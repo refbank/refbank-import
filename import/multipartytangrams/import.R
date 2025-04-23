@@ -49,7 +49,7 @@ combined_results <- one_round_results |>
   mutate(choice_id= gsub("/experiment/tangram_", "", response, fixed = TRUE),
          choice_id= gsub(".png", "", choice_id, fixed = TRUE),
          choice_id=ifelse(choice_id %in% c("false", "FALSE"), NA, choice_id)) |> 
-  select(realCorrect, gameId, targetNum, repNum, trialNum, condition, numPlayers, activePlayerCount, choice_id, playerId, time_to_choice=time) |>
+  select(realCorrect, gameId,tangram, targetNum, repNum, trialNum, condition, numPlayers, activePlayerCount, choice_id, playerId, time_to_choice=time) |>
   unique() |> mutate(role="matcher")
 
 options=c("A", "B","C","D","E","F","G","H","I", "J", "K", "L")
@@ -66,6 +66,7 @@ all <- combined_chat |>
          role=case_when(
            role=="speaker" ~ "describer",
            role=="listener" ~ "matcher",
+           T ~ role
          ),
          target_id=tangram,
          structure=case_when(
