@@ -24,7 +24,7 @@ all <- games |> filter(!is.na(contents)) |>
   select(gameid, trialNum, repetitionNum, role, intendedName, timeElapsed, contents, message_num) |> 
   ungroup() |> 
   full_join(choices) |> 
-  mutate(paper_id="hawkins_characterizing",
+  mutate(paper_id="hawkins2020_characterizing",
          experiment_id="cued",
          structure="thick",
          player_id=str_c(gameid, role), # we know there aren't role switches in this experiment 
