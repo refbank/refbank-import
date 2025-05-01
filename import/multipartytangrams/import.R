@@ -1,5 +1,6 @@
 library(here)
 library(tidyverse)
+library(jsonlite)
 
 ###### read in data from github
 url <- "https://raw.githubusercontent.com/vboyce/multiparty-tangrams/main/"
@@ -37,8 +38,7 @@ all_include <- one_round_include |>
   mutate(include=T)
 
 
-options=c("A", "B","C","D","E","F","G","H","I", "J", "K", "L")
-
+options=c("A", "B","C","D","E","F","G","H","I", "J", "K", "L") 
 ##### do message processing
 
 combined_chat <- one_chat |>
@@ -60,6 +60,8 @@ combined_chat <- one_chat |>
   mutate(message_number=row_number()) |> 
   ungroup() |> 
   mutate(action_type="message") |> 
+  mutate(role=case_when(role=="speaker" ~ "describer",
+                        role=="listener" ~ "matcher")) |> 
   filter(!is.na(text))
 
 ##### do result processing
@@ -106,7 +108,10 @@ all <- choices |> bind_rows(combined_chat) |>
          rep_num=repNum+1,
          full_cite="Boyce, V., Hawkins, R. D., Goodman, N. D., & Frank, M. C. (2024). Interaction structure constrains the emergence of conventions in group communication. Proceedings of the National Academy of Sciences, 121(28), e2403888121.",
          short_cite="Boyce et al. (2024)",
-         group_size=numPlayers, # note this matches condition, not actual player count necessarily
+         group_size=case_when(
+           condition %in% c( "emoji", "full_feedback", "no_rotate") ~ 6,
+           T ~ str_sub(condition, 1,1) |> as.numeric()
+         ), # note this matches condition, not actual player count necessarily
          structure=case_when(
            str_detect(condition, "thin") ~ "thin",
            str_detect(condition, "thick") ~ "thick",
@@ -116,14 +121,16 @@ all <- choices |> bind_rows(combined_chat) |>
            condition =="no_rotate" ~ "med_thick"
          ),
          language="English",
-         option_set=list(options),
          exclude=ifelse(is.na(include),T, NA),
          exclusion_reason=ifelse(exclude, "incomplete block", NA),
          message_irrelevant=(is.chitchat==1),
   ) |> 
+  rowwise() |> 
+  mutate(option_set= options |> str_c(collapse=";") ) |> 
+  ungroup() |> 
   select(condition_label=condition,
          paper_id,
-         full_cite,
+         full_cite, 
          short_cite,
          group_size,
          structure,
@@ -143,6 +150,7 @@ all <- choices |> bind_rows(combined_chat) |>
          message_number,
          message_irrelevant,
          choice_id
-) |> write_csv("test_boyce.csv")
+) |> arrange(game_id) |>  write_csv("test_boyce.csv", quote="needed")
 
+#read_csv("test_boyce.csv") |> View()
 
