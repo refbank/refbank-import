@@ -1,7 +1,7 @@
 library(here)
 library(tidyverse)
 library(jsonlite)
-
+source(here("validate.R"))
 ###### read in data from github
 url <- "https://raw.githubusercontent.com/vboyce/multiparty-tangrams/main/"
 one_chat <- read_csv(str_c(url, "data/study1/filtered_chat.csv")) |> mutate(rotate = str_c(as.character(numPlayers), "_rotate"))
@@ -101,7 +101,7 @@ choices <- combined_results |>
 #### exclusions
 
 
-all <- choices |> bind_rows(combined_chat) |> 
+all_data<- choices |> bind_rows(combined_chat) |> 
   left_join(all_include) |> 
   mutate(paper_id="boyce2024_interaction",
          trial_num=trialNum+1,
@@ -124,6 +124,7 @@ all <- choices |> bind_rows(combined_chat) |>
          exclude=ifelse(is.na(include),T, NA),
          exclusion_reason=ifelse(exclude, "incomplete block", NA),
          message_irrelevant=(is.chitchat==1),
+         message_number=as.numeric(message_number)
   ) |> 
   rowwise() |> 
   mutate(option_set= options |> str_c(collapse=";") ) |> 
@@ -150,7 +151,6 @@ all <- choices |> bind_rows(combined_chat) |>
          message_number,
          message_irrelevant,
          choice_id
-) |> arrange(game_id) |>  write_csv("test_boyce.csv", quote="needed")
+) |> arrange(game_id)
 
-#read_csv("test_boyce.csv") |> View()
-
+validate_dataset(all_data, write=T)
