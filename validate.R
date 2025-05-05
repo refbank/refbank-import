@@ -80,6 +80,10 @@ validate_dataset <- function(df, write=F) {
   condition <- try_condition |>
     mutate(condition_id = row_number())
   
+  # create player_id -- numeric 
+  players <- df |> select(player_id) |> unique() |> 
+    mutate(player_id_numeric = row_number())
+  
   # check players
   try_describer <- df |> select(game_id, trial_num, player_id, role) |>
     filter(role == "describer") |>
@@ -90,14 +94,15 @@ validate_dataset <- function(df, write=F) {
                 try_describer |> nrow(),
               msg = "describer should be unique per game-trial")
   
-  describer <- try_describer |>
-    rename(describer = player_id)
+  describer <- try_describer |> left_join(players) |> 
+    rename(describer = player_id_numeric)
   
   matchers <- df|> select(game_id, trial_num, player_id, role) |>
     filter(role == "matcher") |>
     unique() |>
+    left_join(players) |> 
     group_by(game_id, trial_num) |>
-    summarize(matchers = list(player_id), .groups = "drop")
+    summarize(matchers = list(player_id_numeric), .groups = "drop")
   
   # check trials
   try_trials <- df |>
@@ -112,14 +117,23 @@ validate_dataset <- function(df, write=F) {
   assert_that(try_trials |> select(game_id, trial_num) |> unique() |> nrow() == 
                 try_trials |> nrow(),
               msg = "trials should be uniquely determined by game_id and trial_num")
+ 
+  # create game_id -- numeric
+  
+  games <-try_trials |> select(game_id) |> unique() |> 
+    mutate(game_id_numeric = row_number())
+  
   
   trials <- try_trials |>
-    mutate(trial_id = row_number()) |>
+    mutate(trial_id = row_number()) |> 
+    left_join(games) |> 
     select(-condition_label)
   
+
   # check messages
   messages <- df|> filter(action_type == "message") |>
-    select(game_id, trial_num, text, player_id, role, 
+    left_join(players) |> 
+    select(game_id, trial_num, text, player_id=player_id_numeric, role, 
            message_number, message_irrelevant, time_stamp) |>
     left_join(trials |> select(trial_id, game_id, trial_num), 
               by = join_by(game_id, trial_num)) |>
@@ -127,7 +141,8 @@ validate_dataset <- function(df, write=F) {
   
   # check selections
   try_choices <- df |> filter(action_type == "selection") |>
-    select(game_id, trial_num, choice_id, player_id, role, time_stamp) |>
+    left_join(players) |> 
+    select(game_id, trial_num, choice_id, player_id=player_id_numeric, role, time_stamp) |>
     left_join(trials |> select(trial_id, game_id, trial_num, option_set),
               by = join_by(game_id, trial_num)) |>
     mutate(option_set_list = str_split(option_set, ";")) |>
