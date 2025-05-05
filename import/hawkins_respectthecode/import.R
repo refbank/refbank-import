@@ -10,9 +10,16 @@ ParseJSONColumn <- function(x) {
 
 raw_data_dir <- here("import/hawkins_respectthecode/raw_data")
 
-messages_1 <- read_csv(here(raw_data_dir, "cleaned_messages.csv"))
-
-listener_id <- messages_1 |> select(roomId, repNum, trialNum, gameId, listener, partnerNum)
+messages_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |> 
+  filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
+  mutate(data.target = map(data.target, .f = ParseJSONColumn)) %>%
+  unnest(data.target) |> 
+  rename(room0_target = room0, room1_target = room1) %>%
+  rename_with(~ gsub("data.", "", .x, fixed = TRUE)) %>%
+  rename(room1_response = room1response, room0_response = room0response,
+         room1_correct= room1correct, room0_correct=room0correct) |> 
+  mutate(chat = map (chat, .f=ParseJSONColumn))
+#TODO figure out if there are raw-er messages
 
 
 rounds_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |> 
@@ -33,11 +40,12 @@ rounds_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |>
   rename(player_id=listener) |> 
   mutate(role="matcher") |> 
   mutate(target= gsub("/experiment/tangram_", "", target, fixed = TRUE),
-         target_id= gsub(".png", "", target, fixed = TRUE),
+         target= gsub(".png", "", target, fixed = TRUE),
          response= gsub("/experiment/tangram_", "", response, fixed = TRUE),
          response= gsub(".png", "", response, fixed = TRUE),
-         choice_id=ifelse(response %in% c("false", "FALSE"), NA, response)) |> 
-  select(gameId, trialNum, repNum, partnerNum, choice_id, target_id, role, roomId)
+         choice_id=ifelse(response %in% c("false", "FALSE"), NA, response),
+         action_type="selection") |> 
+  select(gameId, trialNum, repNum, partnerNum, choice_id, target, role, roomId, )
   
 #Note we are just dropping room ID /partnerNum info here!!!
 
@@ -54,6 +62,11 @@ all <- messages_1 |>
   full_join(rounds_1) |> 
     mutate(paper_id="hawkins2021_respectthecode",
            experiment_id="network",
+           full_cite="Hawkins, R., Liu, I., Goldberg, A., & Griffiths, T. (2021). Respect the code: Speakers expect novel conventions to generalize within but not across social group boundaries. In Proceedings of the Annual Meeting of the Cognitive Science Society (Vol. 43, No. 43).",
+           short_cite="Hawkins et al (2021)",
+           language="English",
+           
+           condition_label="network"
            trial_num=1+trialNum+partnerNum*16,
            rep_num=1+repNum+4*partnerNum,
            time_to_choice=NA,
@@ -71,5 +84,6 @@ all <- messages_1 |>
            structure
     )
 
-all |> write_csv(here("harmonized_data/hawkins_respect_code.csv"))
+source(here("validate.R"))
 
+validate_dataset(all)
