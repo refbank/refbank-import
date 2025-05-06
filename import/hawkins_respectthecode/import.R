@@ -6,7 +6,10 @@ library(jsonlite)
 # we are treating game-room as game because that's what is unique / game-trialnum
 
 # note that for player-role, original code implies that games.csv is canonical
-# the raw-chat has a few errors!
+# the raw-chat has a few errors! 
+# we assume errors are limited to chat metadata -- it appears to be at the ends of things,
+# so perhaps is getting meta-data from the next trial? 
+# we assume chat messages are correctly assigned to trial and that playerid is correct which seems to be supported by spot checks
 # we also have to retrieve who the listener is in each room-game to get the right player labels on the selections
 
 
@@ -18,6 +21,7 @@ ParseJSONColumn <- function(x) {
 
 raw_data_dir <- here("import/hawkins_respectthecode/raw_data")
 
+#### get canonical role and room assignments for games/players
 games  <- read_csv(here(raw_data_dir, "games.csv")) %>%
   filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
   rename(gameId = `_id`) 
@@ -37,8 +41,6 @@ roles.tmp <- games |>
          repNum = floor(trialNum/4) %% 4) %>%
   select(-n)
 
-#roles.tmp |> group_by(playerId) |> summarize(n=n()) |> filter(n!=48)
-
 rooms.tmp <- games |>   filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
   select(gameId, data.schedule, data.targetSet) %>%
   mutate(data.schedule = map(data.schedule, .f = ParseJSONColumn)) |> 
@@ -47,7 +49,7 @@ rooms.tmp <- games |>   filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
   rowwise() %>%
   filter(!is.null(room)) %>%
   unnest(room) %>%
-  mutate(option_set=ifelse(data.targetSet=="setA", "A;B;C;D", "E;F;G;H")) |> 
+  #mutate(option_set=ifelse(data.targetSet=="setA", "A;B;C;D", "E;F;G;H")) |> 
   group_by(playerId) %>%
   mutate(n = row_number() - 1,
          trialNum = n %% 16,
@@ -55,10 +57,11 @@ rooms.tmp <- games |>   filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
          repNum = floor(trialNum/4) %% 4) %>%
   select(-n)
 
-#rooms.tmp |> group_by(playerId) |> summarize(n=n()) |> filter(n!=48)
-
 rooms_roles <- roles.tmp |> left_join(rooms.tmp) |> rename(gamerole=role, gameroom=room)
 
+
+
+#### get message info 
 messages_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |> 
   filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
   mutate(data.target = map(data.target, .f = ParseJSONColumn)) %>%
@@ -71,38 +74,16 @@ messages_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |>
   mutate(chat = map (chat, .f=ParseJSONColumn)) |> 
   unnest(chat)|> 
   filter(!is.na(text)) |> 
-  select(gameId, trialNum, partnerNum, repNum, text, playerId, roomId, target, role) |> 
   mutate(target= gsub("/experiment/tangram_", "", target, fixed = TRUE),
          target= gsub(".png", "", target, fixed = TRUE),) |> 
+  select(gameId, trialNum, partnerNum, repNum, text, playerId, roomId, message_target=target, message_role=role) |> 
   group_by(gameId, trialNum, repNum, partnerNum, roomId) |> 
   mutate(message_number=row_number()) |> 
   ungroup() |>   mutate(action_type="message", 
                         message_number=as.numeric(message_number),
                         message_irrelevant=F) #TODO figure out message relevancy
 
-# some player Ids seem to have both roles in the same trial? 
-messages_1 |> select(gameId, trialNum, partnerNum, repNum, playerId, roomId, target, role) |> unique() |> 
-  group_by(gameId, playerId, trialNum, partnerNum, repNum) |> 
-  mutate(n=n()) |> 
-  filter(n>1) |> View()
-
-
-problems <- messages_1 |> select(gameId, trialNum, partnerNum, repNum, playerId, roomId, target) |> unique() |> 
-  group_by(gameId, playerId, trialNum, partnerNum, repNum) |> 
-  mutate(n=n()) |> 
-  filter(n>1) |> ungroup() |> select(gameId, trialNum, partnerNum, repNum, roomId) |> unique()
-
-messages |> inner_join(problems) |> arrange(gameId, partnerNum, repNum, trialNum, roomId) |> View()
-
-#trying to figure out how structure should be 
-messages |> select(gameId, partnerNum, roomId, playerId) |> unique() |> 
-  group_by(gameId, roomId, partnerNum) |> 
-  summarize(n=n()) |> 
-  group_by(n) |> 
-  summarize(count=n())
-# clearly there are supposed to be 2 people / room who are there the whole time 
-
-
+# fix cases where someone seems to be in the wrong room
 fixing_rooms  <- messages_1 |> left_join(rooms_roles) |> select(playerId, roomId, gameroom, partnerNum, gameId, trialNum) |> 
   unique() |> 
   group_by(roomId, gameroom, partnerNum, gameId) |> summarize(n=n()) |> 
@@ -113,7 +94,9 @@ fixing_rooms  <- messages_1 |> left_join(rooms_roles) |> select(playerId, roomId
   ungroup() |> 
   select(-room0, -room1) |> left_join(rooms_roles)
 
-rounds_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |> 
+
+# read in rounds and use room0/1 to determine playerId
+rounds <- read_csv(here(raw_data_dir, "rounds.csv")) |> 
   filter(createdAt >= lubridate::ymd('2021-01-21')) |> 
   mutate(data.target = map(data.target, .f = ParseJSONColumn)) %>%
   unnest(data.target) |> 
@@ -133,24 +116,28 @@ rounds_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |>
          response= gsub("/experiment/tangram_", "", response, fixed = TRUE),
          choice_id= gsub(".png", "", response, fixed = TRUE),
          action_type="selection") |> 
-  select(gameId, trialNum, repNum, partnerNum, choice_id, target, role=gamerole, playerId, roomId) |> 
+  select(gameId, trialNum, repNum, partnerNum, choice_id, target, gamerole, playerId, roomId) |> 
   mutate(action_type="selection")
 
-# it also looks like, per the above issue, that when that occurs the target is also wrong, so we fix
-# that from the trials
 
-targets <- rounds_1 |> select(gameId, trialNum, repNum, partnerNum, roomId, target) |> unique()
-messages <- messages_1 |> select(-roomId, -role, -target) |> left_join(fixing_rooms) |> 
-  left_join(targets) |> 
-  rename(role=gamerole)
+# get the target for each 
+targets <- rounds |> select(gameId, trialNum, repNum, partnerNum, roomId, target) |> unique()
 
+messages_2 <- messages_1 |> rename(message_roomId=roomId) |> left_join(fixing_rooms) |> 
+  left_join(targets)
 
+messages_2 |> filter(roomId!=message_roomId) # 8 instances all trialNum15
+messages_2 |> filter(target!=message_target) # 6 instances all trialNum15
+messages_2 |> filter(gamerole!=message_role) # |> select(trialNum) |> unique() # 42 instances, all trial num 7/11/3/15
+
+messages <- messages_2 |> select(gameId, trialNum, partnerNum, repNum, text, playerId, 
+                                 message_number, action_type, message_irrelevant, roomId, gamerole, target)
 all <- messages |> 
   bind_rows(rounds_1)  |> 
     mutate(game_id=str_c(gameId,"_",roomId),
            role=case_when(
-             role=="speaker" ~ "describer",
-             role=="listener" ~ "matcher",
+             gamerole=="speaker" ~ "describer",
+             gamerole=="listener" ~ "matcher",
              T ~ NA
            ),
            paper_id="hawkins2021_respect",
@@ -165,7 +152,12 @@ all <- messages |>
            structure="pairs-network",
            condition_label="pairs-network",
            exclude=NA, #TODO,
-           exclusion_reason=as.character(NA) #TODO
+           exclusion_reason=as.character(NA), #TODO
+           option_set = case_when(
+             target %in% c("A", "B", "C", "D") ~ "A;B;C;D",
+             target %in% c("E", "F", "G", "H") ~ "E;F;G;H",
+             T ~ NA
+           )
            ) |> 
     select(paper_id, full_cite, short_cite, language,
            condition_label, time_stamp,
@@ -179,13 +171,10 @@ all <- messages |>
            structure
     )
 
-
+# TODO implement exlcusions
+# recruited 272
+# after excluding incomplete 33 groups, 132 participants
 source(here("validate.R"))
 
 validate_dataset(all)
 
-all |> select(condition_label, game_id, option_set, target, trial_num, rep_num, exclude,
-              exclusion_reason) |>
-  unique() |> group_by(game_id, trial_num) |> 
-  mutate(count=n()) |> 
-  filter(count>1) |> View()
