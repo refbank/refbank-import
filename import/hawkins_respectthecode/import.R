@@ -40,13 +40,14 @@ roles.tmp <- games |>
 #roles.tmp |> group_by(playerId) |> summarize(n=n()) |> filter(n!=48)
 
 rooms.tmp <- games |>   filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
-  select(gameId, data.schedule) %>%
+  select(gameId, data.schedule, data.targetSet) %>%
   mutate(data.schedule = map(data.schedule, .f = ParseJSONColumn)) |> 
   unnest(data.schedule) |> 
-  gather(playerId, room, -gameId) %>%
+  gather(playerId, room, -gameId, -data.targetSet) %>%
   rowwise() %>%
   filter(!is.null(room)) %>%
   unnest(room) %>%
+  mutate(option_set=ifelse(data.targetSet=="setA", "A;B;C;D", "E;F;G;H")) |> 
   group_by(playerId) %>%
   mutate(n = row_number() - 1,
          trialNum = n %% 16,
@@ -56,7 +57,7 @@ rooms.tmp <- games |>   filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
 
 #rooms.tmp |> group_by(playerId) |> summarize(n=n()) |> filter(n!=48)
 
-rooms_roles <- roles.tmp |> left_join(rooms.tmp)
+rooms_roles <- roles.tmp |> left_join(rooms.tmp) |> rename(gamerole=role, gameroom=room)
 
 messages_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |> 
   filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
@@ -71,6 +72,8 @@ messages_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |>
   unnest(chat)|> 
   filter(!is.na(text)) |> 
   select(gameId, trialNum, partnerNum, repNum, text, playerId, roomId, target, role) |> 
+  mutate(target= gsub("/experiment/tangram_", "", target, fixed = TRUE),
+         target= gsub(".png", "", target, fixed = TRUE),) |> 
   group_by(gameId, trialNum, repNum, partnerNum, roomId) |> 
   mutate(message_number=row_number()) |> 
   ungroup() |>   mutate(action_type="message", 
@@ -83,8 +86,35 @@ messages_1 |> select(gameId, trialNum, partnerNum, repNum, playerId, roomId, tar
   mutate(n=n()) |> 
   filter(n>1) |> View()
 
+
+problems <- messages_1 |> select(gameId, trialNum, partnerNum, repNum, playerId, roomId, target) |> unique() |> 
+  group_by(gameId, playerId, trialNum, partnerNum, repNum) |> 
+  mutate(n=n()) |> 
+  filter(n>1) |> ungroup() |> select(gameId, trialNum, partnerNum, repNum, roomId) |> unique()
+
+messages |> inner_join(problems) |> arrange(gameId, partnerNum, repNum, trialNum, roomId) |> View()
+
+#trying to figure out how structure should be 
+messages |> select(gameId, partnerNum, roomId, playerId) |> unique() |> 
+  group_by(gameId, roomId, partnerNum) |> 
+  summarize(n=n()) |> 
+  group_by(n) |> 
+  summarize(count=n())
+# clearly there are supposed to be 2 people / room who are there the whole time 
+
+
+fixing_rooms  <- messages_1 |> left_join(rooms_roles) |> select(playerId, roomId, gameroom, partnerNum, gameId, trialNum) |> 
+  unique() |> 
+  group_by(roomId, gameroom, partnerNum, gameId) |> summarize(n=n()) |> 
+  pivot_wider(names_from=roomId, values_from=n, values_fill = 0) |> 
+  # there are 7 cases with an issue, and it's always only 1 v 12+
+  # so we are going to assume that the majority ones are correct!
+  mutate(roomId=ifelse(room1>room0, "room1", "room0")) |> 
+  ungroup() |> 
+  select(-room0, -room1) |> left_join(rooms_roles)
+
 rounds_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |> 
-  filter(createdAt >= lubridate::ymd('2021-01-21'))
+  filter(createdAt >= lubridate::ymd('2021-01-21')) |> 
   mutate(data.target = map(data.target, .f = ParseJSONColumn)) %>%
   unnest(data.target) |> 
   rename(room0_target = room0, room1_target = room1) %>%
@@ -96,18 +126,26 @@ rounds_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |>
   separate(key, into = c('roomId', 'info')) %>%
   spread(info, value) |> 
   mutate(response = ifelse(response == 'false', 'timed_out', response)) |> 
-  mutate(role="listener") |> 
+  mutate(gamerole="listener") |> 
+    left_join(fixing_rooms) |> 
   mutate(target= gsub("/experiment/tangram_", "", target, fixed = TRUE),
          target= gsub(".png", "", target, fixed = TRUE),
          response= gsub("/experiment/tangram_", "", response, fixed = TRUE),
          choice_id= gsub(".png", "", response, fixed = TRUE),
          action_type="selection") |> 
-  select(gameId, trialNum, repNum, partnerNum, choice_id, target, role, playerId, roomId) |> 
+  select(gameId, trialNum, repNum, partnerNum, choice_id, target, role=gamerole, playerId, roomId) |> 
   mutate(action_type="selection")
-  
-options=c("A", "B","C","D")
 
-all <- messages_1 |> 
+# it also looks like, per the above issue, that when that occurs the target is also wrong, so we fix
+# that from the trials
+
+targets <- rounds_1 |> select(gameId, trialNum, repNum, partnerNum, roomId, target) |> unique()
+messages <- messages_1 |> select(-roomId, -role, -target) |> left_join(fixing_rooms) |> 
+  left_join(targets) |> 
+  rename(role=gamerole)
+
+
+all <- messages |> 
   bind_rows(rounds_1)  |> 
     mutate(game_id=str_c(gameId,"_",roomId),
            role=case_when(
@@ -129,9 +167,6 @@ all <- messages_1 |>
            exclude=NA, #TODO,
            exclusion_reason=as.character(NA) #TODO
            ) |> 
-    rowwise() |> 
-    mutate(option_set=str_c(options, collapse=";")) |> 
-    ungroup() |> 
     select(paper_id, full_cite, short_cite, language,
            condition_label, time_stamp,
            game_id, player_id=playerId,
@@ -145,15 +180,12 @@ all <- messages_1 |>
     )
 
 
-dupes <- all |> select(game_id, player_id, trial_num, role) |> filter(role=="describer") |> 
-  unique() |> 
-  group_by(game_id, trial_num) |> 
-  summarize(n=n()) |> 
-  filter(n>1)
-
-
-
-
 source(here("validate.R"))
 
 validate_dataset(all)
+
+all |> select(condition_label, game_id, option_set, target, trial_num, rep_num, exclude,
+              exclusion_reason) |>
+  unique() |> group_by(game_id, trial_num) |> 
+  mutate(count=n()) |> 
+  filter(count>1) |> View()
