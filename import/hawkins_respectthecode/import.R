@@ -3,6 +3,9 @@ library(tidyverse)
 library(jsonlite)
 
 # import decisions:
+
+# note that there is also post-test data associated with this dataset, but not imported
+
 # we are treating game-room as game because that's what is unique / game-trialnum
 
 # note that for player-role, original code implies that games.csv is canonical
@@ -81,7 +84,7 @@ messages_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |>
   mutate(message_number=row_number()) |> 
   ungroup() |>   mutate(action_type="message", 
                         message_number=as.numeric(message_number),
-                        message_irrelevant=F) #TODO figure out message relevancy
+                        message_irrelevant=F) #I don't see any message relevancy cleaning in the source
 
 # fix cases where someone seems to be in the wrong room
 fixing_rooms  <- messages_1 |> left_join(rooms_roles) |> select(playerId, roomId, gameroom, partnerNum, gameId, trialNum) |> 
@@ -132,8 +135,26 @@ messages_2 |> filter(gamerole!=message_role) # |> select(trialNum) |> unique() #
 
 messages <- messages_2 |> select(gameId, trialNum, partnerNum, repNum, text, playerId, 
                                  message_number, action_type, message_irrelevant, roomId, gamerole, target)
+
+
+# according to paper, after excluding incomplete, 33 groups, 132 participants
+# this appears to be the exclusion used, but this keeps 37 (which does line up with the number of games in cleaned_messages)
+# I can't identify other exclusion used
+talked <- messages %>%
+  filter(!is.na(text)) %>%
+  group_by(gameId, trialNum, roomId, partnerNum) %>%
+  tally() %>%
+  group_by(gameId) %>%
+  tally() |> 
+  filter(n >= 90) %>%
+  select(gameId) |> 
+  mutate(exclude=F,
+         exclusion_reason=NA)
+
+
 all <- messages |> 
-  bind_rows(rounds_1)  |> 
+  bind_rows(rounds)  |> 
+  left_join(talked) |> 
     mutate(game_id=str_c(gameId,"_",roomId),
            role=case_when(
              gamerole=="speaker" ~ "describer",
@@ -147,12 +168,12 @@ all <- messages |>
            condition_label="network",
            trial_num=1+trialNum+partnerNum*16,
            rep_num=1+repNum+4*partnerNum,
-           time_stamp=as.numeric(NA),
+           time_stamp=ifelse(choice_id=="timed_out", 45, NA), # didn't find timestamps in source, paper reports time out at 45 seconds/trial 
            group_size=4,
            structure="pairs-network",
            condition_label="pairs-network",
-           exclude=NA, #TODO,
-           exclusion_reason=as.character(NA), #TODO
+           exclude=ifelse(is.na(exclude), T, exclude),
+           exclusion_reason=ifelse(exclude, "incomplete game", NA), 
            option_set = case_when(
              target %in% c("A", "B", "C", "D") ~ "A;B;C;D",
              target %in% c("E", "F", "G", "H") ~ "E;F;G;H",
@@ -171,10 +192,7 @@ all <- messages |>
            structure
     )
 
-# TODO implement exlcusions
-# recruited 272
-# after excluding incomplete 33 groups, 132 participants
 source(here("validate.R"))
 
-validate_dataset(all)
+validate_dataset(all, write=T)
 
