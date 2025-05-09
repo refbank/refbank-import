@@ -70,7 +70,7 @@ exclusion_duplicates <- tibble(gameid=duplicate_gameids, exclude=T, exclusion_re
 exclusion_garbage <- tibble(gameid=garbage_gameids, exclude=T, exclusion_reason="describer didn't talk")
 exclusion_incomplete <- tibble(gameid=incompleteIDs, exclude=T, exclusion_reason="incomplete game")
 exclusion_nonnative <- tibble(gameid=nonNativeSpeakerIDs, exclude=T, exclusion_reason="non-native English-speaking participant")
-exclusion_accuracy <- tibble(gameid=lowAccuracyIDs, exclude=T, exclusion_reason="low accuracy game")
+exclusion_accuracy <- tibble(gameid=lowAccuracyIDs, exclude=T, exclusion_reason="low accuracy game") |> anti_join(exclusion_garbage |> select(gameid)) # prevent duplicate
 
 exclude <- exclusion_duplicates |> bind_rows(exclusion_garbage) |> bind_rows(exclusion_incomplete) |> 
   bind_rows(exclusion_nonnative) |> bind_rows(exclusion_accuracy)
@@ -82,60 +82,52 @@ additional_spellcorrector = read_json(str_c(url,'message/additional_spell_correc
 metacorrector = read_json(str_c(url,'message/meta-cleaning.json')) |> as_tibble() |> 
   pivot_longer(everything()) |> 
   separate(name, c("gameid", "trialNum", "contents"), sep="~~~") |> 
-  mutate(trialNum=as.numeric(trialNum))
-#TODO make sure that the escape sequences are all lining up appropriately!!
-# If the metacorrector went to a zero length string, should instead by labeled chitchat probably
-
+  mutate(trialNum=as.numeric(trialNum)) |> 
+  filter(value=="") |> select(-value) |> 
+  mutate(contents=str_replace_all(contents, fixed("\\"), "")) |> 
+  mutate(message_irrelevant=T) 
 
 # only match full words
 names(spellcorrector) <- paste0('\\b', names(spellcorrector), '\\b')
 names(additional_spellcorrector) <- paste0('\\b', names(additional_spellcorrector), '\\b')
 
-sequentialCombined <- sequentialCombined.raw %>%
-  #filter(!(gameid %in% badGames)) %>%
+messages <- sequentialCombined.raw %>%
   mutate(contents = tolower(contents)) %>%
   mutate(contents = str_replace_all(contents, 
                                     unlist(spellcorrector, 
-                                           use.names = T))) %>%
-  left_join(metacorrector, 
-            by = c('trialNum', 'gameid', "contents"))
-  mutate(contents = ifelse(!is.na(new), new, contents.x)) %>%
+                                           use.names = T))) |> 
   mutate(contents = str_replace_all(contents,
                                     unlist(additional_spellcorrector,
-                                           use.names = T))) %>%
-  mutate(contents = str_trim(contents))
-  #filter(contents != "~~~") %>%
+                                           use.names = T))) |> 
+  left_join(metacorrector, 
+            by = c('trialNum', 'gameid', "contents")) |> 
+  mutate(contents = str_trim(contents)) |> 
+  group_by(gameid, trialNum, repetitionNum) |> 
+  mutate(message_number=row_number() |> as.numeric()) |> 
+  mutate(time_stamp=as.numeric(NA)) |> 
+  #we are unsure of timestamps -- there are both msgTime and timeElapsed, 
+  #but they don't obviously line up, so not sure we have reliable time to message
+  select(gameid, trialNum, repetitionNum, role, intendedName, time_stamp, contents, 
+         message_number, message_irrelevant) |> 
+  ungroup() |> 
+  mutate(action_type="message")
+  
 
-# only match on full words
-names(corrector) <- paste0('\\b', names(corrector), '\\b')
-
-messagesFiltered <- sequentialMsgs %>%
-  filter(!(gameid %in% badGames)) %>%
-  mutate(contents = tolower(contents)) %>%
-  mutate(contents = str_replace_all(contents, unlist(corrector, use.names = T)))
-
-
-
-choices <- games |> 
-  select(gameid, trialNum, repetitionNum, role, intendedName, clickedObj) |> 
-  unique() |> 
-  mutate(time_stamp=as.numeric(NA), #TODO timing info?
-         player_id=str_c(gameid, "matcher"),
+### choices
+choices <- sequentialClicks |> 
+  mutate(role="matcher") |> 
+  select(gameid, trialNum, repetitionNum, role, intendedName=intendedObj, clickedObj, role) |> 
+  mutate(time_stamp=as.numeric(NA), #there is a time column, but I don't think we have a start of trial indicator to baseline with
          action_type="selection"
          ) 
 
 ####
 options=c("A", "B","C","D","E","F","G","H","I", "J", "K", "L")
 
-messages <-  games |> filter(!is.na(contents)) |> 
-  group_by(gameid, trialNum, repetitionNum) |> 
-  mutate(message_number=row_number() |> as.numeric()) |> 
-  select(gameid, trialNum, repetitionNum, role, intendedName, timeElapsed, contents, message_number) |> 
-  ungroup() |>
-  mutate(action_type="message",
-         message_irrelevant=NA) #TODO figure out message_irrelevancy
+
 
 all <- choices |> bind_rows(messages) |> 
+  left_join(exclude) |> 
   mutate(paper_id="hawkins2020_characterizing",
          full_cite="Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",
          short_cite="Hawkins et al. (2020)",
@@ -151,8 +143,7 @@ all <- choices |> bind_rows(messages) |>
          group_size=2,
          group_structure="thick",
          language="English",
-         exclude=NA, #TODO exclusions
-         exclusion_reason=as.character(NA) #TODO exclusions
+         exclude=ifelse(exclude, exclude, F), # fill in F for ones not excluded
          ) |>
   mutate(option_set=str_c(options, collapse=";")) |> 
   rename(game_id=gameid,
@@ -172,5 +163,5 @@ all <- choices |> bind_rows(messages) |>
   )
 
 
-validate_dataset(all)
+validate_dataset(all, write=T)
 
