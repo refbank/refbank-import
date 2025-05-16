@@ -1,0 +1,2596 @@
+text,player_id,role,message_number,message_irrelevant,time_stamp,trial_id
+The one that looks like someone lifting their leg behind them,1,describer,1,FALSE,NA,1
+The one that looks like a person kneeling and praying,1,describer,1,FALSE,NA,2
+The one that is a bean shape under the diamond head,1,describer,1,FALSE,NA,3
+The one that looks like a square body with a jagged right edge,1,describer,1,FALSE,NA,4
+The one that looks like a person sitting and looking down.,2,describer,1,FALSE,NA,5
+The one that looks like a person kneeling and praying.,2,describer,1,FALSE,NA,6
+The slightly square one with a jagged right edge.,2,describer,1,FALSE,NA,7
+The one that looks like a person throwing a kick behind them.,2,describer,1,FALSE,NA,8
+the one with the square body with a jagged right edge,1,describer,1,FALSE,NA,9
+the one kneeling and praying,1,describer,1,FALSE,NA,10
+the one lifting a leg behind them,1,describer,1,FALSE,NA,11
+the one sitting and looking down,1,describer,1,FALSE,NA,12
+The one kneeling and praying.,2,describer,1,FALSE,NA,13
+The one with a raised leg.,2,describer,1,FALSE,NA,14
+The one sitting and looking down.,2,describer,1,FALSE,NA,15
+The square one with a jagged right edge.,2,describer,1,FALSE,NA,16
+"Hello, whatcha got for a description?",3,matcher,1,FALSE,NA,17
+A person kneeling and praying,4,describer,2,FALSE,NA,17
+"got it, i see it",3,matcher,3,FALSE,NA,17
+alright round 2,3,matcher,1,FALSE,NA,18
+A person sitting with their arms to their sides,4,describer,2,FALSE,NA,18
+yup i see it,3,matcher,3,FALSE,NA,18
+got the dude pointing and the dude doing a karate kick,3,matcher,1,FALSE,NA,19
+A person pointing to the right,4,describer,2,FALSE,NA,19
+aiiiiiight we're doing good,3,matcher,1,FALSE,NA,20
+a person kicking their leg out,4,describer,2,FALSE,NA,20
+alright bingo -- so this one is a guy on his knees praying,3,describer,1,FALSE,NA,21
+now ive got a dude sitting with arms to the side,3,describer,1,FALSE,NA,22
+now ive got a guy doing a kick,3,describer,1,FALSE,NA,23
+now ive got a dude standing pointing to the right,3,describer,1,FALSE,NA,24
+praying,4,describer,1,FALSE,NA,25
+sitting with arms at sides,4,describer,1,FALSE,NA,26
+kicking,4,describer,1,FALSE,NA,27
+pointing,4,describer,1,FALSE,NA,28
+kicking dude,3,describer,1,FALSE,NA,29
+praying dude,3,describer,1,FALSE,NA,30
+sitting dude,3,describer,1,FALSE,NA,31
+pointing guy,3,describer,1,FALSE,NA,32
+The one that looks like a person kneeing and praying.,2,describer,1,FALSE,NA,33
+The one that looks like a person sitting and looking down.,2,describer,1,FALSE,NA,34
+The slightly square one with a jagged right edge.,2,describer,1,FALSE,NA,35
+The one that looks like a person raising their leg.,2,describer,1,FALSE,NA,36
+sitting and looking down,4,describer,1,FALSE,NA,37
+praying,4,describer,1,FALSE,NA,38
+kicking leg,4,describer,1,FALSE,NA,39
+jagged edge,4,describer,1,FALSE,NA,40
+kicking leg,2,describer,1,FALSE,NA,41
+praying,2,describer,1,FALSE,NA,42
+sitting and looking down,2,describer,1,FALSE,NA,43
+jagged right edge,2,describer,1,FALSE,NA,44
+sitting,4,describer,1,FALSE,NA,45
+praying,4,describer,1,FALSE,NA,46
+jagged edge,4,describer,1,FALSE,NA,47
+kicking,4,describer,1,FALSE,NA,48
+ive got a guy standing and pointing to the right but he's not kicking or kneeling,3,describer,1,FALSE,NA,49
+"now ive got a dude sitting with his arms to the side, NOT praying",3,describer,1,FALSE,NA,50
+now ive got a guy doing a karate kick move,3,describer,1,FALSE,NA,51
+now ive got a dude praying,3,describer,1,FALSE,NA,52
+"nice, whatcha see?",3,matcher,1,FALSE,NA,53
+the one lifting a leg behind them,1,describer,2,FALSE,NA,53
+kneeling and praying,1,describer,1,FALSE,NA,54
+doing well. whatcha got?,3,matcher,1,FALSE,NA,55
+the one pointing to the right with a square shaped body,1,describer,2,FALSE,NA,55
+dude sitting with arms to the side?,3,matcher,1,FALSE,NA,56
+the one sitting down,1,describer,2,FALSE,NA,56
+ive got the guy kicking behind him,3,describer,1,FALSE,NA,57
+got the prayer person,3,describer,1,FALSE,NA,58
+"got the standing pointing fella, boxman",3,describer,1,FALSE,NA,59
+sitting guy,3,describer,1,FALSE,NA,60
+I got the square one pointing to the right,1,describer,1,FALSE,NA,61
+"nice, we're doing well",3,matcher,1,FALSE,NA,62
+the kneeling and praying one,1,describer,2,FALSE,NA,62
+the sitting one,1,describer,1,FALSE,NA,63
+kicker?,3,matcher,1,FALSE,NA,64
+the leg kicker,1,describer,2,FALSE,NA,64
+"yo, ive got the guy sitting down arms to the side NOT praying",3,describer,1,FALSE,NA,65
+"nice, now ive got the boxy guy standing up pointing to the right NOT kicking",3,describer,1,FALSE,NA,66
+"sweet doing well, got the guy doing a prayer",3,describer,1,FALSE,NA,67
+now karate homeboy,3,describer,1,FALSE,NA,68
+aight whatcha got?,3,matcher,1,FALSE,NA,69
+Boxy guy,2,describer,2,FALSE,NA,69
+dope,3,matcher,1,FALSE,NA,70
+Man sitting,2,describer,2,FALSE,NA,70
+we on it,3,matcher,1,FALSE,NA,71
+Guy praying,2,describer,2,FALSE,NA,71
+4 cents all day baby,3,matcher,1,FALSE,NA,72
+Karate guy lol,2,describer,2,FALSE,NA,72
+got the dude sitting,3,describer,1,FALSE,NA,73
+got the prayer man,3,describer,1,FALSE,NA,74
+karateeeeee,3,describer,1,FALSE,NA,75
+boxy brown,3,describer,1,FALSE,NA,76
+you got it killa,3,matcher,1,FALSE,NA,77
+Guy praying,2,describer,2,FALSE,NA,77
+Karate guy,2,describer,1,FALSE,NA,78
+Boxy guy,2,describer,1,FALSE,NA,79
+Guy sitting,2,describer,1,FALSE,NA,80
+you on it,3,matcher,2,FALSE,NA,80
+the one with a square body and a jagged right edge,1,describer,1,FALSE,NA,81
+the one kicking a leg behind them,1,describer,1,FALSE,NA,82
+the one that looks like it's sitting down,1,describer,1,FALSE,NA,83
+the one kneeling and praying,1,describer,1,FALSE,NA,84
+Person kicking,4,describer,1,FALSE,NA,85
+person praying,4,describer,1,FALSE,NA,86
+jagged edge,4,describer,1,FALSE,NA,87
+person sitting,4,describer,1,FALSE,NA,88
+the kicking one,1,describer,1,FALSE,NA,89
+the sitting one,1,describer,1,FALSE,NA,90
+the kneeling and praying one,1,describer,1,FALSE,NA,91
+the jagged edge one,1,describer,1,FALSE,NA,92
+sitting,4,describer,1,FALSE,NA,93
+jagged,4,describer,1,FALSE,NA,94
+kicking,4,describer,1,FALSE,NA,95
+praying,4,describer,1,FALSE,NA,96
+diamond head facing right,5,describer,1,FALSE,NA,97
+facing left gap at bottom right,5,describer,1,FALSE,NA,98
+facing right sitting down no gap,5,describer,1,FALSE,NA,99
+facing left sitting down gap on left,5,describer,1,FALSE,NA,100
+"standing up, squatting with diamond straight",6,describer,1,FALSE,NA,101
+sitting down gap at left,6,describer,1,FALSE,NA,102
+"shapes on top of the diamond, no gaps",6,describer,1,FALSE,NA,103
+"looks like dancing, gap on right",6,describer,1,FALSE,NA,104
+Squating one facing right,5,describer,1,FALSE,NA,105
+sitting down no gap,5,describer,1,FALSE,NA,106
+sitting down facing left gap on left,5,describer,1,FALSE,NA,107
+dancing one gap on right,5,describer,1,FALSE,NA,108
+sitting down gap on left,6,describer,1,FALSE,NA,109
+"dancing, gap on right",6,describer,1,FALSE,NA,110
+squatting diamond straight up,6,describer,1,FALSE,NA,111
+"sitting, shapes on the head",6,describer,1,FALSE,NA,112
+bald man sitting down looking at his feet,7,describer,1,FALSE,NA,113
+triangle tail on the side towards the bottom,7,describer,1,FALSE,NA,114
+bunny rabbit ears,7,describer,1,FALSE,NA,115
+man kneeling down reading a book,7,describer,1,FALSE,NA,116
+bunny ears sitting down,8,describer,1,FALSE,NA,117
+man sitting down looking at his feet,8,describer,1,FALSE,NA,118
+man kneeling with something in his hands,8,describer,1,FALSE,NA,119
+person sitting with triangle tail,8,describer,1,FALSE,NA,120
+man kneeling reading a book,7,describer,1,FALSE,NA,121
+triangle tail on the side,7,describer,1,FALSE,NA,122
+bunny ears,7,describer,1,FALSE,NA,123
+bald man sitting down looking at his feet,7,describer,1,FALSE,NA,124
+bunny ears,8,describer,1,FALSE,NA,125
+kneeling with book,8,describer,1,FALSE,NA,126
+triangle tail,8,describer,1,FALSE,NA,127
+looking at feet,8,describer,1,FALSE,NA,128
+bunny ears,7,describer,1,FALSE,NA,129
+bland man looking at feet,7,describer,1,FALSE,NA,130
+man kneeling reading a book,7,describer,1,FALSE,NA,131
+triangle tail,7,describer,1,FALSE,NA,132
+man kneeling looking at book,5,describer,1,FALSE,NA,133
+triangle tail,5,describer,1,FALSE,NA,134
+bunny ears,5,describer,1,FALSE,NA,135
+guy sitting facing left,5,describer,1,FALSE,NA,136
+bland one,5,describer,2,FALSE,NA,136
+kneeling reading book,7,describer,1,FALSE,NA,137
+looking at feet no ears,7,describer,1,FALSE,NA,138
+triangle tail,7,describer,1,FALSE,NA,139
+bunny ears,7,describer,1,FALSE,NA,140
+kneeling reading a book,5,describer,1,FALSE,NA,141
+bunny ears,5,describer,1,FALSE,NA,142
+sitting looking at feet no ears,5,describer,1,FALSE,NA,143
+triangle tail,5,describer,1,FALSE,NA,144
+person kneeling with a book in their hands,8,describer,1,FALSE,NA,145
+person sitting with a small triangle tail on their right,8,describer,1,FALSE,NA,146
+bald man sitting looking at his feet,8,describer,1,FALSE,NA,147
+person with bunny ears,8,describer,1,FALSE,NA,148
+squatting with diamond head,6,describer,1,FALSE,NA,149
+"sitting with shapes on the head, bunny ears",6,describer,1,FALSE,NA,150
+sitting down with a gap between legs and ground on the right,6,describer,1,FALSE,NA,151
+dancing with a triangle tail,6,describer,1,FALSE,NA,152
+person squatting,8,describer,1,FALSE,NA,153
+person sitting looking at their feet,8,describer,1,FALSE,NA,154
+person with triangle tail on the right,8,describer,1,FALSE,NA,155
+sitting person with bunny ears,8,describer,1,FALSE,NA,156
+sitting down with gap on the left,6,describer,1,FALSE,NA,157
+squatting with diamond head,6,describer,1,FALSE,NA,158
+dancing with triangle tail,6,describer,1,FALSE,NA,159
+sitting with bunny ears,6,describer,1,FALSE,NA,160
+man squatting facing right nothing on head,5,describer,1,FALSE,NA,161
+man that looks like hes dancing gap on bottom right,5,describer,1,FALSE,NA,162
+man sitting facing left no thing on head,5,describer,1,FALSE,NA,163
+man sitting facing right,5,describer,1,FALSE,NA,164
+person squatting with something in their hands,8,describer,1,FALSE,NA,165
+dancing person with a triangle tail on the right,8,describer,1,FALSE,NA,166
+man sitting towards the left looking at his feet,8,describer,1,FALSE,NA,167
+triangles on his head?,5,matcher,2,FALSE,NA,167
+no,8,describer,3,FALSE,NA,167
+person sitting with triangle bunny ears,8,describer,1,FALSE,NA,168
+man dancing with tail on bottom right,5,describer,1,FALSE,NA,169
+man sitting with triangle bunny ears,5,describer,1,FALSE,NA,170
+man sitting looking at feet,5,describer,1,FALSE,NA,171
+man squatting holding something,5,describer,1,FALSE,NA,172
+dancing with triangle tail,8,describer,1,FALSE,NA,173
+squatting with something in hands,8,describer,1,FALSE,NA,174
+sitting with bunny ears,8,describer,1,FALSE,NA,175
+sitting looking at feet,8,describer,1,FALSE,NA,176
+bald guy looking at feet,7,describer,1,FALSE,NA,177
+kneeling reading a book,7,describer,1,FALSE,NA,178
+triangle tail,7,describer,1,FALSE,NA,179
+bunny ears,7,describer,1,FALSE,NA,180
+sitting down gap on left,6,describer,1,FALSE,NA,181
+bunny ears,6,describer,1,FALSE,NA,182
+kneeling with diamond head,6,describer,1,FALSE,NA,183
+dancing with triangle on bottom right,6,describer,1,FALSE,NA,184
+"guy looking at feet, bald",7,describer,1,FALSE,NA,185
+bunny ears,7,describer,1,FALSE,NA,186
+kneeling reading a book,7,describer,1,FALSE,NA,187
+triangle tail,7,describer,1,FALSE,NA,188
+sitting down facing left,6,describer,1,FALSE,NA,189
+dancing with triangle tail,6,describer,1,FALSE,NA,190
+bunny ears,6,describer,1,FALSE,NA,191
+kneeling,6,describer,1,FALSE,NA,192
+straight,9,describer,1,FALSE,NA,193
+leg up,9,describer,1,FALSE,NA,194
+falling back,9,describer,1,FALSE,NA,195
+triangles on opposite ends,9,describer,1,FALSE,NA,196
+offering a tray,10,describer,1,FALSE,NA,197
+sit down,10,describer,1,FALSE,NA,198
+falling backwards,10,describer,1,FALSE,NA,199
+leg up,10,describer,1,FALSE,NA,200
+offering a tray,9,describer,1,FALSE,NA,201
+leg up,9,describer,1,FALSE,NA,202
+falling back,9,describer,1,FALSE,NA,203
+sitting,9,describer,1,FALSE,NA,204
+falling back,10,describer,1,FALSE,NA,205
+sitting,10,describer,1,FALSE,NA,206
+leg up,10,describer,1,FALSE,NA,207
+offering,10,describer,1,FALSE,NA,208
+It is the one that looks like it's flying.,11,describer,1,FALSE,NA,209
+It looks like a monster kicking something.,11,describer,1,FALSE,NA,210
+It looks like a preacher standing straight holding a book,11,describer,1,FALSE,NA,211
+It looks like a person kneeling with triangle arms.,11,describer,1,FALSE,NA,212
+Looks like flying man,12,describer,1,FALSE,NA,213
+Preacher with book,12,describer,1,FALSE,NA,214
+monster kicking,12,describer,1,FALSE,NA,215
+man with triangle arms,12,describer,1,FALSE,NA,216
+kicking monster,11,describer,1,FALSE,NA,217
+flying guy,11,describer,1,FALSE,NA,218
+preacher with the book,11,describer,1,FALSE,NA,219
+kneeling triangle man,11,describer,1,FALSE,NA,220
+monster kicking,12,describer,1,FALSE,NA,221
+preacher with book,12,describer,1,FALSE,NA,222
+man with triangle arms,12,describer,1,FALSE,NA,223
+flying man,12,describer,1,FALSE,NA,224
+Looks like a man flying,11,describer,1,FALSE,NA,225
+Looks like a man kneeling with triangle arms.,11,describer,1,FALSE,NA,226
+looks like a preacher standing with a book,11,describer,1,FALSE,NA,227
+looks like a monster kicking the ground,11,describer,1,FALSE,NA,228
+preacher offering,9,describer,1,FALSE,NA,229
+man falling back,9,describer,1,FALSE,NA,230
+man kneeling,9,describer,1,FALSE,NA,231
+leg up,9,describer,1,FALSE,NA,232
+The flying or falling man,11,describer,1,FALSE,NA,233
+the preacher with the book,11,describer,1,FALSE,NA,234
+the kneeling man,11,describer,1,FALSE,NA,235
+the monster with the leg up,11,describer,1,FALSE,NA,236
+man falling back,9,describer,1,FALSE,NA,237
+kneeling man,9,describer,1,FALSE,NA,238
+preacher offering,9,describer,1,FALSE,NA,239
+leg up,9,describer,1,FALSE,NA,240
+falling back,10,describer,1,FALSE,NA,241
+leg up,10,describer,1,FALSE,NA,242
+offering while standing,10,describer,1,FALSE,NA,243
+sitting,10,describer,1,FALSE,NA,244
+standing offering,12,describer,1,FALSE,NA,245
+sitting,12,describer,1,FALSE,NA,246
+falling back,12,describer,1,FALSE,NA,247
+with leg up,12,describer,1,FALSE,NA,248
+falling back,10,describer,1,FALSE,NA,249
+leg up,10,describer,1,FALSE,NA,250
+offering,10,describer,1,FALSE,NA,251
+sitting,10,describer,1,FALSE,NA,252
+falling,12,describer,1,FALSE,NA,253
+leg up,12,describer,1,FALSE,NA,254
+sitting,12,describer,1,FALSE,NA,255
+offering,12,describer,1,FALSE,NA,256
+preacher offering tray,9,describer,1,FALSE,NA,257
+leg up,9,describer,1,FALSE,NA,258
+kneeling man,9,describer,1,FALSE,NA,259
+man falling back,9,describer,1,FALSE,NA,260
+preacher,12,describer,1,FALSE,NA,261
+falling,12,describer,1,FALSE,NA,262
+kneeling,12,describer,1,FALSE,NA,263
+leg up,12,describer,1,FALSE,NA,264
+preacher,9,describer,1,FALSE,NA,265
+leg up,9,describer,1,FALSE,NA,266
+kneeling,9,describer,1,FALSE,NA,267
+falling,9,describer,1,FALSE,NA,268
+preacher,12,describer,1,FALSE,NA,269
+leg up,12,describer,1,FALSE,NA,270
+falling,12,describer,1,FALSE,NA,271
+kneeling,12,describer,1,FALSE,NA,272
+The man kneeling,11,describer,1,FALSE,NA,273
+The one that looks like a monster kicking the ground,11,describer,1,FALSE,NA,274
+looks like a preacher holding a book,11,describer,1,FALSE,NA,275
+a man either falling or flying,11,describer,1,FALSE,NA,276
+"offering a tray, standing",10,describer,1,FALSE,NA,277
+falling,10,describer,1,FALSE,NA,278
+kneeling,10,describer,1,FALSE,NA,279
+kicking,10,describer,1,FALSE,NA,280
+the falling one,11,describer,1,FALSE,NA,281
+kicking monster,11,describer,1,FALSE,NA,282
+kneeling one,11,describer,1,FALSE,NA,283
+standing preacher,11,describer,1,FALSE,NA,284
+kneeling,10,describer,1,FALSE,NA,285
+falling,10,describer,1,FALSE,NA,286
+kicking,10,describer,1,FALSE,NA,287
+offering,10,describer,1,FALSE,NA,288
+hi,13,matcher,1,FALSE,NA,289
+one leg is up. look like a dancing position,14,describer,2,FALSE,NA,289
+both hand and legs are covered and nil down,14,describer,1,FALSE,NA,290
+nil down and begging position,14,describer,1,FALSE,NA,291
+standing position one hand is up,14,describer,1,FALSE,NA,292
+looks like they are sitting with hands and feet inside,13,describer,1,FALSE,NA,293
+looks like they are sitting and pointing,13,describer,1,FALSE,NA,294
+like they are begging,13,describer,1,FALSE,NA,295
+like they are dancing,13,describer,1,FALSE,NA,296
+begging position,14,describer,1,FALSE,NA,297
+and nil down,14,describer,2,FALSE,NA,297
+standing position one hand is up,14,describer,1,FALSE,NA,298
+dancing position,14,describer,1,FALSE,NA,299
+nil down legs and hands are inside,14,describer,1,FALSE,NA,300
+standing and pointing,13,describer,1,FALSE,NA,301
+dancing,13,describer,1,FALSE,NA,302
+feet and hands all in,13,describer,1,FALSE,NA,303
+begging,13,describer,1,FALSE,NA,304
+the one that looks like it's standing on a leg,15,describer,1,FALSE,NA,305
+the one that looks like it's sitting crouched down,15,describer,1,FALSE,NA,306
+the one that has a more square body,15,describer,1,FALSE,NA,307
+the sitting one with the spike coming out of its back,15,describer,1,FALSE,NA,308
+like sitting on the left,16,describer,1,FALSE,NA,309
+Like praying,16,describer,1,FALSE,NA,310
+Second from left,16,describer,1,FALSE,NA,311
+stretching leg,16,describer,1,FALSE,NA,312
+Sitting with a spike out its back,15,describer,1,FALSE,NA,313
+Stretching a leg,15,describer,1,FALSE,NA,314
+Sitting balled up,15,describer,1,FALSE,NA,315
+The square looking well,15,describer,1,FALSE,NA,316
+sitting at spike in back,16,describer,1,FALSE,NA,317
+square one,16,describer,1,FALSE,NA,318
+dancing,16,describer,1,FALSE,NA,319
+siting and praying,16,describer,1,FALSE,NA,320
+looks like they are pointing,13,describer,1,FALSE,NA,321
+looks like begging,13,describer,1,FALSE,NA,322
+dancing,13,describer,1,FALSE,NA,323
+like they are sitting with hand and feet all in,13,describer,1,FALSE,NA,324
+stretching leg,15,describer,1,FALSE,NA,325
+The one that is sitting balled up,15,describer,1,FALSE,NA,326
+The one that looks like it's begging or praying,15,describer,1,FALSE,NA,327
+The half square one,15,describer,1,FALSE,NA,328
+praying,13,describer,1,FALSE,NA,329
+half square,13,describer,1,FALSE,NA,330
+dancing,13,describer,1,FALSE,NA,331
+all balled p,13,describer,1,FALSE,NA,332
+stretching one,15,describer,1,FALSE,NA,333
+praying one,15,describer,1,FALSE,NA,334
+balled up one,15,describer,1,FALSE,NA,335
+half square one,15,describer,1,FALSE,NA,336
+standing position,14,describer,1,FALSE,NA,337
+dancing position,14,describer,1,FALSE,NA,338
+begging position,14,describer,1,FALSE,NA,339
+nil down leg and hands are inside,14,describer,1,FALSE,NA,340
+begging,16,describer,1,FALSE,NA,341
+no hands outside,16,describer,1,FALSE,NA,342
+dancing,16,describer,1,FALSE,NA,343
+square one,16,describer,1,FALSE,NA,344
+nil down legs and hands are inside,14,describer,1,FALSE,NA,345
+dancing position,14,describer,1,FALSE,NA,346
+begging,14,describer,1,FALSE,NA,347
+standing position,14,describer,1,FALSE,NA,348
+begging,16,describer,1,FALSE,NA,349
+dancing,16,describer,1,FALSE,NA,350
+square,16,describer,1,FALSE,NA,351
+no hands out,16,describer,1,FALSE,NA,352
+praying,13,describer,1,FALSE,NA,353
+all balled up,13,describer,1,FALSE,NA,354
+half square,13,describer,1,FALSE,NA,355
+dancing,13,describer,1,FALSE,NA,356
+praying,16,describer,1,FALSE,NA,357
+square one,16,describer,1,FALSE,NA,358
+dancing,16,describer,1,FALSE,NA,359
+no hands out,16,describer,1,FALSE,NA,360
+dancing,13,describer,1,FALSE,NA,361
+square,13,describer,1,FALSE,NA,362
+all balled up no hands or feet,13,describer,1,FALSE,NA,363
+praying,13,describer,1,FALSE,NA,364
+no hands,16,describer,1,FALSE,NA,365
+praying,16,describer,1,FALSE,NA,366
+dance,16,describer,1,FALSE,NA,367
+square one,16,describer,1,FALSE,NA,368
+standing position,14,describer,1,FALSE,NA,369
+nil down legs and hands are inside,14,describer,1,FALSE,NA,370
+begging,14,describer,1,FALSE,NA,371
+dancing,14,describer,1,FALSE,NA,372
+balled up one,15,describer,1,FALSE,NA,373
+dancing one,15,describer,1,FALSE,NA,374
+begging one,15,describer,1,FALSE,NA,375
+half square one,15,describer,1,FALSE,NA,376
+begging,14,describer,1,FALSE,NA,377
+standing position,14,describer,1,FALSE,NA,378
+nil down legs and hands are inside,14,describer,1,FALSE,NA,379
+dancing,14,describer,1,FALSE,NA,380
+sitting down balled up one,15,describer,1,FALSE,NA,381
+half square one,15,describer,1,FALSE,NA,382
+dancing one,15,describer,1,FALSE,NA,383
+praying one,15,describer,1,FALSE,NA,384
+Looks like a guy praying on his knees,17,describer,1,FALSE,NA,385
+Looks like a cheerleader stretching her leg,17,describer,1,FALSE,NA,386
+Looks like a buddist monk sitting,17,describer,1,FALSE,NA,387
+Very square?,17,describer,1,FALSE,NA,388
+Like Buddhist monk,18,describer,1,FALSE,NA,389
+Like praying,18,describer,1,FALSE,NA,390
+Left one,18,describer,1,FALSE,NA,391
+?,17,matcher,2,FALSE,NA,391
+The pictures are shuffled,17,matcher,3,FALSE,NA,391
+Square one,18,describer,4,FALSE,NA,391
+stretching leg,18,describer,1,FALSE,NA,392
+Meditating guy,17,describer,1,FALSE,NA,393
+Dancing girl,17,describer,1,FALSE,NA,394
+Minecraft man,17,describer,1,FALSE,NA,395
+Bowing,17,describer,1,FALSE,NA,396
+bowing,18,describer,1,FALSE,NA,397
+dancing,18,describer,1,FALSE,NA,398
+square one,18,describer,1,FALSE,NA,399
+sitting with spike in back,18,describer,1,FALSE,NA,400
+One with sit position,19,describer,1,FALSE,NA,401
+one with prayer position,19,describer,1,FALSE,NA,402
+one with kick position,19,describer,1,FALSE,NA,403
+one with sit position,19,describer,1,FALSE,NA,404
+it looks like it is raising its arms?,20,matcher,2,FALSE,NA,404
+praying position,20,describer,1,FALSE,NA,405
+arms raised,20,describer,1,FALSE,NA,406
+no arms,20,describer,1,FALSE,NA,407
+back kick,20,describer,1,FALSE,NA,408
+with arms raised,19,describer,1,FALSE,NA,409
+with sit position,19,describer,1,FALSE,NA,410
+kick position,19,describer,1,FALSE,NA,411
+prayer position,19,describer,1,FALSE,NA,412
+no arms,20,describer,1,FALSE,NA,413
+praying,20,describer,1,FALSE,NA,414
+arms up,20,describer,1,FALSE,NA,415
+back kick,20,describer,1,FALSE,NA,416
+prayer position,19,describer,1,FALSE,NA,417
+kick positon,19,describer,1,FALSE,NA,418
+arms raised,19,describer,1,FALSE,NA,419
+Sit,19,describer,1,FALSE,NA,420
+When your drunk buddy tries to jump off a roof with homemade wings.,17,describer,1,FALSE,NA,421
+This guy wants a hug.,17,describer,1,FALSE,NA,422
+Your wife after you buy her a diamond necklace.,17,describer,1,FALSE,NA,423
+Uh,17,describer,1,FALSE,NA,424
+arms raised,19,describer,1,FALSE,NA,425
+prayer,19,describer,1,FALSE,NA,426
+sit,19,describer,1,FALSE,NA,427
+kick,19,describer,1,FALSE,NA,428
+Picnic position.,17,describer,1,FALSE,NA,429
+Arms apart.,17,describer,1,FALSE,NA,430
+Leg stretching.,17,describer,1,FALSE,NA,431
+Holding a soup bowl.,17,describer,1,FALSE,NA,432
+no arms,20,describer,1,FALSE,NA,433
+back kick,20,describer,1,FALSE,NA,434
+praying,20,describer,1,FALSE,NA,435
+rejoicing,20,describer,1,FALSE,NA,436
+dancing,18,describer,1,FALSE,NA,437
+square one,18,describer,1,FALSE,NA,438
+begging,18,describer,1,FALSE,NA,439
+no hands outside,18,describer,1,FALSE,NA,440
+back kick,20,describer,1,FALSE,NA,441
+rejoicing,20,describer,1,FALSE,NA,442
+no arms,20,describer,1,FALSE,NA,443
+praying,20,describer,1,FALSE,NA,444
+square one,18,describer,1,FALSE,NA,445
+dancing,18,describer,1,FALSE,NA,446
+no hands out,18,describer,1,FALSE,NA,447
+begging,18,describer,1,FALSE,NA,448
+no arms,20,describer,1,FALSE,NA,449
+praying,20,describer,1,FALSE,NA,450
+back kick,20,describer,1,FALSE,NA,451
+rejoicing,20,describer,1,FALSE,NA,452
+Excercising leg.,17,describer,1,FALSE,NA,453
+Holding a soup bowl while sitting.,17,describer,1,FALSE,NA,454
+Arms apart wearing a cape.,17,describer,1,FALSE,NA,455
+Homeless guy.,17,describer,1,FALSE,NA,456
+back kick,20,describer,1,FALSE,NA,457
+no arms,20,describer,1,FALSE,NA,458
+praying,20,describer,1,FALSE,NA,459
+rejoicing,20,describer,1,FALSE,NA,460
+Prayer position.,17,describer,1,FALSE,NA,461
+"Dancing, kicking.",17,describer,1,FALSE,NA,462
+Arms wiiiiiide oppeeeen.,17,describer,1,FALSE,NA,463
+Chillin' dude.,17,describer,1,FALSE,NA,464
+dancing,18,describer,1,FALSE,NA,465
+square one,18,describer,1,FALSE,NA,466
+no hands out,18,describer,1,FALSE,NA,467
+praying,18,describer,1,FALSE,NA,468
+kick,19,describer,1,FALSE,NA,469
+sit,19,describer,1,FALSE,NA,470
+arms raised,19,describer,1,FALSE,NA,471
+pray,19,describer,1,FALSE,NA,472
+dance,18,describer,1,FALSE,NA,473
+no hands out,18,describer,1,FALSE,NA,474
+square one,18,describer,1,FALSE,NA,475
+praying,18,describer,1,FALSE,NA,476
+kick,19,describer,1,FALSE,NA,477
+pray,19,describer,1,FALSE,NA,478
+square,19,describer,1,FALSE,NA,479
+sit,19,describer,1,FALSE,NA,480
+I'm ready!,21,matcher,1,FALSE,NA,481
+The square is in the upper right,22,describer,2,FALSE,NA,481
+it kind of looks like a person holding his arms in the air with the square as the person's head,22,describer,1,FALSE,NA,482
+it looks like a person holding his hand while wearing a baggy sleeve,22,describer,1,FALSE,NA,483
+the head is a diamond?,21,matcher,2,FALSE,NA,483
+yes,22,describer,3,FALSE,NA,483
+the diamond is at the top and a triangle is on the lower right of the diamon,22,describer,1,FALSE,NA,484
+Diamond head human holds his hand out to the left while standing up straight in a choir robe.,21,describer,1,FALSE,NA,485
+it looks like a bird looking down and kicking leg forward with a square box on its back,21,describer,1,FALSE,NA,486
+"it looks like a person throwing hands up while slipping, shown to the waist only, no legs",21,describer,1,FALSE,NA,487
+It looks like a pointy nose mouse with one diamond and one triangular ear,21,describer,1,FALSE,NA,488
+The person holding hand out wearing a robe with diamond for his head,22,describer,1,FALSE,NA,489
+the bird looking down with the diamond on the back of his neck,22,describer,1,FALSE,NA,490
+the person with his hands in the air and diamond for a head,22,describer,1,FALSE,NA,491
+the mouse looking thing with a diamond ear and triangle ear,22,describer,1,FALSE,NA,492
+hands in air diamond head person,21,describer,1,FALSE,NA,493
+diamon head person in a robe holding out the hand,21,describer,1,FALSE,NA,494
+downward looking bird with a diamond on its back,21,describer,1,FALSE,NA,495
+triangle and diaond ear mouse,21,describer,1,FALSE,NA,496
+It's a human reading a book.,23,describer,1,FALSE,NA,497
+It's a person looking at their feet.,23,describer,1,FALSE,NA,498
+Wondering what happened.,23,describer,1,FALSE,NA,499
+Are they like kneeling?,24,matcher,2,FALSE,NA,499
+Arms open,23,describer,3,FALSE,NA,499
+Standing up.,23,describer,4,FALSE,NA,499
+Person kneeling.,23,describer,1,FALSE,NA,500
+Person reading a book,24,describer,1,FALSE,NA,501
+Person kneeling with their arms up,24,describer,1,FALSE,NA,502
+Person with a leg raised,24,describer,1,FALSE,NA,503
+Slanted person with arms up,24,describer,1,FALSE,NA,504
+"Person standing, looking at a book.",23,describer,1,FALSE,NA,505
+Person standing on one leg.,23,describer,1,FALSE,NA,506
+"Person kneeling, while looking at a book.",23,describer,1,FALSE,NA,507
+Legs bent,23,describer,2,FALSE,NA,507
+Person with arms out.,23,describer,1,FALSE,NA,508
+The slanty one?,24,matcher,2,FALSE,NA,508
+Slanted,23,describer,3,FALSE,NA,508
+person kneeling with arms out,24,describer,1,FALSE,NA,509
+Slanted person with arms out,24,describer,1,FALSE,NA,510
+Person with one leg raised,24,describer,1,FALSE,NA,511
+"Person with one arm lifted, looks like they're facing the side reading a book",24,describer,1,FALSE,NA,512
+Hi :),24,matcher,1,FALSE,NA,513
+downward looking bird,21,describer,2,FALSE,NA,513
+choir robe extended hand diamond head person,21,describer,1,FALSE,NA,514
+diamond head prson with hands in the air,21,describer,1,FALSE,NA,515
+mouse with a diamond ear and a triangle on,21,describer,1,FALSE,NA,516
+*one,21,describer,2,FALSE,NA,516
+Person facing the side with arm halfway raised like reading a book,24,describer,1,FALSE,NA,517
+Arm is level,24,describer,2,FALSE,NA,517
+standing up straight?,21,matcher,3,FALSE,NA,517
+Yes,24,describer,4,FALSE,NA,517
+Person kneeling with arms raised,24,describer,1,FALSE,NA,518
+"there's a diamond on top, and a triangle to the left and slightly lower?",21,matcher,2,FALSE,NA,518
+No,24,describer,3,FALSE,NA,518
+That isn't leaning,24,describer,4,FALSE,NA,518
+leaning to the left?,21,matcher,5,FALSE,NA,518
+The one with short arms,24,describer,6,FALSE,NA,518
+Yes,24,describer,7,FALSE,NA,518
+Person with a leg raised,24,describer,1,FALSE,NA,519
+Slanted person with arms raised,24,describer,1,FALSE,NA,520
+kneeling person with short arms (looks like a pointy nose mouse to me),21,describer,1,FALSE,NA,521
+kicking forward standing person,21,describer,1,FALSE,NA,522
+diamond head person with arms up,21,describer,1,FALSE,NA,523
+Standing person with hand going to the left,21,describer,1,FALSE,NA,524
+Person kneeling with arms up,24,describer,1,FALSE,NA,525
+Person with an arm raised to the side,24,describer,1,FALSE,NA,526
+Person with a raised leg,24,describer,1,FALSE,NA,527
+Slanted person,24,describer,1,FALSE,NA,528
+"Person kneeling, reading a book.",23,describer,1,FALSE,NA,529
+Person slanted with arms open.,23,describer,1,FALSE,NA,530
+Person carrying a flag,23,describer,1,FALSE,NA,531
+person standing with arms out in front,22,describer,1,FALSE,NA,532
+"Person standing, with arms in front.",23,describer,1,FALSE,NA,533
+kneeling reading a book,22,describer,1,FALSE,NA,534
+person with arms in the air,22,describer,1,FALSE,NA,535
+looks like a person kicking with a diamond shape on their back,22,describer,1,FALSE,NA,536
+"Person kneeling, with legs underneath them.  Looking at something.",23,describer,1,FALSE,NA,537
+"Arms forward, standing up",23,describer,1,FALSE,NA,538
+Person walking while carrying something.,23,describer,1,FALSE,NA,539
+Arms open,23,describer,1,FALSE,NA,540
+person kicking leg out with diamond shape on their back,22,describer,1,FALSE,NA,541
+person holding hands out,22,describer,1,FALSE,NA,542
+person kneeling,22,describer,1,FALSE,NA,543
+open arms,22,describer,1,FALSE,NA,544
+Person slanted with arms open.,23,describer,1,FALSE,NA,545
+"Person kneeling, looking at a book.",23,describer,1,FALSE,NA,546
+"Person with leg in front, carrying something.",23,describer,1,FALSE,NA,547
+"Person standing, arms in front.",23,describer,1,FALSE,NA,548
+forward kicking with a diamond on their back,21,describer,1,FALSE,NA,549
+"Person standing extending arm to the left, wearing a wide sleeved robe",21,describer,1,FALSE,NA,550
+person slips and throws hands in the air--legs don't show,21,describer,1,FALSE,NA,551
+person kneels facing right and reads,21,describer,1,FALSE,NA,552
+Person standing with arms to the left.,23,describer,1,FALSE,NA,553
+"Person kneeling, while reading a book.  Facing right.",23,describer,1,FALSE,NA,554
+Person walking with diamond on their back.,23,describer,1,FALSE,NA,555
+Person slanted with arms wide open.,23,describer,1,FALSE,NA,556
+"leaning to left, arms in the air",21,describer,1,FALSE,NA,557
+"standing, hand out to the left",21,describer,1,FALSE,NA,558
+kneeling facing right and reading,21,describer,1,FALSE,NA,559
+kicking leg forward with diamond on back,21,describer,1,FALSE,NA,560
+person with arms up in the air like they just don't care,22,describer,1,FALSE,NA,561
+a diamond at the top and a triangle attached to the lower right part of the diamond,22,describer,1,FALSE,NA,562
+person kicking leg out to the left with a diamond on their back,22,describer,1,FALSE,NA,563
+person holding hand out to the left,22,describer,1,FALSE,NA,564
+Person with a raised leg,24,describer,1,FALSE,NA,565
+hands in the air,22,describer,1,FALSE,NA,566
+person with hand out to the left,22,describer,1,FALSE,NA,567
+Slanted person with arms raised,24,describer,1,FALSE,NA,568
+Person with an arm raised to the side,24,describer,1,FALSE,NA,569
+Kneeling person,24,describer,1,FALSE,NA,570
+person kicking,22,describer,1,FALSE,NA,571
+kneeling person,22,describer,1,FALSE,NA,572
+Arms raised,24,describer,1,FALSE,NA,573
+Slanted person,24,describer,2,FALSE,NA,573
+One arm raised,24,describer,1,FALSE,NA,574
+kneeling,24,describer,1,FALSE,NA,575
+Leg raised,24,describer,1,FALSE,NA,576
+hi good luck,25,matcher,1,FALSE,NA,577
+looks like person raising their arms,26,describer,2,FALSE,NA,577
+good luck,25,matcher,1,FALSE,NA,578
+"looks like triangle falling off cliff, followed by square.",26,describer,2,FALSE,NA,578
+square sliding off a person's back,26,describer,1,FALSE,NA,579
+person in a robe with arms straight out,26,describer,1,FALSE,NA,580
+Man with square on back,25,describer,1,FALSE,NA,581
+Square pushing triangle off a ledge,25,describer,1,FALSE,NA,582
+square headed angel flying,25,describer,1,FALSE,NA,583
+square headed choir boy singing from hymn book,25,describer,1,FALSE,NA,584
+square pushing triangle off cliff,26,describer,1,FALSE,NA,585
+square on man's back,26,describer,1,FALSE,NA,586
+square head choir boy,26,describer,1,FALSE,NA,587
+square head angel,26,describer,1,FALSE,NA,588
+square chasing triangle off cliff,25,describer,1,FALSE,NA,589
+square on man's back,25,describer,1,FALSE,NA,590
+angel flying,25,describer,1,FALSE,NA,591
+Square headed choir boy,25,describer,1,FALSE,NA,592
+looks like a waiter serving a plate,27,describer,1,FALSE,NA,593
+the one that's kneeling,27,describer,1,FALSE,NA,594
+looks like one leg is in the air,27,describer,1,FALSE,NA,595
+arms spread wide,27,describer,1,FALSE,NA,596
+Leg in the air,28,describer,1,FALSE,NA,597
+Arms spread wide,28,describer,1,FALSE,NA,598
+Waiter holding a tray,28,describer,1,FALSE,NA,599
+Kneeling in prayer,28,describer,1,FALSE,NA,600
+leg in the air,27,describer,1,FALSE,NA,601
+kneeling in prayer,27,describer,1,FALSE,NA,602
+waiter serving a tray,27,describer,1,FALSE,NA,603
+arms spread wide,27,describer,1,FALSE,NA,604
+kneeling in prayer,28,describer,1,FALSE,NA,605
+waiter serving a tray,28,describer,1,FALSE,NA,606
+arms spread wide,28,describer,1,FALSE,NA,607
+one leg in the air,28,describer,1,FALSE,NA,608
+A square on a man's back with one foot in the air,25,describer,1,FALSE,NA,609
+a square headed angle flying diagonally,25,describer,1,FALSE,NA,610
+a square pushing a triangle off a mountain,25,describer,1,FALSE,NA,611
+A square headed choir boy singing from a hymn book wearing a robe,25,describer,1,FALSE,NA,612
+angel flying diagonally,28,describer,1,FALSE,NA,613
+choir boy singing from book,28,describer,1,FALSE,NA,614
+One foot in air,28,describer,1,FALSE,NA,615
+square pushing triangle off cliff,28,describer,1,FALSE,NA,616
+square pushing triangle,25,describer,1,FALSE,NA,617
+square on man's back,25,describer,1,FALSE,NA,618
+angel flying,25,describer,1,FALSE,NA,619
+choir boy singing,25,describer,1,FALSE,NA,620
+square pushing triangle,28,describer,1,FALSE,NA,621
+one leg in air,28,describer,1,FALSE,NA,622
+choir boy,28,describer,1,FALSE,NA,623
+angel flying,28,describer,1,FALSE,NA,624
+square head angel flying,26,describer,1,FALSE,NA,625
+square pushing triangle off a cliff,26,describer,1,FALSE,NA,626
+square on man's back,26,describer,1,FALSE,NA,627
+square head choir boy singing,26,describer,1,FALSE,NA,628
+pushing triangle off cliff,27,describer,1,FALSE,NA,629
+square head angel flying,27,describer,1,FALSE,NA,630
+choir boy,27,describer,1,FALSE,NA,631
+square on man's back,27,describer,1,FALSE,NA,632
+triangle falling off cliff,26,describer,1,FALSE,NA,633
+choir boy,26,describer,1,FALSE,NA,634
+angel flying,26,describer,1,FALSE,NA,635
+choir boy,27,describer,1,FALSE,NA,636
+angel flying,27,describer,1,FALSE,NA,637
+square on back,26,describer,1,FALSE,NA,638
+square on back,27,describer,1,FALSE,NA,639
+triangle falling off cliff,27,describer,1,FALSE,NA,640
+one leg lifted in the air,27,describer,1,FALSE,NA,641
+waiter serving a tray,27,describer,1,FALSE,NA,642
+leaning to the left with arms raised wide,27,describer,1,FALSE,NA,643
+person kneeling,27,describer,1,FALSE,NA,644
+waiter with tray,25,describer,1,FALSE,NA,645
+man with square on his back,25,describer,1,FALSE,NA,646
+angel flying with arms out,25,describer,1,FALSE,NA,647
+angel with arms out,27,describer,1,FALSE,NA,648
+square chasing triangle off mountain,25,describer,1,FALSE,NA,649
+waiter with tray,27,describer,1,FALSE,NA,650
+square on back,27,describer,1,FALSE,NA,651
+triangle falling off cliff,27,describer,1,FALSE,NA,652
+server with tray,25,describer,1,FALSE,NA,653
+angel flying,25,describer,1,FALSE,NA,654
+square chasing triangle off cliff,25,describer,1,FALSE,NA,655
+square on back,25,describer,1,FALSE,NA,656
+person with arms in the air,28,describer,1,FALSE,NA,657
+somebody kneeling in prayer,28,describer,1,FALSE,NA,658
+standing on one leg with the other in the air,28,describer,1,FALSE,NA,659
+choir boy singing from a hymn book,28,describer,1,FALSE,NA,660
+square falling off man's back,26,describer,1,FALSE,NA,661
+someone kneeling and praying,26,describer,1,FALSE,NA,662
+choir boy singing,26,describer,1,FALSE,NA,663
+kneeling in prayer,28,describer,1,FALSE,NA,664
+choir boy singing from book,28,describer,1,FALSE,NA,665
+arms raised in air,26,describer,1,FALSE,NA,666
+foot in the air,28,describer,1,FALSE,NA,667
+kneeling in prayer,26,describer,1,FALSE,NA,668
+arms in the air,28,describer,1,FALSE,NA,669
+choir boy,26,describer,1,FALSE,NA,670
+arms in air,26,describer,1,FALSE,NA,671
+foot in air,26,describer,1,FALSE,NA,672
+hello,29,matcher,1,FALSE,NA,673
+The correct choice is the one that looks like a person with their hands raised in the air.,30,describer,2,FALSE,NA,673
+hello,29,matcher,1,FALSE,NA,674
+The correct choice is the one that looks like a person carrying a box,30,describer,2,FALSE,NA,674
+hi,29,matcher,1,FALSE,NA,675
+The correct one looks like some kind of figure walking towards the left of the screen while looking backwards.,30,describer,2,FALSE,NA,675
+hi,29,matcher,1,FALSE,NA,676
+I hope i can describe this one good for you. This one looks like a diamond shape on top of a cliff overlooking rocks??? lol,30,describer,2,FALSE,NA,676
+it is the only one that i haven't described before.,30,describer,3,FALSE,NA,676
+this look like a man carrying a box,29,describer,1,FALSE,NA,677
+this looks like a man that has his hand raised in the air,29,describer,1,FALSE,NA,678
+"kind of looks like a bunny , or as you mentioned a cliff",29,describer,1,FALSE,NA,679
+a man flying at an angle,31,describer,1,FALSE,NA,680
+a man kicking one foot up,31,describer,1,FALSE,NA,681
+a man asking for money,31,describer,1,FALSE,NA,682
+the weirdest looking image with two hands in opposite directions,31,describer,1,FALSE,NA,683
+person kicking foot up,32,describer,1,FALSE,NA,684
+person sitting down,32,describer,1,FALSE,NA,685
+person begging,32,describer,1,FALSE,NA,686
+person throwing hands up,32,describer,1,FALSE,NA,687
+person kicking foot up,31,describer,1,FALSE,NA,688
+person sitting,31,describer,1,FALSE,NA,689
+person with hands up,31,describer,1,FALSE,NA,690
+person begging,31,describer,1,FALSE,NA,691
+person with hands up,32,describer,1,FALSE,NA,692
+person begging,32,describer,1,FALSE,NA,693
+person sitting,32,describer,1,FALSE,NA,694
+person kicking,32,describer,1,FALSE,NA,695
+Kind of looks like a sitting dog,33,describer,1,FALSE,NA,696
+Looks like a speaker or graduate holding a book,33,describer,1,FALSE,NA,697
+Arms are upraised to the sky,33,describer,1,FALSE,NA,698
+"could be a bear one leg is in the air, one on the ground",33,describer,1,FALSE,NA,699
+looks like someone with a bow on its head.,34,describer,1,FALSE,NA,700
+looks like someone walking with a hunchback.,34,describer,1,FALSE,NA,701
+Looks like someone wearing a robe.,34,describer,1,FALSE,NA,702
+Looks like someone flying away.,34,describer,1,FALSE,NA,703
+Looks like someone walking,33,describer,1,FALSE,NA,704
+Someone with arms raised in the air,33,describer,1,FALSE,NA,705
+looks like someone reading a book or in a graduation robe,33,describer,1,FALSE,NA,706
+Looks like someone is walking with a box on its back.,34,describer,1,FALSE,NA,707
+looks like someone squatting down with a diamond and triangle on their head,33,describer,1,FALSE,NA,708
+looks like something is sitting down with different shapes on its head.,34,describer,1,FALSE,NA,709
+Looks like a person that is flying away.,34,describer,1,FALSE,NA,710
+Looks like someone that holding a tray.,34,describer,1,FALSE,NA,711
+it is the biggest blob that looks like it is sitting,35,describer,1,FALSE,NA,712
+cool,36,matcher,1,FALSE,NA,713
+it is the blob that looks like it has arms that are both extended out,35,describer,2,FALSE,NA,713
+it's the blob that looks like it is sitting/ kneeling and looking up,35,describer,1,FALSE,NA,714
+The one that looks like it has one arm outstretched - the one I got wrong.,36,describer,1,FALSE,NA,715
+it is the blob that looks like it is walking,35,describer,1,FALSE,NA,716
+The one that looks like it has both arms stretched upwards - the first one we did,36,describer,1,FALSE,NA,717
+The one that is kicking,36,describer,1,FALSE,NA,718
+The one that looks like a kneeling nun with her arms out,36,describer,1,FALSE,NA,719
+"We should just name them: kneeling nun, arms outstretched, kicking, and one arm",36,matcher,1,FALSE,NA,720
+the one you got wrong,35,describer,2,FALSE,NA,720
+kneeling nun?,36,matcher,3,FALSE,NA,720
+walking,35,describer,1,FALSE,NA,721
+ng,35,describer,1,FALSE,NA,722
+not arms outstretched/ not walking /not 1wrong- the other one,35,describer,2,FALSE,NA,722
+are you trying to be difficult ?,36,matcher,3,FALSE,NA,722
+arms outstretched,35,describer,1,FALSE,NA,723
+ng?,36,matcher,4,FALSE,NA,722
+one arm,36,describer,1,FALSE,NA,724
+walking,36,describer,1,FALSE,NA,725
+kneeling,36,describer,1,FALSE,NA,726
+arms outstretched,36,describer,1,FALSE,NA,727
+It looks like a dog kneeling down.,34,describer,1,FALSE,NA,728
+It looks like someone with a hunchback,34,describer,1,FALSE,NA,729
+"not the fire hydrant looking one, but the one that could be a dogs face?",35,matcher,2,FALSE,NA,728
+The one with the different shapes on what I would assume it could be a head.,34,describer,3,FALSE,NA,728
+it has 2 points going out/ could look like dogs ears?,35,matcher,4,FALSE,NA,728
+yes.,34,describer,5,FALSE,NA,728
+"not the one walking, not the one with arms out stretched, but the other 1?",35,matcher,1,FALSE,NA,730
+Looks like someone wearing a graduation robe with a graduation hat.,34,describer,2,FALSE,NA,730
+Yes.,34,describer,3,FALSE,NA,730
+Looks like someone with their arms up in the air.,34,describer,1,FALSE,NA,731
+walking/kicking 1,35,describer,1,FALSE,NA,732
+arms out stretched,35,describer,1,FALSE,NA,733
+not dog/ears but other 1 kneeling,35,describer,1,FALSE,NA,734
+the last one you just chose (dog ears),35,describer,1,FALSE,NA,735
+The one where it looks like someone is holding a tray and has a diamond shaped head.,34,describer,1,FALSE,NA,736
+Someone that is floating away.,34,describer,1,FALSE,NA,737
+Yes.,34,describer,2,FALSE,NA,737
+the one that is kinda slanty bodied?,35,matcher,3,FALSE,NA,737
+the one (to me) it looks like someone is like holding a hat out? not the one that has a triangle extended out from the body?,35,matcher,2,FALSE,NA,736
+"The one that looks like they are standing up, looks like they are wearing a robe, holding something and has a diamond shaped head.",34,describer,3,FALSE,NA,736
+Yes.,34,describer,4,FALSE,NA,736
+"the one with triangle arm? or the one walking, not slanty?",35,matcher,5,FALSE,NA,736
+the one walking?,35,matcher,6,FALSE,NA,736
+Looks like someone walking. One foot on the floor and one sticking up. With a square on its back.,34,describer,1,FALSE,NA,738
+Standing still,34,describer,7,FALSE,NA,736
+triangle arm 1?,35,matcher,1,FALSE,NA,739
+Looks like a dog or a person kneeling down with a square and a triangle on its head.,34,describer,2,FALSE,NA,739
+"arms outstretched,",35,describer,1,FALSE,NA,740
+walking /kicking 1,35,describer,1,FALSE,NA,741
+triangle extended out from the body,35,describer,1,FALSE,NA,742
+the last 1 you chose,35,describer,1,FALSE,NA,743
+Looks like somone walking with a box on their back,33,describer,1,FALSE,NA,744
+Arms raised up in the air,33,describer,1,FALSE,NA,745
+The one with the book,36,describer,1,FALSE,NA,746
+looks like someone sitting/squatting with bow on head,33,describer,1,FALSE,NA,747
+Someone in a robe holding a book,33,describer,1,FALSE,NA,748
+The one with arms outstretched,36,describer,1,FALSE,NA,749
+The one walking,36,describer,1,FALSE,NA,750
+The one sitting,36,describer,1,FALSE,NA,751
+Arms Over Head,33,describer,1,FALSE,NA,752
+Walking forward,33,describer,1,FALSE,NA,753
+sitting/squatting,33,describer,1,FALSE,NA,754
+holding a book or tray,33,describer,1,FALSE,NA,755
+book,36,describer,1,FALSE,NA,756
+arms up in the air,36,describer,1,FALSE,NA,757
+sitting squatting,36,describer,1,FALSE,NA,758
+walking,36,describer,1,FALSE,NA,759
+"The one that looks like it is holding a book, or has one arm out stretched",36,describer,1,FALSE,NA,760
+The one that looks like it is walking,36,describer,1,FALSE,NA,761
+The one that looks like they are wearing a robe and has a triangle head.,34,describer,1,FALSE,NA,762
+The one that looks like it is on it's knees,36,describer,1,FALSE,NA,763
+The one with arms raised up in the air,36,describer,1,FALSE,NA,764
+Looks like someone kneeling with a square and a triangle on its head.,34,describer,1,FALSE,NA,765
+Looks like someone walking with a hunchback.,34,describer,1,FALSE,NA,766
+Looks like someone is flying away.,34,describer,1,FALSE,NA,767
+One on its knees,36,describer,1,FALSE,NA,768
+The one in the robe,36,describer,1,FALSE,NA,769
+The one flying away,36,describer,1,FALSE,NA,770
+The one that is walking,36,describer,1,FALSE,NA,771
+Looks like someone is kneeling with a pointed face.,34,describer,1,FALSE,NA,772
+Someone is kicking.,34,describer,1,FALSE,NA,773
+Looks like someone is holding a tray.,34,describer,1,FALSE,NA,774
+Waving hands in the air.,34,describer,1,FALSE,NA,775
+looks like person with arms in the air,33,describer,1,FALSE,NA,776
+arms outstretched/ slanty one,35,describer,1,FALSE,NA,777
+looks like somone walking forward,33,describer,1,FALSE,NA,778
+looks like someone squatting/sitting,33,describer,1,FALSE,NA,779
+looks like someone holding a book,33,describer,1,FALSE,NA,780
+1 walking/kicking,35,describer,1,FALSE,NA,781
+the one that looks like someone kneeling with 2 arms out stretched,35,describer,1,FALSE,NA,782
+the last one with the square head looking up,35,describer,1,FALSE,NA,783
+walking forward,33,describer,1,FALSE,NA,784
+sitting/squatting with bow on head,33,describer,1,FALSE,NA,785
+someone in robe holding a tray,33,describer,1,FALSE,NA,786
+arms in the air,33,describer,1,FALSE,NA,787
+knealing one / not the one with the tray - the one w/ triangle arm,35,describer,1,FALSE,NA,788
+the one with the tray,35,describer,1,FALSE,NA,789
+walking 1,35,describer,1,FALSE,NA,790
+arms outstretched,35,describer,1,FALSE,NA,791
+Hi!,37,matcher,1,FALSE,NA,792
+It looks like a person sitting down with a bow on their head,38,describer,1,FALSE,NA,793
+"hi, it looks like a person with a blanket wrapped around them and sitting",39,describer,1,FALSE,NA,794
+it is a square on the left side with a point to the right,39,describer,1,FALSE,NA,795
+someone with their arms straight out on the left and standing on one foot,39,describer,1,FALSE,NA,796
+a square cut out piece on the left side and a v cut out shape on the right,39,describer,1,FALSE,NA,797
+a person sitting down wrapped in a blanket.,40,describer,1,FALSE,NA,798
+"The left side is a square and the right side has two tialngles coming out, almost like a hand pointing and a foot at the bottom.",40,describer,1,FALSE,NA,799
+looks like someone figure skating.    One foot down one up in the air.,40,describer,1,FALSE,NA,800
+ice skater,39,describer,1,FALSE,NA,801
+It looks like a person sitting and holding a plate.,40,describer,1,FALSE,NA,802
+on one foot,39,describer,2,FALSE,NA,801
+person wrapped in a blanket sitting,39,describer,1,FALSE,NA,803
+looks like someone kneeling and holding a plate facing the right,39,describer,1,FALSE,NA,804
+a square shape on the left and two points on the right,39,describer,1,FALSE,NA,805
+A person kneeling and holding a plate,40,describer,1,FALSE,NA,806
+A perosn sitting wrapped in a blanket,40,describer,1,FALSE,NA,807
+Looks like a person figure skating,40,describer,1,FALSE,NA,808
+A square on the left and some points on the right,40,describer,1,FALSE,NA,809
+person is kneeling with head up,41,describer,1,FALSE,NA,810
+just sitting hands down,41,describer,1,FALSE,NA,811
+triangle on top of a block not sitting,41,describer,1,FALSE,NA,812
+on one leg,41,describer,1,FALSE,NA,813
+triangle head on block,42,describer,1,FALSE,NA,814
+praying on knees,42,describer,1,FALSE,NA,815
+standing on one leg,42,describer,1,FALSE,NA,816
+sitting arms down,42,describer,1,FALSE,NA,817
+praying,41,describer,1,FALSE,NA,818
+head on a block,41,describer,1,FALSE,NA,819
+one leg,41,describer,1,FALSE,NA,820
+praying,42,describer,1,FALSE,NA,821
+head on block,42,describer,1,FALSE,NA,822
+just sitting hands down,41,describer,1,FALSE,NA,823
+just sitting,42,describer,1,FALSE,NA,824
+one leg,42,describer,1,FALSE,NA,825
+square on the left side and two points on the right,39,describer,1,FALSE,NA,826
+kneeling and holding a plate on the right,39,describer,1,FALSE,NA,827
+hello,39,describer,1,FALSE,NA,828
+does it look like a blanket and sitting,39,describer,2,FALSE,NA,828
+ice skating,39,describer,1,FALSE,NA,829
+sitting arms down,42,describer,1,FALSE,NA,830
+you there?,42,matcher,3,FALSE,NA,828
+kneeling and praying,42,describer,1,FALSE,NA,831
+"two points on right, square on left",42,describer,1,FALSE,NA,832
+ice skating,42,describer,1,FALSE,NA,833
+square on the left,39,describer,1,FALSE,NA,834
+ice skater,39,describer,1,FALSE,NA,835
+skating,42,describer,1,FALSE,NA,836
+square left,42,describer,1,FALSE,NA,837
+blanket and sitting,39,describer,1,FALSE,NA,838
+kneeling and praying,39,describer,1,FALSE,NA,839
+blanket,42,describer,1,FALSE,NA,840
+praying,42,describer,1,FALSE,NA,841
+A person sitting down wrapped in a blanket,40,describer,1,FALSE,NA,842
+A person figure skating,40,describer,1,FALSE,NA,843
+A person kneeling down and holding out a plate,40,describer,1,FALSE,NA,844
+a person holding a plate,41,describer,1,FALSE,NA,845
+a figure skater,41,describer,1,FALSE,NA,846
+a square on the left and some points on the right,40,describer,1,FALSE,NA,847
+a square on the right and points to the left,41,describer,1,FALSE,NA,848
+a person wrapped in a blanket,41,describer,1,FALSE,NA,849
+a person sitting down wrapped in a blanket,40,describer,1,FALSE,NA,850
+A square on the left and some points on the right,40,describer,1,FALSE,NA,851
+figure skater,41,describer,1,FALSE,NA,852
+a person kneeling holding out a plate,41,describer,1,FALSE,NA,853
+A person sitting down and holding a plate out,40,describer,1,FALSE,NA,854
+a person figure skating,40,describer,1,FALSE,NA,855
+a square on the left and points on the right,41,describer,1,FALSE,NA,856
+a person wrapped in a blanket,41,describer,1,FALSE,NA,857
+kneeling and praying,39,describer,1,FALSE,NA,858
+sitting in a blanket,39,describer,1,FALSE,NA,859
+square on the left,39,describer,1,FALSE,NA,860
+ice skater,39,describer,1,FALSE,NA,861
+square on the left,41,describer,1,FALSE,NA,862
+ice skater,41,describer,1,FALSE,NA,863
+kneeling praying,41,describer,1,FALSE,NA,864
+wrapped in a blanket,41,describer,1,FALSE,NA,865
+ice skater,39,describer,1,FALSE,NA,866
+square on left,41,describer,1,FALSE,NA,867
+wrapped in blanket,41,describer,1,FALSE,NA,868
+praying,39,describer,1,FALSE,NA,869
+left square,39,describer,1,FALSE,NA,870
+ice skater,41,describer,1,FALSE,NA,871
+praying,41,describer,1,FALSE,NA,872
+blanket sitting,39,describer,1,FALSE,NA,873
+A person kneeling down and holding a plate out,40,describer,1,FALSE,NA,874
+a person figure skating,40,describer,1,FALSE,NA,875
+a squre on the left and points on the right,40,describer,1,FALSE,NA,876
+skating,42,describer,1,FALSE,NA,877
+blanket,42,describer,1,FALSE,NA,878
+a person sitting wrapped in a blanket,40,describer,1,FALSE,NA,879
+two points,42,describer,1,FALSE,NA,880
+kneeling and praying,42,describer,1,FALSE,NA,881
+Square on left points on right,40,describer,1,FALSE,NA,882
+kneeling and praying,40,describer,1,FALSE,NA,883
+sitting wrapped in blanket,40,describer,1,FALSE,NA,884
+figure skaitng,40,describer,1,FALSE,NA,885
+wrapped in blanket,42,describer,1,FALSE,NA,886
+praying,42,describer,1,FALSE,NA,887
+skating,42,describer,1,FALSE,NA,888
+block with two points on right,42,describer,1,FALSE,NA,889
+Sitting person,43,describer,1,FALSE,NA,890
+Poking triangle to the right,43,describer,1,FALSE,NA,891
+"Bunny ears, feet to the left",43,describer,1,FALSE,NA,892
+"bunny ears, feet to the right",43,describer,1,FALSE,NA,893
+diaond,44,describer,1,FALSE,NA,894
+m,44,describer,2,FALSE,NA,894
+diaond head,44,describer,3,FALSE,NA,894
+feet to left sit,44,describer,1,FALSE,NA,895
+bunny ears feet right,44,describer,1,FALSE,NA,896
+funbky head feet left,44,describer,1,FALSE,NA,897
+"Bunny ears, feet to the right",43,describer,1,FALSE,NA,898
+"Person sitting, feet to the left, diamond head",43,describer,1,FALSE,NA,899
+"Person, diamond head, triangle pointing right",43,describer,1,FALSE,NA,900
+"Bunny ears, feet to the left",43,describer,1,FALSE,NA,901
+diamond head feet left,44,describer,1,FALSE,NA,902
+bunny feet right,44,describer,1,FALSE,NA,903
+diamond head triangle right,44,describer,1,FALSE,NA,904
+bunny feet left,44,describer,1,FALSE,NA,905
+person sitting w/head down and knees up facing to the left,45,describer,1,FALSE,NA,906
+sitting down knees up and head up.,46,matcher,1,FALSE,NA,907
+man standing with arms as point facing to the right,45,describer,1,FALSE,NA,908
+"one that doesn't really look like a person (not the bunny ears one), arms are points facing behind him/head is looking to the left",45,describer,2,FALSE,NA,907
+bunny ears on head,45,describer,1,FALSE,NA,909
+man standing up praying hands,46,describer,1,FALSE,NA,910
+arms behind the back,46,describer,1,FALSE,NA,911
+sitting down looking up to left,46,describer,1,FALSE,NA,912
+bunny ears on head,46,describer,1,FALSE,NA,913
+sitting down looking to left (knees bent),45,describer,1,FALSE,NA,914
+arms behind back,46,describer,1,FALSE,NA,915
+bunny ears,46,describer,1,FALSE,NA,916
+arms behind back,45,describer,1,FALSE,NA,917
+bunny ears,45,describer,1,FALSE,NA,918
+sitting knees up looking left,46,describer,1,FALSE,NA,919
+arms praying to right,45,describer,1,FALSE,NA,920
+praying hands,46,describer,1,FALSE,NA,921
+"bunny ears, feet to the left",43,describer,1,FALSE,NA,922
+"person standing, triangle to the right",43,describer,1,FALSE,NA,923
+"bunny ears, feet to the right",43,describer,1,FALSE,NA,924
+"Person sitting, diamond head",43,describer,1,FALSE,NA,925
+praying hands,46,describer,1,FALSE,NA,926
+bunny ears head,46,describer,1,FALSE,NA,927
+arms behind back,46,describer,1,FALSE,NA,928
+sitting down looking up left,46,describer,1,FALSE,NA,929
+sitting down looking up left,46,describer,1,FALSE,NA,930
+"person standing, triangle pointing right",43,describer,1,FALSE,NA,931
+"bunny ears, feet to the right",43,describer,1,FALSE,NA,932
+"Diamond head, sitting",43,describer,1,FALSE,NA,933
+praying hands,46,describer,1,FALSE,NA,934
+bunny ears head,46,describer,1,FALSE,NA,935
+ARMS BEHIND BACK,46,describer,1,FALSE,NA,936
+"bunny ears, feet to the left",43,describer,1,FALSE,NA,937
+funky head feet left,44,describer,1,FALSE,NA,938
+square top left,44,describer,2,FALSE,NA,938
+sitting with knees up?,45,matcher,3,FALSE,NA,938
+triangle on right,44,describer,4,FALSE,NA,938
+"bunny ears, sitting  feet to the right",44,describer,1,FALSE,NA,939
+with outh open,44,describer,1,FALSE,NA,940
+arms in a praying position?,45,matcher,2,FALSE,NA,940
+diaond head triangle off to the right,44,describer,3,FALSE,NA,940
+like duck head,44,describer,4,FALSE,NA,940
+yes,44,describer,5,FALSE,NA,940
+arms behind back,45,describer,1,FALSE,NA,941
+sitting with knees bent (to the left),45,describer,1,FALSE,NA,942
+bunny ears,45,describer,1,FALSE,NA,943
+"sit, feet to left, plain head",44,describer,1,FALSE,NA,944
+"plain head, sitting feet to the left",44,describer,1,FALSE,NA,945
+arms praying (to the right),45,describer,1,FALSE,NA,946
+bunny ears,44,describer,1,FALSE,NA,947
+arms praying (to right),45,describer,1,FALSE,NA,948
+arms behind back,45,describer,1,FALSE,NA,949
+"funky head...ars behind back, feet left",44,describer,1,FALSE,NA,950
+bunny ears,45,describer,1,FALSE,NA,951
+praying,44,describer,1,FALSE,NA,952
+sitting knees bent (to the left),45,describer,1,FALSE,NA,953
+sitting knees bent (to the left),45,describer,1,FALSE,NA,954
+arms praying (to the right),45,describer,1,FALSE,NA,955
+arms behind back,45,describer,1,FALSE,NA,956
+bunny ears,45,describer,1,FALSE,NA,957
+person sitting,43,describer,1,FALSE,NA,958
+praying hands,43,describer,1,FALSE,NA,959
+bunny ears,43,describer,1,FALSE,NA,960
+hands behind back,43,describer,1,FALSE,NA,961
+bunny ears,43,describer,1,FALSE,NA,962
+sitting knees bent,45,describer,1,FALSE,NA,963
+hands behind back,43,describer,1,FALSE,NA,964
+bunny ears,45,describer,1,FALSE,NA,965
+arms behind back,45,describer,1,FALSE,NA,966
+praying,45,describer,1,FALSE,NA,967
+sitting,43,describer,1,FALSE,NA,968
+praying,43,describer,1,FALSE,NA,969
+"funky head, ars behing back, feet to the left",44,describer,1,FALSE,NA,970
+"sit, feet to left, plain head",44,describer,1,FALSE,NA,971
+bunny ears,44,describer,1,FALSE,NA,972
+"praying, ars to right",44,describer,1,FALSE,NA,973
+bunny ears head,46,describer,1,FALSE,NA,974
+praying hands,46,describer,1,FALSE,NA,975
+sitting down looking up left,46,describer,1,FALSE,NA,976
+arms behind back,46,describer,1,FALSE,NA,977
+praying ars to the right,44,describer,1,FALSE,NA,978
+"sit, feet left, plain head",44,describer,1,FALSE,NA,979
+"funky head, arms behind back",44,describer,1,FALSE,NA,980
+bunny ears,44,describer,1,FALSE,NA,981
+sitting down looking up left,46,describer,1,FALSE,NA,982
+arms behind back,46,describer,1,FALSE,NA,983
+praying hands,46,describer,1,FALSE,NA,984
+bunny ears,46,describer,1,FALSE,NA,985
+triangle on the bottom,47,describer,1,FALSE,NA,986
+"It is facing to the left, looks like it is upright, with two triangles extended to the left",48,describer,1,FALSE,NA,987
+to the very right there is a small triangle,48,describer,2,FALSE,NA,987
+to the left two triangles one above the other,48,describer,3,FALSE,NA,987
+there is a diamond on top,48,describer,4,FALSE,NA,987
+hello?,48,describer,5,FALSE,NA,987
+You have to select an image for us to move on,48,describer,6,FALSE,NA,987
+You have to select the image I'm describing,48,describer,7,FALSE,NA,987
+hey,49,matcher,1,FALSE,NA,988
+praying position,50,describer,2,FALSE,NA,988
+looks like ice skating or standing with a tail on the right,50,describer,1,FALSE,NA,989
+"the one that would be a square if completed, has a right angle on the upper left",50,describer,1,FALSE,NA,990
+the one that has not been chosen,50,describer,1,FALSE,NA,991
+praying,49,describer,1,FALSE,NA,992
+"""the one that has not been chosen""",49,describer,1,FALSE,NA,993
+square,49,describer,1,FALSE,NA,994
+ice skating,50,describer,1,FALSE,NA,995
+ice skating one,49,describer,1,FALSE,NA,996
+praying,50,describer,1,FALSE,NA,997
+square,50,describer,1,FALSE,NA,998
+not chosen,50,describer,1,FALSE,NA,999
+square,49,describer,1,FALSE,NA,1000
+the one,49,describer,1,FALSE,NA,1001
+skating,49,describer,1,FALSE,NA,1002
+praying,49,describer,1,FALSE,NA,1003
+"The fattest dude, especially in the shoulder area.",51,describer,1,FALSE,NA,1004
+which one?,52,matcher,2,FALSE,NA,1004
+guy with no arms,51,describer,1,FALSE,NA,1005
+one leg behind,51,describer,1,FALSE,NA,1006
+leg behind,52,describer,1,FALSE,NA,1007
+praying,51,describer,1,FALSE,NA,1008
+praying,51,describer,1,FALSE,NA,1009
+fat shoulders,51,describer,1,FALSE,NA,1010
+no arms,52,describer,1,FALSE,NA,1011
+fat at the shoulders,52,describer,1,FALSE,NA,1012
+praying,52,describer,1,FALSE,NA,1013
+leg behind,51,describer,1,FALSE,NA,1014
+no arms,51,describer,1,FALSE,NA,1015
+no arms,52,describer,1,FALSE,NA,1016
+leg behind,52,describer,1,FALSE,NA,1017
+prayingh,52,describer,1,FALSE,NA,1018
+fat shoulders,52,describer,1,FALSE,NA,1019
+with no arms?,51,matcher,1,FALSE,NA,1020
+looks like praying,49,describer,1,FALSE,NA,1021
+looks like a potato,49,describer,2,FALSE,NA,1020
+the square one,49,describer,1,FALSE,NA,1022
+looks like ice skating,49,describer,1,FALSE,NA,1023
+ice skating,51,describer,1,FALSE,NA,1024
+square,49,describer,1,FALSE,NA,1025
+praying,51,describer,1,FALSE,NA,1026
+square one,51,describer,1,FALSE,NA,1027
+potato,51,describer,1,FALSE,NA,1028
+square,51,describer,1,FALSE,NA,1029
+praying,49,describer,1,FALSE,NA,1030
+potato,49,describer,1,FALSE,NA,1031
+skating,49,describer,1,FALSE,NA,1032
+praying,51,describer,1,FALSE,NA,1033
+skating,51,describer,1,FALSE,NA,1034
+potato,51,describer,1,FALSE,NA,1035
+looks like its in a praying positino,50,describer,1,FALSE,NA,1036
+"the one that kinda looks like an ice skater with one leg up in the air, like a tail on its right",50,describer,1,FALSE,NA,1037
+no arms,52,matcher,1,FALSE,NA,1038
+kinda reminds me of a baby swaddled in a blanket,50,describer,2,FALSE,NA,1038
+fat shoulder?,52,matcher,1,FALSE,NA,1039
+praying,52,describer,1,FALSE,NA,1040
+"the one not chosen yet, would be a square if the picture were complete",50,describer,2,FALSE,NA,1039
+fat shoulder,52,describer,1,FALSE,NA,1041
+no arms,52,describer,1,FALSE,NA,1042
+praying,50,describer,1,FALSE,NA,1043
+skater leg behind,52,describer,1,FALSE,NA,1044
+skater,50,describer,1,FALSE,NA,1045
+skater,52,describer,1,FALSE,NA,1046
+praying,52,describer,1,FALSE,NA,1047
+square,50,describer,1,FALSE,NA,1048
+square,52,describer,1,FALSE,NA,1049
+no arms,50,describer,1,FALSE,NA,1050
+no arms,52,describer,1,FALSE,NA,1051
+square,52,describer,1,FALSE,NA,1052
+no arms,52,describer,1,FALSE,NA,1053
+skater leg behind,52,describer,1,FALSE,NA,1054
+praying,52,describer,1,FALSE,NA,1055
+square,49,describer,1,FALSE,NA,1056
+praying,52,describer,1,FALSE,NA,1057
+praying,49,describer,1,FALSE,NA,1058
+no arms,49,describer,1,FALSE,NA,1059
+skating,49,describer,1,FALSE,NA,1060
+skater,52,describer,1,FALSE,NA,1061
+no arms,52,describer,1,FALSE,NA,1062
+square,52,describer,1,FALSE,NA,1063
+skating,49,describer,1,FALSE,NA,1064
+no arms,49,describer,1,FALSE,NA,1065
+square,49,describer,1,FALSE,NA,1066
+praying,49,describer,1,FALSE,NA,1067
+praying,50,describer,1,FALSE,NA,1068
+"ice skating like standing on one leg with one leg in the air, or a tail - we'll call it skating from here on",50,describer,1,FALSE,NA,1069
+would be a square if completed - square,50,describer,1,FALSE,NA,1070
+no arms kind of like a baby swaddled in blanket - no arms,50,describer,1,FALSE,NA,1071
+skating,51,describer,1,FALSE,NA,1072
+praying,51,describer,1,FALSE,NA,1073
+praying,50,describer,1,FALSE,NA,1074
+no arms,51,describer,1,FALSE,NA,1075
+square,51,describer,1,FALSE,NA,1076
+skating,50,describer,1,FALSE,NA,1077
+praying,51,describer,1,FALSE,NA,1078
+no arms,50,describer,1,FALSE,NA,1079
+square,50,describer,1,FALSE,NA,1080
+no arms,51,describer,1,FALSE,NA,1081
+skating,51,describer,1,FALSE,NA,1082
+square,51,describer,1,FALSE,NA,1083
+ok,53,matcher,1,FALSE,NA,1084
+person pointing right,54,describer,2,FALSE,NA,1084
+ok,53,matcher,1,FALSE,NA,1085
+a blob,54,describer,2,FALSE,NA,1085
+person kicking,54,describer,1,FALSE,NA,1086
+ok,53,matcher,1,FALSE,NA,1087
+person pointing right with thing sticking up,53,describer,1,FALSE,NA,1088
+square,54,describer,2,FALSE,NA,1087
+person kicking,54,matcher,2,FALSE,NA,1088
+the blob,53,describer,1,FALSE,NA,1089
+person pointing right,53,describer,1,FALSE,NA,1090
+person kicking,53,describer,1,FALSE,NA,1091
+person kneeling,54,describer,1,FALSE,NA,1092
+square shoulder,54,describer,1,FALSE,NA,1093
+person kicking,54,describer,1,FALSE,NA,1094
+blob,54,describer,1,FALSE,NA,1095
+person pointing right,53,describer,1,FALSE,NA,1096
+person kicking,53,describer,1,FALSE,NA,1097
+the blob,53,describer,1,FALSE,NA,1098
+person kneeling,53,describer,1,FALSE,NA,1099
+the one that looks like a person with their leg kicked up behind them.,55,describer,1,FALSE,NA,1100
+p,56,matcher,1,FALSE,NA,1101
+the one that has more of a solid for and 3 flat surface at the bottom,55,describer,2,FALSE,NA,1101
+does it have an arm?,56,matcher,3,FALSE,NA,1101
+no arms,55,describer,4,FALSE,NA,1101
+"i'd say ""no arms"", ""leg kick"" ""box one arm"" and ""polygon one arm"" or something",56,matcher,1,FALSE,NA,1102
+the one with the big arrow at bottom facing left,55,describer,2,FALSE,NA,1102
+oh ok,56,matcher,3,FALSE,NA,1102
+arm to the right,55,describer,4,FALSE,NA,1102
+"i called the big arrow the ""polygon arm"" and the other the ""box arm"" in my head lol",56,matcher,1,FALSE,NA,1103
+"square middle, right arm",55,describer,2,FALSE,NA,1103
+kicking,56,describer,1,FALSE,NA,1104
+box middle arm,56,describer,1,FALSE,NA,1105
+no arms sitter,56,describer,1,FALSE,NA,1106
+polygon one arm,56,describer,1,FALSE,NA,1107
+arrow down pointing left at base,56,describer,2,FALSE,NA,1107
+"box, right arm",55,describer,1,FALSE,NA,1108
+kicking,55,describer,1,FALSE,NA,1109
+"left arrow bottom, right arm",55,describer,1,FALSE,NA,1110
+no arm sitting,55,describer,1,FALSE,NA,1111
+box middle one arm,56,describer,1,FALSE,NA,1112
+"polygon one arm, arrow base",56,describer,1,FALSE,NA,1113
+kung fu kicker,56,describer,1,FALSE,NA,1114
+sitting no arms,56,describer,1,FALSE,NA,1115
+no arm sitting,55,describer,1,FALSE,NA,1116
+ok,53,matcher,2,FALSE,NA,1116
+"left arrow bottom, right arm",55,describer,1,FALSE,NA,1117
+kicker,55,describer,1,FALSE,NA,1118
+blob sitting,53,describer,1,FALSE,NA,1119
+box right arm,55,describer,1,FALSE,NA,1120
+right arm square,53,describer,1,FALSE,NA,1121
+person kicking,53,describer,1,FALSE,NA,1122
+right arm left bottom,53,describer,1,FALSE,NA,1123
+"left arrow bottom, right arm",55,describer,1,FALSE,NA,1124
+no arm sitter,55,describer,1,FALSE,NA,1125
+"box, right arm",55,describer,1,FALSE,NA,1126
+right arm left bottom,53,describer,1,FALSE,NA,1127
+kicker,55,describer,1,FALSE,NA,1128
+blob sititng,53,describer,1,FALSE,NA,1129
+kicking,53,describer,1,FALSE,NA,1130
+right arm square,53,describer,1,FALSE,NA,1131
+the sitting no arms?,56,matcher,1,FALSE,NA,1132
+a blob,54,describer,2,FALSE,NA,1132
+no arms,54,describer,3,FALSE,NA,1132
+kneeling pointing right,54,describer,1,FALSE,NA,1133
+poly,54,describer,2,FALSE,NA,1133
+kung fu kicker,56,describer,1,FALSE,NA,1134
+the square middle or the polygon middle body?,56,matcher,3,FALSE,NA,1133
+no arms sitter,56,describer,1,FALSE,NA,1135
+square body one arm,56,describer,1,FALSE,NA,1136
+looks like person kicking leg,54,describer,1,FALSE,NA,1137
+square body,54,describer,1,FALSE,NA,1138
+polygon middle one arm,56,describer,1,FALSE,NA,1139
+no arms,56,describer,1,FALSE,NA,1140
+square middle pointing,56,describer,1,FALSE,NA,1141
+no arms,54,describer,1,FALSE,NA,1142
+poly pointing,54,describer,1,FALSE,NA,1143
+square body,54,describer,1,FALSE,NA,1144
+kicker,54,describer,1,FALSE,NA,1145
+poly middle pointing,56,describer,1,FALSE,NA,1146
+kung fu,56,describer,1,FALSE,NA,1147
+polygon middle pointing right,56,describer,1,FALSE,NA,1148
+kung fu kicking,56,describer,1,FALSE,NA,1149
+no arms,56,describer,1,FALSE,NA,1150
+no arms,53,describer,1,FALSE,NA,1151
+kicker,53,describer,1,FALSE,NA,1152
+square body pointing right,56,describer,1,FALSE,NA,1153
+square pointing right,53,describer,1,FALSE,NA,1154
+right arm left bottom,53,describer,1,FALSE,NA,1155
+no arms,56,describer,1,FALSE,NA,1156
+polygon pointing right,56,describer,1,FALSE,NA,1157
+square pointing right,56,describer,1,FALSE,NA,1158
+kung fu kicker,56,describer,1,FALSE,NA,1159
+square pointing right,53,describer,1,FALSE,NA,1160
+polygon pointing right,53,describer,1,FALSE,NA,1161
+no arms,53,describer,1,FALSE,NA,1162
+sry about messing up the earlier ones,56,matcher,2,FALSE,NA,1161
+kicker,53,describer,1,FALSE,NA,1163
+kicker,55,describer,1,FALSE,NA,1164
+no arm sitter,55,describer,1,FALSE,NA,1165
+box right arm,55,describer,1,FALSE,NA,1166
+kneeling pointing right,54,describer,1,FALSE,NA,1167
+square body pointing,54,describer,1,FALSE,NA,1168
+"left bottom arrow, right arm",55,describer,1,FALSE,NA,1169
+blob no arms,54,describer,1,FALSE,NA,1170
+kicker,54,describer,1,FALSE,NA,1171
+kicker,55,describer,1,FALSE,NA,1172
+no arm sitter,55,describer,1,FALSE,NA,1173
+"left arrow bottom, right arm",55,describer,1,FALSE,NA,1174
+blob,54,describer,1,FALSE,NA,1175
+kicker,54,describer,1,FALSE,NA,1176
+box right arm,55,describer,1,FALSE,NA,1177
+arrow bottom right arm,54,describer,1,FALSE,NA,1178
+square body right arm,54,describer,1,FALSE,NA,1179
+Hello,57,describer,1,FALSE,NA,1180
+Hello,58,matcher,2,FALSE,NA,1180
+This looks likes a person with a blanket wrapped around them,57,describer,3,FALSE,NA,1180
+Hi,58,matcher,1,FALSE,NA,1181
+Hi. This one looks like a fish with its mouth open toward the right on the bottom.,57,describer,2,FALSE,NA,1181
+This looks like person pointing toward the right,57,describer,1,FALSE,NA,1182
+This one looks like a person standin on one foot.,57,describer,1,FALSE,NA,1183
+This looks like a person covered in a long cape,58,describer,1,FALSE,NA,1184
+This looks like an ice skater twirling,58,describer,1,FALSE,NA,1185
+This looks like a fish with its mouth open,58,describer,1,FALSE,NA,1186
+"This looks like someone wearing a cape, spreading it open",58,describer,1,FALSE,NA,1187
+This looks like a person with a blanket wrapped around them,57,describer,1,FALSE,NA,1188
+This looks like someone standing on one foot.,57,describer,1,FALSE,NA,1189
+This one looks like a fish with an open mouth,57,describer,1,FALSE,NA,1190
+This one looks like a blanket wrapped around them,57,describer,1,FALSE,NA,1191
+This one looks like someone standing on one leg,58,describer,1,FALSE,NA,1192
+This one looks like someone covered in a blanket or cape,58,describer,1,FALSE,NA,1193
+This one looks like someone pointing at something,58,describer,1,FALSE,NA,1194
+This one looks like a fish with its mouth open,58,describer,1,FALSE,NA,1195
+looks like man doing a back kick,59,describer,1,FALSE,NA,1196
+looks like a person on knees praying or meditating,59,describer,1,FALSE,NA,1197
+person on knees begging hands out,59,describer,1,FALSE,NA,1198
+bottom is part of a square top is a diamond,59,describer,1,FALSE,NA,1199
+is person on knees?,59,matcher,1,FALSE,NA,1200
+no it looks like a diamond on top and bottom has a sideways square slopped to the right,60,describer,2,FALSE,NA,1200
+looks like a man on knees begging,60,describer,1,FALSE,NA,1201
+"looks like a person within a right side of shoulder sticking out, kinda sharp looking",60,describer,1,FALSE,NA,1202
+looks like a person standing on one leg leaning forward,60,describer,1,FALSE,NA,1203
+looks like a person sitting on something on right side the left is straight and smooth,59,describer,1,FALSE,NA,1204
+a person begging with hands out,59,describer,1,FALSE,NA,1205
+looks like someone ice skating,59,describer,1,FALSE,NA,1206
+looks like someone balancing on one leg,60,describer,1,FALSE,NA,1207
+looks like someone meditating or praying,59,describer,1,FALSE,NA,1208
+person has one shoulder that appears sharp and sticking out to right,60,describer,1,FALSE,NA,1209
+person is bowing on knees,60,describer,1,FALSE,NA,1210
+appears to be meditating,60,describer,1,FALSE,NA,1211
+are hands out?,59,matcher,2,FALSE,NA,1210
+yes,60,describer,3,FALSE,NA,1210
+person meditating,59,describer,1,FALSE,NA,1212
+an ice skater,59,describer,1,FALSE,NA,1213
+a person with sharp right shoulder sticking out,59,describer,1,FALSE,NA,1214
+person begging with hands out,59,describer,1,FALSE,NA,1215
+on their knees?,59,matcher,1,FALSE,NA,1216
+Person wearing a blanket blowing in the wind,57,describer,1,FALSE,NA,1217
+Person pointing toward the right,57,describer,2,FALSE,NA,1216
+Its not the fish or the person on one leg,57,describer,3,FALSE,NA,1216
+Fish one,57,describer,1,FALSE,NA,1218
+does it look like a person begging with hands out?,59,matcher,2,FALSE,NA,1218
+i dont see a fish,59,matcher,3,FALSE,NA,1218
+person with sharp right shoulder sticking out,59,describer,1,FALSE,NA,1219
+It looks like a fish on the bottom. With the mouth open toward the right side.,57,describer,4,FALSE,NA,1218
+that could be any...,59,matcher,5,FALSE,NA,1218
+It literally looks like a fish and is the only one you haven't clicked yet,57,describer,6,FALSE,NA,1218
+ice skater,59,describer,1,FALSE,NA,1220
+"person in meditation,  sitting",59,describer,1,FALSE,NA,1221
+person on one foot,57,describer,1,FALSE,NA,1222
+Person on one leg,57,describer,1,FALSE,NA,1223
+it looks like < sign as a mouth,57,describer,7,FALSE,NA,1218
+the one i say looks like a fish or you think looks like a person with hands out,57,describer,1,FALSE,NA,1224
+person begging with hands out,59,describer,1,FALSE,NA,1225
+person with sharp right shoulder,57,describer,1,FALSE,NA,1226
+the one where it looks like a person is wrapped in a blanket and its blowing in the wind,57,describer,1,FALSE,NA,1227
+the one meditating .....,59,matcher,2,FALSE,NA,1227
+this looks like someone pointing,58,describer,1,FALSE,NA,1228
+This looks like someone skating,58,describer,1,FALSE,NA,1229
+this looks like a fish,58,describer,1,FALSE,NA,1230
+this looks like someone covered in a blanket,58,describer,1,FALSE,NA,1231
+looks like someone wrappd in blanket,60,describer,1,FALSE,NA,1232
+someone appears to be ice skating on one leg,60,describer,1,FALSE,NA,1233
+looks like someone with a right side of shoulder that is sticking out and sharp,60,describer,1,FALSE,NA,1234
+looks like someone bowing on knees and beggin,60,describer,1,FALSE,NA,1235
+"looks like a fish with its mouth open, and a diamond on its heada",58,describer,1,FALSE,NA,1236
+looks like someone figure skating,58,describer,1,FALSE,NA,1237
+someone balancing on 1 foot,60,describer,1,FALSE,NA,1238
+looks like someone covered in a blanket,58,describer,1,FALSE,NA,1239
+someone with sharp shoulder,60,describer,1,FALSE,NA,1240
+"looks like someone spreading their arms wide, while wearing a cape",58,describer,1,FALSE,NA,1241
+someone wrapped in sheet,60,describer,1,FALSE,NA,1242
+someone beggin on knees,60,describer,1,FALSE,NA,1243
+This appears to be a person with a sharp pointy right shoulder.,57,describer,1,FALSE,NA,1244
+This appears to be a person standing on one leg.,57,describer,1,FALSE,NA,1245
+This looks like a fish with its mouth open on the bottom,57,describer,1,FALSE,NA,1246
+This looks like a person wrapped in a blanket or cape,57,describer,1,FALSE,NA,1247
+person standing on one leg,60,describer,1,FALSE,NA,1248
+person on knees begging with hands out,60,describer,1,FALSE,NA,1249
+person on one foot,57,describer,1,FALSE,NA,1250
+person wrapped in blanket,57,describer,1,FALSE,NA,1251
+person with sharp right shoulder,57,describer,1,FALSE,NA,1252
+person with sharp right shoulder,60,describer,1,FALSE,NA,1253
+person that appears to be begging with hands out,57,describer,1,FALSE,NA,1254
+person on one foot,60,describer,1,FALSE,NA,1255
+person kneeling and beggin,60,describer,1,FALSE,NA,1256
+person wrapped in blanket,60,describer,1,FALSE,NA,1257
+person wrapped with sheet,60,describer,1,FALSE,NA,1258
+person with sharp shoulder,60,describer,1,FALSE,NA,1259
+someone ice skating,58,describer,1,FALSE,NA,1260
+someone pointing a gun,58,describer,1,FALSE,NA,1261
+someone in a blanket,58,describer,1,FALSE,NA,1262
+"someone in a cape, spreading their arms",58,describer,1,FALSE,NA,1263
+ice skater,59,describer,1,FALSE,NA,1264
+person on knees begging with hands out,59,describer,1,FALSE,NA,1265
+"person meditating, or wrapped in blanket",59,describer,1,FALSE,NA,1266
+figure skater,58,describer,1,FALSE,NA,1267
+sharp right shoulder,59,describer,1,FALSE,NA,1268
+person on knees begging,58,describer,1,FALSE,NA,1269
+begging with hands out,59,describer,1,FALSE,NA,1270
+person with sharp right shoulder sticking out,59,describer,1,FALSE,NA,1271
+person in blanket,58,describer,1,FALSE,NA,1272
+ice skater,59,describer,1,FALSE,NA,1273
+sharp right shoulder,58,describer,1,FALSE,NA,1274
+person meditating or in blanket,59,describer,1,FALSE,NA,1275
+grsduat kneeling down,61,describer,1,FALSE,NA,1276
+graduate,61,describer,2,FALSE,NA,1276
+graduate leaning back,61,describer,1,FALSE,NA,1277
+standing straight,61,describer,1,FALSE,NA,1278
+leg up,61,describer,1,FALSE,NA,1279
+kneeling down,62,describer,1,FALSE,NA,1280
+standing straight,62,describer,1,FALSE,NA,1281
+leaning with both arms out,62,describer,1,FALSE,NA,1282
+kicking a leg out,62,describer,1,FALSE,NA,1283
+kneeling down,61,describer,1,FALSE,NA,1284
+standing straight,61,describer,1,FALSE,NA,1285
+leg up,61,describer,1,FALSE,NA,1286
+leaning back,61,describer,1,FALSE,NA,1287
+kicking a leg out,62,describer,1,FALSE,NA,1288
+leaning with arms out,62,describer,1,FALSE,NA,1289
+standing straight,62,describer,1,FALSE,NA,1290
+kneeling down,62,describer,1,FALSE,NA,1291
+elephant on two legs,63,describer,1,FALSE,NA,1292
+one foot off the ground,63,describer,2,FALSE,NA,1292
+I got this,64,matcher,1,FALSE,NA,1293
+Hands up,64,matcher,3,FALSE,NA,1292
+"mouse nose, with big ears sitting",63,describer,2,FALSE,NA,1293
+man standing holding bowl,63,describer,1,FALSE,NA,1294
+man falling with hands flailing,63,describer,1,FALSE,NA,1295
+man holding bowl,64,describer,1,FALSE,NA,1296
+guy sitting with mouse nose with hands begging,64,describer,1,FALSE,NA,1297
+man with one leg in air,63,describer,1,FALSE,NA,1298
+guy with one leg in air lookign abckwards,64,describer,1,FALSE,NA,1299
+arms flailing looking down,64,describer,1,FALSE,NA,1300
+man standing with bowl out,63,describer,1,FALSE,NA,1301
+man begging on ground with big ears,63,describer,1,FALSE,NA,1302
+man falling with arms out,63,describer,1,FALSE,NA,1303
+Man holding bowl,64,describer,1,FALSE,NA,1304
+big ears holding hands out,64,describer,1,FALSE,NA,1305
+man falling,64,describer,1,FALSE,NA,1306
+one leg in the air,64,describer,1,FALSE,NA,1307
+man with one leg in air,63,describer,1,FALSE,NA,1308
+man on ground with big ears,63,describer,1,FALSE,NA,1309
+man with bowl out,63,describer,1,FALSE,NA,1310
+man falling with arms out,63,describer,1,FALSE,NA,1311
+standing straight,62,describer,1,FALSE,NA,1312
+falling down,62,describer,1,FALSE,NA,1313
+kicking leg,62,describer,1,FALSE,NA,1314
+man falling,63,describer,1,FALSE,NA,1315
+kneeling down,62,describer,1,FALSE,NA,1316
+man on knees big ears,63,describer,1,FALSE,NA,1317
+man with one leg kicking,63,describer,1,FALSE,NA,1318
+man with bowl out,63,describer,1,FALSE,NA,1319
+kneeling down,62,describer,1,FALSE,NA,1320
+standing straight,62,describer,1,FALSE,NA,1321
+falling back,62,describer,1,FALSE,NA,1322
+kicking leg,62,describer,1,FALSE,NA,1323
+standing straight hand out,61,describer,1,FALSE,NA,1324
+kicking,61,describer,1,FALSE,NA,1325
+leaning back arms out,61,describer,1,FALSE,NA,1326
+slanted with arms out,64,describer,1,FALSE,NA,1327
+knealing,61,describer,1,FALSE,NA,1328
+holding bowl standing upright,64,describer,1,FALSE,NA,1329
+standing on one leg and looking backwards,64,describer,1,FALSE,NA,1330
+big ears and begging for something,64,describer,1,FALSE,NA,1331
+slanted with arms out,61,describer,1,FALSE,NA,1332
+big ears and begging for something,61,describer,1,FALSE,NA,1333
+standing on one leg and looking backwards,61,describer,1,FALSE,NA,1334
+holding bowl,64,describer,1,FALSE,NA,1335
+big ears and begging,64,describer,1,FALSE,NA,1336
+holding bowl standing upright,61,describer,1,FALSE,NA,1337
+arms out and falling,64,describer,1,FALSE,NA,1338
+on one leg and looking to the right,64,describer,1,FALSE,NA,1339
+standing straight,62,describer,1,FALSE,NA,1340
+falling backward with arms out,62,describer,1,FALSE,NA,1341
+kicking leg,62,describer,1,FALSE,NA,1342
+kneeling down,62,describer,1,FALSE,NA,1343
+big ears and begging for something,64,describer,1,FALSE,NA,1344
+standing and holding bowl,64,describer,1,FALSE,NA,1345
+slanted to the left and falling,64,describer,1,FALSE,NA,1346
+standing with leg out,64,describer,1,FALSE,NA,1347
+kneeling down,62,describer,1,FALSE,NA,1348
+standing straight,62,describer,1,FALSE,NA,1349
+kicking leg,62,describer,1,FALSE,NA,1350
+holding bowl,64,describer,1,FALSE,NA,1351
+arms out and falling,64,describer,1,FALSE,NA,1352
+falling left,62,describer,1,FALSE,NA,1353
+kicking leg,64,describer,1,FALSE,NA,1354
+begging with big ears,64,describer,1,FALSE,NA,1355
+slanted with arms out,61,describer,1,FALSE,NA,1356
+kneeling down,61,describer,1,FALSE,NA,1357
+standing straight,61,describer,1,FALSE,NA,1358
+kick,61,describer,1,FALSE,NA,1359
+kicking,61,describer,1,FALSE,NA,1360
+"slanted, arms out",63,describer,1,FALSE,NA,1361
+kicking,63,describer,1,FALSE,NA,1362
+kneeling down,63,describer,1,FALSE,NA,1363
+standing straight,63,describer,1,FALSE,NA,1364
+lean,61,describer,1,FALSE,NA,1365
+straight,61,describer,1,FALSE,NA,1366
+kneel,61,describer,1,FALSE,NA,1367
+kneeling,63,describer,1,FALSE,NA,1368
+kicking,63,describer,1,FALSE,NA,1369
+standing straight,63,describer,1,FALSE,NA,1370
+slanted,63,describer,1,FALSE,NA,1371
+this looks like a duck with a ball on its head,65,describer,1,FALSE,NA,1372
+find the man,66,matcher,2,FALSE,NA,1372
+i think you are supposed to choose,65,describer,3,FALSE,NA,1372
+looking like the man dancing,66,matcher,4,FALSE,NA,1372
+i choose the third picture,66,matcher,5,FALSE,NA,1372
+pick the one that looks like a duck with a diamond on its head,65,describer,6,FALSE,NA,1372
+yes third picture,66,matcher,7,FALSE,NA,1372
+fourth  picture,66,matcher,8,FALSE,NA,1372
+did you click it?,65,describer,9,FALSE,NA,1372
+not on my screen. It's different on my screen,65,describer,10,FALSE,NA,1372
+fourh picture,66,matcher,11,FALSE,NA,1372
+you have to click it,65,describer,12,FALSE,NA,1372
+yes,66,matcher,1,FALSE,NA,1373
+this looks like a seal balancing a diamond on its nose,65,describer,2,FALSE,NA,1373
+you have to click the picture,65,describer,3,FALSE,NA,1373
+the looks like a diamond on the edge of a cliff,65,describer,1,FALSE,NA,1374
+looks like someone dancing,65,describer,1,FALSE,NA,1375
+you describe again,65,matcher,1,FALSE,NA,1376
+hiu,66,matcher,2,FALSE,NA,1375
+now i am the matcher. you describe the picture,65,matcher,1,FALSE,NA,1377
+looks like someone is walking,66,describer,2,FALSE,NA,1376
+looks like someone sitting,66,describer,2,FALSE,NA,1377
+hello,66,describer,3,FALSE,NA,1377
+you describe,65,matcher,1,FALSE,NA,1378
+looks some one is shaking his leg,66,describer,2,FALSE,NA,1378
+you describe,65,matcher,1,FALSE,NA,1379
+looks like some one is quiet,66,describer,2,FALSE,NA,1379
+looks like someone sitting quietly,65,describer,1,FALSE,NA,1380
+standing on one leg,67,describer,1,FALSE,NA,1381
+pointing,67,describer,1,FALSE,NA,1382
+"solid horizontal block, triangle on right bottom side",67,describer,1,FALSE,NA,1383
+*vertical block,67,describer,2,FALSE,NA,1383
+two diamond on top of each other,67,describer,1,FALSE,NA,1384
+"one diamond on top, pointing to the right",68,describer,1,FALSE,NA,1385
+"not pointing, not standing, one diamond on top",68,describer,1,FALSE,NA,1386
+"two diamond top, pointing to the right",68,describer,1,FALSE,NA,1387
+one diamond head pointing right,67,describer,1,FALSE,NA,1388
+standing on one leg,68,describer,1,FALSE,NA,1389
+two diamond head,67,describer,1,FALSE,NA,1390
+What does the target look like?,69,matcher,1,FALSE,NA,1391
+the one with a small triangle sticking out the right bottom side,70,describer,2,FALSE,NA,1391
+two triangles sticking out of the top,70,describer,1,FALSE,NA,1392
+a sure on top with two triangles sticking out left side,70,describer,1,FALSE,NA,1393
+*square on top,70,describer,2,FALSE,NA,1393
+square on the very top with a point sticking out of the middle right,70,describer,1,FALSE,NA,1394
+"the one that has 2 things on top, one of them is a square the other is like a deformed triangle",69,describer,1,FALSE,NA,1395
+the one with 2 triangles on top,69,describer,1,FALSE,NA,1396
+square on top and triangle sticking out of the right side,69,describer,1,FALSE,NA,1397
+only one square on top with  2 triangles sticking out of the right side,69,describer,1,FALSE,NA,1398
+two triangles on top,70,describer,1,FALSE,NA,1399
+square on top triangle sticking out middle right,70,describer,1,FALSE,NA,1400
+small triangle sticking out bottom right,70,describer,1,FALSE,NA,1401
+"square on top, 2 triangles sticking out bottom left",70,describer,1,FALSE,NA,1402
+2 triangles on top,69,describer,1,FALSE,NA,1403
+small triangle on the bottom right,69,describer,1,FALSE,NA,1404
+square on top with triangle sticking out of the right hand side,69,describer,1,FALSE,NA,1405
+square on top with 2 triangles sticking out on the left hand side,69,describer,1,FALSE,NA,1406
+it looks like a person praying or on their knees,71,describer,1,FALSE,NA,1407
+a person sitting down,71,describer,1,FALSE,NA,1408
+has a square an triangle as ears up top,71,describer,1,FALSE,NA,1409
+"the one you picked last round, two triangles up top",71,describer,1,FALSE,NA,1410
+square on very top left,72,describer,1,FALSE,NA,1411
+preying,72,describer,1,FALSE,NA,1412
+bunny rabbit ears,72,describer,1,FALSE,NA,1413
+man sitting down,72,describer,1,FALSE,NA,1414
+praying,71,describer,1,FALSE,NA,1415
+bunny ears,71,describer,1,FALSE,NA,1416
+man sitting,71,describer,1,FALSE,NA,1417
+square balancing on head,71,describer,1,FALSE,NA,1418
+bunny,72,describer,1,FALSE,NA,1419
+square,72,describer,1,FALSE,NA,1420
+man sitting,72,describer,1,FALSE,NA,1421
+praying,72,describer,1,FALSE,NA,1422
+square on top and 2 triangles on the bottom left,69,describer,1,FALSE,NA,1423
+2 triangles on top,69,describer,1,FALSE,NA,1424
+"square on top with a triangle sticking out of the right, looks like a person standing with their knees bent",69,describer,1,FALSE,NA,1425
+small triangle on the bottom right,69,describer,1,FALSE,NA,1426
+man sorry,72,describer,1,FALSE,NA,1427
+looks like a pan sitting down with a square head,72,describer,2,FALSE,NA,1427
+bunny rabbit triangle  ears up top,72,describer,1,FALSE,NA,1428
+little triangle bottom right,72,describer,1,FALSE,NA,1429
+looks like a person kneeling with arms out praying,72,describer,1,FALSE,NA,1430
+the one with only the square head that looks like the person sitting down,69,describer,1,FALSE,NA,1431
+small triangle in the bottom right,69,describer,1,FALSE,NA,1432
+the one with the 2 triangles on the head,69,describer,1,FALSE,NA,1433
+the one that looks like its knees are bent praying,69,describer,1,FALSE,NA,1434
+bunny rabbit ears,72,describer,1,FALSE,NA,1435
+man sitting down,72,describer,1,FALSE,NA,1436
+person praying,72,describer,1,FALSE,NA,1437
+little triangle,72,describer,1,FALSE,NA,1438
+"square on top, two triangles sticking out left side",70,describer,1,FALSE,NA,1439
+two triangles on top,70,describer,1,FALSE,NA,1440
+small triangle sticking out bottom right,70,describer,1,FALSE,NA,1441
+looks like a man kneeling or praying,71,describer,1,FALSE,NA,1442
+"square on top, triangle sticking out middle right",70,describer,1,FALSE,NA,1443
+two triangles up top,71,describer,1,FALSE,NA,1444
+triangle sticking out bottom right,71,describer,1,FALSE,NA,1445
+man sitting down,71,describer,1,FALSE,NA,1446
+small triangle bottom right,70,describer,1,FALSE,NA,1447
+looks like man sitting,70,describer,1,FALSE,NA,1448
+two triangles on top,70,describer,1,FALSE,NA,1449
+triangle bottom right,71,describer,1,FALSE,NA,1450
+"man kneeling, praying",70,describer,1,FALSE,NA,1451
+man sitting,71,describer,1,FALSE,NA,1452
+two triangles up top,71,describer,1,FALSE,NA,1453
+man praying,71,describer,1,FALSE,NA,1454
+man kneeling,71,describer,1,FALSE,NA,1455
+man sitting down,71,describer,1,FALSE,NA,1456
+two triangles up top,71,describer,1,FALSE,NA,1457
+man kneeling,69,describer,1,FALSE,NA,1458
+triangle sticking out bottom right,71,describer,1,FALSE,NA,1459
+small triangle in the bottom right,69,describer,1,FALSE,NA,1460
+2 triangles on top,69,describer,1,FALSE,NA,1461
+man sitting,69,describer,1,FALSE,NA,1462
+man kneeling,71,describer,1,FALSE,NA,1463
+man sitting,71,describer,1,FALSE,NA,1464
+small triangle bottom right,71,describer,1,FALSE,NA,1465
+two triangles up top,71,describer,1,FALSE,NA,1466
+sitting down,69,describer,1,FALSE,NA,1467
+kneeling,69,describer,1,FALSE,NA,1468
+2 triangles on top,69,describer,1,FALSE,NA,1469
+small triangle bottom right,69,describer,1,FALSE,NA,1470
+"square on top, triangle sticking out of middle right",70,describer,1,FALSE,NA,1471
+two triangles on top,70,describer,1,FALSE,NA,1472
+small triangle bottom right,70,describer,1,FALSE,NA,1473
+looks like man sitting,70,describer,1,FALSE,NA,1474
+small trangle bottom right,72,describer,1,FALSE,NA,1475
+man sitting down,72,describer,1,FALSE,NA,1476
+person praying,72,describer,1,FALSE,NA,1477
+2 triangle on top looks like bunny ears,72,describer,1,FALSE,NA,1478
+man sitting,70,describer,1,FALSE,NA,1479
+triangle bottom right,70,describer,1,FALSE,NA,1480
+man sitting,72,describer,1,FALSE,NA,1481
+trangle bottom right,72,describer,1,FALSE,NA,1482
+person praying,72,describer,1,FALSE,NA,1483
+bunny rabbit,72,describer,1,FALSE,NA,1484
+man praying,70,describer,1,FALSE,NA,1485
+two triangles on top,70,describer,1,FALSE,NA,1486
+Ready!,73,matcher,1,FALSE,NA,1487
+It looks like a person falling backwards (to the left),74,describer,2,FALSE,NA,1487
+I'm ready!,73,matcher,1,FALSE,NA,1488
+It looks like a person kneeling to the right and throwing up in a bowl,74,describer,2,FALSE,NA,1488
+a person facing left standing up holding a bowl out,74,describer,1,FALSE,NA,1489
+a person dancing? kicking one left out,74,describer,1,FALSE,NA,1490
+Looks like a person falling over to the left,73,describer,1,FALSE,NA,1491
+Someone kneeling down on their knees,73,describer,1,FALSE,NA,1492
+Someone standing completely straight up holding their hand out,73,describer,1,FALSE,NA,1493
+Someone tripping over and falling to the right,73,describer,1,FALSE,NA,1494
+Person falling to the left,74,describer,1,FALSE,NA,1495
+Person tripping and falling to the right,74,describer,1,FALSE,NA,1496
+kneeling person,74,describer,1,FALSE,NA,1497
+standing person,74,describer,1,FALSE,NA,1498
+Person kneeling,73,describer,1,FALSE,NA,1499
+Person falling to the left,73,describer,1,FALSE,NA,1500
+Person stumbling back to the right,73,describer,1,FALSE,NA,1501
+Person standing straight up,73,describer,1,FALSE,NA,1502
+walking man,75,describer,1,FALSE,NA,1503
+kneeling woman,75,describer,1,FALSE,NA,1504
+flying man,75,describer,1,FALSE,NA,1505
+pointing man,75,describer,1,FALSE,NA,1506
+walking man,76,describer,1,FALSE,NA,1507
+kneeling,76,describer,1,FALSE,NA,1508
+flying,76,describer,1,FALSE,NA,1509
+pointing,76,describer,1,FALSE,NA,1510
+flying,75,describer,1,FALSE,NA,1511
+walking,75,describer,1,FALSE,NA,1512
+kneeling,75,describer,1,FALSE,NA,1513
+pointing,75,describer,1,FALSE,NA,1514
+flying,76,describer,1,FALSE,NA,1515
+pointing,76,describer,1,FALSE,NA,1516
+walking,76,describer,1,FALSE,NA,1517
+kneeling,76,describer,1,FALSE,NA,1518
+flying,75,describer,1,FALSE,NA,1519
+kneeling,75,describer,1,FALSE,NA,1520
+pointing,75,describer,1,FALSE,NA,1521
+flying,73,describer,1,FALSE,NA,1522
+pointing,73,describer,1,FALSE,NA,1523
+walking,75,describer,1,FALSE,NA,1524
+kneeling,73,describer,1,FALSE,NA,1525
+walking,73,describer,1,FALSE,NA,1526
+pointing,75,describer,1,FALSE,NA,1527
+kneeling,75,describer,1,FALSE,NA,1528
+walking,75,describer,1,FALSE,NA,1529
+flying,75,describer,1,FALSE,NA,1530
+kneeling,73,describer,1,FALSE,NA,1531
+flying,73,describer,1,FALSE,NA,1532
+pointing,73,describer,1,FALSE,NA,1533
+walking,73,describer,1,FALSE,NA,1534
+Looks like a person kneeling facing the right,74,describer,1,FALSE,NA,1535
+A person standing up facing the left,74,describer,1,FALSE,NA,1536
+kneeling person,76,describer,1,FALSE,NA,1537
+falling person,76,describer,1,FALSE,NA,1538
+A person falling backwards to the left,74,describer,1,FALSE,NA,1539
+A person dancing or tripping to the right,74,describer,1,FALSE,NA,1540
+man pointing left,76,describer,1,FALSE,NA,1541
+dancing person,76,describer,1,FALSE,NA,1542
+kneeling person,74,describer,1,FALSE,NA,1543
+falling person,74,describer,1,FALSE,NA,1544
+kneeling,76,describer,1,FALSE,NA,1545
+dancing,76,describer,1,FALSE,NA,1546
+falling,76,describer,1,FALSE,NA,1547
+pointing,76,describer,1,FALSE,NA,1548
+dancing person,74,describer,1,FALSE,NA,1549
+standing pointing left person,74,describer,1,FALSE,NA,1550
+someone flying or falling to the left,73,describer,1,FALSE,NA,1551
+standing and pointing,73,describer,1,FALSE,NA,1552
+kneeling,76,describer,1,FALSE,NA,1553
+someone walking or stumbling,73,describer,1,FALSE,NA,1554
+kneeling,73,describer,1,FALSE,NA,1555
+flying,76,describer,1,FALSE,NA,1556
+pointing,76,describer,1,FALSE,NA,1557
+walking,76,describer,1,FALSE,NA,1558
+flying,73,describer,1,FALSE,NA,1559
+kneeling,73,describer,1,FALSE,NA,1560
+kneeling,76,describer,1,FALSE,NA,1561
+flying,76,describer,1,FALSE,NA,1562
+pointing,73,describer,1,FALSE,NA,1563
+walking,73,describer,1,FALSE,NA,1564
+pointing,76,describer,1,FALSE,NA,1565
+walking,76,describer,1,FALSE,NA,1566
+a person kneeling looking to the right,74,describer,1,FALSE,NA,1567
+person falling to the left,74,describer,1,FALSE,NA,1568
+person standing pointing to the left,74,describer,1,FALSE,NA,1569
+dancing or tripping person,74,describer,1,FALSE,NA,1570
+kneeling to right,75,describer,1,FALSE,NA,1571
+walking to left,75,describer,1,FALSE,NA,1572
+pointing left,75,describer,1,FALSE,NA,1573
+tripping and falling left,75,describer,1,FALSE,NA,1574
+walking left or dancing,74,describer,1,FALSE,NA,1575
+pointing left,75,describer,1,FALSE,NA,1576
+kneeling to the right,74,describer,1,FALSE,NA,1577
+standing pointing left,74,describer,1,FALSE,NA,1578
+falling backwards to left,74,describer,1,FALSE,NA,1579
+falling left,75,describer,1,FALSE,NA,1580
+kneeling right,75,describer,1,FALSE,NA,1581
+walking left,75,describer,1,FALSE,NA,1582
+hello,77,matcher,1,FALSE,NA,1583
+the picture looks like it is marching with a bird head,78,describer,2,FALSE,NA,1583
+hello,79,matcher,1,FALSE,NA,1584
+hi,80,matcher,1,FALSE,NA,1585
+Silent meditation,81,describer,2,FALSE,NA,1585
+Freaky stance,81,describer,1,FALSE,NA,1586
+Standing with both hands raised,81,describer,1,FALSE,NA,1587
+"it's the same shapes, right? so we have silent meditation, freaky stance, standing with both hands raised, and #4",80,matcher,1,FALSE,NA,1588
+Praying with hands stretched,81,describer,2,FALSE,NA,1588
+standing with both hands stretched,80,describer,1,FALSE,NA,1589
+right angle in the bottom left corner,80,describer,2,FALSE,NA,1589
+freaky stance,80,describer,1,FALSE,NA,1590
+silent meditation,80,describer,1,FALSE,NA,1591
+praying,80,describer,1,FALSE,NA,1592
+Meditation,81,describer,1,FALSE,NA,1593
+Funky,81,describer,1,FALSE,NA,1594
+Praying,81,describer,1,FALSE,NA,1595
+Standing arms stretched,81,describer,1,FALSE,NA,1596
+meditation,80,describer,1,FALSE,NA,1597
+standing,80,describer,1,FALSE,NA,1598
+funk,80,describer,1,FALSE,NA,1599
+prayer,80,describer,1,FALSE,NA,1600
+begger,82,describer,1,FALSE,NA,1601
+fat with hand up,82,describer,1,FALSE,NA,1602
+fat no limbs,82,describer,1,FALSE,NA,1603
+kicking,82,describer,1,FALSE,NA,1604
+fat no limbs,83,describer,1,FALSE,NA,1605
+beggar,83,describer,1,FALSE,NA,1606
+kicking,83,describer,1,FALSE,NA,1607
+no limbs,83,describer,1,FALSE,NA,1608
+fat with hands up,83,describer,1,FALSE,NA,1609
+fat with hand up,83,describer,1,FALSE,NA,1610
+beggar,82,describer,1,FALSE,NA,1611
+no limbs,82,describer,1,FALSE,NA,1612
+kicker,82,describer,1,FALSE,NA,1613
+fat hand up,82,describer,1,FALSE,NA,1614
+beggar,83,describer,1,FALSE,NA,1615
+kicking,83,describer,1,FALSE,NA,1616
+hello,80,matcher,1,FALSE,NA,1617
+fat no limbs,82,describer,1,FALSE,NA,1618
+beg,80,describer,1,FALSE,NA,1619
+kicking,82,describer,2,FALSE,NA,1617
+begging,82,describer,1,FALSE,NA,1620
+fat with hand up,82,describer,1,FALSE,NA,1621
+kick,80,describer,1,FALSE,NA,1622
+fat no hand,80,describer,1,FALSE,NA,1623
+fat one hand,80,describer,1,FALSE,NA,1624
+fat no hands,82,describer,1,FALSE,NA,1625
+fat with hand,82,describer,1,FALSE,NA,1626
+kicking,82,describer,1,FALSE,NA,1627
+kick,80,describer,1,FALSE,NA,1628
+fat one hand,80,describer,1,FALSE,NA,1629
+beggar,82,describer,1,FALSE,NA,1630
+beg,80,describer,1,FALSE,NA,1631
+fat no,80,describer,1,FALSE,NA,1632
+Arms stretched,81,describer,1,FALSE,NA,1633
+Pray,81,describer,1,FALSE,NA,1634
+Dance,81,describer,1,FALSE,NA,1635
+Kneel,81,describer,1,FALSE,NA,1636
+kneel,83,describer,1,FALSE,NA,1637
+arms out,83,describer,1,FALSE,NA,1638
+pray,83,describer,1,FALSE,NA,1639
+Jumping,81,describer,1,FALSE,NA,1640
+dancing,83,describer,1,FALSE,NA,1641
+Praying,81,describer,1,FALSE,NA,1642
+Waving,81,describer,1,FALSE,NA,1643
+Kneeling,81,describer,1,FALSE,NA,1644
+arms out,83,describer,1,FALSE,NA,1645
+dancing,83,describer,1,FALSE,NA,1646
+pray,83,describer,1,FALSE,NA,1647
+pray,83,describer,1,FALSE,NA,1648
+kicking guy,80,describer,1,FALSE,NA,1649
+beggar pose,80,describer,1,FALSE,NA,1650
+kicking,83,describer,1,FALSE,NA,1651
+fat blob with no hands,80,describer,1,FALSE,NA,1652
+blob with one hand (or the only one we haven't picked),80,describer,1,FALSE,NA,1653
+no limbs,83,describer,1,FALSE,NA,1654
+beggar,83,describer,1,FALSE,NA,1655
+no limbs,80,describer,1,FALSE,NA,1656
+fat with one hand out,83,describer,1,FALSE,NA,1657
+one hand,80,describer,1,FALSE,NA,1658
+fat one hand,83,describer,1,FALSE,NA,1659
+beg,80,describer,1,FALSE,NA,1660
+kick,80,describer,1,FALSE,NA,1661
+beg,83,describer,1,FALSE,NA,1662
+kick,83,describer,1,FALSE,NA,1663
+no limbs,83,describer,1,FALSE,NA,1664
+beggar,82,describer,1,FALSE,NA,1665
+fat one hand,82,describer,1,FALSE,NA,1666
+fat no limbs,82,describer,1,FALSE,NA,1667
+kicking,82,describer,1,FALSE,NA,1668
+Dancing,81,describer,1,FALSE,NA,1669
+Fat one hand,81,describer,1,FALSE,NA,1670
+No limb,81,describer,1,FALSE,NA,1671
+Praying,81,describer,1,FALSE,NA,1672
+fat one hand,82,describer,1,FALSE,NA,1673
+sitting/begging,82,describer,1,FALSE,NA,1674
+kicking,82,describer,1,FALSE,NA,1675
+fat no limbs,82,describer,1,FALSE,NA,1676
+Dancing,81,describer,1,FALSE,NA,1677
+One hand fat,81,describer,1,FALSE,NA,1678
+Meditation,81,describer,1,FALSE,NA,1679
+Begging,81,describer,1,FALSE,NA,1680
+"Diamond head, hands holding a tray on the left side. Standing up.",84,describer,1,FALSE,NA,1681
+hi,85,matcher,2,FALSE,NA,1681
+"Diamond head, looks like he's diving to his left with arms spread.",84,describer,1,FALSE,NA,1682
+"One foot on the ground, one raised. Looks like he's carrying a flag on his back.",84,describer,1,FALSE,NA,1683
+"looks like he's kneeling. Diamond head, facing to the right.",84,describer,1,FALSE,NA,1684
+diamond head standing straight up holding something on left side,85,describer,1,FALSE,NA,1685
+diamond head leaning left with arms raised up,85,describer,1,FALSE,NA,1686
+diamond head on back of body on right with left leg kicking,85,describer,1,FALSE,NA,1687
+diamond head with triangle hanging off it on right side and seems to be sitting or kneeling,85,describer,1,FALSE,NA,1688
+"Diamond head, holding a plate on the left side of your screen. Standing up straight.",84,describer,1,FALSE,NA,1689
+"One leg on ground, other leg raised on left side of your screen. Looks like he's carrying a square object on his back.",84,describer,1,FALSE,NA,1690
+"Diamond head, diving to the left with arms raised.",84,describer,1,FALSE,NA,1691
+arms raised,85,describer,1,FALSE,NA,1692
+"Diamond head, kneeling. Triangle at bottom of diamond head on right side of your screen.",84,describer,1,FALSE,NA,1693
+diamond head leaning left with arm raised,85,describer,2,FALSE,NA,1692
+diamond head kneeling with triangle off the right side of head,85,describer,1,FALSE,NA,1694
+diamond head standing up straight with box on left side,85,describer,1,FALSE,NA,1695
+diamond head with head on right side of body with left leg raised,85,describer,1,FALSE,NA,1696
+hi,86,matcher,1,FALSE,NA,1697
+flying,87,describer,2,FALSE,NA,1697
+one leg on the ground,87,describer,1,FALSE,NA,1698
+marching,87,describer,1,FALSE,NA,1699
+marching,86,describer,1,FALSE,NA,1700
+begging with hands together in front,87,matcher,2,FALSE,NA,1700
+walking,86,describer,3,FALSE,NA,1700
+kneeling,87,describer,1,FALSE,NA,1701
+no,87,matcher,4,FALSE,NA,1700
+1 foot up,86,describer,5,FALSE,NA,1700
+praying on knees,86,describer,1,FALSE,NA,1702
+preaching,86,describer,1,FALSE,NA,1703
+flying,86,describer,1,FALSE,NA,1704
+marching,87,describer,1,FALSE,NA,1705
+flying,87,describer,1,FALSE,NA,1706
+preaching,87,describer,1,FALSE,NA,1707
+kneeling,87,describer,1,FALSE,NA,1708
+preaching,86,describer,1,FALSE,NA,1709
+flying,86,describer,1,FALSE,NA,1710
+kneeling,86,describer,1,FALSE,NA,1711
+marching,86,describer,1,FALSE,NA,1712
+kneeling on ground,87,describer,1,FALSE,NA,1713
+flying,87,describer,1,FALSE,NA,1714
+standing and begging,87,describer,1,FALSE,NA,1715
+marching,87,describer,1,FALSE,NA,1716
+"marching - one leg down, other in air",84,describer,1,FALSE,NA,1717
+"Standing straight, holding a plate or something.",84,describer,1,FALSE,NA,1718
+flying,84,describer,1,FALSE,NA,1719
+Kneeling,84,describer,1,FALSE,NA,1720
+holding plate,87,describer,1,FALSE,NA,1721
+kneeling,87,describer,1,FALSE,NA,1722
+"standing straight, holding plate",84,describer,1,FALSE,NA,1723
+marching,87,describer,1,FALSE,NA,1724
+flying,87,describer,1,FALSE,NA,1725
+marching,84,describer,1,FALSE,NA,1726
+flying,84,describer,1,FALSE,NA,1727
+kneeling,84,describer,1,FALSE,NA,1728
+preaching,86,describer,1,FALSE,NA,1729
+is it leaning left?,85,matcher,2,FALSE,NA,1729
+no standing with book in hand,86,describer,3,FALSE,NA,1729
+marching,86,describer,1,FALSE,NA,1730
+kneeling,86,describer,1,FALSE,NA,1731
+diamond head standing straight with book on left,85,describer,1,FALSE,NA,1732
+flying,86,describer,1,FALSE,NA,1733
+diamond head with left leg raised,85,describer,1,FALSE,NA,1734
+diamond head leaning left with arms raised,85,describer,1,FALSE,NA,1735
+kneeling,85,describer,1,FALSE,NA,1736
+standing with book in front,86,describer,1,FALSE,NA,1737
+flying,86,describer,1,FALSE,NA,1738
+marching with leg raised,86,describer,1,FALSE,NA,1739
+kneeling,86,describer,1,FALSE,NA,1740
+flying,85,describer,1,FALSE,NA,1741
+left leg raised marching,85,describer,1,FALSE,NA,1742
+kneeling,85,describer,1,FALSE,NA,1743
+standing straight with book left side,85,describer,1,FALSE,NA,1744
+"Diamond head, kneeling",84,describer,1,FALSE,NA,1745
+flying,84,describer,1,FALSE,NA,1746
+"standing straight, holding plate.",84,describer,1,FALSE,NA,1747
+"marching, one foot on ground, one foot up",84,describer,1,FALSE,NA,1748
+kneeling,86,describer,1,FALSE,NA,1749
+flying,86,describer,1,FALSE,NA,1750
+kneeling,84,describer,1,FALSE,NA,1751
+marching 1 leg up,86,describer,1,FALSE,NA,1752
+standing straight w/book,86,describer,1,FALSE,NA,1753
+standing straight,84,describer,1,FALSE,NA,1754
+flying,84,describer,1,FALSE,NA,1755
+"marching, one foot up",84,describer,1,FALSE,NA,1756
+standing straight,86,describer,1,FALSE,NA,1757
+kneeling,86,describer,1,FALSE,NA,1758
+marching 1 foot up,86,describer,1,FALSE,NA,1759
+flying,86,describer,1,FALSE,NA,1760
+marching,87,describer,1,FALSE,NA,1761
+flying,87,describer,1,FALSE,NA,1762
+kneeling,87,describer,1,FALSE,NA,1763
+kneeling,85,describer,1,FALSE,NA,1764
+holding plate,87,describer,1,FALSE,NA,1765
+flying,85,describer,1,FALSE,NA,1766
+holding plate,85,describer,1,FALSE,NA,1767
+marching,85,describer,1,FALSE,NA,1768
+kneeling,87,describer,1,FALSE,NA,1769
+flying,87,describer,1,FALSE,NA,1770
+marching,87,describer,1,FALSE,NA,1771
+holding plate,87,describer,1,FALSE,NA,1772
+kneeling,85,describer,1,FALSE,NA,1773
+marching,85,describer,1,FALSE,NA,1774
+holding plate,85,describer,1,FALSE,NA,1775
+flying,85,describer,1,FALSE,NA,1776
+Hello,88,matcher,1,FALSE,NA,1777
+the bunny suit?,88,matcher,1,FALSE,NA,1778
+someone sitting down facing left with their feet stuck out,89,describer,2,FALSE,NA,1778
+looks like a person in a bunny suit or something facing to the left with his arm behind his back,89,describer,2,FALSE,NA,1777
+again,88,matcher,1,FALSE,NA,1779
+person reading a book,89,describer,1,FALSE,NA,1780
+person facing to the right with 2 triangular ears,89,describer,2,FALSE,NA,1779
+person facing left sitting no ears,88,describer,1,FALSE,NA,1781
+person facing right sitting with ears,88,describer,1,FALSE,NA,1782
+person sitting facing left no ears,89,describer,1,FALSE,NA,1783
+person standing facing right,88,describer,1,FALSE,NA,1784
+person facing left sitting with ears,88,describer,1,FALSE,NA,1785
+dude with one square ear facing left,89,describer,1,FALSE,NA,1786
+person holding a book out,89,describer,1,FALSE,NA,1787
+two triangular ears,89,describer,1,FALSE,NA,1788
+person facing left with twoears sitting,88,describer,1,FALSE,NA,1789
+person sitting facing left with no ears,88,describer,1,FALSE,NA,1790
+person facing right sitting with two ears,88,describer,1,FALSE,NA,1791
+person standing f=acing right with a book,88,describer,1,FALSE,NA,1792
+Hi,90,matcher,1,FALSE,NA,1793
+looks like someone is praying,91,describer,2,FALSE,NA,1793
+Can you please give some clue,90,matcher,3,FALSE,NA,1793
+next quick pls,90,matcher,1,FALSE,NA,1794
+looks like dancing,91,describer,2,FALSE,NA,1794
+someone looks like dancing,91,describer,1,FALSE,NA,1795
+quick pls,90,matcher,1,FALSE,NA,1796
+running out of time,90,matcher,2,FALSE,NA,1796
+someone looks like sitting,91,describer,3,FALSE,NA,1796
+someone is reading,90,describer,1,FALSE,NA,1797
+somone is half standing,90,describer,1,FALSE,NA,1798
+some one is dancing,90,describer,1,FALSE,NA,1799
+some one is sitting,90,describer,1,FALSE,NA,1800
+quick,90,matcher,1,FALSE,NA,1801
+looks like turning  back,91,describer,2,FALSE,NA,1801
+looks like walking very fastly,91,describer,1,FALSE,NA,1802
+running out of time,90,matcher,3,FALSE,NA,1801
+sitting,91,describer,1,FALSE,NA,1803
+looks like half sitting,91,describer,1,FALSE,NA,1804
+someone is taichi,90,describer,1,FALSE,NA,1805
+someone is sitting,90,describer,1,FALSE,NA,1806
+someone is giving,90,describer,1,FALSE,NA,1807
+someone is seeing down,90,describer,1,FALSE,NA,1808
+quick pls,90,matcher,1,FALSE,NA,1809
+person sittng facing left with no ears,88,describer,2,FALSE,NA,1809
+person sitting facing right with two ears,88,describer,1,FALSE,NA,1810
+person facing left sitting with two ears,88,describer,1,FALSE,NA,1811
+someone is facing left with hands down,90,describer,1,FALSE,NA,1812
+person standing facing right holding a book,88,describer,1,FALSE,NA,1813
+someone is facing right and sitting,90,describer,1,FALSE,NA,1814
+some one is facing left and getting up,90,describer,1,FALSE,NA,1815
+somone is half sitting,90,describer,1,FALSE,NA,1816
+sitting down facing left with two ears,88,describer,1,FALSE,NA,1817
+quick pls,90,matcher,2,FALSE,NA,1817
+standing facing right holding a book,88,describer,1,FALSE,NA,1818
+sitting facing right with two ears,88,describer,1,FALSE,NA,1819
+sitting facing left with no ears,88,describer,1,FALSE,NA,1820
+someone facing right with two ears,90,describer,1,FALSE,NA,1821
+some one standing right with no ears,90,describer,1,FALSE,NA,1822
+some one facing left with two ears,90,describer,1,FALSE,NA,1823
+someone sitting left with no ears,90,describer,1,FALSE,NA,1824
+looks like reading,91,describer,1,FALSE,NA,1825
+looks like dancing,91,describer,1,FALSE,NA,1826
+looks sitting,91,describer,1,FALSE,NA,1827
+looks like turning back,91,describer,1,FALSE,NA,1828
+dancing,89,describer,1,FALSE,NA,1829
+two triangles on top,89,describer,1,FALSE,NA,1830
+reading,89,describer,1,FALSE,NA,1831
+sitting,89,describer,1,FALSE,NA,1832
+sitting in general,91,describer,1,FALSE,NA,1833
+turning back,91,describer,1,FALSE,NA,1834
+half sitting,91,describer,1,FALSE,NA,1835
+dancing,91,describer,1,FALSE,NA,1836
+sitting,89,describer,1,FALSE,NA,1837
+turning back,89,describer,1,FALSE,NA,1838
+dancing with one square ear on top and an arm stuck behind him,89,describer,1,FALSE,NA,1839
+reading a book,89,describer,1,FALSE,NA,1840
+Reading book,91,describer,1,FALSE,NA,1841
+Looks dancing,91,describer,1,FALSE,NA,1842
+facing left or right,88,matcher,1,FALSE,NA,1843
+facing left,91,describer,2,FALSE,NA,1843
+half sitting,91,describer,1,FALSE,NA,1844
+sitting,91,describer,3,FALSE,NA,1843
+sitting facing left with no ears,88,describer,1,FALSE,NA,1845
+sitting facing right with two ears,88,describer,1,FALSE,NA,1846
+sitting facing left with two ears,88,describer,1,FALSE,NA,1847
+standing facing left holding a book,88,describer,1,FALSE,NA,1848
+Hick foot ball,91,describer,1,FALSE,NA,1849
+facing which way and how many ears,88,matcher,2,FALSE,NA,1849
+facing left,91,describer,3,FALSE,NA,1849
+reading books,91,describer,1,FALSE,NA,1850
+one,91,describer,4,FALSE,NA,1849
+how many ears,88,matcher,5,FALSE,NA,1849
+dancing,91,describer,1,FALSE,NA,1851
+general sitting,91,describer,1,FALSE,NA,1852
+standing facing right reading a book,88,describer,1,FALSE,NA,1853
+sitting facing right with two ears,88,describer,1,FALSE,NA,1854
+sitting facing left with two ears,88,describer,1,FALSE,NA,1855
+sitting facing left with no ears,88,describer,1,FALSE,NA,1856
+someone standing with no ears,90,describer,1,FALSE,NA,1857
+some facing right with two ears,90,describer,1,FALSE,NA,1858
+some facing left with no ears,90,describer,1,FALSE,NA,1859
+someone facing left with two ears,90,describer,1,FALSE,NA,1860
+quick pls,90,matcher,1,FALSE,NA,1861
+standing with no ears pointing right,89,describer,1,FALSE,NA,1862
+sitting facing left no ears,89,describer,1,FALSE,NA,1863
+sitting facing right with two triangle ears,89,describer,2,FALSE,NA,1861
+someone standing right with no ears,90,describer,1,FALSE,NA,1864
+sitting facing left with one square ear and one triangle ear,89,describer,1,FALSE,NA,1865
+someone sitting left with two ears,90,describer,1,FALSE,NA,1866
+someone sitting left with no ears,90,describer,1,FALSE,NA,1867
+someone facing right with two ears,90,describer,1,FALSE,NA,1868
+standing pointing right no ears,89,describer,1,FALSE,NA,1869
+sitting facing right two triangle ears,89,describer,1,FALSE,NA,1870
+sitting facing left no ears,89,describer,1,FALSE,NA,1871
+sitting facing left one square ear one triangle ear,89,describer,1,FALSE,NA,1872
+"A man sitting, facing left.",92,describer,1,FALSE,NA,1873
+The man is fat,92,describer,2,FALSE,NA,1873
+"A rabbit sitting, facing left",92,describer,1,FALSE,NA,1874
+"A rabbit facing right, sitting",92,describer,1,FALSE,NA,1875
+The rabbit looks like he's going to lie down,92,describer,2,FALSE,NA,1874
+A woman in a dress not sitting,92,describer,1,FALSE,NA,1876
+The woman is facing right,92,describer,2,FALSE,NA,1876
+She looks like she's holding a plate,92,describer,3,FALSE,NA,1876
+Or a tray,92,describer,4,FALSE,NA,1876
+The woman looks like she's holding a tray,92,describer,5,FALSE,NA,1876
+a woman with two high ponytais,93,describer,1,FALSE,NA,1877
+a man sitting with his back against the wall,93,describer,1,FALSE,NA,1878
+with his knees to his chest,93,describer,2,FALSE,NA,1878
+a person with a triangular hood and tail,93,describer,1,FALSE,NA,1879
+a person bending their knees and holding a tray,93,describer,1,FALSE,NA,1880
+"A man sitting against a wall, his knees high to his chest",92,describer,1,FALSE,NA,1881
+a person with two high ponytails sitting upright,92,describer,1,FALSE,NA,1882
+"A woman, her knees bent, holding a tray",92,describer,1,FALSE,NA,1883
+He's slumped,92,describer,2,FALSE,NA,1881
+He's a little fat,92,describer,3,FALSE,NA,1881
+This person is leaning lower than the other three,92,describer,1,FALSE,NA,1884
+"One ponytail is a diamond, the other is like a triangle falling off her head",92,describer,2,FALSE,NA,1884
+this girl has two high ponytails,93,describer,1,FALSE,NA,1885
+And her ponytails are slanted,92,describer,3,FALSE,NA,1884
+Hello?,92,matcher,1,FALSE,NA,1886
+this person has their legs flat against the floor,93,describer,2,FALSE,NA,1886
+"this man has their knees bent, and is sitting",93,describer,1,FALSE,NA,1887
+"bending their knees, holding a tray",93,describer,1,FALSE,NA,1888
+It looks like it has bunny ears,94,describer,1,FALSE,NA,1889
+next,95,matcher,1,FALSE,NA,1890
+"a square is to the left on the top, left corner and a triangle is at the bottom right corner",94,describer,2,FALSE,NA,1890
+kinda looks like a ghost,94,describer,1,FALSE,NA,1891
+looks like someone sitting with their legs to the left,94,describer,1,FALSE,NA,1892
+Bunny ears,95,describer,1,FALSE,NA,1893
+sitting with legs out,95,describer,1,FALSE,NA,1894
+kneeling with a  book,95,describer,1,FALSE,NA,1895
+jumbled mess,94,describer,1,FALSE,NA,1896
+kneeling,94,describer,1,FALSE,NA,1897
+jumbled mess,95,describer,1,FALSE,NA,1898
+bunny,94,describer,1,FALSE,NA,1899
+sitting with legs to the left,94,describer,1,FALSE,NA,1900
+kneeling,95,describer,1,FALSE,NA,1901
+bunny,95,describer,1,FALSE,NA,1902
+jumbled mess,95,describer,1,FALSE,NA,1903
+sitting with legs to left,95,describer,1,FALSE,NA,1904
+"this person has their legs bent, and holding out a tray",93,describer,1,FALSE,NA,1905
+this person is sitting on the floor with their knees bent,93,describer,1,FALSE,NA,1906
+"this person is sitting with their legs flat on the ground, slated head",93,describer,1,FALSE,NA,1907
+this lady has two high ponytails,93,describer,1,FALSE,NA,1908
+kneeling holding tray,95,describer,1,FALSE,NA,1909
+sitting on ground holding ankles,95,describer,1,FALSE,NA,1910
+square head looks like bunny,95,describer,1,FALSE,NA,1911
+weird looking head piece hanging off of back,95,describer,1,FALSE,NA,1912
+sitting holding ankles,93,describer,1,FALSE,NA,1913
+bending holding tray,93,describer,1,FALSE,NA,1914
+something hanging from back and bottom,93,describer,1,FALSE,NA,1915
+"back against wall, legs out flat on floor",93,describer,1,FALSE,NA,1916
+kneeling holding tray,95,describer,1,FALSE,NA,1917
+looks like bunny ears with a square head,95,describer,1,FALSE,NA,1918
+sitting on floor holding ankles,95,describer,1,FALSE,NA,1919
+piece hanging off back of and head and back of shoulders,95,describer,1,FALSE,NA,1920
+This person has their legs flat against the floor,92,describer,1,FALSE,NA,1921
+"The woman is bending her knees, holding a tray",92,describer,1,FALSE,NA,1922
+"The man is slumped against a wall, sitting",92,describer,1,FALSE,NA,1923
+flat legs,94,describer,1,FALSE,NA,1924
+"The person is sitting upright, their ponytails are high",92,describer,1,FALSE,NA,1925
+back against the wall,94,describer,1,FALSE,NA,1926
+pony tails,94,describer,1,FALSE,NA,1927
+flat legs,92,describer,1,FALSE,NA,1928
+woman with tray,94,describer,1,FALSE,NA,1929
+woman with tray,92,describer,1,FALSE,NA,1930
+high ponytails,92,describer,1,FALSE,NA,1931
+slumped against the wall,92,describer,1,FALSE,NA,1932
+pony tails,94,describer,1,FALSE,NA,1933
+slumped against wall,94,describer,1,FALSE,NA,1934
+woman with tray,94,describer,1,FALSE,NA,1935
+flat legs,94,describer,1,FALSE,NA,1936
+"man sitting on ground with knees bent, holding ankles",93,describer,1,FALSE,NA,1937
+lady with two high pony tails with back against wall,93,describer,1,FALSE,NA,1938
+"man with head bowed, and two things hanging off shoulders and bottom",93,describer,1,FALSE,NA,1939
+man sitting legs to the left,94,describer,1,FALSE,NA,1940
+doing some weird dance with a fat left leg,94,describer,1,FALSE,NA,1941
+man bending knees holding a tray,93,describer,1,FALSE,NA,1942
+high pony tails,94,describer,1,FALSE,NA,1943
+holding a tray,94,describer,1,FALSE,NA,1944
+"man sitting with bent knees, holding his ankles",93,describer,1,FALSE,NA,1945
+lady with two high pony tails,93,describer,1,FALSE,NA,1946
+knees bent holding tray,93,describer,1,FALSE,NA,1947
+high pony tails,94,describer,1,FALSE,NA,1948
+man slouching with weird things hanging off him,93,describer,1,FALSE,NA,1949
+man sitting legs to left,94,describer,1,FALSE,NA,1950
+weird one with things hanging off,94,describer,1,FALSE,NA,1951
+holding a tray,94,describer,1,FALSE,NA,1952
+sitting on floor holding ankles,95,describer,1,FALSE,NA,1953
+kneeling holding book,95,describer,1,FALSE,NA,1954
+piece hanging of back of head and a piece hanging of the back of the shoulders,95,describer,1,FALSE,NA,1955
+"woman bending knees, holding a tray",92,describer,1,FALSE,NA,1956
+looks like bunny with a square head,95,describer,1,FALSE,NA,1957
+man sitting slumped against a wall. He's fat.,92,describer,1,FALSE,NA,1958
+person with high ponytails sitting upright.,92,describer,1,FALSE,NA,1959
+"low ponytails leaning back, legs flat on the floor",92,describer,1,FALSE,NA,1960
+kneeling holding book,95,describer,1,FALSE,NA,1961
+piece hanging of back of head and another back of shoulders,95,describer,1,FALSE,NA,1962
+looks like bunny with a square head,95,describer,1,FALSE,NA,1963
+sitting on floor holding ankles,95,describer,1,FALSE,NA,1964
+holding ankles,92,describer,1,FALSE,NA,1965
+flat legs,92,describer,1,FALSE,NA,1966
+bunny square head,92,describer,1,FALSE,NA,1967
+holding book,92,describer,1,FALSE,NA,1968
+Open arms and falling,96,describer,1,FALSE,NA,1969
+at an angle,96,describer,2,FALSE,NA,1969
+head by arm,96,describer,3,FALSE,NA,1969
+off balance,96,describer,4,FALSE,NA,1969
+Looks like a zombie,96,describer,1,FALSE,NA,1970
+looks like holding a plate,96,describer,1,FALSE,NA,1971
+arms together,96,describer,2,FALSE,NA,1970
+arms straight out,96,describer,1,FALSE,NA,1972
+kneeled down,96,describer,2,FALSE,NA,1972
+arms together,97,describer,1,FALSE,NA,1973
+raised up,97,describer,2,FALSE,NA,1973
+arms raised,97,describer,1,FALSE,NA,1974
+head by arm,97,describer,2,FALSE,NA,1974
+kneeling,97,describer,1,FALSE,NA,1975
+arms together,96,describer,1,FALSE,NA,1976
+looks like holding a plate,97,describer,1,FALSE,NA,1977
+arms outstretched,97,describer,2,FALSE,NA,1975
+head back,96,describer,2,FALSE,NA,1976
+looks like they are carrying something,96,describer,1,FALSE,NA,1978
+kneeling down with arms out,96,describer,1,FALSE,NA,1979
+arms together and raised like a zombie,97,describer,1,FALSE,NA,1980
+arms outstretched and kneeling,97,describer,1,FALSE,NA,1981
+arms out and head to the side,96,describer,1,FALSE,NA,1982
+looks like holding something,97,describer,1,FALSE,NA,1983
+arms raised head near arm,97,describer,1,FALSE,NA,1984
+ok,98,matcher,1,FALSE,NA,1985
+Looks like he's saying I don't know,99,describer,2,FALSE,NA,1985
+This looks like a shoulder shrug.,99,describer,3,FALSE,NA,1985
+more specific?,98,matcher,4,FALSE,NA,1985
+not arms wide open,98,matcher,5,FALSE,NA,1985
+Yes,99,describer,6,FALSE,NA,1985
+Kneeling and praying,99,describer,1,FALSE,NA,1986
+marching forward one leg in the air.,99,describer,1,FALSE,NA,1987
+Hands out in front head looking up,99,describer,1,FALSE,NA,1988
+arms wide open?,98,matcher,2,FALSE,NA,1988
+No,99,describer,3,FALSE,NA,1988
+holding a bowl?,98,matcher,4,FALSE,NA,1988
+yes,99,describer,5,FALSE,NA,1988
+arms wide open,98,describer,1,FALSE,NA,1989
+standing on one leg,98,describer,1,FALSE,NA,1990
+kneeling and praying,98,describer,1,FALSE,NA,1991
+kneeling and praying,99,describer,1,FALSE,NA,1992
+holding a bowl,98,describer,1,FALSE,NA,1993
+arms wide open,99,describer,1,FALSE,NA,1994
+Holding a bowl,99,describer,1,FALSE,NA,1995
+One leg up,99,describer,1,FALSE,NA,1996
+holding a bowl,98,describer,1,FALSE,NA,1997
+standing on one leg,98,describer,1,FALSE,NA,1998
+arms wide open,98,describer,1,FALSE,NA,1999
+kneeling and praying,98,describer,1,FALSE,NA,2000
+One leg up,99,describer,1,FALSE,NA,2001
+Arms wide open,99,describer,1,FALSE,NA,2002
+Kneeling and praying,99,describer,1,FALSE,NA,2003
+arms out and head to the side,96,describer,1,FALSE,NA,2004
+one leg up,96,describer,1,FALSE,NA,2005
+carrying a bowl,96,describer,1,FALSE,NA,2006
+Holding a bowl,99,describer,1,FALSE,NA,2007
+arms out and praying,96,describer,1,FALSE,NA,2008
+One leg up,99,describer,1,FALSE,NA,2009
+arms wide open head to the side,99,describer,1,FALSE,NA,2010
+Holding a bowl,99,describer,1,FALSE,NA,2011
+carrying a plate,96,describer,1,FALSE,NA,2012
+like a zombie and leg up,96,describer,1,FALSE,NA,2013
+kneeling,96,describer,1,FALSE,NA,2014
+arms out like they are falling,96,describer,1,FALSE,NA,2015
+Kneeling down and praying,99,describer,1,FALSE,NA,2016
+no closed,97,describer,1,FALSE,NA,2017
+yes,97,describer,2,FALSE,NA,2017
+arms wide and raised,97,describer,1,FALSE,NA,2018
+standing on one leg?,98,matcher,3,FALSE,NA,2017
+arms together and raised,97,describer,4,FALSE,NA,2017
+arms wide open?,98,matcher,5,FALSE,NA,2017
+holding a bowl?,98,matcher,1,FALSE,NA,2019
+arms together and looks like to be holding something,97,describer,2,FALSE,NA,2019
+yes,97,describer,3,FALSE,NA,2019
+arms outstretched and kneeling,97,describer,1,FALSE,NA,2020
+holding a bowl,98,describer,1,FALSE,NA,2021
+kneeling and praying?,98,matcher,2,FALSE,NA,2020
+standing on one leg,98,describer,1,FALSE,NA,2022
+kneeling and praying,98,describer,1,FALSE,NA,2023
+yes,97,describer,3,FALSE,NA,2020
+arms wide open,98,describer,1,FALSE,NA,2024
+standing on one leg,97,describer,1,FALSE,NA,2025
+arms outstretched raised,97,describer,1,FALSE,NA,2026
+kneeling and praying,97,describer,1,FALSE,NA,2027
+holding a bowl,97,describer,1,FALSE,NA,2028
+kneeling and praying,98,describer,1,FALSE,NA,2029
+arms wide open,98,describer,1,FALSE,NA,2030
+holding a bowl,98,describer,1,FALSE,NA,2031
+standing on one leg,98,describer,1,FALSE,NA,2032
+one leg up,96,describer,1,FALSE,NA,2033
+kneeling and arms out,96,describer,1,FALSE,NA,2034
+head to one side,96,describer,1,FALSE,NA,2035
+yes,96,describer,2,FALSE,NA,2035
+kneeling and praying,98,describer,1,FALSE,NA,2036
+holding a bowl,98,describer,1,FALSE,NA,2037
+carrying something,96,describer,1,FALSE,NA,2038
+arms out,96,describer,3,FALSE,NA,2035
+arms wide open?,98,matcher,4,FALSE,NA,2035
+arms wide open,98,describer,1,FALSE,NA,2039
+standing on one leg,98,describer,1,FALSE,NA,2040
+arms open and leaning back,96,describer,1,FALSE,NA,2041
+kneeling and praying,96,describer,1,FALSE,NA,2042
+carrying a bowl,98,describer,1,FALSE,NA,2043
+carrying a bowl,96,describer,1,FALSE,NA,2044
+looks like a zombie and standing on one leg,96,describer,1,FALSE,NA,2045
+standing on one leg,98,describer,1,FALSE,NA,2046
+arms wide open,98,describer,1,FALSE,NA,2047
+kneeling and praying,98,describer,1,FALSE,NA,2048
+head to side,96,matcher,2,FALSE,NA,2047
+yes,98,describer,3,FALSE,NA,2047
+arms outstretched and kneeling,97,describer,1,FALSE,NA,2049
+looks to be holding something,97,describer,1,FALSE,NA,2050
+standing on one leg,97,describer,1,FALSE,NA,2051
+Pyramid Head,99,describer,1,FALSE,NA,2052
+arms raised and stretched wide,97,describer,1,FALSE,NA,2053
+arms stretched wide head to side,99,describer,1,FALSE,NA,2054
+kneeling and praying,99,describer,1,FALSE,NA,2055
+kneeling and praying,97,describer,1,FALSE,NA,2056
+holding a bowl,99,describer,1,FALSE,NA,2057
+holding a bowl,97,describer,1,FALSE,NA,2058
+Holding a bowl,99,describer,1,FALSE,NA,2059
+looks like a person on their knees praying,99,describer,1,FALSE,NA,2060
+leg raised,97,describer,1,FALSE,NA,2061
+arms raised head to side,97,describer,1,FALSE,NA,2062
+with arms wide open,99,describer,1,FALSE,NA,2063
+Looks like a zombie doing a crane kick,99,describer,1,FALSE,NA,2064
+Hello,100,matcher,1,FALSE,NA,2065
+square head triangle on back,101,describer,2,FALSE,NA,2065
+looks like they have square on back,101,describer,1,FALSE,NA,2066
+ready,100,matcher,2,FALSE,NA,2066
+does it look like one leg is lifted up,100,matcher,3,FALSE,NA,2066
+yes,101,describer,4,FALSE,NA,2066
+hands lifted up,101,describer,1,FALSE,NA,2067
+lifted up like they are flying?,100,matcher,2,FALSE,NA,2067
+Square on the back with one leg lifted,100,describer,1,FALSE,NA,2068
+yes,101,describer,3,FALSE,NA,2067
+"look like holding something out, standing",101,describer,1,FALSE,NA,2069
+Diamond head with hands out like holding a large bowl,100,describer,1,FALSE,NA,2070
+standing?,101,matcher,2,FALSE,NA,2070
+hands out like it is flying,100,describer,1,FALSE,NA,2071
+the same one that was just choosen. kneeling with a triangle on back,100,describer,1,FALSE,NA,2072
+standing with both feet on ground,101,describer,1,FALSE,NA,2073
+looks like kicking,101,describer,1,FALSE,NA,2074
+kneeling,101,describer,1,FALSE,NA,2075
+kneeling with triangle on back,100,describer,1,FALSE,NA,2076
+flying,101,describer,1,FALSE,NA,2077
+flying,100,describer,1,FALSE,NA,2078
+"standing, not kicking",100,describer,1,FALSE,NA,2079
+kicking,100,describer,1,FALSE,NA,2080
+Hello,102,matcher,1,FALSE,NA,2081
+The one that looks like a preacher,103,describer,2,FALSE,NA,2081
+Nope,103,describer,1,FALSE,NA,2082
+arms raised to the sky,103,describer,2,FALSE,NA,2082
+Left,103,describer,1,FALSE,NA,2083
+praying figure,103,describer,2,FALSE,NA,2083
+facing which way?,102,matcher,3,FALSE,NA,2083
+I,103,describer,1,FALSE,NA,2084
+kneeling,103,describer,2,FALSE,NA,2084
+Arms raised in the sky. Leaning to the left of the screen,102,describer,1,FALSE,NA,2085
+Facing left with hands/arms pointing straight out. Looks like a person in a long robe or coat,102,describer,1,FALSE,NA,2086
+Looks like a person that is lifting one leg. Facing left,102,describer,1,FALSE,NA,2087
+Person kneeling facing left,103,describer,1,FALSE,NA,2088
+Left 45°,103,describer,1,FALSE,NA,2089
+The one with the widest base (bottom).,102,describer,1,FALSE,NA,2090
+Leaning left,103,describer,2,FALSE,NA,2089
+in a robe facing left arms out,103,describer,1,FALSE,NA,2091
+Yes,103,describer,1,FALSE,NA,2092
+The one walking like a zombie,103,describer,2,FALSE,NA,2092
+do they look like they have one leg lifted?,102,matcher,3,FALSE,NA,2092
+widest base (bottom),102,describer,1,FALSE,NA,2093
+person in robe standing. facing left with hands/arms out,102,describer,1,FALSE,NA,2094
+person with arms raised in the air leaning to the left,102,describer,1,FALSE,NA,2095
+one leg lifted. facing left,102,describer,1,FALSE,NA,2096
+looks like a person leaning very far to the left. arms raised to the sky,102,describer,1,FALSE,NA,2097
+kneeling with a triangle on back or front?,100,matcher,1,FALSE,NA,2098
+looks like a person lifting one leg. facing the left,102,describer,1,FALSE,NA,2099
+the one with the widest base (bottom),102,describer,2,FALSE,NA,2098
+kind of kneeling. triangle on the back,102,describer,3,FALSE,NA,2098
+"looks like a person in a robe, hands/arms out straight and facing the left",102,describer,1,FALSE,NA,2100
+looks like a person with arms raised and one leg extended,100,describer,1,FALSE,NA,2101
+looks like a person flying,100,describer,1,FALSE,NA,2102
+are they leaning very far to the left?,102,matcher,2,FALSE,NA,2102
+the one that looks like a person wearing a robe,100,describer,1,FALSE,NA,2103
+The one that is kind of kneeling with a triangle on back,100,describer,1,FALSE,NA,2104
+yes arms  extended up,100,describer,3,FALSE,NA,2102
+person leaning very far to the left. arms raised in the sky,102,describer,1,FALSE,NA,2105
+kneeling with triangle on back,102,describer,1,FALSE,NA,2106
+one leg lifted,102,describer,1,FALSE,NA,2107
+robe,102,describer,1,FALSE,NA,2108
+the flying person arms raised to the sky,100,describer,1,FALSE,NA,2109
+kneeling with triangle on back,100,describer,1,FALSE,NA,2110
+one leg extended,100,describer,1,FALSE,NA,2111
+wearing a robe,100,describer,1,FALSE,NA,2112
+Wearing a robe facing left arms out,103,describer,1,FALSE,NA,2113
+knees on the ground praying facing left,103,describer,1,FALSE,NA,2114
+leaning left at 45° arms out,103,describer,1,FALSE,NA,2115
+Looks like a zombie one leg in the air,103,describer,1,FALSE,NA,2116
+kicking,101,describer,1,FALSE,NA,2117
+standing with both feet on ground,101,describer,1,FALSE,NA,2118
+appears to kneel,101,describer,1,FALSE,NA,2119
+looks like flying,101,describer,1,FALSE,NA,2120
+knees on the ground praying facing left,103,describer,1,FALSE,NA,2121
+leaning left at 45° arms in the air,103,describer,1,FALSE,NA,2122
+Looks like a zombie one leg in the air,103,describer,1,FALSE,NA,2123
+Both legs on the ground standing,103,describer,1,FALSE,NA,2124
+looks like kneeling,101,describer,1,FALSE,NA,2125
+appears to be kicking,101,describer,1,FALSE,NA,2126
+standing with both feet on ground,101,describer,1,FALSE,NA,2127
+looks like flying,101,describer,1,FALSE,NA,2128
+the figure that seems to be flying with arms to the sky,100,describer,1,FALSE,NA,2129
+the figure that seems to be wearing a robe with arms extended in front,100,describer,1,FALSE,NA,2130
+One leg in air,103,describer,1,FALSE,NA,2131
+kneeling with a triangle on back,100,describer,1,FALSE,NA,2132
+has one leg extended,100,describer,1,FALSE,NA,2133
+Triangle on back,103,describer,1,FALSE,NA,2134
+Standing wearing a robe,103,describer,1,FALSE,NA,2135
+flying figure,100,describer,1,FALSE,NA,2136
+wearing a robe,100,describer,1,FALSE,NA,2137
+One leg in the air,103,describer,1,FALSE,NA,2138
+Looks like flying,103,describer,1,FALSE,NA,2139
+one leg extended,100,describer,1,FALSE,NA,2140
+kneeling with triangle on back,100,describer,1,FALSE,NA,2141
+Triangle on back,103,describer,1,FALSE,NA,2142
+Standing wearing robe,103,describer,1,FALSE,NA,2143
+Looks like flying,103,describer,1,FALSE,NA,2144
+looks like a person with their arms raised high. leaning very far to the left,102,describer,1,FALSE,NA,2145
+looks like a person standing wearing a long robe. they are holding their hands/arms out straight.,102,describer,1,FALSE,NA,2146
+looks like a person lifting one leg. facing the left,102,describer,1,FALSE,NA,2147
+the one with the widest base (bottom),102,describer,1,FALSE,NA,2148
+looks like a person kicking,101,describer,1,FALSE,NA,2149
+looks like they are flying,101,describer,1,FALSE,NA,2150
+appears to be kneeling,101,describer,1,FALSE,NA,2151
+yes,101,describer,2,FALSE,NA,2151
+flying,102,describer,1,FALSE,NA,2152
+is there a triangle on their back?,102,matcher,3,FALSE,NA,2151
+standing with both feet on ground,101,describer,1,FALSE,NA,2153
+robe?,102,matcher,2,FALSE,NA,2153
+flying,101,describer,1,FALSE,NA,2154
+yes,101,describer,3,FALSE,NA,2153
+one leg lifted,102,describer,1,FALSE,NA,2155
+robe,102,describer,1,FALSE,NA,2156
+kneeling with triangle on back,102,describer,1,FALSE,NA,2157
+kneeling with triangle on back,101,describer,1,FALSE,NA,2158
+one leg lifted,101,describer,1,FALSE,NA,2159
+robe,101,describer,1,FALSE,NA,2160
+2,104,describer,1,FALSE,NA,2161
+1,104,describer,2,FALSE,NA,2161
+2,104,describer,3,FALSE,NA,2161
+hello,105,matcher,4,FALSE,NA,2161
+2,104,describer,5,FALSE,NA,2161
+Hi,104,describer,6,FALSE,NA,2161
+"you are supposed to describe the picture for me to select, correct?",105,matcher,7,FALSE,NA,2161
+What is your name,104,describer,8,FALSE,NA,2161
+The third picture is looks good and it look like man in sitting position.,104,describer,9,FALSE,NA,2161
+Hello,104,describer,1,FALSE,NA,2162
+"hi, what does the picture look like?",105,matcher,2,FALSE,NA,2162
+The third picture is looks like a man in sitting position.,104,describer,3,FALSE,NA,2162
+with big ears or a hat?,105,matcher,4,FALSE,NA,2162
+cuz i see 2 pictures with people sitting,105,matcher,5,FALSE,NA,2162
+hat,104,describer,6,FALSE,NA,2162
+ok i think i can get this one right this time,105,matcher,1,FALSE,NA,2163
+The picture looks like stand position and like begging.,104,describer,2,FALSE,NA,2163
+ok cool,105,matcher,7,FALSE,NA,2162
+The picture looks like sitting position and no hats.,104,describer,1,FALSE,NA,2164
+don't select any of tis.,104,matcher,1,FALSE,NA,2165
+what do you see,105,matcher,2,FALSE,NA,2164
+sitting person with a hat looks like bunny ears,105,describer,2,FALSE,NA,2165
+Don't select any of this.,104,matcher,3,FALSE,NA,2165
+looking like a person kneeling and about to start begging or praying,105,describer,1,FALSE,NA,2166
+i see it,105,matcher,1,FALSE,NA,2167
+hi,104,matcher,1,FALSE,NA,2168
+kind of looks like a high heeled shoe,105,describer,1,FALSE,NA,2169
+The person look like long hat and leg look like thunder.,104,describer,2,FALSE,NA,2167
+"good day, i see it! well done",105,matcher,1,FALSE,NA,2170
+The position looks sitting with no hat,104,describer,1,FALSE,NA,2171
+i think we are starting to understand one another,105,matcher,1,FALSE,NA,2172
+looks like a guy with a box for a head sitting down with knees to chest,105,describer,2,FALSE,NA,2168
+told me,104,matcher,2,FALSE,NA,2169
+what do ya see there director,105,matcher,3,FALSE,NA,2167
+The position look like begging.,104,describer,2,FALSE,NA,2170
+gimme a good one,105,matcher,2,FALSE,NA,2172
+"box head, sitting knees to chest",105,describer,1,FALSE,NA,2173
+The position looks wired,104,describer,3,FALSE,NA,2172
+or praying,105,describer,1,FALSE,NA,2174
+can u be more specific,105,matcher,4,FALSE,NA,2172
+hat in different position,104,describer,5,FALSE,NA,2172
+begging for food or some change,105,describer,2,FALSE,NA,2174
+native american indian guy sitting down big hat,105,describer,1,FALSE,NA,2175
+"the one we keep struggling with, big white triangle in the right bottom",105,describer,1,FALSE,NA,2176
+This one looks like a rabbit sitting down facing the right.,106,describer,1,FALSE,NA,2177
+This one looks like a person kneeling with his arm outstretched.,106,describer,1,FALSE,NA,2178
+This one looks like a rabbit laying down facing the left.,106,describer,1,FALSE,NA,2179
+It has a square head and two triangles that look like ears.,106,describer,2,FALSE,NA,2177
+One of his ears is a square.,106,describer,2,FALSE,NA,2179
+This one looks like it has bunny ears,107,describer,1,FALSE,NA,2180
+This one looks like a person sitting down facing the left.,106,describer,1,FALSE,NA,2181
+Looks like someone kneeling down to pray,107,describer,1,FALSE,NA,2182
+Square head looking down,107,describer,1,FALSE,NA,2183
+This one looks like a man kneeling with his arms out.,106,describer,1,FALSE,NA,2184
+looks like it has a square ear,107,describer,1,FALSE,NA,2185
+A bunny sitting down facing the right,106,describer,1,FALSE,NA,2186
+A man sitting down facing the left,106,describer,1,FALSE,NA,2187
+Bunny ears,107,describer,1,FALSE,NA,2188
+Square ear,107,describer,1,FALSE,NA,2189
+A rabbit with a square ear facing the left.,106,describer,1,FALSE,NA,2190
+Person kneeling down to pray,107,describer,1,FALSE,NA,2191
+Suare head looking down,107,describer,1,FALSE,NA,2192
+"person sitting with knees to stomach, big box head, no ears and no hat",105,describer,1,FALSE,NA,2193
+Big box head,107,describer,1,FALSE,NA,2194
+sitting knees in?,105,matcher,2,FALSE,NA,2194
+"big white triangle in corner, kind of looks like a high heeled womens shoe facing left",105,describer,1,FALSE,NA,2195
+good job!,105,matcher,3,FALSE,NA,2194
+thank you youtoo!,107,describer,4,FALSE,NA,2194
+yes,107,describer,5,FALSE,NA,2194
+Oliver Twist,107,describer,1,FALSE,NA,2196
+person begging like please sir may I have some more,105,describer,1,FALSE,NA,2197
+sitting criss cross style with big hat on box head,105,describer,1,FALSE,NA,2198
+on a role! heck yeah,105,matcher,1,FALSE,NA,2199
+Box head knees up,107,describer,1,FALSE,NA,2200
+lol nice!,105,matcher,2,FALSE,NA,2196
+Woman's shoe,107,describer,1,FALSE,NA,2201
+womens shoe,105,describer,1,FALSE,NA,2202
+box head no hat,105,describer,1,FALSE,NA,2203
+box head sitting big hat,105,describer,1,FALSE,NA,2204
+Hat head,107,describer,1,FALSE,NA,2205
+Box head wearing the hat,107,describer,2,FALSE,NA,2199
+oliver twist,105,describer,1,FALSE,NA,2206
+Woman's shoe,107,describer,1,FALSE,NA,2207
+yes!,105,matcher,1,FALSE,NA,2208
+one more for perfection!,105,matcher,2,FALSE,NA,2208
+Oliver Twist,107,describer,3,FALSE,NA,2208
+This one looks like a man laying down looking left.,106,describer,1,FALSE,NA,2209
+This one looks like a bunny rabbit facing the left and sitting down,106,describer,1,FALSE,NA,2210
+This one looks like a rabbit with a square ear looking left.,106,describer,1,FALSE,NA,2211
+This one looks like a man kneeling with his arms outstretched.,106,describer,1,FALSE,NA,2212
+It looks wired position,104,describer,1,FALSE,NA,2213
+It looks like beggar position,104,describer,1,FALSE,NA,2214
+The position with big hat,104,describer,1,FALSE,NA,2215
+The man sitting down with no hat,104,describer,1,FALSE,NA,2216
+"This one looks like a weird position, with a square facing the left.",106,describer,1,FALSE,NA,2217
+A person wearing a hat facing the right.,106,describer,1,FALSE,NA,2218
+A man laying down facing the left,106,describer,1,FALSE,NA,2219
+A person begging.,106,describer,1,FALSE,NA,2220
+The person lying down with no hot,104,describer,1,FALSE,NA,2221
+The position is wired,104,describer,1,FALSE,NA,2222
+The position is with big hat,104,describer,1,FALSE,NA,2223
+begging position,104,describer,1,FALSE,NA,2224
+This looks like a person sitting down and facing the left with a square head,106,describer,1,FALSE,NA,2225
+please sir may I have some more?,105,matcher,1,FALSE,NA,2226
+"This looks like a person with a weird square head facing the left with a triangle arm behind hi,",106,describer,1,FALSE,NA,2227
+This looks like a person wearing bunny ears facing the right,106,describer,1,FALSE,NA,2228
+person sitting cross legged with a big hat on their boxed head,105,describer,1,FALSE,NA,2229
+This looks like a person begging,106,describer,2,FALSE,NA,2226
+begging person,105,describer,1,FALSE,NA,2230
+bunny ears,105,describer,2,FALSE,NA,2229
+the other bunny ears ones but i think it looks like a womens high heeled shoes facing left,105,describer,1,FALSE,NA,2231
+box head no hat sitting down knees to chest,105,describer,1,FALSE,NA,2232
+Weird bunny ears one that's facing to the left.,106,describer,1,FALSE,NA,2233
+Yup,106,describer,2,FALSE,NA,2233
+The man sitting down with a box head.,106,describer,1,FALSE,NA,2234
+womens shoe,105,describer,1,FALSE,NA,2235
+The beggar.,106,describer,1,FALSE,NA,2236
+native american big ears no the womens shoe,105,describer,1,FALSE,NA,2237
+box head knees to chest,105,describer,1,FALSE,NA,2238
+the womens shoe,105,matcher,3,FALSE,NA,2233
+The bunny ears hat facing the right,106,describer,1,FALSE,NA,2239
+"sorry i got the one wrong, I owe you 4 cents, lol",105,matcher,2,FALSE,NA,2239
+oliver twist,105,describer,1,FALSE,NA,2240
+lying down no hat,104,describer,1,FALSE,NA,2241
+Big hat,107,describer,1,FALSE,NA,2242
+begging,104,describer,1,FALSE,NA,2243
+big hat,104,describer,1,FALSE,NA,2244
+begging position,104,describer,1,FALSE,NA,2245
+position with big hat,104,describer,1,FALSE,NA,2246
+Weird position,107,describer,1,FALSE,NA,2247
+wired,104,describer,1,FALSE,NA,2248
+wired position,104,describer,1,FALSE,NA,2249
+Begging person,107,describer,1,FALSE,NA,2250
+Sitting box head no hat,107,describer,1,FALSE,NA,2251
+lying down,104,describer,1,FALSE,NA,2252
+begging,107,describer,1,FALSE,NA,2253
+big hat,107,describer,1,FALSE,NA,2254
+lying down,107,describer,1,FALSE,NA,2255
+weird,107,describer,1,FALSE,NA,2256
+The upper left hand and bottom left hand corners me a right angle and the top has a diamond on top,108,describer,1,FALSE,NA,2257
+"The top diamond looks like it is sitting on another diamond, and on the righthand side there is a big v indent",108,describer,1,FALSE,NA,2258
+Hi,109,matcher,2,FALSE,NA,2257
+which image should i pick?,109,matcher,3,FALSE,NA,2257
+Top triangle looks like it is sitting on a triangle top square with the shape pointing to the right,108,describer,1,FALSE,NA,2259
+This looks like a diamond sitting ontop of two triangles and there is a column,108,describer,1,FALSE,NA,2260
+Could look like a person sitting also,108,describer,2,FALSE,NA,2259
+A person standing with horizontal left side,109,describer,1,FALSE,NA,2261
+kneel down in a prayer position,109,describer,1,FALSE,NA,2262
+a belly dancer,109,describer,1,FALSE,NA,2263
+are their arms extended,108,matcher,2,FALSE,NA,2263
+yes,109,describer,3,FALSE,NA,2263
+sitting down,109,describer,1,FALSE,NA,2264
+Diamond on top of two triangles that also has a long column,108,describer,1,FALSE,NA,2265
+Triangle with both upper and bottom left right angles with straight line along with it forming a straight line across,108,describer,1,FALSE,NA,2266
+Diamond ontop of another diamond and it looks like a big V missing from Right side,108,describer,1,FALSE,NA,2267
+Person sitting,108,describer,1,FALSE,NA,2268
+candle,110,describer,1,FALSE,NA,2269
+great hints,111,matcher,1,FALSE,NA,2270
+standing on one leg,110,describer,1,FALSE,NA,2271
+standing on one leg,111,describer,1,FALSE,NA,2272
+Hi,111,matcher,1,FALSE,NA,2273
+kneeling,110,describer,2,FALSE,NA,2273
+duck facing left,110,describer,2,FALSE,NA,2270
+kneeling,111,describer,1,FALSE,NA,2274
+sitting on his legs,111,describer,1,FALSE,NA,2275
+candle,111,describer,1,FALSE,NA,2276
+kneeling,111,describer,1,FALSE,NA,2277
+sitting down,111,describer,1,FALSE,NA,2278
+kneeling,110,describer,1,FALSE,NA,2279
+duckling facing left,110,describer,1,FALSE,NA,2280
+candle,111,describer,1,FALSE,NA,2281
+standing on one leg,110,describer,1,FALSE,NA,2282
+candle,110,describer,1,FALSE,NA,2283
+standing on one leg,111,describer,1,FALSE,NA,2284
