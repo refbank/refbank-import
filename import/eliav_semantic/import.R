@@ -2,14 +2,21 @@ library(here)
 library(tidyverse)
 library(jsonlite)
 
-# query -- what does "controlled" mean?? -- looks like basically non-repeating / novel from the paper
-
-# query -- is there ordered chat data for "clean_no_discourse"
-# query -- is role constant for "clean_no_discourse"
-# query -- trial number for "clean_no_discourse"
-# query -- option set for "clean_no_discourse"
+# what does "controlled" mean?? -- looks like basically non-repeating / novel from the paper
 
 data_dir <- "import/eliav_semantic/raw_data"
+
+
+ParseJSONColumn <- function(x) {
+  x |> str_replace_all("\\\\", "") |> 
+    str_replace_all('"', "'") |>  str_replace_all(fixed("{'"), '{"') |> 
+    str_replace_all(fixed("'}"), '"}') |> 
+    str_replace_all("':", '":') |> 
+    str_replace_all(": '", ': "') |> 
+    str_replace_all("', '", '", "') |> 
+    fromJSON(flatten = T) 
+}
+
 
 expt_1 <- read_csv(here(data_dir, "exp1_data.csv")) |> mutate(condition_label="expt1_singlemessage") |> 
   mutate(sec_until_click=as.double(sec_until_click))
@@ -17,11 +24,8 @@ expt_1 <- read_csv(here(data_dir, "exp1_data.csv")) |> mutate(condition_label="e
 expt_2 <- read_csv(here(data_dir, "exp2_data.csv")) |> mutate(condition_label="expt2_singlemessage") |> 
   mutate(sec_until_click=as.double(sec_until_click))
 
-expt_3 <- read_csv(here(data_dir, "clean_no_discourse.csv")) |> mutate(condition_label="expt3") |> 
-  mutate(sec_until_click=as.double(sec_until_click)) |> 
-  group_by(game_id) |> 
-  mutate(trial_index=row_number(), #NOTE THIS IS TOTALLY FAKE SO WE CAN APPEASE THE VALIDATOR
-         context=str_c(response,";", target)) #AGAIN TOTALLY FAKE SO WE CAN APPEASE VALIDATOR
+expt_3 <- read_csv(here(data_dir, "exp3_data.csv")) |> mutate(condition_label="expt3") |> 
+  mutate(sec_until_click=as.double(sec_until_click)) 
 
 messages_single <- expt_1 |> bind_rows(expt_2) |> select(game_id, trial_index, block, target, controlled, 
                                 speaker_id,  context, description, time_to_message,
@@ -34,14 +38,15 @@ messages_single <- expt_1 |> bind_rows(expt_2) |> select(game_id, trial_index, b
          action_type="message")
 
 messages_complex <- expt_3 |> select(game_id, block, target, controlled, trial_index,
-                                     condition_label, speaker_desc, listener_desc, context) |> 
-  pivot_longer(c("speaker_desc", "listener_desc"), names_to="source", values_to="text") |> 
-  mutate(text=str_sub(text, 2,-2) |> str_split(",")) |> 
-  unnest(text) |> 
-  mutate(text=trimws(text) |> str_sub(2,-2)) |>  # this is a janky way to do the unlisting, but whatever
-  mutate(role=ifelse(source=="speaker_desc", "describer", "matcher"),
-         player_id=str_c(game_id,"_",role),
-         action_type="message")  #assuming role constancy TODO
+                                     condition_label, description, context, speaker_id, listener_id) |> 
+mutate(description=map(description, ParseJSONColumn)) |> 
+  unnest(description) |> 
+  group_by(game_id, block, target, trial_index) |> 
+  mutate(message_number=row_number()) |> 
+  ungroup() |> 
+  mutate(role=ifelse(role=="speaker", "describer", "matcher"),
+         player_id=ifelse(role=="describer", speaker_id, listener_id),
+         action_type="message") 
 
 
 choices <- expt_1 |> bind_rows(expt_2) |> bind_rows(expt_3) |> select(game_id, trial_index, block, target, controlled, listener_id, context,
@@ -83,7 +88,7 @@ all <- messages_single |>
 
 source(here("validate.R"))
 
-validate_dataset(all, write = F)
+validate_dataset(all, write = T)
 
 
 
