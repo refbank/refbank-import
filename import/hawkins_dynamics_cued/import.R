@@ -128,7 +128,7 @@ options=c("A", "B","C","D","E","F","G","H","I", "J", "K", "L")
 
 all <- choices |> bind_rows(messages) |> 
   left_join(exclude) |> 
-  mutate(paper_id="hawkins2020_characterizing",
+  mutate(paper_id="hawkins2020_characterizing_cued",
          full_cite="Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",
          short_cite="Hawkins et al. (2020)",
          condition_label="cued",

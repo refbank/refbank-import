@@ -59,7 +59,7 @@ all <- messages_single |>
   bind_rows(choices) |>
   bind_rows(messages_complex) |> 
   mutate(
-    paper_id = "eliav_semantic",
+    paper_id = "eliav2023_semantic",
     full_cite = "Eliav, R., Ji, A., Artzi, Y., & Hawkins, R. D. (2023). Semantic uncertainty guides the extension of conventions to new referents. arXiv preprint arXiv:2305.06539.",
     short_cite = "Eliav et al (2023)",
     language = "English",
