@@ -166,11 +166,12 @@ all <- messages |>
            short_cite="Hawkins et al (2021)",
            language="English",
            condition_label="network",
+           stage_num=partnerNum+1,
            trial_num=1+trialNum+partnerNum*16,
            rep_num=1+repNum+4*partnerNum,
            time_stamp=ifelse(choice_id=="timed_out", 45, NA), # didn't find timestamps in source, paper reports time out at 45 seconds/trial 
            group_size=4,
-           structure="pairs-network",
+           structure="network-swap",
            condition_label="pairs-network",
            exclude=ifelse(is.na(exclude), T, exclude),
            exclusion_reason=ifelse(exclude, "incomplete game", NA), 
@@ -180,7 +181,7 @@ all <- messages |>
              T ~ NA
            )
            ) |> 
-    select(paper_id, full_cite, short_cite, language,
+    select(paper_id, full_cite, short_cite, language, stage_num, 
            condition_label, time_stamp,
            game_id, player_id=playerId,
            trial_num,rep_num,

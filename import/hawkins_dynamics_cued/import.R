@@ -134,6 +134,7 @@ all <- choices |> bind_rows(messages) |>
          condition_label="cued",
          structure="thick",
          player_id=str_c(gameid, role), # we know there aren't role switches in this experiment 
+         stage_num=1,
          trial_num=trialNum, 
          rep_num=repetitionNum,
          role=case_when(
@@ -152,6 +153,7 @@ all <- choices |> bind_rows(messages) |>
          choice_id=clickedObj,
         ) |> 
   select(paper_id, condition_label, full_cite, short_cite,
+         stage_num, 
          language,
          game_id, player_id, trial_num,rep_num,
          role, target, message_number, text,

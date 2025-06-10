@@ -125,6 +125,7 @@ all_data<- choices |> bind_rows(combined_chat) |>
            condition =="full_feedback" ~ "med_thick",
            condition =="no_rotate" ~ "med_thick"
          ),
+         stage_num=1, 
          language="English",
          exclude=ifelse(is.na(include),T, NA),
          exclusion_reason=ifelse(exclude, "incomplete block", NA),
@@ -144,6 +145,7 @@ all_data<- choices |> bind_rows(combined_chat) |>
          game_id=gameId,
          option_set,
          target=tangram,
+         stage_num,
          trial_num,
          rep_num,
          exclude,
