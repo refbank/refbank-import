@@ -95,14 +95,15 @@ validate_dataset <- function(df, write=F) {
               msg = "describer should be unique per game-trial")
   
   describer <- try_describer |> left_join(players) |> 
-    rename(describer = player_id_numeric)
+    rename(describer = player_id_numeric) |> 
+    select(-player_id)
   
   matchers <- df|> select(game_id, trial_num, player_id, role) |>
     filter(role == "matcher") |>
     unique() |>
     left_join(players) |> 
     group_by(game_id, trial_num) |>
-    summarize(matchers = list(player_id_numeric), .groups = "drop")
+    summarize(matchers = str_c(player_id_numeric, collapse=";"), .groups = "drop")
   
   # check trials
   try_trials <- df |>

@@ -54,9 +54,10 @@ sort_expt1_clean <- sort_expt1 |>
     rep_num = ifelse(partner=="M1", round, 4+round),
     trial_num = presumed_view_order,
     condition=str_c("expt1_",partner, "_sort"),
+    image=str_c("image_", trialID),
     group_size=4, #TODO figure out how to handle group size here!!
   ) |> 
-  select(gameid, playerid, rep_num, trial_num, images, image=trialID,
+  select(gameid, playerid, rep_num, trial_num, images, image,
          text=transcription, condition, group_size)
 
 cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
@@ -69,6 +70,7 @@ cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
     gameid = str_c("expt1_group", subID, "_images", image_set),
     playerid = str_c("expt1_group", subID, "_d"),
     images=str_c("image_", trialID, ";unk1;unk2;unk3"),
+    image=str_c("image_", trialID),
     rep_num=case_when(
       condition=="2(2K1N)"~ 9,
       gameid=="expt1_group5_images2" ~ 9, #we expect that only in the above condition was there an M2 stage, but there's an anomaly
@@ -76,7 +78,7 @@ cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
     trial_num=(rep_num-1)*16+presumed_view_order,
     condition=str_c("expt1_",condition, "_match"),
     group_size=4) |> 
-  select(gameid, playerid, rep_num, trial_num, images, image=trialID, 
+  select(gameid, playerid, rep_num, trial_num, images, image, 
          text=transcription, condition, group_size)
   
 all_1 <- sort_expt1_clean |> bind_rows(cued_expt1)
@@ -111,10 +113,11 @@ sort_expt2_clean <- sort_expt2 |>
       partner=="M2" ~4+round,
       partner=="M3" ~ 8+round),
     trial_num = presumed_view_order,
+    image=str_c("image_", trialID),
     condition=str_c("expt2_",partner, "_sort"),
     group_size=5, #TODO figure out how to handle group size here!!
   ) |> 
-  select(gameid, playerid, rep_num, trial_num, images, image=trialID,
+  select(gameid, playerid, rep_num, trial_num, images, image,
          text=transcription, condition, group_size)
 
 cued_expt2 <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |> 
@@ -132,9 +135,10 @@ cued_expt2 <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
       condition=="3(2K2N)"~ 9,
       T ~ 5),
     trial_num=(rep_num-1)*16+presumed_view_order,
+    image=str_c("image_", trialID),
     condition=str_c("expt2_",condition, "_match"),
     group_size=5) |> 
-  select(gameid, playerid, rep_num, trial_num, images, image=trialID, 
+  select(gameid, playerid, rep_num, trial_num, images, image, 
          text=transcription, condition, group_size)
 
 all_2 <- sort_expt2_clean |> bind_rows(cued_expt2)
@@ -168,9 +172,10 @@ sort_expt3_clean <- sort_expt3 |>
     rep_num =  round,
     trial_num = presumed_view_order,
     condition=str_c("expt3_M1M2M3_sort"),
+    image=str_c("image_", trialID),
     group_size=7, #TODO figure out how to handle group size here!!
   ) |> 
-  select(gameid, playerid, rep_num, trial_num, images, image=trialID,
+  select(gameid, playerid, rep_num, trial_num, images, image,
          text=transcription, condition, group_size)
 
 cued_expt3 <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |> 
@@ -186,8 +191,9 @@ cued_expt3 <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |>
     rep_num=6,
     trial_num=(rep_num-1)*16+presumed_view_order,
     condition=str_c("expt3_",condition, "_match"),
+    image=str_c("image_", trialID),
     group_size=7) |> 
-  select(gameid, playerid, rep_num, trial_num, images, image=trialID, 
+  select(gameid, playerid, rep_num, trial_num, images, image, 
          text=transcription, condition, group_size)
 
 all_3 <- sort_expt3_clean |> bind_rows(cued_expt3)

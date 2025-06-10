@@ -90,6 +90,11 @@ choices <- combined_results |>
     is.na(lasttrialNum) ~ NA, # if there's never a choice, NA
     trialNum<lasttrialNum+1 ~ NA, # if it's more than one after the last choice, NA
     T ~ "timed_out"), # otherwise, it's a timed_out
+    time=case_when(
+      time<0 ~ NA, # something went wrong here and we don't know how to fix,
+      time>180~ NA, # again if > 180 there's a problem with recording,
+      T ~ time
+    ),
     time_stamp=case_when(
       choice_id %in% options ~ time,
       choice_id=="timed_out" ~ 180, # known max time for trial

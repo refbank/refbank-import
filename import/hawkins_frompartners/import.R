@@ -6,7 +6,7 @@ library(jsonlite)
 # 92 participants in networks or 4 (23 networks)
 # networks got 1 of 3 contexts
 # each pair does 4 blocks of 4 each 
-# do all 3 pairs 
+# do all 3 pairs  
 # not time-synced so wait if one pair is faster 
 
 
