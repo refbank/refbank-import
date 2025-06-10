@@ -173,7 +173,7 @@ all <- chat |>
     rep_num = 1 + repNum,
     time_stamp = as.numeric(NA), # there is some time info in original data but unclear how to map it
     group_size = ifelse(condition=="human-speaker-model-listener", 1, 2), # counting number of actual people? idk
-    structure = "pairs",
+    structure = ifelse(condition=="human-speaker-model-listener", "thin", "medium"),
     ) |>
   select(paper_id, full_cite, short_cite, language, stage_num, 
     condition_label=condition, time_stamp,
