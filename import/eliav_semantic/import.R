@@ -25,17 +25,18 @@ ParseJSONColumn <- function(x) {
 
 
 expt_1 <- read_csv(here(data_dir, "exp1_data.csv")) |> mutate(condition_label="expt1_singlemessage") |> 
-  mutate(sec_until_click=as.double(sec_until_click)) |> mutate(structure="thin")
+  mutate(sec_until_click=as.double(sec_until_click)) |> mutate(structure="thin") |> mutate(stage_num=1)
 
 expt_2 <- read_csv(here(data_dir, "exp2_data.csv")) |> mutate(condition_label="expt2_singlemessage") |> 
-  mutate(sec_until_click=as.double(sec_until_click)) |> mutate(structure="thin")
+  mutate(sec_until_click=as.double(sec_until_click)) |> mutate(structure="thin") |> mutate(stage_num=ifelse(block==5, 2,1))
 
 expt_3 <- read_csv(here(data_dir, "exp3_data.csv")) |> mutate(condition_label="expt3") |> 
-  mutate(sec_until_click=as.double(sec_until_click)) |> mutate(structure="medium") # TODO verify with Robert
+  mutate(sec_until_click=as.double(sec_until_click)) |> mutate(structure="medium") |> # TODO verify with Robert
+  mutate(stage_num=1) # looks like there are 5 blocks of 6 each which I think suggests no test phase?
 
 messages_single <- expt_1 |> bind_rows(expt_2) |> select(game_id, trial_index, block, target, controlled, structure,
                                 speaker_id,  context, description, time_to_message,
-                                condition_label) |> 
+                                condition_label, stage_num) |> 
   mutate(player_id=speaker_id, 
          role="describer",
          time_stamp=time_to_message,
@@ -45,7 +46,7 @@ messages_single <- expt_1 |> bind_rows(expt_2) |> select(game_id, trial_index, b
          text=description)
 
 messages_complex <- expt_3 |> select(game_id, block, target, controlled, trial_index, structure, 
-                                     condition_label, description, context, speaker_id, listener_id) |> 
+                                     condition_label, description, context, speaker_id, listener_id, stage_num) |> 
 mutate(description=map(description, ParseJSONColumn)) |> 
   unnest(description) |> 
   group_by(game_id, block, target, trial_index) |> 
@@ -58,7 +59,7 @@ mutate(description=map(description, ParseJSONColumn)) |>
 
 choices <- expt_1 |> bind_rows(expt_2) |> bind_rows(expt_3) |> select(game_id, trial_index, block, target, controlled,
                                                                       structure, listener_id, context,
-                               sec_until_press, sec_until_click, response, condition_label) |> 
+                               sec_until_press, sec_until_click, response, condition_label, stage_num) |> 
   mutate(player_id=listener_id, time_stamp=ifelse(!is.na(sec_until_press), sec_until_press, sec_until_click),
          action_type="selection",choice_id=response, role="matcher")
 
@@ -71,15 +72,15 @@ all <- messages_single |>
     full_cite = "Eliav, R., Ji, A., Artzi, Y., & Hawkins, R. D. (2023). Semantic uncertainty guides the extension of conventions to new referents. arXiv preprint arXiv:2305.06539.",
     short_cite = "Eliav et al (2023)",
     language = "English",
-    stage_num=1,
     trial_num = trial_index + 1,
     rep_num = 1 + block,
     group_size = 2,
-    target=str_replace(target, ".svg", ""),
-    choice_id=str_replace(choice_id, ".svg", ""),
+    target=str_replace(target, ".svg", "") |> str_replace_all("page-",""),
+    choice_id=str_replace(choice_id, ".svg", "") |> str_replace_all("page-", ""),
     exclude=NA, #TODO figure out
     exclusion_reason=as.character(NA), # TODO figure out
-    option_set=str_replace_all(context, ".svg", "") |> str_replace_all("', '", ";") |> str_replace_all(fixed("['"),"") |> str_replace_all(fixed("']"),""),
+    option_set=str_replace_all(context, ".svg", "") |> str_replace_all("', '", ";") |> 
+      str_replace_all(fixed("['"),"") |> str_replace_all(fixed("']"),"") |> str_replace_all("page-",""),
     ) |>
   select(paper_id, full_cite, short_cite, language,
     condition_label, time_stamp, stage_num, 
