@@ -169,12 +169,13 @@ all <- chat |>
     short_cite = "Hawkins et al (2019)",
     language = "English",
     trial_num = trialNum + 1,
+    stage_num=1, 
     rep_num = 1 + repNum,
     time_stamp = as.numeric(NA), # there is some time info in original data but unclear how to map it
     group_size = ifelse(condition=="human-speaker-model-listener", 1, 2), # counting number of actual people? idk
-    structure = "pairs",
+    structure = ifelse(condition=="human-speaker-model-listener", "thin", "medium"),
     ) |>
-  select(paper_id, full_cite, short_cite, language,
+  select(paper_id, full_cite, short_cite, language, stage_num, 
     condition_label=condition, time_stamp,
     game_id=gameid,
     player_id,

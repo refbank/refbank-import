@@ -254,7 +254,7 @@ process_game_messages <- function(messages_df, id_cols, boards_dict, exclusion_d
       selection_val <- if (j <= length(selections)) selections[j] else NA
 
       result[[length(result) + 1]] <- tibble(
-        paper_id = "hawkins2020_characterizing",
+        paper_id = "hawkins2020_characterizing_uncued",
         condition_label = "unconstrained",
         full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020)...",
         short_cite = "Hawkins et al. (2020)",
@@ -279,7 +279,7 @@ process_game_messages <- function(messages_df, id_cols, boards_dict, exclusion_d
       )
 
       result[[length(result) + 1]] <- tibble(
-        paper_id = "hawkins2020_characterizing",
+        paper_id = "hawkins2020_characterizing_uncued",
         condition_label = "unconstrained",
         full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020)...",
         short_cite = "Hawkins et al. (2020)",

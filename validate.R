@@ -9,7 +9,7 @@ validate_dataset <- function(df, write=F) {
   required_cols <- c(
     "condition_label", "paper_id", "full_cite", "short_cite",
     "group_size", "structure", "language", "game_id",
-    "option_set", "target", "trial_num", "rep_num",
+    "option_set", "target", "trial_num", "rep_num", "stage_num",
     "exclude", "exclusion_reason",
     "action_type", "player_id", "role", "time_stamp",
     "text", "message_number", "message_irrelevant", "choice_id")
@@ -35,7 +35,7 @@ validate_dataset <- function(df, write=F) {
                       "structure", "language", "option_set",
                       "exclusion_reason", "action_type", "role", "text")
   should_be_numeric <- c("group_size", "trial_num", "rep_num", 
-                         "time_stamp", "message_number")
+                         "time_stamp", "message_number", "stage_num")
   should_be_bool <- c("exclude", "message_irrelevant")
   
   valid_types <- bind_rows(
@@ -95,18 +95,19 @@ validate_dataset <- function(df, write=F) {
               msg = "describer should be unique per game-trial")
   
   describer <- try_describer |> left_join(players) |> 
-    rename(describer = player_id_numeric)
+    rename(describer = player_id_numeric) |> 
+    select(-player_id)
   
   matchers <- df|> select(game_id, trial_num, player_id, role) |>
     filter(role == "matcher") |>
     unique() |>
     left_join(players) |> 
     group_by(game_id, trial_num) |>
-    summarize(matchers = list(player_id_numeric), .groups = "drop")
+    summarize(matchers = str_c(player_id_numeric, collapse=";"), .groups = "drop")
   
   # check trials
   try_trials <- df |>
-    select(condition_label, game_id, option_set, target, trial_num, rep_num, exclude,
+    select(condition_label, game_id, option_set, target, stage_num, trial_num, rep_num, exclude,
            exclusion_reason) |>
     unique() |>
     left_join(condition |> select(condition_label, condition_id),

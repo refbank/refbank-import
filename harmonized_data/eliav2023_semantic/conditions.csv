@@ -1,0 +1,4 @@
+condition_label,paper_id,full_cite,short_cite,group_size,structure,language,condition_id
+expt1_singlemessage,eliav2023_semantic,"Eliav, R., Ji, A., Artzi, Y., & Hawkins, R. D. (2023). Semantic uncertainty guides the extension of conventions to new referents. arXiv preprint arXiv:2305.06539.",Eliav et al (2023),2,thin,English,1
+expt2_singlemessage,eliav2023_semantic,"Eliav, R., Ji, A., Artzi, Y., & Hawkins, R. D. (2023). Semantic uncertainty guides the extension of conventions to new referents. arXiv preprint arXiv:2305.06539.",Eliav et al (2023),2,thin,English,2
+expt3,eliav2023_semantic,"Eliav, R., Ji, A., Artzi, Y., & Hawkins, R. D. (2023). Semantic uncertainty guides the extension of conventions to new referents. arXiv preprint arXiv:2305.06539.",Eliav et al (2023),2,medium,English,3

@@ -90,6 +90,11 @@ choices <- combined_results |>
     is.na(lasttrialNum) ~ NA, # if there's never a choice, NA
     trialNum<lasttrialNum+1 ~ NA, # if it's more than one after the last choice, NA
     T ~ "timed_out"), # otherwise, it's a timed_out
+    time=case_when(
+      time<0 ~ NA, # something went wrong here and we don't know how to fix,
+      time>180~ NA, # again if > 180 there's a problem with recording,
+      T ~ time
+    ),
     time_stamp=case_when(
       choice_id %in% options ~ time,
       choice_id=="timed_out" ~ 180, # known max time for trial
@@ -120,6 +125,7 @@ all_data<- choices |> bind_rows(combined_chat) |>
            condition =="full_feedback" ~ "med_thick",
            condition =="no_rotate" ~ "med_thick"
          ),
+         stage_num=1, 
          language="English",
          exclude=ifelse(is.na(include),T, NA),
          exclusion_reason=ifelse(exclude, "incomplete block", NA),
@@ -139,6 +145,7 @@ all_data<- choices |> bind_rows(combined_chat) |>
          game_id=gameId,
          option_set,
          target=tangram,
+         stage_num,
          trial_num,
          rep_num,
          exclude,
