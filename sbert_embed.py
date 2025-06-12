@@ -54,6 +54,6 @@ if __name__ == "__main__":
     ### save
     print("Saving embeddings...")
     for dir in sorted(dirs):
-        all_msg_concat[all_msg_concat["paper_id"] == dir].to_csv(os.path.join(DATA_LOC, dir, "embeddings.csv"))
+        all_msg_concat[all_msg_concat["paper_id"] == dir].to_csv(os.path.join(DATA_LOC, dir, "embeddings.csv"), index=False)
 
 
