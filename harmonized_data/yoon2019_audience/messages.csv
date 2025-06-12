@@ -1,4 +1,4 @@
-text,player_id,role,message_number,message_irrelevant,time_stamp,trial_id
+Ôªøtext,player_id,role,message_number,message_irrelevant,time_stamp,trial_id
 "two loops connected each other, they are solid black, and kind of thick",1,describer,1,FALSE,NA,1
 "almost equals sign, but not completely, they are curved",1,describer,1,FALSE,NA,2
 "semicicle on top, and then there is a sideway T or a line, below that there is a triangle and a sideway V",1,describer,1,FALSE,NA,3
@@ -394,7 +394,7 @@ bamboo,7,describer,1,FALSE,NA,392
 looks like someone ace bandaged their knee,7,describer,1,FALSE,NA,393
 a fuzzy fluffy shape,7,describer,1,FALSE,NA,394
 a thing that looks like a moldy wheel of cheese,7,describer,1,FALSE,NA,395
-"ovals, like a whole bunch of ovals that make kind of like an o shape, there is like one oval in the center they get wider till its like a circle, it doesnÕt have anything in the middle, it is light grey",7,describer,1,FALSE,NA,396
+"ovals, like a whole bunch of ovals that make kind of like an o shape, there is like one oval in the center they get wider till its like a circle, it doesn√ït have anything in the middle, it is light grey",7,describer,1,FALSE,NA,396
 looks like a binder,7,describer,1,FALSE,NA,397
 like a dandelion maybe,7,describer,1,FALSE,NA,398
 the line with the circle,7,describer,1,FALSE,NA,399
@@ -861,7 +861,7 @@ the black image that has the straight line at the bottom it is like a hook going
 kind of looks like how they describe the solar system it has like rings it is going around each other with the planets inside,15,describer,1,FALSE,NA,860
 "looks like, it is the one that has the triangle cutout in it looks like a clothes or maybe wood or something",15,describer,1,FALSE,NA,861
 "the circle with the paw print in it, inside",15,describer,1,FALSE,NA,862
-looks doesnÕt look like a cookie but kind of,15,describer,1,FALSE,NA,863
+looks doesn√ït look like a cookie but kind of,15,describer,1,FALSE,NA,863
 the vine looking picture,15,describer,1,FALSE,NA,864
 "looks like the vine with the flower, the white one",15,describer,1,FALSE,NA,865
 "looks like it could maybe be 2 horns, maybe a face the horns kind of look like the outline of a city, like a buildings a little bit, let's just go back with the horns. So it has 2 horns its all black it just has like 2 things sticking up on the side. it is all one image it is not like, it looks like it could be like a monster but it has horns at the top like 2 things sticking up at the side at the top there is like a dip in the middle the womens shirt",15,describer,1,FALSE,NA,866
@@ -1211,7 +1211,7 @@ a hyper cube got a cube within a cube rounded,20,describer,1,FALSE,NA,1209
 looks kind of like a key a brush a broom,20,describer,1,FALSE,NA,1210
 two parrallel zigzag lines,20,describer,1,FALSE,NA,1211
 looks like an x with spikes beneath it but they are not connected,20,describer,1,FALSE,NA,1212
-"an octopus or squid, but doesnÕt look hairy",20,describer,1,FALSE,NA,1213
+"an octopus or squid, but doesn√ït look hairy",20,describer,1,FALSE,NA,1213
 three grey shapes kind of look like a person,20,describer,1,FALSE,NA,1214
 looks like the sun with a weird triangle diamond thing in the center,20,describer,1,FALSE,NA,1215
 looks like bamboo,20,describer,1,FALSE,NA,1216
@@ -2948,7 +2948,7 @@ the moon shape,20,describer,1,FALSE,NA,2946
 the beach ball,20,describer,1,FALSE,NA,2947
 the walkman,20,describer,1,FALSE,NA,2948
 the floral picture,20,describer,1,FALSE,NA,2949
-kind of looks like pi but doesnÕt have one leg,20,describer,1,FALSE,NA,2950
+kind of looks like pi but doesn√ït have one leg,20,describer,1,FALSE,NA,2950
 looks like pi with two legs,20,describer,1,FALSE,NA,2951
 the kind of indian looking symbol with the two circles the 8 arms off of it,20,describer,1,FALSE,NA,2952
 the cirlce with the dot,20,describer,1,FALSE,NA,2953
@@ -10467,7 +10467,7 @@ a half circle with like streamers attached to it,29,describer,1,FALSE,NA,10465
 looks like a timer,29,describer,1,FALSE,NA,10466
 a triangle with two sticks at the bottom,29,describer,1,FALSE,NA,10467
 the first thing I thought of was corn But it looks like,29,describer,1,FALSE,NA,10468
-that doesnêt look like anything to me,29,describer,1,FALSE,NA,10469
+that doesn√™t look like anything to me,29,describer,1,FALSE,NA,10469
 looks like a corner connecting piece,29,describer,1,FALSE,NA,10470
 looks like two pairs of eyes with no iris,29,describer,1,FALSE,NA,10471
 looks like a honeycomb,29,describer,1,FALSE,NA,10472
@@ -10601,7 +10601,7 @@ two half circles on a piece of paper,31,describer,1,FALSE,NA,10599
 an arrow pointing left with an X on it,31,describer,1,FALSE,NA,10600
 kind of looks like cross hatching,31,describer,1,FALSE,NA,10601
 looks like a smiley face with a tongue sticking out ok basically the face itself is just a half circle facing downward with another half circle,31,describer,1,FALSE,NA,10602
-looks like an eye but there is a lone line pointing straight up that kind of looks like a magcians wand it kind of looks like a insect or fish clawing at something or fishes donêt do that kind of looks like a fish with a line pointing up kind of looks like a wand,31,describer,1,FALSE,NA,10603
+looks like an eye but there is a lone line pointing straight up that kind of looks like a magcians wand it kind of looks like a insect or fish clawing at something or fishes don√™t do that kind of looks like a fish with a line pointing up kind of looks like a wand,31,describer,1,FALSE,NA,10603
 kind of looks like a dreamcatcher but has two horns,31,describer,1,FALSE,NA,10604
 the rhino,31,describer,1,FALSE,NA,10605
 looks like a turtle,31,describer,1,FALSE,NA,10606
@@ -10679,7 +10679,7 @@ the blob looking thing,32,describer,1,FALSE,NA,10677
 "like two, it looks like its a trapizoid",32,describer,1,FALSE,NA,10678
 two half circles that are stripped,32,describer,1,FALSE,NA,10679
 an arrow thing with an x in the left side of it,32,describer,1,FALSE,NA,10680
-looks like an incomplete like flag Like someone didnêt finish drawing it,32,describer,1,FALSE,NA,10681
+looks like an incomplete like flag Like someone didn√™t finish drawing it,32,describer,1,FALSE,NA,10681
 like someone opening their mouth Its like a half circle that goes like,32,describer,1,FALSE,NA,10682
 "looks like the letter d but with stuff coming out of it, or a line coming out of it",32,describer,1,FALSE,NA,10683
 like a v on top of an o,32,describer,1,FALSE,NA,10684
@@ -10824,7 +10824,7 @@ a super stylized rectangle except it is missing a part from the left from the up
 "symmetrical like vertically again, and it is solid black, and it has like wings",34,describer,1,FALSE,NA,10823
 dark black it there is a stylized X over the top hand circle So,34,describer,1,FALSE,NA,10824
 "looks like, it is symmetric dow- it is symmetric vertically, and it has a a lot of a it looks it is light gray it has a lot of dots taken out of it and it is strewn around the outside",34,describer,1,FALSE,NA,10825
-"looks like a, it almost looks like a really oddly shaped it looks, the the right hadn side of it looks like it like a gooseês mouth like a birdês head pad, and it has like shading, and it goes from the right to the left",34,describer,1,FALSE,NA,10826
+"looks like a, it almost looks like a really oddly shaped it looks, the the right hadn side of it looks like it like a goose√™s mouth like a bird√™s head pad, and it has like shading, and it goes from the right to the left",34,describer,1,FALSE,NA,10826
 "a hollow infinity sign connected to a, really stylized M",34,describer,1,FALSE,NA,10827
 the handcuffs,34,describer,1,FALSE,NA,10828
 a diagnol line with three horizontal lines,34,describer,1,FALSE,NA,10829
@@ -10871,7 +10871,7 @@ a whale breaching the water it looks like the underside of the whales like mouth
 "looks like a hexigonal pipe, and it has two holes, or I suppose four holes",34,describer,1,FALSE,NA,10870
 the two infinity signs,34,describer,1,FALSE,NA,10871
 the honeycomb,34,describer,1,FALSE,NA,10872
-"the upper left hand corner itês, so theres a circle and it looks like a circuit that is disconnected going through the center vertically So it is a light grey circle, then theres a veritcal line that has a top",34,describer,1,FALSE,NA,10873
+"the upper left hand corner it√™s, so theres a circle and it looks like a circuit that is disconnected going through the center vertically So it is a light grey circle, then theres a veritcal line that has a top",34,describer,1,FALSE,NA,10873
 "another upsidedown semicircle, however it has a line on the outside",34,describer,1,FALSE,NA,10874
 the wheel,34,describer,1,FALSE,NA,10875
 looks like a bunch of needles radiating out from the center,34,describer,1,FALSE,NA,10876
@@ -10933,16 +10933,16 @@ like a little like zipper squiggly and then it has like an X,35,describer,1,FALS
 like three pieces but it looks like a person like with its leg extended and it arm kind of moving it is like three pieces like it is not all together,35,describer,1,FALSE,NA,10932
 not like a star but like a little like four sided figure,35,describer,1,FALSE,NA,10933
 looks like it is definitely plants it is not the flower one it is like looks like,35,describer,1,FALSE,NA,10934
-kind of looks like a canopy thing and it has like it is like dark like strip and it is like all gray strips and then there is like another dark one and then a light one and then a dark one again Like the top part of it looks like if you were like an aerial view over thatês what it would look like,35,describer,1,FALSE,NA,10935
+kind of looks like a canopy thing and it has like it is like dark like strip and it is like all gray strips and then there is like another dark one and then a light one and then a dark one again Like the top part of it looks like if you were like an aerial view over that√™s what it would look like,35,describer,1,FALSE,NA,10935
 kind of looks like part of like a feather duster sort of thing,35,describer,1,FALSE,NA,10936
 looks like the moon like craters or something,35,describer,1,FALSE,NA,10937
 looks like a ball and it is animated and then like it has like a huge oval in the middle of it it is gray,35,describer,1,FALSE,NA,10938
 kind of looks like maybe like an old-fashioned like radio or like wi-fi box,35,describer,1,FALSE,NA,10939
 like little it is like flowers,35,describer,1,FALSE,NA,10940
-kind of looks like a music note And then the third oneês the one that looks like a music note,35,describer,1,FALSE,NA,10941
+kind of looks like a music note And then the third one√™s the one that looks like a music note,35,describer,1,FALSE,NA,10941
 has like several things it kind of almost looks like a pi sign like in math but it has like all triangle like in a halo of a circle,35,describer,1,FALSE,NA,10942
 looks like there is a donut in the middle and then there is like 6 going out from like all 4 sides,35,describer,1,FALSE,NA,10943
-kind of looks like it could be like a handheld mirror but it is like pointy like where youêd hold it sort of thing and it has like a dot in the middle like a dark-filled dot,35,describer,1,FALSE,NA,10944
+kind of looks like it could be like a handheld mirror but it is like pointy like where you√™d hold it sort of thing and it has like a dot in the middle like a dark-filled dot,35,describer,1,FALSE,NA,10944
 a semicircle it has little squiggles like three little squiggles,35,describer,1,FALSE,NA,10945
 has like two parts like or it is not two parts but it looks like a circle with like space in the middle and then it looks like it has a drop like a big drop going through the top into the middle,35,describer,1,FALSE,NA,10946
 looks like a backwards tepee or like triangle with like the lines like crossed over at the end,35,describer,1,FALSE,NA,10947
@@ -11123,7 +11123,7 @@ looks like almost looks like the Pepsi symbol it is like two half circles and th
 looks like three disks with a needle sticking through,37,describer,1,FALSE,NA,11122
 looks like a sunset,37,describer,1,FALSE,NA,11123
 looks like a palm tree,37,describer,1,FALSE,NA,11124
-kind of looks like a personês face,37,describer,1,FALSE,NA,11125
+kind of looks like a person√™s face,37,describer,1,FALSE,NA,11125
 "looks like, kind of like three trees maybe, there is definitely three figures in it",37,describer,1,FALSE,NA,11126
 "looks like, just a bunch of it is like one large one long connected line but they are like it looks almost like a, like a tangled knot in a way",37,describer,1,FALSE,NA,11127
 kind of looks like a sun sticking out of something one is a circle with three sticks sticking out of that,37,describer,1,FALSE,NA,11128
@@ -11170,7 +11170,7 @@ looks like a kind of a key type thing,38,describer,1,FALSE,NA,11168
 looks like some hash tag like a vertical equal sign squiggly ones,38,describer,1,FALSE,NA,11169
 an X and like a few little mountains coming off of left side of it,38,describer,1,FALSE,NA,11170
 looks like coral,38,describer,1,FALSE,NA,11171
-"looks like the Iron Man symbol should be the only one that looks like a person it has like a, it is gray it has it doesnêt really look like a person, Upside down Nike symbol is the bottom it has like a little head",38,describer,1,FALSE,NA,11172
+"looks like the Iron Man symbol should be the only one that looks like a person it has like a, it is gray it has it doesn√™t really look like a person, Upside down Nike symbol is the bottom it has like a little head",38,describer,1,FALSE,NA,11172
 a diamond inside of like a firey looking thing,38,describer,1,FALSE,NA,11173
 bamboo,38,describer,1,FALSE,NA,11174
 "looks like it could be a knee brace, in a way",38,describer,1,FALSE,NA,11175
@@ -11261,7 +11261,7 @@ looks like a computer,39,describer,1,FALSE,NA,11259
 a flower of sorts it is got like a stem and a bunch of things radiating out from the top of the stem eight,39,describer,1,FALSE,NA,11260
 a pendulumum hanging from a curvy stick,39,describer,1,FALSE,NA,11261
 the zodiac signs it is got like a little triangle on the bottom left,39,describer,1,FALSE,NA,11262
-two concentric circles with with rectangles coming out weêll call that like a captainês wheel,39,describer,1,FALSE,NA,11263
+two concentric circles with with rectangles coming out we√™ll call that like a captain√™s wheel,39,describer,1,FALSE,NA,11263
 looks like a crown on it pointing top right,39,describer,1,FALSE,NA,11264
 a semicircle with some coils coming out,39,describer,1,FALSE,NA,11265
 a Pokeball looks like it is kind of like that with a spike coming out of the center,39,describer,1,FALSE,NA,11266
@@ -11269,7 +11269,7 @@ an upside down triangle,39,describer,1,FALSE,NA,11267
 looks kind of like a muscle cross section maybe,39,describer,1,FALSE,NA,11268
 bunch of melting sticks kind of,39,describer,1,FALSE,NA,11269
 an elbow looking tube an elbow tube,39,describer,1,FALSE,NA,11270
-a side ways 8 in the right in the top right and a side ways 8 in the bottom left of this square weêll call them figure eights,39,describer,1,FALSE,NA,11271
+a side ways 8 in the right in the top right and a side ways 8 in the bottom left of this square we√™ll call them figure eights,39,describer,1,FALSE,NA,11271
 honeycomb,39,describer,1,FALSE,NA,11272
 a circle with a bar going through it but it is broken,39,describer,1,FALSE,NA,11273
 a semicircle with a stick coming out of the right,39,describer,1,FALSE,NA,11274
@@ -11285,12 +11285,12 @@ a sun above some clouds some tapering clouds it keeps alternating the,39,describ
 a tree it is got a it has a bunch of thin and thick brush strokes,39,describer,1,FALSE,NA,11284
 a it is kind of like an arrow pointing downward but it is rounded it is wide and rounded,39,describer,1,FALSE,NA,11285
 black and white mushrooms,39,describer,1,FALSE,NA,11286
-"one big interconnected item that has a bunch of tapering and widening ends and it forms a bunch of triangles thatês a weird one the continuous triangle, maybe bird beak the bird beak",39,describer,1,FALSE,NA,11287
+"one big interconnected item that has a bunch of tapering and widening ends and it forms a bunch of triangles that√™s a weird one the continuous triangle, maybe bird beak the bird beak",39,describer,1,FALSE,NA,11287
 like a weird black shape with a triangle cutout of it and like a sun peaking out of the right,39,describer,1,FALSE,NA,11288
 a heart shape and some poke and some dots on the top part,39,describer,1,FALSE,NA,11289
 wind with some black dots,39,describer,1,FALSE,NA,11290
 a person but with like an arrow pointing downwards and it is got like three orbs hanging above his head,39,describer,1,FALSE,NA,11291
-like wavy S its varying shades of grey yup thatês it for the middle,39,describer,1,FALSE,NA,11292
+like wavy S its varying shades of grey yup that√™s it for the middle,39,describer,1,FALSE,NA,11292
 two cursive L's,40,describer,1,FALSE,NA,11293
 two pareall lines,40,describer,1,FALSE,NA,11294
 a T with a half circle and a triangle a T one it is side its all black,40,describer,1,FALSE,NA,11295
@@ -11371,7 +11371,7 @@ a bunch of dots on the top right it is you know which one,40,describer,1,FALSE,N
 four squiggly lines two dots,40,describer,1,FALSE,NA,11370
 the stick figure man with like a white circle on his chest,40,describer,1,FALSE,NA,11371
 looks like toothpaste it is like a blob with like bubbles in it what else shaving cream it has like a point coming out on the right side or like ice cream it looks like an ice cream cone It has three circles in it within it the first one's the light gray one,40,describer,1,FALSE,NA,11372
-like two cursive eês,41,describer,1,FALSE,NA,11373
+like two cursive e√™s,41,describer,1,FALSE,NA,11373
 "like two lines, like just like two squiggles, black",41,describer,1,FALSE,NA,11374
 "a half circle, and then a t on its side, and then a triangle, all black, and then kind of a v on a side [like a circle] and then a t kind of on its side its below the half circle so like white in between and then like a right triangle",41,describer,1,FALSE,NA,11375
 like the letter R or H on the side kind of if you rotated it to the left 90 degrees,41,describer,1,FALSE,NA,11376
@@ -11451,7 +11451,7 @@ looks like a heart and its got dots along the edge,41,describer,1,FALSE,NA,11449
 the two ovals its like four swiggle lines and two dots,41,describer,1,FALSE,NA,11450
 "three trees there is three dots, four dots and then a point a solid kind of looks like a person",41,describer,1,FALSE,NA,11451
 two gray ovals in a rectangle,41,describer,1,FALSE,NA,11452
-looks like two cursive Lês put together like two like loops put together,42,describer,1,FALSE,NA,11453
+looks like two cursive L√™s put together like two like loops put together,42,describer,1,FALSE,NA,11453
 looks like an equal sign with like the two lines,42,describer,1,FALSE,NA,11454
 a half of a circle and then it looks like a long like letter T under that and then there,42,describer,1,FALSE,NA,11455
 the letter C and then a line under it,42,describer,1,FALSE,NA,11456
@@ -11472,14 +11472,14 @@ a bunch of boxes stacked on top of each other like a squares,42,describer,1,FALS
 the triangles in a row,42,describer,1,FALSE,NA,11471
 looks like it is like it is really detailed it has like all these things on it it almost looks like it could be like some kind of the end of there is like point there is point there is like sticks coming,42,describer,1,FALSE,NA,11472
 a little darkly shaded ball and then it is laying it is like resting on top of another thing,42,describer,1,FALSE,NA,11473
-looks like a bugês antennas it is like two lines and,42,describer,1,FALSE,NA,11474
+looks like a bug√™s antennas it is like two lines and,42,describer,1,FALSE,NA,11474
 like it is like half of it is a rectangle but then it kind ofloops out the other side,42,describer,1,FALSE,NA,11475
 looks like a a tree on the top with three branches and then a line and then another thing at the bottom,42,describer,1,FALSE,NA,11476
 looks like it could be the figure of a face and it is kind of darkly shaded,42,describer,1,FALSE,NA,11477
-looks like a like a super hero symbol so it is like two it looks like two like dês,42,describer,1,FALSE,NA,11478
+looks like a like a super hero symbol so it is like two it looks like two like d√™s,42,describer,1,FALSE,NA,11478
 "a big box but it is not square and it is white on the inside but then it has two like, things in it",42,describer,1,FALSE,NA,11479
 an arrow pointing to the le-left but it has an X end of the box,42,describer,1,FALSE,NA,11480
-and then row three Iêll just skip the first one because I have no idea how to describe it,42,describer,1,FALSE,NA,11481
+and then row three I√™ll just skip the first one because I have no idea how to describe it,42,describer,1,FALSE,NA,11481
 looks like it is like a smiley face but then it has like a half circle on top of that,42,describer,1,FALSE,NA,11482
 darkly shaded and then it almost looks like the letter D and then there is like a line coming out of the letter D,42,describer,1,FALSE,NA,11483
 a bottom circle with two horns in it and then two more lines coming out of that circle did,42,describer,1,FALSE,NA,11484
@@ -11534,7 +11534,7 @@ looks like it would be bubbley it looks like it could be a cloud or something th
 A pretzel,43,describer,1,FALSE,NA,11533
 A squiggly equal sign,43,describer,1,FALSE,NA,11534
 the top is a black semicircle followed by a nail going from left to right going into it followed by a black triangle followed by a black swoosh the sideways nail,43,describer,1,FALSE,NA,11535
-Someone turning the page of a book so it makes almost like a _c” on a flat line,43,describer,1,FALSE,NA,11536
+Someone turning the page of a book so it makes almost like a _c‚Äù on a flat line,43,describer,1,FALSE,NA,11536
 looks like a pair of lips and then many circles coming out of it to the right,43,describer,1,FALSE,NA,11537
 A weird statue or bench that looks almost like an animal,43,describer,1,FALSE,NA,11538
 A paw print in a circle,43,describer,1,FALSE,NA,11539
@@ -11542,21 +11542,21 @@ A cookie,43,describer,1,FALSE,NA,11540
 An extremely fancy E that is turned to face left instead of right,43,describer,1,FALSE,NA,11541
 A fancy vine,43,describer,1,FALSE,NA,11542
 A dive bombing stealth plane,43,describer,1,FALSE,NA,11543
-A magnifying glass with a cursive _x” over the top,43,describer,1,FALSE,NA,11544
+A magnifying glass with a cursive _x‚Äù over the top,43,describer,1,FALSE,NA,11544
 A pile of crumbs,43,describer,1,FALSE,NA,11545
 what looks like a used napkin,43,describer,1,FALSE,NA,11546
 A flying angel with very long pig tails and a rope pulling up an 8,43,describer,1,FALSE,NA,11547
 A monocle,43,describer,1,FALSE,NA,11548
 a cross with a squiggly at the bottom cross,43,describer,1,FALSE,NA,11549
 the bunch of building blocks that look like theyre falling down But they are falling,43,describer,1,FALSE,NA,11550
-Bunch of Aês in a row 4 Aês in a row,43,describer,1,FALSE,NA,11551
+Bunch of A√™s in a row 4 A√™s in a row,43,describer,1,FALSE,NA,11551
 "Like a religious or an Aztec symbol Pretty detailed Its got spikes coming out of every direction its semicircle, the bottom half of a semicircle with spikes coming out of every end",43,describer,1,FALSE,NA,11552
 A swoosh Like a tilted J with a ball resting in the bottom left corner,43,describer,1,FALSE,NA,11553
 Looks sort of like a V Like two flowers that make a V Or maybe like two little antennae,43,describer,1,FALSE,NA,11554
 Dead in the middle is like a rectangle with rounded bottom left edge,43,describer,1,FALSE,NA,11555
 "imagine a rake with the rake end up, a flat line under it and then sort of just almost like a crown underneath and there are three completely separate things they are all drawn in really low detail lines kind of like a crown just something with 4 bumps on top",43,describer,1,FALSE,NA,11556
 Looks like a face but its all gray,43,describer,1,FALSE,NA,11557
-Two jewels that look like Dês,43,describer,1,FALSE,NA,11558
+Two jewels that look like D√™s,43,describer,1,FALSE,NA,11558
 Looks like a chalk board with an equation written on it And its got a chunk taken out of it on the left Not an equation but like a weird graph,43,describer,1,FALSE,NA,11559
 Popsicle pointing left and with an X by the tip,43,describer,1,FALSE,NA,11560
 the one that just goes nuts It looks like someone is just bending a line of sheet music,43,describer,1,FALSE,NA,11561
@@ -11709,10 +11709,10 @@ on the top of it is like a 3D W and then towards the bottom there is a line conn
 a ring and then off to the left there is a trail of more smaller rings,45,describer,1,FALSE,NA,11708
 a poll and a 45 degree angle with 3 bars going through it,45,describer,1,FALSE,NA,11709
 the stacked squares,45,describer,1,FALSE,NA,11710
-looks like 4 tens 4 TPês um and then,45,describer,1,FALSE,NA,11711
+looks like 4 tens 4 TP√™s um and then,45,describer,1,FALSE,NA,11711
 looks like it could be like wings or something like an insect,45,describer,1,FALSE,NA,11712
 the letter J with a circle at the end a dot,45,describer,1,FALSE,NA,11713
-a V with like the antenaês,45,describer,1,FALSE,NA,11714
+a V with like the antena√™s,45,describer,1,FALSE,NA,11714
 looks like the edge of a counter or a table it is a square then on the bottom there is a curve,45,describer,1,FALSE,NA,11715
 a metal a poll on top of a fench With a a line going a line between the poll and the fench like the brick or whatever and then the stacked squares,45,describer,1,FALSE,NA,11716
 a potato,45,describer,1,FALSE,NA,11717
@@ -12028,17 +12028,17 @@ looks like a rolled up napkin like a squished napkin,49,describer,1,FALSE,NA,120
 looks like there is an 8 down on the left side and then it is connected to a rope of some sort to this black shape,49,describer,1,FALSE,NA,12027
 looks like a monocle,49,describer,1,FALSE,NA,12028
 "looks kind of like a telephone pole, it has three lines intersecting it, but the bottom one is different than the top two",49,describer,1,FALSE,NA,12029
-A stack of blocks that is about to fall over but the last oneês light gray yeah,49,describer,1,FALSE,NA,12030
+A stack of blocks that is about to fall over but the last one√™s light gray yeah,49,describer,1,FALSE,NA,12030
 "looks like four triangles stuck together, in a row",49,describer,1,FALSE,NA,12031
 a spikey upside down semicircle,49,describer,1,FALSE,NA,12032
 "Looks like a ball coming down a hall, its like a darker gray ball coming down a curve",49,describer,1,FALSE,NA,12033
 Looks like two antenna,49,describer,1,FALSE,NA,12034
-the top of a piano if youêre looking down at it,49,describer,1,FALSE,NA,12035
-"Looks kind of like an upside down person, like an upside down stick figure almost, with a weird weird, shape like a _w” for a head",49,describer,1,FALSE,NA,12036
+the top of a piano if you√™re looking down at it,49,describer,1,FALSE,NA,12035
+"Looks kind of like an upside down person, like an upside down stick figure almost, with a weird weird, shape like a _w‚Äù for a head",49,describer,1,FALSE,NA,12036
 look like slenderma,49,describer,1,FALSE,NA,12037
-a fast forward button like two triangles but the one of themês,49,describer,1,FALSE,NA,12038
+a fast forward button like two triangles but the one of them√™s,49,describer,1,FALSE,NA,12038
 "a table with legs, but it is laying on it is side, maybe even like a step stool laying on it is side, there is a weird, two semicircles in the middle but they are not connected, well I mean they are like side by side, like there is top semicircle and then there is nothing below it and then a bottom semicircle there is nothing above it",49,describer,1,FALSE,NA,12039
-"a firecracker, it is like a sideways polygon of some sort with an _x”",49,describer,1,FALSE,NA,12040
+"a firecracker, it is like a sideways polygon of some sort with an _x‚Äù",49,describer,1,FALSE,NA,12040
 "all gray, has a bunch of lines going to the right, then like a ships mast on an angle like the most possible ever",49,describer,1,FALSE,NA,12041
 "Looks like an eye, but it is looking down and you can only see the bottom part of the eye, like you have the white part and then there is like a gray iris like an eyeball",49,describer,1,FALSE,NA,12042
 "Some weird straw looking thing, it is like one line, um, it is all gray, but on the far right top of it there is [yeI got it] okay",49,describer,1,FALSE,NA,12043
@@ -12048,18 +12048,18 @@ A nice little cute bug it has two hug it is a cute bug,49,describer,1,FALSE,NA,1
 "Looks like it is like a cube and it is surrounded by 2 circles, it is like a cube connected by 4 lines in the middle, its it is like suspended in the air with some other some geometric shape",49,describer,1,FALSE,NA,12047
 "Looks like two instruments, or tools, tools, tools it is like pliers",49,describer,1,FALSE,NA,12048
 Just two zigzags,49,describer,1,FALSE,NA,12049
-"like an _x” and like down into the left of the _x” is a bunch of mountains, or side waves, or heart beats",49,describer,1,FALSE,NA,12050
+"like an _x‚Äù and like down into the left of the _x‚Äù is a bunch of mountains, or side waves, or heart beats",49,describer,1,FALSE,NA,12050
 "looks like a bunch of octopus legs sticking out of a rock, it is like it is really detailed like a sea urchin or a sea anenimy",49,describer,1,FALSE,NA,12051
 "a running person, like it looks like the Olympic symbol",49,describer,1,FALSE,NA,12052
 "a sun with a 4 pointed star in the middle, phew",49,describer,1,FALSE,NA,12053
 looks like a bamboo patch,49,describer,1,FALSE,NA,12054
 "a stripd object what to call it just different shades of gray, fifty shades of gray",49,describer,1,FALSE,NA,12055
-"kind of looks like a sea anenimy, it is very detailed, very thin lines that are like hair, it looks like hair just without the personês head underneath",49,describer,1,FALSE,NA,12056
+"kind of looks like a sea anenimy, it is very detailed, very thin lines that are like hair, it looks like hair just without the person√™s head underneath",49,describer,1,FALSE,NA,12056
 "looks kind of like the moon, has a bunch of craters on top of it and then it is darker gray underneath or on the bottom of it, it is kind of like a pokeball in some sort",49,describer,1,FALSE,NA,12057
 "Kind of like a basketball looking thing, but its like an oval, and then, like a globe, it is a globe, with lines of latitude",49,describer,1,FALSE,NA,12058
 "looks like a tape recorder, it is like a box, kind of like a clip art drawing 3 dimensional",49,describer,1,FALSE,NA,12059
 "Kind of like a dandelion, it looks like a flower but instead of petals it like spreads out with more flowers",49,describer,1,FALSE,NA,12060
-"like the hangmanês like if youêre playing hangman, like you have the ball at the bottom and",49,describer,1,FALSE,NA,12061
+"like the hangman√™s like if you√™re playing hangman, like you have the ball at the bottom and",49,describer,1,FALSE,NA,12061
 "the pi symbol, it looks like pi, like 314, like a really weird version of that",49,describer,1,FALSE,NA,12062
 a doughnut with four sticks going into it,49,describer,1,FALSE,NA,12063
 "the eyeball with the eyelashes coming out of it, its like it is a really tiny dot in a big white circle, in the right the top right there is like a curly lines and then a spike, the eye with the eye lashes",49,describer,1,FALSE,NA,12064
@@ -12067,10 +12067,10 @@ a doughnut with four sticks going into it,49,describer,1,FALSE,NA,12063
 "Looks like a gage of some sort, its has it is like a circle like a ticker or",49,describer,1,FALSE,NA,12066
 the upside down triangle,49,describer,1,FALSE,NA,12067
 Looks like an opened up pickle,49,describer,1,FALSE,NA,12068
-"a bunch of, upside down _v”s coming out, they kind of like weird French fries almost, pff kind of but at the same time its not, theres like hm its like one _v” on the left like a distinct upside down _v” and then to the right of that you have a bunch of like interconnected lines",49,describer,1,FALSE,NA,12069
+"a bunch of, upside down _v‚Äùs coming out, they kind of like weird French fries almost, pff kind of but at the same time its not, theres like hm its like one _v‚Äù on the left like a distinct upside down _v‚Äù and then to the right of that you have a bunch of like interconnected lines",49,describer,1,FALSE,NA,12069
 a macaroni pipe,49,describer,1,FALSE,NA,12070
 Two sets of eyes,49,describer,1,FALSE,NA,12071
-"a honeycomb, like the inside of a beeês hive",49,describer,1,FALSE,NA,12072
+"a honeycomb, like the inside of a bee√™s hive",49,describer,1,FALSE,NA,12072
 "a circle and it only has one line, there is two lines intersecting it from the top and bottom just like one line on top one line on bottom and in the middle it is like, like a box, like an unfinished box, and there is a little eye ball down at the bottom, kind of like an electrode, pokemon, kind of",49,describer,1,FALSE,NA,12073
 "a semicircle, just one, and it has a line coming out of the right side, it is like an observatory",49,describer,1,FALSE,NA,12074
 the wheel or like the pie chart,49,describer,1,FALSE,NA,12075
@@ -12200,8 +12200,8 @@ kind of like two trapezoids piled on top of each other with a little indent on o
 looks like a trapezoid a sideways trapezoid with two like little legs sticking out on the left side and it is like a a white area with like a twisting DNA-looking thing in the middle it is the only solid white area like,51,describer,1,FALSE,NA,12199
 a little tab with an X on it,51,describer,1,FALSE,NA,12200
 looks like it could be a net with some sort of tool sticking out of it Yeit is the only thing that looks like a net,51,describer,1,FALSE,NA,12201
-a right side up V shape or U shape with another U shape over it but it is upside down it could be the bottom of someoneês face the beard or,51,describer,1,FALSE,NA,12202
-made of lines and it looks like one of them is a handle of a tool or something like it could be or those two are kind of similar in describing it is the one that does not have like knobs This oneês harder it looks like it could be almost like a Nike symbol shape but then with something sticking out of it,51,describer,1,FALSE,NA,12203
+a right side up V shape or U shape with another U shape over it but it is upside down it could be the bottom of someone√™s face the beard or,51,describer,1,FALSE,NA,12202
+made of lines and it looks like one of them is a handle of a tool or something like it could be or those two are kind of similar in describing it is the one that does not have like knobs This one√™s harder it looks like it could be almost like a Nike symbol shape but then with something sticking out of it,51,describer,1,FALSE,NA,12203
 looks like it could be like a face with antlers and like devil horns,51,describer,1,FALSE,NA,12204
 looks like a hairy rhinocerous,51,describer,1,FALSE,NA,12205
 cute little bug with stripes and big eyes and the bug,51,describer,1,FALSE,NA,12206
@@ -12279,7 +12279,7 @@ kind of like a face shape but without the face features,52,describer,1,FALSE,NA,
 two identical shapes put togather and they are sort of like two two trapezoids kind of on their sides,52,describer,1,FALSE,NA,12278
 looks like there is a striped circle cut in half and then they are moved to,52,describer,1,FALSE,NA,12279
 an arrow with an x in it,52,describer,1,FALSE,NA,12280
-more faint than the other shapes and doesnêt really look like a real shape there is a bunch of like curved horizontal lines,52,describer,1,FALSE,NA,12281
+more faint than the other shapes and doesn√™t really look like a real shape there is a bunch of like curved horizontal lines,52,describer,1,FALSE,NA,12281
 looks like kind of like a rising sun type of shape so there is like a half circle and then a smaller upside down half circle in it,52,describer,1,FALSE,NA,12282
 sort of like if you had a v and you turned it to the left and there is a line kind of going through the middle yeah,52,describer,1,FALSE,NA,12283
 a circle with some horns on it,52,describer,1,FALSE,NA,12284
@@ -12306,12 +12306,12 @@ the circle with the dot in the center,52,describer,1,FALSE,NA,12304
 a half circle with three squiggly lines in it maybe like half of a baseball or something,52,describer,1,FALSE,NA,12305
 looks like two halves of a circle that are almost joined together but there is some white space,52,describer,1,FALSE,NA,12306
 an upside down triangle,52,describer,1,FALSE,NA,12307
-kind of looks like a cap and then itês,52,describer,1,FALSE,NA,12308
+kind of looks like a cap and then it√™s,52,describer,1,FALSE,NA,12308
 a bunch of very odd shapes,52,describer,1,FALSE,NA,12309
 looks like a like an l pipe,52,describer,1,FALSE,NA,12310
 two pairs of ovals that are like touching each other they look like eyes if you filled in the pupils,52,describer,1,FALSE,NA,12311
 kind of looks like a honeycomb,52,describer,1,FALSE,NA,12312
-"looks like there is a circle and there is a vertical line going through it but it looks like the lineês been broken kind of, and there is like a small dot in the bottom right corner of the circle",52,describer,1,FALSE,NA,12313
+"looks like there is a circle and there is a vertical line going through it but it looks like the line√™s been broken kind of, and there is like a small dot in the bottom right corner of the circle",52,describer,1,FALSE,NA,12313
 a half circle with just a small line coming out of it,52,describer,1,FALSE,NA,12314
 looks like a basketball with a circle with lines running through it,52,describer,1,FALSE,NA,12315
 looks kind of like a sea urchin with a bunch of spikes coming out,52,describer,1,FALSE,NA,12316
@@ -12821,7 +12821,7 @@ a rectangle with a swoosh underneath of it that is shaded the whole things shade
 a line with some squigglies underneath it and on top of it like half of a stick person if that description works,59,describer,1,FALSE,NA,12820
 like a circular blob that is shaded and outlined,59,describer,1,FALSE,NA,12821
 two arrows almost that are shaded darker on the outside,59,describer,1,FALSE,NA,12822
-the like box with the sine graph in it directly to the right of it like youêre reading a book the box with it is like a line and then two semicircles with different shadings,59,describer,1,FALSE,NA,12823
+the like box with the sine graph in it directly to the right of it like you√™re reading a book the box with it is like a line and then two semicircles with different shadings,59,describer,1,FALSE,NA,12823
 an arrow with an X pointing to the left,59,describer,1,FALSE,NA,12824
 a bunch of lines,59,describer,1,FALSE,NA,12825
 a large semicircle with a shaded area on top of it,59,describer,1,FALSE,NA,12826
@@ -13463,7 +13463,7 @@ the blob,32,describer,1,FALSE,NA,13461
 the trapizoid ones,32,describer,1,FALSE,NA,13462
 the two half circles are stripped,32,describer,1,FALSE,NA,13463
 the arrow with the x on the left side,32,describer,1,FALSE,NA,13464
-the one with all those lines that didnêt,32,describer,1,FALSE,NA,13465
+the one with all those lines that didn√™t,32,describer,1,FALSE,NA,13465
 the two half circles,32,describer,1,FALSE,NA,13466
 looks like it is a d,32,describer,1,FALSE,NA,13467
 the one is the o with the horns coming out of it,32,describer,1,FALSE,NA,13468
@@ -13713,7 +13713,7 @@ looks like the trampoline with the cube in the middle like a little web,35,descr
 Shovel thing,35,describer,1,FALSE,NA,13712
 like the identical zigzags,35,describer,1,FALSE,NA,13713
 like it has like a ton of zigzags and then like an X,35,describer,1,FALSE,NA,13714
-like the octopus spider thatês kind of detailed or it is like a really weird plant,35,describer,1,FALSE,NA,13715
+like the octopus spider that√™s kind of detailed or it is like a really weird plant,35,describer,1,FALSE,NA,13715
 the person,35,describer,1,FALSE,NA,13716
 the one with it like almost star in the middle,35,describer,1,FALSE,NA,13717
 like the seaweed plant,35,describer,1,FALSE,NA,13718
@@ -14045,7 +14045,7 @@ computer,39,describer,1,FALSE,NA,14043
 the flower thing with the eight things protruding out,39,describer,1,FALSE,NA,14044
 the pendulumum hanging,39,describer,1,FALSE,NA,14045
 the pie symbol,39,describer,1,FALSE,NA,14046
-the captainês wheel thing thatês the two concentric circles with the four bars,39,describer,1,FALSE,NA,14047
+the captain√™s wheel thing that√™s the two concentric circles with the four bars,39,describer,1,FALSE,NA,14047
 the circle with the crown,39,describer,1,FALSE,NA,14048
 the semicircle with the coils hanging from the bottom,39,describer,1,FALSE,NA,14049
 the Pokeball,39,describer,1,FALSE,NA,14050
@@ -14155,7 +14155,7 @@ the intricate one it has like dots on the right side,40,describer,1,FALSE,NA,141
 the like four squiggly lines with the two dots,40,describer,1,FALSE,NA,14154
 the stick figure guy with the white on white circle on his chest,40,describer,1,FALSE,NA,14155
 the toothpaste bubbly thing,40,describer,1,FALSE,NA,14156
-those two cursive eês,41,describer,1,FALSE,NA,14157
+those two cursive e√™s,41,describer,1,FALSE,NA,14157
 those two squiggles,41,describer,1,FALSE,NA,14158
 "that half circle, with the t, with the triangle",41,describer,1,FALSE,NA,14159
 like R or H on its side,41,describer,1,FALSE,NA,14160
@@ -14235,7 +14235,7 @@ kind of looks like a heart,41,describer,1,FALSE,NA,14233
 "the four swiggles and two dots, so it is next to it",41,describer,1,FALSE,NA,14234
 "three dots kind of form a triangle, forth bigger dot in the middle then a rectangle and a triangle sticking up of it",41,describer,1,FALSE,NA,14235
 two gray ovals in a rectangle,41,describer,1,FALSE,NA,14236
-the two Lês the cursive whatever the loops,42,describer,1,FALSE,NA,14237
+the two L√™s the cursive whatever the loops,42,describer,1,FALSE,NA,14237
 the equal sign,42,describer,1,FALSE,NA,14238
 a lot of stuff with the half circle the T and the triangle,42,describer,1,FALSE,NA,14239
 the C with the line under it,42,describer,1,FALSE,NA,14240
@@ -14333,7 +14333,7 @@ the pigtail angel dragging the 8,43,describer,1,FALSE,NA,14331
 the monocle,43,describer,1,FALSE,NA,14332
 the triple cross,43,describer,1,FALSE,NA,14333
 Falling building blocks,43,describer,1,FALSE,NA,14334
-the four Aês,43,describer,1,FALSE,NA,14335
+the four A√™s,43,describer,1,FALSE,NA,14335
 the spiky religious symbol,43,describer,1,FALSE,NA,14336
 the J swoosh with the ball,43,describer,1,FALSE,NA,14337
 the antennae,43,describer,1,FALSE,NA,14338
@@ -14475,7 +14475,7 @@ the one that looks like a snake with the dots,44,describer,1,FALSE,NA,14473
 looks like a river,44,describer,1,FALSE,NA,14474
 the one with the three circles on top of the head and the T is like the body is like a spiked T,44,describer,1,FALSE,NA,14475
 gray overlapping one and it has three gray things in the middle and it looks like a tail at the end or like a beak,44,describer,1,FALSE,NA,14476
-the cursive Lês,45,describer,1,FALSE,NA,14477
+the cursive L√™s,45,describer,1,FALSE,NA,14477
 the equals sign,45,describer,1,FALSE,NA,14478
 the half circle with a sideways T in the triangle,45,describer,1,FALSE,NA,14479
 the c with a line underneath it,45,describer,1,FALSE,NA,14480
@@ -14722,7 +14722,7 @@ the ovals,48,describer,1,FALSE,NA,14720
 bench,48,describer,1,FALSE,NA,14721
 "the paw, or not paw, trail",48,describer,1,FALSE,NA,14722
 Cookie that is like a bunch of like chocolate chips,48,describer,1,FALSE,NA,14723
-I don't know what that isó yesure,48,describer,1,FALSE,NA,14724
+I don't know what that is√≥ yesure,48,describer,1,FALSE,NA,14724
 ribbons,48,describer,1,FALSE,NA,14725
 batman,48,describer,1,FALSE,NA,14726
 two loops with a x over it,48,describer,1,FALSE,NA,14727
@@ -14817,11 +14817,11 @@ the four triangles all in a row,49,describer,1,FALSE,NA,14814
 "the ball coming down the curve, it is at the very bottom",49,describer,1,FALSE,NA,14816
 "the two antenna, or two dandelions",49,describer,1,FALSE,NA,14817
 "the upside down, or the top down view of a piano",49,describer,1,FALSE,NA,14818
-the upside down person with the _W” for a head,49,describer,1,FALSE,NA,14819
+the upside down person with the _W‚Äù for a head,49,describer,1,FALSE,NA,14819
 slenderman,49,describer,1,FALSE,NA,14820
 the fast forward looking one,49,describer,1,FALSE,NA,14821
 the sideways table with the two striped semicircles,49,describer,1,FALSE,NA,14822
-the firecracker with a _x” on it,49,describer,1,FALSE,NA,14823
+the firecracker with a _x‚Äù on it,49,describer,1,FALSE,NA,14823
 "the weird lines ones, with the most lines possible ever",49,describer,1,FALSE,NA,14824
 the upside down eyeball,49,describer,1,FALSE,NA,14825
 "the weird bird, straw looking thing",49,describer,1,FALSE,NA,14826
@@ -14831,18 +14831,18 @@ the rhino,49,describer,1,FALSE,NA,14828
 the cubes suspended inside the other abstract objects,49,describer,1,FALSE,NA,14830
 "those instruments, the tools crisscross tools",49,describer,1,FALSE,NA,14831
 the two zigzags,49,describer,1,FALSE,NA,14832
-"the _x” with the heart beats, or sound waves, or mountains to the side of it",49,describer,1,FALSE,NA,14833
+"the _x‚Äù with the heart beats, or sound waves, or mountains to the side of it",49,describer,1,FALSE,NA,14833
 the sea anenimy or coral or octopus legs coming out of the rock,49,describer,1,FALSE,NA,14834
 the running Olympic man,49,describer,1,FALSE,NA,14835
 the sun,49,describer,1,FALSE,NA,14836
 the patch of bamboo,49,describer,1,FALSE,NA,14837
 "the 50 shades of grey lines, just grey lines",49,describer,1,FALSE,NA,14838
-"Hair, the hair, the personês head just without the head",49,describer,1,FALSE,NA,14839
+"Hair, the hair, the person√™s head just without the head",49,describer,1,FALSE,NA,14839
 "the moon cut in half, whatever that could even just be a crater itself",49,describer,1,FALSE,NA,14840
 the globe with lines of latitude,49,describer,1,FALSE,NA,14841
 the tape recorder,49,describer,1,FALSE,NA,14842
 the flower and instead of petals it has more flowers,49,describer,1,FALSE,NA,14843
-"the hangmanês nuhs almost like its like a circle, even like like on a clock, like the pendulumon a clock even as a bottom",49,describer,1,FALSE,NA,14844
+"the hangman√™s nuhs almost like its like a circle, even like like on a clock, like the pendulumon a clock even as a bottom",49,describer,1,FALSE,NA,14844
 the abstract pi,49,describer,1,FALSE,NA,14845
 the doughnut with the the 4 sticks coming into it or the kind of like,49,describer,1,FALSE,NA,14846
 the eyelashed eye,49,describer,1,FALSE,NA,14847
@@ -14850,7 +14850,7 @@ the eyelashed eye,49,describer,1,FALSE,NA,14847
 "the gage, the gage yeits like dark gray and a black circle",49,describer,1,FALSE,NA,14849
 the upside down triangle,49,describer,1,FALSE,NA,14850
 the opened up pickle,49,describer,1,FALSE,NA,14851
-the _v” with a weird conglomeration with other _v”s,49,describer,1,FALSE,NA,14852
+the _v‚Äù with a weird conglomeration with other _v‚Äùs,49,describer,1,FALSE,NA,14852
 the macaroni pipe,49,describer,1,FALSE,NA,14853
 Two sets of eyes,49,describer,1,FALSE,NA,14854
 the honeycomb,49,describer,1,FALSE,NA,14855
@@ -15011,7 +15011,7 @@ the circle with the cone in the middle with it is broken up,51,describer,1,FALSE
 the bottom one is upside down triangle with the tip that extends,51,describer,1,FALSE,NA,15010
 the corn husk,51,describer,1,FALSE,NA,15011
 the fries,51,describer,1,FALSE,NA,15012
-(?) I think they didnêt describe it,51,describer,1,FALSE,NA,15013
+(?) I think they didn√™t describe it,51,describer,1,FALSE,NA,15013
 the pair of like circles two circles next to each other and then another set of circles,51,describer,1,FALSE,NA,15014
 the honeycomb wasp nest beehive,51,describer,1,FALSE,NA,15015
 the circle with a little ball inside of it and two from the top and the bottom,51,describer,1,FALSE,NA,15016
@@ -15072,7 +15072,7 @@ the square with like the curved tubes around it,52,describer,1,FALSE,NA,15070
 the two tools One of them looks kind of like a hammer,52,describer,1,FALSE,NA,15071
 the two identical squiggly lines,52,describer,1,FALSE,NA,15072
 the x,52,describer,1,FALSE,NA,15073
-the one we didnêt get with the,52,describer,1,FALSE,NA,15074
+the one we didn√™t get with the,52,describer,1,FALSE,NA,15074
 the shape of the person that is running,52,describer,1,FALSE,NA,15075
 the star with the circles around it,52,describer,1,FALSE,NA,15076
 the one that looks like corn stalks,52,describer,1,FALSE,NA,15077
@@ -16391,7 +16391,7 @@ the like the m the stylized vines,34,describer,1,FALSE,NA,16389
 the wings,34,describer,1,FALSE,NA,16390
 the two circles connected by a bar with the X,34,describer,1,FALSE,NA,16391
 the like the h light gray with the bubbles that are strewn around,34,describer,1,FALSE,NA,16392
-looks like a gun stock on left and a gooseês head on the right,34,describer,1,FALSE,NA,16393
+looks like a gun stock on left and a goose√™s head on the right,34,describer,1,FALSE,NA,16393
 the vertical infinity sign connected to the M,34,describer,1,FALSE,NA,16394
 the handcuff,34,describer,1,FALSE,NA,16395
 the diagnol bar with three,34,describer,1,FALSE,NA,16396
@@ -16665,7 +16665,7 @@ the moon,37,describer,1,FALSE,NA,16663
 the sphere,37,describer,1,FALSE,NA,16664
 the desktop computer,37,describer,1,FALSE,NA,16665
 the dandelions,37,describer,1,FALSE,NA,16666
-the circle on the bottom thatês a gamma,37,describer,1,FALSE,NA,16667
+the circle on the bottom that√™s a gamma,37,describer,1,FALSE,NA,16667
 the triangle on the bottom,37,describer,1,FALSE,NA,16668
 the circle with two lines on each side,37,describer,1,FALSE,NA,16669
 the full circle with something coming out of the top right,37,describer,1,FALSE,NA,16670
@@ -16826,7 +16826,7 @@ the computer from the right,39,describer,1,FALSE,NA,16824
 the flower,39,describer,1,FALSE,NA,16825
 the hanging pendulumum,39,describer,1,FALSE,NA,16826
 the pi symbol,39,describer,1,FALSE,NA,16827
-the captainês wheel cross thing,39,describer,1,FALSE,NA,16828
+the captain√™s wheel cross thing,39,describer,1,FALSE,NA,16828
 the circle with a crown,39,describer,1,FALSE,NA,16829
 the semicircle with coils,39,describer,1,FALSE,NA,16830
 the Pokeball,39,describer,1,FALSE,NA,16831
@@ -16936,7 +16936,7 @@ the intricate one with all the lines and dots and stuff,40,describer,1,FALSE,NA,
 the four squiggles and two dots,40,describer,1,FALSE,NA,16935
 the stick figure with the dot on his chest,40,describer,1,FALSE,NA,16936
 the toothpaste with the bubbles and the,40,describer,1,FALSE,NA,16937
-those two cursive eês,41,describer,1,FALSE,NA,16938
+those two cursive e√™s,41,describer,1,FALSE,NA,16938
 those two squiggles,41,describer,1,FALSE,NA,16939
 "the half circle with the t, with the triangle",41,describer,1,FALSE,NA,16940
 the R or H kind of on it is side,41,describer,1,FALSE,NA,16941
@@ -17016,7 +17016,7 @@ the heart,41,describer,1,FALSE,NA,17014
 four swiggles and the two dots,41,describer,1,FALSE,NA,17015
 kind of person,41,describer,1,FALSE,NA,17016
 the gray Blob oval blobs,41,describer,1,FALSE,NA,17017
-the two Lês cursive Lês,42,describer,1,FALSE,NA,17018
+the two L√™s cursive L√™s,42,describer,1,FALSE,NA,17018
 the equal sign,42,describer,1,FALSE,NA,17019
 the one with a lot of stuff with the circle the T and the triangle,42,describer,1,FALSE,NA,17020
 the C with the line under it,42,describer,1,FALSE,NA,17021
@@ -17071,7 +17071,7 @@ the half a circle with the squiggles,42,describer,1,FALSE,NA,17069
 the pokemon ball,42,describer,1,FALSE,NA,17070
 the upside down triangle,42,describer,1,FALSE,NA,17071
 the corn,42,describer,1,FALSE,NA,17072
-That thing I canêt describe like lines,42,describer,1,FALSE,NA,17073
+That thing I can√™t describe like lines,42,describer,1,FALSE,NA,17073
 the inhaler,42,describer,1,FALSE,NA,17074
 the pairs of eyes,42,describer,1,FALSE,NA,17075
 the thing you can put your fingers through it,42,describer,1,FALSE,NA,17076
@@ -17113,7 +17113,7 @@ Pigtail angel,43,describer,1,FALSE,NA,17111
 A monocle,43,describer,1,FALSE,NA,17112
 the triple cross,43,describer,1,FALSE,NA,17113
 the tumbling blocks,43,describer,1,FALSE,NA,17114
-Four Aês,43,describer,1,FALSE,NA,17115
+Four A√™s,43,describer,1,FALSE,NA,17115
 the spiky religious symbol,43,describer,1,FALSE,NA,17116
 the J swoosh with the ball,43,describer,1,FALSE,NA,17117
 the antennae,43,describer,1,FALSE,NA,17118
@@ -17598,11 +17598,11 @@ the four triangles in a row,49,describer,1,FALSE,NA,17595
 the ball that rolled down the hill,49,describer,1,FALSE,NA,17597
 the two dandelions or antenna,49,describer,1,FALSE,NA,17598
 "a piano, the top down view",49,describer,1,FALSE,NA,17599
-the upside down person with a _w” for a head,49,describer,1,FALSE,NA,17600
+the upside down person with a _w‚Äù for a head,49,describer,1,FALSE,NA,17600
 slenderman,49,describer,1,FALSE,NA,17601
 the fast forward button,49,describer,1,FALSE,NA,17602
 the sideways table with the striped semicircles,49,describer,1,FALSE,NA,17603
-the firecracker with the _x” in it,49,describer,1,FALSE,NA,17604
+the firecracker with the _x‚Äù in it,49,describer,1,FALSE,NA,17604
 the ship sail or mast the lined one,49,describer,1,FALSE,NA,17605
 the upside down eyeball,49,describer,1,FALSE,NA,17606
 "the weird straw, bird looking thing, kind of like the Hollister logo but",49,describer,1,FALSE,NA,17607
@@ -17612,7 +17612,7 @@ the cute bug again,49,describer,1,FALSE,NA,17610
 "the cube suspended inside the other shape, the geometric object",49,describer,1,FALSE,NA,17611
 the crisscross tools,49,describer,1,FALSE,NA,17612
 the two zigzags,49,describer,1,FALSE,NA,17613
-the _x” with the heart beat or mountains to the side of it,49,describer,1,FALSE,NA,17614
+the _x‚Äù with the heart beat or mountains to the side of it,49,describer,1,FALSE,NA,17614
 the sea anenimy or octopus legs coming out of the rock,49,describer,1,FALSE,NA,17615
 the Olympic running man,49,describer,1,FALSE,NA,17616
 the sun with the 4 pointed star,49,describer,1,FALSE,NA,17617
@@ -19279,7 +19279,7 @@ the octopus spider thing,35,describer,1,FALSE,NA,19277
 the person,35,describer,1,FALSE,NA,19278
 the one with the non-star thing in the middle and then the circles and then the fire thing in the back,35,describer,1,FALSE,NA,19279
 the seaweed plant,35,describer,1,FALSE,NA,19280
-And then the last oneês the canopy one,35,describer,1,FALSE,NA,19281
+And then the last one√™s the canopy one,35,describer,1,FALSE,NA,19281
 the feather head thing,35,describer,1,FALSE,NA,19282
 the moon,35,describer,1,FALSE,NA,19283
 the ball with the oval,35,describer,1,FALSE,NA,19284
@@ -19743,7 +19743,7 @@ the rectangle with the curved bottom,41,describer,1,FALSE,NA,19741
 the fork,41,describer,1,FALSE,NA,19742
 "the gray blob, kind of like the potato",41,describer,1,FALSE,NA,19743
 the two trapezoids stuck together,41,describer,1,FALSE,NA,19744
-the circle with the stripes thatês split up,41,describer,1,FALSE,NA,19745
+the circle with the stripes that√™s split up,41,describer,1,FALSE,NA,19745
 the dynamite with the x,41,describer,1,FALSE,NA,19746
 the grid,41,describer,1,FALSE,NA,19747
 the eye,41,describer,1,FALSE,NA,19748
@@ -19797,7 +19797,7 @@ a heart,41,describer,1,FALSE,NA,19795
 the four swiggle and two dots,41,describer,1,FALSE,NA,19796
 a person with the three dots,41,describer,1,FALSE,NA,19797
 circle with a gray circle with a smaller gray circle in a white,41,describer,1,FALSE,NA,19798
-the two Lês,42,describer,1,FALSE,NA,19799
+the two L√™s,42,describer,1,FALSE,NA,19799
 the equal sign,42,describer,1,FALSE,NA,19800
 the one with the lot the half circle the T and the triangle,42,describer,1,FALSE,NA,19801
 the C with the line under it,42,describer,1,FALSE,NA,19802
@@ -19825,7 +19825,7 @@ the face,42,describer,1,FALSE,NA,19823
 the super hero,42,describer,1,FALSE,NA,19824
 that box with the two half circles in it,42,describer,1,FALSE,NA,19825
 the arrow going to the left with the X in it,42,describer,1,FALSE,NA,19826
-the one we just did I canêt I donêt know how to describe it,42,describer,1,FALSE,NA,19827
+the one we just did I can√™t I don√™t know how to describe it,42,describer,1,FALSE,NA,19827
 the smiley face with the half circle over it,42,describer,1,FALSE,NA,19828
 the that letter D with the thing coming out of it,42,describer,1,FALSE,NA,19829
 that bottom circle with the horns and then those two things coming out of it,42,describer,1,FALSE,NA,19830
@@ -19853,7 +19853,7 @@ the half circle with the squiggles,42,describer,1,FALSE,NA,19851
 the pokemon ball,42,describer,1,FALSE,NA,19852
 upside down triangle,42,describer,1,FALSE,NA,19853
 the corn,42,describer,1,FALSE,NA,19854
-the thing I canêt describe,42,describer,1,FALSE,NA,19855
+the thing I can√™t describe,42,describer,1,FALSE,NA,19855
 the inhaler,42,describer,1,FALSE,NA,19856
 the pairs of eyes,42,describer,1,FALSE,NA,19857
 the one where you can put your fingers through it,42,describer,1,FALSE,NA,19858
@@ -19895,7 +19895,7 @@ pigtail angel,43,describer,1,FALSE,NA,19893
 the monocle,43,describer,1,FALSE,NA,19894
 triple cross,43,describer,1,FALSE,NA,19895
 tumbling blocks,43,describer,1,FALSE,NA,19896
-4 Aês,43,describer,1,FALSE,NA,19897
+4 A√™s,43,describer,1,FALSE,NA,19897
 the spiky religious symbol,43,describer,1,FALSE,NA,19898
 the j with the ball,43,describer,1,FALSE,NA,19899
 the antennae,43,describer,1,FALSE,NA,19900
@@ -20357,10 +20357,10 @@ cobra,48,describer,1,FALSE,NA,20355
 wind,48,describer,1,FALSE,NA,20356
 the bloach,48,describer,1,FALSE,NA,20357
 the smoke cloud,48,describer,1,FALSE,NA,20358
-the double cursive _L”s,49,describer,1,FALSE,NA,20359
+the double cursive _L‚Äùs,49,describer,1,FALSE,NA,20359
 the approximation sign,49,describer,1,FALSE,NA,20360
-the sunset with the sideways _t”,49,describer,1,FALSE,NA,20361
-the backwards 2 slash upside down _j”,49,describer,1,FALSE,NA,20362
+the sunset with the sideways _t‚Äù,49,describer,1,FALSE,NA,20361
+the backwards 2 slash upside down _j‚Äù,49,describer,1,FALSE,NA,20362
 the mouth with the three dots,49,describer,1,FALSE,NA,20363
 "three dimensional horse, bird, duck, thing",49,describer,1,FALSE,NA,20364
 the paw print,49,describer,1,FALSE,NA,20365
@@ -20380,11 +20380,11 @@ the four triangles,49,describer,1,FALSE,NA,20377
 the ball that rolled down the hill,49,describer,1,FALSE,NA,20379
 two antenna slash dandelions,49,describer,1,FALSE,NA,20380
 the piano looking,49,describer,1,FALSE,NA,20381
-the upside down person with a _w” for a face,49,describer,1,FALSE,NA,20382
+the upside down person with a _w‚Äù for a face,49,describer,1,FALSE,NA,20382
 slenderman,49,describer,1,FALSE,NA,20383
 the fast forward button,49,describer,1,FALSE,NA,20384
 sideways table with the two striped semicircles,49,describer,1,FALSE,NA,20385
-the firecracker with an _x” in it,49,describer,1,FALSE,NA,20386
+the firecracker with an _x‚Äù in it,49,describer,1,FALSE,NA,20386
 the ship sail or with a bunch of lines,49,describer,1,FALSE,NA,20387
 the upside down eyeball,49,describer,1,FALSE,NA,20388
 "the weird straw, Hollister looking, bird thing",49,describer,1,FALSE,NA,20389
@@ -20394,7 +20394,7 @@ the rhino,49,describer,1,FALSE,NA,20391
 the cube with the suspended into the shape,49,describer,1,FALSE,NA,20393
 "the crisscross tools, like the pliars and the, maybe even a ring stand",49,describer,1,FALSE,NA,20394
 two zigzag lines,49,describer,1,FALSE,NA,20395
-"_x” with the mountains, heart beats, waves of some sort",49,describer,1,FALSE,NA,20396
+"_x‚Äù with the mountains, heart beats, waves of some sort",49,describer,1,FALSE,NA,20396
 the octopus legs or sea anenimy protruding from the rock,49,describer,1,FALSE,NA,20397
 the olympic running man,49,describer,1,FALSE,NA,20398
 the sun with the 4 pointed star in the middle,49,describer,1,FALSE,NA,20399
@@ -21849,7 +21849,7 @@ like a music note with a colored bottom,38,describer,1,FALSE,NA,21846
 like a bullseye type looking thing,38,describer,1,FALSE,NA,21848
 a circle with a dot in the middle and something going to the upper right,38,describer,1,FALSE,NA,21849
 the half circles with the squiggly lines coming down,38,describer,1,FALSE,NA,21850
-a full circle thatês cut in half but the bottom half is darker than the top,38,describer,1,FALSE,NA,21851
+a full circle that√™s cut in half but the bottom half is darker than the top,38,describer,1,FALSE,NA,21851
 an upside down triangle,38,describer,1,FALSE,NA,21852
 looks like something peeled open,38,describer,1,FALSE,NA,21853
 "looks like a painted portrait of some sort, and then theres an upside down V on the left side of it",38,describer,1,FALSE,NA,21854
@@ -21858,7 +21858,7 @@ the 2 infinity signs,38,describer,1,FALSE,NA,21856
 a honeycomb,38,describer,1,FALSE,NA,21857
 a circle with a dot in the middle and something going to the upper right,38,describer,1,FALSE,NA,21858
 a half circle with a line going on the ride side the line is going on the upper corner,38,describer,1,FALSE,NA,21859
-the circle thatês cut into 8s,38,describer,1,FALSE,NA,21860
+the circle that√™s cut into 8s,38,describer,1,FALSE,NA,21860
 something spiky,38,describer,1,FALSE,NA,21861
 "the pendulm like one with a s with a curly stick, a pendulum hanging from a curly stick",39,describer,1,FALSE,NA,21862
 the zodiac like sign the one that looks kind of like a screwed up pi symbol,39,describer,1,FALSE,NA,21863
@@ -22629,7 +22629,7 @@ the spikey shape a bunch of spikes,62,describer,1,FALSE,NA,22627
 a vertical line with a dark grey-grey shaded circle and then a a curved line on top,63,describer,1,FALSE,NA,22628
 an image of kind of looks like a fancy pi symbol it is a vertical line with a triangle and then next to it is a curved line and then on top is a curved line,63,describer,1,FALSE,NA,22629
 a circle within a circle and then there are lines coming out of four sides,63,describer,1,FALSE,NA,22630
-a circle with a dot in the center and thereês kind of a crown looking image attached to the right side,63,describer,1,FALSE,NA,22631
+a circle with a dot in the center and there√™s kind of a crown looking image attached to the right side,63,describer,1,FALSE,NA,22631
 "a open semicircle with three squiggles coming out of it, a half circle and its got squiggles coming out of it",63,describer,1,FALSE,NA,22632
 a circle cut in half that the bottom half is black and the top half is grey and then there is like a pointed image inside it,63,describer,1,FALSE,NA,22633
 a triangle that is like upside down. kind of looks like an upside down teepee,63,describer,1,FALSE,NA,22634
@@ -22644,7 +22644,7 @@ the image of a wheel it looks like a wheel it is a circle and its got a bunch of
 looks like a bunch of spikes,63,describer,1,FALSE,NA,22643
 the five circles that kind of look like they are dripping. It is like a black image,63,describer,1,FALSE,NA,22644
 a circle that looks like the pepsi symbol. Its got grey inside,63,describer,1,FALSE,NA,22645
-"kind of looks like two umbrellas, oneês upside down with like an intricate drawing inside",63,describer,1,FALSE,NA,22646
+"kind of looks like two umbrellas, one√™s upside down with like an intricate drawing inside",63,describer,1,FALSE,NA,22646
 two ovals with like a face in them,63,describer,1,FALSE,NA,22647
 two grey rectangles with a circle in the middle,63,describer,1,FALSE,NA,22648
 a pointed line with three curved horizontal lines going through it,63,describer,1,FALSE,NA,22649
@@ -24865,7 +24865,7 @@ the pizza,62,describer,1,FALSE,NA,24863
 the spikes,62,describer,1,FALSE,NA,24864
 the dark grey circle and then the squiggle line on top,63,describer,1,FALSE,NA,24865
 the fancy looking pi symbol with the three lines,63,describer,1,FALSE,NA,24866
-the image of the circle within a circle and then the four lines itês technically eight looks like four no the circle within the circle,63,describer,1,FALSE,NA,24867
+the image of the circle within a circle and then the four lines it√™s technically eight looks like four no the circle within the circle,63,describer,1,FALSE,NA,24867
 the circle with the dot in the center and the crown on top,63,describer,1,FALSE,NA,24868
 the open semicircle image with the three squiggles,63,describer,1,FALSE,NA,24869
 the cut in half circle with the black bottom and grey top and the point in the middle,63,describer,1,FALSE,NA,24870
@@ -26029,10 +26029,10 @@ the fish in the net,29,describer,1,FALSE,NA,26027
 the smilely face,29,describer,1,FALSE,NA,26028
 the sigunture D,29,describer,1,FALSE,NA,26029
 the doubled doubled horns,29,describer,1,FALSE,NA,26030
-"kind of looks like a coat rack to me so it has itês angled to the left and it has three horizontal spokes almost, the coat rack",30,describer,1,FALSE,NA,26031
-"five building blocks, vertical, but theyêre like not balanced properly",30,describer,1,FALSE,NA,26032
+"kind of looks like a coat rack to me so it has it√™s angled to the left and it has three horizontal spokes almost, the coat rack",30,describer,1,FALSE,NA,26031
+"five building blocks, vertical, but they√™re like not balanced properly",30,describer,1,FALSE,NA,26032
 four triangles arranged horizontally,30,describer,1,FALSE,NA,26033
-looks like the outline of somebodyês face. Just a grey blob with a dark edge,30,describer,1,FALSE,NA,26034
+looks like the outline of somebody√™s face. Just a grey blob with a dark edge,30,describer,1,FALSE,NA,26034
 a Nike swoosh and put it on its side and then there is a ball at the bottom of it,30,describer,1,FALSE,NA,26035
 looks like a V and at the top it has two balls attached to it a V and at the top it has two balls attached to it,30,describer,1,FALSE,NA,26036
 looks like the top view a piano it looks like a rectangle and then there is a curve on the bottom,30,describer,1,FALSE,NA,26037
@@ -26040,7 +26040,7 @@ looks like a Y at the top and then it has a horizontal line and then it has what
 looks like the top view a piano it looks like a rectangle and then there is a curve on the bottom,30,describer,1,FALSE,NA,26039
 looks like a V and at the top it has two balls attached to it,30,describer,1,FALSE,NA,26040
 a white box with a sine wave in the middle of it,30,describer,1,FALSE,NA,26041
-looks itês a box and it has an X in it,30,describer,1,FALSE,NA,26042
+looks it√™s a box and it has an X in it,30,describer,1,FALSE,NA,26042
 "a really funky looking picture sail boat but on the leftmost side of the picture it is a vertical line and then it has five horizontal lines coming to the right of it. And then in the background it kind of looks like a sailboat, a sailboat",30,describer,1,FALSE,NA,26043
 four triangles arranged horizontally,30,describer,1,FALSE,NA,26044
 "looks like a plow like, Jesus fish magnets and then it has a handle coming off to the right, a Nike swoosh and flip it down and then there is a handle coming off to the right like another line coming up and to the right from the front of it and the handle looks slightly lighter gray, the fish",30,describer,1,FALSE,NA,26045
@@ -26223,7 +26223,7 @@ the wheel. It looks like a wheel,41,describer,1,FALSE,NA,26221
 a spiky blob kind of thing,41,describer,1,FALSE,NA,26222
 the T and the circle on the bottom,42,describer,1,FALSE,NA,26223
 looks like a letter T and almost like connected to the number five. It looks like a T 5. and upper right of that figure it looks like a little c,42,describer,1,FALSE,NA,26224
-"the little tiny circle on the bottom right of that circle on the inner part, like a donut. There is like a dot in the middle of it. itês just a little circle on the bottom right and there's the line coming from the top of it and then from the bottom of it",42,describer,1,FALSE,NA,26225
+"the little tiny circle on the bottom right of that circle on the inner part, like a donut. There is like a dot in the middle of it. it√™s just a little circle on the bottom right and there's the line coming from the top of it and then from the bottom of it",42,describer,1,FALSE,NA,26225
 a circle with a black dot in the middle,42,describer,1,FALSE,NA,26226
 a half of circle with three squiggles in it,42,describer,1,FALSE,NA,26227
 "a big circle. it almost like a. it looks like a tear drop looking thing in the middle and it's pointing out. And then the middle has like, it looks like there's a slid on the right on the left side of the circle",42,describer,1,FALSE,NA,26228
@@ -26287,14 +26287,14 @@ looks like a sideways football pointed to the right and then like a handle stick
 the head with a pair of antlers and horns,45,describer,1,FALSE,NA,26286
 "a diagonal line with three lines going through it and the last line has like a loop in it, its grey",46,describer,1,FALSE,NA,26287
 "the five stacked blocks, the five stacked blocks",46,describer,1,FALSE,NA,26288
-"like four upside down vês, or four triangle",46,describer,1,FALSE,NA,26289
+"like four upside down v√™s, or four triangle",46,describer,1,FALSE,NA,26289
 like spikes pointing downwards and and like a semicircle shape,46,describer,1,FALSE,NA,26290
 the checkmark with the ball. like the nike symbol with like the ball inside of it,46,describer,1,FALSE,NA,26291
 a v with two circles on it. the v with the two circles on top,46,describer,1,FALSE,NA,26292
 like a rectangle but the bottom left is like curved outwards,46,describer,1,FALSE,NA,26293
 "a stick with like three prongs and then a horizontal line underneath that sticks and then there is another like figure with like four bumps on top of it underneath that, so it is like three individual or three different pictures one with like a stick pointing vertically with three prongs, a horizontal line underneath, and then a like a structure with like four bumps underneath that. the three or the line with three prongs coming out of it and then a line underneath and then",46,describer,1,FALSE,NA,26294
 looks like a potato,46,describer,1,FALSE,NA,26295
-like two trapezoids connected to each other that look like rocks. theyêre sideways. like two trapezoids with that look like rocks. the two trapezoids that look like rocks,46,describer,1,FALSE,NA,26296
+like two trapezoids connected to each other that look like rocks. they√™re sideways. like two trapezoids with that look like rocks. the two trapezoids that look like rocks,46,describer,1,FALSE,NA,26296
 two striped semicircles inside of like a figure,46,describer,1,FALSE,NA,26297
 "like the arrow with the x inside of it, its pointing to the left. the arrow with the x,",46,describer,1,FALSE,NA,26298
 "like lines going out to the right with like a semicircle connected to one of the lines, its grey, its got like a semicircle connected to a line coming off. like the spikes coming out er the lines going out to the right with like a semicircle connected to one of them",46,describer,1,FALSE,NA,26299
@@ -26308,7 +26308,7 @@ a circle with a small black dot inside of it and what looks like a crown,47,desc
 a half circle with squiggly lines inside of it,47,describer,1,FALSE,NA,26307
 a circle. The top half of the circle is dark grey. The bottom half is black and there is a dark grey water drop it in the middle,47,describer,1,FALSE,NA,26308
 upside down triangle,47,describer,1,FALSE,NA,26309
-"kind of looks like an opened up rib cage. It is quite detailed, like the inside of the rib cage is like dark grey and then the top doesnêt really look like a head it looks more like a nut or something and its lighter grey",47,describer,1,FALSE,NA,26310
+"kind of looks like an opened up rib cage. It is quite detailed, like the inside of the rib cage is like dark grey and then the top doesn√™t really look like a head it looks more like a nut or something and its lighter grey",47,describer,1,FALSE,NA,26310
 kind of looks like paint splatters. Its like kind of abstract white white on the inside and shaded black,47,describer,1,FALSE,NA,26311
 looks like a 90 degree pipe. the pipe,47,describer,1,FALSE,NA,26312
 two pairs of eggs,47,describer,1,FALSE,NA,26313
@@ -26368,7 +26368,7 @@ a hairy rhinoceros,51,describer,1,FALSE,NA,26366
 bug,51,describer,1,FALSE,NA,26367
 a 3-dimensional shape with a three dimensional cube in the center,51,describer,1,FALSE,NA,26368
 a shape that looks like a key or a prong or a person holding a broom,51,describer,1,FALSE,NA,26369
-two vertical squiggly lines that look like bacon or Homer Simpsonês hair or whatever,51,describer,1,FALSE,NA,26370
+two vertical squiggly lines that look like bacon or Homer Simpson√™s hair or whatever,51,describer,1,FALSE,NA,26370
 an x with squiggly lines next to it black lines,51,describer,1,FALSE,NA,26371
 a sea urchin with tentacles,51,describer,1,FALSE,NA,26372
 kind of a human shape made out of nike symbols with a commas at the top,51,describer,1,FALSE,NA,26373
@@ -26596,7 +26596,7 @@ the Nike swoosh on its side with the ball on the bottom,30,describer,1,FALSE,NA,
 the V with the balls on the top,30,describer,1,FALSE,NA,26595
 looks like the top of a piano,30,describer,1,FALSE,NA,26596
 the Y and the horizontal line and the four fingers,30,describer,1,FALSE,NA,26597
-looks like the outline of someoneês face,30,describer,1,FALSE,NA,26598
+looks like the outline of someone√™s face,30,describer,1,FALSE,NA,26598
 two arrows pointing to the right,30,describer,1,FALSE,NA,26599
 the white box with the sine wave in the middle,30,describer,1,FALSE,NA,26600
 looks like it has the box with the X in it,30,describer,1,FALSE,NA,26601
@@ -26798,7 +26798,7 @@ the pizza,42,describer,1,FALSE,NA,26796
 the spiky thing,42,describer,1,FALSE,NA,26797
 the cherry hanging from the branch,43,describer,1,FALSE,NA,26798
 the number fifteen,43,describer,1,FALSE,NA,26799
-the bullês eye with the lines coming out,43,describer,1,FALSE,NA,26800
+the bull√™s eye with the lines coming out,43,describer,1,FALSE,NA,26800
 the eyeball with the spike jutting out the top right,43,describer,1,FALSE,NA,26801
 the planet,43,describer,1,FALSE,NA,26802
 the speedometer,43,describer,1,FALSE,NA,26803
@@ -26927,7 +26927,7 @@ hairy rhinoceros,51,describer,1,FALSE,NA,26925
 the bug,51,describer,1,FALSE,NA,26926
 the 3-dimensional cube like shape,51,describer,1,FALSE,NA,26927
 the guy holding the broom,51,describer,1,FALSE,NA,26928
-the bacon or Homerês hair or squiggly lines,51,describer,1,FALSE,NA,26929
+the bacon or Homer√™s hair or squiggly lines,51,describer,1,FALSE,NA,26929
 the x with the squiggle next to it,51,describer,1,FALSE,NA,26930
 sea urchin,51,describer,1,FALSE,NA,26931
 the nike man,51,describer,1,FALSE,NA,26932
@@ -27120,7 +27120,7 @@ the circle that looks like a pepsi symbol,63,describer,1,FALSE,NA,27118
 the two umbrellas,63,describer,1,FALSE,NA,27119
 the two ovals with the face in it,63,describer,1,FALSE,NA,27120
 the two rectangles with the circle in it,63,describer,1,FALSE,NA,27121
-the line the pointed line with the three curved lines running through it itês a diagonal line,63,describer,1,FALSE,NA,27122
+the line the pointed line with the three curved lines running through it it√™s a diagonal line,63,describer,1,FALSE,NA,27122
 the sun stting on water,63,describer,1,FALSE,NA,27123
 the tree,63,describer,1,FALSE,NA,27124
 a picture of what looks to be a person its dark with white in it,63,describer,1,FALSE,NA,27125
@@ -27155,7 +27155,7 @@ the Nike swoosh with the ball,30,describer,1,FALSE,NA,27153
 the V with the circles on the top,30,describer,1,FALSE,NA,27154
 the top of the piano,30,describer,1,FALSE,NA,27155
 the Y with the horizontal line and the four fingers,30,describer,1,FALSE,NA,27156
-the outline of someoneês face,30,describer,1,FALSE,NA,27157
+the outline of someone√™s face,30,describer,1,FALSE,NA,27157
 the two triangles pointing to the right,30,describer,1,FALSE,NA,27158
 the box with the sine wave in the middle,30,describer,1,FALSE,NA,27159
 the box with the X in it,30,describer,1,FALSE,NA,27160
@@ -27357,7 +27357,7 @@ the pizza,42,describer,1,FALSE,NA,27355
 the spiky thing,42,describer,1,FALSE,NA,27356
 the cherry hanging form the branch,43,describer,1,FALSE,NA,27357
 the number 15,43,describer,1,FALSE,NA,27358
-the bullês eye,43,describer,1,FALSE,NA,27359
+the bull√™s eye,43,describer,1,FALSE,NA,27359
 the eyeball with the spike jutting out the right,43,describer,1,FALSE,NA,27360
 the planet,43,describer,1,FALSE,NA,27361
 the speedometer,43,describer,1,FALSE,NA,27362
@@ -27405,7 +27405,7 @@ sideways football with a handle,45,describer,1,FALSE,NA,27403
 the antlers with the head with the antlers,45,describer,1,FALSE,NA,27404
 the diagonal line with three lines through it,46,describer,1,FALSE,NA,27405
 the five stacked blocks,46,describer,1,FALSE,NA,27406
-the four upside down vês or the triangles,46,describer,1,FALSE,NA,27407
+the four upside down v√™s or the triangles,46,describer,1,FALSE,NA,27407
 the spikes pointing downwards,46,describer,1,FALSE,NA,27408
 the weird nike symbol with the ball,46,describer,1,FALSE,NA,27409
 the v with two circles,46,describer,1,FALSE,NA,27410
@@ -27715,7 +27715,7 @@ the Nike swoosh with the ball,30,describer,1,FALSE,NA,27713
 V with the circles on top,30,describer,1,FALSE,NA,27714
 top of the piano,30,describer,1,FALSE,NA,27715
 the Y with the horizontal line and the four fingers,30,describer,1,FALSE,NA,27716
-the outline of someoneês face,30,describer,1,FALSE,NA,27717
+the outline of someone√™s face,30,describer,1,FALSE,NA,27717
 the two triangles pointing to the right,30,describer,1,FALSE,NA,27718
 the white box with the sine wave,30,describer,1,FALSE,NA,27719
 the box with the X in it,30,describer,1,FALSE,NA,27720
@@ -27917,7 +27917,7 @@ the pizza,42,describer,1,FALSE,NA,27915
 the spiky thing the spiky thing if you grab it,42,describer,1,FALSE,NA,27916
 the cherry,43,describer,1,FALSE,NA,27917
 the number 15,43,describer,1,FALSE,NA,27918
-the bullês eye,43,describer,1,FALSE,NA,27919
+the bull√™s eye,43,describer,1,FALSE,NA,27919
 the eyeball with the spike,43,describer,1,FALSE,NA,27920
 the planet,43,describer,1,FALSE,NA,27921
 the speedometer,43,describer,1,FALSE,NA,27922
@@ -27965,7 +27965,7 @@ sideways football with handle,45,describer,1,FALSE,NA,27963
 a head with antlers,45,describer,1,FALSE,NA,27964
 the diagonal line with three lines through it,46,describer,1,FALSE,NA,27965
 the five stacked blocks,46,describer,1,FALSE,NA,27966
-the upside down vês or the triangle,46,describer,1,FALSE,NA,27967
+the upside down v√™s or the triangle,46,describer,1,FALSE,NA,27967
 spikes pointing downwards,46,describer,1,FALSE,NA,27968
 the weird nike symbol with the ball it in,46,describer,1,FALSE,NA,27969
 the v with two circles on top,46,describer,1,FALSE,NA,27970
@@ -28299,7 +28299,7 @@ the beach ball,29,describer,1,FALSE,NA,28297
 the grey binder,29,describer,1,FALSE,NA,28298
 flowers,29,describer,1,FALSE,NA,28299
 the hangman set up,29,describer,1,FALSE,NA,28300
-the figure that kind of looks like a 15 if you donêt look at it too closey,29,describer,1,FALSE,NA,28301
+the figure that kind of looks like a 15 if you don√™t look at it too closey,29,describer,1,FALSE,NA,28301
 the circle within a circle with eight pegs,29,describer,1,FALSE,NA,28302
 the circle that has a black dot in the middle and has like a crown,29,describer,1,FALSE,NA,28303
 the half circle with streamers,29,describer,1,FALSE,NA,28304
@@ -28356,10 +28356,10 @@ the one that looks like the outline of someones face,30,describer,1,FALSE,NA,283
 four triangles horzontially,30,describer,1,FALSE,NA,28355
 the one its white box with the sine wave in the middle,30,describer,1,FALSE,NA,28356
 the one that has the box with x,30,describer,1,FALSE,NA,28357
-a sail boat but looks on the most left side of the picture itês a vertical line and then has five horzontial lines coming to the right,30,describer,1,FALSE,NA,28358
+a sail boat but looks on the most left side of the picture it√™s a vertical line and then has five horzontial lines coming to the right,30,describer,1,FALSE,NA,28358
 the one that looks like two semicircles they both on top of each other,30,describer,1,FALSE,NA,28359
 looks like the fish but it has a handle coming out on the right,30,describer,1,FALSE,NA,28360
-the one that looks pendant itês the circle with horns and has a V on the top,30,describer,1,FALSE,NA,28361
+the one that looks pendant it√™s the circle with horns and has a V on the top,30,describer,1,FALSE,NA,28361
 the one that looks like the rhino,30,describer,1,FALSE,NA,28362
 the one that looks like a bug,30,describer,1,FALSE,NA,28363
 looks like a cube in another cube,30,describer,1,FALSE,NA,28364
@@ -28378,7 +28378,7 @@ the one that looks like a binder,30,describer,1,FALSE,NA,28376
 the one that looks like a flower,30,describer,1,FALSE,NA,28377
 the one that looks like a ball on a rope,30,describer,1,FALSE,NA,28378
 the one that looks like it has a five in it,30,describer,1,FALSE,NA,28379
-the one that looks like an aztec piece itês a circle in the middle and then is four sets of lines coming on each of the sides,30,describer,1,FALSE,NA,28380
+the one that looks like an aztec piece it√™s a circle in the middle and then is four sets of lines coming on each of the sides,30,describer,1,FALSE,NA,28380
 a circle with a dot in the middle,30,describer,1,FALSE,NA,28381
 the one that looks like a semicircle with squiggles coming down,30,describer,1,FALSE,NA,28382
 the one that looks like a speedometer so it is like two semicircles and a triangle in the middle,30,describer,1,FALSE,NA,28383
@@ -28473,7 +28473,7 @@ the half circle with the line coming out of it,31,describer,1,FALSE,NA,28471
 the pie chart,31,describer,1,FALSE,NA,28472
 the spikey thing,31,describer,1,FALSE,NA,28473
 the cloud,31,describer,1,FALSE,NA,28474
-the thing that kind of looks like a sideways pepsi logo except there is like itês a circle and it has another circle in it,31,describer,1,FALSE,NA,28475
+the thing that kind of looks like a sideways pepsi logo except there is like it√™s a circle and it has another circle in it,31,describer,1,FALSE,NA,28475
 the thing that looks like a face with two rectangles taken out of the sides,31,describer,1,FALSE,NA,28476
 the face,31,describer,1,FALSE,NA,28477
 the abstract camera looking thing it is rectangular or square,31,describer,1,FALSE,NA,28478
@@ -28627,8 +28627,8 @@ the one that kind of looks like a bunch of like flags sort of all together,33,de
 the one that kind of its like looks like a pipe hanging,33,describer,1,FALSE,NA,28626
 the one there is like four circles but they're both in pairs like two,33,describer,1,FALSE,NA,28627
 the one where it kind of looks like a beehive or honeycomb thing,33,describer,1,FALSE,NA,28628
-the one where its a circle and there is a line going vertically through the top but it doesnêt like it cuts off half way,33,describer,1,FALSE,NA,28629
-the one where itês a half circle and there is a little line coming out of it,33,describer,1,FALSE,NA,28630
+the one where its a circle and there is a line going vertically through the top but it doesn√™t like it cuts off half way,33,describer,1,FALSE,NA,28629
+the one where it√™s a half circle and there is a little line coming out of it,33,describer,1,FALSE,NA,28630
 looks like like a basketball or like a pizza kind of like eight pieces,33,describer,1,FALSE,NA,28631
 the one that looks like a sea urchin thing like pointy,33,describer,1,FALSE,NA,28632
 has like three targets on it and there is like black lines coming down from each of them,33,describer,1,FALSE,NA,28633
@@ -28660,7 +28660,7 @@ the stylized vines they use to decoarte old stuff,34,describer,1,FALSE,NA,28658
 the wings it is symmetric down the middle and on both sides it'll go up and then kind of ends in streaks,34,describer,1,FALSE,NA,28659
 what looks like two circles connected by a straight black line and has two X's crossing it It has the X crossing it,34,describer,1,FALSE,NA,28660
 like rain and has a lot of bubbles taken out of it and strewn around the outside of it,34,describer,1,FALSE,NA,28661
-"on the left it has a gunstock, on the very right side of it itês the horizontal shape and on the right of it it kind of looks like a goose's face and on the left it kind of looks like a gunstock",34,describer,1,FALSE,NA,28662
+"on the left it has a gunstock, on the very right side of it it√™s the horizontal shape and on the right of it it kind of looks like a goose's face and on the left it kind of looks like a gunstock",34,describer,1,FALSE,NA,28662
 the shape with the hollow eight that connects to a really weird looking M,34,describer,1,FALSE,NA,28663
 the handcuff,34,describer,1,FALSE,NA,28664
 the diagonal with the three horizontal lines,34,describer,1,FALSE,NA,28665
@@ -29033,7 +29033,7 @@ the one that is an oval with the middle removed and a vertical bar running throu
 the one that looks like a smiley face,38,describer,1,FALSE,NA,29032
 the one that has a vertical rectangle a circle and a vertical rectangle,38,describer,1,FALSE,NA,29033
 the one that looks like it could be have like discs and a line running through it,38,describer,1,FALSE,NA,29034
-the one that looks like itês a sun setting on water,38,describer,1,FALSE,NA,29035
+the one that looks like it√™s a sun setting on water,38,describer,1,FALSE,NA,29035
 the one that looks like a tree,38,describer,1,FALSE,NA,29036
 the one that is symmetrical vertically,38,describer,1,FALSE,NA,29037
 the one that looks like mushrooms three mushrooms,38,describer,1,FALSE,NA,29038
@@ -29149,12 +29149,12 @@ the piano it looks like a piano like the top of a piano,40,describer,1,FALSE,NA,
 the thing that has like it looks like a coat rack on top and then like a line in the middle and like four things on the bottom,40,describer,1,FALSE,NA,29148
 the blob that looks like a head,40,describer,1,FALSE,NA,29149
 the two triangles pointing to the right three dimensional grey with black perimeter,40,describer,1,FALSE,NA,29150
-the thing that has two half circles with stripes itês a big block,40,describer,1,FALSE,NA,29151
+the thing that has two half circles with stripes it√™s a big block,40,describer,1,FALSE,NA,29151
 the thing that looks like a price tag it has an X on it,40,describer,1,FALSE,NA,29152
 the thing that looks like a volleyball net,40,describer,1,FALSE,NA,29153
 the half circles within a half circle its like grey,40,describer,1,FALSE,NA,29154
 looks kind of like a missing football its like a football shape pointing towards the right it has a straw coming out on the right side it looks like,40,describer,1,FALSE,NA,29155
-the thing that looks like a peace sign itês a circle,40,describer,1,FALSE,NA,29156
+the thing that looks like a peace sign it√™s a circle,40,describer,1,FALSE,NA,29156
 the rhino,40,describer,1,FALSE,NA,29157
 the turtle,40,describer,1,FALSE,NA,29158
 the box being pulled at,40,describer,1,FALSE,NA,29159
@@ -30170,7 +30170,7 @@ the seat its like shaded and its like bumps out,53,describer,1,FALSE,NA,30168
 the dog paw,53,describer,1,FALSE,NA,30169
 the shield with the rocks on it,53,describer,1,FALSE,NA,30170
 the vine,53,describer,1,FALSE,NA,30171
-the treble cleft looking thing its like its very curvy and then it goes down and itês a very kind of it,53,describer,1,FALSE,NA,30172
+the treble cleft looking thing its like its very curvy and then it goes down and it√™s a very kind of it,53,describer,1,FALSE,NA,30172
 what looks like it could be the falling bird,53,describer,1,FALSE,NA,30173
 the circle that is attached to another circle with an x through the top circle,53,describer,1,FALSE,NA,30174
 what looks like sand,53,describer,1,FALSE,NA,30175
@@ -31468,7 +31468,7 @@ like a gray blob it kind of looks like theres a fork behind it and theres 3 litt
 looks like a honeycomb,70,describer,1,FALSE,NA,31467
 looks like a circuit that is open so it looks like a circle and then a wire and that little thing is not attaching it or like a little box thing,70,describer,1,FALSE,NA,31468
 a dome with a little line coming out to the right but it is not a circle it is a dome and its gray a dome so it is just a line in the shape of a dome with a little line sticking up to the top right of it it is a half circle and theres a line on top,70,describer,1,FALSE,NA,31469
-looks like a conductor who's lost his leg so he is holding a wand like a baton and he doesnÕt have a leg,70,describer,1,FALSE,NA,31470
+looks like a conductor who's lost his leg so he is holding a wand like a baton and he doesn√ït have a leg,70,describer,1,FALSE,NA,31470
 a spiky sea urchin so it has it is a ball of spikes,70,describer,1,FALSE,NA,31471
 looks like it is oozing slime it has 3 target rings like if you went to the store target,71,describer,1,FALSE,NA,31472
 looks like rocks you suddenly put into water like three circles ripples in the water sort of like four circles coming out at the same time moons cresents,71,describer,1,FALSE,NA,31473
@@ -31577,7 +31577,7 @@ looks like a wooden hat,72,describer,1,FALSE,NA,31575
 looks like it is like a playpen banana type thing with two circles in it on the left side,72,describer,1,FALSE,NA,31576
 looks like on the very top is three dots and it looks like it is making a fist like like making a fist,72,describer,1,FALSE,NA,31577
 looks like the inside of a beehive,72,describer,1,FALSE,NA,31578
-a circle that is not connected by the line the line cuts off into a square not a square like a part of a square a circle and there is a line going through it but the two lines donÕt touch,72,describer,1,FALSE,NA,31579
+a circle that is not connected by the line the line cuts off into a square not a square like a part of a square a circle and there is a line going through it but the two lines don√ït touch,72,describer,1,FALSE,NA,31579
 the semicircle with a line outside of it,72,describer,1,FALSE,NA,31580
 a legless man it is like hangman,72,describer,1,FALSE,NA,31581
 a thousand pikes or spikes not pikes this thing thorns,72,describer,1,FALSE,NA,31582
@@ -31729,7 +31729,7 @@ loops good one loops the black ones white vines and black loops,75,describer,1,F
 two kind of wavy like an equals sign,75,describer,1,FALSE,NA,31728
 like a semicircle like a black semicircle on top,75,describer,1,FALSE,NA,31729
 looks like if you turn your head to the right like an R almost like a weird R now turn your head to the left R slash H,75,describer,1,FALSE,NA,31730
-looks like an oval inside another oval and theyÕve got three circles inside of it it is like all the ovals start from the left side,75,describer,1,FALSE,NA,31731
+looks like an oval inside another oval and they√ïve got three circles inside of it it is like all the ovals start from the left side,75,describer,1,FALSE,NA,31731
 like a swoop to the right it looks like a doodle like it is shaded If you turn your head to the right it is like an H it is got like a triangle on the left side of it,75,describer,1,FALSE,NA,31732
 looks almost like an instrument but not and it is got like 3 circcular things hanging from it almost like a swoop like a cornicopia from thanksgiving,75,describer,1,FALSE,NA,31733
 like a turtle shell with little bumps on it like a little turtle shell,75,describer,1,FALSE,NA,31734
@@ -31845,7 +31845,7 @@ looks like it has like the little on the top right of it and like a piece of met
 looks like there is a line in the middle and theres like shapes coming off of each side kind of looks like a tree shapes on the left side top and bottom just not on the middle,76,describer,1,FALSE,NA,31844
 kind of looks like a sunset and the water circle with like light coming out of it,76,describer,1,FALSE,NA,31845
 the tree looking one,76,describer,1,FALSE,NA,31846
-kind of looked like the head it doesnÕt have like any facial expression feature on it it kind of looks like a head with a top of a body maybe like,76,describer,1,FALSE,NA,31847
+kind of looked like the head it doesn√ït have like any facial expression feature on it it kind of looks like a head with a top of a body maybe like,76,describer,1,FALSE,NA,31847
 looks like a drawing of grass in a way,76,describer,1,FALSE,NA,31848
 kind of its like a bunch of points just mixed up into and jumbled all together,76,describer,1,FALSE,NA,31849
 looks like a giant skeleton rock half of him is a skeleton and half of it is a rock,76,describer,1,FALSE,NA,31850
@@ -32093,7 +32093,7 @@ like a person who is sitting in the center it is kind of like a rose and a hand 
 like very curly pictures they are all black the upper right like something melting like a booger the left most picture kind of looks like an abstract christmas tree the one the black picture in the center has a white circle in the middle,80,describer,1,FALSE,NA,32092
 two circles they are kind of highlighted to make them look 3D and then there is one part of the picture that kind of looks like a squirrels tail it is like that kind of curvy s shape and then there is also a bunch of other kind of ovals in the picture and most of them are like highlighted that white highlight to make it,80,describer,1,FALSE,NA,32093
 kind of like the pepsi symbol if you turned it and there is also a light grey circle in the center,80,describer,1,FALSE,NA,32094
-like an egg shape or an oval and this like sunset shape and a white shape in the center but it doesnÕt go all the way through,80,describer,1,FALSE,NA,32095
+like an egg shape or an oval and this like sunset shape and a white shape in the center but it doesn√ït go all the way through,80,describer,1,FALSE,NA,32095
 like a starburst not like the candy but like a star with a black dot in the middle to the left it is a fourth or a fifth of a circle and then to the right it is just a straight line,80,describer,1,FALSE,NA,32096
 kind of like that black music note from before it has that feel it is crooked there is some curls to it,80,describer,1,FALSE,NA,32097
 kind of like a lady bug,80,describer,1,FALSE,NA,32098
@@ -32516,7 +32516,7 @@ a little rotated nike sign,87,describer,1,FALSE,NA,32514
 looks like a grasshopper iguana cameleon it has a very long front leg,87,describer,1,FALSE,NA,32515
 looks like a top of a piano it has square edges at the top and then it has like this round on the bottom,87,describer,1,FALSE,NA,32516
 like a tree branch and then there is like a fist at the bottom of it,87,describer,1,FALSE,NA,32517
-looks like a face but it it doesnÕt have anything on it,87,describer,1,FALSE,NA,32518
+looks like a face but it it doesn√ït have anything on it,87,describer,1,FALSE,NA,32518
 a very crisp looking picture its like two it looks like puzzles its crisp it looks like steels,87,describer,1,FALSE,NA,32519
 inside of it theres two semicircles split in half stripes,87,describer,1,FALSE,NA,32520
 looks like a price tag with an X on it,87,describer,1,FALSE,NA,32521
@@ -41011,7 +41011,7 @@ stripes on it looks like kind of like the upper thighs and the mid-calf,80,descr
 the picture that looks like hair or dusting instrument,80,describer,1,FALSE,NA,41010
 the picture that looks kind of like a close up of you are under the microscope and then also there is like a cresent moon on the bottom it is like a ciirlce and then there small circles at the bottom of it,80,describer,1,FALSE,NA,41011
 the picture that looks like a sphere there is a circle the outermost circle and then concentric ovals and then there is a kind of in the middle,80,describer,1,FALSE,NA,41012
-the picture that looks like a binder if you donêt see a binder then it kind of looks like a tape recorder,80,describer,1,FALSE,NA,41013
+the picture that looks like a binder if you don√™t see a binder then it kind of looks like a tape recorder,80,describer,1,FALSE,NA,41013
 looks like a black oval in the center and then a smaller white oval in the center of that then to the left it is like a cresent moon and then to the right its like another cresent oval,80,describer,1,FALSE,NA,41014
 the picture that looks like an upside down lollipop and then there is also some squiggles like near the top,80,describer,1,FALSE,NA,41015
 the picture that kind of looks like the pie symbol there is a 5 in there there is a C circle and a triangle,80,describer,1,FALSE,NA,41016
