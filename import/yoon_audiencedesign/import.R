@@ -79,7 +79,7 @@ cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
     stage_num=case_when(
       condition=="2(2K1N)"~ 3,
       gameid=="expt1_group5_images2" ~ 3, # see above for this anomoly,
-      T ~ 3),
+      T ~ 2),
     trial_num=(rep_num-1)*16+presumed_view_order,
     condition=str_c("expt1_",condition, "_match"),
     group_size=4) |> 

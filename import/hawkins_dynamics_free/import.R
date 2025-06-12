@@ -339,3 +339,8 @@ cat("Segmentation completed successfully!\n")
 print(head(result, 24))
 
 # nolint end
+
+source(here("validate.R"))
+test <- read_csv(here("import/hawkins_dynamics_free/segmented_data.csv")) |> 
+  mutate(stage_num=1)
+validate_dataset(test, write=T)
