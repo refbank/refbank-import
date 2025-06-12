@@ -50,3 +50,5 @@ rsconnect/
 
 
 **/.DS_Store
+**/embeddings.csv
+*.zip

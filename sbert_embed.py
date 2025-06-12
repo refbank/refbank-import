@@ -30,7 +30,7 @@ if __name__ == "__main__":
             df_trials = pd.read_csv(os.path.join(DATA_LOC, dir, "trials.csv"))
             df_con = pd.read_csv(os.path.join(DATA_LOC, dir, "conditions.csv"))
             df_out = df_trials.merge(df_con, on="condition_id", how="left") \
-                            .merge(df_msg, on="trial_id", how="left")
+                              .merge(df_msg, on="trial_id", how="left")
             all_msg = pd.concat([all_msg, df_out])
 
     if all_msg.empty:
