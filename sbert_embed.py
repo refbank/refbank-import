@@ -30,7 +30,7 @@ if __name__ == "__main__":
             df_trials = pd.read_csv(os.path.join(DATA_LOC, dir, "trials.csv"))
             df_con = pd.read_csv(os.path.join(DATA_LOC, dir, "conditions.csv"))
             df_out = df_trials.merge(df_con, on="condition_id", how="left") \
-                              .merge(df_msg, on="trial_id", how="left")
+                                .merge(df_msg, on="trial_id", how="left")
             all_msg = pd.concat([all_msg, df_out])
 
     if all_msg.empty:
@@ -49,11 +49,12 @@ if __name__ == "__main__":
     sentences = all_msg_concat['text'].tolist()
     embeddings = model.encode(sentences)
 
-    all_msg_concat["embeddings"] = pd.Series(list(embeddings))
+    embed_df = pd.DataFrame(embeddings, columns=[f"dim_{i+1}" for i in range(embeddings.shape[1])])
+    embed_out = pd.concat([all_msg_concat, embed_df], axis=1)
 
     ### save
     print("Saving embeddings...")
     for dir in sorted(dirs):
-        all_msg_concat[all_msg_concat["paper_id"] == dir].to_csv(os.path.join(DATA_LOC, dir, "embeddings.csv"), index=False)
+        embed_out[embed_out["paper_id"] == dir].to_csv(os.path.join(DATA_LOC, dir, "embeddings.csv"), index=False)
 
 
