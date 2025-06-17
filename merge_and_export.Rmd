@@ -1,0 +1,115 @@
+---
+title: "Merge data and export"
+output:
+  html_document:
+    toc: true
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F)
+library(tidyverse)
+library(here)
+library(ggplot2)
+library(stringi)
+
+theme_set(theme_bw())
+
+source(here("data_helpers.R"))
+DATA_LOC=here("harmonized_data")
+```
+
+Set up the function for getting tables. 
+
+```{r}
+get_tbl <- function(con = DATA_LOC, dataset_name, tbl_name) {
+  # con is fake rn, and takes in the root dir for all datasets
+  if (missing(dataset_name)) {
+    stop("dataset_name must be provided")
+  }
+  if (missing(tbl_name)) {
+    stop("tbl_name must be provided")
+  }
+  
+  file_path <- file.path(con, dataset_name, paste0(tbl_name, ".csv"))
+  if (!file.exists(file_path)) {
+    stop(paste("File does not exist:", file_path))
+  }
+  
+  out <- read_csv(file_path, show_col_types = FALSE)
+  
+  if (tbl_name == "conditions") {
+    out <- out |> 
+      mutate(structure = structure |> 
+               as.character() |> 
+               replace_na("other") |> 
+               factor(levels = c("thin", "medium", "med_thick", "thick", "network-swap", "naive-swap")) |> 
+               fct_drop())
+  }
+  out
+}
+```
+
+
+# Get data
+
+Mark with dataset IDs
+
+```{r, eval=F}
+# options to get trials / choices / messages for all datasets
+dataset_names <- list.dirs(DATA_LOC, full.names = FALSE) |> 
+  stri_remove_empty()
+
+all_messages <- map(dataset_names, \(d) get_messages_full(DATA_LOC, d) |>
+                      mutate(dataset_id = d)) |> 
+  list_rbind() |> 
+  mutate(option_size = option_set |> 
+           str_split(";") |> 
+           lengths()) |> 
+  filter(option_size != 1) |>
+  select(-paper_id)
+
+# put cite information into datasets
+datasets <- tibble(dataset_id = dataset_names) |>
+  left_join(all_messages |>
+              select(dataset_id, full_cite, short_cite) |>
+              distinct()) 
+
+# remove extra information
+all_messages <- select(all_messages, -full_cite, -short_cite)
+
+# now do choices and trials
+all_choices <- map(dataset_names, \(d) get_choices_full(DATA_LOC, d) |>
+                      mutate(dataset_id = d)) |>
+  list_rbind() |> 
+  mutate(option_size = option_set |> 
+           str_split(";") |> 
+           lengths()) |> 
+  filter(option_size != 1) |>
+  select(-paper_id, -full_cite, -short_cite)
+
+all_trials <- map(dataset_names, \(d) get_trials_full(DATA_LOC, d) |>
+                      mutate(dataset_id = d)) |>
+  list_rbind() |> 
+  mutate(option_size = option_set |> 
+           str_split(";") |> 
+           lengths()) |> 
+  filter(option_size != 1) |>
+  select(-paper_id, -full_cite, -short_cite)
+
+```
+
+```{r}
+conditions <- get_tbl(con, dataset_name, "conditions")
+```
+
+
+Write out for redivis with missing for NA to facilitate import. 
+
+```{r}
+write_csv(datasets, here("merged_data", "datasets.csv"), na = "")
+write_csv(all_messages, here("merged_data", "messages.csv"), na = "")
+write_csv(all_choices,  here("merged_data", "choices.csv"), na = "")
+write_csv(all_messages, here("merged_data", "trials.csv"), na = "")
+```
+
