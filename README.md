@@ -16,9 +16,13 @@
 * validate.R has the validate and write function
 * schema.txt has specification for the wide-table format schema
 
-eventually we will also have to find a way to accomodate the target image files and metadata
+eventually we will also have to find a way to accommodate the target image files and metadata
 
 ## Importing
 * start a new import subfolder for your project
 * follow the wide-table schema in schema.txt
 * use a github issue for that dataset to take note on any issues or questions 
+
+## Merging and sharing
+
+`merge_and_export.Rmd` creates both the `export` directory with CSVs and also pushes these to redivis for access by `refbankr`. 

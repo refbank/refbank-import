@@ -12,8 +12,7 @@ library(tidyverse)
 library(here)
 library(ggplot2)
 library(stringi)
-
-theme_set(theme_bw())
+library(redivis)
 
 # source(here("data_helpers.R"))
 DATA_LOC=here("harmonized_data")
@@ -67,7 +66,8 @@ dataset_names <- list.dirs(DATA_LOC, full.names = FALSE) |>
 Messages
 
 ```{r}
-messages <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "messages")) |> 
+messages <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "messages") |>
+                     mutate(dataset_id = d)) |> 
   rename(player_num = player_id)
 ```
 
@@ -77,7 +77,8 @@ Trials
 ```{r}
 trials <-   map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "trials") |> 
                      mutate(target = as.character(target),
-                            matchers = as.character(matchers))) |> 
+                            matchers = as.character(matchers),
+                            dataset_id = d)) |> 
   mutate(option_set = option_set |> 
            str_remove_all("\\[|\\]|\"") |> 
            str_replace_all(",", ";") )
@@ -110,7 +111,8 @@ choices <- map_df(dataset_names, function (d) {
     mutate(player_num = as.numeric(player_num), 
            time_stamp = as.numeric(time_stamp),
            trial_id = as.numeric(trial_id),
-           check_choices = as.numeric(check_choices)) |>
+           check_choices = as.numeric(check_choices), 
+           dataset_id = d) |>
     select(-option_set)
   
   df
@@ -126,5 +128,71 @@ write_csv(messages, here("export", "messages.csv"), na = "")
 write_csv(choices,  here("export", "choices.csv"), na = "")
 write_csv(trials, here("export", "trials.csv"), na = "")
 write_csv(conditions, here("export", "conditions.csv"), na = "")
+```
+
+Now try pushing them directly to redivis. 
+
+```{r}
+# Set up the connection to Redivis
+
+con <- redivis::user("mcfrank")$dataset("refbank")
+
+dataset <- con$create_next_version()
+
+upload <- dataset$table("datasets")$upload()$create(
+  "export/datasets.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+upload <- dataset$table("datasets")$upload()$create(
+  "export/messages.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+upload <- dataset$table("datasets")$upload()$create(
+  "export/choices.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+upload <- dataset$table("datasets")$upload()$create(
+  "export/trials.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+upload <- dataset$table("datasets")$upload()$create(
+  "export/conditions.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+dataset$release()
+
+  # 
+# upload <- table$upload()$create(
+#     "./data.csv",           # Path to file, data.frame, raw vector, etc
+#     type="delimited",       # Inferred from file extension if not provided
+#     remove_on_fail=True,    # Remove the upload if a failure occurs
+#     wait_for_finish=True,   # Wait for the upload to finish processing
+#     raise_on_fail=True      # Raise an error on failure
+# )
 ```
 
