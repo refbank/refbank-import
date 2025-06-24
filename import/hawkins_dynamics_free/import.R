@@ -342,5 +342,5 @@ print(head(result, 24))
 
 source(here("validate.R"))
 test <- read_csv(here("import/hawkins_dynamics_free/segmented_data.csv")) |> 
-  mutate(stage_num=1)
+  mutate(stage_num=1, paper_id="hawkins2020_characterizing_uncued")
 validate_dataset(test, write=T)
