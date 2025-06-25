@@ -128,13 +128,16 @@ options=c("A", "B","C","D","E","F","G","H","I", "J", "K", "L")
 
 all <- choices |> bind_rows(messages) |> 
   left_join(exclude) |> 
-  mutate(paper_id="hawkins2020_characterizing_cued",
+  mutate(dataset_id="hawkins2020_characterizing_cued",
          full_cite="Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",
          short_cite="Hawkins et al. (2020)",
          condition_label="cued",
          structure="thick",
          player_id=str_c(gameid, role), # we know there aren't role switches in this experiment 
          stage_num=1,
+         room_num=1,
+         age=as.numeric(NA), #we may have this?
+         gender=as.character(NA),
          trial_num=trialNum, 
          rep_num=repetitionNum,
          role=case_when(
@@ -152,10 +155,10 @@ all <- choices |> bind_rows(messages) |>
          text=contents,
          choice_id=clickedObj,
         ) |> 
-  select(paper_id, condition_label, full_cite, short_cite,
-         stage_num, 
+  select(dataset_id, condition_label, full_cite, short_cite,
+         stage_num, room_num, 
          language,
-         game_id, player_id, trial_num,rep_num,
+         game_id, player_id, age, gender, trial_num,rep_num,
          role, target, message_number, text,
          choice_id, time_stamp, option_set,
          group_size,

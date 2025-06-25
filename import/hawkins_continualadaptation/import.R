@@ -164,21 +164,24 @@ choices <- combined |> select(
 all <- chat |>
   bind_rows(choices) |>
   mutate(
-    paper_id = "hawkins2019_continual",
+    dataset_id = "hawkins2019_continual",
     full_cite = "Hawkins, R. D., Kwon, M., Sadigh, D., & Goodman, N. D. (2019). Continual adaptation for efficient machine communication. Proceedings of the 24th Conference on Computational Natural Language Learning.",
     short_cite = "Hawkins et al (2019)",
     language = "English",
     trial_num = trialNum + 1,
-    stage_num=1, 
+    stage_num=1,
+    room_num=1,
     rep_num = 1 + repNum,
+    age=as.numeric(NA),
+    gender=as.character(NA),
     time_stamp = as.numeric(NA), # there is some time info in original data but unclear how to map it
     group_size = ifelse(condition=="human-speaker-model-listener", 1, 2), # counting number of actual people? idk
     structure = ifelse(condition=="human-speaker-model-listener", "thin", "medium"),
     ) |>
-  select(paper_id, full_cite, short_cite, language, stage_num, 
+  select(dataset_id, full_cite, short_cite, language, stage_num, 
     condition_label=condition, time_stamp,
-    game_id=gameid,
-    player_id,
+    game_id=gameid, room_num,
+    player_id, age, gender,
     trial_num, rep_num,
     role, target=targetImg,
     action_type, exclude, exclusion_reason,

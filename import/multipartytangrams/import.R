@@ -108,7 +108,7 @@ choices <- combined_results |>
 
 all_data<- choices |> bind_rows(combined_chat) |> 
   left_join(all_include) |> 
-  mutate(paper_id="boyce2024_interaction",
+  mutate(dataset_id="boyce2024_interaction",
          trial_num=trialNum+1,
          rep_num=repNum+1,
          full_cite="Boyce, V., Hawkins, R. D., Goodman, N. D., & Frank, M. C. (2024). Interaction structure constrains the emergence of conventions in group communication. Proceedings of the National Academy of Sciences, 121(28), e2403888121.",
@@ -125,8 +125,11 @@ all_data<- choices |> bind_rows(combined_chat) |>
            condition =="full_feedback" ~ "med_thick",
            condition =="no_rotate" ~ "med_thick"
          ),
+         room_num=1,
          stage_num=1, 
          language="English",
+         age=as.numeric(NA), #TODO
+         gender=as.character(NA), #TODO
          exclude=ifelse(is.na(include),T, NA),
          exclusion_reason=ifelse(exclude, "incomplete block", NA),
          message_irrelevant=(is.chitchat==1),
@@ -136,13 +139,14 @@ all_data<- choices |> bind_rows(combined_chat) |>
   mutate(option_set= options |> str_c(collapse=";") ) |> 
   ungroup() |> 
   select(condition_label=condition,
-         paper_id,
+         dataset_id,
          full_cite, 
          short_cite,
          group_size,
          structure,
          language,
          game_id=gameId,
+         room_num,
          option_set,
          target=tangram,
          stage_num,
@@ -152,6 +156,8 @@ all_data<- choices |> bind_rows(combined_chat) |>
          exclusion_reason,
          action_type,
          player_id=playerId,
+         age,
+         gender,
          role,
          time_stamp,
          text,

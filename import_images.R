@@ -28,7 +28,7 @@ all_images <- all_trials |> select(target, paper_id) |> unique() |>
     target %in% c("A", "B", "C", "D", "E", "F", "G","H", "I", "J", "K", "L") ~ str_c("page-", target),
     paper_id %in% c("eliav2023_semantic") ~  target
   ),
-  file_loc = 
+  image_path = 
     case_when(
       paper_id %in% c("boyce2024_interaction", "eliav2023_semantic",
                       "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",

@@ -37,18 +37,9 @@ get_tbl <- function(con = DATA_LOC, dataset_name, tbl_name) {
   
   out <- read_csv(file_path, show_col_types = FALSE)
   
-  if (tbl_name == "conditions") {
-    out <- out |> 
-      mutate(structure = structure |> 
-               as.character() |> 
-               replace_na("other") |> 
-               factor(levels = c("thin", "medium", "med_thick", "thick", "network-swap", "naive-swap")) |> 
-               fct_drop())
-  }
   out
 }
 ```
-
 
 # Make tables
 
@@ -65,60 +56,148 @@ dataset_names <- list.dirs(DATA_LOC, full.names = FALSE) |>
 
 Messages
 
+Table messages {
+  id integer [primary key]
+  trial_id integer [foreign key trials]
+  player_id integer [foreign key players]
+  role varchar 
+  text string
+  message_number integer
+  message_irrelevant bool
+  time_stamp time
+  dataset_id [foreign key datasets]
+}
+
 ```{r}
 messages <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "messages") |>
-                     mutate(dataset_id = d)) |> 
-  rename(player_num = player_id)
+                     mutate(dataset_id = d))
 ```
 
 
 Trials
 
+Table trials {
+  id integer [primary key]
+  condition_id integer [foreign key conditions]
+  dataset_id [foreign key datasets]
+  game_id varchar
+  room_num varchar
+  option_set list [foreign key images]
+  target integer
+  stage_num integer
+  trial_num integer
+  rep_num integer
+  exclude bool
+  exclusion_reason varchar
+  describer varchar [foreign key players]
+  matchers list [foreign key matchers]
+}
+
 ```{r}
 trials <-   map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "trials") |> 
                      mutate(target = as.character(target),
                             matchers = as.character(matchers),
-                            dataset_id = d)) |> 
-  mutate(option_set = option_set |> 
-           str_remove_all("\\[|\\]|\"") |> 
-           str_replace_all(",", ";") )
+                            dataset_id = d)) #|> 
+ # mutate(option_set = option_set |> 
+  #         str_remove_all("\\[|\\]|\"") |> 
+   #        str_replace_all(",", ";") )
 
 
 ```
 
 Conditions & datasets
 
+
+Table datasets{
+  id integer [primary key]
+  paper_id varchar
+  full_cite varchar
+  short_cite varchar
+}
+
+Table conditions{
+  id integer [primary key]
+  dataset_id integer [foreign key datasets]
+  condition_label varchar (to be removed later?)
+  group_size integer
+  structure varchar
+  language varchar
+  placeholder_features varchar PLACEHOLDER
+}
+
+
 ```{r}
 conditions <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "conditions"))
 
 datasets <- tibble(dataset_id = dataset_names) |>
   left_join(conditions |>
-              select(dataset_id = paper_id, full_cite, short_cite) |>
+              select(dataset_id, full_cite, short_cite) |>
               distinct()) 
 
 conditions <- conditions |>
-  rename(dataset_id = paper_id) |>
-  select(dataset_id, condition_id, condition_label, group_size, structure, language) 
+  select(-full_cite, -short_cite)
 ```
 
 
 Choices
 
+Table choices {
+  id integer [primary key]
+  trial_id integer [foreign key trials]
+  choice integer [foreign key images]
+  player_id integer [foreign key players]
+  time_to_choice time 
+  dataset_id [foreign key datasets]
+}
+
 ```{r}
 choices <- map_df(dataset_names, function (d) {
   df <- get_tbl(DATA_LOC, d, "choices")  |>
-    rename(player_num = player_id) |>
-    mutate(player_num = as.numeric(player_num), 
+    mutate(player_id = as.numeric(player_id), 
            time_stamp = as.numeric(time_stamp),
            trial_id = as.numeric(trial_id),
-           check_choices = as.numeric(check_choices), 
-           dataset_id = d) |>
-    select(-option_set)
+           dataset_id = d) 
   
   df
 }) 
 ```
 
+Players
+
+Table players {
+  id integer [primary key]
+  age integer
+  gender varchar
+  placeholder_demo varchar
+  dataset_id [foreign key datasets]
+}
+
+```{r}
+players <- map_df(dataset_names, function (d) {
+  df <- get_tbl(DATA_LOC, d, "players") |> 
+    mutate(player_id=as.numeric(player_id),
+           dataset_id=d)
+  
+  df
+})
+```
+
+Images (already one table for all images)
+
+Table images {
+  id integer [primary key]
+  kilogram_id varchar
+  image_type varchar
+  image_path varchar
+}
+
+```{r}
+images <- read_csv(here("image_data/image_metadata.csv"))
+```
+
+
+
+# Export
 
 Write out for redivis with missing for NA to facilitate import. 
 

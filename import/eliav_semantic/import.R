@@ -68,10 +68,13 @@ all <- messages_single |>
   bind_rows(choices) |>
   bind_rows(messages_complex) |> 
   mutate(
-    paper_id = "eliav2023_semantic",
+    dataset_id = "eliav2023_semantic",
     full_cite = "Eliav, R., Ji, A., Artzi, Y., & Hawkins, R. D. (2023). Semantic uncertainty guides the extension of conventions to new referents. arXiv preprint arXiv:2305.06539.",
     short_cite = "Eliav et al (2023)",
     language = "English",
+    room_num = 1, # only 1 group / game
+    age = as.numeric(NA), #TODO figure out demog
+    gender = as.character(NA), #TODO figure out demog
     trial_num = trial_index + 1,
     rep_num = 1 + block,
     group_size = 2,
@@ -82,10 +85,10 @@ all <- messages_single |>
     option_set=str_replace_all(context, ".svg", "") |> str_replace_all("', '", ";") |> 
       str_replace_all(fixed("['"),"") |> str_replace_all(fixed("']"),"") |> str_replace_all("page-",""),
     ) |>
-  select(paper_id, full_cite, short_cite, language,
+  select(dataset_id, full_cite, short_cite, language,
     condition_label, time_stamp, stage_num, 
-    game_id,
-    player_id,
+    game_id, room_num, 
+    player_id, age, gender, 
     stage_num, 
     trial_num, rep_num,
     role, target,

@@ -4,7 +4,7 @@ For import should make the following as one dataframe, then pass to the validate
 These are all the columns for the dataframe. Here we're grouping based on what level it should vary with, but the just all go in one dataframe.
 
 (condition-level)
-  - condition_label: a human-understandable name for the condition (to eventually cross-reference with  metadata coding)
+  - condition_label: a human-understandable name for the condition (to eventually cross-reference with metadata coding)
   - paper_id: character, firstauthorlastname+year_firstwordintitle (ex. boyce2024_interaction)
   - full_cite: character, the APA format citation for the source paper
   - short_cite: character, the in-text citation, ex: Boyce et al. (2024)
@@ -14,6 +14,8 @@ These are all the columns for the dataframe. Here we're grouping based on what l
 
 (trial-level)
   - game_id: 
+  - room_id: 
+  - stage_num: 
   - option_set: the set of choices, collapsed into a semicolon separated list, using str_c(choices, collapse=";")
   - target: which the correct target is, should be in option_set
   - trial_num: numeric, starting at 1, continuing to increase over entire experiment 

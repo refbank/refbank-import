@@ -216,7 +216,7 @@ all_3 <- sort_expt3_clean |> bind_rows(cued_expt3)
 #### put everything together
 
 all <- all_1 |> bind_rows(all_2) |> bind_rows(all_3) |> 
-  mutate(paper_id="yoon2019_audience",
+  mutate(dataset_id="yoon2019_audience",
          full_cite="Yoon, S. O., & Brown‐Schmidt, S. (2019). Audience design in multiparty conversation. Cognitive science, 43(8), e12774.",
          short_cite="Yoon & Brown-Schmidt (2019)",
          structure="naive-swap",
@@ -227,15 +227,19 @@ all <- all_1 |> bind_rows(all_2) |> bind_rows(all_3) |>
          role="describer",
          time_stamp=as.numeric(NA),
          message_irrelevant=F,
+         room_num=1,
+         age=as.numeric(NA), #don't have demographics
+         gender=as.character(NA), 
          choice_id=NA # we don't have choice data
          ) |> 
   group_by(rep_num, trial_num, gameid) |> 
   mutate(message_number=row_number() |> as.numeric()) |> 
   ungroup() |> 
-  select(condition_label=condition, paper_id, full_cite, short_cite,
+  select(condition_label=condition, dataset_id, full_cite, short_cite,
          trial_num, rep_num, stage_num, 
-         group_size, structure, language, game_id=gameid, option_set=images,
+         group_size, structure, language, game_id=gameid, room_num, option_set=images,
          target=image, exclude, exclusion_reason, action_type,player_id=playerid,
+         age, gender,
          role, time_stamp, text, message_number, message_irrelevant, choice_id
          )
 
