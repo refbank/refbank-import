@@ -106,9 +106,10 @@ completeNetworks <- clicks %>%
 all <- messages_with_context |> 
   bind_rows(clicks) |> 
   left_join(completeNetworks) |> 
-    mutate(game_id=str_c(networkid,"_",roomid),
+    mutate(game_id=networkid,
+           room_num=roomid%%2+1, #for consistency with others, start with 1 and reset each
            player_id=str_c(networkid,"_", participantid),
-           paper_id="hawkins2023_frompartners",
+           dataset_id="hawkins2023_frompartners",
            full_cite="Hawkins, R. D., Franke, M., Frank, M. C., Goldberg, A. E., Smith, K., Griffiths, T. L., & Goodman, N. D. (2023). From partners to populations: A hierarchical Bayesian account of coordination and convention. Psychological Review, 130(4), 977.",
            short_cite="Hawkins et al (2023)",
            language="English",
@@ -117,18 +118,21 @@ all <- messages_with_context |>
            trial_num=1+trialnum+partnernum*16,
            rep_num=1+rep_num+4*partnernum,
            time_stamp=as.numeric(NA), # didn't find timestamps in source
+           age=as.numeric(NA), #TODO demographics
+           gender=as.character(NA),
            group_size=4,
            structure="network-swap",
            condition_label="pairs-network",
            exclude=ifelse(is.na(exclude), T, exclude),
            exclusion_reason=ifelse(exclude, "incomplete game", NA), 
            ) |> 
-    select(paper_id, full_cite, short_cite, language,
+    select(dataset_id, full_cite, short_cite, language,
            stage_num, 
            condition_label, time_stamp,
-           game_id, player_id,
+           game_id, player_id, room_num,
            trial_num,rep_num,
            role, target, 
+           age, gender,
            action_type, exclude, exclusion_reason, 
            message_number, text,
            choice_id, option_set,

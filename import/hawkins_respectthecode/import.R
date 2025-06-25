@@ -155,13 +155,16 @@ talked <- messages %>%
 all <- messages |> 
   bind_rows(rounds)  |> 
   left_join(talked) |> 
-    mutate(game_id=str_c(gameId,"_",roomId),
+    mutate(game_id=gameId,
+           room_num=1+ (str_sub(roomId, -1, -1) |> as.numeric()) ,
            role=case_when(
              gamerole=="speaker" ~ "describer",
              gamerole=="listener" ~ "matcher",
              T ~ NA
            ),
-           paper_id="hawkins2021_respect",
+           age=as.numeric(NA), #TODO demographics
+           gender=as.character(NA),
+           dataset_id="hawkins2021_respect",
            full_cite="Hawkins, R., Liu, I., Goldberg, A., & Griffiths, T. (2021). Respect the code: Speakers expect novel conventions to generalize within but not across social group boundaries. In Proceedings of the Annual Meeting of the Cognitive Science Society (Vol. 43, No. 43).",
            short_cite="Hawkins et al (2021)",
            language="English",
@@ -181,9 +184,10 @@ all <- messages |>
              T ~ NA
            )
            ) |> 
-    select(paper_id, full_cite, short_cite, language, stage_num, 
+    select(dataset_id, full_cite, short_cite, language, stage_num, 
            condition_label, time_stamp,
-           game_id, player_id=playerId,
+           game_id, room_num, player_id=playerId,
+           age, gender,
            trial_num,rep_num,
            role, target, 
            action_type, exclude, exclusion_reason, 

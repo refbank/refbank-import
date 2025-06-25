@@ -253,8 +253,9 @@ process_game_messages <- function(messages_df, id_cols, boards_dict, exclusion_d
       target_val <- if (j <= length(targets)) targets[j] else NA
       selection_val <- if (j <= length(selections)) selections[j] else NA
 
+      #messages
       result[[length(result) + 1]] <- tibble(
-        paper_id = "hawkins2020_characterizing_uncued",
+        dataset_id = "hawkins2020_characterizing_uncued",
         condition_label = "unconstrained",
         full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020)...",
         short_cite = "Hawkins et al. (2020)",
@@ -263,6 +264,10 @@ process_game_messages <- function(messages_df, id_cols, boards_dict, exclusion_d
         player_id = paste0(game_id, "_describer"),
         trial_num = global_trial_num,
         rep_num = rep_num,
+        room_num=1,
+        stage_num=1,
+        age=as.numeric(NA), # do age later
+        gender=as.character(NA), #do gender later
         role = "describer",
         target = num_to_letter(target_val),  # Map target to letter
         message_number = j,
@@ -278,8 +283,9 @@ process_game_messages <- function(messages_df, id_cols, boards_dict, exclusion_d
         message_irrelevant = FALSE
       )
 
+      #choices
       result[[length(result) + 1]] <- tibble(
-        paper_id = "hawkins2020_characterizing_uncued",
+        dataset_id = "hawkins2020_characterizing_uncued",
         condition_label = "unconstrained",
         full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020)...",
         short_cite = "Hawkins et al. (2020)",
@@ -288,6 +294,10 @@ process_game_messages <- function(messages_df, id_cols, boards_dict, exclusion_d
         player_id = paste0(game_id, "_matcher"),
         trial_num = global_trial_num,
         rep_num = rep_num,
+        room_num=1,
+        stage_num=1,
+        age=as.numeric(NA), # do age later,
+        gender=as.character(NA),
         role = "matcher",
         target = num_to_letter(target_val),  # Map target to letter
         message_number = NA,
@@ -341,6 +351,6 @@ print(head(result, 24))
 # nolint end
 
 source(here("validate.R"))
-test <- read_csv(here("import/hawkins_dynamics_free/segmented_data.csv")) |> 
-  mutate(stage_num=1, paper_id="hawkins2020_characterizing_uncued")
+
+test <- read_csv(here(OUTPUT_FILE)) |> mutate(age=as.numeric(age), gender=as.character(gender))
 validate_dataset(test, write=T)

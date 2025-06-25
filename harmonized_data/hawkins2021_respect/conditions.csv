@@ -1,2 +1,2 @@
-condition_label,paper_id,full_cite,short_cite,group_size,structure,language,condition_id
-pairs-network,hawkins2021_respect,"Hawkins, R., Liu, I., Goldberg, A., & Griffiths, T. (2021). Respect the code: Speakers expect novel conventions to generalize within but not across social group boundaries. In Proceedings of the Annual Meeting of the Cognitive Science Society (Vol. 43, No. 43).",Hawkins et al (2021),4,network-swap,English,1
+dataset_id,full_cite,short_cite,group_size,structure,language,condition_id
+hawkins2021_respect,"Hawkins, R., Liu, I., Goldberg, A., & Griffiths, T. (2021). Respect the code: Speakers expect novel conventions to generalize within but not across social group boundaries. In Proceedings of the Annual Meeting of the Cognitive Science Society (Vol. 43, No. 43).",Hawkins et al (2021),4,network-swap,English,1

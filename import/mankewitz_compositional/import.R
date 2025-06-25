@@ -64,7 +64,7 @@ d_game$condition_label <- factor(d_game$contextStructure,
                                     labels=new_conditions_long)
 
 d_game_final <- d_game |> 
-  mutate(paper_id = "mankewitz2025_compositional",
+  mutate(dataset_id = "mankewitz2025_compositional",
          full_cite = "",
          short_cite = "Mankewitz & Hawkins (2025)",
          group_size = 2,
@@ -114,18 +114,15 @@ d_trial_info <- d_round |>
          exclusion_reason = as.character(NA))
 
 d_full <- d_actions |> left_join(d_trial_info) |> left_join(d_game_final) |> 
-  select(condition_label, paper_id, full_cite, short_cite,
-         trial_num, rep_num, stage_num, 
+  mutate(room_num=1,
+         age=as.numeric(NA),
+         gender=as.character(NA)) |> 
+  select(condition_label, dataset_id, full_cite, short_cite,
+         trial_num, rep_num, stage_num, room_num, age, gender,
          group_size, structure, language, game_id, option_set,
          target, exclude, exclusion_reason, action_type,player_id,
          role, time_stamp, text, message_number, message_irrelevant, choice_id
   )
 
-try_choices <- d_full |> filter(action_type == "selection") |>
-  select(game_id, trial_num, choice_id, player_id, role, time_stamp, option_set) |>
-  mutate(option_set_list = str_split(option_set, ";")) |>
-  select(-trial_num, -game_id) |>
-  mutate(check_choices = map2_lgl(choice_id, option_set_list, 
-                                  \(c, o) {c %in% o | c == "timed_out" | is.na(c)}))
 
 validate_dataset(d_full, write=T)
