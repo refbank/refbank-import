@@ -222,7 +222,7 @@ validate_dataset <- function(df, write=F) {
     mutate(option_set_list = str_split(option_set, ";")) |>
     select(-trial_num, -room_num, -game_id) |>
     mutate(check_choices = map2_lgl(choice_id, option_set_list, 
-                                    \(c, o) {c %in% o | c == "timed_out" | is.na(c)}))
+                                    \(c, o) {c %in% o | c == "timed_out" }))
   
   assert_that(all(try_choices$check_choices), 
               msg = "choice_id must be in option_set or timed_out or NA")
@@ -237,15 +237,30 @@ validate_dataset <- function(df, write=F) {
   
   print("Checking players")
   check_cols(c("player_id", "age", "gender"), players)
+  na_players <- players |> filter(if_any(c("player_id"), is.na))
+  assert_that(nrow(na_players)==0)
+  
   print("Checking conditions")
   check_cols(c("condition_id", "dataset_id", "full_cite", "short_cite", "group_size", "structure", "language"), conditions)
+  na_conditions <- conditions |> filter(if_any(c("dataset_id","short_cite", "full_cite", "condition_id", "group_size", "structure", "language"), is.na))
+  assert_that(nrow(na_conditions)==0)
+  
   print("Checking choices")
   check_cols(c("trial_id", "choice_id", "player_id", "time_stamp"), choices)
+  na_choices <- choices |> filter(if_any(c("trial_id", "choice_id", "player_id"), is.na))
+  assert_that(nrow(na_choices)==0)
+  
   print("Checking messages")
   check_cols(c("trial_id", "player_id", "role", "text", "message_number", "message_irrelevant", "time_stamp"), messages)
+  na_messages <- messages |> filter(if_any(c("player_id", "trial_id", "role", "message_number", "text"), is.na))
+  assert_that(nrow(na_messages)==0)
+  
   print("Checking trials")
   check_cols(c("trial_id", "condition_id", "game_id", "room_num", "option_set", "target", "stage_num",
                "trial_num", "rep_num", "exclude", "exclusion_reason", "describer", "matchers"), trials)
+  na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer", "matchers"), is.na))
+  assert_that(nrow(na_messages)==0)
+  
   print("All checks pass!")
   
   

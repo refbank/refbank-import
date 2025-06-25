@@ -43,7 +43,8 @@ messages_single <- expt_1 |> bind_rows(expt_2) |> select(game_id, trial_index, b
          message_number=1,
          message_irrelevant=F,
          action_type="message",
-         text=description)
+         text=description) |> 
+  filter(!is.na(text))
 
 messages_complex <- expt_3 |> select(game_id, block, target, controlled, trial_index, structure, 
                                      condition_label, description, context, speaker_id, listener_id, stage_num) |> 
@@ -54,14 +55,16 @@ mutate(description=map(description, ParseJSONColumn)) |>
   ungroup() |> 
   mutate(role=ifelse(role=="speaker", "describer", "matcher"),
          player_id=ifelse(role=="describer", speaker_id, listener_id),
-         action_type="message") 
+         action_type="message") |> 
+  filter(!is.na(text))
 
 
 choices <- expt_1 |> bind_rows(expt_2) |> bind_rows(expt_3) |> select(game_id, trial_index, block, target, controlled,
                                                                       structure, listener_id, context,
                                sec_until_press, sec_until_click, response, condition_label, stage_num) |> 
   mutate(player_id=listener_id, time_stamp=ifelse(!is.na(sec_until_press), sec_until_press, sec_until_click),
-         action_type="selection",choice_id=response, role="matcher")
+         action_type="selection",choice_id=response, role="matcher") |> 
+  mutate(choice_id=ifelse(is.na(choice_id), "timed_out", choice_id))
 
 ### combine everything 
 all <- messages_single |>

@@ -68,10 +68,16 @@ Table messages {
   dataset_id [foreign key datasets]
 }
 
+TODO check that player_id, trial_id, role, message_number, text, !is.na()
+
 ```{r}
 messages <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "messages") |>
                      mutate(dataset_id = d))
+
+na_messages <- messages |> filter(if_any(c("player_id", "trial_id", "role", "message_number", "text", "dataset_id"), is.na))
+assert_that(nrow(na_messages)==0)
 ```
+
 
 
 Trials
@@ -93,6 +99,8 @@ Table trials {
   matchers list [foreign key matchers]
 }
 
+TODO check that condition_id, game_id, room_num, option_set, target, stage_num, trial_num, rep_num, describer all !is.na()
+
 ```{r}
 trials <-   map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "trials") |> 
                      mutate(target = as.character(target),
@@ -102,6 +110,9 @@ trials <-   map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "trials") |>
   #         str_remove_all("\\[|\\]|\"") |> 
    #        str_replace_all(",", ";") )
 
+na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer", "dataset_id"), is.na))
+assert_that(nrow(na_trials)==0)
+
 
 ```
 
@@ -110,7 +121,7 @@ Conditions & datasets
 
 Table datasets{
   id integer [primary key]
-  paper_id varchar
+  dataset_id varchar
   full_cite varchar
   short_cite varchar
 }
@@ -118,13 +129,13 @@ Table datasets{
 Table conditions{
   id integer [primary key]
   dataset_id integer [foreign key datasets]
-  condition_label varchar (to be removed later?)
   group_size integer
   structure varchar
   language varchar
   placeholder_features varchar PLACEHOLDER
 }
 
+TODO check that dataset_id, full_cite, short_cite, condition_id, group_size, structure, language  all !is.na()
 
 ```{r}
 conditions <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "conditions"))
@@ -136,6 +147,13 @@ datasets <- tibble(dataset_id = dataset_names) |>
 
 conditions <- conditions |>
   select(-full_cite, -short_cite)
+
+na_datasets <- datasets |> filter(if_any(c("dataset_id", "full_cite", "short_cite"), is.na))
+assert_that(nrow(na_datasets)==0)
+
+na_conditions <- conditions |> filter(if_any(c("dataset_id", "condition_id", "group_size", "structure", "language"), is.na))
+assert_that(nrow(na_conditions)==0)
+
 ```
 
 
@@ -150,6 +168,8 @@ Table choices {
   dataset_id [foreign key datasets]
 }
 
+TODO check that trial_id, choice, player_id all !is.na()
+
 ```{r}
 choices <- map_df(dataset_names, function (d) {
   df <- get_tbl(DATA_LOC, d, "choices")  |>
@@ -160,6 +180,9 @@ choices <- map_df(dataset_names, function (d) {
   
   df
 }) 
+
+na_choices <- choices |> filter(if_any(c("trial_id", "choice", "player_id"), is.na))
+assert_that(nrow(na_choices)==0)
 ```
 
 Players
@@ -172,6 +195,8 @@ Table players {
   dataset_id [foreign key datasets]
 }
 
+TODO check that player_id !is.na()
+
 ```{r}
 players <- map_df(dataset_names, function (d) {
   df <- get_tbl(DATA_LOC, d, "players") |> 
@@ -180,6 +205,9 @@ players <- map_df(dataset_names, function (d) {
   
   df
 })
+
+na_players <- players |> filter(if_any(c("player_id"), is.na))
+assert_that(nrow(na_players)==0)
 ```
 
 Images (already one table for all images)
@@ -191,11 +219,23 @@ Table images {
   image_path varchar
 }
 
+check that id and image_type !is.na()
+
 ```{r}
 images <- read_csv(here("image_data/image_metadata.csv"))
+
+# keep here!
+na_images <- images |> filter(if_any(c("image_id", "image_type"), is.na))
+assert_that(nrow(na_images)==0)
+
 ```
 
+# Validate
 
+* all targets appear in images
+* all images appear in option_list
+
+* id cols are unique (and nest appropriately), & dataset id's line up
 
 # Export
 
