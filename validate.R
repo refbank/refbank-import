@@ -264,7 +264,7 @@ validate_dataset <- function(df, write=F) {
   check_cols(c("trial_id", "condition_id", "game_id", "room_num", "option_set", "target", "stage_num",
                "trial_num", "rep_num", "exclude", "exclusion_reason", "describer", "matchers"), trials)
   na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer"), is.na))
-View(na_trials)
+#View(na_trials)
     assert_that(nrow(na_trials)==0)
   
   print("All checks pass!")
