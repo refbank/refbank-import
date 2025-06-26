@@ -767,7 +767,6 @@ diamond in center of a pillar,131,describer,1,NA,NA,622
 person sitting with legs out,131,describer,1,NA,NA,623
 kicking can,131,describer,1,NA,NA,624
 the only image we keep getting wrong,131,describer,1,NA,NA,625
-,131,describer,2,TRUE,NA,625
 nice we got it,131,describer,1,TRUE,NA,626
 kneeling slightly,131,describer,2,NA,NA,626
 holding bowl,131,describer,3,NA,NA,626
@@ -1007,7 +1006,6 @@ last one! :),11,matcher,1,TRUE,NA,792
 kick back :-),133,describer,2,NA,NA,792
 hi,12,matcher,1,TRUE,NA,793
 "the shape that looks like an upright bunny sitting against a wall. two triangles on top of a square head, sitting on top of a right triangle that's butting up against a smaller triangle",134,describer,2,NA,NA,793
-,12,matcher,1,TRUE,NA,794
 "weird druid priest. sideways square on top of an oblong pillar, holding a top hat looking item that's made of a square with a kind of lip. the square is on the left side of the body pillar.",134,describer,2,NA,NA,794
 *kind,134,describer,3,NA,NA,794
 drunk seal balancing a square and a triangle on his nose. triangle on the right side of the image looks like a flipper.,134,describer,1,NA,NA,795
@@ -1070,7 +1068,6 @@ the body is a long rectangle with just the little foot thing at the bottom.. not
 it was what i thought originally,12,matcher,1,NA,NA,811
 "the one where the image looks like it's kicking something, both feet pointing to the left",134,describer,2,NA,NA,811
 dinosaur kicking,12,matcher,1,NA,NA,812
-,12,matcher,2,TRUE,NA,812
 . yes!,134,describer,3,TRUE,NA,812
 little mouse again. square and triangle ears,134,describer,4,NA,NA,812
 "car dealership guy, falling to the left",134,describer,1,NA,NA,813
@@ -1081,7 +1078,6 @@ btw the one who i thought was a state is the roman soldier,12,matcher,1,TRUE,NA,
 "okay the diamond head one that's back behind the body a bit, flipper facing right",134,describer,2,NA,NA,815
 what state is roman soldier guy? like im turning my head sideways.. nevada?,134,describer,3,TRUE,NA,815
 i think it looks like idaho,12,matcher,4,TRUE,NA,815
-,12,matcher,5,TRUE,NA,815
 it totally does!,134,describer,6,TRUE,NA,815
 and hmm,12,matcher,7,TRUE,NA,815
 does it look like a sitting person? the duck one from before?,12,matcher,8,NA,NA,815
@@ -1246,8 +1242,6 @@ hmm,14,matcher,2,NA,NA,938
 or his hand is pointing,136,describer,3,NA,NA,938
 looks like a candle,136,describer,1,NA,NA,939
 "this one is easy, looks like he's sitting on the floor with knees up",136,describer,1,NA,NA,940
-,136,describer,1,TRUE,NA,941
-,14,matcher,2,TRUE,NA,941
 this is hard,136,describer,3,TRUE,NA,941
 compared to the color ones he had up,136,describer,4,TRUE,NA,941
 this one looks like,136,describer,5,NA,NA,941
@@ -1276,7 +1270,6 @@ same thing as last time but also has a big triangle behind him,136,describer,2,N
 this one looks like a candle with a small triangle on the bottom to stand,136,describer,1,NA,NA,952
 woops,14,matcher,1,TRUE,NA,953
 its hard,136,describer,2,TRUE,NA,953
-,14,matcher,3,TRUE,NA,953
 no problem,136,describer,4,TRUE,NA,953
 "this one rabbit ears again, looking downward",136,describer,5,NA,NA,953
 "this one again we had last time, looks like high heels on the bottom",136,describer,1,NA,NA,954
@@ -1298,7 +1291,6 @@ this one is a fat candle,136,describer,4,NA,NA,959
 "close, it was the other one",136,describer,1,TRUE,NA,960
 woops now i know,14,matcher,2,TRUE,NA,960
 yes,136,describer,3,TRUE,NA,960
-,136,describer,4,TRUE,NA,960
 ok this one looks like he s holding a bowl,136,describer,5,NA,NA,960
 *one,136,describer,6,TRUE,NA,960
 square on his back with foot raised,136,describer,1,NA,NA,961
@@ -1318,7 +1310,6 @@ thin candle,136,describer,2,NA,NA,967
 fat candle,136,describer,1,NA,NA,968
 arms raised to the sky,136,describer,1,NA,NA,969
 holding a bowl or preacher on podium standing straight,136,describer,1,NA,NA,970
-,136,describer,2,TRUE,NA,970
 one leg standing with a leg behind him,136,describer,1,NA,NA,971
 preacher but with a big triangle behind him,136,describer,1,NA,NA,972
 same one again,136,describer,1,NA,NA,973
@@ -1440,7 +1431,6 @@ angel,137,describer,2,NA,NA,1042
 this man looks depressed. sitting on floor with back to the right side of square. will call debbie downer in future.,137,describer,1,NA,NA,1043
 mountain (triangle),137,describer,1,NA,NA,1044
 "debbie downer, excellent.",15,matcher,2,NA,NA,1044
-,137,describer,3,TRUE,NA,1044
 sorry we can think of something else for those two!,137,describer,1,TRUE,NA,1045
 ... that's the only one i had problem with...,15,matcher,2,TRUE,NA,1045
 do you have an idea?,137,describer,3,TRUE,NA,1045
@@ -1614,7 +1604,6 @@ dinosaur flag,139,describer,1,NA,NA,1187
 fan head sitter,139,describer,1,NA,NA,1188
 i don't know guy,139,describer,1,NA,NA,1189
 i'm chuckling here,139,describer,2,TRUE,NA,1189
-,17,matcher,1,TRUE,NA,1190
 short squatty sideways square head,139,describer,2,NA,NA,1190
 point elbows up kneeling looking down,139,describer,1,NA,NA,1191
 graduate,139,describer,1,NA,NA,1192
@@ -1644,7 +1633,6 @@ fan head,139,describer,1,NA,NA,1212
 squatting arms in front,139,describer,1,NA,NA,1213
 lunger,139,describer,1,NA,NA,1214
 short squatty sideways square head. always want to type spongebob  :),139,describer,1,NA,NA,1215
-,17,matcher,2,TRUE,NA,1215
 fan head,139,describer,1,NA,NA,1216
 skater,139,describer,1,NA,NA,1217
 "praying, kneeling, looking up",139,describer,1,NA,NA,1218
@@ -2100,7 +2088,6 @@ kneeling with toes up,144,describer,1,NA,NA,1524
 nodder sitting on ground,144,describer,1,NA,NA,1525
 "kneeling, no toes up",144,describer,1,NA,NA,1526
 "angel wings, just picked it",144,describer,1,NA,NA,1527
-,22,matcher,1,TRUE,NA,1528
 leaning back arms spread,144,describer,2,NA,NA,1528
 robed standing with hand out,144,describer,1,NA,NA,1529
 dancing barney dinosaur,144,describer,1,NA,NA,1530
@@ -2112,7 +2099,6 @@ those are arms,22,matcher,1,NA,NA,1535
 "rabbit ears, triangle sitting on ground",144,describer,2,NA,NA,1535
 "kneeling toes up, third time using same description, can you remember from other trials?",144,describer,1,NA,NA,1536
 i remember now,22,matcher,1,NA,NA,1537
-,22,matcher,2,TRUE,NA,1537
 are you even trying to remember the names so i don't have to describe them anew each time?,144,describer,3,TRUE,NA,1537
 "oh, okay, sorry",144,describer,4,TRUE,NA,1537
 leaning back arms spread,144,describer,5,NA,NA,1537
@@ -2494,7 +2480,6 @@ the object looks like it is standing on one foot with the leg in the air backwar
 the object has a diamond on top and the left is a straight box with three points to the right,148,describer,1,NA,NA,1802
 the object has a diamond on top and the middle looks like a house,148,describer,1,NA,NA,1803
 finally,26,matcher,1,TRUE,NA,1804
-,148,describer,2,TRUE,NA,1804
 diamond on top the object is sitting down with feet to the left,148,describer,3,NA,NA,1804
 diamond on top straight part is on right side standing position with feet on ground facing left direction,148,describer,1,NA,NA,1805
 diamond on top both hands are outstretched in air,148,describer,1,NA,NA,1806
@@ -2703,7 +2688,6 @@ pick the one where it looks like a guy is kicking forward,150,describer,1,NA,NA,
 "pick the weird ballet looking one, one legged another leg in the air",150,describer,1,NA,NA,1946
 the one where the guy is sort of laying foward and praying,150,describer,1,NA,NA,1947
 with his head reared back,150,describer,2,NA,NA,1947
-,28,matcher,1,NA,NA,1948
 sorry,150,describer,2,NA,NA,1948
 my bad,28,matcher,3,NA,NA,1948
 the one where the guy is sort of quatting with his hands forward,150,describer,4,NA,NA,1948
@@ -2951,7 +2935,6 @@ hiya,30,matcher,1,NA,NA,2089
 asl?,30,matcher,2,NA,NA,2089
 hi,152,describer,3,NA,NA,2089
 looks like a windmill or rabbit with flat botton pointing to the right,152,describer,4,NA,NA,2089
-,30,matcher,1,NA,NA,2090
 flat botton pointing to the left 2 ears,152,describer,1,NA,NA,2091
 that was pointing right mang,30,matcher,1,NA,NA,2092
 ;let's go quicker bud,30,matcher,2,NA,NA,2092
@@ -3041,7 +3024,6 @@ the one most like a rectangle facing forward,153,describer,1,NA,NA,7342
 it's ok,153,describer,2,NA,NA,7343
 the onoe that looks like a woman falling forward,153,describer,3,NA,NA,7343
 mate these descriptions,154,matcher,4,NA,NA,7343
-,153,describer,1,NA,NA,7344
 ye this is some bullshit,154,matcher,2,NA,NA,7344
 dude sitting on the ground with his hands around his kees,153,describer,3,NA,NA,7344
 knees*,153,describer,4,NA,NA,7344
@@ -3164,7 +3146,6 @@ farewell!,31,matcher,2,NA,NA,2231
 depressed bunny!,158,describer,3,NA,NA,2231
 "oh, 1 more :)",158,describer,1,NA,NA,2232
 hello again,31,matcher,2,NA,NA,2232
-,31,matcher,3,NA,NA,2232
 depressed man,158,describer,4,NA,NA,2232
 see ya! :p,158,describer,5,NA,NA,2232
 it has only a right hand and right foot showing,159,describer,1,NA,NA,2233
@@ -3370,7 +3351,6 @@ no problem,34,matcher,3,TRUE,NA,2386
 "this one is like a person sitting on the ground with his back against a wall, knees bent",161,describer,4,NA,NA,2386
 sorta like he's reading a book up against a tree or something,161,describer,5,NA,NA,2386
 legs are pointed to the left,161,describer,6,NA,NA,2386
-,34,matcher,1,TRUE,NA,2387
 didnt mean to choose that one ha,34,matcher,2,TRUE,NA,2387
 no worries,161,describer,3,TRUE,NA,2387
 "very boxy body on this one, small triangle near the top pointed to the right",161,describer,4,NA,NA,2387
@@ -3427,7 +3407,6 @@ oh... candle again,161,describer,2,NA,NA,2413
 cool,34,matcher,3,TRUE,NA,2413
 it does look like a candle now that i think about it hah,161,describer,4,NA,NA,2413
 but yeah same one again,161,describer,5,NA,NA,2413
-,34,matcher,1,TRUE,NA,2414
 guy reading,161,describer,2,NA,NA,2414
 sad guy,161,describer,1,NA,NA,2415
 the impossible one,161,describer,1,NA,NA,2416
@@ -3723,7 +3702,6 @@ this one is a person sitting down,166,describer,1,NA,NA,2597
 this one kind of looks like a bird,166,describer,1,NA,NA,2598
 but with human legs,166,describer,2,NA,NA,2598
 this one looks like someone in a dress,166,describer,1,NA,NA,2599
-,166,describer,2,TRUE,NA,2599
 on the bottom theres a triangle,166,describer,3,NA,NA,2599
 this one looks like someone raising both arms,166,describer,1,NA,NA,2600
 no legs,166,describer,2,NA,NA,2600
@@ -3826,7 +3804,6 @@ looks like a person sitting facing left,167,describer,2,NA,NA,2674
 square top left,167,describer,1,NA,NA,2675
 sideways trapezoid under square and what looks like one leg kicking left,167,describer,2,NA,NA,2675
 oh i think it's the bird with the flag,38,matcher,3,NA,NA,2675
-,38,matcher,4,TRUE,NA,2675
 does it have a big beak?,38,matcher,5,NA,NA,2675
 i see that now,167,describer,6,TRUE,NA,2675
 looks like person looking left holding a bowl,167,describer,1,NA,NA,2676
@@ -4291,7 +4268,6 @@ ok the target image kind of looks like a guy sitting down. the top part is a dia
 "ok this one looks like a man again, diamond shaped head, his 'feet' are facing left and he has one hand pointing to the left",172,describer,1,NA,NA,2968
 "let's keep it up with the dude analogies. this is a dude on his keeps, diamond for a head, facing to the right and pointing right. this is the one where there is another diamond under the head that looks like it's his shoulder blades",172,describer,1,NA,NA,2969
 this looks like a sad bunny sitting down,172,describer,1,NA,NA,2970
-,172,describer,2,TRUE,NA,2970
 this looks like a sad dude sitting down facing left,172,describer,1,NA,NA,2971
 maybe we should give them quick names so when we see them again you can quickly just say something like 'bunny',43,matcher,2,NA,NA,2971
 "ok, this is another kneeling guy but without 2nd diamond. maybe call him kneeling 1 diamond",172,describer,1,NA,NA,2972
@@ -4658,7 +4634,6 @@ hands down,177,describer,2,NA,NA,3224
 "d head, looking forward, right hand out. no left hand visible",177,describer,1,NA,NA,3227
 "d head, facing right, bent knees and arm pointing right",177,describer,1,NA,NA,3228
 "d head, knees bent facing right and hand also facing right ( one you picked last round)",177,describer,1,NA,NA,3229
-,177,describer,1,NA,NA,3230
 sorry be right back 1 min errand,48,matcher,2,NA,NA,3230
 "s head, standing up doing a karate chop to the right",177,describer,3,NA,NA,3230
 that's the falling one,177,describer,1,NA,NA,3231
@@ -4694,7 +4669,6 @@ screen right,177,describer,2,NA,NA,3250
 atleast i know what that is now,48,matcher,1,NA,NA,3256
 that should have been to the right,177,describer,2,NA,NA,3256
 sorry i keep mixing it uup,177,describer,3,NA,NA,3256
-,48,matcher,4,NA,NA,3256
 "s head, triangle hand to the right",177,describer,5,NA,NA,3256
 "it fine, sorry to have type all this crap",48,matcher,6,NA,NA,3256
 "d head, kneeling facing left, hand out to the left",177,describer,1,NA,NA,3257
@@ -4703,7 +4677,6 @@ i call that one the triangle hand,177,describer,1,NA,NA,3258
 "d head, sitting facing the left, reading a book",177,describer,1,NA,NA,3259
 "s head, standing on one foot with the other foot pointed left, hand pointing down and to the left",177,describer,1,NA,NA,3260
 he look like a zombie imo,48,matcher,1,NA,NA,3261
-,177,describer,2,NA,NA,3261
 "d head, arm out to the right, no left hand",177,describer,3,NA,NA,3261
 "d head, facing left, arm slightly visible pointing left",177,describer,1,NA,NA,3262
 "d head, facing forward, no limbs",177,describer,1,NA,NA,3263
@@ -4830,7 +4803,6 @@ no arms,178,describer,2,NA,NA,3343
 upside down bird,178,describer,1,NA,NA,3344
 sitting bunny,178,describer,1,NA,NA,3345
 hello,50,matcher,1,TRUE,NA,3346
-,179,describer,2,TRUE,NA,3346
 choose the picture that looks like a man holding two hand up in the air,179,describer,3,NA,NA,3346
 ready for details,50,matcher,1,TRUE,NA,3347
 man kneeling straight,179,describer,2,NA,NA,3347
@@ -4891,7 +4863,6 @@ like he is napping,179,describer,4,NA,NA,3368
 that ones 2,50,matcher,1,NA,NA,3369
 "figure looks like they are on their knees looking up, (not the one with the knees bent they exactly the same though)",179,describer,2,NA,NA,3369
 figure is facing right,179,describer,3,NA,NA,3369
-,50,matcher,1,NA,NA,3370
 now i cant remember which one it was to label it 3,50,matcher,2,NA,NA,3370
 figure is facing left standing up with hands to the left looking down like he's reading something,179,describer,3,NA,NA,3370
 3,50,matcher,1,NA,NA,3371
@@ -4945,7 +4916,6 @@ its ok - lets get you a nice bonus!,50,matcher,3,TRUE,NA,3393
 10,179,describer,1,NA,NA,3397
 8,179,describer,1,NA,NA,3398
 not sure how to look up their email but this is their to site,179,describer,1,TRUE,NA,3399
-,179,describer,2,TRUE,NA,3399
 i think if you send them an email with the code they make you a hit or something cause this takes forever,179,describer,3,TRUE,NA,3399
 please don't even worry about it.  i do this for fun more than for the money,50,matcher,4,TRUE,NA,3399
 12,179,describer,5,NA,NA,3399
@@ -4973,7 +4943,6 @@ no problem,50,matcher,3,TRUE,NA,3417
 ok,51,matcher,1,NA,NA,3418
 looks like a priest standing,180,describer,2,NA,NA,3418
 the one you chose before this one haha,180,describer,1,NA,NA,3419
-,51,matcher,1,NA,NA,3420
 a flying priest,180,describer,2,NA,NA,3420
 "he seems to be flat against a wall, almost ducking",180,describer,1,NA,NA,3421
 "no visible hands, sitting looking straight at us",180,describer,1,NA,NA,3422
@@ -5390,11 +5359,8 @@ finally got 2,58,matcher,1,NA,NA,3740
 1*,58,matcher,2,NA,NA,3740
 yeah,187,describer,3,NA,NA,3740
 this one looks like he is about to kneel over,187,describer,4,NA,NA,3740
-,187,describer,1,NA,NA,3741
 this one looks like a dog or some animal that is balancing something on his nose,187,describer,2,NA,NA,3741
 looks like a guy sitting down and looking at his junk,187,describer,1,NA,NA,3742
-,58,matcher,1,NA,NA,3743
-,187,describer,2,NA,NA,3743
 a guy standing on one leg,187,describer,3,NA,NA,3743
 a guy standing straight up with his arming going to the left,187,describer,1,NA,NA,3744
 a guy box that looks like his head was cut off and is falling off,187,describer,1,NA,NA,3745
@@ -5448,7 +5414,6 @@ oh this one is like a figure skater,188,describer,1,NA,NA,3762
 with leg out to the left?,59,matcher,2,NA,NA,3762
 leaning to the left side with arms outstretched,188,describer,3,NA,NA,3762
 yup,188,describer,4,TRUE,NA,3762
-,188,describer,5,TRUE,NA,3762
 leg to right?,59,matcher,6,NA,NA,3762
 no,188,describer,7,NA,NA,3762
 "leg out to right, sorry",188,describer,8,NA,NA,3762
@@ -5561,7 +5526,6 @@ no arms,188,describer,5,NA,NA,3782
 bunny ears,188,describer,1,NA,NA,3783
 i swear that is the best description.  love it,59,matcher,1,TRUE,NA,3784
 monster dinosaur faceregular face. legs to left outermost raised,188,describer,2,NA,NA,3784
-,188,describer,3,TRUE,NA,3784
 its the easiest for sure,188,describer,4,TRUE,NA,3784
 the dinosaur description is great too.,59,matcher,1,NA,NA,3785
 "large center mass, no arms, legs out slightly to right",188,describer,2,NA,NA,3785
@@ -5618,9 +5582,7 @@ bunny ears!!!,188,describer,1,NA,NA,3800
 dinosaur faceregular face,188,describer,1,NA,NA,3801
 dancing dinosaur,188,describer,2,NA,NA,3801
 i call this one ooga boogs but triangle tail arms out,188,describer,1,NA,NA,3802
-,188,describer,2,TRUE,NA,3802
 the rectangle that got eaten,188,describer,1,NA,NA,3803
-,59,matcher,1,TRUE,NA,3804
 leaning up against tree. legs out left,188,describer,2,NA,NA,3804
 reminds me of a knights tale,188,describer,3,NA,NA,3804
 kneeling guy arms left feet right big feet,188,describer,1,NA,NA,3805
@@ -5632,7 +5594,6 @@ rectangle body got ate,188,describer,1,NA,NA,3807
 dancing dinosaur,188,describer,1,NA,NA,3808
 /regular face,188,describer,2,NA,NA,3808
 . even better description,59,matcher,3,TRUE,NA,3808
-,188,describer,1,TRUE,NA,3809
 inflatable balloon guy,188,describer,2,NA,NA,3809
 figure skater,188,describer,1,NA,NA,3810
 guy against tree,188,describer,1,NA,NA,3811
@@ -5658,15 +5619,12 @@ these descriptions are great,59,matcher,1,TRUE,NA,3818
 dancing dinosaur,188,describer,2,NA,NA,3818
 no arms big boy legs right,188,describer,1,NA,NA,3819
 big feet?,188,describer,1,NA,NA,3820
-,188,describer,2,TRUE,NA,3820
 nice!,188,describer,1,TRUE,NA,3821
 book left tiny feet left guy,188,describer,2,NA,NA,3821
-,59,matcher,1,TRUE,NA,3822
 inflatable balloon guy,188,describer,2,NA,NA,3822
 slightly bent guy,188,describer,1,NA,NA,3823
 guy that got eaten,188,describer,1,NA,NA,3824
 he used to be a rectangle,188,describer,2,NA,NA,3824
-,59,matcher,3,TRUE,NA,3824
 figure skater,188,describer,1,NA,NA,3825
 triangle tail,188,describer,1,NA,NA,3826
 leaner guy,188,describer,1,NA,NA,3827
@@ -5727,7 +5685,6 @@ that one was easy .. phew,60,matcher,1,TRUE,NA,3842
 sweet,189,describer,2,TRUE,NA,3842
 this is bird man again,189,describer,3,NA,NA,3842
 "sitting down with knees up, facing left. no arms",189,describer,1,NA,NA,3843
-,60,matcher,1,TRUE,NA,3844
 "! this is the one with arms stretched behind him, we had him before",189,describer,2,NA,NA,3844
 hmm. i don't remember that one. freaking out guy?,60,matcher,3,NA,NA,3844
 sitting down,189,describer,4,NA,NA,3844
@@ -5835,7 +5792,6 @@ hi,190,describer,1,NA,NA,3902
 hi,61,matcher,2,NA,NA,3902
 i hope i can describe the images well enough,190,describer,3,NA,NA,3902
 me too,61,matcher,4,NA,NA,3902
-,61,matcher,5,NA,NA,3902
 this one looks like it has a head of a bird and is standing on one foot and holding a flag behind the beak,190,describer,6,NA,NA,3902
 ok,61,matcher,1,NA,NA,3903
 yeah!,190,describer,2,NA,NA,3903
@@ -5958,7 +5914,6 @@ kneeling pointy boobs triangle on back,192,describer,1,NA,NA,3993
 not vomit one,192,describer,2,NA,NA,3993
 sorry family bothering me,192,describer,1,NA,NA,3994
 bunny ears sitting,192,describer,2,NA,NA,3994
-,63,matcher,3,TRUE,NA,3994
 arms up in air slanted body,192,describer,1,NA,NA,3995
 no arms or legs,192,describer,1,NA,NA,3996
 head leaning back like before walking,192,describer,1,NA,NA,3997
@@ -6139,7 +6094,6 @@ diamond head and half the square body is ripped off,193,describer,5,NA,NA,4082
 they're all weird shaped men,64,matcher,6,NA,NA,4082
 it better be this,64,matcher,7,TRUE,NA,4082
 square body shape,193,describer,8,NA,NA,4082
-,193,describer,1,TRUE,NA,4083
 hands stretched out man,193,describer,2,NA,NA,4083
 penguin head walking left,193,describer,1,NA,NA,4084
 square behind,193,describer,2,NA,NA,4084
@@ -6203,7 +6157,6 @@ bottom part has 8 sides,194,describer,2,NA,NA,4123
 only 2 parts,194,describer,3,NA,NA,4123
 "does it have a straight line across the top, under the square?",65,matcher,4,NA,NA,4123
 no,194,describer,5,NA,NA,4123
-,194,describer,1,NA,NA,4124
 "square on top shaped like diamond, bottom whole piece with a cutout on the left like a square fits in, right side looks like a mouth opened or a 1/2 diamond shape could fit in it",194,describer,2,NA,NA,4124
 does it look like it is pointing to the left?,65,matcher,3,NA,NA,4124
 no,194,describer,4,NA,NA,4124
@@ -7326,7 +7279,6 @@ looks like a figure flying,208,describer,1,NA,NA,4927
 figure is balancing on 1 foot,208,describer,1,NA,NA,4928
 "figure with a right triangle on the bottom left, cant tell what it is",208,describer,1,NA,NA,4929
 sorry something happened to computer. i meant to click the right one. :/,79,matcher,1,TRUE,NA,4930
-,208,describer,2,TRUE,NA,4930
 "looks like a figure who is dancing, bottom is a slanted rectangle",208,describer,3,NA,NA,4930
 figure looks like holding something standing,208,describer,1,NA,NA,4931
 "looks similar to the last, maybe more so kneeling down,",208,describer,1,NA,NA,4932
@@ -7608,7 +7560,6 @@ and we're only halfway through now.,82,matcher,3,TRUE,NA,5102
 art piece with split triangles on the top.,212,describer,1,NA,NA,5103
 "zig zag body. diamond head on top, facing right",212,describer,1,NA,NA,5104
 animal with his leg back. facing right. one leg on the ground. one leg up.,212,describer,1,NA,NA,5105
-,82,matcher,1,TRUE,NA,5106
 "looks like machinery. square/diamond near top, triangle on right extended from it. flat bottom. long width on the bottom",212,describer,2,NA,NA,5106
 okay call that one machinery,82,matcher,1,TRUE,NA,5107
 okay.,212,describer,2,TRUE,NA,5107
@@ -8238,7 +8189,6 @@ yes,90,matcher,1,TRUE,NA,5435
 chicken man,220,describer,2,NA,NA,5435
 now we are rolling,220,describer,1,TRUE,NA,5436
 we finally get a system and then we'll never use this again :),90,matcher,2,TRUE,NA,5436
-,90,matcher,3,TRUE,NA,5436
 left facing person with the square head,220,describer,4,NA,NA,5436
 soup,90,matcher,5,NA,NA,5436
 ?,90,matcher,6,TRUE,NA,5436
@@ -8452,7 +8402,6 @@ its the guy walking again,222,describer,1,NA,NA,5542
 its the weirdly squirting one,222,describer,1,NA,NA,5543
 oh the weird box dude oops,92,matcher,1,NA,NA,5544
 yes,222,describer,2,NA,NA,5544
-,222,describer,3,NA,NA,5544
 this one is the flat (left) sided dude,222,describer,4,NA,NA,5544
 this one is the one reading the book,222,describer,1,NA,NA,5545
 but kind a sitting,222,describer,2,NA,NA,5545
@@ -8481,7 +8430,6 @@ limbless block?,92,matcher,2,NA,NA,5554
 yes,222,describer,3,NA,NA,5554
 sorry panda was going off,222,describer,4,NA,NA,5554
 "no worries, know how that goes",92,matcher,1,NA,NA,5555
-,222,describer,2,NA,NA,5555
 this one is the 2 triangles on the right ( bulky at the button),222,describer,3,NA,NA,5555
 yoga,222,describer,1,NA,NA,5556
 sitting on the floor dude,222,describer,1,NA,NA,5557
@@ -8570,16 +8518,13 @@ was that the winged one,93,matcher,2,NA,NA,5612
 the one you picked instead of the winged one,223,describer,3,NA,NA,5612
 it looks more like a i than the winged one,223,describer,4,NA,NA,5612
 teamwork!!,223,describer,1,TRUE,NA,5613
-,93,matcher,2,TRUE,NA,5613
 praying man with his feet up i think this one was the s praying man?,223,describer,3,NA,NA,5613
 thats the regular praying man,93,matcher,1,TRUE,NA,5614
 1.0,93,matcher,2,TRUE,NA,5614
-,93,matcher,3,TRUE,NA,5614
 ok,223,describer,4,TRUE,NA,5614
 i think i described this as a horse,223,describer,5,NA,NA,5614
 wind up guy,223,describer,1,NA,NA,5615
 karate master,223,describer,1,NA,NA,5616
-,223,describer,2,TRUE,NA,5616
 this one is a praying man,223,describer,1,NA,NA,5617
 kneeling man?,223,describer,2,NA,NA,5617
 it was the one facing us,223,describer,3,NA,NA,5617
@@ -8603,12 +8548,10 @@ feet up right,93,matcher,3,NA,NA,5624
 feet down,223,describer,4,NA,NA,5624
 this one can be chill dude 2.0 he is sitting facing the left with his knees up and feet down,223,describer,1,TRUE,NA,5625
 2.0!,93,matcher,1,TRUE,NA,5626
-,223,describer,2,TRUE,NA,5626
 letter i again,223,describer,3,NA,NA,5626
 the karate master,223,describer,1,NA,NA,5627
 the butler,223,describer,1,NA,NA,5628
 the chill dude,223,describer,1,NA,NA,5629
-,93,matcher,1,TRUE,NA,5630
 mister bunny ears strikes again,223,describer,2,NA,NA,5630
 praying man feet down,223,describer,1,NA,NA,5631
 my memory is bad  i do not remember what we were calling that one,223,describer,1,TRUE,NA,5632
@@ -8620,26 +8563,21 @@ praying s with the feet up,223,describer,1,NA,NA,5634
 winged bandit,223,describer,1,NA,NA,5635
 mister wind up,223,describer,1,NA,NA,5636
 all great names,93,matcher,2,TRUE,NA,5636
-,223,describer,3,TRUE,NA,5636
-,93,matcher,1,TRUE,NA,5637
 misclicked,93,matcher,2,TRUE,NA,5637
 i used to want to make comics can you tell,223,describer,3,TRUE,NA,5637
 thats pretty cool,93,matcher,4,TRUE,NA,5637
 its mister wind up again,223,describer,5,NA,NA,5637
 "spiderman, superman, mister.wind up",93,matcher,1,NA,NA,5638
 praying with the feet up,223,describer,2,NA,NA,5638
-,223,describer,1,TRUE,NA,5639
 this one could be a superhero its mister bunny ears,223,describer,2,NA,NA,5639
 chill dude 2.0,223,describer,1,NA,NA,5640
 the best butler ever,223,describer,1,NA,NA,5641
 bringing that amazon prime package,93,matcher,1,TRUE,NA,5642
-,223,describer,2,TRUE,NA,5642
 i likethat!!,223,describer,3,TRUE,NA,5642
 mister winged man,223,describer,4,NA,NA,5642
 praying with the feet down,223,describer,1,NA,NA,5643
 hands up guy,223,describer,1,NA,NA,5644
 this is acually a fun hit,223,describer,1,TRUE,NA,5645
-,223,describer,2,TRUE,NA,5645
 yep,93,matcher,3,TRUE,NA,5645
 letter i dude,223,describer,4,NA,NA,5645
 karate master,223,describer,1,NA,NA,5646
@@ -8651,17 +8589,14 @@ winged bandit,223,describer,2,NA,NA,5650
 karate master in the dojo,223,describer,1,NA,NA,5651
 hands up guy,223,describer,1,NA,NA,5652
 hallelujah,93,matcher,1,NA,NA,5653
-,223,describer,2,TRUE,NA,5653
 this ones praying with its feet up so were on the same track,223,describer,3,NA,NA,5653
 feet up!,93,matcher,1,TRUE,NA,5654
 feet up ok . feet up and feet down. this ones letter i dude,223,describer,2,NA,NA,5654
 good idea,93,matcher,1,TRUE,NA,5655
 mister delivery man with that amazon prime package,223,describer,2,NA,NA,5655
 free 2-day shipping,93,matcher,1,TRUE,NA,5656
-,223,describer,2,TRUE,NA,5656
 this one is the chill dude 2.0,223,describer,3,NA,NA,5656
 the equestrian champion,223,describer,1,NA,NA,5657
-,223,describer,1,TRUE,NA,5658
 dat wordplay,93,matcher,2,TRUE,NA,5658
 man!,223,describer,3,TRUE,NA,5658
 the chillist chill dude,223,describer,4,NA,NA,5658
@@ -8672,7 +8607,6 @@ feet down,223,describer,2,NA,NA,5660
 i feel like we are mj and scottie pippen right now,223,describer,1,TRUE,NA,5661
 6 rings,93,matcher,2,TRUE,NA,5661
 or $3.00,93,matcher,3,TRUE,NA,5661
-,223,describer,4,TRUE,NA,5661
 same thing right,93,matcher,5,TRUE,NA,5661
 :d,93,matcher,6,TRUE,NA,5661
 this ones hands up dude,223,describer,7,NA,NA,5661
@@ -8680,7 +8614,6 @@ that horse,223,describer,1,NA,NA,5662
 kind of a letdown after equestrian... :p,93,matcher,1,TRUE,NA,5663
 i couldnt top equestrian champion,223,describer,2,TRUE,NA,5663
 i do not blame you,93,matcher,3,TRUE,NA,5663
-,223,describer,4,TRUE,NA,5663
 this ones feet down,223,describer,5,NA,NA,5663
 chill dude 2.0,223,describer,1,NA,NA,5664
 mister bunny ears,223,describer,1,NA,NA,5665
@@ -8690,14 +8623,12 @@ mister wind up,223,describer,1,NA,NA,5668
 the chill dude,223,describer,1,NA,NA,5669
 mister fed ex,223,describer,1,NA,NA,5670
 what can brown do for... wrong company,93,matcher,1,TRUE,NA,5671
-,223,describer,2,TRUE,NA,5671
 :p,93,matcher,3,TRUE,NA,5671
 this ones feet up,223,describer,4,NA,NA,5671
 just want to say that it was fun working with you,93,matcher,1,TRUE,NA,5672
 ditto the very same to you,223,describer,2,TRUE,NA,5672
 ive done a few interaction hits this has been the best,223,describer,3,TRUE,NA,5672
 and my guy the winged man for the win!,223,describer,4,NA,NA,5672
-,93,matcher,5,TRUE,NA,5672
 good luck on your comics!,93,matcher,6,TRUE,NA,5672
 hi,224,matcher,1,NA,NA,7371
 ready when you are,224,matcher,2,NA,NA,7371
@@ -8730,7 +8661,6 @@ looks like someone leaning against a wall and taking a nap. seen from his left s
 any feet?,94,matcher,2,NA,NA,5686
 just the one pointing to our right. his left foot.,225,describer,3,NA,NA,5686
 thank you,94,matcher,1,TRUE,NA,5687
-,225,describer,2,TRUE,NA,5687
 "the figure with his arms outstretched, kneeling, triangle foot to our left. arms are two triangles.",225,describer,3,NA,NA,5687
 the weird bunny rabbit.,225,describer,1,NA,NA,5688
 "two diamonds at the top, weapon jutting out of his chest, pointing to our right.",225,describer,1,NA,NA,5689
@@ -9045,9 +8975,7 @@ no dress either ;),227,describer,4,NA,NA,5857
 server,227,describer,1,NA,NA,5858
 fat server,227,describer,1,NA,NA,5859
 girl zombie/ghost,227,describer,1,NA,NA,5860
-,96,matcher,1,TRUE,NA,5861
 praying feet up,227,describer,2,NA,NA,5861
-,227,describer,3,TRUE,NA,5861
 2 triangles,227,describer,1,NA,NA,5862
 crap... um,227,describer,1,TRUE,NA,5863
 :d,96,matcher,2,TRUE,NA,5863
@@ -9077,7 +9005,6 @@ wait,96,matcher,3,TRUE,NA,5877
 "ok, this one is?",96,matcher,4,TRUE,NA,5877
 no,227,describer,5,TRUE,NA,5877
 fat server,227,describer,6,NA,NA,5877
-,227,describer,7,TRUE,NA,5877
 server,227,describer,1,NA,NA,5878
 skater,227,describer,1,NA,NA,5879
 praying feet up,227,describer,1,NA,NA,5880
@@ -9237,7 +9164,6 @@ they're all so similar,98,matcher,2,NA,NA,5974
 "ok, so....this looks like the one you selected last time, except instead of kneeling, they're kinda talller.",229,describer,4,NA,NA,5974
 i'mma call that one dumbo from now on.,229,describer,1,NA,NA,5975
 the one you selected,229,describer,2,NA,NA,5975
-,98,matcher,3,NA,NA,5975
 this one is the one that looks like a person flying,229,describer,4,NA,NA,5975
 ok....this is the one i struggled to describe the last time haha,229,describer,1,NA,NA,5976
 uh.  there's a diamond for a head.  no other feature you can really make out.,229,describer,2,NA,NA,5976
@@ -9254,7 +9180,6 @@ two triangles aiming to the left,229,describer,4,NA,NA,5979
 the one with slanted square shape?,98,matcher,5,NA,NA,5979
 ok that one is karate kid,229,describer,1,NA,NA,5980
 this one is car seat.,229,describer,2,NA,NA,5980
-,98,matcher,3,NA,NA,5980
 this one is dumbo,229,describer,1,NA,NA,5981
 wait i forgot which was dumb let me think a sec,98,matcher,2,NA,NA,5981
 "looks like they're balanced on one leg, the other leg off the ground, a square to the right of their head",229,describer,3,NA,NA,5981
@@ -9276,7 +9201,6 @@ trix,229,describer,1,NA,NA,5988
 "god, i hate this one.  we're definitely nicknaming this one if you get it.",229,describer,1,NA,NA,5989
 "it looks like a piece missing, and if you connected it, it'd look like the person was in a bed.  only their head you can really make out.",229,describer,2,NA,NA,5989
 "ok, that one is bed .",229,describer,1,NA,NA,5990
-,98,matcher,2,NA,NA,5990
 this one is the one that looks the most like they're kneeling with their arms out.  the tallest.,229,describer,3,NA,NA,5990
 that one is lightning bolt,229,describer,1,NA,NA,5991
 those two are hardest,98,matcher,2,NA,NA,5991
@@ -9302,7 +9226,6 @@ the one you got wrong when i said sky glancer,229,describer,1,NA,NA,6004
 the head balanced on the gap of the two triangles.,229,describer,3,NA,NA,6004
 crap,98,matcher,1,NA,NA,6005
 the one you just got wrong haha,229,describer,2,NA,NA,6005
-,98,matcher,1,NA,NA,6006
 "no no, it was the opposite both times haha",229,describer,2,NA,NA,6006
 it's been a long day,98,matcher,3,NA,NA,6006
 "haha it's ok, we're doing pretty good!",229,describer,4,NA,NA,6006
@@ -9469,7 +9392,6 @@ the lunger ... facing right arms going up diagonally one leg way back,231,descri
 sad easter bunny :(,231,describer,1,NA,NA,6094
 the angel floating up to heaven,231,describer,1,NA,NA,6095
 or falling ... your choice :p,231,describer,2,NA,NA,6095
-,101,matcher,3,TRUE,NA,6095
 no legs,231,describer,4,NA,NA,6095
 burrito of sadness,231,describer,1,NA,NA,6096
 "show off ... facing left balancing on one leg, the other stretched out behind him arms forward",231,describer,1,NA,NA,6097
@@ -10296,7 +10218,6 @@ receiving diploma,239,describer,1,NA,NA,6676
 "almost like diploma, just slight bend of the legs and no arms",239,describer,1,NA,NA,6678
 "looks like a servant with a tray out, small triangle on back",239,describer,1,NA,NA,6679
 kneeling,239,describer,2,NA,NA,6679
-,109,matcher,1,TRUE,NA,6680
 "one foot on ground, one foot off, head tilted back,  its okay",239,describer,2,NA,NA,6680
 "standing straight, with one arm out",239,describer,1,NA,NA,6681
 not the graduate?,109,matcher,2,NA,NA,6681
@@ -10372,7 +10293,6 @@ yes,240,describer,4,TRUE,NA,6726
 man standing on one leg with the other short leg pointed back,240,describer,1,NA,NA,6727
 arms facing left? sorta looks like he might be kicking?,110,matcher,2,NA,NA,6727
 "weird ... like a woman in dress doing weird yoga pose, one elbow lifted",240,describer,1,NA,NA,6728
-,110,matcher,2,TRUE,NA,6728
 which direction is the elbow?,110,matcher,3,NA,NA,6728
 to right,240,describer,4,NA,NA,6728
 she looks like she is sorta kneeling on the ground,240,describer,5,NA,NA,6728
@@ -10603,14 +10523,11 @@ this one kind of look like a bow in a girl's hair,242,describer,3,NA,NA,6868
 oops,242,describer,4,TRUE,NA,6868
 hair,242,describer,5,TRUE,NA,6868
 nuts,112,matcher,1,TRUE,NA,6869
-,112,matcher,2,TRUE,NA,6869
 it was close:),242,describer,3,TRUE,NA,6869
 this one like a monk,242,describer,4,NA,NA,6869
 holding something in his hand,242,describer,5,NA,NA,6869
 facing left or right?,112,matcher,6,NA,NA,6869
 facing left,242,describer,7,NA,NA,6869
-,112,matcher,1,TRUE,NA,6870
-,242,describer,2,TRUE,NA,6870
 can we survive 72 rounds,242,describer,3,TRUE,NA,6870
 yes!,112,matcher,4,TRUE,NA,6870
 someone doing the tango,242,describer,5,NA,NA,6870
@@ -10625,7 +10542,6 @@ which way they facing?,112,matcher,4,NA,NA,6872
 just a triangle head,242,describer,5,NA,NA,6872
 right,242,describer,6,NA,NA,6872
 wow you got that one,242,describer,1,TRUE,NA,6873
-,112,matcher,2,TRUE,NA,6873
 your good,242,describer,3,TRUE,NA,6873
 this one looks like a woman,242,describer,4,NA,NA,6873
 your clues are good,112,matcher,5,TRUE,NA,6873
@@ -10701,7 +10617,6 @@ head down,242,describer,4,NA,NA,6891
 sitting or standing?,112,matcher,5,NA,NA,6891
 standing,242,describer,6,NA,NA,6891
 that was the one one with the head thrown back,112,matcher,1,NA,NA,6892
-,112,matcher,2,TRUE,NA,6892
 triangle on top of a jagged square,242,describer,3,NA,NA,6892
 this one is the one,242,describer,1,NA,NA,6893
 like a chicken about the look at the ground,242,describer,2,NA,NA,6893
@@ -10787,7 +10702,6 @@ its ok,112,matcher,3,TRUE,NA,6919
 oops,242,describer,4,TRUE,NA,6919
 this the geisha,242,describer,5,NA,NA,6919
 with he bow behind,242,describer,6,NA,NA,6919
-,242,describer,1,TRUE,NA,6920
 monk,242,describer,2,NA,NA,6920
 its ok,112,matcher,3,TRUE,NA,6920
 facing?,112,matcher,4,NA,NA,6920
@@ -11126,7 +11040,6 @@ candle,250,describer,1,NA,NA,7122
 good one.  :),119,matcher,1,TRUE,NA,7123
 person sitting,250,describer,2,NA,NA,7123
 figure skater,250,describer,1,NA,NA,7124
-,250,describer,1,TRUE,NA,7125
 i don't know  diamond on top triangle pointing at it from right,250,describer,2,NA,NA,7125
 bugs bunny,250,describer,1,NA,NA,7126
 haha!,119,matcher,1,TRUE,NA,7127
@@ -11191,7 +11104,6 @@ bunny,250,describer,3,NA,NA,7155
 squatting (still on feet) facing right,250,describer,1,NA,NA,7156
 i was scared to click after getting it wrong awhile ago.  ;),119,matcher,1,TRUE,NA,7157
 walking facing left (box on back),250,describer,2,NA,NA,7157
-,250,describer,3,TRUE,NA,7157
 figure skater,250,describer,1,NA,NA,7158
 weird one (not walking one),250,describer,1,NA,NA,7159
 chicken,250,describer,2,NA,NA,7159
@@ -11216,7 +11128,6 @@ zombie,250,describer,3,NA,NA,7168
 figure skater,250,describer,1,NA,NA,7170
 ghost,250,describer,1,NA,NA,7171
 this game makes me realize how weird my brain is,250,describer,1,TRUE,NA,7172
-,119,matcher,2,TRUE,NA,7172
 walking left (box on back),250,describer,3,NA,NA,7172
 kneeling,250,describer,1,NA,NA,7173
 heels up,250,describer,2,NA,NA,7173

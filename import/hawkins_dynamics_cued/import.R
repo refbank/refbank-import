@@ -112,6 +112,7 @@ messages <- sequentialCombined.raw %>%
   ungroup() |> 
   mutate(action_type="message")
   
+messages <- messages |> inner_join(messages |> filter(role=="director") |> select(gameid, trialNum) |> unique())
 
 ### choices
 choices <- sequentialClicks |> 
@@ -166,6 +167,11 @@ all <- choices |> bind_rows(messages) |>
          exclude, exclusion_reason, action_type,
          message_irrelevant
   )
+
+spoke <- all |> filter(action_type=="message") |> filter(role=="describer") |> select(game_id, trial_num) |> unique()
+all |> filter(action_type=="selection") |> select(game_id, trial_num, choice_id) |> unique() |> anti_join(spoke)
+
+
 
 
 validate_dataset(all, write=T)

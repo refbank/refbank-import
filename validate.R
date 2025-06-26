@@ -211,6 +211,9 @@ validate_dataset <- function(df, write=F) {
            message_number, message_irrelevant, time_stamp) |>
     left_join(trials |> select(trial_id, game_id, room_num, trial_num), 
               by = join_by(game_id, room_num, trial_num)) |>
+    mutate(text=str_trim(text)) |>
+    filter(!is.na(text)) |> 
+    filter(text!="") |> 
     select(-trial_num, -game_id, -room_num)
   
   # check selections
@@ -225,7 +228,7 @@ validate_dataset <- function(df, write=F) {
                                     \(c, o) {c %in% o | c == "timed_out" }))
   
   assert_that(all(try_choices$check_choices), 
-              msg = "choice_id must be in option_set or timed_out or NA")
+              msg = "choice_id must be in option_set or timed_out")
   
   choices <- try_choices |> select(-option_set_list, -check_choices, -option_set)
   
@@ -254,12 +257,15 @@ validate_dataset <- function(df, write=F) {
   check_cols(c("trial_id", "player_id", "role", "text", "message_number", "message_irrelevant", "time_stamp"), messages)
   na_messages <- messages |> filter(if_any(c("player_id", "trial_id", "role", "message_number", "text"), is.na))
   assert_that(nrow(na_messages)==0)
+  empty_message <- messages |> filter(text=="")
+  assert_that(nrow(empty_message)==0)
   
   print("Checking trials")
   check_cols(c("trial_id", "condition_id", "game_id", "room_num", "option_set", "target", "stage_num",
                "trial_num", "rep_num", "exclude", "exclusion_reason", "describer", "matchers"), trials)
-  na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer", "matchers"), is.na))
-  assert_that(nrow(na_messages)==0)
+  na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer"), is.na))
+View(na_trials)
+    assert_that(nrow(na_trials)==0)
   
   print("All checks pass!")
   
@@ -277,7 +283,7 @@ validate_dataset <- function(df, write=F) {
     print("Writing choices")
     write_csv(choices, here(dir, "choices.csv"))
     print("Writing players")
-    write_csv(players, "players.csv")
+    write_csv(players, here(dir, "players.csv"))
          
   }
 }

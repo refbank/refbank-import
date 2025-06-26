@@ -13,6 +13,7 @@ library(here)
 library(ggplot2)
 library(stringi)
 library(redivis)
+library(assertthat)
 
 # source(here("data_helpers.R"))
 DATA_LOC=here("harmonized_data")
@@ -68,11 +69,11 @@ Table messages {
   dataset_id [foreign key datasets]
 }
 
-TODO check that player_id, trial_id, role, message_number, text, !is.na()
 
 ```{r}
 messages <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "messages") |>
-                     mutate(dataset_id = d))
+                     mutate(dataset_id = d)) |> 
+  filter(!is.na(text)) 
 
 na_messages <- messages |> filter(if_any(c("player_id", "trial_id", "role", "message_number", "text", "dataset_id"), is.na))
 assert_that(nrow(na_messages)==0)
@@ -99,8 +100,6 @@ Table trials {
   matchers list [foreign key matchers]
 }
 
-TODO check that condition_id, game_id, room_num, option_set, target, stage_num, trial_num, rep_num, describer all !is.na()
-
 ```{r}
 trials <-   map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "trials") |> 
                      mutate(target = as.character(target),
@@ -110,7 +109,7 @@ trials <-   map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "trials") |>
   #         str_remove_all("\\[|\\]|\"") |> 
    #        str_replace_all(",", ";") )
 
-na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer", "dataset_id"), is.na))
+na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num","describer", "dataset_id"), is.na))
 assert_that(nrow(na_trials)==0)
 
 
@@ -181,7 +180,7 @@ choices <- map_df(dataset_names, function (d) {
   df
 }) 
 
-na_choices <- choices |> filter(if_any(c("trial_id", "choice", "player_id"), is.na))
+na_choices <- choices |> filter(if_any(c("trial_id", "choice_id", "player_id", "dataset_id"), is.na))
 assert_that(nrow(na_choices)==0)
 ```
 
@@ -206,7 +205,7 @@ players <- map_df(dataset_names, function (d) {
   df
 })
 
-na_players <- players |> filter(if_any(c("player_id"), is.na))
+na_players <- players |> filter(if_any(c("player_id", "dataset_id"), is.na))
 assert_that(nrow(na_players)==0)
 ```
 

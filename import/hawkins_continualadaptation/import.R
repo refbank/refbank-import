@@ -109,7 +109,6 @@ combined <- d.humanhuman |>
 combined |>
   select(gameid, iterationName, condition, exclude) |>
   unique() |>
-  filter(exclude == F) |>
   group_by(iterationName, condition) |>
   tally()
 
@@ -123,7 +122,7 @@ ParseJSONColumn <- function(x) {
     fromJSON(flatten = T)
 }
 
-contexts <- combined |> select(context_id, targetImg, fullContext, condition) |> unique() |> 
+contexts <- combined |> select(context_id, targetImg, fullContext, condition) |>
   filter(!is.na(fullContext)) |> 
   mutate(fullContext=map(fullContext, .f=ParseJSONColumn)) |> 
   unnest(fullContext) |> 
@@ -156,7 +155,8 @@ choices <- combined |> select(
                         player_id=ifelse(condition=="human-speaker-model-listener", "model", player_id)) |> 
   left_join(concat_contexts) |> 
   left_join(clicked) |> 
-  mutate(action_type="selection")
+  mutate(action_type="selection") |>
+  mutate(choice_id=ifelse(is.na(choice_id), "timed_out", choice_id))
 
 
 
@@ -178,6 +178,7 @@ all <- chat |>
     group_size = ifelse(condition=="human-speaker-model-listener", 1, 2), # counting number of actual people? idk
     structure = ifelse(condition=="human-speaker-model-listener", "thin", "medium"),
     ) |>
+  filter(!is.na(option_set)) |> # this is two games in pilots where there wasn't context info in source 
   select(dataset_id, full_cite, short_cite, language, stage_num, 
     condition_label=condition, time_stamp,
     game_id=gameid, room_num,

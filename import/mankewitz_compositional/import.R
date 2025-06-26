@@ -65,10 +65,10 @@ d_game$condition_label <- factor(d_game$contextStructure,
 
 d_game_final <- d_game |> 
   mutate(dataset_id = "mankewitz2025_compositional",
-         full_cite = "",
+         full_cite = "Mankewitz & Hawkins (2025) unpublished",
          short_cite = "Mankewitz & Hawkins (2025)",
          group_size = 2,
-         structure = as.character(NA),
+         structure = "thick",
          language = "English",
          game_id = gameID)
 
@@ -109,7 +109,7 @@ d_trial_info <- d_round |>
                     str_replace_all(',', ';'),
          trial_num = index +1,
          rep_num = repNum + 1,
-         stage_num = as.numeric(NA),
+         stage_num = 1,
          exclude = FALSE,
          exclusion_reason = as.character(NA))
 

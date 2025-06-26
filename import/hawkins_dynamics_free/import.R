@@ -270,7 +270,7 @@ process_game_messages <- function(messages_df, id_cols, boards_dict, exclusion_d
         gender=as.character(NA), #do gender later
         role = "describer",
         target = num_to_letter(target_val),  # Map target to letter
-        message_number = j,
+        message_number = as.numeric(j),
         text = ifelse(segments[j] == "", "NA", segments[j]),
         choice_id = "NA",
         time_stamp = time_stamp,
@@ -333,6 +333,7 @@ load_and_process <- function(input_file, board_file, subj_file, output_file) {
   id_cols <- c("gameid", "roundNum")
   result_df <- process_game_messages(messages_df, id_cols, boards_dict, exclusion_df)
 
+  result_df <- result_df |>  filter(!(action_type=="message"&(is.na(text)|text==""))) #remove message rows without text 
   write_csv(result_df, output_file)
   result_df
 }
@@ -348,9 +349,10 @@ result <- load_and_process(INPUT_FILE, BOARD_FILE, SUBJ_FILE, OUTPUT_FILE)
 cat("Segmentation completed successfully!\n")
 print(head(result, 24))
 
-# nolint end
 
 source(here("validate.R"))
 
-test <- read_csv(here(OUTPUT_FILE)) |> mutate(age=as.numeric(age), gender=as.character(gender))
-validate_dataset(test, write=T)
+validate_dataset(result, write=T)
+# nolint end
+
+

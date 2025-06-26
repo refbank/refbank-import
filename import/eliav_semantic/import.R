@@ -43,8 +43,7 @@ messages_single <- expt_1 |> bind_rows(expt_2) |> select(game_id, trial_index, b
          message_number=1,
          message_irrelevant=F,
          action_type="message",
-         text=description) |> 
-  filter(!is.na(text))
+         text=description) 
 
 messages_complex <- expt_3 |> select(game_id, block, target, controlled, trial_index, structure, 
                                      condition_label, description, context, speaker_id, listener_id, stage_num) |> 
@@ -55,8 +54,7 @@ mutate(description=map(description, ParseJSONColumn)) |>
   ungroup() |> 
   mutate(role=ifelse(role=="speaker", "describer", "matcher"),
          player_id=ifelse(role=="describer", speaker_id, listener_id),
-         action_type="message") |> 
-  filter(!is.na(text))
+         action_type="message") 
 
 
 choices <- expt_1 |> bind_rows(expt_2) |> bind_rows(expt_3) |> select(game_id, trial_index, block, target, controlled,

@@ -62,7 +62,9 @@ combined_chat <- one_chat |>
   mutate(action_type="message") |> 
   mutate(role=case_when(role=="speaker" ~ "describer",
                         role=="listener" ~ "matcher")) |> 
-  filter(!is.na(text))
+  filter(!is.na(tangram))
+
+
 
 ##### do result processing
 
@@ -101,12 +103,18 @@ choices <- combined_results |>
       T ~ NA
     ),
     action_type="selection", 
-    role="matcher")
+    role="matcher") |> 
+  filter(!is.na(choice_id))
 
 #### exclusions
 
+# missing describers: there are trials where a describer talks but nothing else happens, we're going to exclude
+good_chat <- combined_chat |> inner_join(combined_chat |> filter(role=="describer") |> select(gameId,trialNum))
 
-all_data<- choices |> bind_rows(combined_chat) |> 
+
+
+
+all_data<- choices |> bind_rows(good_chat) |> 
   left_join(all_include) |> 
   mutate(dataset_id="boyce2024_interaction",
          trial_num=trialNum+1,
@@ -165,5 +173,7 @@ all_data<- choices |> bind_rows(combined_chat) |>
          message_irrelevant,
          choice_id
 ) |> arrange(game_id)
+
+
 
 validate_dataset(all_data, write=T)

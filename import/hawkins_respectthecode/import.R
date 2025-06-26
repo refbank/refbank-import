@@ -120,6 +120,7 @@ rounds <- read_csv(here(raw_data_dir, "rounds.csv")) |>
          choice_id= gsub(".png", "", response, fixed = TRUE),
          action_type="selection") |> 
   select(gameId, trialNum, repNum, partnerNum, choice_id, target, gamerole, playerId, roomId) |> 
+  filter(!is.na(choice_id)) |> 
   mutate(action_type="selection")
 
 
@@ -133,7 +134,8 @@ messages_2 |> filter(roomId!=message_roomId) # 8 instances all trialNum15
 messages_2 |> filter(target!=message_target) # 6 instances all trialNum15
 messages_2 |> filter(gamerole!=message_role) # |> select(trialNum) |> unique() # 42 instances, all trial num 7/11/3/15
 
-messages <- messages_2 |> select(gameId, trialNum, partnerNum, repNum, text, playerId, 
+messages <- messages_2 |> 
+  select(gameId, trialNum, partnerNum, repNum, text, playerId, 
                                  message_number, action_type, message_irrelevant, roomId, gamerole, target)
 
 
@@ -184,6 +186,7 @@ all <- messages |>
              T ~ NA
            )
            ) |> 
+  filter(!is.na(target)) |> 
     select(dataset_id, full_cite, short_cite, language, stage_num, 
            condition_label, time_stamp,
            game_id, room_num, player_id=playerId,
@@ -197,6 +200,11 @@ all <- messages |>
            structure
     )
 
+
+message <- all |> filter(action_type=="message") |> filter(role=="describer") |> select(game_id, room_num, trial_num) |> unique()
+choice <- all |> filter(action_type=="selection") |> select(game_id, room_num, trial_num) |> unique()
+
+choice |> anti_join(message)
 source(here("validate.R"))
 
 validate_dataset(all, write=T)

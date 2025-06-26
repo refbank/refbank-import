@@ -1,4 +1,4 @@
-target,image_type,kilogram_id,image_path
+image_id,image_type,kilogram_id,image_path
 C,tangram,page-C,page-C.svg
 G,tangram,page-G,page-G.svg
 H,tangram,page-H,page-H.svg
@@ -26,16 +26,13 @@ page6-109,tangram,page6-109,page6-109.svg
 page5-71,tangram,page5-71,page5-71.svg
 page5-65,tangram,page5-65,page5-65.svg
 page7-166,tangram,page7-166,page7-166.svg
-page7-20,tangram,page7-20,page7-20.svg
 page4-11,tangram,page4-11,page4-11.svg
-page8-169,tangram,page8-169,page8-169.svg
 page2-140,tangram,page2-140,page2-140.svg
 page5-153,tangram,page5-153,page5-153.svg
 page9-39,tangram,page9-39,page9-39.svg
 page1-95,tangram,page1-95,page1-95.svg
 page5-86,tangram,page5-86,page5-86.svg
 page7-107,tangram,page7-107,page7-107.svg
-page2-34,tangram,page2-34,page2-34.svg
 page6-122,tangram,page6-122,page6-122.svg
 page3-52,tangram,page3-52,page3-52.svg
 page3-70,tangram,page3-70,page3-70.svg
@@ -51,6 +48,7 @@ page6-1,tangram,page6-1,page6-1.svg
 page7-116,tangram,page7-116,page7-116.svg
 page1-117,tangram,page1-117,page1-117.svg
 page3-33,tangram,page3-33,page3-33.svg
+page7-20,tangram,page7-20,page7-20.svg
 page1-30,tangram,page1-30,page1-30.svg
 page7-226,tangram,page7-226,page7-226.svg
 page7-53,tangram,page7-53,page7-53.svg
@@ -58,7 +56,6 @@ page8-58,tangram,page8-58,page8-58.svg
 page5-85,tangram,page5-85,page5-85.svg
 page7-225,tangram,page7-225,page7-225.svg
 page8-246,tangram,page8-246,page8-246.svg
-page2-133,tangram,page2-133,page2-133.svg
 page7-115,tangram,page7-115,page7-115.svg
 page5-56,tangram,page5-56,page5-56.svg
 page7-126,tangram,page7-126,page7-126.svg
@@ -69,7 +66,6 @@ page5-45,tangram,page5-45,page5-45.svg
 page1-186,tangram,page1-186,page1-186.svg
 page6-185,tangram,page6-185,page6-185.svg
 page6-23,tangram,page6-23,page6-23.svg
-page5-63,tangram,page5-63,page5-63.svg
 page1-150,tangram,page1-150,page1-150.svg
 page8-206,tangram,page8-206,page8-206.svg
 page7-36,tangram,page7-36,page7-36.svg
@@ -78,6 +74,7 @@ page6-124,tangram,page6-124,page6-124.svg
 page5-36,tangram,page5-36,page5-36.svg
 page3-12,tangram,page3-12,page3-12.svg
 page6-208,tangram,page6-208,page6-208.svg
+page8-169,tangram,page8-169,page8-169.svg
 page5-232,tangram,page5-232,page5-232.svg
 page5-84,tangram,page5-84,page5-84.svg
 page5-26,tangram,page5-26,page5-26.svg
@@ -95,8 +92,10 @@ page8-159,tangram,page8-159,page8-159.svg
 page4-195,tangram,page4-195,page4-195.svg
 page6-135,tangram,page6-135,page6-135.svg
 page4-128,tangram,page4-128,page4-128.svg
+page5-63,tangram,page5-63,page5-63.svg
 page6-186,tangram,page6-186,page6-186.svg
 page6-219,tangram,page6-219,page6-219.svg
+page2-133,tangram,page2-133,page2-133.svg
 page6-21,tangram,page6-21,page6-21.svg
 page6-226,tangram,page6-226,page6-226.svg
 page7-15,tangram,page7-15,page7-15.svg
@@ -106,7 +105,6 @@ page6-204,tangram,page6-204,page6-204.svg
 page7-145,tangram,page7-145,page7-145.svg
 page6-162,tangram,page6-162,page6-162.svg
 page7-73,tangram,page7-73,page7-73.svg
-page4-241,tangram,page4-241,page4-241.svg
 page5-66,tangram,page5-66,page5-66.svg
 page5-96,tangram,page5-96,page5-96.svg
 page8-192,tangram,page8-192,page8-192.svg
@@ -117,6 +115,7 @@ page8-38,tangram,page8-38,page8-38.svg
 page2-20,tangram,page2-20,page2-20.svg
 page7-202,tangram,page7-202,page7-202.svg
 page7-113,tangram,page7-113,page7-113.svg
+page2-34,tangram,page2-34,page2-34.svg
 page7-29,tangram,page7-29,page7-29.svg
 page6-167,tangram,page6-167,page6-167.svg
 page2-36,tangram,page2-36,page2-36.svg
@@ -129,6 +128,7 @@ page3-61,tangram,page3-61,page3-61.svg
 page7-127,tangram,page7-127,page7-127.svg
 page5-165,tangram,page5-165,page5-165.svg
 page5-80,tangram,page5-80,page5-80.svg
+page4-241,tangram,page4-241,page4-241.svg
 page3-139,tangram,page3-139,page3-139.svg
 page8-247,tangram,page8-247,page8-247.svg
 page6-121,tangram,page6-121,page6-121.svg
@@ -153,7 +153,6 @@ page6-107,tangram,page6-107,page6-107.svg
 page6-175,tangram,page6-175,page6-175.svg
 page2-85,tangram,page2-85,page2-85.svg
 page4-155,tangram,page4-155,page4-155.svg
-page5-102,tangram,page5-102,page5-102.svg
 page5-128,tangram,page5-128,page5-128.svg
 page8-56,tangram,page8-56,page8-56.svg
 page8-54,tangram,page8-54,page8-54.svg
@@ -162,7 +161,6 @@ page1-107,tangram,page1-107,page1-107.svg
 page8-18,tangram,page8-18,page8-18.svg
 page7-217,tangram,page7-217,page7-217.svg
 page5-75,tangram,page5-75,page5-75.svg
-page8-22,tangram,page8-22,page8-22.svg
 page1-149,tangram,page1-149,page1-149.svg
 page7-35,tangram,page7-35,page7-35.svg
 page7-144,tangram,page7-144,page7-144.svg
@@ -175,10 +173,11 @@ page7-4,tangram,page7-4,page7-4.svg
 page5-188,tangram,page5-188,page5-188.svg
 page8-166,tangram,page8-166,page8-166.svg
 page9-32,tangram,page9-32,page9-32.svg
+page5-102,tangram,page5-102,page5-102.svg
 page9-25,tangram,page9-25,page9-25.svg
-page6-31,tangram,page6-31,page6-31.svg
 page9-34,tangram,page9-34,page9-34.svg
 page3-59,tangram,page3-59,page3-59.svg
+page8-22,tangram,page8-22,page8-22.svg
 page8-221,tangram,page8-221,page8-221.svg
 page3-21,tangram,page3-21,page3-21.svg
 page7-117,tangram,page7-117,page7-117.svg
@@ -191,18 +190,19 @@ page1-128,tangram,page1-128,page1-128.svg
 page2-64,tangram,page2-64,page2-64.svg
 page1-97,tangram,page1-97,page1-97.svg
 page5-233,tangram,page5-233,page5-233.svg
-page2-190,tangram,page2-190,page2-190.svg
 page6-192,tangram,page6-192,page6-192.svg
 page6-123,tangram,page6-123,page6-123.svg
 page3-207,tangram,page3-207,page3-207.svg
+page6-31,tangram,page6-31,page6-31.svg
 page4-108,tangram,page4-108,page4-108.svg
 page6-53,tangram,page6-53,page6-53.svg
 page5-190,tangram,page5-190,page5-190.svg
-page8-217,tangram,page8-217,page8-217.svg
 page3-200,tangram,page3-200,page3-200.svg
 page5-174,tangram,page5-174,page5-174.svg
 page3-205,tangram,page3-205,page3-205.svg
+page8-217,tangram,page8-217,page8-217.svg
 page5-107,tangram,page5-107,page5-107.svg
+page2-190,tangram,page2-190,page2-190.svg
 page9-38,tangram,page9-38,page9-38.svg
 page5-235,tangram,page5-235,page5-235.svg
 page8-180,tangram,page8-180,page8-180.svg
@@ -1157,6 +1157,7 @@ COCO_val2014_000000260182.jpg,photograph,NA,NA
 COCO_val2014_000000181249.jpg,photograph,NA,NA
 COCO_val2014_000000204360.jpg,photograph,NA,NA
 COCO_val2014_000000072050.jpg,photograph,NA,NA
+NA,tangram,NA,NA
 /tangrams/343_157.png,NA,NA,NA
 /tangrams/336_402.png,NA,NA,NA
 /tangrams/189_405.png,NA,NA,NA

@@ -46,7 +46,7 @@ contexts <- messages |> select(networkid, roomid, trialnum, target) |> unique() 
     target %in% c("I", "J", "K", "H") ~ 2
   ),
   target_name=target,
-  dist0=case_when( # there are all based on the idea that the distractors are labeled in order from what's left of the set
+  distr0=case_when( # there are all based on the idea that the distractors are labeled in order from what's left of the set
     # see https://github.com/hawkrobe/conventions_model/blob/master/reference_game/experiment.py#L102 for why we think that
     target=="A" ~ "B",
     target %in% c("B", "C","D") ~ "A",
@@ -55,7 +55,7 @@ contexts <- messages |> select(networkid, roomid, trialnum, target) |> unique() 
     target=="I" ~ "J",
     target %in% c("J", "K", "H") ~ "I",
   ),
-  dist1=case_when(
+  distr1=case_when(
     target %in% c("A","B") ~ "C",
     target %in% c("C","D") ~ "B",
     target %in% c("E", "F") ~ "G",
@@ -63,7 +63,7 @@ contexts <- messages |> select(networkid, roomid, trialnum, target) |> unique() 
     target %in% c("I", "J") ~ "K",
     target %in% c("K", "H") ~ "J",
   ),
-  dist2=case_when(
+  distr2=case_when(
     target=="D" ~ "C",
     target %in% c("A", "B", "C") ~ "D",
     target=="L" ~ "G",
@@ -71,7 +71,7 @@ contexts <- messages |> select(networkid, roomid, trialnum, target) |> unique() 
     target=="H" ~ "K",
     target %in% c("I","J", "K") ~ "H",
   )) |> 
-  pivot_longer(c("target", "dist0", "dist1", "dist2"), names_to="object_id", values_to="choice_id") |> 
+  pivot_longer(c("target", "distr0", "distr1", "distr2"), names_to="object_id", values_to="choice_id") |> 
   rename(target=target_name)
 
 roles <- messages |> mutate(rep_num=trialnum%/%4) |> 
@@ -91,7 +91,12 @@ clicks <- read_csv(str_c(url,'clicks.csv')) |>
   mutate(action_type="selection") |> left_join(contexts |> select(-option_set, -target)) |> 
   left_join(contexts |> select(networkid,roomid, option_set, trialnum, target) |> unique())
   
-messages_with_context <- messages |> 
+
+#exclude messages from matchers on trials where the describer didn't talk
+# only applies to two trials 
+describer_talked <- messages |> filter(role=="describer") |> select(networkid, roomid, trialnum) |> unique()
+
+messages_with_context <- messages |> inner_join(describer_talked) |> 
   left_join(contexts |> ungroup() |> select(networkid, option_set) |> unique())
 
 
@@ -139,6 +144,7 @@ all <- messages_with_context |>
            group_size, message_irrelevant,
            structure
     )
+
 
 source(here("validate.R"))
 
