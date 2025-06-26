@@ -503,78 +503,78 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,70,6,NA,NA,1,130,7,502,7
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,71,6,NA,NA,1,130,7,503,7
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,72,6,NA,NA,1,130,7,504,7
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,1,1,TRUE,describer didn't talk,1,NA,8,505,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,2,1,TRUE,describer didn't talk,1,NA,8,506,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,3,1,TRUE,describer didn't talk,1,NA,8,507,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,4,1,TRUE,describer didn't talk,1,NA,8,508,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,5,1,TRUE,describer didn't talk,1,NA,8,509,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,6,1,TRUE,describer didn't talk,1,NA,8,510,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,7,1,TRUE,describer didn't talk,1,NA,8,511,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,8,1,TRUE,describer didn't talk,1,NA,8,512,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,9,1,TRUE,describer didn't talk,1,NA,8,513,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,10,1,TRUE,describer didn't talk,1,NA,8,514,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,11,1,TRUE,describer didn't talk,1,NA,8,515,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,12,1,TRUE,describer didn't talk,1,NA,8,516,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,13,2,TRUE,describer didn't talk,1,NA,8,517,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,14,2,TRUE,describer didn't talk,1,NA,8,518,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,15,2,TRUE,describer didn't talk,1,NA,8,519,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,16,2,TRUE,describer didn't talk,1,NA,8,520,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,17,2,TRUE,describer didn't talk,1,NA,8,521,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,18,2,TRUE,describer didn't talk,1,NA,8,522,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,19,2,TRUE,describer didn't talk,1,NA,8,523,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,20,2,TRUE,describer didn't talk,1,NA,8,524,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,21,2,TRUE,describer didn't talk,1,NA,8,525,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,22,2,TRUE,describer didn't talk,1,NA,8,526,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,23,2,TRUE,describer didn't talk,1,NA,8,527,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,24,2,TRUE,describer didn't talk,1,NA,8,528,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,25,3,TRUE,describer didn't talk,1,NA,8,529,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,26,3,TRUE,describer didn't talk,1,NA,8,530,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,27,3,TRUE,describer didn't talk,1,NA,8,531,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,28,3,TRUE,describer didn't talk,1,NA,8,532,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,29,3,TRUE,describer didn't talk,1,NA,8,533,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,30,3,TRUE,describer didn't talk,1,NA,8,534,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,31,3,TRUE,describer didn't talk,1,NA,8,535,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,32,3,TRUE,describer didn't talk,1,NA,8,536,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,33,3,TRUE,describer didn't talk,1,NA,8,537,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,34,3,TRUE,describer didn't talk,1,NA,8,538,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,35,3,TRUE,describer didn't talk,1,NA,8,539,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,36,3,TRUE,describer didn't talk,1,NA,8,540,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,37,4,TRUE,describer didn't talk,1,NA,8,541,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,38,4,TRUE,describer didn't talk,1,NA,8,542,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,39,4,TRUE,describer didn't talk,1,NA,8,543,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,40,4,TRUE,describer didn't talk,1,NA,8,544,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,41,4,TRUE,describer didn't talk,1,NA,8,545,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,42,4,TRUE,describer didn't talk,1,NA,8,546,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,43,4,TRUE,describer didn't talk,1,NA,8,547,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,44,4,TRUE,describer didn't talk,1,NA,8,548,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,45,4,TRUE,describer didn't talk,1,NA,8,549,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,46,4,TRUE,describer didn't talk,1,NA,8,550,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,47,4,TRUE,describer didn't talk,1,NA,8,551,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,48,4,TRUE,describer didn't talk,1,NA,8,552,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,49,5,TRUE,describer didn't talk,1,NA,8,553,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,50,5,TRUE,describer didn't talk,1,NA,8,554,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,51,5,TRUE,describer didn't talk,1,NA,8,555,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,52,5,TRUE,describer didn't talk,1,NA,8,556,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,53,5,TRUE,describer didn't talk,1,NA,8,557,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,54,5,TRUE,describer didn't talk,1,NA,8,558,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,55,5,TRUE,describer didn't talk,1,NA,8,559,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,56,5,TRUE,describer didn't talk,1,NA,8,560,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,57,5,TRUE,describer didn't talk,1,NA,8,561,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,58,5,TRUE,describer didn't talk,1,NA,8,562,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,59,5,TRUE,describer didn't talk,1,NA,8,563,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,60,5,TRUE,describer didn't talk,1,NA,8,564,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,61,6,TRUE,describer didn't talk,1,NA,8,565,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,62,6,TRUE,describer didn't talk,1,NA,8,566,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,63,6,TRUE,describer didn't talk,1,NA,8,567,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,64,6,TRUE,describer didn't talk,1,NA,8,568,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,65,6,TRUE,describer didn't talk,1,NA,8,569,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,66,6,TRUE,describer didn't talk,1,NA,8,570,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,67,6,TRUE,describer didn't talk,1,NA,8,571,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,68,6,TRUE,describer didn't talk,1,NA,8,572,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,69,6,TRUE,describer didn't talk,1,NA,8,573,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,70,6,TRUE,describer didn't talk,1,NA,8,574,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,71,6,TRUE,describer didn't talk,1,NA,8,575,8
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,72,6,TRUE,describer didn't talk,1,NA,8,576,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,1,1,TRUE,describer didn't talk,1,255,8,505,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,2,1,TRUE,describer didn't talk,1,255,8,506,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,3,1,TRUE,describer didn't talk,1,255,8,507,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,4,1,TRUE,describer didn't talk,1,255,8,508,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,5,1,TRUE,describer didn't talk,1,255,8,509,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,6,1,TRUE,describer didn't talk,1,255,8,510,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,7,1,TRUE,describer didn't talk,1,255,8,511,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,8,1,TRUE,describer didn't talk,1,255,8,512,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,9,1,TRUE,describer didn't talk,1,255,8,513,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,10,1,TRUE,describer didn't talk,1,255,8,514,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,11,1,TRUE,describer didn't talk,1,255,8,515,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,12,1,TRUE,describer didn't talk,1,255,8,516,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,13,2,TRUE,describer didn't talk,1,255,8,517,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,14,2,TRUE,describer didn't talk,1,255,8,518,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,15,2,TRUE,describer didn't talk,1,255,8,519,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,16,2,TRUE,describer didn't talk,1,255,8,520,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,17,2,TRUE,describer didn't talk,1,255,8,521,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,18,2,TRUE,describer didn't talk,1,255,8,522,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,19,2,TRUE,describer didn't talk,1,255,8,523,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,20,2,TRUE,describer didn't talk,1,255,8,524,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,21,2,TRUE,describer didn't talk,1,255,8,525,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,22,2,TRUE,describer didn't talk,1,255,8,526,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,23,2,TRUE,describer didn't talk,1,255,8,527,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,24,2,TRUE,describer didn't talk,1,255,8,528,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,25,3,TRUE,describer didn't talk,1,255,8,529,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,26,3,TRUE,describer didn't talk,1,255,8,530,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,27,3,TRUE,describer didn't talk,1,255,8,531,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,28,3,TRUE,describer didn't talk,1,255,8,532,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,29,3,TRUE,describer didn't talk,1,255,8,533,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,30,3,TRUE,describer didn't talk,1,255,8,534,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,31,3,TRUE,describer didn't talk,1,255,8,535,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,32,3,TRUE,describer didn't talk,1,255,8,536,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,33,3,TRUE,describer didn't talk,1,255,8,537,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,34,3,TRUE,describer didn't talk,1,255,8,538,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,35,3,TRUE,describer didn't talk,1,255,8,539,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,36,3,TRUE,describer didn't talk,1,255,8,540,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,37,4,TRUE,describer didn't talk,1,255,8,541,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,38,4,TRUE,describer didn't talk,1,255,8,542,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,39,4,TRUE,describer didn't talk,1,255,8,543,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,40,4,TRUE,describer didn't talk,1,255,8,544,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,41,4,TRUE,describer didn't talk,1,255,8,545,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,42,4,TRUE,describer didn't talk,1,255,8,546,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,43,4,TRUE,describer didn't talk,1,255,8,547,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,44,4,TRUE,describer didn't talk,1,255,8,548,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,45,4,TRUE,describer didn't talk,1,255,8,549,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,46,4,TRUE,describer didn't talk,1,255,8,550,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,47,4,TRUE,describer didn't talk,1,255,8,551,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,48,4,TRUE,describer didn't talk,1,255,8,552,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,49,5,TRUE,describer didn't talk,1,255,8,553,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,50,5,TRUE,describer didn't talk,1,255,8,554,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,51,5,TRUE,describer didn't talk,1,255,8,555,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,52,5,TRUE,describer didn't talk,1,255,8,556,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,53,5,TRUE,describer didn't talk,1,255,8,557,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,54,5,TRUE,describer didn't talk,1,255,8,558,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,55,5,TRUE,describer didn't talk,1,255,8,559,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,56,5,TRUE,describer didn't talk,1,255,8,560,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,57,5,TRUE,describer didn't talk,1,255,8,561,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,58,5,TRUE,describer didn't talk,1,255,8,562,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,59,5,TRUE,describer didn't talk,1,255,8,563,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,60,5,TRUE,describer didn't talk,1,255,8,564,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,61,6,TRUE,describer didn't talk,1,255,8,565,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,62,6,TRUE,describer didn't talk,1,255,8,566,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,63,6,TRUE,describer didn't talk,1,255,8,567,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,64,6,TRUE,describer didn't talk,1,255,8,568,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,65,6,TRUE,describer didn't talk,1,255,8,569,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,66,6,TRUE,describer didn't talk,1,255,8,570,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,67,6,TRUE,describer didn't talk,1,255,8,571,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,68,6,TRUE,describer didn't talk,1,255,8,572,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,69,6,TRUE,describer didn't talk,1,255,8,573,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,70,6,TRUE,describer didn't talk,1,255,8,574,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,71,6,TRUE,describer didn't talk,1,255,8,575,8
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,72,6,TRUE,describer didn't talk,1,255,8,576,8
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,1,1,NA,NA,1,131,9,577,9
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,2,1,NA,NA,1,131,9,578,9
 1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,3,1,NA,NA,1,131,9,579,9
@@ -2088,21 +2088,21 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,71,6,NA,NA,1,151,29,2087,29
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,72,6,NA,NA,1,151,29,2088,29
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,1,1,TRUE,low accuracy game,1,152,30,2089,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,2,1,TRUE,low accuracy game,1,NA,30,2090,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,2,1,TRUE,low accuracy game,1,152,30,2090,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,3,1,TRUE,low accuracy game,1,152,30,2091,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,4,1,TRUE,low accuracy game,1,NA,30,2092,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,4,1,TRUE,low accuracy game,1,152,30,2092,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,5,1,TRUE,low accuracy game,1,152,30,2093,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,6,1,TRUE,low accuracy game,1,NA,30,2094,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,7,1,TRUE,low accuracy game,1,NA,30,2095,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,8,1,TRUE,low accuracy game,1,NA,30,2096,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,9,1,TRUE,low accuracy game,1,NA,30,2097,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,10,1,TRUE,low accuracy game,1,NA,30,2098,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,6,1,TRUE,low accuracy game,1,152,30,2094,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,7,1,TRUE,low accuracy game,1,152,30,2095,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,8,1,TRUE,low accuracy game,1,152,30,2096,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,9,1,TRUE,low accuracy game,1,152,30,2097,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,10,1,TRUE,low accuracy game,1,152,30,2098,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,11,1,TRUE,low accuracy game,1,152,30,2099,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,12,1,TRUE,low accuracy game,1,152,30,2100,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,13,2,TRUE,low accuracy game,1,152,30,2101,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,14,2,TRUE,low accuracy game,1,NA,30,2102,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,14,2,TRUE,low accuracy game,1,152,30,2102,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,15,2,TRUE,low accuracy game,1,152,30,2103,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,16,2,TRUE,low accuracy game,1,NA,30,2104,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,16,2,TRUE,low accuracy game,1,152,30,2104,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,17,2,TRUE,low accuracy game,1,152,30,2105,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,18,2,TRUE,low accuracy game,1,152,30,2106,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,19,2,TRUE,low accuracy game,1,152,30,2107,30
@@ -2115,8 +2115,8 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,26,3,TRUE,low accuracy game,1,152,30,2114,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,27,3,TRUE,low accuracy game,1,152,30,2115,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,28,3,TRUE,low accuracy game,1,152,30,2116,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,29,3,TRUE,low accuracy game,1,NA,30,2117,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,30,3,TRUE,low accuracy game,1,NA,30,2118,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,29,3,TRUE,low accuracy game,1,152,30,2117,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,30,3,TRUE,low accuracy game,1,152,30,2118,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,31,3,TRUE,low accuracy game,1,152,30,2119,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,32,3,TRUE,low accuracy game,1,152,30,2120,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,33,3,TRUE,low accuracy game,1,152,30,2121,30
@@ -2130,34 +2130,34 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,41,4,TRUE,low accuracy game,1,152,30,2129,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,42,4,TRUE,low accuracy game,1,152,30,2130,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,43,4,TRUE,low accuracy game,1,152,30,2131,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,44,4,TRUE,low accuracy game,1,NA,30,2132,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,45,4,TRUE,low accuracy game,1,NA,30,2133,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,46,4,TRUE,low accuracy game,1,NA,30,2134,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,47,4,TRUE,low accuracy game,1,NA,30,2135,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,48,4,TRUE,low accuracy game,1,NA,30,2136,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,49,5,TRUE,low accuracy game,1,NA,30,2137,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,44,4,TRUE,low accuracy game,1,152,30,2132,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,45,4,TRUE,low accuracy game,1,152,30,2133,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,46,4,TRUE,low accuracy game,1,152,30,2134,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,47,4,TRUE,low accuracy game,1,152,30,2135,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,48,4,TRUE,low accuracy game,1,152,30,2136,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,49,5,TRUE,low accuracy game,1,152,30,2137,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,50,5,TRUE,low accuracy game,1,152,30,2138,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,51,5,TRUE,low accuracy game,1,152,30,2139,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,52,5,TRUE,low accuracy game,1,NA,30,2140,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,53,5,TRUE,low accuracy game,1,NA,30,2141,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,54,5,TRUE,low accuracy game,1,NA,30,2142,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,55,5,TRUE,low accuracy game,1,NA,30,2143,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,52,5,TRUE,low accuracy game,1,152,30,2140,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,53,5,TRUE,low accuracy game,1,152,30,2141,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,54,5,TRUE,low accuracy game,1,152,30,2142,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,55,5,TRUE,low accuracy game,1,152,30,2143,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,56,5,TRUE,low accuracy game,1,152,30,2144,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,57,5,TRUE,low accuracy game,1,NA,30,2145,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,57,5,TRUE,low accuracy game,1,152,30,2145,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,58,5,TRUE,low accuracy game,1,152,30,2146,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,59,5,TRUE,low accuracy game,1,152,30,2147,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,60,5,TRUE,low accuracy game,1,152,30,2148,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,61,6,TRUE,low accuracy game,1,NA,30,2149,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,62,6,TRUE,low accuracy game,1,NA,30,2150,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,63,6,TRUE,low accuracy game,1,NA,30,2151,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,64,6,TRUE,low accuracy game,1,NA,30,2152,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,65,6,TRUE,low accuracy game,1,NA,30,2153,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,61,6,TRUE,low accuracy game,1,152,30,2149,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,62,6,TRUE,low accuracy game,1,152,30,2150,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,63,6,TRUE,low accuracy game,1,152,30,2151,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,64,6,TRUE,low accuracy game,1,152,30,2152,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,65,6,TRUE,low accuracy game,1,152,30,2153,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,66,6,TRUE,low accuracy game,1,152,30,2154,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,67,6,TRUE,low accuracy game,1,152,30,2155,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,68,6,TRUE,low accuracy game,1,NA,30,2156,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,69,6,TRUE,low accuracy game,1,NA,30,2157,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,68,6,TRUE,low accuracy game,1,152,30,2156,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,69,6,TRUE,low accuracy game,1,152,30,2157,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,70,6,TRUE,low accuracy game,1,152,30,2158,30
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,71,6,TRUE,low accuracy game,1,NA,30,2159,30
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,71,6,TRUE,low accuracy game,1,152,30,2159,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,72,6,TRUE,low accuracy game,1,152,30,2160,30
 1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,1,1,TRUE,repeat participant,1,158,31,2161,31
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,2,1,TRUE,repeat participant,1,158,31,2162,31
@@ -2450,7 +2450,7 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,1,1,NA,NA,1,162,35,2449,35
 1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,2,1,NA,NA,1,162,35,2450,35
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,3,1,NA,NA,1,162,35,2451,35
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,4,1,NA,NA,1,NA,35,2452,35
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,4,1,NA,NA,1,162,35,2452,35
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,5,1,NA,NA,1,162,35,2453,35
 1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,6,1,NA,NA,1,162,35,2454,35
 1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,7,1,NA,NA,1,162,35,2455,35
@@ -3497,12 +3497,12 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,72,6,NA,NA,1,181,52,3496,52
 1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,1,1,TRUE,incomplete game,1,182,53,3497,53
 1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,2,1,TRUE,incomplete game,1,182,53,3498,53
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,3,1,TRUE,incomplete game,1,NA,53,3499,53
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,3,1,TRUE,incomplete game,1,182,53,3499,53
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,4,1,TRUE,incomplete game,1,182,53,3500,53
 1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,5,1,TRUE,incomplete game,1,182,53,3501,53
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,6,1,TRUE,incomplete game,1,NA,53,3502,53
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,7,1,TRUE,incomplete game,1,NA,53,3503,53
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,8,1,TRUE,incomplete game,1,NA,53,3504,53
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,6,1,TRUE,incomplete game,1,182,53,3502,53
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,7,1,TRUE,incomplete game,1,182,53,3503,53
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,8,1,TRUE,incomplete game,1,182,53,3504,53
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,9,1,TRUE,incomplete game,1,182,53,3505,53
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,10,1,TRUE,incomplete game,1,182,53,3506,53
 1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,11,1,TRUE,incomplete game,1,182,53,3507,53
@@ -4707,7 +4707,7 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,71,6,NA,NA,1,203,74,4706,74
 1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,72,6,NA,NA,1,203,74,4707,74
 1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,1,1,TRUE,incomplete game,1,204,75,4708,75
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,2,1,TRUE,incomplete game,1,NA,75,4709,75
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,2,1,TRUE,incomplete game,1,204,75,4709,75
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,1,1,NA,NA,1,205,76,4710,76
 1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,2,1,NA,NA,1,205,76,4711,76
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,3,1,NA,NA,1,205,76,4712,76
@@ -4998,7 +4998,7 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,72,6,NA,NA,1,208,79,4997,79
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,1,1,TRUE,incomplete game,1,209,80,4998,80
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,2,1,TRUE,incomplete game,1,209,80,4999,80
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,1,1,NA,NA,1,NA,81,5000,81
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,1,1,NA,NA,1,211,81,5000,81
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,2,1,NA,NA,1,211,81,5001,81
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,3,1,NA,NA,1,211,81,5002,81
 1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,4,1,NA,NA,1,211,81,5003,81
@@ -5228,7 +5228,7 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,71,6,NA,NA,1,214,84,5227,84
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,72,6,NA,NA,1,214,84,5228,84
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,1,1,TRUE,incomplete game,1,215,85,5229,85
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,2,1,TRUE,incomplete game,1,NA,85,5230,85
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,2,1,TRUE,incomplete game,1,215,85,5230,85
 1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,3,1,TRUE,incomplete game,1,215,85,5231,85
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,4,1,TRUE,incomplete game,1,215,85,5232,85
 1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,5,1,TRUE,incomplete game,1,215,85,5233,85
@@ -6071,7 +6071,7 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,38,4,TRUE,incomplete game,1,230,99,6070,99
 1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,39,4,TRUE,incomplete game,1,230,99,6071,99
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,40,4,TRUE,incomplete game,1,230,99,6072,99
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,1,1,TRUE,incomplete game,1,NA,100,6073,100
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,1,1,TRUE,incomplete game,1,259,100,6073,100
 1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,1,1,NA,NA,1,231,101,6074,101
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,2,1,NA,NA,1,231,101,6075,101
 1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,3,1,NA,NA,1,231,101,6076,101
@@ -6586,9 +6586,9 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,8,1,NA,NA,1,238,108,6585,108
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,9,1,NA,NA,1,238,108,6586,108
 1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,10,1,NA,NA,1,238,108,6587,108
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,11,1,NA,NA,1,NA,108,6588,108
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,12,1,NA,NA,1,NA,108,6589,108
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,13,2,NA,NA,1,NA,108,6590,108
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,11,1,NA,NA,1,238,108,6588,108
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,12,1,NA,NA,1,238,108,6589,108
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,13,2,NA,NA,1,238,108,6590,108
 1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,14,2,NA,NA,1,238,108,6591,108
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,15,2,NA,NA,1,238,108,6592,108
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,16,2,NA,NA,1,238,108,6593,108
@@ -6936,24 +6936,24 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,70,6,TRUE,low accuracy game,1,242,112,6935,112
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,71,6,TRUE,low accuracy game,1,242,112,6936,112
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,72,6,TRUE,low accuracy game,1,242,112,6937,112
-1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,1,1,TRUE,incomplete game,1,NA,113,6938,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,2,1,TRUE,incomplete game,1,NA,113,6939,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,3,1,TRUE,incomplete game,1,NA,113,6940,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,4,1,TRUE,incomplete game,1,NA,113,6941,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,5,1,TRUE,incomplete game,1,NA,113,6942,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,6,1,TRUE,incomplete game,1,NA,113,6943,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,7,1,TRUE,incomplete game,1,NA,113,6944,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,8,1,TRUE,incomplete game,1,NA,113,6945,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,9,1,TRUE,incomplete game,1,NA,113,6946,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,10,1,TRUE,incomplete game,1,NA,113,6947,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,11,1,TRUE,incomplete game,1,NA,113,6948,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,12,1,TRUE,incomplete game,1,NA,113,6949,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,13,2,TRUE,incomplete game,1,NA,113,6950,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,14,2,TRUE,incomplete game,1,NA,113,6951,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,15,2,TRUE,incomplete game,1,NA,113,6952,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,16,2,TRUE,incomplete game,1,NA,113,6953,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,17,2,TRUE,incomplete game,1,NA,113,6954,113
-1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,18,2,TRUE,incomplete game,1,NA,113,6955,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,1,1,TRUE,incomplete game,1,260,113,6938,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,2,1,TRUE,incomplete game,1,260,113,6939,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,3,1,TRUE,incomplete game,1,260,113,6940,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,4,1,TRUE,incomplete game,1,260,113,6941,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,5,1,TRUE,incomplete game,1,260,113,6942,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,6,1,TRUE,incomplete game,1,260,113,6943,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,7,1,TRUE,incomplete game,1,260,113,6944,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,8,1,TRUE,incomplete game,1,260,113,6945,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,K,1,9,1,TRUE,incomplete game,1,260,113,6946,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,10,1,TRUE,incomplete game,1,260,113,6947,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,11,1,TRUE,incomplete game,1,260,113,6948,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,12,1,TRUE,incomplete game,1,260,113,6949,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,13,2,TRUE,incomplete game,1,260,113,6950,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,14,2,TRUE,incomplete game,1,260,113,6951,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,15,2,TRUE,incomplete game,1,260,113,6952,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,16,2,TRUE,incomplete game,1,260,113,6953,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,A,1,17,2,TRUE,incomplete game,1,260,113,6954,113
+1,A;B;C;D;E;F;G;H;I;J;K;L,J,1,18,2,TRUE,incomplete game,1,260,113,6955,113
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,1,1,NA,NA,1,243,114,6956,114
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,2,1,NA,NA,1,243,114,6957,114
 1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,3,1,NA,NA,1,243,114,6958,114
@@ -7343,9 +7343,9 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,H,1,1,1,TRUE,incomplete game,1,153,NA,7342,124
 1,A;B;C;D;E;F;G;H;I;J;K;L,G,1,2,1,TRUE,incomplete game,1,153,154,7343,124
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,3,1,TRUE,incomplete game,1,153,154,7344,124
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,4,1,TRUE,incomplete game,1,NA,154,7345,124
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,4,1,TRUE,incomplete game,1,153,154,7345,124
 1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,1,1,TRUE,incomplete game,1,155,156,7346,125
-1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,1,1,TRUE,incomplete game,1,NA,157,7347,126
+1,A;B;C;D;E;F;G;H;I;J;K;L,C,1,1,1,TRUE,incomplete game,1,256,157,7347,126
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,1,1,TRUE,incomplete game,1,165,164,7348,127
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,2,1,TRUE,incomplete game,1,165,NA,7349,127
 1,A;B;C;D;E;F;G;H;I;J;K;L,I,1,3,1,TRUE,incomplete game,1,165,NA,7350,127
@@ -7365,12 +7365,12 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,8,1,TRUE,incomplete game,1,180,NA,7364,51
 1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,24,2,TRUE,incomplete game,1,184,55,7365,55
 1,A;B;C;D;E;F;G;H;I;J;K;L,E,1,4,1,TRUE,incomplete game,1,190,NA,7366,61
-1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,3,1,TRUE,incomplete game,1,NA,75,7367,75
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,1,1,TRUE,incomplete game,1,NA,210,7368,128
+1,A;B;C;D;E;F;G;H;I;J;K;L,F,1,3,1,TRUE,incomplete game,1,204,75,7367,75
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,1,1,TRUE,incomplete game,1,257,210,7368,128
 1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,14,2,TRUE,incomplete game,1,213,NA,7369,83
 1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,4,1,TRUE,incomplete game,1,218,NA,7370,88
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,1,1,TRUE,incomplete game,1,NA,224,7371,129
-1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,2,1,TRUE,incomplete game,1,NA,100,7372,100
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,1,1,TRUE,incomplete game,1,258,224,7371,129
+1,A;B;C;D;E;F;G;H;I;J;K;L,B,1,2,1,TRUE,incomplete game,1,259,100,7372,100
 1,A;B;C;D;E;F;G;H;I;J;K;L,D,1,2,1,TRUE,incomplete game,1,244,115,7373,115
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,1,1,TRUE,incomplete game,1,NA,248,7374,130
-1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,1,1,TRUE,incomplete game,1,NA,249,7375,131
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,1,1,TRUE,incomplete game,1,261,248,7374,130
+1,A;B;C;D;E;F;G;H;I;J;K;L,L,1,1,1,TRUE,incomplete game,1,262,249,7375,131

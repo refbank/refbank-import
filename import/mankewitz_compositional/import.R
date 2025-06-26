@@ -87,6 +87,30 @@ d_messages_final <- d_chat |>
   select(roundID, gameID, action_type, player_id, role, time_stamp, 
          message_number, message_irrelevant, choice_id, text)
 
+# add dummy messages for rounds where director didn't talk
+
+# game director 
+d_director <- d_round |> select(gameID, director, index) |> #director appears to alternate on a trial by trial basis
+  mutate(parity=index%%2) |> select(gameID, derived_director=director, parity) |> unique() |> 
+  filter(derived_director!="") 
+
+d_no_talk <- d_round |> as_tibble() |> 
+  select(roundID, gameID, director, index) |> unique() |> mutate(parity=index%%2) |>  
+  filter(!is.na(gameID)) |> 
+  filter(!is.na(roundID)) |> 
+  left_join(d_director) |> 
+  mutate(director=ifelse(director=="", derived_director, director)) |> 
+  anti_join(d_messages_final |> filter(role=="describer") |> select(roundID, gameID) |> unique()) |> 
+  mutate(action_type="message",
+         player_id=director,
+         role="describer",
+         time_stamp=NA,
+         message_number=NA, 
+         message_irrelevant=NA,
+         choice_id=NA,
+         text=NA) 
+
+
 d_actions_final <- d_round |> 
   mutate(action_type = "selection",
          role = "matcher",
@@ -99,11 +123,12 @@ d_actions_final <- d_round |>
   select(roundID, gameID, action_type, player_id, role, time_stamp, 
          message_number, message_irrelevant, choice_id, text)
 
-d_actions <- rbind(d_messages_final, d_actions_final)
-  
+d_actions <- bind_rows(d_messages_final, d_actions_final, d_no_talk)
+
+
 # Round Info
 
-d_trial_info <- d_round |> 
+d_trial_info <- d_round |> as_tibble() |> 
   mutate(option_set = tangramURLs |> 
                     str_remove_all('\\[|\\]|"') |> 
                     str_replace_all(',', ';'),
@@ -111,7 +136,8 @@ d_trial_info <- d_round |>
          rep_num = repNum + 1,
          stage_num = 1,
          exclude = FALSE,
-         exclusion_reason = as.character(NA))
+         exclusion_reason = as.character(NA)) |> 
+  select(roundID, gameID, option_set, trial_num, rep_num, stage_num, exclude, exclusion_reason, target)
 
 d_full <- d_actions |> left_join(d_trial_info) |> left_join(d_game_final) |> 
   mutate(room_num=1,

@@ -58,7 +58,8 @@ rooms.tmp <- games |>   filter(createdAt >= lubridate::ymd('2021-01-21')) %>%
          trialNum = n %% 16,
          partnerNum = floor(n / 16),
          repNum = floor(trialNum/4) %% 4) %>%
-  select(-n)
+  select(-n) |> 
+  ungroup()
 
 rooms_roles <- roles.tmp |> left_join(rooms.tmp) |> rename(gamerole=role, gameroom=room)
 
@@ -121,6 +122,7 @@ rounds <- read_csv(here(raw_data_dir, "rounds.csv")) |>
          action_type="selection") |> 
   select(gameId, trialNum, repNum, partnerNum, choice_id, target, gamerole, playerId, roomId) |> 
   filter(!is.na(choice_id)) |> 
+  filter(!is.na(playerId)) |> 
   mutate(action_type="selection")
 
 
@@ -139,6 +141,15 @@ messages <- messages_2 |>
                                  message_number, action_type, message_irrelevant, roomId, gamerole, target)
 
 
+
+# identify cases where we are missing speaker info because they didn't talk
+# these seem to be cases where we just don't have speaker info (incomplete games?)
+# delete these 179 rows for now
+rounds_clean <- rounds |> inner_join(messages |> filter(gamerole=="speaker") |> select(gameId, trialNum, partnerNum, roomId) |> unique())
+
+#do the same for messages?
+messages_clean <- messages |> inner_join(messages |> filter(gamerole=="speaker") |> select(gameId, trialNum, partnerNum, roomId) |> unique())
+
 # according to paper, after excluding incomplete, 33 groups, 132 participants
 # this appears to be the exclusion used, but this keeps 37 (which does line up with the number of games in cleaned_messages)
 # I can't identify other exclusion used
@@ -154,8 +165,8 @@ talked <- messages %>%
          exclusion_reason=NA)
 
 
-all <- messages |> 
-  bind_rows(rounds)  |> 
+all <- messages_clean |> 
+  bind_rows(rounds_clean)  |> 
   left_join(talked) |> 
     mutate(game_id=gameId,
            room_num=1+ (str_sub(roomId, -1, -1) |> as.numeric()) ,
@@ -204,7 +215,8 @@ all <- messages |>
 message <- all |> filter(action_type=="message") |> filter(role=="describer") |> select(game_id, room_num, trial_num) |> unique()
 choice <- all |> filter(action_type=="selection") |> select(game_id, room_num, trial_num) |> unique()
 
-choice |> anti_join(message)
+choice |> anti_join(message) |> View()
+
 source(here("validate.R"))
 
 validate_dataset(all, write=T)

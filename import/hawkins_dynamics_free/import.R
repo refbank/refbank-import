@@ -333,7 +333,6 @@ load_and_process <- function(input_file, board_file, subj_file, output_file) {
   id_cols <- c("gameid", "roundNum")
   result_df <- process_game_messages(messages_df, id_cols, boards_dict, exclusion_df)
 
-  result_df <- result_df |>  filter(!(action_type=="message"&(is.na(text)|text==""))) #remove message rows without text 
   write_csv(result_df, output_file)
   result_df
 }

@@ -112,7 +112,6 @@ messages <- sequentialCombined.raw %>%
   ungroup() |> 
   mutate(action_type="message")
   
-messages <- messages |> inner_join(messages |> filter(role=="director") |> select(gameid, trialNum) |> unique())
 
 ### choices
 choices <- sequentialClicks |> 
@@ -122,12 +121,22 @@ choices <- sequentialClicks |>
          action_type="selection"
          ) 
 
+
+# fill in when describer didn't talk
+no_describer <- messages |> select(gameid, trialNum, repetitionNum, intendedName) |>  anti_join(messages |> filter(role=="director") |> select(gameid, trialNum) |> unique()) |> 
+  mutate(role="director",
+         action_type="message")
+
+choice_no_describer <- choices |> select(gameid, trialNum, repetitionNum, intendedName) |>  anti_join(messages |> filter(role=="director") |> select(gameid, trialNum) |> unique()) |> 
+  mutate(role="director",
+         action_type="message")
+
 ####
 options=c("A", "B","C","D","E","F","G","H","I", "J", "K", "L")
 
 
 
-all <- choices |> bind_rows(messages) |> 
+all <- choices |> bind_rows(messages) |> bind_rows(no_describer) |> bind_rows(choice_no_describer) |> 
   left_join(exclude) |> 
   mutate(dataset_id="hawkins2020_characterizing_cued",
          full_cite="Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",
