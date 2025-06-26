@@ -25,14 +25,11 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
   # Fill any missing ages with -1
   combined_df$age_lookup[is.na(combined_df$age_lookup)] <- -1
 
-  # Optional: Report subids missing from lookup
-  missing_age_subids <- combined_df %>%
-    filter(age_lookup == -1) %>%
-    distinct(subid)
-  if (nrow(missing_age_subids) > 0) {
-    cat("WARNING: These subids are missing age info in exchanges.csv:\n")
-    print(missing_age_subids)
-  }
+  combined_df <- combined_df %>%
+    group_by(subid) %>%
+    arrange(subid, rep_num, trial) %>%
+    mutate(trial_num_overall = row_number()) %>%
+    ungroup()
 
   # Get global option set
   option_set <- combined_df$target %>%
@@ -50,12 +47,11 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
 
   for (group in grouped) {
     game_id <- as.character(group$subid[1])
-    trial_num <- group$trial[1]
+    trial_num <- group$trial_num_overall[1]
     rep_num <- group$rep_num[1]
     target <- group$target[1]
     condition_label <- group$experiment[1]
     age <- group$age_lookup[1]
-    # gender is unknown in this data
     gender <- "unknown"
 
     global_trial_num <- global_trial_num + 1
@@ -116,7 +112,7 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
       stage_num = stage_num,
       option_set = option_set,
       target = target,
-      trial_num = global_trial_num,
+      trial_num = trial_num,
       rep_num = rep_num,
       exclude = FALSE,
       exclusion_reason = "",
@@ -135,7 +131,7 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
       choice_id = NA_character_
     )
 
-    # Append matcher selection (always include, use "timed_out" if no selection)
+    # Append matcher selection
     records[[length(records) + 1]] <- tibble(
       condition_label = condition_label,
       dataset_id = dataset_id,
@@ -150,7 +146,7 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
       stage_num = stage_num,
       option_set = option_set,
       target = target,
-      trial_num = global_trial_num,
+      trial_num = trial_num,
       rep_num = rep_num,
       exclude = FALSE,
       exclusion_reason = "",
@@ -184,7 +180,7 @@ cat("Segmenting data for Leung et al. (2024)...\n")
 segmented_df <- process_leung_dataset(COMBINED_FILE, EXCHANGES_FILE, OUTPUT_FILE)
 cat("Segmented data written to:", OUTPUT_FILE, "\n")
 
-# ---- VALIDATE FIXED OUTPUT ----
+
 source(here("validate.R"))
 test <- read_csv(OUTPUT_FILE, show_col_types = FALSE) %>%
    mutate(
