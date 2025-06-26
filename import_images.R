@@ -22,7 +22,7 @@ all_images <- all_trials |> select(target, dataset_id) |> unique() |>
     dataset_id %in% c("hawkins2019_continual") ~ "photograph",
     dataset_id %in% c("boyce2024_interaction", "eliav2023_semantic",
                     "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
-                    "hawkins2021_respect", "hawkins2023_frompartners") ~ "tangram"
+                    "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_compositional") ~ "tangram"
   ),
   kilogram_id = case_when(
     target %in% c("A", "B", "C", "D", "E", "F", "G","H", "I", "J", "K", "L") ~ str_c("page-", target),
@@ -50,8 +50,8 @@ fix_svg <- function(in_file, out_file){
   writeLines(new, out_file)
 }
 
-to_fix <- all_images |> filter(!is.na(kilogram_id))
+#to_fix <- all_images |> filter(!is.na(kilogram_id))
 
-walk(to_fix$kilogram_id, \(id) fix_svg(here("tangrams-svg", str_c(id, ".svg")), here("image_data/images", str_c(id, ".svg"))))
+#walk(to_fix$kilogram_id, \(id) fix_svg(here("tangrams-svg", str_c(id, ".svg")), here("image_data/images", str_c(id, ".svg"))))
 
 

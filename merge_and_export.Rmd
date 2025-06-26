@@ -59,14 +59,16 @@ Messages
 
 Table messages {
   id integer [primary key]
+  
   trial_id integer [foreign key trials]
   player_id integer [foreign key players]
+  dataset_id [foreign key datasets]
+
   role varchar 
   text string
   message_number integer
   message_irrelevant bool
   time_stamp time
-  dataset_id [foreign key datasets]
 }
 
 
@@ -77,6 +79,7 @@ messages <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "messages") |>
 
 na_messages <- messages |> filter(if_any(c("player_id", "trial_id", "role", "message_number", "text", "dataset_id"), is.na))
 assert_that(nrow(na_messages)==0)
+
 ```
 
 
@@ -85,19 +88,23 @@ Trials
 
 Table trials {
   id integer [primary key]
+  
   condition_id integer [foreign key conditions]
   dataset_id [foreign key datasets]
-  game_id varchar
-  room_num varchar
   option_set list [foreign key images]
+  describer varchar [foreign key players]
+  matchers list [foreign key matchers]
+  
+  game_id varchar
+  
+  room_num varchar
   target integer
   stage_num integer
   trial_num integer
   rep_num integer
   exclude bool
   exclusion_reason varchar
-  describer varchar [foreign key players]
-  matchers list [foreign key matchers]
+
 }
 
 ```{r}
@@ -119,22 +126,22 @@ Conditions & datasets
 
 
 Table datasets{
-  id integer [primary key]
-  dataset_id varchar
+  dataset_id [primary key]
+  
   full_cite varchar
   short_cite varchar
 }
 
 Table conditions{
   id integer [primary key]
-  dataset_id integer [foreign key datasets]
+  dataset_id [foreign key datasets]
+  
   group_size integer
   structure varchar
   language varchar
   placeholder_features varchar PLACEHOLDER
 }
 
-TODO check that dataset_id, full_cite, short_cite, condition_id, group_size, structure, language  all !is.na()
 
 ```{r}
 conditions <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "conditions"))
@@ -160,14 +167,15 @@ Choices
 
 Table choices {
   id integer [primary key]
+  
   trial_id integer [foreign key trials]
-  choice integer [foreign key images]
+  choice_id  [foreign key images]
   player_id integer [foreign key players]
-  time_to_choice time 
   dataset_id [foreign key datasets]
+  
+  time_to_choice time 
 }
 
-TODO check that trial_id, choice, player_id all !is.na()
 
 ```{r}
 choices <- map_df(dataset_names, function (d) {
@@ -188,13 +196,13 @@ Players
 
 Table players {
   id integer [primary key]
+  
+  dataset_id [foreign key datasets]
+
   age integer
   gender varchar
   placeholder_demo varchar
-  dataset_id [foreign key datasets]
 }
-
-TODO check that player_id !is.na()
 
 ```{r}
 players <- map_df(dataset_names, function (d) {
@@ -212,13 +220,12 @@ assert_that(nrow(na_players)==0)
 Images (already one table for all images)
 
 Table images {
-  id integer [primary key]
+  image_id [primary key]
+  
   kilogram_id varchar
   image_type varchar
   image_path varchar
 }
-
-check that id and image_type !is.na()
 
 ```{r}
 images <- read_csv(here("image_data/image_metadata.csv"))
@@ -227,14 +234,100 @@ images <- read_csv(here("image_data/image_metadata.csv"))
 na_images <- images |> filter(if_any(c("image_id", "image_type"), is.na))
 assert_that(nrow(na_images)==0)
 
+
+assert_that(nrow(trials |> select(target) |> unique() |> anti_join(images |> select(target=image_id)))==0)
+
+options <- trials |> select(option_set) |> mutate(image_id = str_split(option_set, ";")) |> unnest(image_id) |> select(image_id) |> unique()
+
+assert_that(nrow(images |> anti_join(options))==0)
 ```
 
-# Validate
+# Create cross-dataset unique ids
+(dataset id non-numeric)
 
-* all targets appear in images
-* all images appear in option_list
+* trials
+* games
+* players
+* conditions
 
-* id cols are unique (and nest appropriately), & dataset id's line up
+( * message id)
+( * selection id)
+
+( image id non-numeric )
+
+```{r}
+players_unique <- players |> 
+  mutate(player_id_num=row_number())
+
+conditions_unique <- conditions |> 
+  mutate(condition_id_num=row_number())
+
+games_unique <- trials |> select(game_id, dataset_id) |> unique() |> 
+  mutate(game_id_num=row_number())
+
+trials_unique <-  trials |> 
+  left_join(players_unique |> select(dataset_id, describer=player_id, describer_id_num=player_id_num)) |> 
+  mutate(matcher=str_split(matchers, ";")) |> unnest(matcher) |> 
+  mutate(matcher=as.numeric(matcher)) |> 
+  left_join(players_unique |> select(dataset_id, matcher=player_id, matcher_id_num=player_id_num)) |> 
+  group_by(across(c(-matcher, -matcher_id_num))) |> 
+  summarize(matchers_num=str_c(matcher_id_num, sep=";", collapse=";")) |> 
+  left_join(games_unique) |> 
+  left_join(conditions_unique) |> 
+  ungroup() |> 
+  mutate(trial_id_num=row_number())
+
+
+messages_final <- messages |> left_join(trials_unique |> select(dataset_id, trial_id, trial_id_num)) |> 
+  select(-trial_id) |> rename(trial_id=trial_id_num) |> 
+  left_join(players_unique |> select(dataset_id, player_id, player_id_num)) |> 
+  select(-player_id) |> rename(player_id=player_id_num) |> 
+  ungroup() |> 
+  mutate(message_id=row_number())
+
+choices_final <- choices |> left_join(trials_unique |> select(dataset_id, trial_id, trial_id_num)) |> 
+  select(-trial_id) |> rename(trial_id=trial_id_num) |> 
+  left_join(players_unique |> select(dataset_id, player_id, player_id_num)) |> 
+  select(-player_id) |> rename(player_id=player_id_num) |> 
+  ungroup() |> 
+  mutate(choices_id=row_number())
+
+trials_final <- trials_unique |> 
+  select(-trial_id, -game_id, -describer, -matchers, -condition_id) |> 
+  rename(trial_id=trial_id_num, game_id=game_id_num, describer=describer_id_num, 
+         matchers=matchers_num, condition_id=condition_id_num)
+
+conditions_final <- conditions_unique |> select(-condition_id) |> rename(condition_id=condition_id_num)
+
+players_final <- players_unique |> select(-player_id) |> rename(player_id=player_id_num)
+
+  
+```
+
+# Validate more
+
+```{r}
+#TODO FIX ME NEEDS TO BE ROWS NOT COLS 
+assert_that(length(players_final$player_id)==length(players$player_id))
+assert_that(length(conditions_final$condition_id)==length(conditions$condition_id))
+assert_that(length(choices_final$choices_id)==length(choices$choice_id))
+assert_that(length(messages_final$message_id)==length(messages$message_number))
+assert_that(length(trials_final$trial_id)==length(trials$trial_id))
+
+assert_that(length(players_final$player_id)==length(players_final$player_id |> unique()))
+assert_that(length(conditions_final$condition_id)==length(conditions_final$condition_id |> unique()))
+assert_that(length(trials_final$trial_id)==length(trials_final$trial_id |> unique()))
+assert_that(length(messages_final$message_id)==length(messages_final$message_id |> unique()))
+assert_that(length(choices_final$choices_id)==length(choices_final$choices_id |> unique()))
+
+assert_that(length(datasets$dataset_id)==length(datasets$dataset_id |> unique()))
+assert_that(length(images$image_id)==length(images$image_id |> unique()))
+
+
+
+
+```
+
 
 # Export
 
@@ -242,10 +335,12 @@ Write out for redivis with missing for NA to facilitate import.
 
 ```{r}
 write_csv(datasets, here("export", "datasets.csv"), na = "")
-write_csv(messages, here("export", "messages.csv"), na = "")
-write_csv(choices,  here("export", "choices.csv"), na = "")
-write_csv(trials, here("export", "trials.csv"), na = "")
-write_csv(conditions, here("export", "conditions.csv"), na = "")
+write_csv(messages_final, here("export", "messages.csv"), na = "")
+write_csv(choices_final,  here("export", "choices.csv"), na = "")
+write_csv(trials_final, here("export", "trials.csv"), na = "")
+write_csv(conditions_final, here("export", "conditions.csv"), na = "")
+write_csv(players_final, here("export", "players.csv"), na="")
+write_csv(images, here("export", "images.csv"), na="")
 ```
 
 Now try pushing them directly to redivis. 
@@ -253,11 +348,11 @@ Now try pushing them directly to redivis.
 ```{r}
 # Set up the connection to Redivis
 
-con <- redivis::user("mcfrank")$dataset("refbank")
+con <- redivis::user("mcfrank")$dataset("refbank:2zy7")
 
-dataset <- con$create_next_version()
+dataset <- con$create_next_version(if_not_exists=T)
 
-upload <- dataset$table("datasets")$upload()$create(
+upload <- dataset$table("datasets:q7yy")$upload()$create(
   "export/datasets.csv",
   type="delimited",        
   remove_on_fail = TRUE,     
@@ -266,7 +361,7 @@ upload <- dataset$table("datasets")$upload()$create(
   replace_on_conflict = TRUE
 )
 
-upload <- dataset$table("datasets")$upload()$create(
+upload <- dataset$table("messages:2q18")$upload()$create(
   "export/messages.csv",
   type="delimited",        
   remove_on_fail = TRUE,     
@@ -275,7 +370,7 @@ upload <- dataset$table("datasets")$upload()$create(
   replace_on_conflict = TRUE
 )
 
-upload <- dataset$table("datasets")$upload()$create(
+upload <- dataset$table("choices:s1zj")$upload()$create(
   "export/choices.csv",
   type="delimited",        
   remove_on_fail = TRUE,     
@@ -284,7 +379,7 @@ upload <- dataset$table("datasets")$upload()$create(
   replace_on_conflict = TRUE
 )
 
-upload <- dataset$table("datasets")$upload()$create(
+upload <- dataset$table("trials:zkj2")$upload()$create(
   "export/trials.csv",
   type="delimited",        
   remove_on_fail = TRUE,     
@@ -293,8 +388,27 @@ upload <- dataset$table("datasets")$upload()$create(
   replace_on_conflict = TRUE
 )
 
-upload <- dataset$table("datasets")$upload()$create(
+upload <- dataset$table("conditions:kk1e")$upload()$create(
   "export/conditions.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+
+upload <- dataset$table("players:7xnd")$upload()$create(
+  "export/players.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+upload <- dataset$table("images:jw0t")$upload()$create(
+  "export/images.csv",
   type="delimited",        
   remove_on_fail = TRUE,     
   wait_for_finish = TRUE, 

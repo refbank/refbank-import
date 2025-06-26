@@ -109,7 +109,7 @@ choices <- combined_results |>
 #### exclusions
 
 # missing describers: there are trials where a describer talks but nothing else happens, we're going to exclude
-good_chat <- combined_chat |> inner_join(combined_chat |> filter(role=="describer") |> select(gameId,trialNum))
+good_chat <- combined_chat |> inner_join(combined_chat |> filter(role=="describer") |> select(gameId,trialNum) |> unique())
 
 
 
