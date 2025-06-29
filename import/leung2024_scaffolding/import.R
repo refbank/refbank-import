@@ -184,15 +184,9 @@ cat("Segmented data written to:", OUTPUT_FILE, "\n")
 source(here("validate.R"))
 test <- read_csv(OUTPUT_FILE, show_col_types = FALSE) %>%
    mutate(
-    gender = if_else(is.na(gender) | gender == "", "unknown", gender),
     exclusion_reason = as.character(exclusion_reason),
     time_stamp = as.numeric(time_stamp),
-    text = as.character(text),
-    message_number = as.numeric(message_number),
-    choice_id = as.character(choice_id),
-    message_irrelevant = as.logical(message_irrelevant),
-    age = as.numeric(age)
   )
-validate_dataset(test, write = FALSE)
+validate_dataset(test, write = TRUE)
 
 # nolint end
