@@ -31,12 +31,6 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
     mutate(trial_num_overall = row_number()) %>%
     ungroup()
 
-  # Get global option set
-  option_set <- combined_df$target %>%
-    unique() %>%
-    sort() %>%
-    str_c(collapse = ";")
-
   records <- list()
   global_trial_num <- 0
 
@@ -51,6 +45,7 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
     rep_num <- group$rep_num[1]
     target <- group$target[1]
     condition_label <- group$experiment[1]
+    option_set_trial <- str_c(target, "unk1", sep = ";")
     age <- group$age_lookup[1]
     gender <- "unknown"
 
@@ -76,7 +71,7 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
     describer_pid <- paste0(game_id, "_describer")
 
     # Matcher selection
-    valid_options <- str_split(option_set, ";")[[1]]
+    valid_options <- c(target, "unk1")
     matcher_row <- exchanges_df %>%
       filter(subid == group$subid[1],
              trial == group$trial[1],
@@ -110,7 +105,7 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
       game_id = game_id,
       room_num = room_num,
       stage_num = stage_num,
-      option_set = option_set,
+      option_set = option_set_trial,
       target = target,
       trial_num = trial_num,
       rep_num = rep_num,
@@ -144,7 +139,7 @@ process_leung_dataset <- function(combined_file, exchanges_file, output_file) {
       game_id = game_id,
       room_num = room_num,
       stage_num = stage_num,
-      option_set = option_set,
+      option_set = option_set_trial,
       target = target,
       trial_num = trial_num,
       rep_num = rep_num,
