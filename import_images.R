@@ -20,7 +20,7 @@ all_images <- all_trials |> select(target, dataset_id) |> unique() |>
   mutate(image_type=case_when(
     dataset_id %in% c("yoon2019_audience") ~ "line drawing",
     dataset_id %in% c("hawkins2019_continual") ~ "photograph",
-    dataset_id %in% c("boyce2024_interaction", "eliav2023_semantic",
+    dataset_id %in% c("boyce2024_interaction", "eliav2023_semantic", "leung2024_scaffolding",
                     "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
                     "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_compositional") ~ "tangram"
   ),

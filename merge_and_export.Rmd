@@ -47,10 +47,12 @@ get_tbl <- function(con = DATA_LOC, dataset_name, tbl_name) {
 
 Mark with dataset IDs
 
-```{r, eval=F}
+```{r}
 # options to get trials / choices / messages for all datasets
 dataset_names <- list.dirs(DATA_LOC, full.names = FALSE) |> 
   stri_remove_empty()
+
+dataset_names <- dataset_names[-8]
 ```
 
 
@@ -256,16 +258,16 @@ assert_that(nrow(images |> anti_join(options))==0)
 ( image id non-numeric )
 
 ```{r}
-players_unique <- players |> 
+players_unique <- players |> ungroup() |> 
   mutate(player_id_num=row_number())
 
-conditions_unique <- conditions |> 
+conditions_unique <- conditions |> ungroup() |> 
   mutate(condition_id_num=row_number())
 
-games_unique <- trials |> select(game_id, dataset_id) |> unique() |> 
+games_unique <- trials |> ungroup() |> select(game_id, dataset_id) |> unique() |> 
   mutate(game_id_num=row_number())
 
-trials_unique <-  trials |> 
+trials_unique <-  trials |> ungroup() |> 
   left_join(players_unique |> select(dataset_id, describer=player_id, describer_id_num=player_id_num)) |> 
   mutate(matcher=str_split(matchers, ";")) |> unnest(matcher) |> 
   mutate(matcher=as.numeric(matcher)) |> 
@@ -307,7 +309,6 @@ players_final <- players_unique |> select(-player_id) |> rename(player_id=player
 # Validate more
 
 ```{r}
-#TODO FIX ME NEEDS TO BE ROWS NOT COLS 
 assert_that(length(players_final$player_id)==length(players$player_id))
 assert_that(length(conditions_final$condition_id)==length(conditions$condition_id))
 assert_that(length(choices_final$choices_id)==length(choices$choice_id))
@@ -351,6 +352,19 @@ Now try pushing them directly to redivis.
 con <- redivis::user("mcfrank")$dataset("refbank:2zy7")
 
 dataset <- con$create_next_version(if_not_exists=T)
+
+
+dataset$table("datasets:q7yy")$update(upload_merge_strategy="replace")
+dataset$table("messages:2q18")$update(upload_merge_strategy="replace")
+dataset$table("choices:s1zj")$update(upload_merge_strategy="replace")
+dataset$table("trials:zkj2")$update(upload_merge_strategy="replace")
+dataset$table("conditions:kk1e")$update(upload_merge_strategy="replace")
+dataset$table("players:7xnd")$update(upload_merge_strategy="replace")
+dataset$table("images:jw0t")$update(upload_merge_strategy="replace")
+
+
+
+
 
 upload <- dataset$table("datasets:q7yy")$upload()$create(
   "export/datasets.csv",
