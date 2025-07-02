@@ -275,7 +275,7 @@ trials_unique <-  trials |> ungroup() |>
   group_by(across(c(-matcher, -matcher_id_num))) |> 
   summarize(matchers_num=str_c(matcher_id_num, sep=";", collapse=";")) |> 
   left_join(games_unique) |> 
-  left_join(conditions_unique) |> 
+  left_join(conditions_unique |> select(condition_id_num, condition_id, dataset_id)) |> 
   ungroup() |> 
   mutate(trial_id_num=row_number())
 
@@ -343,6 +343,7 @@ write_csv(conditions_final, here("export", "conditions.csv"), na = "")
 write_csv(players_final, here("export", "players.csv"), na="")
 write_csv(images, here("export", "images.csv"), na="")
 ```
+
 
 Now try pushing them directly to redivis. 
 
