@@ -16,7 +16,7 @@ clickedObj.raw.humanhuman <- read_csv(str_c(url, "human-human/clickedObjFromMong
 chatMessages.raw.humanhuman <- read_csv(str_c(url, "human-human/messageFromMongo.csv")) %>%
   filter(iterationName != "testing") %>%
   mutate(uttLength = str_count(msg, "\\S+")) %>%
-  group_by(gameid, trialNum, repNum, targetImg, context_id) 
+  group_by(gameid, trialNum, repNum, targetImg, context_id)
 
 incompleteIDs.humanhuman <- clickedObj.raw.humanhuman %>%
   group_by(gameid) %>%
@@ -28,7 +28,7 @@ incompleteIDs.humanhuman <- clickedObj.raw.humanhuman %>%
 d.humanhuman <- left_join(chatMessages.raw.humanhuman, clickedObj.raw.humanhuman,
   by = c("gameid", "trialNum", "repNum", "context_id")
 ) %>%
-  ungroup() |> 
+  ungroup() |>
   mutate(targetImg = gsub('{"url":"', "", targetImg, fixed = TRUE)) %>%
   mutate(targetImg = gsub('","targetStatus":"target"}', "", targetImg, fixed = TRUE)) %>%
   left_join(incompleteIDs.humanhuman) |>
@@ -114,53 +114,70 @@ combined |>
 
 ### trying to figure out image contexts
 
-# each group sees 1 context 
+# each group sees 1 context
 
 ParseJSONColumn <- function(x) {
-  if(is.na(x)){x="{}"}
-  str_c("[ ", str_c(x, collapse = ",", sep=" "), " ]")  %>% 
+  if (is.na(x)) {
+    x <- "{}"
+  }
+  str_c("[ ", str_c(x, collapse = ",", sep = " "), " ]") %>%
     fromJSON(flatten = T)
 }
 
-contexts <- combined |> select(context_id, targetImg, fullContext, condition) |>
-  filter(!is.na(fullContext)) |> 
-  mutate(fullContext=map(fullContext, .f=ParseJSONColumn)) |> 
-  unnest(fullContext) |> 
+contexts <- combined |>
+  select(context_id, targetImg, fullContext, condition) |>
+  filter(!is.na(fullContext)) |>
+  mutate(fullContext = map(fullContext, .f = ParseJSONColumn)) |>
+  unnest(fullContext) |>
   unnest(fullContext)
 
-concat_contexts <- contexts |> group_by(context_id, targetImg, condition) |> summarize(option_set=str_c(url, collapse=";"))
+concat_contexts <- contexts |>
+  unique() |>
+  group_by(context_id, targetImg, condition) |>
+  summarize(option_set = str_c(url, collapse = ";")) |>
+  ungroup()
 
-clicked <- contexts |> select(clickedObj=targetStatus, context_id, targetImg, condition, choice_id=url)
+clicked <- contexts |> unique() |> select(clickedObj = targetStatus, context_id, targetImg, condition, choice_id = url)
 
 
-### split 
-chat <- combined |> select(
-  gameid, trialNum, repNum, targetImg, context_id, msg,
-  exclude, exclusion_reason, condition
-) |> 
-  mutate(role="describer",
-         player_id=str_c(gameid, "_describer")) |> 
-  group_by(gameid, trialNum, repNum) |> 
-  mutate(message_number=row_number() |> as.numeric()) |> 
-  ungroup() |> 
+### split
+chat <- combined |>
+  select(
+    gameid, trialNum, repNum, targetImg, context_id, msg,
+    exclude, exclusion_reason, condition
+  ) |>
+  mutate(
+    role = "describer",
+    player_id = str_c(gameid, "_describer")
+  ) |>
+  group_by(gameid, trialNum, repNum) |>
+  mutate(message_number = row_number() |> as.numeric()) |>
+  ungroup() |>
+  left_join(concat_contexts) |>
+  mutate(
+    action_type = "message",
+    message_irrelevant = F
+  ) # we don't have annotations for msg relevancy
+
+choices <- combined |>
+  select(
+    gameid, trialNum, repNum, targetImg, context_id, exclude,
+    exclusion_reason, condition,
+    clickedObj
+  ) |>
+  unique() |>
+  mutate(
+    role = "matcher", player_id = str_c(gameid, "_matcher"),
+    player_id = ifelse(condition == "human-speaker-model-listener", "model", player_id)
+  ) |>
   left_join(concat_contexts) |> 
-  mutate(action_type="message",
-         message_irrelevant=F) # we don't have annotations for msg relevancy
-
-choices <- combined |> select(
-  gameid, trialNum, repNum, targetImg, context_id, exclude,
-  exclusion_reason, condition,
-  clickedObj
-) |> unique() |> mutate(role="matcher", player_id=str_c(gameid, "_matcher"),
-                        player_id=ifelse(condition=="human-speaker-model-listener", "model", player_id)) |> 
-  left_join(concat_contexts) |> 
-  left_join(clicked) |> 
-  mutate(action_type="selection") |>
-  mutate(choice_id=ifelse(is.na(choice_id), "timed_out", choice_id))
+  left_join(clicked) |>
+  mutate(action_type = "selection") |>
+  mutate(choice_id = ifelse(is.na(choice_id), "timed_out", choice_id))
 
 
 
-### combine everything 
+### combine everything
 all <- chat |>
   bind_rows(choices) |>
   mutate(
@@ -169,24 +186,24 @@ all <- chat |>
     short_cite = "Hawkins et al (2019)",
     language = "English",
     trial_num = trialNum + 1,
-    stage_num=1,
-    room_num=1,
+    stage_num = 1,
+    room_num = 1,
     rep_num = 1 + repNum,
-    age=as.numeric(NA),
-    gender=as.character(NA),
+    age = as.numeric(NA),
+    gender = as.character(NA),
     time_stamp = as.numeric(NA), # there is some time info in original data but unclear how to map it
-    group_size = ifelse(condition=="human-speaker-model-listener", 1, 2), # counting number of actual people? idk
-    structure = ifelse(condition=="human-speaker-model-listener", "thin", "medium"),
-    ) |>
-  filter(!is.na(option_set)) |> # this is two games in pilots where there wasn't context info in source 
-  select(dataset_id, full_cite, short_cite, language, stage_num, 
-    condition_label=condition, time_stamp,
-    game_id=gameid, room_num,
+    group_size = ifelse(condition == "human-speaker-model-listener", 1, 2), # counting number of actual people? idk
+    structure = ifelse(condition == "human-speaker-model-listener", "thin", "medium"),
+  ) |>
+  filter(!is.na(option_set)) |> # this is two games in pilots where there wasn't context info in source
+  select(dataset_id, full_cite, short_cite, language, stage_num,
+    condition_label = condition, time_stamp,
+    game_id = gameid, room_num,
     player_id, age, gender,
     trial_num, rep_num,
-    role, target=targetImg,
+    role, target = targetImg,
     action_type, exclude, exclusion_reason,
-    message_number, text=msg,
+    message_number, text = msg,
     choice_id, option_set,
     group_size, message_irrelevant,
     structure

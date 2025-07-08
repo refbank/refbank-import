@@ -121,6 +121,12 @@ trials <-   map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "trials") |>
 na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num","describer", "dataset_id"), is.na))
 assert_that(nrow(na_trials)==0)
 
+trials <- trials |> mutate(option_size = option_set |> str_split(";") |> 
+                                                                 lengths())
+
+assert_that(max(trials$option_size)==16) #change these as datasets change, but we're trying to rule out screw ups that make it like 96 or something absurd
+assert_that(min(trials$option_size)==4)
+
 
 ```
 
