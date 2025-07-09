@@ -449,3 +449,25 @@ dataset$release()
 # )
 ```
 
+```{r}
+# example text for how to do unstructured data!
+
+# library(redivis)
+# dataset <- redivis$user("user_name")$dataset("dataset_name", version="next")
+# 
+# # Non-tabular files must be uploaded to file index tables
+# table <- dataset$table("my_files")$create(is_file_index=TRUE)
+# 
+# # upload all contents in a directory
+# table$add_files(directory="/path/to/directory/")
+# 
+# # upload specific files
+# table$add_files(files=list(
+#     list(path="/path/to/file.png"), # file name will be "file.png"
+#     list(path="/path/to/other/file.png", name="other_file.png"), # file name will be other_file.png
+#     list(data="Hello world", name="hello_world.txt") # Data can be string or raw vector 
+#     list(data=url("http://example.com"), name="example_com.html") # Data can be a connection
+# )
+```
+
+
