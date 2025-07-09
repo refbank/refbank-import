@@ -361,80 +361,11 @@ con <- redivis::user("mcfrank")$dataset("refbank:2zy7")
 dataset <- con$create_next_version(if_not_exists=T)
 
 
-dataset$table("datasets:q7yy")$update(upload_merge_strategy="replace")
-dataset$table("messages:2q18")$update(upload_merge_strategy="replace")
-dataset$table("choices:s1zj")$update(upload_merge_strategy="replace")
-dataset$table("trials:zkj2")$update(upload_merge_strategy="replace")
-dataset$table("conditions:kk1e")$update(upload_merge_strategy="replace")
-dataset$table("players:7xnd")$update(upload_merge_strategy="replace")
-dataset$table("images:jw0t")$update(upload_merge_strategy="replace")
 
 
-
-
-
-upload <- dataset$table("datasets:q7yy")$upload()$create(
-  "export/datasets.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
-  raise_on_fail = TRUE,
-  replace_on_conflict = TRUE
-)
-
-upload <- dataset$table("messages:2q18")$upload()$create(
-  "export/messages.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
-  raise_on_fail = TRUE,
-  replace_on_conflict = TRUE
-)
-
-upload <- dataset$table("choices:s1zj")$upload()$create(
-  "export/choices.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
-  raise_on_fail = TRUE,
-  replace_on_conflict = TRUE
-)
-
-upload <- dataset$table("trials:zkj2")$upload()$create(
-  "export/trials.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
-  raise_on_fail = TRUE,
-  replace_on_conflict = TRUE
-)
-
-upload <- dataset$table("conditions:kk1e")$upload()$create(
-  "export/conditions.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
-  raise_on_fail = TRUE,
-  replace_on_conflict = TRUE
-)
-
-
-upload <- dataset$table("players:7xnd")$upload()$create(
-  "export/players.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
-  raise_on_fail = TRUE,
-  replace_on_conflict = TRUE
-)
-
-upload <- dataset$table("images:jw0t")$upload()$create(
-  "export/images.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
-  raise_on_fail = TRUE,
-  replace_on_conflict = TRUE
+#image files
+upload <- dataset$table("image_files")$create(is_file_index=T)$add_files(
+  directory=here("image_data/images/")
 )
 
 dataset$release()
