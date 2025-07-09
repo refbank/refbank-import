@@ -33,6 +33,19 @@ load_data <- function(data_name, study_list) {
   }
 }
 
+# sort free-response gender prompt into male/female/nonbinary
+bin_gender <- function(gender_val) {
+  low_gender <- tolower(gender_val)
+  return_val <- case_when(
+    low_gender %in% c("female", "female ", "f", "woman", "femal", "femals", "femail", "famale", "females", "femaile", "femalr", "female/woman", "demigirl", "cis woman") ~ "female",
+    low_gender %in% c("male", "malw", "man", " male", "male ", "man", "m", "boy", "trans-masc", "cis male") ~ "male",
+    low_gender %in% c("nonbinary", "non-binary", "nb", "genderfluid") ~ "nonbinary",
+    .default = as.character(low_gender)
+  )
+  return(return_val)
+  
+}
+
 # I forgot to add partner information in my preprocessing script, so let's recover that...
 load_participant_data <- function(data_name, study_list){
   source_files <- list.files(path = here(raw_data_dir),
@@ -41,16 +54,21 @@ load_participant_data <- function(data_name, study_list){
                              full.names = TRUE)
   data_files <- source_files[Reduce("|", lapply(study_list, function(x) grepl(x, source_files)))]
   d_player_raw <- do.call(bind_rows, lapply(data_files, read.csv))
-  
   d_players <- d_player_raw |> 
     mutate(URLParams = map(urlParams, ~ possibly(function(x) {
       if (is.na(x)) return(data.frame())
       fromJSON(x) %>% as.data.frame()
     }, otherwise = data.frame())(.)
+    ),
+    ExitSurvey = map(exitSurvey, ~ possibly(function(x) {
+      if (is.na(x)) return(data.frame())
+      fromJSON(x) %>% as.data.frame()
+    }, otherwise = data.frame())(.)
     )) |>
-    unnest(URLParams) |>
-    select(playerID = id, prolificID = participantKey,
-           bonus, exitStepDone, gameID, partnerID = partner) 
+    unnest(URLParams) %>% 
+    unnest(ExitSurvey)|>
+    select(playerID = id, gender, age, education, prolificID = participantKey,
+      bonus, exitStepDone, gameID, partnerID = partner) 
   return(d_players)
 }
 
@@ -118,13 +136,12 @@ d_actions_final <- d_round |>
          choice_id = ifelse(response == "", "timed_out", response), 
          text = NA, 
          message_number = as.numeric(NA), 
-         message_irrelevant = NA) |> 
+         message_irrelevant = NA) |>
   left_join(d_players |> select(gameID, director=playerID, player_id=partnerID)) |> 
   select(roundID, gameID, action_type, player_id, role, time_stamp, 
          message_number, message_irrelevant, choice_id, text)
 
-d_actions <- bind_rows(d_messages_final, d_actions_final, d_no_talk)
-
+d_actions <- bind_rows(d_messages_final, d_actions_final, d_no_talk)|> left_join(d_players |> select(gameID, age, gender, education, player_id=playerID), by=c("player_id", "gameID")) 
 
 # Round Info
 
@@ -141,12 +158,13 @@ d_trial_info <- d_round |> as_tibble() |>
 
 d_full <- d_actions |> left_join(d_trial_info) |> left_join(d_game_final) |> 
   mutate(room_num=1,
-         age=as.numeric(NA),
-         gender=as.character(NA)) |> 
+         age = ifelse(age!="", as.numeric(age), as.numeric(NA)),
+         gender = ifelse(gender!="", gender |> as.character() |> bin_gender(), as.character(NA)),
+         education = ifelse(education!="", as.character(education), as.character(NA)))|> 
   select(condition_label, dataset_id, full_cite, short_cite,
-         trial_num, rep_num, stage_num, room_num, age, gender,
+         trial_num, rep_num, stage_num, room_num,
          group_size, structure, language, game_id, option_set,
-         target, exclude, exclusion_reason, action_type,player_id,
+         target, exclude, exclusion_reason, action_type, player_id, age, gender, education,
          role, time_stamp, text, message_number, message_irrelevant, choice_id
   )
 

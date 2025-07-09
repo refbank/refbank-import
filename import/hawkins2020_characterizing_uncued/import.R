@@ -338,9 +338,15 @@ load_and_process <- function(input_file, board_file, subj_file, output_file) {
 }
 
 # Example execution
-INPUT_FILE <- "import/hawkins_dynamics_free/raw_data/rawUnconstrainedMessages.csv" 
+INPUT_FILE <- "import/hawkins_dynamics_free/raw_data/rawUnconstrainedMessages.csv"
+# https://github.com/hawkrobe/tangrams/blob/master/data/tangrams_unconstrained/message/rawUnconstrainedMessages.csv
+
 BOARD_FILE <- "import/hawkins_dynamics_free/raw_data/tangramsFinalBoards.csv"
+# https://github.com/hawkrobe/tangrams/blob/master/data/tangrams_unconstrained/finalBoard/tangramsFinalBoards.csv
+
 SUBJ_FILE <- "import/hawkins_dynamics_free/raw_data/tangrams-subject_information.csv"
+# https://github.com/hawkrobe/tangrams/blob/master/data/tangrams_unconstrained/turk/tangrams-subject_information.csv
+
 OUTPUT_FILE <- "import/hawkins_dynamics_free/segmented_data.csv"
 
 cat("Starting tangrams description segmentation for refbank-import...\n")
