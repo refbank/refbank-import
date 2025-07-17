@@ -356,49 +356,96 @@ Now try pushing them directly to redivis.
 ```{r}
 # Set up the connection to Redivis
 
-con <- redivis::user("mcfrank")$dataset("refbank:2zy7")
+con <- redivis$user("mcfrank")$dataset("refbank:2zy7")
 
 dataset <- con$create_next_version(if_not_exists=T)
 
 
 
 
+dataset$table("datasets:q7yy")$update(upload_merge_strategy="replace")
+dataset$table("messages:2q18")$update(upload_merge_strategy="replace")
+dataset$table("choices:s1zj")$update(upload_merge_strategy="replace")
+dataset$table("trials:zkj2")$update(upload_merge_strategy="replace")
+dataset$table("conditions:kk1e")$update(upload_merge_strategy="replace")
+dataset$table("players:7xnd")$update(upload_merge_strategy="replace")
+dataset$table("images:jw0t")$update(upload_merge_strategy="replace")
+
+
+
+
+
+upload <- dataset$table("datasets:q7yy")$upload()$create(
+  "export/datasets.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+upload <- dataset$table("messages:2q18")$upload()$create(
+  "export/messages.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+upload <- dataset$table("choices:s1zj")$upload()$create(
+  "export/choices.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+upload <- dataset$table("trials:zkj2")$upload()$create(
+  "export/trials.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+upload <- dataset$table("conditions:kk1e")$upload()$create(
+  "export/conditions.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
+
+upload <- dataset$table("players:7xnd")$upload()$create(
+  "export/players.csv",
+  type="delimited",        
+  remove_on_fail = TRUE,     
+  wait_for_finish = TRUE, 
+  raise_on_fail = TRUE,
+  replace_on_conflict = TRUE
+)
+
 #image files
-upload <- dataset$table("image_files")$create(is_file_index=T)$add_files(
+upload <- dataset$table("image_files")$add_files(
   directory=here("image_data/images/")
 )
 
-dataset$release()
-
-  # 
-# upload <- table$upload()$create(
-#     "./data.csv",           # Path to file, data.frame, raw vector, etc
-#     type="delimited",       # Inferred from file extension if not provided
-#     remove_on_fail=True,    # Remove the upload if a failure occurs
-#     wait_for_finish=True,   # Wait for the upload to finish processing
-#     raise_on_fail=True      # Raise an error on failure
-# )
 ```
 
-```{r}
-# example text for how to do unstructured data!
+THIS IS WHERE YOU GO RUN THE WORKFLOW IN THE GUI TO GENERATE DERIVED TABLES!
 
-# library(redivis)
-# dataset <- redivis$user("user_name")$dataset("dataset_name", version="next")
-# 
-# # Non-tabular files must be uploaded to file index tables
-# table <- dataset$table("my_files")$create(is_file_index=TRUE)
-# 
-# # upload all contents in a directory
-# table$add_files(directory="/path/to/directory/")
-# 
-# # upload specific files
-# table$add_files(files=list(
-#     list(path="/path/to/file.png"), # file name will be "file.png"
-#     list(path="/path/to/other/file.png", name="other_file.png"), # file name will be other_file.png
-#     list(data="Hello world", name="hello_world.txt") # Data can be string or raw vector 
-#     list(data=url("http://example.com"), name="example_com.html") # Data can be a connection
-# )
+```{r, eval=F}
+#did you run the workflow?
+
+con <- redivis$user("mcfrank")$dataset("refbank:2zy7")
+dataset <- con$create_next_version(if_not_exists=T)
+dataset$release()
+
 ```
 
 
