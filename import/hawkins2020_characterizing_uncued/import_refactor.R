@@ -6,7 +6,7 @@ library(tidyr)
 library(purrr)
 library(logger)
 library(tibble)
-
+library(here)
 # Logging setup
 log_appender(appender_file("segmentation.log"))
 log_layout(layout_glue_colors)
@@ -230,10 +230,6 @@ clean_messages <- grouped_messages |>
   #filter(key %in% names(boards_dict)) %>%
   # Add trial numbering
   arrange(gameid, roundNum) %>%
-  mutate(
-    game_changed = gameid != lag(gameid, default = ""),
-    global_trial_num = cumsum(game_changed)
-  ) %>%
   # Expand segments
   mutate(segment_id = row_number()) %>%
   unnest_longer(segments, indices_to = "trial_number") %>%
@@ -244,71 +240,47 @@ clean_messages <- grouped_messages |>
   replace_na(list(exclude = FALSE, exclusion_reason = "NA"))
 
 # Create message and choice rows
-message_rows <- clean_messages %>%
-  transmute(
-    dataset_id = "hawkins2020_characterizing_uncued",
-    condition_label = "unconstrained", 
-    full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020)...",
-    short_cite = "Hawkins et al. (2020)",
-    language = "English",
-    game_id = gameid,
-    player_id = str_c(gameid, "_describer"),
-    trial_num = global_trial_num,
-    rep_num = repetitionNum,
-    room_num = 1,
-    stage_num = 1,
-    age = as.numeric(NA),
-    gender = as.character(NA),
-    role = "describer",
-    target = targets,
-    message_number = 1,
-    text = if_else(segments == "", "NA", segments),
-    choice_id = "NA",
+message_rows <- clean_messages |> select( gameid, repetitionNum, segments, msgTime,
+                                          trial_number, targets, exclude, exclusion_reason) |> 
+  filter(!is.na(targets)) |> 
+  mutate(role="describer",
+         action_type="message",
     time_stamp = as.numeric(msgTime),
-    option_set = option_set,
-    group_size = 2,
-    structure = "thick",
-    exclude = exclude,
-    exclusion_reason = exclusion_reason,
-    action_type = "message",
-    message_irrelevant = FALSE
-  )
+    message_irrelevant=F,
+    message_number=1)
 
-choice_rows <- clean_messages %>%
-  transmute(
-    dataset_id = "hawkins2020_characterizing_uncued",
-    condition_label = "unconstrained",
-    full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020)...",
-    short_cite = "Hawkins et al. (2020)",
-    language = "English", 
-    game_id = gameid,
-    player_id = str_c(gameid, "_matcher"),
-    trial_num = global_trial_num,
-    rep_num = repetitionNum,
-    room_num = 1,
-    stage_num = 1,
-    age = as.numeric(NA),
-    gender = as.character(NA),
-    role = "matcher",
-    target = targets,
-    message_number = as.numeric(NA),
-    text = "NA",
-    choice_id = selections,
-    time_stamp = as.numeric(NA),
-    option_set = option_set,
-    group_size = 2,
-    structure = "thick",
-    exclude = exclude,
-    exclusion_reason = exclusion_reason,
-    action_type = "selection",
-    message_irrelevant = as.logical(NA)
-  )
-
+choice_rows <- clean_messages %>% select(gameid, repetitionNum, segments, msgTime,
+                                         trial_number, targets, selections, exclude, exclusion_reason) |> 
+  filter(!is.na(selections)) |> 
+  filter(!is.na(targets)) |> 
+  mutate(role="matcher", action_type="selection")
+  
+  
 result <- bind_rows(message_rows, choice_rows) %>%
+  mutate(dataset_id = "hawkins2020_characterizing_uncued",
+         condition_label = "unconstrained",
+         full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",
+         short_cite = "Hawkins et al. (2020)",
+         language = "English", 
+         game_id = gameid,
+         player_id = str_c(gameid, "_", role),
+         trial_num = trial_number + 12* (as.numeric(repetitionNum)-1),
+         rep_num = repetitionNum,
+         room_num = 1,
+         stage_num = 1,
+         age = as.numeric(NA),
+         gender = as.character(NA),
+         target = targets,
+         text = "NA",
+         choice_id = selections,
+         option_set = option_set,
+         group_size = 2,
+         structure = "thick",
+  ) |> 
   arrange(game_id, trial_num, desc(action_type)) |> 
-  mutate(trial_num=as.numeric(trial_num))
-
+  mutate(trial_num=as.numeric(trial_num)) |> 
+  select(-gameid, -msgTime, -repetitionNum, -segments, -trial_number, -targets, -selections)
 
 source(here("validate.R"))
-validate_dataset(result, write = F)
+validate_dataset(result, write = T)
 # nolint end
