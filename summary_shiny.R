@@ -1,6 +1,6 @@
 library(tidyverse)
 library(redivis)
-
+library(here)
 
 # option dataset stats
 con <- redivis$user("mcfrank")$dataset("refbank:2zy7")
@@ -49,21 +49,11 @@ diverge <- sims |> filter(sim_type %in% c("diverge")) |>
 
 trial_sum <- trials |> left_join(words) |> left_join(accuracy) |> left_join(rt) |> 
   group_by(game_id, rep_num, stage_num, option_size, condition_id, dataset_id) |> 
-  summarize(words=sum(total_num_words, na.rm=T),
+  summarize(words=mean(total_num_words, na.rm=T),
             accuracy=mean(overall_accuracy, na.rm=T),
             rt=mean(mean_rt, na.rm=T),
             trials=n()) |> 
-  left_join(sim_summary) |> left_join(diverge) |> left_join(conditions)
+  left_join(sim_summary) |> left_join(diverge) |> left_join(conditions) |> 
+  write_csv(here("../refbank-viz/shiny_summary.csv"))
 
-         
-
-theme_set(theme_bw())
-
-x <- "option_set_size"
-
-y <- "trials_per_game"
-
-
-
-ggplot(all, aes(x = .data[[x]], y = .data[[y]])) +
-  geom_point(aes(color=dataset_id))
+  
