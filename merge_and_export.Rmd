@@ -16,7 +16,7 @@ library(redivis)
 library(assertthat)
 
 # source(here("data_helpers.R"))
-DATA_LOC=here("harmonized_data")
+DATA_LOC <- here("harmonized_data")
 ```
 
 Set up the function for getting tables. 
@@ -30,14 +30,14 @@ get_tbl <- function(con = DATA_LOC, dataset_name, tbl_name) {
   if (missing(tbl_name)) {
     stop("tbl_name must be provided")
   }
-  
+
   file_path <- file.path(con, dataset_name, paste0(tbl_name, ".csv"))
   if (!file.exists(file_path)) {
     stop(paste("File does not exist:", file_path))
   }
-  
+
   out <- read_csv(file_path, show_col_types = FALSE)
-  
+
   out
 }
 ```
@@ -49,7 +49,7 @@ Mark with dataset IDs
 
 ```{r}
 # options to get trials / choices / messages for all datasets
-dataset_names <- list.dirs(DATA_LOC, full.names = FALSE) |> 
+dataset_names <- list.dirs(DATA_LOC, full.names = FALSE) |>
   stri_remove_empty()
 
 dataset_names <- dataset_names[-8]
@@ -76,12 +76,11 @@ Table messages {
 
 ```{r}
 messages <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "messages") |>
-                     mutate(dataset_id = d)) |> 
-  filter(!is.na(text)) 
+  mutate(dataset_id = d)) |>
+  filter(!is.na(text))
 
 na_messages <- messages |> filter(if_any(c("player_id", "trial_id", "role", "message_number", "text", "dataset_id"), is.na))
-assert_that(nrow(na_messages)==0)
-
+assert_that(nrow(na_messages) == 0)
 ```
 
 
@@ -104,30 +103,31 @@ Table trials {
   stage_num integer
   trial_num integer
   rep_num integer
+  order_match varchar {order, match}
   exclude bool
   exclusion_reason varchar
 
 }
 
 ```{r}
-trials <-   map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "trials") |> 
-                     mutate(target = as.character(target),
-                            matchers = as.character(matchers),
-                            dataset_id = d)) #|> 
- # mutate(option_set = option_set |> 
-  #         str_remove_all("\\[|\\]|\"") |> 
-   #        str_replace_all(",", ";") )
+trials <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "trials") |>
+  mutate(
+    target = as.character(target),
+    matchers = as.character(matchers),
+    dataset_id = d
+  )) #|>
+# mutate(option_set = option_set |>
+#         str_remove_all("\\[|\\]|\"") |>
+#        str_replace_all(",", ";") )
 
-na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num","describer", "dataset_id"), is.na))
-assert_that(nrow(na_trials)==0)
+na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer", "dataset_id", "order_match"), is.na))
+assert_that(nrow(na_trials) == 0)
 
-trials <- trials |> mutate(option_size = option_set |> str_split(";") |> 
-                                                                 lengths())
+trials <- trials |> mutate(option_size = option_set |> str_split(";") |>
+  lengths())
 
-assert_that(max(trials$option_size)==16) #change these as datasets change, but we're trying to rule out screw ups that make it like 96 or something absurd
-assert_that(min(trials$option_size)==4)
-
-
+assert_that(max(trials$option_size) == 16) # change these as datasets change, but we're trying to rule out screw ups that make it like 96 or something absurd
+assert_that(min(trials$option_size) == 4)
 ```
 
 Conditions & datasets
@@ -145,9 +145,14 @@ Table conditions{
   dataset_id [foreign key datasets]
   
   group_size integer
-  structure varchar
   language varchar
-  placeholder_features varchar PLACEHOLDER
+  prior_relationship {yes,no}
+  partner_constancy {yes,no}
+  role_constancy {yes,no}
+  confederates {yes, no}
+  modality {written, oral-remote, oral-in-person}
+  feedback {full, limited, none}
+  backchannel {full, limited, none}
 }
 
 
@@ -156,18 +161,20 @@ conditions <- map_df(dataset_names, \(d) get_tbl(DATA_LOC, d, "conditions"))
 
 datasets <- tibble(dataset_id = dataset_names) |>
   left_join(conditions |>
-              select(dataset_id, full_cite, short_cite) |>
-              distinct()) 
+    select(dataset_id, full_cite, short_cite) |>
+    distinct())
 
 conditions <- conditions |>
   select(-full_cite, -short_cite)
 
 na_datasets <- datasets |> filter(if_any(c("dataset_id", "full_cite", "short_cite"), is.na))
-assert_that(nrow(na_datasets)==0)
+assert_that(nrow(na_datasets) == 0)
 
-na_conditions <- conditions |> filter(if_any(c("dataset_id", "condition_id", "group_size", "structure", "language"), is.na))
-assert_that(nrow(na_conditions)==0)
-
+na_conditions <- conditions |> filter(if_any(c(
+  "dataset_id", "condition_id", "group_size", "language", "prior_relationship", "partner_constant",
+  "role_constant", "confederates", "modality", "feedback", "backchannel",
+), is.na))
+assert_that(nrow(na_conditions) == 0)
 ```
 
 
@@ -186,18 +193,20 @@ Table choices {
 
 
 ```{r}
-choices <- map_df(dataset_names, function (d) {
-  df <- get_tbl(DATA_LOC, d, "choices")  |>
-    mutate(player_id = as.numeric(player_id), 
-           time_stamp = as.numeric(time_stamp),
-           trial_id = as.numeric(trial_id),
-           dataset_id = d) 
-  
+choices <- map_df(dataset_names, function(d) {
+  df <- get_tbl(DATA_LOC, d, "choices") |>
+    mutate(
+      player_id = as.numeric(player_id),
+      time_stamp = as.numeric(time_stamp),
+      trial_id = as.numeric(trial_id),
+      dataset_id = d
+    )
+
   df
-}) 
+})
 
 na_choices <- choices |> filter(if_any(c("trial_id", "choice_id", "player_id", "dataset_id"), is.na))
-assert_that(nrow(na_choices)==0)
+assert_that(nrow(na_choices) == 0)
 ```
 
 Players
@@ -213,16 +222,18 @@ Table players {
 }
 
 ```{r}
-players <- map_df(dataset_names, function (d) {
-  df <- get_tbl(DATA_LOC, d, "players") |> 
-    mutate(player_id=as.numeric(player_id),
-           dataset_id=d)
-  
+players <- map_df(dataset_names, function(d) {
+  df <- get_tbl(DATA_LOC, d, "players") |>
+    mutate(
+      player_id = as.numeric(player_id),
+      dataset_id = d
+    )
+
   df
 })
 
 na_players <- players |> filter(if_any(c("player_id", "dataset_id"), is.na))
-assert_that(nrow(na_players)==0)
+assert_that(nrow(na_players) == 0)
 ```
 
 Images (already one table for all images)
@@ -240,14 +251,19 @@ images <- read_csv(here("image_data/image_metadata.csv"))
 
 # keep here!
 na_images <- images |> filter(if_any(c("image_id", "image_type"), is.na))
-assert_that(nrow(na_images)==0)
+assert_that(nrow(na_images) == 0)
 
 
-assert_that(nrow(trials |> select(target) |> unique() |> anti_join(images |> select(target=image_id)))==0)
+assert_that(nrow(trials |> select(target) |> unique() |> anti_join(images |> select(target = image_id))) == 0)
 
-options <- trials |> select(option_set) |> mutate(image_id = str_split(option_set, ";")) |> unnest(image_id) |> select(image_id) |> unique()
+options <- trials |>
+  select(option_set) |>
+  mutate(image_id = str_split(option_set, ";")) |>
+  unnest(image_id) |>
+  select(image_id) |>
+  unique()
 
-assert_that(nrow(images |> anti_join(options))==0)
+assert_that(nrow(images |> anti_join(options)) == 0)
 ```
 
 # Create cross-dataset unique ids
@@ -264,75 +280,88 @@ assert_that(nrow(images |> anti_join(options))==0)
 ( image id non-numeric )
 
 ```{r}
-players_unique <- players |> ungroup() |> 
-  mutate(player_id_num=row_number())
+players_unique <- players |>
+  ungroup() |>
+  mutate(player_id_num = row_number())
 
-conditions_unique <- conditions |> ungroup() |> 
-  mutate(condition_id_num=row_number())
+conditions_unique <- conditions |>
+  ungroup() |>
+  mutate(condition_id_num = row_number())
 
-games_unique <- trials |> ungroup() |> select(game_id, dataset_id) |> unique() |> 
-  mutate(game_id_num=row_number())
+games_unique <- trials |>
+  ungroup() |>
+  select(game_id, dataset_id) |>
+  unique() |>
+  mutate(game_id_num = row_number())
 
-trials_unique <-  trials |> ungroup() |> 
-  left_join(players_unique |> select(dataset_id, describer=player_id, describer_id_num=player_id_num)) |> 
-  mutate(matcher=str_split(matchers, ";")) |> unnest(matcher) |> 
-  mutate(matcher=as.numeric(matcher)) |> 
-  left_join(players_unique |> select(dataset_id, matcher=player_id, matcher_id_num=player_id_num)) |> 
-  group_by(across(c(-matcher, -matcher_id_num))) |> 
-  summarize(matchers_num=str_c(matcher_id_num, sep=";", collapse=";")) |> 
-  left_join(games_unique) |> 
-  left_join(conditions_unique |> select(condition_id_num, condition_id, dataset_id)) |> 
-  ungroup() |> 
-  mutate(trial_id_num=row_number())
+trials_unique <- trials |>
+  ungroup() |>
+  left_join(players_unique |> select(dataset_id, describer = player_id, describer_id_num = player_id_num)) |>
+  mutate(matcher = str_split(matchers, ";")) |>
+  unnest(matcher) |>
+  mutate(matcher = as.numeric(matcher)) |>
+  left_join(players_unique |> select(dataset_id, matcher = player_id, matcher_id_num = player_id_num)) |>
+  group_by(across(c(-matcher, -matcher_id_num))) |>
+  summarize(matchers_num = str_c(matcher_id_num, sep = ";", collapse = ";")) |>
+  left_join(games_unique) |>
+  left_join(conditions_unique |> select(condition_id_num, condition_id, dataset_id)) |>
+  ungroup() |>
+  mutate(trial_id_num = row_number())
 
 
-messages_final <- messages |> left_join(trials_unique |> select(dataset_id, trial_id, trial_id_num)) |> 
-  select(-trial_id) |> rename(trial_id=trial_id_num) |> 
-  left_join(players_unique |> select(dataset_id, player_id, player_id_num)) |> 
-  select(-player_id) |> rename(player_id=player_id_num) |> 
-  ungroup() |> 
-  mutate(message_id=row_number())
+messages_final <- messages |>
+  left_join(trials_unique |> select(dataset_id, trial_id, trial_id_num)) |>
+  select(-trial_id) |>
+  rename(trial_id = trial_id_num) |>
+  left_join(players_unique |> select(dataset_id, player_id, player_id_num)) |>
+  select(-player_id) |>
+  rename(player_id = player_id_num) |>
+  ungroup() |>
+  mutate(message_id = row_number())
 
-choices_final <- choices |> left_join(trials_unique |> select(dataset_id, trial_id, trial_id_num)) |> 
-  select(-trial_id) |> rename(trial_id=trial_id_num) |> 
-  left_join(players_unique |> select(dataset_id, player_id, player_id_num)) |> 
-  select(-player_id) |> rename(player_id=player_id_num) |> 
-  ungroup() |> 
-  mutate(choices_id=row_number())
+choices_final <- choices |>
+  left_join(trials_unique |> select(dataset_id, trial_id, trial_id_num)) |>
+  select(-trial_id) |>
+  rename(trial_id = trial_id_num) |>
+  left_join(players_unique |> select(dataset_id, player_id, player_id_num)) |>
+  select(-player_id) |>
+  rename(player_id = player_id_num) |>
+  ungroup() |>
+  mutate(choices_id = row_number())
 
-trials_final <- trials_unique |> 
-  select(-trial_id, -game_id, -describer, -matchers, -condition_id) |> 
-  rename(trial_id=trial_id_num, game_id=game_id_num, describer=describer_id_num, 
-         matchers=matchers_num, condition_id=condition_id_num)
+trials_final <- trials_unique |>
+  select(-trial_id, -game_id, -describer, -matchers, -condition_id) |>
+  rename(
+    trial_id = trial_id_num, game_id = game_id_num, describer = describer_id_num,
+    matchers = matchers_num, condition_id = condition_id_num
+  )
 
-conditions_final <- conditions_unique |> select(-condition_id) |> rename(condition_id=condition_id_num)
+conditions_final <- conditions_unique |>
+  select(-condition_id) |>
+  rename(condition_id = condition_id_num)
 
-players_final <- players_unique |> select(-player_id) |> rename(player_id=player_id_num)
-
-  
+players_final <- players_unique |>
+  select(-player_id) |>
+  rename(player_id = player_id_num)
 ```
 
 # Validate more
 
 ```{r}
-assert_that(length(players_final$player_id)==length(players$player_id))
-assert_that(length(conditions_final$condition_id)==length(conditions$condition_id))
-assert_that(length(choices_final$choices_id)==length(choices$choice_id))
-assert_that(length(messages_final$message_id)==length(messages$message_number))
-assert_that(length(trials_final$trial_id)==length(trials$trial_id))
+assert_that(length(players_final$player_id) == length(players$player_id))
+assert_that(length(conditions_final$condition_id) == length(conditions$condition_id))
+assert_that(length(choices_final$choices_id) == length(choices$choice_id))
+assert_that(length(messages_final$message_id) == length(messages$message_number))
+assert_that(length(trials_final$trial_id) == length(trials$trial_id))
 
-assert_that(length(players_final$player_id)==length(players_final$player_id |> unique()))
-assert_that(length(conditions_final$condition_id)==length(conditions_final$condition_id |> unique()))
-assert_that(length(trials_final$trial_id)==length(trials_final$trial_id |> unique()))
-assert_that(length(messages_final$message_id)==length(messages_final$message_id |> unique()))
-assert_that(length(choices_final$choices_id)==length(choices_final$choices_id |> unique()))
+assert_that(length(players_final$player_id) == length(players_final$player_id |> unique()))
+assert_that(length(conditions_final$condition_id) == length(conditions_final$condition_id |> unique()))
+assert_that(length(trials_final$trial_id) == length(trials_final$trial_id |> unique()))
+assert_that(length(messages_final$message_id) == length(messages_final$message_id |> unique()))
+assert_that(length(choices_final$choices_id) == length(choices_final$choices_id |> unique()))
 
-assert_that(length(datasets$dataset_id)==length(datasets$dataset_id |> unique()))
-assert_that(length(images$image_id)==length(images$image_id |> unique()))
-
-
-
-
+assert_that(length(datasets$dataset_id) == length(datasets$dataset_id |> unique()))
+assert_that(length(images$image_id) == length(images$image_id |> unique()))
 ```
 
 
@@ -343,11 +372,11 @@ Write out for redivis with missing for NA to facilitate import.
 ```{r}
 write_csv(datasets, here("export", "datasets.csv"), na = "")
 write_csv(messages_final, here("export", "messages.csv"), na = "")
-write_csv(choices_final,  here("export", "choices.csv"), na = "")
+write_csv(choices_final, here("export", "choices.csv"), na = "")
 write_csv(trials_final, here("export", "trials.csv"), na = "")
 write_csv(conditions_final, here("export", "conditions.csv"), na = "")
-write_csv(players_final, here("export", "players.csv"), na="")
-write_csv(images, here("export", "images.csv"), na="")
+write_csv(players_final, here("export", "players.csv"), na = "")
+write_csv(images, here("export", "images.csv"), na = "")
 ```
 
 
@@ -358,18 +387,18 @@ Now try pushing them directly to redivis.
 
 con <- redivis$user("mcfrank")$dataset("refbank:2zy7")
 
-dataset <- con$create_next_version(if_not_exists=T)
+dataset <- con$create_next_version(if_not_exists = T)
 
 
 
 
-dataset$table("datasets:q7yy")$update(upload_merge_strategy="replace")
-dataset$table("messages:2q18")$update(upload_merge_strategy="replace")
-dataset$table("choices:s1zj")$update(upload_merge_strategy="replace")
-dataset$table("trials:zkj2")$update(upload_merge_strategy="replace")
-dataset$table("conditions:kk1e")$update(upload_merge_strategy="replace")
-dataset$table("players:7xnd")$update(upload_merge_strategy="replace")
-dataset$table("images:jw0t")$update(upload_merge_strategy="replace")
+dataset$table("datasets:q7yy")$update(upload_merge_strategy = "replace")
+dataset$table("messages:2q18")$update(upload_merge_strategy = "replace")
+dataset$table("choices:s1zj")$update(upload_merge_strategy = "replace")
+dataset$table("trials:zkj2")$update(upload_merge_strategy = "replace")
+dataset$table("conditions:kk1e")$update(upload_merge_strategy = "replace")
+dataset$table("players:7xnd")$update(upload_merge_strategy = "replace")
+dataset$table("images:jw0t")$update(upload_merge_strategy = "replace")
 
 
 
@@ -377,45 +406,45 @@ dataset$table("images:jw0t")$update(upload_merge_strategy="replace")
 
 upload <- dataset$table("datasets:q7yy")$upload()$create(
   "export/datasets.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
+  type = "delimited",
+  remove_on_fail = TRUE,
+  wait_for_finish = TRUE,
   raise_on_fail = TRUE,
   replace_on_conflict = TRUE
 )
 
 upload <- dataset$table("messages:2q18")$upload()$create(
   "export/messages.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
+  type = "delimited",
+  remove_on_fail = TRUE,
+  wait_for_finish = TRUE,
   raise_on_fail = TRUE,
   replace_on_conflict = TRUE
 )
 
 upload <- dataset$table("choices:s1zj")$upload()$create(
   "export/choices.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
+  type = "delimited",
+  remove_on_fail = TRUE,
+  wait_for_finish = TRUE,
   raise_on_fail = TRUE,
   replace_on_conflict = TRUE
 )
 
 upload <- dataset$table("trials:zkj2")$upload()$create(
   "export/trials.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
+  type = "delimited",
+  remove_on_fail = TRUE,
+  wait_for_finish = TRUE,
   raise_on_fail = TRUE,
   replace_on_conflict = TRUE
 )
 
 upload <- dataset$table("conditions:kk1e")$upload()$create(
   "export/conditions.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
+  type = "delimited",
+  remove_on_fail = TRUE,
+  wait_for_finish = TRUE,
   raise_on_fail = TRUE,
   replace_on_conflict = TRUE
 )
@@ -423,42 +452,40 @@ upload <- dataset$table("conditions:kk1e")$upload()$create(
 
 upload <- dataset$table("players:7xnd")$upload()$create(
   "export/players.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
+  type = "delimited",
+  remove_on_fail = TRUE,
+  wait_for_finish = TRUE,
   raise_on_fail = TRUE,
   replace_on_conflict = TRUE
 )
 
 upload <- dataset$table("images:jw0t")$upload()$create(
   "export/images.csv",
-  type="delimited",        
-  remove_on_fail = TRUE,     
-  wait_for_finish = TRUE, 
+  type = "delimited",
+  remove_on_fail = TRUE,
+  wait_for_finish = TRUE,
   raise_on_fail = TRUE,
   replace_on_conflict = TRUE
 )
 
-#image files
+# image files
 upload <- dataset$table("image_files")$add_files(
-  directory=here("image_data/images/")
+  directory = here("image_data/images/")
 )
-
 ```
 
 THIS IS WHERE YOU GO RUN THE WORKFLOW IN THE GUI TO GENERATE DERIVED TABLES!
 
 ```{r, eval=F}
-#did you run the workflow?
+# did you run the workflow?
 
 con <- redivis$user("mcfrank")$dataset("refbank:2zy7")
-dataset <- con$create_next_version(if_not_exists=T)
+dataset <- con$create_next_version(if_not_exists = T)
 
 
 dataset$table("per_game_summary")$create()
 
 dataset$release()
-
 ```
 
 

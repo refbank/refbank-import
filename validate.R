@@ -79,11 +79,12 @@ validate_dataset <- function(df, write=F) {
   # check column presence
   required_cols <- c(
     "condition_label", "dataset_id", "full_cite", "short_cite",
-    "group_size", "structure", "language",
+    "group_size","language", "prior_relationship", "partner_constant",
+    "role_constant", "confederates", "modality", "feedback", "backchannel",
     
     "game_id", "room_num", "option_set", "target", 
     "trial_num", "rep_num", "stage_num",
-    "exclude", "exclusion_reason",
+    "exclude", "exclusion_reason", "order_match",
     
     "action_type", "player_id", "role", "time_stamp",
     "age", "gender",
@@ -97,7 +98,9 @@ validate_dataset <- function(df, write=F) {
   types <- map(df, class) |> enframe() |> unnest(value)
   
   should_be_char <- c("dataset_id", "full_cite", "short_cite", 
-                      "structure", "language", "option_set",
+                       "language", "option_set", "prior_relationship", "partner_constant",
+                      "role_constant", "confederates", "modality", "feedback", "backchannel",
+                      "order_match",
                       "exclusion_reason", "action_type", "role", "text", "gender")
   should_be_numeric <- c("group_size", "room_num", "trial_num", "rep_num", "stage_num",
                          "time_stamp", "message_number", "age")
@@ -126,11 +129,29 @@ validate_dataset <- function(df, write=F) {
               msg = "action_type must be message or selection")
   assert_that(all(df$role %in% c("describer", "matcher")), 
               msg = "role must be matcher or describer")
+  assert_that(all(df$order_match %in% c("order", "match")), 
+              msg = "order_match must be either order or match")
+  assert_that(all(df$prior_relationship %in% c("yes", "no")), 
+              msg = "prior_relationship must be yes or no")
+  assert_that(all(df$partner_constancy %in% c("yes", "no")), 
+              msg = "partner_constancy must be yes or no")
+  assert_that(all(df$role_constancy %in% c("yes", "no")), 
+              msg = "role_constancy must be yes or no")
+  assert_that(all(df$confederates %in% c("yes", "no")), 
+              msg = "confederates must be yes or no")
+  assert_that(all(df$modality %in% c("written", "oral-remote", "oral-in-person")), 
+              msg = "modality must be written, oral-remote, or oral-in-person"),
+  assert_that(all(df$feedback %in% c("full", "limited", "none")), 
+              msg = "feedback must be full, limited, or none")
+  assert_that(all(df$backchannel %in% c("full", "limited", "none")), 
+              msg = "backchannel must be full, limited, or none")
+  
   
   # check conditions
   try_condition <- df |>
     select(condition_label, dataset_id, full_cite, short_cite, 
-           group_size, structure, language) |>
+           group_size, prior_relationship, partner_constancy, role_constancy, 
+           confederates, modality, feedback, backchannel, language) |>
     unique()
   
   assert_that(length(unique(try_condition$condition_label)) == 
@@ -181,7 +202,7 @@ validate_dataset <- function(df, write=F) {
   # check trials
   try_trials <- df |>
     select(condition_label, game_id, room_num, option_set, target, stage_num, trial_num, rep_num, exclude,
-           exclusion_reason) |>
+           exclusion_reason, order_match) |>
     unique() |>
     left_join(conditions |> select(condition_label, condition_id),
               by = join_by(condition_label)) |>
@@ -244,8 +265,10 @@ validate_dataset <- function(df, write=F) {
   assert_that(nrow(na_players)==0)
   
   print("Checking conditions")
-  check_cols(c("condition_id", "dataset_id", "full_cite", "short_cite", "group_size", "structure", "language"), conditions)
-  na_conditions <- conditions |> filter(if_any(c("dataset_id","short_cite", "full_cite", "condition_id", "group_size", "structure", "language"), is.na))
+  check_cols(c("condition_id", "dataset_id", "full_cite", "short_cite", "group_size", "prior_relationship", "partner_constant",
+               "role_constant", "confederates", "modality", "feedback", "backchannel","language"), conditions)
+  na_conditions <- conditions |> filter(if_any(c("dataset_id","short_cite", "full_cite", "condition_id", "prior_relationship", "partner_constant",
+                                                 "role_constant", "confederates", "modality", "feedback", "backchannel", "group_size", "language"), is.na))
   assert_that(nrow(na_conditions)==0)
   
   print("Checking choices")
@@ -262,8 +285,8 @@ validate_dataset <- function(df, write=F) {
   
   print("Checking trials")
   check_cols(c("trial_id", "condition_id", "game_id", "room_num", "option_set", "target", "stage_num",
-               "trial_num", "rep_num", "exclude", "exclusion_reason", "describer", "matchers"), trials)
-  na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer"), is.na))
+               "trial_num", "rep_num", "exclude", "exclusion_reason", "describer", "matchers", "order_match"), trials)
+  na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer", "order_match"), is.na))
 #View(na_trials)
     assert_that(nrow(na_trials)==0)
   
