@@ -218,7 +218,9 @@ Table players {
 
   age integer
   gender varchar
-  placeholder_demo varchar
+  native_language varchar
+  race varchar
+  education varchar
 }
 
 ```{r}
