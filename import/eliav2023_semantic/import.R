@@ -10,7 +10,7 @@ library(jsonlite)
 # expt 1 NA texts
 # page-F target
 
-data_dir <- "import/eliav_semantic/raw_data"
+data_dir <- "import/eliav2023_semantic/raw_data"
 
 
 ParseJSONColumn <- function(x) {

@@ -137,7 +137,9 @@ concat_contexts <- contexts |>
   summarize(option_set = str_c(url, collapse = ";")) |>
   ungroup()
 
-clicked <- contexts |> unique() |> select(clickedObj = targetStatus, context_id, targetImg, condition, choice_id = url)
+clicked <- contexts |>
+  unique() |>
+  select(clickedObj = targetStatus, context_id, targetImg, condition, choice_id = url)
 
 
 ### split
@@ -170,16 +172,35 @@ choices <- combined |>
     role = "matcher", player_id = str_c(gameid, "_matcher"),
     player_id = ifelse(condition == "human-speaker-model-listener", "model", player_id)
   ) |>
-  left_join(concat_contexts) |> 
+  left_join(concat_contexts) |>
   left_join(clicked) |>
   mutate(action_type = "selection") |>
   mutate(choice_id = ifelse(is.na(choice_id), "timed_out", choice_id))
 
 
+# demogs
+demogs.humanhuman <- read_csv(str_c(url, "human-human/exitSurveyFromMongo.csv")) |>
+  select(gameid, role, nativeEnglish) |>
+  mutate(condition = "human-human")
+demogs.humanhumaneasy <- read_csv(str_c(url, "human-human-easy/exitSurveyFromMongo.csv")) |>
+  select(gameid, role, nativeEnglish) |>
+  mutate(condition = "human-human-easy")
+demogs.modellistener <- read_csv(str_c(url, "model-as-listener/exitSurveyFromMongo.csv")) |>
+  select(gameid, role, nativeEnglish) |>
+  mutate(condition = "human-speaker-model-listener")
+
+demogs <- demogs.humanhuman |>
+  bind_rows(demogs.humanhumaneasy) |>
+  bind_rows(demogs.modellistener) |>
+  mutate(role = ifelse(role == "speaker", "describer", "matcher")) |>
+  mutate(native_language = ifelse(nativeEnglish == "yes", "English", NA)) |>
+  select(-nativeEnglish) |>
+  unique() # i don't know why there are duplicates for two game ids, but there are
 
 ### combine everything
 all <- chat |>
   bind_rows(choices) |>
+  left_join(demogs, by = c("gameid", "role", "condition")) |>
   mutate(
     dataset_id = "hawkins2019_continual",
     full_cite = "Hawkins, R. D., Kwon, M., Sadigh, D., & Goodman, N. D. (2019). Continual adaptation for efficient machine communication. Proceedings of the 24th Conference on Computational Natural Language Learning.",
@@ -191,22 +212,32 @@ all <- chat |>
     rep_num = 1 + repNum,
     age = as.numeric(NA),
     gender = as.character(NA),
+    education = as.character(NA),
+    race = as.character(NA),
     time_stamp = as.numeric(NA), # there is some time info in original data but unclear how to map it
+    prior_relationship = "no",
+    partner_constancy = "yes",
+    role_constancy = "yes",
+    confederates = ifelse(condition == "human-speaker-model-listener", "yes", "no"), # idk
+    modality = "written",
+    feedback = "full",
+    backchannel = "none",
+    order_match = "match",
     group_size = ifelse(condition == "human-speaker-model-listener", 1, 2), # counting number of actual people? idk
-    structure = ifelse(condition == "human-speaker-model-listener", "thin", "medium"),
   ) |>
   filter(!is.na(option_set)) |> # this is two games in pilots where there wasn't context info in source
   select(dataset_id, full_cite, short_cite, language, stage_num,
     condition_label = condition, time_stamp,
     game_id = gameid, room_num,
-    player_id, age, gender,
+    player_id, age, gender, native_language, race, education,
     trial_num, rep_num,
     role, target = targetImg,
     action_type, exclude, exclusion_reason,
     message_number, text = msg,
     choice_id, option_set,
-    group_size, message_irrelevant,
-    structure
+    group_size, prior_relationship, partner_constancy, role_constancy, confederates,
+    modality, feedback, backchannel, order_match,
+    message_irrelevant
   )
 
 source(here("validate.R"))

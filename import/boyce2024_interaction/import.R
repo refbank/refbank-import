@@ -202,7 +202,7 @@ all_data <- choices |>
     choice_id
   ) |>
   arrange(game_id) |>
-  left_join(read_csv("demogs.csv"))
+  left_join(read_csv(here("import/boyce2024_interaction/demogs.csv")))
 
 
 
