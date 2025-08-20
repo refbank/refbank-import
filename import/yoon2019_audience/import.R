@@ -4,7 +4,7 @@ library(jsonlite)
 source(here("validate.R"))
 
 
-raw_data_dir <- "import/yoon_audiencedesign/raw_data/"
+raw_data_dir <- "import/yoon2019_audience/raw_data/"
 
 # TO ask for
 # experimental materials if they have them -- images, trial order, distractors
@@ -47,45 +47,52 @@ image_sort_sets <- sort_expt1 |>
   summarize(images = str_c("image_", trialID, collapse = ";"))
 
 sort_expt1_clean <- sort_expt1 |>
-  left_join(image_sort_sets) |> 
+  left_join(image_sort_sets) |>
   mutate(
     gameid = str_c("expt1_group", subID, "_images", image_set),
     playerid = str_c("expt1_group", subID, "_d"),
-    rep_num = ifelse(partner=="M1", round, 4+round),
-    stage_num = ifelse(partner=="M1", 1, 2),
+    rep_num = ifelse(partner == "M1", round, 4 + round),
+    stage_num = ifelse(partner == "M1", 1, 2),
     trial_num = presumed_view_order,
-    condition=str_c("expt1_",partner, "_sort"),
-    image=str_c("image_", trialID),
-    group_size=4, #TODO figure out how to handle group size here!!
-  ) |> 
-  select(gameid, playerid, rep_num, trial_num, images, image, stage_num, 
-         text=transcription, condition, group_size)
+    condition = str_c("expt1_", partner, "_sort"),
+    image = str_c("image_", trialID),
+    group_size = 4, # TODO figure out how to handle group size here!!
+    order_match = "order"
+  ) |>
+  select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
+    text = transcription, condition, group_size, order_match
+  )
 
 cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
   mutate(block = str_sub(trialID, 1, 1)) |>
   mutate(image_set = str_sub(trialID, 1, 1)) |>
   group_by(subID, block) |>
   mutate(presumed_view_order = row_number()) |> # TODO we don't actually trust this order, but it's all we have
-  ungroup() |>   
+  ungroup() |>
   mutate(
     gameid = str_c("expt1_group", subID, "_images", image_set),
     playerid = str_c("expt1_group", subID, "_d"),
-    images=str_c("image_", trialID, ";unk1;unk2;unk3"),
-    image=str_c("image_", trialID),
-    rep_num=case_when(
-      condition=="2(2K1N)"~ 9,
-      gameid=="expt1_group5_images2" ~ 9, #we expect that only in the above condition was there an M2 stage, but there's an anomaly
-      T ~ 5),
-    stage_num=case_when(
-      condition=="2(2K1N)"~ 3,
-      gameid=="expt1_group5_images2" ~ 3, # see above for this anomoly,
-      T ~ 2),
-    trial_num=(rep_num-1)*16+presumed_view_order,
-    condition=str_c("expt1_",condition, "_match"),
-    group_size=4) |> 
+    images = str_c("image_", trialID, ";unk1;unk2;unk3"),
+    image = str_c("image_", trialID),
+    rep_num = case_when(
+      condition == "2(2K1N)" ~ 9,
+      gameid == "expt1_group5_images2" ~ 9, # we expect that only in the above condition was there an M2 stage, but there's an anomaly
+      T ~ 5
+    ),
+    stage_num = case_when(
+      condition == "2(2K1N)" ~ 3,
+      gameid == "expt1_group5_images2" ~ 3, # see above for this anomoly,
+      T ~ 2
+    ),
+    trial_num = (rep_num - 1) * 16 + presumed_view_order,
+    condition = str_c("expt1_", condition, "_match"),
+    group_size = 4,
+    order_match = "match"
+  ) |>
   select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
-         text=transcription, condition, group_size)
-  
+    text = transcription, condition, group_size, order_match
+  )
+
 all_1 <- sort_expt1_clean |> bind_rows(cued_expt1)
 
 # Expt 2
@@ -109,50 +116,59 @@ image_sort_sets <- sort_expt2 |>
   summarize(images = str_c("image_", trialID, collapse = ";"))
 
 sort_expt2_clean <- sort_expt2 |>
-  left_join(image_sort_sets) |> 
+  left_join(image_sort_sets) |>
   mutate(
     gameid = str_c("expt2_group", subID, "_images", image_set),
     playerid = str_c("expt2_group", subID, "_d"),
     rep_num = case_when(
-      partner=="M1"~ round,
-      partner=="M2" ~4+round,
-      partner=="M3" ~ 8+round),
+      partner == "M1" ~ round,
+      partner == "M2" ~ 4 + round,
+      partner == "M3" ~ 8 + round
+    ),
     stage_num = case_when(
-      partner=="M1"~ 1,
-      partner=="M2" ~ 2,
-      partner=="M3" ~ 3),
+      partner == "M1" ~ 1,
+      partner == "M2" ~ 2,
+      partner == "M3" ~ 3
+    ),
     trial_num = presumed_view_order,
-    image=str_c("image_", trialID),
-    condition=str_c("expt2_",partner, "_sort"),
-    group_size=5, #TODO figure out how to handle group size here!!
-  ) |> 
-  select(gameid, playerid, rep_num, trial_num, images, image, stage_num, 
-         text=transcription, condition, group_size)
+    image = str_c("image_", trialID),
+    condition = str_c("expt2_", partner, "_sort"),
+    group_size = 5, # TODO figure out how to handle group size here!!
+    order_match = "order"
+  ) |>
+  select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
+    text = transcription, condition, group_size, order_match
+  )
 
-cued_expt2 <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |> 
+cued_expt2 <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
   mutate(block = str_sub(trialID, 1, 1)) |>
   mutate(image_set = str_sub(trialID, 1, 1)) |>
   group_by(subID, block) |>
   mutate(presumed_view_order = row_number()) |> # TODO we don't actually trust this order, but it's all we have
-  ungroup() |>   
+  ungroup() |>
   mutate(
     gameid = str_c("expt2_group", subID, "_images", image_set),
     playerid = str_c("expt2_group", subID, "_d"),
-    images=str_c("image_", trialID, ";unk1;unk2;unk3"),
-    rep_num=case_when(
-      condition=="2(3K1N)"~ 13,
-      condition=="3(2K2N)"~ 9,
-      T ~ 5),
-    stage_num=case_when(
-      condition=="2(3K1N)"~ 4,
-      condition=="3(2K2N)"~ 3,
-      T ~ 2),
-    trial_num=(rep_num-1)*16+presumed_view_order,
-    image=str_c("image_", trialID),
-    condition=str_c("expt2_",condition, "_match"),
-    group_size=5) |> 
-  select(gameid, playerid, rep_num, trial_num, images, image, stage_num, 
-         text=transcription, condition, group_size)
+    images = str_c("image_", trialID, ";unk1;unk2;unk3"),
+    rep_num = case_when(
+      condition == "2(3K1N)" ~ 13,
+      condition == "3(2K2N)" ~ 9,
+      T ~ 5
+    ),
+    stage_num = case_when(
+      condition == "2(3K1N)" ~ 4,
+      condition == "3(2K2N)" ~ 3,
+      T ~ 2
+    ),
+    trial_num = (rep_num - 1) * 16 + presumed_view_order,
+    image = str_c("image_", trialID),
+    condition = str_c("expt2_", condition, "_match"),
+    group_size = 5,
+    order_match = "match"
+  ) |>
+  select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
+    text = transcription, condition, group_size, order_match
+  )
 
 all_2 <- sort_expt2_clean |> bind_rows(cued_expt2)
 
@@ -178,70 +194,90 @@ image_sort_sets <- sort_expt3 |>
   summarize(images = str_c("image_", trialID, collapse = ";"))
 
 sort_expt3_clean <- sort_expt3 |>
-  left_join(image_sort_sets) |> 
+  left_join(image_sort_sets) |>
   mutate(
     gameid = str_c("expt3_group", subID, "_images", image_set),
-    playerid = str_c("expt3_group", subID, "_d"), #if we ever get matcher stuff, note that a matcher becomes a director with a different number since each group of 7 does everything twice
-    rep_num =  round,
+    playerid = str_c("expt3_group", subID, "_d"), # if we ever get matcher stuff, note that a matcher becomes a director with a different number since each group of 7 does everything twice
+    rep_num = round,
     trial_num = presumed_view_order,
-    condition=str_c("expt3_M1M2M3_sort"),
-    image=str_c("image_", trialID),
-    stage_num=1,
-    group_size=7, #TODO figure out how to handle group size here!!
-  ) |> 
+    condition = str_c("expt3_M1M2M3_sort"),
+    image = str_c("image_", trialID),
+    stage_num = 1,
+    group_size = 7, # TODO figure out how to handle group size here!!
+    order_match = "order"
+  ) |>
   select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
-         text=transcription, condition, group_size)
+    text = transcription, condition, group_size, order_match
+  )
 
-cued_expt3 <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |> 
+cued_expt3 <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |>
   mutate(block = str_sub(trialID, 1, 1)) |>
   mutate(image_set = str_sub(trialID, 1, 1)) |>
   group_by(subID, block) |>
   mutate(presumed_view_order = row_number()) |> # TODO we don't actually trust this order, but it's all we have
-  ungroup() |>   
+  ungroup() |>
   mutate(
     gameid = str_c("expt3_group", subID, "_images", image_set),
     playerid = str_c("expt3_group", subID, "_d"),
-    images=str_c("image_", trialID, ";unk1;unk2;unk3"),
-    rep_num=6,
-    stage_num=2,
-    trial_num=(rep_num-1)*16+presumed_view_order,
-    condition=str_c("expt3_",condition, "_match"),
-    image=str_c("image_", trialID),
-    group_size=7) |> 
+    images = str_c("image_", trialID, ";unk1;unk2;unk3"),
+    rep_num = 6,
+    stage_num = 2,
+    trial_num = (rep_num - 1) * 16 + presumed_view_order,
+    condition = str_c("expt3_", condition, "_match"),
+    image = str_c("image_", trialID),
+    group_size = 7,
+    order_match="match"
+  ) |>
   select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
-         text=transcription, condition, group_size)
+    text = transcription, condition, group_size, order_match
+  )
 
 all_3 <- sort_expt3_clean |> bind_rows(cued_expt3)
 
 #### put everything together
 
-all <- all_1 |> bind_rows(all_2) |> bind_rows(all_3) |> 
-  mutate(dataset_id="yoon2019_audience",
-         full_cite="Yoon, S. O., & Brown‐Schmidt, S. (2019). Audience design in multiparty conversation. Cognitive science, 43(8), e12774.",
-         short_cite="Yoon & Brown-Schmidt (2019)",
-         structure="naive-swap",
-         language="English",
-         exclude=F,
-         exclusion_reason=as.character(NA),
-         action_type="message",
-         role="describer",
-         time_stamp=as.numeric(NA),
-         message_irrelevant=F,
-         room_num=1,
-         age=as.numeric(NA), #don't have demographics
-         gender=as.character(NA), 
-         choice_id=NA # we don't have choice data
-         ) |> 
-  group_by(rep_num, trial_num, gameid) |> 
-  mutate(message_number=row_number() |> as.numeric()) |> 
-  ungroup() |> 
-  select(condition_label=condition, dataset_id, full_cite, short_cite,
-         trial_num, rep_num, stage_num, 
-         group_size, structure, language, game_id=gameid, room_num, option_set=images,
-         target=image, exclude, exclusion_reason, action_type,player_id=playerid,
-         age, gender,
-         role, time_stamp, text, message_number, message_irrelevant, choice_id
-         )
+all <- all_1 |>
+  bind_rows(all_2) |>
+  bind_rows(all_3) |>
+  mutate(
+    dataset_id = "yoon2019_audience",
+    full_cite = "Yoon, S. O., & Brown‐Schmidt, S. (2019). Audience design in multiparty conversation. Cognitive science, 43(8), e12774.",
+    short_cite = "Yoon & Brown-Schmidt (2019)",
+    prior_relationship = "no",
+    partner_constancy = "no",
+    role_constancy = "yes",
+    population = "adult",
+    confederates = "no",
+    modality = "oral-in-person",
+    feedback = "none", # no mention of feedback in paper, so assuming it wasn't given but don't know for sure
+    backchannel = "full",
+    language = "English",
+    exclude = F,
+    exclusion_reason = as.character(NA),
+    action_type = "message",
+    role = "describer",
+    time_stamp = as.numeric(NA),
+    message_irrelevant = F,
+    room_num = 1,
+    age = as.numeric(NA), # don't have demographics
+    gender = as.character(NA),
+    native_language = as.character(NA),
+    race = as.character(NA),
+    education = as.character(NA),
+    choice_id = NA # we don't have choice data
+  ) |>
+  group_by(rep_num, trial_num, gameid) |>
+  mutate(message_number = row_number() |> as.numeric()) |>
+  ungroup() |>
+  select(
+    condition_label = condition, dataset_id, full_cite, short_cite,
+    trial_num, rep_num, stage_num,
+    group_size, language, prior_relationship, partner_constancy, role_constancy, population,
+    modality, confederates, feedback, backchannel, order_match,
+    game_id = gameid, room_num, option_set = images,
+    target = image, exclude, exclusion_reason, action_type, player_id = playerid,
+    age, gender, race, education, native_language,
+    role, time_stamp, text, message_number, message_irrelevant, choice_id
+  )
 
-validate_dataset(all, write=T)
-
+validate_dataset(all, write = T)

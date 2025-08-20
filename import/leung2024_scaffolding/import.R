@@ -7,7 +7,8 @@ library(here)
 # Load data
 # some sort of data error on trial 21 of game 107 (adult adult, where both players are listed as matchers)
 # guessing that right is the describer so that it's alternating across 20 and 22 ? 
-combined_df <- read_csv(here("import/leung2024_scaffolding/raw_data/combined_clean.csv")) |> 
+source="https://raw.githubusercontent.com/ashleychuikay/tangramgame/refs/heads/master/data/experiment1/combined_clean.csv"
+combined_df <- read_csv(url(source)) |> 
   mutate(role=case_when(
     subid==107 & trial==21 & person=="right" ~ "director",
     T ~ role
@@ -48,10 +49,21 @@ all <- messages |> bind_rows(selections) |> bind_rows(missing_messages) |>
          option_set=str_c(target, "unk1", sep = ";"), # we don't know what the distractor is per trial!
          age=ifelse(person=="child", age, NA) |> as.numeric(),
          gender=as.character(NA),
+         race=as.character(NA),
+         education=as.character(NA),
+         native_language=as.character(NA),
          stage_num=1,
          room_num=1,
          group_size=2, 
-         structure="nofeedback", #need to systematize in future!
+         prior_relationship=ifelse(experiment=="adult-adult", "no", "yes"),
+         partner_constancy="yes",
+         role_constancy="no",
+         population=ifelse(experiment=="adult-adult", "adult", "child-parent"),
+         modality="oral-in-person",
+         feedback="none",
+         backchannel="full",
+         order_match="match",
+         confederates="no",
          language="English",
          full_cite= "Leung, A., Yurovsky, D., & Hawkins, R. D. (2025). Parents spontaneously scaffold the formation of conversational pacts with their children. Child Development, 96(2), 546-561.",
          short_cite="Leung et al. (2024)",

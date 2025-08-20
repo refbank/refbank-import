@@ -14,95 +14,131 @@ data_dir <- "import/eliav2023_semantic/raw_data"
 
 
 ParseJSONColumn <- function(x) {
-  x |> str_replace_all("\\\\", "") |> 
-    str_replace_all('"', "'") |>  str_replace_all(fixed("{'"), '{"') |> 
-    str_replace_all(fixed("'}"), '"}') |> 
-    str_replace_all("':", '":') |> 
-    str_replace_all(": '", ': "') |> 
-    str_replace_all("', '", '", "') |> 
-    fromJSON(flatten = T) 
+  x |>
+    str_replace_all("\\\\", "") |>
+    str_replace_all('"', "'") |>
+    str_replace_all(fixed("{'"), '{"') |>
+    str_replace_all(fixed("'}"), '"}') |>
+    str_replace_all("':", '":') |>
+    str_replace_all(": '", ': "') |>
+    str_replace_all("', '", '", "') |>
+    fromJSON(flatten = T)
 }
 
 
-expt_1 <- read_csv(here(data_dir, "exp1_data.csv")) |> mutate(condition_label="expt1_singlemessage") |> 
-  mutate(sec_until_click=as.double(sec_until_click)) |> mutate(structure="thin") |> mutate(stage_num=1)
+expt_1 <- read_csv(here(data_dir, "exp1_data.csv")) |>
+  mutate(condition_label = "expt1_singlemessage") |>
+  mutate(sec_until_click = as.double(sec_until_click)) |>
+  mutate(stage_num = 1)
 
-expt_2 <- read_csv(here(data_dir, "exp2_data.csv")) |> mutate(condition_label="expt2_singlemessage") |> 
-  mutate(sec_until_click=as.double(sec_until_click)) |> mutate(structure="thin") |> mutate(stage_num=ifelse(block==5, 2,1))
+expt_2 <- read_csv(here(data_dir, "exp2_data.csv")) |>
+  mutate(condition_label = "expt2_singlemessage") |>
+  mutate(sec_until_click = as.double(sec_until_click)) |>
+  mutate(stage_num = ifelse(block == 5, 2, 1))
 
-expt_3 <- read_csv(here(data_dir, "exp3_data.csv")) |> mutate(condition_label="expt3") |> 
-  mutate(sec_until_click=as.double(sec_until_click)) |> mutate(structure="medium") |> # TODO verify with Robert
-  mutate(stage_num=1) # looks like there are 5 blocks of 6 each which I think suggests no test phase?
+expt_3 <- read_csv(here(data_dir, "exp3_data.csv")) |>
+  mutate(condition_label = "expt3") |>
+  mutate(sec_until_click = as.double(sec_until_click)) |>
+  mutate(stage_num = 1) # looks like there are 5 blocks of 6 each which I think suggests no test phase?
 
-messages_single <- expt_1 |> bind_rows(expt_2) |> select(game_id, trial_index, block, target, controlled, structure,
-                                speaker_id,  context, description, time_to_message,
-                                condition_label, stage_num) |> 
-  mutate(player_id=speaker_id, 
-         role="describer",
-         time_stamp=time_to_message,
-         message_number=1,
-         message_irrelevant=F,
-         action_type="message",
-         text=description) 
+messages_single <- expt_1 |>
+  bind_rows(expt_2) |>
+  select(
+    game_id, trial_index, block, target, controlled, 
+    speaker_id, context, description, time_to_message,
+    condition_label, stage_num
+  ) |>
+  mutate(
+    player_id = speaker_id,
+    role = "describer",
+    time_stamp = time_to_message,
+    message_number = 1,
+    message_irrelevant = F,
+    action_type = "message",
+    text = description
+  )
 
-messages_complex <- expt_3 |> select(game_id, block, target, controlled, trial_index, structure, 
-                                     condition_label, description, context, speaker_id, listener_id, stage_num) |> 
-mutate(description=map(description, ParseJSONColumn)) |> 
-  unnest(description) |> 
-  group_by(game_id, block, target, trial_index) |> 
-  mutate(message_number=row_number()) |> 
-  ungroup() |> 
-  mutate(role=ifelse(role=="speaker", "describer", "matcher"),
-         player_id=ifelse(role=="describer", speaker_id, listener_id),
-         action_type="message") 
+messages_complex <- expt_3 |>
+  select(
+    game_id, block, target, controlled, trial_index, 
+    condition_label, description, context, speaker_id, listener_id, stage_num
+  ) |>
+  mutate(description = map(description, ParseJSONColumn)) |>
+  unnest(description) |>
+  group_by(game_id, block, target, trial_index) |>
+  mutate(message_number = row_number()) |>
+  ungroup() |>
+  mutate(
+    role = ifelse(role == "speaker", "describer", "matcher"),
+    player_id = ifelse(role == "describer", speaker_id, listener_id),
+    action_type = "message"
+  )
 
 
-choices <- expt_1 |> bind_rows(expt_2) |> bind_rows(expt_3) |> select(game_id, trial_index, block, target, controlled,
-                                                                      structure, listener_id, context,
-                               sec_until_press, sec_until_click, response, condition_label, stage_num) |> 
-  mutate(player_id=listener_id, time_stamp=ifelse(!is.na(sec_until_press), sec_until_press, sec_until_click),
-         action_type="selection",choice_id=response, role="matcher") |> 
-  mutate(choice_id=ifelse(is.na(choice_id), "timed_out", choice_id))
+choices <- expt_1 |>
+  bind_rows(expt_2) |>
+  bind_rows(expt_3) |>
+  select(
+    game_id, trial_index, block, target, controlled,
+     listener_id, context,
+    sec_until_press, sec_until_click, response, condition_label, stage_num
+  ) |>
+  mutate(
+    player_id = listener_id, time_stamp = ifelse(!is.na(sec_until_press), sec_until_press, sec_until_click),
+    action_type = "selection", choice_id = response, role = "matcher"
+  ) |>
+  mutate(choice_id = ifelse(is.na(choice_id), "timed_out", choice_id))
 
-### combine everything 
+### combine everything
 all <- messages_single |>
   bind_rows(choices) |>
-  bind_rows(messages_complex) |> 
+  bind_rows(messages_complex) |>
   mutate(
     dataset_id = "eliav2023_semantic",
     full_cite = "Eliav, R., Ji, A., Artzi, Y., & Hawkins, R. D. (2023). Semantic uncertainty guides the extension of conventions to new referents. arXiv preprint arXiv:2305.06539.",
     short_cite = "Eliav et al (2023)",
     language = "English",
+    prior_relationship="no",
+    partner_constancy="yes",
+    role_constancy="no", # confirmed in expt2 in paper, otherwise judging by data structure; TODO double check
+    population="adult",
+    confederates="no",
+    modality="written",
+    backchannel=ifelse(condition_label=="expt3", "full", "none"), #from paper + data structure; TODO confirm
+    feedback="limited", #TODO double check, we don't know for 3, and might be full
+    order_match="match",
     room_num = 1, # only 1 group / game
-    age = as.numeric(NA), #TODO figure out demog
-    gender = as.character(NA), #TODO figure out demog
+    age = as.numeric(NA),
+    native_language = "English", # according to criteria in paper for expt 1 & 2, assuming same for 3
+    gender = as.character(NA),
+    race = as.character(NA),
+    education = as.character(NA),
     trial_num = trial_index + 1,
     rep_num = 1 + block,
     group_size = 2,
-    target=str_replace(target, ".svg", "") |> str_replace_all("page-",""),
-    choice_id=str_replace(choice_id, ".svg", "") |> str_replace_all("page-", ""),
-    exclude=NA, #TODO figure out
-    exclusion_reason=as.character(NA), # TODO figure out
-    option_set=str_replace_all(context, ".svg", "") |> str_replace_all("', '", ";") |> 
-      str_replace_all(fixed("['"),"") |> str_replace_all(fixed("']"),"") |> str_replace_all("page-",""),
-    ) |>
-  select(dataset_id, full_cite, short_cite, language,
-    condition_label, time_stamp, stage_num, 
-    game_id, room_num, 
-    player_id, age, gender, 
-    stage_num, 
+    target = str_replace(target, ".svg", "") |> str_replace_all("page-", ""),
+    choice_id = str_replace(choice_id, ".svg", "") |> str_replace_all("page-", ""),
+    exclude = NA, # TODO figure out
+    exclusion_reason = as.character(NA), # TODO figure out
+    option_set = str_replace_all(context, ".svg", "") |> str_replace_all("', '", ";") |>
+      str_replace_all(fixed("['"), "") |> str_replace_all(fixed("']"), "") |> str_replace_all("page-", ""),
+  ) |>
+  select(
+    dataset_id, full_cite, short_cite, language, prior_relationship,
+    partner_constancy, role_constancy, population, confederates, modality, backchannel,
+    feedback, order_match,
+    condition_label, time_stamp, stage_num,
+    game_id, room_num,
+    player_id, age, gender, race, education, native_language,
+    stage_num,
     trial_num, rep_num,
     role, target,
     action_type, exclude, exclusion_reason,
     message_number, text,
     choice_id, option_set,
     group_size, message_irrelevant,
-    structure
   )
 
 source(here("validate.R"))
 
 validate_dataset(all, write = T)
-
-
-
