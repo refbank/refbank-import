@@ -223,6 +223,7 @@ all <- chat |>
     feedback = "full",
     backchannel = "none",
     order_match = "match",
+    population = "adult",
     group_size = ifelse(condition == "human-speaker-model-listener", 1, 2), # counting number of actual people? idk
   ) |>
   filter(!is.na(option_set)) |> # this is two games in pilots where there wasn't context info in source
@@ -235,7 +236,7 @@ all <- chat |>
     action_type, exclude, exclusion_reason,
     message_number, text = msg,
     choice_id, option_set,
-    group_size, prior_relationship, partner_constancy, role_constancy, confederates,
+    group_size, prior_relationship, partner_constancy, role_constancy, confederates, population,
     modality, feedback, backchannel, order_match,
     message_irrelevant
   )

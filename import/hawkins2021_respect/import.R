@@ -232,6 +232,7 @@ all <- messages_clean |>
     feedback = "full",
     backchannel = "full",
     order_match = "match",
+    population = "adult",
     condition_label = "pairs-network",
     exclude = ifelse(is.na(exclude), T, exclude),
     exclusion_reason = ifelse(exclude, "incomplete game", NA),
@@ -253,7 +254,7 @@ all <- messages_clean |>
     message_number, text,
     choice_id, option_set,
     group_size, message_irrelevant,
-    prior_relationship, role_constancy, partner_constancy, confederates,
+    prior_relationship, role_constancy, partner_constancy, confederates, population,
     modality, feedback, backchannel, order_match
   )
 

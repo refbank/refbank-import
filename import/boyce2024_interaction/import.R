@@ -170,7 +170,8 @@ all_data <- choices |>
     exclude = ifelse(is.na(include), T, NA),
     exclusion_reason = ifelse(exclude, "incomplete block", NA),
     message_irrelevant = (is.chitchat == 1),
-    message_number = as.numeric(message_number)
+    message_number = as.numeric(message_number),
+    population = "adult"
   ) |>
   rowwise() |>
   mutate(option_set = options |> str_c(collapse = ";")) |>
@@ -182,7 +183,8 @@ all_data <- choices |>
     short_cite,
     group_size,
     language,
-    prior_relationship, partner_constancy, role_constancy, confederates, modality, feedback, backchannel, order_match,
+    prior_relationship, partner_constancy, role_constancy, population,
+    confederates, modality, feedback, backchannel, order_match,
     game_id = gameId,
     room_num,
     option_set,

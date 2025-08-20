@@ -158,6 +158,7 @@ all <- messages_with_context |>
     backchannel = "full",
     order_match = "match",
     condition_label = "pairs-network",
+    population="adult",
     exclude = ifelse(is.na(exclude), T, exclude),
     exclusion_reason = ifelse(exclude, "incomplete game", NA),
   ) |>
@@ -168,7 +169,7 @@ all <- messages_with_context |>
     game_id, player_id, room_num,
     trial_num, rep_num,
     role, target,
-    age, gender, race, education, native_language,
+    age, gender, race, education, native_language, population,
     action_type, exclude, exclusion_reason,
     message_number, text,
     choice_id, option_set,

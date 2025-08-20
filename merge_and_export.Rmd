@@ -146,6 +146,7 @@ Table conditions{
   
   group_size integer
   language varchar
+  population varchar {adult, child, child-parent} can have others if other atypical populations
   prior_relationship {yes,no}
   partner_constancy {yes,no}
   role_constancy {yes,no}
@@ -171,8 +172,8 @@ na_datasets <- datasets |> filter(if_any(c("dataset_id", "full_cite", "short_cit
 assert_that(nrow(na_datasets) == 0)
 
 na_conditions <- conditions |> filter(if_any(c(
-  "dataset_id", "condition_id", "group_size", "language", "prior_relationship", "partner_constant",
-  "role_constant", "confederates", "modality", "feedback", "backchannel",
+  "dataset_id", "condition_id", "group_size", "language", "prior_relationship", "partner_constancy", "population",
+  "role_constancy", "confederates", "modality", "feedback", "backchannel",
 ), is.na))
 assert_that(nrow(na_conditions) == 0)
 ```

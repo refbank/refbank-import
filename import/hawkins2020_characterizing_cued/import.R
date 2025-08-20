@@ -196,6 +196,7 @@ all <- choices |>
     feedback = "full",
     backchannel = "full",
     order_match = "match",
+    population = "adult",
     language = "English",
     exclude = ifelse(exclude, exclude, F), # fill in F for ones not excluded
   ) |>
@@ -222,6 +223,7 @@ all <- choices |>
     feedback,
     backchannel,
     order_match,
+    population,
     exclude, exclusion_reason, action_type,
     message_irrelevant
   )

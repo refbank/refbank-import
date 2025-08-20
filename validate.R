@@ -3,59 +3,6 @@ library(tidyverse)
 library(testthat)
 library(assertthat)
 
-# Table conditions{
-#   condition_id integer
-#   dataset_id varchar
-#   full_cite varchar
-#   short_cite varchar
-#   condition_label varchar
-#   group_size integer
-#   structure varchar
-#   language varchar
-#   placeholder_features varchar
-# }
-
-# Table choices {
-#   id integer [primary key]
-#   trial_id integer
-#   choice integer
-#   player_id integer
-#   time_stamp time
-# }
-#
-# Table messages {
-#   id integer [primary key]
-#   trial_id integer
-#   player_id integer
-#   role varchar
-#   text string
-#   message_number integer
-#   message_irrelevant bool
-#   time_stamp time
-# }
-#
-# Table players {
-#   id integer [primary key]
-#   age integer
-#   gender varchar
-#   placeholder_demo varchar
-# }
-#
-# Table trials {
-#   id integer [primary key]
-#   condition_id integer
-#   game_id varchar
-#   room_num varchar
-#   option_set list
-#   target integer
-#   stage_num integer
-#   trial_num integer
-#   rep_num integer
-#   exclude bool
-#   exclusion_reason varchar
-#   describer varchar
-#   matchers list
-# }
 
 check_cols <- function(required_cols, df) {
   missing_cols <- setdiff(required_cols, colnames(df))
@@ -78,7 +25,7 @@ validate_dataset <- function(df, write = F) {
   # check column presence
   required_cols <- c(
     "condition_label", "dataset_id", "full_cite", "short_cite",
-    "group_size", "language", "prior_relationship", "partner_constancy",
+    "group_size", "language", "prior_relationship", "partner_constancy", "population",
     "role_constancy", "confederates", "modality", "feedback", "backchannel",
     "game_id", "room_num", "option_set", "target",
     "trial_num", "rep_num", "stage_num",
@@ -97,7 +44,7 @@ validate_dataset <- function(df, write = F) {
 
   should_be_char <- c(
     "dataset_id", "full_cite", "short_cite",
-    "language", "option_set", "prior_relationship", "partner_constancy",
+    "language", "option_set", "prior_relationship", "partner_constancy", "population",
     "role_constancy", "confederates", "modality", "feedback", "backchannel",
     "order_match",
     "exclusion_reason", "action_type", "role", "text",
@@ -166,7 +113,7 @@ validate_dataset <- function(df, write = F) {
   try_condition <- df |>
     select(
       condition_label, dataset_id, full_cite, short_cite,
-      group_size, prior_relationship, partner_constancy, role_constancy,
+      group_size, prior_relationship, partner_constancy, role_constancy, population,
       confederates, modality, feedback, backchannel, language
     ) |>
     unique()
@@ -319,11 +266,11 @@ validate_dataset <- function(df, write = F) {
 
   print("Checking conditions")
   check_cols(c(
-    "condition_id", "dataset_id", "full_cite", "short_cite", "group_size", "prior_relationship", "partner_constancy",
+    "condition_id", "dataset_id", "full_cite", "short_cite", "group_size", "prior_relationship", "partner_constancy", "population",
     "role_constancy", "confederates", "modality", "feedback", "backchannel", "language"
   ), conditions)
   na_conditions <- conditions |> filter(if_any(c(
-    "dataset_id", "short_cite", "full_cite", "condition_id", "prior_relationship", "partner_constancy",
+    "dataset_id", "short_cite", "full_cite", "condition_id", "prior_relationship", "partner_constancy", "population",
     "role_constancy", "confederates", "modality", "feedback", "backchannel", "group_size", "language"
   ), is.na))
   assert_that(nrow(na_conditions) == 0)
