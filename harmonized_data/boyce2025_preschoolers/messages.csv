@@ -1,0 +1,1827 @@
+text,player_id,role,message_number,message_irrelevant,time_stamp,trial_id
+I see a person in the box.,1,describer,1,FALSE,NA,1
+Give me some hints.,2,matcher,2,TRUE,NA,1
+I've got two people.,2,matcher,3,TRUE,NA,1
+One is holding out something and the other is walking.,2,matcher,4,TRUE,NA,1
+I see two people.,1,describer,5,TRUE,NA,1
+It looks like an animal.,1,describer,6,FALSE,NA,1
+So is that the one that looks like an animal that's holding out something?,2,matcher,7,TRUE,NA,1
+A person walking.,2,describer,1,FALSE,NA,2
+I don't see any blocks.,1,matcher,2,TRUE,NA,2
+I don't see a box.,1,matcher,3,TRUE,NA,2
+I see someone walking.,1,matcher,4,TRUE,NA,2
+Now I see a person with one leg.,1,describer,1,FALSE,NA,3
+A flamingo.,1,describer,2,TRUE,NA,3
+I see a person with one leg too.,2,matcher,3,TRUE,NA,3
+A flamingo with a triangle.,1,describer,4,FALSE,NA,3
+I see a person with a triangle.,2,matcher,5,TRUE,NA,3
+A person jumping,2,describer,1,FALSE,NA,4
+I see something funny.,1,matcher,2,TRUE,NA,4
+[mumble] jumping,2,describer,3,TRUE,NA,4
+Now I see someone jumping again.,1,describer,1,TRUE,NA,5
+I see someone jumping again.,1,describer,2,FALSE,NA,5
+Now I see someone jumping again.,1,matcher,1,TRUE,NA,6
+It kind of seems like someone dying.,2,describer,2,FALSE,NA,6
+I see what that looks like dying too.,1,matcher,3,TRUE,NA,6
+I see a flamingo.,1,describer,1,FALSE,NA,7
+I can't see it.,2,matcher,2,TRUE,NA,7
+I see something.,1,describer,3,TRUE,NA,7
+I see a triangle and a person holding it with one leg.,1,describer,4,FALSE,NA,7
+"I can see a person with one leg, but I can't see a person where the person is holding it.",2,matcher,5,TRUE,NA,7
+A person walking.,2,describer,1,FALSE,NA,8
+I see a person walking.,2,describer,2,FALSE,NA,8
+The person's head is square.,2,describer,3,FALSE,NA,8
+I see a person walking,1,matcher,4,TRUE,NA,8
+Someone with a triangle and one leg.,1,describer,1,FALSE,NA,9
+I see a person walking with a square head.,2,describer,1,FALSE,NA,10
+"I see one, too.",1,matcher,2,TRUE,NA,10
+I see someone that looks like dying.,1,describer,1,FALSE,NA,11
+I see someone that looks like dying.,1,describer,2,TRUE,NA,11
+A person jumping.,2,describer,1,FALSE,NA,12
+Come on.,2,describer,2,TRUE,NA,12
+I'm looking for a smiley face.,2,describer,3,TRUE,NA,12
+I see a square.,3,describer,1,FALSE,NA,13
+I see a square.,3,describer,2,TRUE,NA,13
+with one feet.,3,describer,3,FALSE,NA,13
+"And one, I don't know, this one.",3,describer,4,TRUE,NA,13
+I see a square with one foot.,4,matcher,5,TRUE,NA,13
+I see a guy.,3,describer,1,FALSE,NA,14
+I see a guy.,4,matcher,2,TRUE,NA,14
+I see.,3,matcher,1,TRUE,NA,15
+I see this.,3,matcher,2,TRUE,NA,15
+"Uh, a two wings with a square in the back with two feet.",4,describer,3,FALSE,NA,15
+I see a guy with a triangle and with two feet and with a square.,3,describer,1,FALSE,NA,16
+I see a guy with a triangle and two feet and a square.,4,matcher,2,TRUE,NA,16
+A guy with one foot and a square and a triangle.,4,describer,1,TRUE,NA,17
+"A foot, a man with one foot and a line and a square and a triangle.",4,describer,2,FALSE,NA,17
+"Oh, I know one foot.",3,matcher,3,TRUE,NA,17
+"Now, I see a boat.",3,describer,1,FALSE,NA,18
+I see a boat.,4,matcher,2,TRUE,NA,18
+I see a guy with two foot and a line and a square.,3,matcher,1,TRUE,NA,19
+I see a guy with two foot and a line and one square.,3,matcher,2,FALSE,NA,19
+I see a man with two foot and in a tummy shaped as a diamond and a square head.,4,describer,3,FALSE,NA,19
+I see one guy with one foot and a triangle and a square.,3,describer,1,FALSE,NA,20
+I see a man with one foot and a triangle and a square.,4,matcher,2,TRUE,NA,20
+I see a man with two foot and a diamond shaped tummy and a square head.,4,describer,1,FALSE,NA,21
+"Yeah, I see two foots and a tummy of a diamond and a square.",3,matcher,2,TRUE,NA,21
+I see a guy with two foot and one and one tummy and one square tummy.,3,describer,1,TRUE,NA,22
+"No, actually it's a square tummy and it's a triangle tummy square.",3,describer,2,TRUE,NA,22
+And his head is a square.,3,describer,3,TRUE,NA,22
+I see two feet of a guy with one square tummy and one triangle tummy and one square.,3,describer,4,FALSE,NA,22
+A man with two feet and two triangle wings and one square in the back shaped like a jet.,4,describer,1,FALSE,NA,23
+Man.,5,matcher,1,TRUE,NA,24
+A person?,6,describer,2,FALSE,NA,24
+A girl.,5,describer,1,FALSE,NA,25
+I see someone jumping I think?,6,describer,1,FALSE,NA,26
+Airplane.,5,describer,1,FALSE,NA,27
+I don't see an airplane.,6,matcher,2,TRUE,NA,27
+A man.,5,describer,3,TRUE,NA,27
+This guy.,5,describer,4,TRUE,NA,27
+"A guy driving a jet plane, I think.",5,describer,5,FALSE,NA,27
+I don't see it.,6,matcher,6,TRUE,NA,27
+This thing.,5,describer,7,TRUE,NA,27
+Walking man.,5,describer,8,TRUE,NA,27
+"It's kind of an airplane, it looks like one.",5,describer,9,FALSE,NA,27
+Is it this?,6,matcher,10,TRUE,NA,27
+A girl.,6,describer,1,FALSE,NA,28
+A jumping man.,5,describer,1,FALSE,NA,29
+There's one that's a falling man.,6,describer,1,FALSE,NA,30
+A walking man.,5,describer,1,FALSE,NA,31
+What do you see in the box?,6,describer,1,TRUE,NA,32
+A walking man.,5,matcher,2,TRUE,NA,32
+A walking man.,6,describer,3,FALSE,NA,32
+I mean a jumping man.,5,matcher,4,TRUE,NA,32
+Not the jumping man.,6,describer,5,FALSE,NA,32
+The walking.,5,matcher,6,TRUE,NA,32
+A jet plane.,5,describer,1,FALSE,NA,33
+A girl.,6,describer,1,FALSE,NA,34
+A jet plane.,5,describer,1,TRUE,NA,35
+A jumping man.,5,describer,2,FALSE,NA,35
+It's kind of tricky.,7,describer,1,TRUE,NA,36
+It's too tricky for me.,7,describer,2,TRUE,NA,36
+A person holding a plate.,8,describer,1,FALSE,NA,37
+I see a person.,7,matcher,2,TRUE,NA,37
+It was this one.,8,describer,3,TRUE,NA,37
+It was a kind of person.,7,describer,1,FALSE,NA,38
+This one?,8,matcher,2,TRUE,NA,38
+I think so.,8,matcher,3,TRUE,NA,38
+A crocodile tasting an animal in the water.,8,describer,1,FALSE,NA,39
+I see a guy.,7,describer,1,FALSE,NA,40
+I see a guy.,7,describer,2,TRUE,NA,40
+I actually didn't need help with that.,8,matcher,3,TRUE,NA,40
+I see a person walking in a black box.,8,describer,1,FALSE,NA,41
+A crocodile.,7,describer,1,FALSE,NA,42
+I see a person jumping from a pole all the way down to the ground.,8,describer,1,FALSE,NA,43
+It was this one.,8,describer,2,TRUE,NA,43
+I don’t know what it is,7,describer,1,TRUE,NA,44
+I see a person sitting.,7,describer,2,FALSE,NA,44
+I see a crocodile in a black box.,8,describer,1,FALSE,NA,45
+I see a guy holding a triangle.,7,describer,1,FALSE,NA,46
+I see a guy walking.,8,describer,1,FALSE,NA,47
+A boat.,9,describer,1,FALSE,NA,48
+A boat.,10,describer,1,FALSE,NA,49
+Feet.,9,describer,1,FALSE,NA,50
+I see a feet.,9,describer,2,TRUE,NA,50
+Yes.,9,describer,3,TRUE,NA,50
+[mumbling],9,describer,4,TRUE,NA,50
+Somebody jumping.,10,matcher,5,TRUE,NA,50
+Somebody jumping.,10,matcher,6,TRUE,NA,50
+A person walking.,10,describer,1,FALSE,NA,51
+Stairs.,9,describer,1,FALSE,NA,52
+Kind of stairs.,9,describer,2,TRUE,NA,52
+Stairs.,9,describer,3,TRUE,NA,52
+A guy with a paper thing.,10,describer,1,FALSE,NA,53
+Yeah!,9,matcher,2,TRUE,NA,53
+A box with a boat.,9,describer,1,FALSE,NA,54
+That.,10,describer,1,TRUE,NA,55
+A person looking down.,10,describer,2,FALSE,NA,55
+There's two red little friends walking around.,10,describer,3,TRUE,NA,55
+A walk.,9,describer,1,FALSE,NA,56
+A boat.,10,describer,1,FALSE,NA,57
+Yes.,9,matcher,2,TRUE,NA,57
+A dog.,9,describer,1,FALSE,NA,58
+I mean a camera?,9,describer,2,FALSE,NA,58
+And what?,10,matcher,3,TRUE,NA,58
+I can't remember what it looks like.,9,matcher,1,TRUE,NA,59
+A person jumping again.,10,describer,2,FALSE,NA,59
+A birdie.,11,describer,1,TRUE,NA,60
+Is this the birdie or is this the birdie?,12,matcher,2,TRUE,NA,60
+I see a birdie that's flying.,11,describer,3,FALSE,NA,60
+A person maybe walking-,12,describer,1,TRUE,NA,61
+A person that's walking.,12,describer,2,FALSE,NA,61
+I see a person that's walking.,12,describer,3,TRUE,NA,61
+Maybe it looks like person that doesn't have any arms.,11,matcher,4,TRUE,NA,61
+Kind of.,12,describer,5,TRUE,NA,61
+It might look like an angel.,12,describer,6,FALSE,NA,61
+Why is this the same thing?,11,describer,1,TRUE,NA,62
+A person.,11,describer,2,FALSE,NA,62
+I don't know if that's a person.,11,describer,3,TRUE,NA,62
+It looks like a person but it's not.,11,describer,4,FALSE,NA,62
+I don't know if it's a water fountain but it kind of looks like it.,12,describer,1,FALSE,NA,63
+"I see, maybe that’s  a Lego.",11,describer,1,FALSE,NA,64
+I don't know if I see a Lego.,12,matcher,2,TRUE,NA,64
+I don't know what it's that.,11,describer,3,TRUE,NA,64
+Why is this not a person without any arms and I don't know what it is?,11,describer,4,FALSE,NA,64
+It kind of looks like an angel.,12,describer,1,FALSE,NA,65
+Angel.,11,matcher,2,TRUE,NA,65
+That looks like [mumbling] an angel to me.,11,matcher,3,TRUE,NA,65
+It's an angel.,11,matcher,4,TRUE,NA,65
+A person holding up plate.,11,describer,1,FALSE,NA,66
+It kind of looks like someone flying a plane without a cover.,12,describer,1,FALSE,NA,67
+I see an angel.,11,describer,1,FALSE,NA,68
+A person that kind of looks sad without any arms walking away from maybe.,12,describer,1,FALSE,NA,69
+"I see a person that's flying a plane, but the person is flying a plane.",11,describer,1,FALSE,NA,70
+Kind of looks like someone building a funnel.,12,describer,1,FALSE,NA,71
+A person.,13,describer,1,FALSE,NA,72
+Yeah.,14,matcher,2,TRUE,NA,72
+A person.,14,describer,1,FALSE,NA,73
+I see,13,matcher,2,TRUE,NA,73
+"A person, too.",13,matcher,3,TRUE,NA,73
+A flying person.,13,describer,1,FALSE,NA,74
+Yeah.,14,matcher,2,TRUE,NA,74
+A laying person.,14,describer,1,FALSE,NA,75
+Yes.,13,matcher,2,TRUE,NA,75
+A walking person.,13,describer,1,FALSE,NA,76
+A walking person.,14,matcher,2,TRUE,NA,76
+A person with this cube.,14,describer,1,FALSE,NA,77
+Yeah.,13,matcher,2,TRUE,NA,77
+A lying person.,13,describer,1,FALSE,NA,78
+I see a lying person.,14,matcher,2,TRUE,NA,78
+A flying person.,14,describer,1,FALSE,NA,79
+A person standing up with a cube.,13,describer,1,FALSE,NA,80
+Me too.,14,matcher,2,TRUE,NA,80
+A laying person.,14,describer,1,FALSE,NA,81
+I see a laying person.,13,matcher,2,TRUE,NA,81
+A walking person.,13,describer,1,FALSE,NA,82
+I see a walking person.,14,matcher,2,TRUE,NA,82
+A flying person.,14,describer,1,FALSE,NA,83
+I see a flying person too.,13,matcher,2,TRUE,NA,83
+Stickles.,15,describer,1,FALSE,NA,84
+Stickles.,15,describer,2,TRUE,NA,84
+I can't find that.,16,matcher,3,TRUE,NA,84
+I don't know what that is.,15,describer,4,TRUE,NA,84
+A seesaw.,15,describer,5,FALSE,NA,84
+A flying people.,16,describer,1,FALSE,NA,85
+A kid.,15,describer,1,FALSE,NA,86
+"No, I can't find him.",16,matcher,2,TRUE,NA,86
+I don't know,15,describer,3,TRUE,NA,86
+I don't know,15,describer,4,TRUE,NA,86
+I want to tap on this.,15,describer,5,TRUE,NA,86
+A server.,16,describer,1,FALSE,NA,87
+A server.,15,describer,1,TRUE,NA,88
+A diver.,16,describer,1,FALSE,NA,89
+A kid.,15,describer,1,FALSE,NA,90
+"I can't find that one, I can't",16,matcher,2,TRUE,NA,90
+A flying person.,16,describer,1,FALSE,NA,91
+A kid.,15,describer,1,FALSE,NA,92
+I don't know.,15,describer,2,TRUE,NA,92
+"Yes, we'll move on to one. The next one.",15,describer,3,TRUE,NA,92
+I don't know,15,describer,3,TRUE,NA,90
+A big kid.,15,describer,4,FALSE,NA,92
+A big kid,15,describer,5,TRUE,NA,92
+A flying person.,16,describer,1,FALSE,NA,93
+A server.,15,describer,1,FALSE,NA,94
+A diver.,16,describer,1,FALSE,NA,95
+A person.,17,describer,1,FALSE,NA,96
+Yes.,18,matcher,2,TRUE,NA,96
+"Uh, what's that?",18,describer,1,TRUE,NA,97
+I think it's a whale.,18,describer,2,FALSE,NA,97
+Yeah.,17,matcher,3,TRUE,NA,97
+A person holding something.,17,describer,1,FALSE,NA,98
+"I see a person holding something, too.",18,matcher,2,TRUE,NA,98
+A bird.,18,describer,1,FALSE,NA,99
+What is the bird?,17,matcher,2,TRUE,NA,99
+This one?,17,matcher,3,TRUE,NA,99
+This one?,18,describer,4,TRUE,NA,99
+"Um, this one.",17,matcher,5,TRUE,NA,99
+A person trying to fly.,17,describer,1,FALSE,NA,100
+Yeah.,18,matcher,2,TRUE,NA,100
+Whale!,18,describer,1,FALSE,NA,101
+Yeah.,17,matcher,2,TRUE,NA,101
+A person holding something again.,17,describer,1,FALSE,NA,102
+Me too.,18,matcher,2,TRUE,NA,102
+I see people walking.,18,describer,1,FALSE,NA,103
+A person trying to fly again.,17,describer,1,FALSE,NA,104
+"Yeah, me too.",18,matcher,2,TRUE,NA,104
+A person holding something.,18,describer,1,FALSE,NA,105
+I see a whale swimming.,17,describer,1,FALSE,NA,106
+Me too.,18,matcher,2,TRUE,NA,106
+A people walking.,18,describer,1,FALSE,NA,107
+I don't know.,19,describer,1,TRUE,NA,108
+Magnet.,19,describer,2,FALSE,NA,108
+A block.,20,describer,1,FALSE,NA,109
+No.,19,matcher,2,TRUE,NA,109
+It has a triangle.,20,describer,3,FALSE,NA,109
+It's on the ground.,20,describer,4,FALSE,NA,109
+"No, that looks like a...",19,describer,1,TRUE,NA,110
+A bird.,19,describer,2,FALSE,NA,110
+"No, a person flying.",19,describer,3,FALSE,NA,110
+A person sad walking.,20,describer,1,FALSE,NA,111
+A flying person again.,19,describer,1,FALSE,NA,112
+A rope.,19,matcher,1,TRUE,NA,113
+This again.,20,describer,2,TRUE,NA,113
+It's on the floor and it has a triangle.,20,describer,3,FALSE,NA,113
+A person sad walking again.,19,describer,1,FALSE,NA,114
+A person holding a triangle.,20,describer,1,FALSE,NA,115
+Sad walking.,19,matcher,2,TRUE,NA,115
+Uh huh.,19,matcher,3,TRUE,NA,115
+Sad walking.,19,describer,1,FALSE,NA,116
+Not again.,19,describer,2,TRUE,NA,116
+A triangle that's on the ground again.,20,describer,1,FALSE,NA,117
+A flying person.,19,describer,1,FALSE,NA,118
+"No, a butterfly.",19,describer,2,FALSE,NA,118
+A person holding a triangle.,20,describer,1,FALSE,NA,119
+"Uh, this.",21,describer,1,TRUE,NA,120
+A person in the mountains.,21,describer,2,FALSE,NA,120
+It looks like a person.,22,describer,1,FALSE,NA,121
+A person.,22,describer,2,TRUE,NA,121
+Yeah.,21,matcher,3,TRUE,NA,121
+A person walking.,21,describer,1,FALSE,NA,122
+"Uh, a person.",22,describer,1,FALSE,NA,123
+Yeah.,21,matcher,2,TRUE,NA,123
+"But, the black box right this one.",22,describer,3,TRUE,NA,123
+This way.,22,describer,4,FALSE,NA,123
+"Yeah, but this way.",22,describer,5,TRUE,NA,123
+Like this way.,22,describer,6,TRUE,NA,123
+"Yes, this.",21,matcher,7,TRUE,NA,123
+"No, that's actually this way.",22,describer,8,TRUE,NA,123
+A person dancing.,21,describer,1,FALSE,NA,124
+This.,22,describer,1,TRUE,NA,125
+A car.,22,describer,2,FALSE,NA,125
+A person.,21,describer,1,FALSE,NA,126
+Yeah.,22,matcher,2,TRUE,NA,126
+"I thought it was this one, but it wasn't working.",22,matcher,3,TRUE,NA,126
+I see a person walking.,22,describer,1,FALSE,NA,127
+A person dancing.,21,describer,1,FALSE,NA,128
+A car.,22,describer,1,FALSE,NA,129
+Again.,22,describer,2,TRUE,NA,129
+A person walking.,21,describer,1,FALSE,NA,130
+A person holding a pot.,22,describer,1,FALSE,NA,131
+A block?,23,describer,1,FALSE,NA,132
+The squares.,23,describer,2,FALSE,NA,132
+I don't know.,24,matcher,3,TRUE,NA,132
+I don't know.,24,matcher,4,TRUE,NA,132
+Triangles.,23,describer,5,TRUE,NA,132
+There's squares and there's triangles.,23,describer,6,TRUE,NA,132
+It doesn't look like anything else.,23,describer,7,TRUE,NA,132
+A square.,23,describer,8,FALSE,NA,132
+A man.,24,describer,1,FALSE,NA,133
+A man.,23,describer,1,FALSE,NA,134
+That looks like a man.,23,matcher,1,TRUE,NA,135
+Another man.,24,describer,2,FALSE,NA,135
+A square that's on the mouth.,23,describer,1,FALSE,NA,136
+Yeah.,23,describer,2,TRUE,NA,136
+I don't know.,24,matcher,3,TRUE,NA,136
+It looks like a man.,23,describer,4,FALSE,NA,136
+Falling.,23,describer,5,FALSE,NA,136
+It looks like an airplane.,24,describer,1,FALSE,NA,137
+A man falling again.,23,describer,1,FALSE,NA,138
+A man holding something.,23,describer,2,FALSE,NA,138
+A gem or something.,24,matcher,3,TRUE,NA,138
+A gem.,24,matcher,4,TRUE,NA,138
+A gem.,24,matcher,5,TRUE,NA,138
+The man is holding food.,23,describer,6,FALSE,NA,138
+Another man.,24,describer,1,FALSE,NA,139
+A man falling down.,23,describer,1,FALSE,NA,140
+A man.,24,describer,1,FALSE,NA,141
+A man.,23,describer,1,FALSE,NA,142
+I see an airplane in that.,25,matcher,1,TRUE,NA,143
+Somebody.,25,matcher,2,TRUE,NA,143
+A whale.,25,matcher,3,TRUE,NA,143
+A whale.,25,matcher,4,TRUE,NA,143
+A whale.,26,describer,5,FALSE,NA,143
+That and that.,25,matcher,6,TRUE,NA,143
+A person.,25,describer,1,FALSE,NA,144
+A person?,25,describer,2,FALSE,NA,144
+A person?,26,describer,1,FALSE,NA,145
+Two persons.,25,matcher,2,TRUE,NA,145
+A sad face.,25,describer,1,FALSE,NA,146
+A sad face.,26,describer,1,FALSE,NA,147
+A silly person.,25,describer,1,FALSE,NA,148
+I don't know.,25,matcher,1,TRUE,NA,149
+You don't know?,25,matcher,2,TRUE,NA,149
+A person.,26,describer,3,FALSE,NA,149
+Both.,25,matcher,4,TRUE,NA,149
+"But actually, this one.",25,matcher,5,TRUE,NA,149
+A plane?,25,describer,1,FALSE,NA,150
+"Actually, a whale.",25,describer,2,FALSE,NA,150
+A whale.,26,matcher,3,TRUE,NA,150
+A person.,26,describer,1,FALSE,NA,151
+"Oh, okay.",25,matcher,2,TRUE,NA,151
+A person.,25,matcher,3,TRUE,NA,151
+A whale.,25,describer,1,FALSE,NA,152
+Chomper.,25,matcher,1,TRUE,NA,153
+A person.,26,describer,2,FALSE,NA,153
+I see a person.,25,matcher,3,TRUE,NA,153
+Sad person.,25,matcher,4,TRUE,NA,153
+Human.,27,describer,1,FALSE,NA,154
+Another human.,27,matcher,1,TRUE,NA,155
+A person.,28,describer,2,FALSE,NA,155
+A flying human.,27,describer,1,FALSE,NA,156
+A airplane.,27,matcher,1,TRUE,NA,157
+A boat.,28,describer,2,FALSE,NA,157
+A human.,27,describer,1,FALSE,NA,158
+A boat.,28,describer,1,FALSE,NA,159
+A boat.,27,describer,1,FALSE,NA,160
+A statue.,28,describer,1,FALSE,NA,161
+A human.,27,describer,1,FALSE,NA,162
+A butterfly.,28,describer,1,FALSE,NA,163
+A airplane.,27,describer,1,FALSE,NA,164
+A person.,28,describer,1,FALSE,NA,165
+I don't know.,29,describer,1,TRUE,NA,166
+I don't know.,29,describer,2,TRUE,NA,166
+I don't know.,29,describer,3,TRUE,NA,166
+I don't know what they're like.,29,describer,4,TRUE,NA,166
+I don't know.,29,describer,5,TRUE,NA,166
+Triangle.,30,describer,1,FALSE,NA,167
+A triangle.,30,describer,2,TRUE,NA,167
+Walking the people.,30,matcher,1,TRUE,NA,168
+It looks like a person.,29,describer,2,FALSE,NA,168
+A person.,30,describer,1,FALSE,NA,169
+A person.,29,describer,1,FALSE,NA,170
+A cowboy.,30,describer,1,FALSE,NA,171
+A whale.,29,describer,1,FALSE,NA,172
+A person?,30,describer,1,FALSE,NA,173
+A person.,29,describer,1,FALSE,NA,174
+A boat.,30,describer,1,FALSE,NA,175
+A boat.,30,describer,2,TRUE,NA,175
+People standing in the boat.,30,describer,3,FALSE,NA,175
+The boat.,30,describer,4,TRUE,NA,175
+A person.,29,describer,1,FALSE,NA,176
+A person.,30,describer,1,FALSE,NA,177
+A person.,31,describer,1,FALSE,NA,178
+A bird.,32,describer,1,FALSE,NA,179
+No.,31,matcher,2,TRUE,NA,179
+It looks like a guard jumping in the air.,32,describer,3,FALSE,NA,179
+Guard.,32,describer,4,TRUE,NA,179
+It does.,31,matcher,5,TRUE,NA,179
+A person walking.,31,describer,1,FALSE,NA,180
+That looks like a person lying on the ground.,32,describer,1,FALSE,NA,181
+This looks like a person.,31,describer,1,FALSE,NA,182
+That one.,32,matcher,2,TRUE,NA,182
+A guy jumping in the air.,32,describer,1,FALSE,NA,183
+That looks like a person lying on the ground.,32,matcher,1,TRUE,NA,184
+A person walking.,32,describer,1,FALSE,NA,185
+A person lying on the ground.,31,describer,1,FALSE,NA,186
+A person holding a tray.,32,describer,1,FALSE,NA,187
+Somebody jumping.,31,describer,1,FALSE,NA,188
+A person walking.,32,describer,1,FALSE,NA,189
+A plane.,33,describer,1,FALSE,NA,190
+A boat.,33,describer,2,FALSE,NA,190
+That has a turbo engine on the back.,33,describer,3,FALSE,NA,190
+A person.,34,describer,1,FALSE,NA,191
+This one.,33,matcher,2,TRUE,NA,191
+It's a plane again.,33,describer,1,TRUE,NA,192
+A bird that has feet.,33,describer,2,FALSE,NA,192
+A person.,34,describer,1,FALSE,NA,193
+This one.,33,matcher,2,TRUE,NA,193
+A person.,33,describer,1,FALSE,NA,194
+A dog.,34,describer,1,FALSE,NA,195
+No.,33,matcher,2,TRUE,NA,195
+Uh...,33,matcher,3,TRUE,NA,195
+"Yeah, this one.",33,matcher,4,TRUE,NA,195
+Uh...,33,describer,1,TRUE,NA,196
+A person that can fly.,33,describer,2,FALSE,NA,196
+"And, I mean, a bird that has feet.",33,describer,3,FALSE,NA,196
+A person that has something in front to eat.,34,describer,1,FALSE,NA,197
+In a bowl.,34,describer,2,FALSE,NA,197
+A person that has something to eat in his hands.,33,describer,1,FALSE,NA,198
+A dead dog.,34,describer,1,FALSE,NA,199
+Which one?,33,matcher,2,TRUE,NA,199
+This one.,33,matcher,3,TRUE,NA,199
+A flying person that has a jetpack.,33,describer,1,FALSE,NA,200
+"No, a jet pack.",33,describer,2,TRUE,NA,200
+Do you even know what a jet pack is?,33,describer,3,TRUE,NA,200
+What is it?,33,describer,4,TRUE,NA,200
+Yeah.,34,matcher,5,TRUE,NA,200
+And it's very fast.,34,matcher,6,TRUE,NA,200
+A person.,34,describer,1,FALSE,NA,201
+Looking down and walking.,34,describer,2,FALSE,NA,201
+I can't really see.,35,describer,1,TRUE,NA,202
+It kind of looks like a bear.,35,describer,2,FALSE,NA,202
+No a bear,35,describer,3,TRUE,NA,202
+Yes.,35,describer,4,TRUE,NA,202
+I don't know.,35,describer,1,TRUE,NA,203
+A person.,35,describer,2,FALSE,NA,203
+A sloth.,36,describer,1,FALSE,NA,204
+A sloth.,36,describer,2,TRUE,NA,204
+It kind of looks like someone...,35,describer,1,TRUE,NA,205
+It's like...,35,describer,2,TRUE,NA,205
+It looks like someone's like walking while sliding?,35,describer,3,FALSE,NA,205
+It's not the one in the box.,35,describer,4,TRUE,NA,205
+A spider.,36,describer,1,FALSE,NA,206
+It's a spider.,36,describer,2,TRUE,NA,206
+This one.,35,matcher,3,TRUE,NA,206
+Someone sliding.,35,describer,1,TRUE,NA,207
+A person.,35,describer,2,FALSE,NA,207
+It looks like this.,35,describer,3,TRUE,NA,207
+This is the person.,35,describer,4,TRUE,NA,207
+Someone's holding a plate.,36,describer,1,FALSE,NA,208
+I know it's this one.,35,matcher,2,TRUE,NA,208
+It changes to the same one.,35,describer,1,TRUE,NA,209
+Someone has three hands with a diamond head.,35,describer,2,TRUE,NA,209
+Two hands with a diamond head.,35,describer,3,FALSE,NA,209
+A spider.,36,describer,1,FALSE,NA,210
+A gem with a triangle head.,35,describer,1,FALSE,NA,211
+Zero feet.,35,describer,2,FALSE,NA,211
+Zero feet.,35,describer,3,TRUE,NA,211
+I tried to describe this one.,35,matcher,1,TRUE,NA,212
+It looks like a slider.,36,describer,2,FALSE,NA,212
+I don't know what it is.,37,describer,1,TRUE,NA,213
+A boat.,37,describer,2,FALSE,NA,213
+A person.,38,describer,1,FALSE,NA,214
+I have a person.,37,matcher,2,TRUE,NA,214
+I don't know.,37,describer,1,TRUE,NA,215
+A superhero.,37,describer,2,FALSE,NA,215
+This one.,38,matcher,3,TRUE,NA,215
+A boat.,38,describer,1,FALSE,NA,216
+A superhero.,37,describer,1,FALSE,NA,217
+This one.,38,matcher,2,TRUE,NA,217
+A person.,38,describer,1,FALSE,NA,218
+I don't know.,37,describer,1,TRUE,NA,219
+I don't know.,37,describer,2,TRUE,NA,219
+Yeah.,37,describer,3,TRUE,NA,219
+I don't know.,37,describer,4,TRUE,NA,219
+A person doing something.,37,describer,5,FALSE,NA,219
+I think it's this one.,38,matcher,6,TRUE,NA,219
+A person doing something.,38,describer,1,FALSE,NA,220
+What?,37,matcher,2,TRUE,NA,220
+What?,37,matcher,3,TRUE,NA,220
+A superhero.,37,describer,1,FALSE,NA,221
+This one.,38,matcher,2,TRUE,NA,221
+A boat.,38,describer,1,FALSE,NA,222
+A person doing something.,37,describer,1,FALSE,NA,223
+It's this one.,38,matcher,2,TRUE,NA,223
+It's like this.,39,describer,1,TRUE,NA,224
+Feet that are up and a bite like this and a head.,39,describer,2,FALSE,NA,224
+Like that.,39,describer,3,TRUE,NA,224
+That one.,40,matcher,4,TRUE,NA,224
+A car.,40,describer,1,FALSE,NA,225
+It's like someone that's holding a backwards triangle cup.,39,describer,1,FALSE,NA,226
+A human.,40,describer,1,FALSE,NA,227
+A diamond head and a backwards triangle butt and triangle feet and a backwards triangle,39,describer,1,FALSE,NA,228
+head and a backwards triangle butt and triangle feet.,39,describer,2,TRUE,NA,228
+A car.,40,describer,1,FALSE,NA,229
+"It's a head, down, square and like this.",39,describer,1,FALSE,NA,230
+"Okay, so it's a triangle feet and one rectangle and one triangle and then a square head.",39,describer,2,FALSE,NA,230
+Somebody holding a triangle.,40,describer,1,FALSE,NA,231
+A race car.,39,describer,1,FALSE,NA,232
+A human that’s dancing.,40,describer,1,FALSE,NA,233
+A human that's dancing.,40,describer,2,TRUE,NA,233
+Yeah.,40,describer,3,TRUE,NA,233
+"It has a triangle leg, a rectangle, and a diamond body and a square head.",39,describer,1,FALSE,NA,234
+Someone holding a triangle in a cup,40,describer,1,FALSE,NA,235
+I see a human.,41,describer,1,FALSE,NA,240
+I see a human.,41,describer,2,TRUE,NA,240
+A human.,41,describer,3,TRUE,NA,240
+"The human is holding a square, a rectangular, and he's bending, and then he has one foot, and there's one square head",41,describer,4,FALSE,NA,240
+It's like a kite.,41,describer,5,FALSE,NA,240
+That's a house joke.,41,describer,6,TRUE,NA,240
+Maybe a kite,42,describer,1,FALSE,NA,241
+Okay.,41,matcher,2,TRUE,NA,241
+It's a boat.,41,describer,1,FALSE,NA,242
+That boat,42,matcher,2,TRUE,NA,242
+A people.,42,describer,1,FALSE,NA,243
+A human,41,describer,1,FALSE,NA,244
+A boat.,42,describer,1,FALSE,NA,245
+It's a boat.,42,describer,2,TRUE,NA,245
+A human,41,describer,1,FALSE,NA,246
+I touch this one,42,matcher,2,TRUE,NA,246
+"Um, a kite",42,describer,1,TRUE,NA,247
+A kite.,42,describer,2,FALSE,NA,247
+It's a boat.,41,describer,1,FALSE,NA,248
+I think I pop those yeah,42,matcher,2,TRUE,NA,248
+I see a human. A human,42,describer,1,FALSE,NA,249
+It's a... a human.,41,describer,1,FALSE,NA,250
+I have no human in mine.,42,matcher,2,TRUE,NA,250
+It's a kite.,41,describer,3,FALSE,NA,250
+I have a kite in mine,42,matcher,4,TRUE,NA,250
+I see a human in the box.,42,describer,1,FALSE,NA,251
+It's a human.,41,describer,1,FALSE,NA,252
+I get it,42,matcher,2,TRUE,NA,252
+Um A human holding a roof.,42,describer,1,FALSE,NA,253
+"What's in the black box, [id70]?",42,matcher,1,TRUE,NA,254
+Just give me a little bit,41,describer,2,TRUE,NA,254
+Ship.,41,describer,3,FALSE,NA,254
+A ship.,41,describer,4,TRUE,NA,254
+I found it.,42,describer,1,TRUE,NA,255
+Me,42,describer,2,TRUE,NA,255
+A kite.,42,describer,3,FALSE,NA,255
+And what is that?,43,describer,1,TRUE,NA,256
+I have no idea.,43,describer,2,TRUE,NA,256
+What is this?,43,describer,3,TRUE,NA,256
+Island.,44,matcher,4,FALSE,NA,256
+It's a island,44,matcher,5,FALSE,NA,256
+A guitar. Ha!,43,describer,6,FALSE,NA,256
+Ha!,44,matcher,7,TRUE,NA,256
+Ha!,43,describer,8,TRUE,NA,256
+Guitar? Guitar.,44,matcher,9,FALSE,NA,256
+"I'll just- I'll just guess, okay?",44,matcher,10,TRUE,NA,256
+What is he?,44,describer,1,TRUE,NA,257
+What is that?,44,describer,2,TRUE,NA,257
+People.,44,describer,3,FALSE,NA,257
+A boat.,43,describer,1,FALSE,NA,258
+A people.,44,describer,1,FALSE,NA,259
+A people carrying a box of dirt.,43,describer,1,FALSE,NA,260
+His boat.,44,describer,1,FALSE,NA,261
+Boat.,44,describer,2,FALSE,NA,261
+Person.,43,describer,1,FALSE,NA,262
+What is it?,44,describer,1,TRUE,NA,263
+That one's also a really hard one to guess.,43,matcher,2,TRUE,NA,263
+A rock rolling down from here.,44,describer,3,FALSE,NA,263
+A boat.,43,describer,1,FALSE,NA,264
+But who's winning?,44,matcher,2,TRUE,NA,264
+A people.,44,describer,1,FALSE,NA,265
+A person carrying a boat of dirt.,43,describer,1,FALSE,NA,266
+A rock rolling down the hill.,44,describer,1,FALSE,NA,267
+A person rolling down a wall.,43,describer,1,FALSE,NA,268
+A person.,44,describer,1,FALSE,NA,269
+A boat.,43,describer,1,FALSE,NA,270
+"So eas- so easy, gosh.",44,matcher,2,TRUE,NA,270
+I went 100.,44,matcher,3,TRUE,NA,270
+You went 100.,44,matcher,4,TRUE,NA,270
+People holding a box and a dirt is in the box.,44,describer,1,FALSE,NA,271
+The person.,45,describer,1,FALSE,NA,272
+Which one is that?,46,matcher,2,TRUE,NA,272
+The person.,45,describer,3,FALSE,NA,272
+But I just need to someone to tell me what's that.,46,matcher,4,TRUE,NA,272
+I don't know.,45,describer,5,TRUE,NA,272
+"Eh, I don't know.",46,describer,1,TRUE,NA,273
+This one.,46,describer,2,TRUE,NA,273
+Uh. Uhhh...the beaver.,46,describer,3,FALSE,NA,273
+The- which one?,45,matcher,4,TRUE,NA,273
+I don't see it? This one?,45,matcher,5,TRUE,NA,273
+Which one?,46,matcher,1,TRUE,NA,274
+Do this one?,45,describer,2,TRUE,NA,274
+I don't know.,45,describer,3,TRUE,NA,274
+A person and vampire rat,45,describer,4,FALSE,NA,274
+Yeah.,46,matcher,5,TRUE,NA,274
+He's going to press it.,46,matcher,6,TRUE,NA,274
+Uhhh.,46,describer,1,TRUE,NA,275
+Person.,46,describer,2,FALSE,NA,275
+The...,45,describer,1,TRUE,NA,276
+Person.,45,describer,2,FALSE,NA,276
+The...,46,describer,1,TRUE,NA,277
+The... beaver.,46,describer,2,FALSE,NA,277
+I don't tell any with boxes around it.,45,matcher,3,TRUE,NA,277
+The beaver.,45,describer,1,TRUE,NA,278
+I trick,45,describer,2,TRUE,NA,278
+The bat.,45,describer,3,FALSE,NA,278
+The person.,46,describer,1,FALSE,NA,279
+The people.,45,describer,1,FALSE,NA,280
+The person.,46,describer,1,FALSE,NA,281
+Woo!,46,describer,2,TRUE,NA,281
+"It said, woo!",46,describer,3,TRUE,NA,281
+The...,45,describer,1,TRUE,NA,282
+I don't know which one.,45,describer,2,TRUE,NA,282
+I don't know 'cause I don't know what is that.,45,describer,3,TRUE,NA,282
+It looks... which one is it? The which one on other side.,46,matcher,4,TRUE,NA,282
+The person.,45,describer,5,FALSE,NA,282
+The person.,46,describer,1,FALSE,NA,283
+The person.,46,describer,2,FALSE,NA,283
+We both got 'aww'.,46,describer,3,TRUE,NA,283
+The person.,45,describer,1,FALSE,NA,284
+Holding its fingers,45,describer,2,FALSE,NA,284
+The...,46,describer,1,TRUE,NA,285
+Beaver,46,describer,2,FALSE,NA,285
+The vampire bat.,45,describer,1,FALSE,NA,286
+The person.,46,describer,1,FALSE,NA,287
+The human that is walking has the box.,47,describer,1,FALSE,NA,288
+What is that one?,48,describer,1,TRUE,NA,289
+"A square, like, walking.",48,describer,2,FALSE,NA,289
+Uh-huh.,47,matcher,3,TRUE,NA,289
+square walking,47,matcher,4,FALSE,NA,289
+This one?,47,matcher,5,TRUE,NA,289
+I don't know which one.,47,matcher,6,TRUE,NA,289
+"Um,",48,describer,7,TRUE,NA,289
+and it has feet.,48,describer,8,FALSE,NA,289
+This?,47,matcher,9,TRUE,NA,289
+"is it, is it, is it, is it, is it the one jumping or bending down and",47,matcher,10,TRUE,NA,289
+putting something?,47,matcher,11,TRUE,NA,289
+"um, jumping.",48,describer,12,FALSE,NA,289
+"The ship is the one that has the square, the square.",47,describer,1,FALSE,NA,290
+It's the same.,48,describer,1,TRUE,NA,291
+The one that has the box on it is the one bending down.,48,describer,2,FALSE,NA,291
+and holding something.,48,describer,3,TRUE,NA,291
+The one bending down and holding something is having the box.,47,describer,1,FALSE,NA,292
+The one that's walking is the one it- it- it is the box on it.,48,describer,1,FALSE,NA,293
+The ship has the box.,47,describer,1,FALSE,NA,294
+The one that's jumping and has a square.,48,describer,1,FALSE,NA,295
+and has feet.,48,describer,2,FALSE,NA,295
+This one?,47,matcher,3,TRUE,NA,295
+"The human that is walking, bending its head down, is having the square.",47,describer,1,FALSE,NA,296
+The one that's bending down and putting something.,48,describer,1,FALSE,NA,297
+That's because I didn't hear what [pear128] say.,47,matcher,2,TRUE,NA,297
+The ship is- the ship is having the box.,47,describer,1,FALSE,NA,298
+The one that's jumping and has the square.,48,describer,1,FALSE,NA,299
+I like,47,matcher,2,TRUE,NA,299
+Yeah.,47,matcher,3,TRUE,NA,299
+And I also have- have a cute bagel.,47,matcher,4,TRUE,NA,299
+And I also have a blankie that they've faced.,47,matcher,5,TRUE,NA,299
+"The human that is bending down his head like this, is is is is having the square.",47,describer,1,FALSE,NA,300
+and walking.,47,describer,2,TRUE,NA,300
+"Um, the one that's bending down and holding something.",48,describer,1,FALSE,NA,301
+See there's a rainbow.,47,matcher,2,TRUE,NA,301
+See the rainbow.,47,matcher,3,TRUE,NA,301
+The ship is having the box.,47,describer,1,FALSE,NA,302
+Um the one that's jumping and has the square.,48,describer,1,FALSE,NA,303
+...,49,describer,1,TRUE,NA,304
+"Uh, a *unintelligble*.",50,describer,1,TRUE,NA,305
+...,50,describer,2,TRUE,NA,305
+I already know it.,49,matcher,3,TRUE,NA,305
+Airplane?,49,describer,1,FALSE,NA,306
+Mm-hmm.,50,describer,1,TRUE,NA,307
+A human.,50,describer,2,FALSE,NA,307
+A human.,50,describer,3,FALSE,NA,307
+Airplane.,49,matcher,4,TRUE,NA,307
+A human.,50,describer,5,FALSE,NA,307
+A human.,49,matcher,6,FALSE,NA,307
+A airplane.,49,describer,1,FALSE,NA,308
+"Uh, *unintelligible*",50,describer,1,TRUE,NA,309
+A human.,49,describer,1,FALSE,NA,310
+A man.,50,describer,1,FALSE,NA,311
+A human.,49,describer,1,FALSE,NA,312
+A airplane.,50,describer,1,FALSE,NA,313
+I said he's my baby.,50,matcher,1,TRUE,NA,314
+"Oh, and I'm a old man.",49,describer,2,FALSE,NA,314
+Old man.,49,describer,3,FALSE,NA,314
+A old man.,49,describer,4,FALSE,NA,314
+"Uh, uh, a human.",50,describer,1,FALSE,NA,315
+A human.,50,describer,2,FALSE,NA,315
+A human.,50,describer,3,FALSE,NA,315
+A human.,49,matcher,4,FALSE,NA,315
+A human.,50,describer,5,FALSE,NA,315
+Umm... airplane,49,describer,1,FALSE,NA,316
+A man.,50,describer,1,FALSE,NA,317
+A human.,49,describer,1,FALSE,NA,318
+A man.,50,matcher,2,FALSE,NA,318
+A human.,49,describer,3,FALSE,NA,318
+A human.,50,describer,1,FALSE,NA,319
+What is this called?,51,describer,1,TRUE,NA,320
+A person.,51,describer,2,FALSE,NA,320
+A person holding.,51,describer,3,FALSE,NA,320
+Holding a flute.,51,describer,4,TRUE,NA,320
+"Hey, she got the same thing.",51,describer,5,TRUE,NA,320
+Somebody falling down.,52,describer,1,FALSE,NA,321
+I see a person walking.,51,describer,1,FALSE,NA,322
+Someone in the boat.,52,describer,1,FALSE,NA,323
+I see a person flying.,51,describer,1,FALSE,NA,324
+"I see a person, but I see this one.",52,matcher,2,TRUE,NA,324
+Somebody walking.,52,describer,1,FALSE,NA,325
+I see a person holding a flute.,51,describer,1,FALSE,NA,326
+I see someone holding...,52,matcher,2,TRUE,NA,326
+I see someone in a boat,52,describer,1,FALSE,NA,327
+well I see somebody holding a trumpet well why do these are these all these things,51,describer,1,FALSE,NA,328
+I said it so fast.,52,matcher,2,TRUE,NA,328
+Somebody falling.,52,describer,1,FALSE,NA,329
+Walking?,51,matcher,2,TRUE,NA,329
+Somebody falling.,52,describer,3,FALSE,NA,329
+This guy.,51,matcher,4,TRUE,NA,329
+Why?,51,matcher,5,TRUE,NA,329
+I see a person on a boat floating.,51,describer,1,FALSE,NA,330
+I want like a different one that bird's,51,describer,2,TRUE,NA,330
+a picture like that.,51,describer,3,TRUE,NA,330
+Somebody walking.,52,describer,1,FALSE,NA,331
+I see a person flying.,51,describer,1,FALSE,NA,332
+A person flying.,51,describer,2,FALSE,NA,332
+"Um, somebody on the boat.",52,describer,1,FALSE,NA,333
+I see a person holding a trumpet.,51,describer,1,FALSE,NA,334
+You see a person watching.,52,describer,1,TRUE,NA,335
+I think Smarfi's fingers must get a little bit a bit happy.,52,describer,2,TRUE,NA,335
+I just have a unicorn.,52,describer,3,TRUE,NA,335
+have a unicorn that has heavy foot.,52,describer,4,TRUE,NA,335
+How about one day I can bring him and show you?,52,describer,5,TRUE,NA,335
+"And need tomorrow in the coming because he actually,",52,describer,6,TRUE,NA,335
+"and tomorrow will be in, in a park that all these",52,describer,7,TRUE,NA,335
+bicycles and scooters.,52,describer,8,TRUE,NA,335
+I see somebody walking.,52,describer,9,FALSE,NA,335
+The box has the jumping person.,53,describer,1,FALSE,NA,336
+And I'm gonna pick.,54,matcher,2,TRUE,NA,336
+It's so fun.,54,matcher,3,TRUE,NA,336
+The box in there is a walking person and his head is looking down.,54,describer,1,FALSE,NA,337
+The box has the...,53,describer,1,TRUE,NA,338
+The one who's holding the triangle in its hand and it's bowing.,53,describer,2,FALSE,NA,338
+Boxes there is a...,54,describer,1,TRUE,NA,339
+Maybe...,54,describer,2,TRUE,NA,339
+A boat?,54,describer,3,FALSE,NA,339
+"It's a person that's just walking, but it's, with it's head down.",53,describer,1,FALSE,NA,340
+I know it.,54,matcher,2,TRUE,NA,340
+"Like yeah, we're just like very good as like something, like, just like, everything.",54,matcher,3,TRUE,NA,340
+The box is a boat.,54,describer,1,FALSE,NA,341
+It's something that's holding something.,53,describer,1,FALSE,NA,342
+The box is a jumping person.,54,describer,1,FALSE,NA,343
+That was so fun!,54,describer,2,TRUE,NA,343
+I told her that's hard and jump guide.,53,describer,1,TRUE,NA,344
+It's something that holding something.,53,describer,2,FALSE,NA,344
+Here the box is a boat.,54,describer,1,FALSE,NA,345
+I don't know that one.,53,matcher,2,TRUE,NA,345
+We did it!,54,describer,3,TRUE,NA,345
+It's a person that's walking.,53,describer,1,FALSE,NA,346
+It's a person that's walking.,53,describer,2,TRUE,NA,346
+Why you're saying like a different word like who or like yeah?,54,matcher,3,TRUE,NA,346
+In the box is a jumping person.,54,describer,1,FALSE,NA,347
+I saw a horse jumping.,53,describer,1,FALSE,NA,348
+"Okay, in the box is a boat.",54,describer,1,FALSE,NA,349
+That I have a...,53,matcher,2,TRUE,NA,349
+I've done it!,53,describer,1,TRUE,NA,350
+I thought it.,53,describer,2,TRUE,NA,350
+But your dog is trying to touch.,54,matcher,3,TRUE,NA,350
+It's something that's holding something.,53,describer,4,FALSE,NA,350
+"In the box is a person, and he has no thing in his hand.",54,describer,1,FALSE,NA,351
+And it's walking?,53,matcher,2,FALSE,NA,351
+Yeah.,54,describer,3,TRUE,NA,351
+"Um, person?",55,describer,1,FALSE,NA,352
+Boat.,56,describer,1,FALSE,NA,353
+What's this picture?,55,describer,1,TRUE,NA,354
+Sitting down?,55,describer,2,FALSE,NA,354
+Sitting down?,56,matcher,3,TRUE,NA,354
+"No, jump, jump, jump.",55,describer,4,FALSE,NA,354
+This one?,56,matcher,5,TRUE,NA,354
+Jump?,56,matcher,6,TRUE,NA,354
+Yeah.,55,describer,7,TRUE,NA,354
+Standing.,56,describer,1,FALSE,NA,355
+It's because you pressed walking.,56,describer,2,TRUE,NA,355
+Jumping.,55,describer,1,FALSE,NA,356
+Jumping?,56,matcher,2,TRUE,NA,356
+Human.,56,describer,1,FALSE,NA,357
+Standing human.,56,describer,2,FALSE,NA,357
+"Um, boat.",55,describer,1,FALSE,NA,358
+Why do you need help Smarfi?,56,matcher,2,TRUE,NA,358
+Putting head down.,56,describer,1,FALSE,NA,359
+Eyes down.,56,describer,2,TRUE,NA,359
+Boat.,55,describer,1,FALSE,NA,360
+Jumper.,56,describer,1,FALSE,NA,361
+Stand up and eyes down.,55,describer,1,FALSE,NA,362
+Walking human.,55,describer,2,FALSE,NA,362
+"This time, only tell me one, ten, sta- standing.",56,describer,1,TRUE,NA,363
+Standing.,56,describer,2,FALSE,NA,363
+Walking and head down and eyes down.,55,describer,1,FALSE,NA,364
+walking human.,55,describer,2,FALSE,NA,364
+Which one are you talking about?,56,matcher,3,TRUE,NA,364
+Umm,56,matcher,4,TRUE,NA,364
+Just press something.,55,describer,5,TRUE,NA,364
+Okay.,56,matcher,6,TRUE,NA,364
+Let me see.,55,describer,7,TRUE,NA,364
+Human with head up.,56,describer,1,FALSE,NA,365
+With eyes.,56,describer,2,FALSE,NA,365
+"with eyes, with eyes.",56,describer,3,TRUE,NA,365
+Jumper!,55,describer,1,FALSE,NA,366
+I can let Smurphy touch it.,56,matcher,2,TRUE,NA,366
+Boat.,56,describer,1,FALSE,NA,367
+I don't know.,57,describer,1,TRUE,NA,368
+Maybe a human.,57,describer,2,FALSE,NA,368
+A human.,57,describer,3,TRUE,NA,368
+But what is the arms?,57,describer,4,FALSE,NA,368
+I want...,57,describer,5,TRUE,NA,368
+What does?,58,describer,1,TRUE,NA,369
+Tap his nose.,57,matcher,2,TRUE,NA,369
+"Um, a kite.",58,describer,3,FALSE,NA,369
+This one.,57,matcher,4,TRUE,NA,369
+A snow skater.,57,describer,1,FALSE,NA,370
+This is one.,58,matcher,2,TRUE,NA,370
+A snow staker.,57,describer,3,TRUE,NA,370
+This one?,58,matcher,4,TRUE,NA,370
+I know.,57,describer,5,TRUE,NA,370
+A snow skater.,57,describer,6,TRUE,NA,370
+A snow skater!,57,describer,7,TRUE,NA,370
+I got to a diamond.,58,describer,1,FALSE,NA,371
+A human carrying a diamond.,58,describer,2,FALSE,NA,371
+A human,57,matcher,3,FALSE,NA,371
+"No, this will be the body.",57,matcher,4,TRUE,NA,371
+"He said, yeah.",58,describer,5,TRUE,NA,371
+A dog.,57,describer,1,FALSE,NA,372
+A dog.,57,describer,2,TRUE,NA,372
+He said yay.,57,describer,3,TRUE,NA,372
+Why did he say it said yay?,57,describer,4,TRUE,NA,372
+"[id86], what's in the black box?",57,describer,5,TRUE,NA,372
+What's in the black box?,57,describer,6,TRUE,NA,372
+What do you see in the black box?,57,describer,7,TRUE,NA,372
+A dog!,57,describer,8,TRUE,NA,372
+Where is there a dog?,58,matcher,9,TRUE,NA,372
+There's no dogs here.,58,matcher,10,TRUE,NA,372
+I see a person and a person.,58,matcher,11,TRUE,NA,372
+It's bigger now.,57,describer,12,TRUE,NA,372
+I want it's bigger.,57,describer,13,TRUE,NA,372
+It's bigger!,57,describer,14,TRUE,NA,372
+A diamond.,58,matcher,15,TRUE,NA,372
+I make it smaller.,57,describer,16,TRUE,NA,372
+A dog.,57,describer,17,TRUE,NA,372
+A human carrying a diamond and a...,58,matcher,18,TRUE,NA,372
+I want it big.,57,describer,19,TRUE,NA,372
+A dog.,57,describer,20,TRUE,NA,372
+This one is a...,57,describer,21,TRUE,NA,372
+I didn't know he was...,58,describer,1,TRUE,NA,373
+A kite!,57,matcher,2,TRUE,NA,373
+A kite.,58,describer,3,FALSE,NA,373
+Like a kite!,57,matcher,4,FALSE,NA,373
+A kite!,57,matcher,5,FALSE,NA,373
+"A Taya, Taya!",58,matcher,1,TRUE,NA,374
+"A big, big gum ball.",58,matcher,2,FALSE,NA,374
+A snow skater.,58,matcher,3,FALSE,NA,374
+A snowskaker.,57,describer,1,FALSE,NA,375
+I make it.,57,describer,2,TRUE,NA,375
+"Uh,",59,describer,1,TRUE,NA,376
+What is?,59,describer,2,TRUE,NA,376
+Kanda?,59,describer,3,TRUE,NA,376
+Kind of.,59,describer,4,TRUE,NA,376
+Kind of.,59,describer,5,TRUE,NA,376
+Kind of.,59,describer,6,TRUE,NA,376
+What's your king?,60,matcher,7,TRUE,NA,376
+Is person?,59,describer,8,FALSE,NA,376
+"And what, what is there?",60,describer,1,TRUE,NA,377
+"It looks like a [unintelligible – falcon? Flat thing?], then a triangle and then a square.",60,describer,2,FALSE,NA,377
+Oh this? Or this?,59,matcher,3,TRUE,NA,377
+it's a square on the rectangle.,60,describer,4,FALSE,NA,377
+This.,60,describer,5,TRUE,NA,377
+"Look like something, a lock, and then a triangle and then a square, and then...",60,describer,6,FALSE,NA,377
+"Uh, yes.",59,matcher,7,TRUE,NA,377
+Is...,59,describer,1,TRUE,NA,378
+Is hoppy?,59,describer,2,FALSE,NA,378
+It's jump?,59,describer,3,FALSE,NA,378
+Someone is jumping or walking.,60,matcher,4,TRUE,NA,378
+Someone is jumping or walking?,60,matcher,5,TRUE,NA,378
+A jumping.,59,describer,6,FALSE,NA,378
+Person walking.,60,describer,1,FALSE,NA,379
+It's a person walking.,60,describer,2,TRUE,NA,379
+Person walking?,59,matcher,3,FALSE,NA,379
+"Uh, is Hoppy?",59,describer,1,FALSE,NA,380
+Jumping or hop?,60,matcher,2,TRUE,NA,380
+How is he doing?,60,matcher,3,TRUE,NA,380
+Jumping or,60,matcher,4,TRUE,NA,380
+What's how?,60,matcher,5,TRUE,NA,380
+Hoppy.,59,describer,6,FALSE,NA,380
+What's hobby?,60,matcher,7,TRUE,NA,380
+It's a...,60,describer,1,TRUE,NA,381
+a rectangle and then a triangle and then a square and then a rectangle and then.,60,describer,2,FALSE,NA,381
+"A triangle, then a triangle.",60,describer,3,TRUE,NA,381
+"Uh, I don't know.",59,matcher,4,TRUE,NA,381
+"It's not jumping, but it's...",60,describer,5,TRUE,NA,381
+Jumping.,59,matcher,6,TRUE,NA,381
+Not jumping.,60,describer,7,FALSE,NA,381
+Not jumping.,60,describer,8,TRUE,NA,381
+This?,59,matcher,9,TRUE,NA,381
+Is me?,59,matcher,10,TRUE,NA,381
+"Uh, person walking.",59,describer,1,FALSE,NA,382
+Person walking?,60,matcher,2,TRUE,NA,382
+He's doing like this.,60,describer,1,TRUE,NA,383
+Shh.,60,describer,2,TRUE,NA,383
+It's a person stopping walking and chilling his hand.,60,describer,3,FALSE,NA,383
+It's...,59,describer,1,TRUE,NA,384
+Hopping.,59,describer,2,FALSE,NA,384
+Hopping or...,60,matcher,3,TRUE,NA,384
+What side is this one?,60,matcher,4,TRUE,NA,384
+Hopping.,59,describer,5,FALSE,NA,384
+Hopping?,60,matcher,6,TRUE,NA,384
+Hopping or...,60,matcher,7,TRUE,NA,384
+Hopping or haloping?,60,matcher,8,TRUE,NA,384
+Hopping or halloping?,60,matcher,9,TRUE,NA,384
+Hopping.,59,describer,10,FALSE,NA,384
+A rectangle,60,describer,1,FALSE,NA,385
+Then a triangle and then a rectangle and then a rectangle and then a triangle and then a triangle.,60,describer,2,TRUE,NA,385
+A this.,59,matcher,3,TRUE,NA,385
+It's not walking.,60,describer,4,FALSE,NA,385
+A this.,59,matcher,5,TRUE,NA,385
+"Um, walking.",59,describer,1,FALSE,NA,386
+Walking this one?,60,matcher,2,TRUE,NA,386
+Yeah.,59,describer,3,TRUE,NA,386
+He is a person who's not showing his hands.,60,describer,1,FALSE,NA,387
+"Uh, jump.",59,describer,1,FALSE,NA,388
+"Uh, walking.",59,describer,2,FALSE,NA,388
+This one?,60,matcher,3,TRUE,NA,388
+It's the one that is showing his hands.,60,describer,1,FALSE,NA,389
+"Uh, Hindi.",59,matcher,2,TRUE,NA,389
+It's someone that is showing his hands.,60,describer,3,FALSE,NA,389
+Okay.,59,matcher,4,TRUE,NA,389
+Can I touch it.,59,matcher,5,TRUE,NA,389
+It's someone that is showing his hands.,60,describer,6,FALSE,NA,389
+That's surprise me.,60,describer,7,TRUE,NA,389
+This is so magic.,59,matcher,8,TRUE,NA,389
+A hopping.,59,describer,1,FALSE,NA,390
+Hopping or- or walking?,60,matcher,2,TRUE,NA,390
+A walking- hopping.,59,describer,3,TRUE,NA,390
+Hopping?,60,matcher,4,TRUE,NA,390
+"Uh, jump.",59,describer,5,FALSE,NA,390
+"It's a rectangle and then a triangle, and then a square",60,describer,1,FALSE,NA,391
+and then the rectangle.,60,describer,2,TRUE,NA,391
+And then...and then,60,describer,3,TRUE,NA,391
+"Then a triangle and then, and then a triangle.",60,describer,4,TRUE,NA,391
+My is what?,61,describer,1,TRUE,NA,392
+The boat.,61,describer,2,FALSE,NA,392
+Do you see it?,61,describer,3,TRUE,NA,392
+If you guess it,61,describer,4,TRUE,NA,392
+it doesn't even have a...,62,matcher,5,TRUE,NA,392
+I can't...,61,describer,6,TRUE,NA,392
+Guess what is this?,61,describer,7,TRUE,NA,392
+Can you see that?,61,describer,8,TRUE,NA,392
+"The thing is, um, a camera.",61,describer,9,FALSE,NA,392
+It's this one or this one?,62,matcher,10,TRUE,NA,392
+"I don't know what it is, I don't know which one it is.",62,describer,1,TRUE,NA,393
+"It is, I think it's like camel or something.",62,describer,2,FALSE,NA,393
+I think this one.,61,matcher,3,TRUE,NA,393
+Looks like people or something?,61,describer,1,TRUE,NA,394
+It looks like a people or something.,61,describer,2,FALSE,NA,394
+What does it look like?,62,matcher,3,TRUE,NA,394
+I won't tell you.,61,describer,4,TRUE,NA,394
+I don't know what it looks like.,62,matcher,5,TRUE,NA,394
+Is it this one or this one?,62,matcher,6,TRUE,NA,394
+"It looks like a people, but it doesn't have any arms.",61,describer,7,FALSE,NA,394
+"Oh, I know this one.",62,matcher,8,TRUE,NA,394
+"It kind of looks like a pastry or something, but it has legs.",62,describer,1,FALSE,NA,395
+I know.,61,matcher,2,TRUE,NA,395
+Looks like a tree but something like is jumping and they have legs.,61,describer,1,FALSE,NA,396
+I know.,62,matcher,2,TRUE,NA,396
+Is it...,62,matcher,3,TRUE,NA,396
+No.,62,matcher,4,TRUE,NA,396
+Does it have two legs or one?,62,matcher,5,TRUE,NA,396
+Two.,61,describer,6,FALSE,NA,396
+It's something that kind of looks like a boat or something.,62,describer,1,FALSE,NA,397
+"It looks like something that holding a p-,",61,describer,1,TRUE,NA,398
+it looks like someone holding a plate and giving it to a restaurant and has watermelon.,61,describer,2,FALSE,NA,398
+Isaac has one leg it's like and then someone and then like one leg so it's,62,matcher,3,TRUE,NA,398
+giving with their leg to someone else?,62,matcher,4,FALSE,NA,398
+Yeah.,61,describer,5,TRUE,NA,398
+um it's something that kind of looks like it looks like it's someone like a plate or something giving it to someone,62,describer,1,FALSE,NA,399
+"Hey, I got the box.",61,matcher,2,TRUE,NA,399
+It looks like a person that is walking.,62,describer,3,FALSE,NA,399
+I see something like a boat.,61,describer,1,FALSE,NA,400
+It's something that kind of looks like it's flying.,62,describer,1,FALSE,NA,401
+Are you coming every day?,61,matcher,2,TRUE,NA,401
+It's something it's like flying.,62,describer,3,TRUE,NA,401
+flying and it's jumping.,62,describer,4,FALSE,NA,401
+It looks like someone holding a plate and giving it to someone with [apple255].,61,describer,1,FALSE,NA,402
+It's someone that kind of looks like it's walking.,62,describer,1,FALSE,NA,403
+Someone's jumping.,61,describer,1,FALSE,NA,404
+"It's something, someone that's walking.",62,describer,1,FALSE,NA,405
+It kind of looks like...,62,describer,2,TRUE,NA,405
+Is someone that giving a plate to someone with one hand.,61,describer,1,FALSE,NA,406
+It's something that kind of looks like a boat or something.,62,describer,1,FALSE,NA,407
+a race car [maybe?],63,describer,1,FALSE,NA,408
+A triangle with a head on it with feet?,64,describer,1,FALSE,NA,409
+A triangle with feet again.,63,describer,1,FALSE,NA,410
+A person.,64,describer,1,FALSE,NA,411
+It has the diamond on the head.,63,describer,1,FALSE,NA,412
+A person.,64,describer,1,FALSE,NA,413
+That one?,63,matcher,2,TRUE,NA,413
+Race car.,63,describer,1,FALSE,NA,414
+A person.,64,describer,1,FALSE,NA,415
+Person.,63,describer,1,FALSE,NA,416
+A square on the head.,63,describer,2,FALSE,NA,416
+Has a triangle body.,64,describer,1,FALSE,NA,417
+A triangle body?,63,matcher,2,TRUE,NA,417
+Race car.,63,describer,1,FALSE,NA,418
+One has a triangle.,64,describer,1,FALSE,NA,419
+What?,63,matcher,2,TRUE,NA,419
+They has a triangle.,64,describer,3,TRUE,NA,419
+"Um, race car.",63,describer,1,FALSE,NA,420
+a diamond head,64,describer,1,FALSE,NA,421
+Diamond head.,63,describer,1,FALSE,NA,422
+It has feet.,64,describer,1,FALSE,NA,423
+It looks like a person with a head that's square.,64,describer,2,FALSE,NA,423
+A person.,65,describer,1,FALSE,NA,424
+The walking person or the standing person that's holding something?,66,matcher,2,TRUE,NA,424
+The walking person.,66,matcher,3,FALSE,NA,424
+"Um, a boat.",66,describer,1,FALSE,NA,425
+Boat. Boat.,66,describer,2,TRUE,NA,425
+Where's the boat?,65,matcher,3,TRUE,NA,425
+It's the one that's on the left or the right.,65,matcher,4,TRUE,NA,425
+"Um, a...",65,describer,1,TRUE,NA,426
+What is that?,65,describer,2,TRUE,NA,426
+A dog.,65,describer,3,FALSE,NA,426
+That has- that's holding a triangle.,65,describer,4,TRUE,NA,426
+A person that's holding a triangle.,66,matcher,5,TRUE,NA,426
+A person flying.,66,describer,1,FALSE,NA,427
+Is it that one?,65,matcher,2,TRUE,NA,427
+Is this this one?,65,matcher,3,TRUE,NA,427
+"Um, which one?",66,describer,4,TRUE,NA,427
+"Um, uh.",66,describer,5,TRUE,NA,427
+"A person jumping, I think, flying, I guess.",66,describer,6,FALSE,NA,427
+"It's a person that's in a race car almost, that has a one triangle.",65,describer,1,FALSE,NA,428
+and two triangles.,65,describer,2,TRUE,NA,428
+"a person, standing, holding.",66,describer,1,FALSE,NA,429
+Yeah.,65,matcher,2,TRUE,NA,429
+A person that's holding something.,66,describer,3,FALSE,NA,429
+I wanna know.,65,describer,1,TRUE,NA,430
+It's a person walking.,65,describer,2,FALSE,NA,430
+A person jumping.,66,describer,1,FALSE,NA,431
+A person that is jumping.,65,describer,1,FALSE,NA,432
+The person in a race car.,66,describer,1,FALSE,NA,433
+Why?,65,matcher,2,TRUE,NA,433
+It's a person walking.,65,describer,1,FALSE,NA,434
+It's a person standing.,66,describer,1,FALSE,NA,435
+it's holding something.,66,describer,2,FALSE,NA,435
+It's a race car and somebody inside.,65,describer,1,FALSE,NA,436
+someone is jumping,66,describer,1,FALSE,NA,437
+Is it this one?,65,matcher,2,TRUE,NA,437
+It's a person holding something.,65,describer,1,FALSE,NA,438
+A person...,66,describer,1,TRUE,NA,439
+A person...,66,describer,2,TRUE,NA,439
+Beep.,65,matcher,3,TRUE,NA,439
+Beep.,65,matcher,4,TRUE,NA,439
+"Um, what is this thing called?",67,matcher,1,TRUE,NA,440
+Hmm.,68,describer,2,TRUE,NA,440
+"What, this?",68,describer,3,TRUE,NA,440
+"Um, alligator?",68,describer,4,FALSE,NA,440
+Press the alligator?,67,matcher,5,TRUE,NA,440
+Im gonna press the alligator,67,matcher,6,TRUE,NA,440
+"Ooh, I've got a smiley face.",68,describer,7,TRUE,NA,440
+Me too!,67,matcher,8,TRUE,NA,440
+Alligator.,67,matcher,1,TRUE,NA,441
+Hmm.,68,describer,2,TRUE,NA,441
+A person.,68,describer,3,FALSE,NA,441
+Person,67,describer,1,FALSE,NA,442
+Sad face.,68,matcher,2,TRUE,NA,442
+I see a..,68,describer,1,TRUE,NA,443
+Person,68,describer,2,FALSE,NA,443
+person,67,describer,1,FALSE,NA,444
+Got it.,68,matcher,2,TRUE,NA,444
+Um it looks like,68,describer,1,TRUE,NA,445
+An alligator or soething like that?,68,describer,2,FALSE,NA,445
+I got it!,68,describer,3,TRUE,NA,445
+I got a smiley face!.,68,describer,4,TRUE,NA,445
+Person,67,describer,1,FALSE,NA,446
+I think I see a person?,68,describer,1,FALSE,NA,447
+I got it.,68,describer,2,TRUE,NA,447
+I got a smiley face!.,68,describer,3,TRUE,NA,447
+Alligator.,67,describer,1,FALSE,NA,448
+Alligator I think?,68,describer,1,FALSE,NA,449
+Person!,67,describer,1,FALSE,NA,450
+I see a person.,68,describer,1,FALSE,NA,451
+Person,67,describer,1,FALSE,NA,452
+I got it.,68,matcher,2,TRUE,NA,452
+I see an alligator.,68,describer,1,FALSE,NA,453
+I get the last one.,68,describer,2,TRUE,NA,453
+There's a person inside.,69,describer,1,FALSE,NA,454
+"Okay, Smurphy, there's a person inside.",70,matcher,2,TRUE,NA,454
+So tap.,70,matcher,3,TRUE,NA,454
+There is a person inside it.,70,describer,1,FALSE,NA,455
+The one that's looking down?,69,matcher,2,TRUE,NA,455
+Yeah.,70,describer,3,TRUE,NA,455
+It's the one looking up.,69,describer,1,FALSE,NA,456
+Yeah.,69,describer,2,TRUE,NA,456
+A airplane inside.,70,describer,1,FALSE,NA,457
+So tap the airplane.,70,describer,2,TRUE,NA,457
+There's a...,69,describer,1,TRUE,NA,458
+There's somebody in...,69,describer,2,TRUE,NA,458
+If its okay Ill show you it,69,describer,3,TRUE,NA,458
+Somebody skydiving.,69,describer,4,FALSE,NA,458
+Somebody skydiving?,70,matcher,5,TRUE,NA,458
+Yeah.,69,describer,6,TRUE,NA,458
+Like this?,70,matcher,7,TRUE,NA,458
+There's a airplane,70,describer,1,FALSE,NA,459
+Thank you.,69,matcher,2,TRUE,NA,459
+It's the one that's looking down.,69,describer,1,FALSE,NA,460
+Tell me.,69,matcher,1,TRUE,NA,461
+There's a.. a...,70,describer,2,TRUE,NA,461
+a... dog with his hands down,70,describer,3,FALSE,NA,461
+His hands...,70,describer,4,TRUE,NA,461
+"Ooh! This one, you mean?",69,matcher,5,TRUE,NA,461
+You got it wrong.,69,matcher,6,TRUE,NA,461
+I got it wrong.,69,matcher,7,TRUE,NA,461
+What is there?,70,matcher,1,TRUE,NA,462
+It's the one that's in the airplane.,69,describer,2,FALSE,NA,462
+It's the one that's the airplane.,70,matcher,3,TRUE,NA,462
+"He has, he has...",70,describer,1,TRUE,NA,463
+"He has, hands with a... like a triangle.",70,describer,2,FALSE,NA,463
+What's there?,70,matcher,1,TRUE,NA,464
+In the box.,70,matcher,2,TRUE,NA,464
+"Uh... There's somebody skydiving, but don't! don't choose the one that has the triangle hands.",69,describer,3,FALSE,NA,464
+"No, don't choose that one.",69,describer,4,TRUE,NA,464
+You got right that time.,69,matcher,1,TRUE,NA,465
+There's someone inside... there's someone with a head down.,70,describer,2,FALSE,NA,465
+What is there?,70,matcher,1,TRUE,NA,466
+Somebody skydiving.,69,describer,2,FALSE,NA,466
+Not in the airplane.,69,describer,3,FALSE,NA,466
+You got right.,69,matcher,1,TRUE,NA,467
+Thank you.,69,matcher,2,TRUE,NA,467
+What is it?,69,matcher,3,TRUE,NA,467
+There is someone with their triangle hands.,70,describer,4,FALSE,NA,467
+There's...,69,describer,1,TRUE,NA,468
+What is there?,70,matcher,2,TRUE,NA,468
+There's somebody looking down.,69,describer,3,FALSE,NA,468
+You got it right,69,matcher,1,TRUE,NA,469
+This actually...,69,matcher,2,TRUE,NA,469
+There is someone...,70,describer,3,TRUE,NA,469
+in an airplane,70,describer,4,TRUE,NA,469
+I...,70,describer,5,TRUE,NA,469
+A airplane?,69,matcher,6,TRUE,NA,469
+There's someone in an airplane.,70,describer,7,FALSE,NA,469
+"Um, a person, a person jumping?",71,describer,1,FALSE,NA,470
+A person lying down,72,describer,1,FALSE,NA,471
+Is it this one?,71,matcher,2,TRUE,NA,471
+A person walking.,71,describer,1,FALSE,NA,472
+A person... holding something.,72,describer,1,FALSE,NA,473
+Um a person jumping.,71,describer,1,FALSE,NA,474
+A person holding something.,72,describer,1,FALSE,NA,475
+A person walking.,71,describer,1,FALSE,NA,476
+A person lying.,72,describer,1,FALSE,NA,477
+A person jumping.,71,describer,1,FALSE,NA,478
+A person lying.,72,describer,1,FALSE,NA,479
+A person walking.,71,describer,1,FALSE,NA,480
+A person holding something,72,describer,1,FALSE,NA,481
+A person jumping.,71,describer,1,FALSE,NA,482
+Oh it's... a person's what?,72,matcher,1,TRUE,NA,483
+A person's lying!,71,describer,2,FALSE,NA,483
+"A, a, what is that?",73,describer,1,TRUE,NA,484
+It's a person.,73,describer,2,FALSE,NA,484
+Person.,74,matcher,3,TRUE,NA,484
+What's this?,74,matcher,4,TRUE,NA,484
+This?,74,matcher,5,TRUE,NA,484
+I'm [].,74,matcher,6,TRUE,NA,484
+A person.,73,describer,7,TRUE,NA,484
+Okay.,74,matcher,8,TRUE,NA,484
+It's a human.,73,describer,9,FALSE,NA,484
+And this?,74,describer,1,TRUE,NA,485
+What's this?,74,describer,2,TRUE,NA,485
+"Uh, this, like this. Oh, I don't know what's this.",74,describer,3,TRUE,NA,485
+Uh.,74,describer,4,TRUE,NA,485
+Looks like the airport.,74,describer,5,FALSE,NA,485
+It's a human.,73,describer,1,FALSE,NA,486
+Human?,74,matcher,2,TRUE,NA,486
+Yeah.,73,describer,3,TRUE,NA,486
+Okay.,74,matcher,4,TRUE,NA,486
+"Do do, do, do.",74,matcher,5,TRUE,NA,486
+Here's one.,74,matcher,6,TRUE,NA,486
+What this?,74,describer,1,TRUE,NA,487
+And this is walking feet.,74,describer,2,FALSE,NA,487
+This is feet.,74,describer,3,TRUE,NA,487
+And this is...,74,describer,4,TRUE,NA,487
+What?,73,matcher,5,TRUE,NA,487
+it's the it's the airplane.,73,describer,1,FALSE,NA,488
+Let me check.,74,matcher,2,TRUE,NA,488
+This.,74,matcher,3,TRUE,NA,488
+It's a human.,73,matcher,1,TRUE,NA,489
+Let me tap this.,74,describer,2,TRUE,NA,489
+"Uh, this and this.",74,describer,3,TRUE,NA,489
+What's this?,74,describer,4,TRUE,NA,489
+"Um,",74,describer,5,TRUE,NA,489
+[id116]?,74,describer,6,TRUE,NA,489
+Okay.,74,describer,7,TRUE,NA,489
+"Yeah, I ho- has the the a toy airplane.",74,describer,8,FALSE,NA,489
+Again!,74,describer,9,TRUE,NA,489
+"Oh no, you are no!",73,matcher,10,TRUE,NA,489
+You are no!,74,describer,11,TRUE,NA,489
+"In the box, the airplane.",73,describer,1,FALSE,NA,490
+What?,74,matcher,2,TRUE,NA,490
+In the box in the airplane!,73,describer,3,TRUE,NA,490
+Okay.,74,matcher,4,TRUE,NA,490
+"Why, you tapped the person!",73,describer,5,TRUE,NA,490
+He pressed the person.,73,describer,6,TRUE,NA,490
+Uh,74,describer,1,TRUE,NA,491
+It's a pony.,73,matcher,2,TRUE,NA,491
+What is in the box?,73,matcher,3,TRUE,NA,491
+"Uh, puppy?",74,describer,4,FALSE,NA,491
+Why not a puppy?,73,matcher,5,TRUE,NA,491
+It's the person!,73,describer,1,FALSE,NA,492
+"He, I did that.",74,matcher,2,TRUE,NA,492
+It's a person.,73,describer,3,FALSE,NA,492
+"no, you did it!",74,matcher,4,TRUE,NA,492
+It's a person in the box.,73,describer,5,FALSE,NA,492
+Okay.,74,matcher,6,TRUE,NA,492
+The person.,73,describer,7,FALSE,NA,492
+Okay.,74,matcher,8,TRUE,NA,492
+This?,74,matcher,9,TRUE,NA,492
+There's.,74,describer,1,TRUE,NA,493
+What is it?,73,matcher,2,TRUE,NA,493
+Tell me.,73,matcher,3,TRUE,NA,493
+The hat?,74,describer,4,FALSE,NA,493
+What is the hat?,73,matcher,5,TRUE,NA,493
+"Oh, no.",73,matcher,6,TRUE,NA,493
+No!,74,describer,7,TRUE,NA,493
+No!,73,matcher,8,TRUE,NA,493
+No!,74,describer,9,TRUE,NA,493
+It's a it's a person in the box.,73,describer,1,FALSE,NA,494
+Uh,74,matcher,2,TRUE,NA,494
+It's a person in the box,73,describer,3,TRUE,NA,494
+Puppy?,74,matcher,4,TRUE,NA,494
+No a-,73,describer,5,TRUE,NA,494
+Good job.,73,describer,6,TRUE,NA,494
+Smurphy,73,describer,7,TRUE,NA,494
+My best doggy.,73,describer,8,TRUE,NA,494
+Maybe this.,74,describer,1,TRUE,NA,495
+What is it?,73,matcher,2,TRUE,NA,495
+"Tell me, what do you think?",73,matcher,3,TRUE,NA,495
+"Okay, tree.",74,describer,4,FALSE,NA,495
+What?,73,matcher,5,TRUE,NA,495
+It's a airplane.,73,matcher,6,TRUE,NA,495
+Why did he say a tree?,74,describer,7,TRUE,NA,495
+This.,74,describer,1,TRUE,NA,496
+what is that?,73,matcher,2,TRUE,NA,496
+why he [unintelligible],74,describer,3,TRUE,NA,496
+again,74,describer,4,TRUE,NA,496
+it's a airplane.,73,describer,1,FALSE,NA,497
+Okay.,74,matcher,2,TRUE,NA,497
+He's a...,74,describer,1,TRUE,NA,498
+He's a...,74,describer,2,TRUE,NA,498
+What does that mean?,73,matcher,3,TRUE,NA,498
+I see the doggy in this box.,74,describer,4,FALSE,NA,498
+It's a person,73,matcher,5,TRUE,NA,498
+Yeah it's a person,74,describer,6,FALSE,NA,498
+Which one's that?,75,describer,1,TRUE,NA,499
+Frowny face? Is that frowny face? What is that?,76,matcher,2,TRUE,NA,499
+"Oh, [id118]!",76,matcher,3,TRUE,NA,499
+Look at it. It's this one,75,describer,4,TRUE,NA,499
+[id120]?,75,describer,5,TRUE,NA,499
+What?,76,matcher,6,TRUE,NA,499
+Did you know that this one actually has triangle feet?,75,describer,7,FALSE,NA,499
+"Oh, I see it.",76,matcher,8,TRUE,NA,499
+This one?,76,matcher,9,TRUE,NA,499
+I don't know.,76,matcher,10,TRUE,NA,499
+"[id120], it's triangle feet",75,describer,11,TRUE,NA,499
+I see a person with triangle feet walking.,76,describer,1,FALSE,NA,500
+I see a person holding a sandwich in the black box.,75,describer,1,FALSE,NA,501
+I see...,76,describer,1,TRUE,NA,502
+It's the same!,75,matcher,2,TRUE,NA,502
+I see...,76,describer,3,TRUE,NA,502
+Uh...,76,describer,4,TRUE,NA,502
+"Kinda looks like a boat, again",76,describer,5,FALSE,NA,502
+It's the same again,75,describer,1,TRUE,NA,503
+"It has triangle feet again, [id120].",75,describer,2,FALSE,NA,503
+This one?,76,matcher,3,TRUE,NA,503
+I think so.,75,describer,4,TRUE,NA,503
+I see somebody with triangle feet and holding a sandwich in their hands.,76,describer,1,FALSE,NA,504
+I see a boat.,75,describer,1,FALSE,NA,505
+with a diamond board,75,describer,2,FALSE,NA,505
+Im the best player,76,describer,1,TRUE,NA,506
+What?,76,describer,2,TRUE,NA,506
+A person walking with triangle feet.,76,describer,3,FALSE,NA,506
+What?,75,matcher,4,TRUE,NA,506
+I see a person with a sandwich... with a sandwich in his hand.,75,describer,1,FALSE,NA,507
+I see a person walking with triangle feet in... in the box,76,describer,1,FALSE,NA,508
+I see a boat with a diving board in the box.,75,describer,1,FALSE,NA,509
+I see...,76,describer,1,TRUE,NA,510
+A person with triangle feet,76,describer,2,FALSE,NA,510
+"Well, he, well, this one actually did have triangle feet",75,describer,1,TRUE,NA,511
+Nobody wants...,76,matcher,2,TRUE,NA,511
+Nobody wants...,76,matcher,3,TRUE,NA,511
+to leave nobody.,76,matcher,4,TRUE,NA,511
+I see... a person with triangle feet in the box.,75,describer,5,FALSE,NA,511
+Ah.,76,describer,1,TRUE,NA,512
+"I see a boat with a triangle,",76,describer,2,FALSE,NA,512
+On its... back,76,describer,3,FALSE,NA,512
+I see a person holding a square on its nose,75,describer,1,FALSE,NA,513
+This?,76,matcher,2,TRUE,NA,513
+This?,76,matcher,3,TRUE,NA,513
+I see a person with triangle feet.,76,describer,1,FALSE,NA,514
+Tell me what you see.,77,matcher,1,TRUE,NA,515
+I see a person in it.,78,describer,2,FALSE,NA,515
+What do you see?,77,describer,1,TRUE,NA,516
+I don't have any box.,78,matcher,2,TRUE,NA,516
+"I see, um, person.",77,describer,3,FALSE,NA,516
+I remember that.,78,matcher,4,TRUE,NA,516
+So I have to...,78,matcher,5,TRUE,NA,516
+Press!,77,describer,6,TRUE,NA,516
+I see...,77,matcher,1,TRUE,NA,517
+It's a racecar,78,describer,2,FALSE,NA,517
+This?,77,matcher,3,TRUE,NA,517
+Tell me what you have.,78,matcher,1,TRUE,NA,518
+I have.,77,describer,2,TRUE,NA,518
+What is this called?,77,describer,3,TRUE,NA,518
+I think it's a human.,77,describer,4,FALSE,NA,518
+"No, it's a vampire.",78,matcher,5,FALSE,NA,518
+What vampire?,77,describer,6,TRUE,NA,518
+The one with a like thing around its neck is a vampire.,78,matcher,7,TRUE,NA,518
+Oh.,78,matcher,8,TRUE,NA,518
+It was a vampire.,78,describer,1,TRUE,NA,519
+I've got a vampire.,78,describer,2,FALSE,NA,519
+Vampire!,77,matcher,3,TRUE,NA,519
+Vampire.,78,describer,4,TRUE,NA,519
+"Hm, I see a racecar",77,describer,1,FALSE,NA,520
+"Um, tell me what you see.",77,matcher,1,TRUE,NA,521
+I see a person.,78,describer,2,FALSE,NA,521
+I see...,77,describer,1,TRUE,NA,522
+Person!,77,describer,2,FALSE,NA,522
+Person again.,78,matcher,3,TRUE,NA,522
+Tell me what you see.,77,matcher,1,TRUE,NA,523
+I see racecar,78,describer,2,FALSE,NA,523
+I see... vampire,77,describer,1,FALSE,NA,524
+I see...,77,matcher,1,TRUE,NA,525
+I see person.,78,describer,2,FALSE,NA,525
+I see... human,77,describer,1,FALSE,NA,526
+I'm a bit.,78,describer,1,TRUE,NA,527
+Race car,78,describer,2,FALSE,NA,527
+I see human.,77,describer,1,FALSE,NA,528
+Vampire.,78,describer,1,FALSE,NA,529
+I see human.,77,describer,1,FALSE,NA,530
+I see a person in mine,79,describer,1,FALSE,NA,531
+I see a person in mine also,80,matcher,2,TRUE,NA,531
+I see something with triangle feet.,80,describer,1,FALSE,NA,532
+I see somebody flying.,80,describer,2,FALSE,NA,532
+I see something with a square in my box.,79,describer,1,FALSE,NA,533
+"Oh, I see that also.",80,matcher,2,TRUE,NA,533
+"In the black box, I see something with a square head.",80,describer,1,FALSE,NA,534
+I see something that is a square on a triangle balancing.,79,describer,1,FALSE,NA,535
+"In the box, I see someone holding a triangle in their hand.",80,describer,1,FALSE,NA,536
+I see someone jumping in my box.,79,describer,1,FALSE,NA,537
+"Oh, I see that on mine",80,matcher,2,TRUE,NA,537
+"In my box, I see somebody with a square head on like a diamond thing, triangle thing.",80,describer,1,FALSE,NA,538
+I see someone holding a triangle that has a wick... a head,79,describer,1,FALSE,NA,539
+I see... like triangles with a square on top that looks like a boat.,80,describer,1,FALSE,NA,540
+I see someone jumping in my box.,79,describer,1,FALSE,NA,541
+Oh. I see them too,80,matcher,2,TRUE,NA,541
+I see somebody with a square head with triangle feet,80,describer,1,FALSE,NA,542
+I see a boat.,79,describer,1,FALSE,NA,543
+Oh.,80,matcher,2,TRUE,NA,543
+I see somebody jumping.,80,describer,1,FALSE,NA,544
+I see someone holding a triangle with a head.,79,describer,1,FALSE,NA,545
+I see somebody with a square head that's balancing on a triangle thing with triangle... with like triangle legs.,80,describer,1,FALSE,NA,546
+"I see, uh, what is that? I don't know.",81,describer,1,TRUE,NA,547
+I see a person.,81,describer,2,FALSE,NA,547
+I see... uh what is this?,82,describer,1,TRUE,NA,548
+I think I see a ghost.,82,describer,2,FALSE,NA,548
+This is a ghost?,81,matcher,3,TRUE,NA,548
+"Yes, so.",82,describer,4,TRUE,NA,548
+That's a ghost.,82,describer,5,TRUE,NA,548
+"Okay, I see a boat.",81,describer,1,FALSE,NA,549
+I see a person.,82,describer,1,FALSE,NA,550
+What do you see [id125]?,81,describer,1,TRUE,NA,551
+I see a... a...,81,describer,2,TRUE,NA,551
+another... I see a fishing book,81,describer,3,FALSE,NA,551
+I see... what do you see?,81,matcher,1,TRUE,NA,552
+I didn't think,82,describer,2,TRUE,NA,552
+I see a person.,82,describer,3,FALSE,NA,552
+holding a ball.,82,describer,4,FALSE,NA,552
+Okay.,82,describer,1,TRUE,NA,553
+I see...,82,describer,2,TRUE,NA,553
+a ghost,82,describer,3,FALSE,NA,553
+Okay,81,matcher,4,TRUE,NA,553
+Yeah,81,describer,1,TRUE,NA,554
+Got it,82,matcher,2,TRUE,NA,554
+I guess it's this one,82,matcher,3,TRUE,NA,554
+"Oh, okay",82,describer,1,TRUE,NA,555
+The ghost came again,81,matcher,2,TRUE,NA,555
+"[id126], I see...",82,describer,3,TRUE,NA,555
+I see a person holding a bow in his hand.,82,describer,4,FALSE,NA,555
+I see a ghost.,81,describer,1,FALSE,NA,556
+Thats...,82,describer,1,TRUE,NA,557
+Not good.,82,describer,2,TRUE,NA,557
+"[id126], you have to tell me you see a person in the box.",82,describer,3,TRUE,NA,557
+I see a ghost.,82,describer,4,FALSE,NA,557
+"Okay, let me tap.",81,matcher,5,TRUE,NA,557
+I see a person holding a ball.,81,describer,1,FALSE,NA,558
+It's not gonna keep pressing.,82,describer,1,TRUE,NA,559
+I see a ghost.,82,describer,2,FALSE,NA,559
+"No, I see a person.",82,describer,3,FALSE,NA,559
+Thats what I said... there was a ghost.,82,matcher,1,TRUE,NA,560
+What do you see?,82,matcher,2,TRUE,NA,560
+I see... actually waht is this... I'll just tap it,81,describer,3,TRUE,NA,560
+I see a squirrel boat.,81,describer,4,FALSE,NA,560
+Someone holding a cup and in the box it's a person.,82,describer,1,FALSE,NA,561
+"Uh, What is that?",83,describer,1,TRUE,NA,562
+A boat,83,describer,2,FALSE,NA,562
+boat?,84,matcher,3,TRUE,NA,562
+Person.,84,describer,1,FALSE,NA,563
+Person.,83,matcher,2,TRUE,NA,563
+Person?,83,describer,1,FALSE,NA,564
+Boat,84,describer,1,FALSE,NA,565
+Oat?,83,matcher,2,TRUE,NA,565
+Mm-hmm.,84,describer,3,TRUE,NA,565
+Wheres the oat?,83,matcher,4,TRUE,NA,565
+No boat!,84,describer,5,TRUE,NA,565
+boat.,83,matcher,6,TRUE,NA,565
+Uhh,83,matcher,7,TRUE,NA,565
+Boat?,83,matcher,8,TRUE,NA,565
+Boat.,84,describer,9,TRUE,NA,565
+Boat.,83,matcher,10,TRUE,NA,565
+Person walking.,83,describer,1,FALSE,NA,566
+Person.,84,describer,1,FALSE,NA,567
+"Oh,",83,describer,1,TRUE,NA,568
+Uh... racecar?,83,describer,2,FALSE,NA,568
+Boat,84,describer,1,FALSE,NA,569
+Hey! I got the same thing too,84,matcher,1,TRUE,NA,570
+Racecar,83,describer,2,FALSE,NA,570
+Person.,84,describer,1,FALSE,NA,571
+I wish I said person walking.,84,matcher,1,TRUE,NA,572
+Person walking.,83,describer,2,FALSE,NA,572
+Boat,84,describer,1,FALSE,NA,573
+"Um, animal?",83,describer,1,FALSE,NA,574
+Person walking.,84,describer,1,FALSE,NA,575
+Person walking.,83,describer,1,FALSE,NA,576
+"Uh, racecar.",84,describer,1,FALSE,NA,577
+Racecar.,83,matcher,2,TRUE,NA,577
+Try again.,85,describer,1,TRUE,NA,578
+A key.,85,describer,2,FALSE,NA,578
+A key.,85,describer,3,TRUE,NA,578
+What is a key?,86,matcher,4,TRUE,NA,578
+Which one?,86,matcher,5,TRUE,NA,578
+This one?,86,matcher,6,TRUE,NA,578
+A key.,85,describer,7,TRUE,NA,578
+A key.,85,describer,8,TRUE,NA,578
+Yay!,86,describer,1,TRUE,NA,579
+This one got,86,describer,2,TRUE,NA,579
+A key. A key. A key,85,matcher,3,TRUE,NA,579
+Yay!,85,describer,1,TRUE,NA,580
+A person!,85,describer,2,FALSE,NA,580
+A person. A person!,85,describer,3,TRUE,NA,580
+Which one? This one?,86,matcher,4,TRUE,NA,580
+It's a person.,85,describer,5,TRUE,NA,580
+It's a person.,85,describer,6,TRUE,NA,580
+It's a person. person. person.,85,describer,7,TRUE,NA,580
+But this one...,86,matcher,8,TRUE,NA,580
+A person.,85,describer,9,TRUE,NA,580
+A person.,85,describer,10,TRUE,NA,580
+What is it?,85,matcher,1,TRUE,NA,581
+"This one, an airplane.",86,describer,2,FALSE,NA,581
+Airplane.,85,matcher,3,TRUE,NA,581
+Airplane.,85,matcher,4,TRUE,NA,581
+Airplane.,85,matcher,5,TRUE,NA,581
+Wrong. Yeah it's wrong,85,describer,1,TRUE,NA,582
+Try your best!,86,matcher,2,TRUE,NA,582
+A person again.,85,describer,3,FALSE,NA,582
+"Bop, Bop. Bop",85,describer,4,TRUE,NA,582
+Which one?,86,matcher,5,TRUE,NA,582
+B b b bop bop bop bop bop,85,describer,6,TRUE,NA,582
+This one?,86,matcher,7,TRUE,NA,582
+Bop. Bop. Bop. Bop,85,describer,8,TRUE,NA,582
+A person again.,85,describer,9,TRUE,NA,582
+This one is good.,86,matcher,1,TRUE,NA,583
+But- But this one's bad,86,matcher,2,TRUE,NA,583
+There's two persons.,85,describer,3,TRUE,NA,583
+"Um, a person.",86,matcher,4,FALSE,NA,583
+Mm-hmm.,85,matcher,1,TRUE,NA,584
+Dit. dit. a boat!,85,matcher,2,FALSE,NA,584
+A boat,85,matcher,3,TRUE,NA,584
+A boat. a big big boat,85,matcher,4,FALSE,NA,584
+A person in a boat.,85,matcher,5,FALSE,NA,584
+A person in a boat.,85,matcher,6,TRUE,NA,584
+That one?,86,describer,7,TRUE,NA,584
+A person in a boat.,85,matcher,8,TRUE,NA,584
+A person in a boat.,85,matcher,9,TRUE,NA,584
+Person in a boat.,85,describer,1,TRUE,NA,585
+"Look, look.",85,describer,2,TRUE,NA,585
+"Um, this one.",86,matcher,3,TRUE,NA,585
+What's this?,86,matcher,4,TRUE,NA,585
+"Hot, pop, pop, pop, bo, bo, bo, po.",85,describer,5,TRUE,NA,585
+"Um, why...",86,matcher,6,TRUE,NA,585
+Fall over the edge... Fall over the edge,85,describer,7,TRUE,NA,585
+Fall over the edge. Fall over the edge,85,describer,8,TRUE,NA,585
+Yeah.,86,matcher,9,TRUE,NA,585
+Bop bop... bop,85,describer,10,TRUE,NA,585
+"Um, it's kind of looks like a...",86,matcher,11,TRUE,NA,585
+T... Tail haha,85,describer,12,TRUE,NA,585
+Tail?,86,matcher,13,TRUE,NA,585
+No?,86,matcher,14,TRUE,NA,585
+Tail?,86,matcher,15,FALSE,NA,585
+Now me!,85,describer,1,TRUE,NA,586
+A person.,85,describer,2,FALSE,NA,586
+"Um, a person.",86,describer,1,TRUE,NA,587
+I see... poonkin nimbat,85,describer,1,TRUE,NA,588
+"Um, away.",86,matcher,2,TRUE,NA,588
+Away. Away. Away.,85,describer,3,TRUE,NA,588
+"Yeah, yeah.",85,describer,4,TRUE,NA,588
+Yeah.,85,describer,5,TRUE,NA,588
+A box.,85,describer,6,TRUE,NA,588
+Hilly! Hooray!,85,describer,7,TRUE,NA,588
+"Okay, this one?",86,matcher,8,TRUE,NA,588
+"I can't help you, but that's what you think.",86,matcher,9,TRUE,NA,588
+Now you do!,85,matcher,2,TRUE,NA,587
+I want to go.,86,describer,3,TRUE,NA,587
+Yeah.,86,describer,4,TRUE,NA,587
+Okay.,86,describer,5,TRUE,NA,587
+Okay.,86,describer,6,TRUE,NA,587
+Okay.,86,describer,7,TRUE,NA,587
+um a airplane,86,describer,8,FALSE,NA,587
+Now my turn! a person a person pop pop pop a person!,85,describer,10,TRUE,NA,588
+Which one !?,86,matcher,11,TRUE,NA,588
+A person,85,describer,12,FALSE,NA,588
+Okay,86,matcher,13,TRUE,NA,588
+"Hey, I forgot to do that one.",85,matcher,1,TRUE,NA,589
+"Um, away.",86,describer,2,FALSE,NA,589
+Away?,85,matcher,3,TRUE,NA,589
+Wrong! Yuck,86,matcher,1,TRUE,NA,590
+That's okay. I need black,85,describer,2,TRUE,NA,590
+"Uh,.. boat.",85,describer,3,FALSE,NA,590
+pop pop.,85,describer,4,TRUE,NA,590
+boat?,86,matcher,5,TRUE,NA,590
+Yeah a boat. pop. pop.,85,describer,6,TRUE,NA,590
+"Okay, now it's your turn.",85,matcher,1,TRUE,NA,591
+We already start.,85,matcher,2,TRUE,NA,591
+"Uh uh. Um, um a person?",86,describer,3,FALSE,NA,591
+pop,85,matcher,4,TRUE,NA,591
+see you got it. that was the duck,87,matcher,1,TRUE,NA,592
+I see a person,88,describer,2,FALSE,NA,592
+in a black box,88,describer,3,TRUE,NA,592
+Bullseye!,87,describer,1,TRUE,NA,593
+"I see a person, holding a triangle in the black box",87,describer,2,FALSE,NA,593
+yeah,88,matcher,3,TRUE,NA,593
+Spider.,88,describer,1,FALSE,NA,594
+A... a person.,87,describer,1,FALSE,NA,595
+Airplane.,88,describer,1,FALSE,NA,596
+Airplane?,87,matcher,2,TRUE,NA,596
+Yeah.,88,describer,3,TRUE,NA,596
+I don't have an airplane. This one? Aw,87,matcher,4,TRUE,NA,596
+Biscuit,87,describer,1,FALSE,NA,597
+It looks like someone jumping off the floor.,87,describer,2,FALSE,NA,597
+Person.,87,matcher,1,FALSE,NA,598
+That was a hard one because there were two drells,87,describer,1,TRUE,NA,599
+It's a person.,87,describer,2,FALSE,NA,599
+"Yes! You got it, got it, got it!",87,matcher,1,TRUE,NA,600
+Got it!,87,matcher,2,TRUE,NA,600
+Got it! Got it!,87,matcher,3,TRUE,NA,600
+A person.,88,describer,4,FALSE,NA,600
+Hmm.,87,matcher,5,TRUE,NA,600
+Yes.,87,describer,1,TRUE,NA,601
+Yes.,88,matcher,2,TRUE,NA,601
+That was easy because I got a black box.,87,describer,3,TRUE,NA,601
+"Um, I find someone jumping",87,describer,4,FALSE,NA,601
+Yes,87,matcher,1,TRUE,NA,602
+Yes.,88,describer,2,TRUE,NA,602
+Airplane.,88,describer,3,FALSE,NA,602
+Finally I got the airplane!,87,describer,1,TRUE,NA,603
+Yay!,88,matcher,2,TRUE,NA,603
+"Uh, human.",87,describer,3,FALSE,NA,603
+Human,88,describer,1,FALSE,NA,604
+"I... It looks like a human, but two triangles.",87,describer,1,FALSE,NA,605
+Kind of like the one that you saw airplane?,87,describer,2,FALSE,NA,605
+Does that have a triangle?,87,matcher,1,TRUE,NA,606
+Easy.,88,describer,2,TRUE,NA,606
+Spider.,88,describer,3,FALSE,NA,606
+Yes!,88,describer,4,TRUE,NA,606
+I got it.,88,matcher,1,TRUE,NA,607
+"Uh, why?",87,describer,2,TRUE,NA,607
+"Okay, that's a person",87,describer,3,FALSE,NA,607
+Person person,87,describer,4,TRUE,NA,607
+Yes!,87,describer,5,TRUE,NA,607
+I don't know what to do.,89,describer,1,TRUE,NA,608
+Yeah,89,describer,2,TRUE,NA,608
+I don't see anything.,89,describer,3,TRUE,NA,608
+"Kite, I think",89,describer,4,FALSE,NA,608
+Kite.,89,describer,5,TRUE,NA,608
+Kite.,90,matcher,6,TRUE,NA,608
+There is a monster.,90,describer,1,FALSE,NA,609
+There is a monster in my box.,90,describer,2,TRUE,NA,609
+There is a monster.,90,describer,3,TRUE,NA,609
+"Uh, boat.",89,describer,1,FALSE,NA,610
+Boat.,89,describer,2,TRUE,NA,610
+Boat.,89,describer,3,TRUE,NA,610
+Boat.,90,matcher,4,TRUE,NA,610
+There's a person in my box.,90,describer,1,FALSE,NA,611
+There's a person in my box.,90,describer,2,TRUE,NA,611
+There's a monster.,89,describer,1,FALSE,NA,612
+Monsters.,90,matcher,2,FALSE,NA,612
+There's a person in my box.,90,describer,1,FALSE,NA,613
+a boat again.,89,describer,1,FALSE,NA,614
+A kite in mine.,90,describer,1,FALSE,NA,615
+A kite.,90,describer,2,TRUE,NA,615
+There's a...,89,describer,1,TRUE,NA,616
+Kite in my box,89,describer,2,FALSE,NA,616
+There's a person in my box again!,90,describer,1,FALSE,NA,617
+Monster.,89,describer,1,FALSE,NA,618
+Monster,90,matcher,2,TRUE,NA,618
+There's a boat in my box,90,describer,1,FALSE,NA,619
+There's a kite in my box,89,describer,1,FALSE,NA,620
+There's a person in my box.,90,describer,1,FALSE,NA,621
+There's a person in my box.,90,describer,2,TRUE,NA,621
+boat.,89,describer,1,FALSE,NA,622
+There is a monster of my box.,90,describer,1,FALSE,NA,623
+See that?,91,describer,1,TRUE,NA,624
+What is that?,91,describer,2,TRUE,NA,624
+A boat.,91,describer,3,FALSE,NA,624
+Uh.,92,describer,1,TRUE,NA,625
+I don't know.,92,describer,2,TRUE,NA,625
+It's a...,92,describer,3,TRUE,NA,625
+I don't actually know.,92,describer,4,TRUE,NA,625
+Who is this?,91,matcher,5,TRUE,NA,625
+It looks like a kite.,91,matcher,6,FALSE,NA,625
+I think it's a kite.,92,describer,7,FALSE,NA,625
+The person with the diamond in his hand.,91,describer,1,FALSE,NA,626
+This one?,92,matcher,2,TRUE,NA,626
+A person is in the square.,92,describer,1,FALSE,NA,627
+The kite.,91,describer,1,FALSE,NA,628
+It comes.,92,matcher,2,TRUE,NA,628
+Which one is in there?,91,matcher,1,TRUE,NA,629
+A diamond.,92,describer,2,FALSE,NA,629
+This one?,91,matcher,3,TRUE,NA,629
+Which one is it?,91,matcher,4,TRUE,NA,629
+[id140]?,91,matcher,5,TRUE,NA,629
+Is it this one?,91,matcher,6,TRUE,NA,629
+It's a diamond.,92,describer,7,FALSE,NA,629
+A person is holding a diamond.,92,describer,8,FALSE,NA,629
+Okay.,91,matcher,9,TRUE,NA,629
+The boat.,91,describer,1,FALSE,NA,630
+It's the boat.,91,describer,2,TRUE,NA,630
+Press it?,92,matcher,3,TRUE,NA,630
+Which one's in there?,91,matcher,1,TRUE,NA,631
+The person?,91,matcher,2,TRUE,NA,631
+Is it a person?,91,matcher,3,TRUE,NA,631
+[id140]?,91,matcher,4,TRUE,NA,631
+A person.,92,describer,5,FALSE,NA,631
+The person.,91,describer,1,FALSE,NA,632
+It's holding a diamond.,91,describer,2,FALSE,NA,632
+Whi- whi- which person is it this one?,91,matcher,1,TRUE,NA,633
+I see the... the person tha- that has that looks like it's doing a little silly...,91,describer,1,FALSE,NA,634
+It's a person that's doing a silly thing.,91,describer,2,FALSE,NA,634
+This one?,92,matcher,3,TRUE,NA,634
+Yeah.,91,describer,4,TRUE,NA,634
+Yeah.,91,describer,5,TRUE,NA,634
+I'll press it.,92,matcher,6,TRUE,NA,634
+Which one is that one?,91,matcher,1,TRUE,NA,635
+Which one is it?,91,matcher,2,TRUE,NA,635
+What?,91,matcher,3,TRUE,NA,635
+A boat.,92,describer,4,FALSE,NA,635
+The person that has a silly thing,91,describer,1,FALSE,NA,636
+That one?,92,matcher,2,TRUE,NA,636
+Yeah.,91,describer,3,TRUE,NA,636
+You can press it.,91,describer,4,TRUE,NA,636
+Which one is in the box?,91,matcher,1,TRUE,NA,637
+[id140]?,91,matcher,2,TRUE,NA,637
+The diamond.,92,describer,3,FALSE,NA,637
+You mean this one?,91,matcher,4,TRUE,NA,637
+The person?,91,matcher,5,FALSE,NA,637
+Yeah.,92,describer,6,TRUE,NA,637
+The boat.,91,describer,1,FALSE,NA,638
+this one.,92,matcher,2,TRUE,NA,638
+then press it.,91,describer,3,TRUE,NA,638
+Which one's in the box?,91,matcher,1,TRUE,NA,639
+"Oh, why are these big chairs?",91,matcher,2,TRUE,NA,639
+Why are there the chairs?,91,matcher,3,TRUE,NA,639
+"Um, the triangle.",92,describer,4,FALSE,NA,639
+"Um, um, can you show me what's in it?",91,matcher,5,TRUE,NA,639
+This one?,91,matcher,6,TRUE,NA,639
+I see a airplane in my box.,93,describer,1,FALSE,NA,640
+What?,94,matcher,2,TRUE,NA,640
+I see a airplane.,93,describer,3,TRUE,NA,640
+Airplane?,94,matcher,4,TRUE,NA,640
+Which one's the airplane?,94,matcher,5,TRUE,NA,640
+It is a airplane.,94,matcher,6,TRUE,NA,640
+I don't know what this is.,94,describer,1,TRUE,NA,641
+I don't know what it is.,94,describer,2,TRUE,NA,641
+I don't know.,94,describer,3,TRUE,NA,641
+Diamond.,94,describer,4,FALSE,NA,641
+Okay.,93,matcher,5,TRUE,NA,641
+So I see a person looking down.,93,describer,1,FALSE,NA,642
+I see a person looking up!,94,describer,1,FALSE,NA,643
+Look.,93,describer,1,TRUE,NA,644
+Look.,93,describer,2,TRUE,NA,644
+"It's a do-, it's somebody looking up.",93,describer,3,FALSE,NA,644
+Up?,94,matcher,4,TRUE,NA,644
+Yeah.,93,describer,5,TRUE,NA,644
+I don't know.,94,describer,1,TRUE,NA,645
+I don't know.,94,describer,2,TRUE,NA,645
+"[id142], press the black square.",94,describer,3,FALSE,NA,645
+Black square?,93,matcher,4,TRUE,NA,645
+"Yeah, black square.",94,describer,5,TRUE,NA,645
+I see a person looking down.,93,describer,1,FALSE,NA,646
+Airplane.,94,describer,1,FALSE,NA,647
+Airplane [id142].,94,describer,2,TRUE,NA,647
+I see a person looking up holding a triangle.,93,describer,1,FALSE,NA,648
+I see a person flying!,94,describer,1,FALSE,NA,649
+I see a person looking down.,93,describer,1,FALSE,NA,650
+I see a airplane again.,94,describer,1,FALSE,NA,651
+What did you see?,94,matcher,1,TRUE,NA,652
+I see somebody looking up holding a triangle again.,93,describer,2,FALSE,NA,652
+I see a airplane again.,94,describer,1,FALSE,NA,653
+I see a person looking down.,93,describer,1,FALSE,NA,654
+I see a person flying!,94,describer,1,FALSE,NA,655
+I see a person flying.,94,describer,2,TRUE,NA,655
+I don't know what's in it,95,describer,1,TRUE,NA,656
+I don't know what's that,95,describer,2,TRUE,NA,656
+Maybe a boat?,95,describer,3,FALSE,NA,656
+A person,96,describer,1,FALSE,NA,657
+There's a person.,95,describer,1,FALSE,NA,658
+What?,96,matcher,2,TRUE,NA,658
+Person.,95,describer,3,TRUE,NA,658
+Person.,96,describer,1,FALSE,NA,659
+There's a person another portion.,95,describer,1,FALSE,NA,660
+A person,95,describer,2,TRUE,NA,660
+Another person,95,describer,3,TRUE,NA,660
+a person,96,describer,1,FALSE,NA,661
+Person.,96,matcher,1,FALSE,NA,662
+Airplane.,96,describer,1,FALSE,NA,663
+A person,95,describer,1,FALSE,NA,664
+Person.,96,describer,1,FALSE,NA,665
+Airplane.,95,describer,1,FALSE,NA,666
+No.,96,matcher,2,TRUE,NA,666
+Airplane.,95,describer,3,TRUE,NA,666
+Person.,96,describer,1,FALSE,NA,667
+I see a airplane.,95,describer,1,FALSE,NA,668
+Person.,96,describer,1,FALSE,NA,669
+A person,95,describer,1,FALSE,NA,670
+Person.,96,describer,1,FALSE,NA,671
+A person!,97,describer,1,FALSE,NA,672
+"Um, a person",98,describer,1,FALSE,NA,673
+Um a person?,97,matcher,2,TRUE,NA,673
+"This one, my way.",98,matcher,1,TRUE,NA,674
+Person.,97,describer,1,FALSE,NA,675
+Yeah.,98,matcher,2,TRUE,NA,675
+A person?,98,matcher,3,TRUE,NA,675
+"Um, a person.",98,describer,1,FALSE,NA,676
+A person.,97,describer,1,FALSE,NA,677
+A person laying down.,98,describer,1,FALSE,NA,678
+A person lying down.,97,describer,1,FALSE,NA,679
+"Um, person",98,describer,1,FALSE,NA,680
+Walking.,98,describer,2,FALSE,NA,680
+A person.,97,describer,1,FALSE,NA,681
+Right now,98,describer,1,TRUE,NA,682
+"Um, I see somebody jumping",98,describer,2,FALSE,NA,682
+A person.,97,describer,1,FALSE,NA,683
+Which one is a person?,98,matcher,2,TRUE,NA,683
+A person.,98,describer,1,FALSE,NA,684
+Yeah it's right!,98,matcher,1,TRUE,NA,685
+Person lying down,97,describer,2,FALSE,NA,685
+I see someone jumping.,98,describer,1,FALSE,NA,686
+I don't know.,99,describer,1,TRUE,NA,687
+Person,99,describer,2,FALSE,NA,687
+flying person,100,describer,1,FALSE,NA,688
+Yeah.,99,describer,1,TRUE,NA,689
+A person that fell down.,99,describer,2,FALSE,NA,689
+A paintballer,101,describer,1,FALSE,NA,690
+A person who's holding a triangle.,99,describer,1,FALSE,NA,691
+Yeah.,100,matcher,2,TRUE,NA,691
+A person fell down.,100,describer,1,FALSE,NA,692
+A person walking.,99,describer,1,FALSE,NA,693
+A person flying.,100,describer,1,FALSE,NA,694
+A person flying.,99,describer,1,FALSE,NA,695
+That's the same one again.,99,matcher,1,TRUE,NA,696
+A person holding a triangle,100,describer,2,FALSE,NA,696
+A person walking.,99,describer,1,FALSE,NA,697
+A person fell down.,100,describer,1,FALSE,NA,698
+A person fell down.,99,describer,1,FALSE,NA,699
+A person holding a triangle,100,describer,1,FALSE,NA,700
+A person flying.,99,describer,1,FALSE,NA,701
+Yes.,100,describer,1,TRUE,NA,702
+I'm going to say a walk.,100,describer,2,FALSE,NA,702
+Why's it taking so long?,102,matcher,1,TRUE,NA,703
+"Um, what's this?",103,describer,2,TRUE,NA,703
+A diamond.,103,describer,3,FALSE,NA,703
+What is the diamond?,102,matcher,4,TRUE,NA,703
+Which one is he talking about?,102,matcher,5,TRUE,NA,703
+"Uh, this one?",102,matcher,6,TRUE,NA,703
+What is this one?,102,describer,1,TRUE,NA,704
+Is it an airplane?,102,describer,2,FALSE,NA,704
+"Yeah, airplane.",103,matcher,3,TRUE,NA,704
+Yeah.,103,matcher,4,TRUE,NA,704
+Why does it keep switch onto other stuff?,102,matcher,1,TRUE,NA,705
+A falcon!,103,describer,2,FALSE,NA,705
+What is a falcon?,102,matcher,3,TRUE,NA,705
+The black box one.,103,describer,4,TRUE,NA,705
+A human.,102,describer,1,FALSE,NA,706
+"Why does it make, says more woos?",102,matcher,1,TRUE,NA,707
+Um...,103,describer,2,TRUE,NA,707
+Falcon again!,103,describer,3,FALSE,NA,707
+Why is it a falcon?,102,describer,1,TRUE,NA,708
+A human.,102,describer,2,FALSE,NA,708
+Why does he have to even more?,102,matcher,1,TRUE,NA,709
+A diamond again.,103,describer,2,FALSE,NA,709
+A Airplane.,102,describer,1,FALSE,NA,710
+Human.,103,describer,1,FALSE,NA,711
+I hear my brothers already here,102,describer,1,TRUE,NA,712
+The human.,102,describer,2,FALSE,NA,712
+I see my aunt.,102,matcher,1,TRUE,NA,713
+"Um, airplane.",103,describer,2,FALSE,NA,713
+This is fun,102,describer,1,TRUE,NA,714
+Is it your voice?,102,describer,2,TRUE,NA,714
+Uh,102,describer,3,TRUE,NA,714
+A human.,102,describer,4,FALSE,NA,714
+What happened?,102,matcher,1,TRUE,NA,715
+"Um, human.",103,describer,2,FALSE,NA,715
+There's two humans.,102,matcher,3,TRUE,NA,715
+Any one you want.,103,describer,4,TRUE,NA,715
+"Um, it looks like a superhero human.",103,describer,5,FALSE,NA,715
+Airplane,102,describer,1,FALSE,NA,716
+Why do you keep have to passing it?,102,matcher,1,TRUE,NA,717
+Um...,103,describer,2,TRUE,NA,717
+Human!,103,describer,3,FALSE,NA,717
+No.,103,matcher,1,TRUE,NA,718
+A human.,102,describer,2,FALSE,NA,718
+Which one?,103,matcher,3,TRUE,NA,718
+"Uh, the one that is walking.",102,describer,4,FALSE,NA,718

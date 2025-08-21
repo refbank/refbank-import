@@ -189,7 +189,7 @@ validate_dataset <- function(df, write = F) {
     ) |>
     left_join(describer, by = join_by(game_id, room_num, trial_num)) |>
     left_join(matchers, by = join_by(game_id, room_num, trial_num))
-
+  # View(try_trials |> group_by(game_id, room_num, trial_num) |> tally())
   assert_that(
     try_trials |> select(game_id, room_num, trial_num) |> unique() |> nrow() ==
       try_trials |> nrow(),
