@@ -16,26 +16,34 @@ all_trials <- map(all_dirs, \(d) read_csv(file.path(DATA_LOC, d, "trials.csv"), 
 
 #we only do target, not things that occur only as distractors. Could revisit
 
+
 all_images <- all_trials |> select(target, dataset_id) |> unique() |> 
   mutate(image_type=case_when(
     dataset_id %in% c("yoon2019_audience") ~ "line drawing",
     dataset_id %in% c("hawkins2019_continual") ~ "photograph",
     dataset_id %in% c("boyce2024_interaction", "eliav2023_semantic", "leung2024_scaffolding",
                     "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
-                    "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_compositional") ~ "tangram"
+                    "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_function",
+                    "boyce2025_preschoolers") ~ "tangram"
   ),
   kilogram_id = case_when(
     target %in% c("A", "B", "C", "D", "E", "F", "G","H", "I", "J", "K", "L") ~ str_c("page-", target),
-    dataset_id %in% c("eliav2023_semantic") ~  target
+    dataset_id %in% c("eliav2023_semantic") ~  target,
   ),
   image_path = 
     case_when(
       dataset_id %in% c("boyce2024_interaction", "eliav2023_semantic",
                       "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
-                      "hawkins2021_respect", "hawkins2023_frompartners") ~ str_c(kilogram_id, ".svg")
+                      "hawkins2021_respect", "hawkins2023_frompartners") ~ str_c(kilogram_id, ".svg"),
+      dataset_id %in% c("leung2024_scaffolding") ~ str_c(target, ".jpg"),
+      target=="hold" ~ "I1.jpg",
+      target=="walk" ~ "B1.jpg",
+      target=="swim" ~ "D1.jpg",
+      target=="jump" ~ "E1.jpg",
   )) |> select(-dataset_id) |> 
   rename(image_id=target)|> unique() |> write_csv(here("image_data/image_metadata.csv"))
   
+
 
 # hilarious file processing adventure # 
 

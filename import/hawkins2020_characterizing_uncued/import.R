@@ -5,359 +5,312 @@ library(stringr)
 library(tidyr)
 library(purrr)
 library(logger)
-
+library(tibble)
+library(here)
 # Logging setup
 log_appender(appender_file("segmentation.log"))
 log_layout(layout_glue_colors)
 
-# Define segment patterns
-segment_patterns <- list(
-  list(pattern = "\\b(\\d{1,2})(?:st|nd|rd|th)\\s*(?:one|image|picture)\\b", type = "ordinal"), 
-  list(pattern = "\\b(\\d{1,2})\\.\\s*", type = "numbered"),
-  list(pattern = "\\b(\\d{1,2})\\s*:\\s*", type = "colon"),
-  list(pattern = "\\b(\\d{1,2})\\s*-", type = "dash"),
-  list(pattern = "\\bimage\\s*(\\d{1,2})\\b", type = "image_num"),
-  list(pattern = "\\bpicture\\s*(\\d{1,2})\\b", type = "picture_num"),
-  list(pattern = "\\bnumber\\s*(\\d{1,2})\\b", type = "number_num"),
-  list(pattern = "\\bnext\\s*(?:one|image|picture)\\b", type = "next_one"),
-  list(pattern = "\\bfirst\\s*(?:one|image|picture)\\b", type = "first_one"),
-  list(pattern = "\\bsecond\\s*(?:one|image|picture)\\b", type = "second_one"),
-  list(pattern = "\\bthird\\s*(?:one|image|picture)\\b", type = "third_one"),
-  list(pattern = "\\bfourth\\s*(?:one|image|picture)\\b", type = "fourth_one"),
-  list(pattern = "\\bfifth\\s*(?:one|image|picture)\\b", type = "fifth_one"),
-  list(pattern = "\\bsixth\\s*(?:one|image|picture)\\b", type = "sixth_one"),
-  list(pattern = "\\bseventh\\s*(?:one|image|picture)\\b", type = "seventh_one"),
-  list(pattern = "\\beighth\\s*(?:one|image|picture)\\b", type = "eighth_one"),
-  list(pattern = "\\bninth\\s*(?:one|image|picture)\\b", type = "ninth_one"),
-  list(pattern = "\\btenth\\s*(?:one|image|picture)\\b", type = "tenth_one"),
-  list(pattern = "\\beleventh\\s*(?:one|image|picture)\\b", type = "eleventh_one"),
-  list(pattern = "\\btwelfth\\s*(?:one|image|picture)\\b", type = "twelfth_one"),
-  list(pattern = "\\b(\\d{1,2})\\b(?!\\d)", type = "standalone")
+# Define segment patterns as a tibble for easier manipulation
+segment_patterns <- tribble(
+  ~pattern, ~type,
+  "\\b(\\d{1,2})(?:st|nd|rd|th)\\s*(?:one|image|picture)\\b", "ordinal",
+  "\\b(\\d{1,2})\\.\\s*", "numbered",
+  "\\b(\\d{1,2})\\s*:\\s*", "colon",
+  "\\b(\\d{1,2})\\s*-", "dash",
+  "\\bimage\\s*(\\d{1,2})\\b", "image_num",
+  "\\bpicture\\s*(\\d{1,2})\\b", "picture_num",
+  "\\bnumber\\s*(\\d{1,2})\\b", "number_num",
+  "\\bnext\\s*(?:one|image|picture)\\b", "next_one",
+  "\\bfirst\\s*(?:one|image|picture)\\b", "first_one",
+  "\\bsecond\\s*(?:one|image|picture)\\b", "second_one",
+  "\\bthird\\s*(?:one|image|picture)\\b", "third_one",
+  "\\bfourth\\s*(?:one|image|picture)\\b", "fourth_one",
+  "\\bfifth\\s*(?:one|image|picture)\\b", "fifth_one",
+  "\\bsixth\\s*(?:one|image|picture)\\b", "sixth_one",
+  "\\bseventh\\s*(?:one|image|picture)\\b", "seventh_one",
+  "\\beighth\\s*(?:one|image|picture)\\b", "eighth_one",
+  "\\bninth\\s*(?:one|image|picture)\\b", "ninth_one",
+  "\\btenth\\s*(?:one|image|picture)\\b", "tenth_one",
+  "\\beleventh\\s*(?:one|image|picture)\\b", "eleventh_one",
+  "\\btwelfth\\s*(?:one|image|picture)\\b", "twelfth_one",
+  "\\b(\\d{1,2})\\b(?!\\d)", "standalone"
+)
+
+# Create ordinal mapping as a named vector
+ordinal_map <- c(
+  first = 1, second = 2, third = 3, fourth = 4, fifth = 5,
+  sixth = 6, seventh = 7, eighth = 8, ninth = 9, tenth = 10,
+  eleventh = 11, twelfth = 12
 )
 
 extract_image_number <- function(text, type) {
-  ordinal_map <- c(
-    first = 1, second = 2, third = 3, fourth = 4, fifth = 5,
-    sixth = 6, seventh = 7, eighth = 8, ninth = 9, tenth = 10,
-    eleventh = 11, twelfth = 12
-  )
-  if (type %in% c("numbered", "colon", "dash", "standalone", "ordinal",
-                  "image_num", "picture_num", "number_num")) {
-    num <- as.integer(str_extract(text, "\\d+"))
-  } else if (type == "next_one") {
-    num <- -1
-  } else if (str_ends(type, "_one")) {
-    word <- str_remove(type, "_one")
-    num <- ordinal_map[[word]]
-    if (is.null(num)) num <- 0
-  } else {
-    num <- 0
-  }
-  list(num = num, text = text)
+  case_when(
+    type %in% c(
+      "numbered", "colon", "dash", "standalone", "ordinal",
+      "image_num", "picture_num", "number_num"
+    ) ~
+      as.integer(str_extract(text, "\\d+")),
+    type == "next_one" ~ -1L,
+    str_ends(type, "_one") ~ {
+      word <- str_remove(type, "_one")
+      ordinal_map[word] %||% 0L
+    },
+    TRUE ~ 0L
+  ) %>%
+    list(num = ., text = text)
 }
 
 segment_description <- function(text, expected_segments = 12) {
-  segments <- vector("list", expected_segments)
-  for (i in seq_len(expected_segments)) {
-    segments[[i]] <- character(0)
-  }
+  # Initialize segments as a named list
+  segments <- set_names(vector("list", expected_segments), seq_len(expected_segments))
+  segments <- map(segments, ~ character(0))
 
   current_num <- 1
   last_pos <- 1
-  matches <- list()
 
-  for (pat in segment_patterns) {
-    m <- str_match_all(text, regex(pat$pattern, ignore_case = TRUE))[[1]]
-    if (nrow(m) > 0) {
-      for (i in seq_len(nrow(m))) {
-        start <- str_locate_all(text, regex(pat$pattern, ignore_case = TRUE))[[1]][i, 1]
-        end <- str_locate_all(text, regex(pat$pattern, ignore_case = TRUE))[[1]][i, 2]
-        match_text <- m[i, 1]
-        info <- extract_image_number(match_text, pat$type)
-        matches <- append(matches, list(list(start = start, end = end, num = info$num, text = info$text)))
-      }
+  # Find all matches using tidyverse approach
+  matches <- segment_patterns %>%
+    pmap(function(pattern, type) {
+      str_locate_all(text, regex(pattern, ignore_case = TRUE))[[1]] %>%
+        as_tibble() %>%
+        filter(start > 0) %>%
+        mutate(
+          match_text = str_sub(text, start, end),
+          type = type,
+          num = map2_int(match_text, type, ~ extract_image_number(.x, .y)$num)
+        )
+    }) %>%
+    bind_rows() %>%
+    arrange(start)
+
+  # Process matches
+  for (i in seq_len(nrow(matches))) {
+    match_row <- matches[i, ]
+
+    # Add text before match to current segment
+    if (match_row$start > last_pos) {
+      segments[[current_num]] <- c(
+        segments[[current_num]],
+        str_sub(text, last_pos, match_row$start - 1)
+      )
+    }
+
+    # Handle "next" pattern
+    if (match_row$num == -1) {
+      match_row$num <- current_num + 1
+    }
+
+    # Add match to appropriate segment
+    if (match_row$num >= 1 && match_row$num <= expected_segments) {
+      segments[[match_row$num]] <- c(segments[[match_row$num]], match_row$match_text)
+      current_num <- match_row$num
+      last_pos <- match_row$end + 1
     }
   }
 
-  matches <- matches[order(sapply(matches, function(x) x$start))]
-
-  for (m in matches) {
-    if (m$start > last_pos) {
-      segments[[current_num]] <- c(segments[[current_num]], substr(text, last_pos, m$start - 1))
-    }
-    if (m$num == -1) {
-      m$num <- current_num + 1
-    }
-    if (m$num >= 1 && m$num <= expected_segments) {
-      segments[[m$num]] <- c(segments[[m$num]], m$text)
-      current_num <- m$num
-      last_pos <- m$end + 1
-    }
-  }
-
+  # Add remaining text
   if (last_pos <= nchar(text)) {
-    segments[[current_num]] <- c(segments[[current_num]], substr(text, last_pos, nchar(text)))
-  }
-
-  return(sapply(segments, function(x) str_trim(paste(x, collapse = " "))))
-}
-
-load_tangram_boards <- function(board_file) {
-  df <- read_csv(board_file)
-  names(df)[names(df) == "roundNum"] <- "repetitionNum"
-  names(df)[names(df) == "score"] <- "repetitionScore"
-  
-  # Create a named list manually instead of using deframe
-  boards_dict <- list()
-  
-  df_processed <- df %>%
-    group_by(gameid, repetitionNum) %>%
-    slice(1) %>%
-    ungroup() %>%
-    mutate(
-      targets = pmap_chr(select(., starts_with("true")), ~paste(..., sep = ",")),
-      selections = pmap_chr(select(., starts_with("sub")), ~paste(..., sep = ",")),
-      key = paste(gameid, repetitionNum, sep = "_")
-    ) %>%
-    select(key, targets, selections, repetitionScore)
-  
-  # Iterate over rows to build the named list
-  for (i in seq_len(nrow(df_processed))) {
-    row <- df_processed[i, ]
-    boards_dict[[row$key]] <- list(
-      targets = str_split(row$targets, ",")[[1]],
-      selections = str_split(row$selections, ",")[[1]],
-      score = row$repetitionScore
-    )
-  }
-  
-  return(boards_dict)
-}
-
-load_subject_info <- function(subj_file) {
-  read_csv(subj_file) %>%
-    rename(gameid = gameID) %>%
-    select(gameid, nativeEnglish)
-}
-
-apply_exclusions <- function(messages_df, boards_dict, subj_df) {
-  incomplete_games <- messages_df %>%
-    group_by(gameid) %>%
-    summarise(rounds = n_distinct(roundNum)) %>%
-    filter(rounds != 6) %>%
-    pull(gameid)
-
-  non_native_games <- subj_df %>%
-    filter(nativeEnglish != "yes") %>%
-    pull(gameid)
-
-  low_accuracy_games <- unique(messages_df$gameid)
-  low_acc <- vector("character", 0)
-
-  for (gid in low_accuracy_games) {
-    round_keys <- grep(paste0("^", gid, "_"), names(boards_dict), value = TRUE)
-    scores <- sapply(round_keys, function(k) boards_dict[[k]]$score)
-    if (length(scores) == 6 && sum(scores <= 8) >= 4) {
-      low_acc <- c(low_acc, gid)
-    }
-  }
-
-  # Create exclusion data frame and aggregate reasons
-  exclusion_df <- bind_rows(
-    tibble(gameid = incomplete_games, exclusion_reason = "incomplete game"),
-    tibble(gameid = non_native_games, exclusion_reason = "non-native English-speaking participant"),
-    tibble(gameid = low_acc, exclusion_reason = "low accuracy game"),
-    tibble(gameid = "0574-6", exclusion_reason = "incomplete game (manual)")
-  ) %>%
-    group_by(gameid) %>%
-    summarise(
-      exclude = TRUE,
-      exclusion_reason = paste(exclusion_reason, collapse = "; "),  # Combine reasons
-      .groups = "drop"
-    )
-
-  # Add games not in exclusion_df with exclude = FALSE
-  all_games <- unique(messages_df$gameid)
-  missing_games <- setdiff(all_games, exclusion_df$gameid)
-  if (length(missing_games) > 0) {
-    exclusion_df <- bind_rows(
-      exclusion_df,
-      tibble(
-        gameid = missing_games,
-        exclude = FALSE,
-        exclusion_reason = "NA"
-      )
+    segments[[current_num]] <- c(
+      segments[[current_num]],
+      str_sub(text, last_pos, nchar(text))
     )
   }
 
-  return(exclusion_df)
+  # Collapse and clean segments
+  segments %>%
+    map_chr(~ str_trim(str_c(.x, collapse = " ")))
 }
 
-# Helper function to map numeric values to letters (1=A, 2=B, ..., 12=L)
+# Helper function using case_when for cleaner logic
 num_to_letter <- function(num) {
-  letters <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L")
-  if (is.na(num) || num == "" || !is.character(num) || !grepl("^[0-9]+$", num) || as.integer(num) < 1 || as.integer(num) > 12) {
-    return("NA")
-  }
-  letters[as.integer(num)]
+  case_when(
+    is.na(num) | num == "" ~ "NA",
+    !str_detect(as.character(num), "^[0-9]+$") ~ "NA",
+    as.integer(num) < 1 | as.integer(num) > 12 ~ "NA",
+    TRUE ~ LETTERS[as.integer(num)]
+  )
 }
 
-process_game_messages <- function(messages_df, id_cols, boards_dict, exclusion_df) {
-  options <- LETTERS[1:12]
-  option_set <- paste(options, collapse = ";")
-  result <- list()
-  global_trial_num <- 0
-  last_game_id <- ""
+# Data processing workflow
 
-  grouped <- messages_df %>%
-    group_by(across(all_of(id_cols))) %>%
-    summarise(contents = paste(na.omit(contents), collapse = " "),
-              msgTime = first(msgTime), .groups = "drop")
+INPUT_FILE <- "https://raw.githubusercontent.com/hawkrobe/tangrams/master/data/tangrams_unconstrained/message/rawUnconstrainedMessages.csv"
 
-  for (i in seq_len(nrow(grouped))) {
-    row <- grouped[i, ]
-    game_id <- row[[id_cols[1]]]
-    rep_num <- if ("roundNum" %in% id_cols) row$roundNum else 1
-    time_stamp <- if (!is.na(row$msgTime)) as.numeric(row$msgTime) else NA
+BOARD_FILE <- "https://raw.githubusercontent.com/hawkrobe/tangrams/master/data/tangrams_unconstrained/finalBoard/tangramsFinalBoards.csv"
 
-    if (game_id != last_game_id) {
-      global_trial_num <- 0
-      last_game_id <- game_id
-    }
+SUBJ_FILE <- "https://raw.githubusercontent.com/hawkrobe/tangrams/master/data/tangrams_unconstrained/turk/tangrams-subject_information.csv"
 
-    segments <- segment_description(row$contents)
-    key <- paste(game_id, rep_num, sep = "_")
-    if (!key %in% names(boards_dict)) {
-      log_info("Skipping key {key}: not found in boards_dict")
-      next
-    }
+# Load and prepare messages data
+messages_df <- read_csv(INPUT_FILE) %>%
+  rename(role = sender, msgTime = time)
 
-    # Access targets and selections without [[1]] and log their content
-    targets <- boards_dict[[key]]$targets
-    selections <- boards_dict[[key]]$selections
-    log_info("Processing key {key}: targets = {paste(targets, collapse=', ')}, selections = {paste(selections, collapse=', ')}")
+# Load tangram boards
+boards_dict <- read_csv(BOARD_FILE) %>%
+  rename(
+    repetitionNum = roundNum,
+    repetitionScore = score
+  ) %>%
+  group_by(gameid, repetitionNum) |>
+  pivot_longer(c(starts_with("true"), starts_with("sub")), names_to = "type", values_to = "trial_number") |>
+  mutate(
+    source = str_sub(type, 1, -2),
+    tangram = str_sub(type, -1, -1)
+  ) |>
+  select(-type) |>
+  pivot_wider(names_from = source, values_from = tangram) |>
+  rename(targets = true, selections = sub, score = repetitionScore)
 
-    # Check lengths
-    if (length(targets) < length(segments) || length(selections) < length(segments)) {
-      log_warn("Length mismatch for key {key}: segments={length(segments)}, targets={length(targets)}, selections={length(selections)}")
-    }
+# Load subject information
+subj_df <- read_csv(SUBJ_FILE) %>%
+  rename(gameid = gameID) %>%
+  select(gameid, nativeEnglish)
 
-    exclude_info <- exclusion_df %>% filter(gameid == game_id)
-    exclude <- if (nrow(exclude_info) > 0) exclude_info$exclude else FALSE
-    exclusion_reason <- if (nrow(exclude_info) > 0) exclude_info$exclusion_reason else "NA"
+# Apply exclusions
+# Find incomplete games
+incomplete_games <- messages_df %>%
+  count(gameid, roundNum) %>%
+  count(gameid, name = "rounds") %>%
+  filter(rounds != 6) %>%
+  pull(gameid)
 
-    for (j in seq_along(segments)) {
-      global_trial_num <- global_trial_num + 1
+# Find non-native English games
+non_native_games <- subj_df %>%
+  filter(nativeEnglish != "yes") %>%
+  pull(gameid)
 
-      # Use j to index targets and selections, with fallback to "NA" if index exceeds length
-      target_val <- if (j <= length(targets)) targets[j] else NA
-      selection_val <- if (j <= length(selections)) selections[j] else NA
+# Find low accuracy games
+low_accuracy_games <- boards_dict |>
+  select(gameid, repetitionNum, score) |>
+  unique() |>
+  group_by(gameid) |>
+  add_tally() |>
+  ungroup() |>
+  filter(n == 6) |>
+  filter(score < 8) |>
+  group_by(gameid) |>
+  tally() |>
+  filter(n > 3) |>
+  pull(gameid)
 
-      #messages
-      result[[length(result) + 1]] <- tibble(
-        dataset_id = "hawkins2020_characterizing_uncued",
-        condition_label = "unconstrained",
-        full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020)...",
-        short_cite = "Hawkins et al. (2020)",
-        language = "English",
-        game_id = game_id,
-        player_id = paste0(game_id, "_describer"),
-        trial_num = global_trial_num,
-        rep_num = rep_num,
-        room_num=1,
-        stage_num=1,
-        age=as.numeric(NA), # do age later
-        gender=as.character(NA), #do gender later
-        role = "describer",
-        target = num_to_letter(target_val),  # Map target to letter
-        message_number = as.numeric(j),
-        text = ifelse(segments[j] == "", "NA", segments[j]),
-        choice_id = "NA",
-        time_stamp = time_stamp,
-        option_set = option_set,
-        group_size = 2,
-        structure = "thick",
-        exclude = exclude,
-        exclusion_reason = exclusion_reason,
-        action_type = "message",
-        message_irrelevant = FALSE
-      )
+# Create exclusion tibble
+exclusion_df <- tribble(
+  ~gameid, ~exclusion_reason,
+  incomplete_games, "incomplete game",
+  non_native_games, "non-native English-speaking participant",
+  low_accuracy_games, "low accuracy game",
+  "0574-6", "incomplete game (manual)"
+) %>%
+  unnest(cols = c(gameid, exclusion_reason)) %>%
+  group_by(gameid) %>%
+  summarise(
+    exclude = TRUE,
+    exclusion_reason = str_c(exclusion_reason, collapse = "; "),
+    .groups = "drop"
+  ) %>%
+  # Add games not excluded
+  bind_rows(
+    tibble(
+      gameid = setdiff(unique(messages_df$gameid), .$gameid),
+      exclude = FALSE,
+      exclusion_reason = "NA"
+    )
+  )
 
-      #choices
-      result[[length(result) + 1]] <- tibble(
-        dataset_id = "hawkins2020_characterizing_uncued",
-        condition_label = "unconstrained",
-        full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020)...",
-        short_cite = "Hawkins et al. (2020)",
-        language = "English",
-        game_id = game_id,
-        player_id = paste0(game_id, "_matcher"),
-        trial_num = global_trial_num,
-        rep_num = rep_num,
-        room_num=1,
-        stage_num=1,
-        age=as.numeric(NA), # do age later,
-        gender=as.character(NA),
-        role = "matcher",
-        target = num_to_letter(target_val),  # Map target to letter
-        message_number = NA,
-        text = "NA",
-        choice_id = num_to_letter(selection_val),  # Map selection to letter
-        time_stamp = NA,
-        option_set = option_set,
-        group_size = 2,
-        structure = "thick",
-        exclude = exclude,
-        exclusion_reason = exclusion_reason,
-        action_type = "selection",
-        message_irrelevant = NA
-      )
-    }
-  }
+# Process game messages
+id_cols <- c("gameid", "roundNum")
+options <- LETTERS[1:12]
+option_set <- str_c(options, collapse = ";")
 
-  bind_rows(result)
-}
+# Group and collapse messages
+grouped_messages <- messages_df %>%
+  group_by(across(all_of(id_cols))) %>%
+  summarise(
+    contents = str_c(na.omit(contents), collapse = " "),
+    msgTime = first(msgTime),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    segments = map(contents, segment_description),
+    key = str_c(gameid, roundNum, sep = "_")
+  )
 
-load_and_process <- function(input_file, board_file, subj_file, output_file) {
-  messages_df <- read_csv(input_file) %>%
-    rename(role = sender, msgTime = time)
 
-  boards_dict <- load_tangram_boards(board_file)
-  subj_df <- load_subject_info(subj_file)
-  exclusion_df <- apply_exclusions(messages_df, boards_dict, subj_df)
+clean_messages <- grouped_messages |>
+  # Filter out keys not in boards_dict
+  # filter(key %in% names(boards_dict)) %>%
+  # Add trial numbering
+  arrange(gameid, roundNum) %>%
+  # Expand segments
+  mutate(segment_id = row_number()) %>%
+  unnest_longer(segments, indices_to = "trial_number") %>%
+  mutate(trial_number = as.numeric(trial_number)) |>
+  rename(repetitionNum = roundNum) |>
+  left_join(boards_dict, by = c("gameid", "trial_number", "repetitionNum")) |>
+  left_join(exclusion_df, by = "gameid") %>%
+  replace_na(list(exclude = FALSE, exclusion_reason = "NA"))
 
-  if (!"roundNum" %in% colnames(messages_df)) {
-    messages_df$roundNum <- 1
-  }
+# Create message and choice rows
+message_rows <- clean_messages |>
+  select(
+    gameid, repetitionNum, segments, msgTime,
+    trial_number, targets, exclude, exclusion_reason
+  ) |>
+  filter(!is.na(targets)) |>
+  mutate(
+    role = "describer",
+    action_type = "message",
+    time_stamp = as.numeric(msgTime),
+    message_irrelevant = F,
+    message_number = 1
+  )
 
-  id_cols <- c("gameid", "roundNum")
-  result_df <- process_game_messages(messages_df, id_cols, boards_dict, exclusion_df)
+choice_rows <- clean_messages %>%
+  select(
+    gameid, repetitionNum, segments, msgTime,
+    trial_number, targets, selections, exclude, exclusion_reason
+  ) |>
+  filter(!is.na(selections)) |>
+  filter(!is.na(targets)) |>
+  mutate(role = "matcher", action_type = "selection")
 
-  write_csv(result_df, output_file)
-  result_df
-}
 
-# Example execution
-INPUT_FILE <- "import/hawkins_dynamics_free/raw_data/rawUnconstrainedMessages.csv"
-# https://github.com/hawkrobe/tangrams/blob/master/data/tangrams_unconstrained/message/rawUnconstrainedMessages.csv
-
-BOARD_FILE <- "import/hawkins_dynamics_free/raw_data/tangramsFinalBoards.csv"
-# https://github.com/hawkrobe/tangrams/blob/master/data/tangrams_unconstrained/finalBoard/tangramsFinalBoards.csv
-
-SUBJ_FILE <- "import/hawkins_dynamics_free/raw_data/tangrams-subject_information.csv"
-# https://github.com/hawkrobe/tangrams/blob/master/data/tangrams_unconstrained/turk/tangrams-subject_information.csv
-
-OUTPUT_FILE <- "import/hawkins_dynamics_free/segmented_data.csv"
-
-cat("Starting tangrams description segmentation for refbank-import...\n")
-result <- load_and_process(INPUT_FILE, BOARD_FILE, SUBJ_FILE, OUTPUT_FILE)
-cat("Segmentation completed successfully!\n")
-print(head(result, 24))
-
+result <- bind_rows(message_rows, choice_rows) %>%
+  mutate(
+    dataset_id = "hawkins2020_characterizing_uncued",
+    condition_label = "unconstrained",
+    full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",
+    short_cite = "Hawkins et al. (2020)",
+    language = "English",
+    game_id = gameid,
+    player_id = str_c(gameid, "_", role),
+    trial_num = trial_number + 12 * (as.numeric(repetitionNum) - 1),
+    rep_num = repetitionNum,
+    room_num = 1,
+    stage_num = 1,
+    age = as.numeric(NA),
+    gender = as.character(NA),
+    native_language = as.character(NA),
+    race = as.character(NA),
+    education = as.character(NA),
+    target = targets,
+    text = "NA",
+    choice_id = selections,
+    option_set = option_set,
+    group_size = 2,
+    prior_relationship = "no",
+    population = "adult",
+    partner_constancy = "yes",
+    role_constancy = "yes",
+    confederates = "no",
+    modality = "written",
+    feedback = "full",
+    backchannel = "full",
+    order_match = "order",
+  ) |>
+  arrange(game_id, trial_num, desc(action_type)) |>
+  mutate(trial_num = as.numeric(trial_num)) |>
+  select(-gameid, -msgTime, -repetitionNum, -segments, -trial_number, -targets, -selections)
 
 source(here("validate.R"))
-
-validate_dataset(result, write=T)
+validate_dataset(result, write = T)
 # nolint end
-
-

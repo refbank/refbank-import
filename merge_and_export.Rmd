@@ -51,8 +51,6 @@ Mark with dataset IDs
 # options to get trials / choices / messages for all datasets
 dataset_names <- list.dirs(DATA_LOC, full.names = FALSE) |>
   stri_remove_empty()
-
-dataset_names <- dataset_names[-8]
 ```
 
 
@@ -127,7 +125,7 @@ trials <- trials |> mutate(option_size = option_set |> str_split(";") |>
   lengths())
 
 assert_that(max(trials$option_size) == 16) # change these as datasets change, but we're trying to rule out screw ups that make it like 96 or something absurd
-assert_that(min(trials$option_size) == 4)
+assert_that(min(trials$option_size) == 2)
 ```
 
 Conditions & datasets
@@ -486,7 +484,7 @@ con <- redivis$user("mcfrank")$dataset("refbank:2zy7")
 dataset <- con$create_next_version(if_not_exists = T)
 
 
-dataset$table("per_game_summary")$create()
+# dataset$table("per_game_summary")$create()
 
 dataset$release()
 ```

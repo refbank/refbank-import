@@ -11,6 +11,10 @@ F,tangram,page-F,page-F.svg
 I,tangram,page-I,page-I.svg
 E,tangram,page-E,page-E.svg
 J,tangram,page-J,page-J.svg
+hold,tangram,NA,I1.jpg
+walk,tangram,NA,B1.jpg
+swim,tangram,NA,D1.jpg
+jump,tangram,NA,E1.jpg
 page2-136,tangram,page2-136,page2-136.svg
 page7-79,tangram,page7-79,page7-79.svg
 page6-52,tangram,page6-52,page6-52.svg
@@ -1155,6 +1159,16 @@ COCO_val2014_000000260182.jpg,photograph,NA,NA
 COCO_val2014_000000181249.jpg,photograph,NA,NA
 COCO_val2014_000000204360.jpg,photograph,NA,NA
 COCO_val2014_000000072050.jpg,photograph,NA,NA
+K1,tangram,NA,K1.jpg
+C1,tangram,NA,C1.jpg
+I1,tangram,NA,I1.jpg
+E1,tangram,NA,E1.jpg
+H1,tangram,NA,H1.jpg
+B1,tangram,NA,B1.jpg
+G1,tangram,NA,G1.jpg
+A1,tangram,NA,A1.jpg
+D1,tangram,NA,D1.jpg
+F1,tangram,NA,F1.jpg
 /tangrams/343_157.png,tangram,NA,NA
 /tangrams/336_402.png,tangram,NA,NA
 /tangrams/189_405.png,tangram,NA,NA
