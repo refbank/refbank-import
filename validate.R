@@ -77,6 +77,12 @@ validate_dataset <- function(df, write = F) {
     stop()
   }
 
+  assert_that(all(df$trial_num > 0), msg = "trial_num is 1 indexed")
+  assert_that(all(df$rep_num > 0), msg = "rep_num is 1 indexed")
+  assert_that(all(df$stage_num > 0), msg = "stage_num is 1 indexed")
+
+
+
   assert_that(all(df$action_type %in% c("message", "selection")),
     msg = "action_type must be message or selection"
   )

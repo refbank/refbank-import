@@ -18,14 +18,13 @@ expt_1_messages <- read_csv(url(expt_1_transcript)) |>
   ungroup() |>
   mutate(
     trialNum = trial - 1,
-    repNum = (trialNum - 1) %/% 4,
     action_type = "message",
     message_irrelevant = ifelse(is.na(description), T, F),
     role = ifelse(role == "S", "describer", "matcher")
   ) |>
   filter(trialNum > 0) |>
   select(game,
-    playerId = speaker, role, trialNum, repNum, action_type,
+    playerId = speaker, role, trialNum, action_type,
     message_number, text, message_irrelevant
   )
 
@@ -34,7 +33,6 @@ expt_1_choices <- read_csv(url(expt_1_responses)) |>
   select(game, trialNum, response, listener, distractor, target) |>
   mutate(
     trialNum = trialNum - 1,
-    repNum = (trialNum - 1) %/% 4
   ) |>
   rename(playerId = listener, choice_id = response) |>
   mutate(choice_id = ifelse(is.na(choice_id), "timed_out", choice_id)) |>
@@ -48,7 +46,6 @@ expt_1_no_talk <- read_csv(url(expt_1_responses)) |>
   select(game, trialNum, response, speaker) |>
   mutate(
     trialNum = trialNum - 1,
-    repNum = (trialNum - 1) %/% 4
   ) |>
   anti_join(expt_1_messages) |>
   mutate(text = NA, playerId = speaker, role = "describer", action_type = "message")
@@ -97,14 +94,13 @@ expt_2_messages <- read_csv(url(expt_2_transcript)) |>
   ungroup() |>
   mutate(
     trialNum = trial - 3,
-    repNum = (trialNum - 1) %/% 4,
     action_type = "message",
     message_irrelevant = ifelse(is.na(description), T, F),
     role = ifelse(role == "S", "describer", "matcher")
   ) |>
   filter(trialNum > 0) |>
   select(game, gameId,
-    playerId = speaker, role, trialNum, repNum, action_type,
+    playerId = speaker, role, trialNum, action_type,
     message_number, text, message_irrelevant
   ) |>
   left_join(id_sub) |>
@@ -125,7 +121,6 @@ expt_2_choices <- read_csv(url(expt_2_responses)) |>
   select(gameId, trialNum, response, listener, target, distractor) |>
   mutate(
     trialNum = trialNum - 3,
-    repNum = (trialNum - 1) %/% 4
   ) |>
   rename(playerId = listener, choice_id = response) |>
   mutate(action_type = "selection", role = "matcher") |>
@@ -146,7 +141,6 @@ expt_2_no_talk <- read_csv(url(expt_2_responses)) |>
   left_join(expt_2_game_mapping) |>
   mutate(
     trialNum = trialNum - 3,
-    repNum = (trialNum - 1) %/% 4
   ) |>
   anti_join(expt_2_messages) |>
   mutate(text = NA, playerId = speaker, role = "describer", action_type = "message")
@@ -155,7 +149,6 @@ echoing <- read_csv(url(expt_2_transcript)) |>
   filter(!is.na(echo)) |>
   mutate(
     trialNum = trial - 3,
-    repNum = (trialNum - 1) %/% 4
   ) |>
   filter(trialNum > 0) |>
   select(game = gameConfig, trialNum) |>
@@ -219,13 +212,13 @@ all_fixed <- all |>
 
 
 missing_describers <- all_fixed |>
-  select(game_id, repNum, trial_num, condition_label, target, option_set) |>
+  select(game_id, trial_num, condition_label, target, option_set) |>
   unique() |>
   left_join(all_fixed |> filter(role == "describer")) |>
   filter(is.na(role)) |>
   mutate(role = "describer") |>
   mutate(trial_parity = trial_num %% 2 == 0) |>
-  select(trial_parity, repNum, trial_num, condition_label, game_id, role, target, option_set) |>
+  select(trial_parity, trial_num, condition_label, game_id, role, target, option_set) |>
   left_join(all_fix_role) |>
   mutate(action_type = "message")
 
@@ -249,17 +242,19 @@ fixed <- all_fixed |>
     order_match = "match",
     room_num = 1,
     stage_num = 1,
+    rep_num = (trial_num - 1) %/% 4 + 1,
     time_stamp = as.numeric(NA),
     native_language = as.character(NA),
     message_number = as.numeric(message_number),
     game_id = str_c(condition_label, "_", game_id),
   ) |>
-  select(dataset_id, full_cite, short_cite, group_size, language, condition_label,
+  select(
+    dataset_id, full_cite, short_cite, group_size, language, condition_label,
     prior_relationship, partner_constancy, population, role_constancy,
     confederates, modality, feedback, backchannel, order_match,
     game_id, room_num, option_set,
     trial_num,
-    rep_num = repNum, stage_num, action_type, target,
+    rep_num, stage_num, action_type, target,
     exclude, exclusion_reason,
     role, time_stamp,
     native_language, player_id, age, gender, race, education,
@@ -272,4 +267,4 @@ fixed <- all_fixed |>
 
 
 
-validate_dataset(fixed, write=T)
+validate_dataset(fixed, write = T)
