@@ -163,7 +163,9 @@ boards_dict <- read_csv(BOARD_FILE) %>%
 # Load subject information
 subj_df <- read_csv(SUBJ_FILE) %>%
   rename(gameid = gameID) %>%
-  select(gameid, nativeEnglish)
+  mutate(role = ifelse(role == "director", "describer", role)) %>%
+  select(gameid, nativeEnglish, role) %>%
+  mutate()
 
 # Apply exclusions
 # Find incomplete games
@@ -274,7 +276,8 @@ choice_rows <- clean_messages %>%
   mutate(role = "matcher", action_type = "selection")
 
 
-result <- bind_rows(message_rows, choice_rows) %>%
+result <- bind_rows(message_rows, choice_rows) |>
+  left_join(select(subj_df, "gameid", "role", "nativeEnglish")) %>%
   mutate(
     dataset_id = "hawkins2020_characterizing_uncued",
     condition_label = "unconstrained",
@@ -289,7 +292,7 @@ result <- bind_rows(message_rows, choice_rows) %>%
     stage_num = 1,
     age = as.numeric(NA),
     gender = as.character(NA),
-    native_language = as.character(NA),
+    native_language = ifelse(nativeEnglish == tolower("yes"), "English", NA),
     race = as.character(NA),
     education = as.character(NA),
     target = targets,
@@ -309,7 +312,7 @@ result <- bind_rows(message_rows, choice_rows) %>%
   ) |>
   arrange(game_id, trial_num, desc(action_type)) |>
   mutate(trial_num = as.numeric(trial_num)) |>
-  select(-gameid, -msgTime, -repetitionNum, -segments, -trial_number, -targets, -selections)
+  select(-gameid, -msgTime, -repetitionNum, -segments, -trial_number, -targets, -selections, -nativeEnglish)
 
 source(here("validate.R"))
 validate_dataset(result, write = T)
