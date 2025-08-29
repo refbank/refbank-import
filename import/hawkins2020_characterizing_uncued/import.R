@@ -164,7 +164,7 @@ boards_dict <- read_csv(BOARD_FILE) %>%
 subj_df <- read_csv(SUBJ_FILE) %>%
   rename(gameid = gameID) %>%
   mutate(role = ifelse(role == "director", "describer", role)) %>%
-  select(gameid, nativeEnglish, role)
+  select(gameid, role, nativeEnglish)
 
 # Apply exclusions
 # Find incomplete games
@@ -275,7 +275,7 @@ choice_rows <- clean_messages %>%
   mutate(role = "matcher", action_type = "selection")
 
 
-result <- bind_rows(message_rows, choice_rows) |>
+result <- bind_rows(message_rows, choice_rows) %>%
   left_join(select(subj_df, "gameid", "role", "nativeEnglish")) %>%
   mutate(
     dataset_id = "hawkins2020_characterizing_uncued",
