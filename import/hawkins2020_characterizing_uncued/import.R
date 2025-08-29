@@ -164,8 +164,7 @@ boards_dict <- read_csv(BOARD_FILE) %>%
 subj_df <- read_csv(SUBJ_FILE) %>%
   rename(gameid = gameID) %>%
   mutate(role = ifelse(role == "director", "describer", role)) %>%
-  select(gameid, nativeEnglish, role) %>%
-  mutate()
+  select(gameid, nativeEnglish, role)
 
 # Apply exclusions
 # Find incomplete games
