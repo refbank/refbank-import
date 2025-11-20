@@ -4,6 +4,9 @@ library(jsonlite)
 source(here("validate.R"))
 ###### read in data from github
 url <- "https://raw.githubusercontent.com/vboyce/multiparty-tangrams/main/"
+
+source(here("import/boyce2024_interaction/process_pilots.R"))
+
 one_chat <- read_csv(str_c(url, "data/study1/filtered_chat.csv")) |> mutate(rotate = str_c(as.character(numPlayers), "_rotate"))
 two_a_chat <- read_csv(str_c(url, "data/study2a/filtered_chat.csv")) |> mutate(rotate = "no_rotate")
 two_b_chat <- read_csv(str_c(url, "data/study2b/filtered_chat.csv")) |>
@@ -35,7 +38,8 @@ all_include <- one_round_include |>
   rbind(two_b_round_include) |>
   rbind(two_c_round_include) |>
   rbind(three_round_include) |>
-  mutate(include = T)
+  mutate(include = T) |>
+  bind_rows(pilot_include)
 
 
 options <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L")
@@ -45,6 +49,7 @@ combined_chat <- one_chat |>
   rbind(two_a_chat) |>
   rbind(two_b_chat) |>
   rbind(two_c_chat) |>
+  rbind(pilot_chat) |>
   mutate(activePlayerCount = NA) |>
   rename(condition = rotate) |>
   rbind(three_chat) |>
@@ -74,9 +79,10 @@ combined_results <- one_round_results |>
   rbind(two_a_round_results) |>
   rbind(two_b_round_results) |>
   rbind(two_c_round_results) |>
+  bind_rows(pilot_round_results) |>
   mutate(activePlayerCount = NA) |>
   rename(condition = rotate) |>
-  rbind(three_round_results) |>
+  bind_rows(three_round_results) |>
   mutate(
     choice_id = gsub("/experiment/tangram_", "", response, fixed = TRUE),
     choice_id = gsub(".png", "", choice_id, fixed = TRUE)
@@ -96,7 +102,7 @@ choices <- combined_results |>
     choice_id = case_when(
       choice_id %in% options ~ choice_id, # if there's a choice, keep it
       is.na(lasttrialNum) ~ NA, # if there's never a choice, NA
-      trialNum < lasttrialNum + 1 ~ NA, # if it's more than one after the last choice, NA
+      trialNum > lasttrialNum + 1 ~ NA, # if it's more than one after the last choice, NA
       T ~ "timed_out"
     ), # otherwise, it's a timed_out
     time = case_when(
@@ -116,13 +122,16 @@ choices <- combined_results |>
 
 #### exclusions
 
-# missing describers: there are trials where a describer talks but nothing else happens, we're going to exclude
+# missing describers: there are trials where a matcher talks but nothing else happens, we're going to exclude
 good_chat <- combined_chat |> inner_join(combined_chat |> filter(role == "describer") |> select(gameId, trialNum) |> unique())
 
+# exclude trials where there is no describer talking
+good_choices <- choices |> inner_join(combined_chat |> filter(role == "describer") |> select(gameId, trialNum) |> unique())
 
 
 
-all_data <- choices |>
+
+all_data <- good_choices |>
   bind_rows(good_chat) |>
   left_join(all_include) |>
   mutate(
@@ -167,8 +176,16 @@ all_data <- choices |>
     room_num = 1,
     stage_num = 1,
     language = "English",
-    exclude = ifelse(is.na(include), T, NA),
-    exclusion_reason = ifelse(exclude, "incomplete block", NA),
+    exclude = case_when(
+      is.na(include) ~ T,
+      include == F ~ T,
+      T ~ NA
+    ),
+    exclusion_reason = case_when(
+      include == F ~ "pilot", # this is only used for pilot data
+      exclude ~ "incomplete block",
+      T ~ NA
+    ),
     message_irrelevant = (is.chitchat == 1),
     message_number = as.numeric(message_number),
     population = "adult"

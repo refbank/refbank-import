@@ -1,6 +1,8 @@
 library(tidyverse)
 library(here)
 
+pilotb <- read_csv(url("https://raw.githubusercontent.com/vboyce/multiparty-tangrams/refs/heads/main/data/pilotB/player-inputs.csv"))
+pilotc <- read_csv(url("https://raw.githubusercontent.com/vboyce/multiparty-tangrams/refs/heads/main/data/pilotC/player-inputs.csv"))
 study_3 <- read_csv(url("https://raw.githubusercontent.com/vboyce/multiparty-tangrams/refs/heads/main/data/study3/player-inputs.csv"))
 study_2c <- read_csv(url("https://raw.githubusercontent.com/vboyce/multiparty-tangrams/refs/heads/main/data/study2c/player-inputs.csv"))
 study_2b <- read_csv(url("https://raw.githubusercontent.com/vboyce/multiparty-tangrams/refs/heads/main/data/study2b/player-inputs.csv")) |>
@@ -12,7 +14,7 @@ study_1a <- read_csv(url("https://raw.githubusercontent.com/vboyce/multiparty-ta
 
 
 female_equivalent <- c("female", "Female", "F", "f", "femal", "Femal", "Woman", "woman", "FEMALE", "trans female", "demigirl")
-male_equivalent <- c("Male", "male", "MALE", "Malw", "Man", "Cis man", "M", "m", "mALE", "man")
+male_equivalent <- c("Male", "male", "MALE", "Malw", "Man", "Cis man", "M", "m", "mALE", "man", "<a;e")
 nb_equivalent <- c("Nonbinary", "NB", "Genderqueer", "Non-Binary", "Non-binary", "nonbinary", "Agender", "Genderfluid")
 
 # goal for language is that a case_insensitive str_detect() would work
