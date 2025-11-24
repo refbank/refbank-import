@@ -1,0 +1,221 @@
+# Load Libraries
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(readr)
+library(purrr)
+library(here)
+library(fs)
+
+# DATA STRUCTURE NOTES (from email) 
+# File naming: tan[round].[dyad].dat
+# Columns (multivariate time series):
+#   1. tangram_mouse: tangram moused over by matcher (1-6 valid, -1 = failed mouse data)
+#   2. correct_tangram: the correct tangram number (1-6)
+#   3. turn_time: time in milliseconds
+#   4. director_eye: tangram fixated by director (1-6 valid, 10 = not fixating, 11 = tracker lost)
+#   5. matcher_eye: tangram fixated by matcher (1-6 valid, 10 = not fixating, 11 = tracker lost)
+# Each row is a time sample (not a trial)
+# No transcripts available - study focused on perceptuomotor dynamics
+
+# Set Metadata
+dataset_id <- "dale2011_tangram"
+full_cite  <- "Dale, R., Kirkham, N. Z., & Richardson, D. C. (2011). How two people become a tangram recognition system. In Proceedings of the European Conference on Computer-Supported Cooperative Work."
+short_cite <- "Dale et al. (2011)"
+group_size <- 2
+language   <- "English"
+prior_relationship <- "no"
+partner_constancy  <- "yes"
+population         <- "adults"
+role_constancy     <- "yes"
+confederates       <- "no"
+modality           <- "oral-in-person"
+feedback           <- "none"
+backchannel        <- "none"
+
+# Helper to Read a .dat File
+read_tangram_dat <- function(path) {
+  tryCatch({
+    df <- read_table(path, 
+                     col_names = FALSE, 
+                     show_col_types = FALSE,
+                     col_types = "ddddd",
+                     progress = FALSE)
+    
+    if (ncol(df) != 5) {
+      warning("Expected 5 columns in ", basename(path), ", got ", ncol(df))
+    }
+    
+    colnames(df) <- c("tangram_mouse", "correct_tangram", "turn_time", "director_eye", "matcher_eye")
+    return(df)
+  }, error = function(e) {
+    warning("Error reading ", basename(path), ": ", e$message)
+    return(tibble(
+      tangram_mouse = numeric(0),
+      correct_tangram = numeric(0),
+      turn_time = numeric(0),
+      director_eye = numeric(0),
+      matcher_eye = numeric(0)
+    ))
+  })
+}
+
+# Find All .dat Files 
+data_dir <- "/Users/Fiona/refbank-import/import/dale2011_tangram/raw_data/tangram_rounds"
+dat_files <- dir_ls(data_dir, regexp = "\\.dat$")
+
+# Extract Info and Harmonize 
+cat("Found", length(dat_files), ".dat files to process...\n")
+
+# Read all files and add metadata
+all_data <- map_dfr(dat_files, function(file) {
+  m <- str_match(basename(file), "^tan(\\d+)\\.(\\d+)\\.dat$")
+  round_num <- as.numeric(m[2])
+  dyad_id   <- as.numeric(m[3])
+  
+  cat(".")
+  
+  df <- read_tangram_dat(file)
+  
+  if (nrow(df) == 0) return(NULL)
+  
+  df %>%
+    mutate(
+      round_num = round_num,
+      dyad_id = dyad_id
+    )
+})
+
+cat("\n")
+
+# Create matcher selections (only valid tangram selections 1-6)
+matcher_df <- all_data %>%
+  filter(tangram_mouse %in% c(1, 2, 3, 4, 5, 6)) %>%
+  group_by(dyad_id) %>%
+  mutate(
+    trial_num = row_number(),
+    condition_label   = paste0("tangram_round_", round_num),
+    dataset_id        = dataset_id,
+    full_cite         = full_cite,
+    short_cite        = short_cite,
+    group_size        = group_size,
+    language          = language,
+    prior_relationship = prior_relationship,
+    partner_constancy  = partner_constancy,
+    population         = population,
+    role_constancy     = role_constancy,
+    confederates       = confederates,
+    modality           = modality,
+    feedback           = feedback,
+    backchannel        = backchannel,
+    game_id           = paste0("dyad", dyad_id),
+    room_num          = 1,
+    option_set        = "1;2;3;4;5;6",
+    target            = as.character(correct_tangram),
+    rep_num           = round_num,
+    stage_num         = 1,
+    exclude           = FALSE,
+    exclusion_reason  = "",
+    order_match       = "order",
+    action_type       = "selection",
+    player_id         = paste0("dyad", dyad_id, "_matcher"),
+    role              = "matcher",
+    time_stamp        = as.numeric(turn_time) / 1000,
+    age               = NA_real_,
+    gender            = "unknown",
+    native_language   = NA_character_,
+    race              = NA_character_,
+    education         = NA_character_,
+    text              = NA_character_,
+    message_number    = NA_real_,
+    message_irrelevant = FALSE,
+    choice_id         = as.character(tangram_mouse)
+  ) %>%
+  ungroup()
+
+# Add describer entries (one per trial) for validation
+describer_df <- matcher_df %>%
+  select(condition_label, dataset_id, full_cite, short_cite, group_size, language,
+         prior_relationship, partner_constancy, population, role_constancy,
+         confederates, modality, feedback, backchannel,
+         game_id, room_num, option_set, target, trial_num, rep_num, stage_num,
+         exclude, exclusion_reason, order_match, dyad_id) %>%
+  distinct() %>%
+  mutate(
+    action_type       = "message",
+    player_id         = paste0("dyad", dyad_id, "_describer"),
+    role              = "describer",
+    time_stamp        = NA_real_,
+    age               = NA_real_,
+    gender            = "unknown",
+    native_language   = NA_character_,
+    race              = NA_character_,
+    education         = NA_character_,
+    text              = NA_character_,
+    message_number    = NA_real_,
+    message_irrelevant = FALSE,
+    choice_id         = NA_character_
+  ) %>%
+  select(-dyad_id)
+
+# Combine matcher selections and describer entries
+harmonized_df <- bind_rows(
+  matcher_df %>% select(-dyad_id, -round_num, -tangram_mouse, 
+                        -correct_tangram, -turn_time, -director_eye, -matcher_eye),
+  describer_df
+) %>%
+  select(
+    condition_label, dataset_id, full_cite, short_cite, group_size, language,
+    prior_relationship, partner_constancy, population, role_constancy,
+    confederates, modality, feedback, backchannel,
+    game_id, room_num, option_set, target, trial_num, rep_num, stage_num,
+    exclude, exclusion_reason, order_match,
+    action_type, player_id, role, time_stamp, age, gender, native_language,
+    race, education, text, message_number, message_irrelevant, choice_id
+  )
+
+# Save Harmonized Data 
+write_csv(harmonized_df, "import/dale2011_tangram/dale2011_tangram_harmonized.csv", na = "")
+
+# Validation 
+source("validate.R")
+df <- read_csv("import/dale2011_tangram/dale2011_tangram_harmonized.csv", show_col_types = FALSE)
+
+# Fix column types
+df <- df %>%
+  mutate(
+    group_size = as.numeric(group_size),
+    room_num = as.numeric(room_num),
+    trial_num = as.numeric(trial_num),
+    rep_num = as.numeric(rep_num),
+    stage_num = as.numeric(stage_num),
+    time_stamp = as.numeric(time_stamp),
+    message_number = as.numeric(message_number),
+    age = as.numeric(age),
+    prior_relationship = as.character(prior_relationship),
+    partner_constancy = as.character(partner_constancy),
+    population = as.character(population),
+    role_constancy = as.character(role_constancy),
+    confederates = as.character(confederates),
+    modality = as.character(modality),
+    feedback = as.character(feedback),
+    backchannel = as.character(backchannel),
+    order_match = as.character(order_match),
+    dataset_id = as.character(dataset_id),
+    full_cite = as.character(full_cite),
+    short_cite = as.character(short_cite),
+    language = as.character(language),
+    option_set = as.character(option_set),
+    exclusion_reason = as.character(exclusion_reason),
+    action_type = as.character(action_type),
+    player_id = as.character(player_id),
+    role = as.character(role),
+    text = as.character(text),
+    gender = as.character(gender),
+    native_language = as.character(native_language),
+    race = as.character(race),
+    education = as.character(education),
+    choice_id = as.character(choice_id)
+  )
+
+validate_dataset(df, write = TRUE)
