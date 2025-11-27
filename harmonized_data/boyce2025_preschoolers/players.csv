@@ -1,107 +1,213 @@
 age,gender,native_language,race,education,player_id
-4.916666666666667,female,NA,black,NA,1
-5.25,female,NA,white,NA,2
-4.25,female,NA,white,NA,3
-5.583333333333333,male,NA,hispanicmixed,NA,4
-5.333333333333333,male,NA,white,NA,5
-4.583333333333333,male,NA,mixed,NA,6
-4.333333333333333,male,NA,mixed,NA,7
-5,male,NA,mixed,NA,8
-5.833333333333333,male,NA,black,NA,9
-4.416666666666667,male,NA,white,NA,10
-5.416666666666667,female,NA,white,NA,11
-5.416666666666667,male,NA,asian,NA,12
-4.083333333333333,female,NA,white,NA,13
-4.333333333333333,female,NA,white,NA,14
-4.25,female,NA,asian,NA,15
-4.583333333333333,female,NA,mixed,NA,16
-4.416666666666667,female,NA,mixed,NA,17
-5.416666666666667,female,NA,other,NA,18
-4.166666666666667,male,NA,asian,NA,19
-4.25,female,NA,asian,NA,20
-4.666666666666667,female,NA,asian,NA,21
-4.166666666666667,male,NA,hispanicmixed,NA,22
-4.416666666666667,male,NA,asian,NA,23
-4.916666666666667,female,NA,mixed,NA,24
-4.333333333333333,female,NA,white,NA,25
-4.666666666666667,female,NA,black,NA,26
-4,male,NA,other,NA,27
-5.083333333333333,female,NA,mixed,NA,28
-4.833333333333333,female,NA,white,NA,29
-5.416666666666667,male,NA,other,NA,30
-5.583333333333333,female,NA,white,NA,31
-4.75,female,NA,hispanicmixed,NA,32
-5.166666666666667,male,NA,white,NA,33
-4.916666666666667,male,NA,mixed,NA,34
-5.75,male,NA,white,NA,35
-4,female,NA,NaN,NA,36
-5.333333333333333,female,NA,asian,NA,37
-4,male,NA,asian,NA,38
-5.583333333333333,male,NA,hispanicwhite,NA,39
-4,male,NA,asian,NA,40
-4.583333333333333,female,NA,mixed,NA,41
-4.333333333333333,female,NA,asian,NA,42
-5.5,male,NA,other,NA,43
-5.083333333333333,male,NA,asian,NA,44
-NA,NA,NA,NA,NA,45
-NA,NA,NA,NA,NA,46
-NA,NA,NA,NA,NA,47
-NA,NA,NA,NA,NA,48
-NA,NA,NA,NA,NA,49
-NA,NA,NA,NA,NA,50
-NA,NA,NA,NA,NA,51
-NA,NA,NA,NA,NA,52
-NA,NA,NA,NA,NA,53
-NA,NA,NA,NA,NA,54
-NA,NA,NA,NA,NA,55
-NA,NA,NA,NA,NA,56
-NA,NA,NA,NA,NA,57
-NA,NA,NA,NA,NA,58
-NA,NA,NA,NA,NA,59
-NA,NA,NA,NA,NA,60
-NA,NA,NA,NA,NA,61
-NA,NA,NA,NA,NA,62
-NA,NA,NA,NA,NA,63
-NA,NA,NA,NA,NA,64
-NA,NA,NA,NA,NA,65
-NA,NA,NA,NA,NA,66
-4.333333333333333,female,NA,mixed,NA,67
-4,female,NA,mixed,NA,68
-5.166666666666667,male,NA,hispanicwhite,NA,69
-4.75,male,NA,hispanicmixed,NA,70
-5.25,female,NA,asian,NA,71
-5.666666666666667,female,NA,asian,NA,72
-4.666666666666667,male,NA,asian,NA,73
-4.083333333333333,male,NA,asian,NA,74
-NA,NA,NA,NA,NA,75
-NA,NA,NA,NA,NA,76
-5.75,male,NA,mixed,NA,77
-4.833333333333333,male,NA,white,NA,78
-4.833333333333333,female,NA,white,NA,79
-4.5,male,NA,mixed,NA,80
-4.583333333333333,male,NA,asian,NA,81
-4.916666666666667,female,NA,NaN,NA,82
-4.916666666666667,female,NA,hispanicmixed,NA,83
-5.25,female,NA,white,NA,84
-4.25,male,NA,NaN,NA,85
-4,male,NA,asian,NA,86
-4.916666666666667,male,NA,other,NA,87
-4.166666666666667,male,NA,white,NA,88
-4.333333333333333,female,NA,NaN,NA,89
-4.166666666666667,female,NA,white,NA,90
-4.416666666666667,female,NA,NaN,NA,91
-4.166666666666667,female,NA,mixed,NA,92
-5.75,male,NA,asian,NA,93
-4.333333333333333,female,NA,asian,NA,94
-4.333333333333333,male,NA,mixed,NA,95
-4.333333333333333,male,NA,white,NA,96
-4.666666666666667,male,NA,asian,NA,97
-4.333333333333333,male,NA,hispanicother,NA,98
-5.083333333333333,female,NA,mixed,NA,99
-4.083333333333333,female,NA,other,NA,100
-NA,NA,NA,NA,NA,101
-4.916666666666667,male,NA,other,NA,102
-5.25,male,NA,other,NA,103
-NA,NA,NA,NA,NA,104
-NA,NA,NA,NA,NA,105
-4.833333333333333,male,NA,mixed,NA,106
+NA,NA,NA,NA,preschool,1
+NA,NA,NA,NA,preschool,2
+NA,NA,NA,NA,preschool,3
+NA,NA,NA,NA,preschool,4
+NA,NA,NA,NA,preschool,5
+NA,NA,NA,NA,preschool,6
+NA,NA,NA,NA,preschool,7
+NA,NA,NA,NA,preschool,8
+NA,NA,NA,NA,preschool,9
+4.916666666666667,female,NA,black ,preschool,10
+5.25,female,NA,white ,preschool,11
+4.25,female,NA,white ,preschool,12
+5.583333333333333,male,NA,mixed hispanic,preschool,13
+4.583333333333333,male,NA,mixed ,preschool,14
+5.333333333333333,male,NA,white ,preschool,15
+4.333333333333333,male,NA,mixed ,preschool,16
+5,male,NA,mixed ,preschool,17
+5.833333333333333,male,NA,black ,preschool,18
+4.416666666666667,male,NA,white ,preschool,19
+5.416666666666667,female,NA,white ,preschool,20
+5.416666666666667,male,NA,asian ,preschool,21
+4.083333333333333,female,NA,white ,preschool,22
+4.333333333333333,female,NA,white ,preschool,23
+4.25,female,NA,asian ,preschool,24
+4.583333333333333,female,NA,mixed ,preschool,25
+4.416666666666667,female,NA,mixed ,preschool,26
+5.416666666666667,female,NA,other ,preschool,27
+4.166666666666667,male,NA,asian ,preschool,28
+4.25,female,NA,asian ,preschool,29
+4.666666666666667,female,NA,asian ,preschool,30
+4.166666666666667,male,NA,mixed hispanic,preschool,31
+NA,NA,NA,NA,preschool,32
+NA,NA,NA,NA,preschool,33
+4.916666666666667,female,NA,mixed ,preschool,34
+4.416666666666667,male,NA,asian ,preschool,35
+4.333333333333333,female,NA,white ,preschool,36
+4.666666666666667,female,NA,black ,preschool,37
+4,male,NA,other ,preschool,38
+5.083333333333333,female,NA,mixed ,preschool,39
+4.833333333333333,female,NA,white ,preschool,40
+5.416666666666667,male,NA,other ,preschool,41
+5.583333333333333,female,NA,white ,preschool,42
+4.75,female,NA,mixed hispanic,preschool,43
+5.166666666666667,male,NA,white ,preschool,44
+4.916666666666667,male,NA,mixed ,preschool,45
+5.75,male,NA,white ,preschool,46
+4,female,NA,NaN ,preschool,47
+5.333333333333333,female,NA,asian ,preschool,48
+4,male,NA,asian ,preschool,49
+NA,NA,NA,NA,preschool,50
+NA,NA,NA,NA,preschool,51
+5.583333333333333,male,NA,white hispanic,preschool,52
+4,male,NA,asian ,preschool,53
+NA,NA,NA,NA,preschool,54
+NA,NA,NA,NA,preschool,55
+NA,NA,NA,NA,preschool,56
+NA,NA,NA,NA,preschool,57
+NA,NA,NA,NA,preschool,58
+NA,NA,NA,NA,preschool,59
+NA,NA,NA,NA,preschool,60
+NA,NA,NA,NA,preschool,61
+4.583333333333333,female,NA,mixed ,preschool,62
+4.333333333333333,female,NA,asian ,preschool,63
+5.5,male,NA,other ,preschool,64
+5.083333333333333,male,NA,asian ,preschool,65
+4.916666666666667,male,NA,mixed hispanic,preschool,66
+5.083333333333333,male,NA,mixed ,preschool,67
+4.583333333333333,female,NA,mixed ,preschool,68
+3.75,female,NA,white ,preschool,69
+4.416666666666667,female,NA,white ,preschool,70
+4.75,female,NA,asian ,preschool,71
+5.416666666666667,female,NA,asian ,preschool,72
+5.5,female,NA,white hispanic,preschool,73
+5.583333333333333,male,NA,asian ,preschool,74
+5.166666666666667,male,NA,mixed ,preschool,75
+4.916666666666667,female,NA,black ,preschool,76
+4.583333333333333,female,NA,NaN ,preschool,77
+4,male,NA,NaN ,preschool,78
+4.833333333333333,male,NA,mixed ,preschool,79
+4.75,female,NA,asian ,preschool,80
+4.25,male,NA,mixed ,preschool,81
+4.25,female,NA,NaN ,preschool,82
+5.166666666666667,female,NA,other ,preschool,83
+4.916666666666667,male,NA,mixed ,preschool,84
+5.166666666666667,female,NA,white ,preschool,85
+4.25,male,NA,asian ,preschool,86
+4.333333333333333,female,NA,mixed ,preschool,87
+NA,NA,NA,NA,preschool,88
+NA,NA,NA,NA,preschool,89
+4.333333333333333,female,NA,mixed ,preschool,90
+4,female,NA,mixed ,preschool,91
+5.166666666666667,male,NA,white hispanic,preschool,92
+4.75,male,NA,mixed hispanic,preschool,93
+5.25,female,NA,asian ,preschool,94
+5.666666666666667,female,NA,asian ,preschool,95
+4.666666666666667,male,NA,asian ,preschool,96
+4.083333333333333,male,NA,asian ,preschool,97
+4.083333333333333,male,NA,mixed ,preschool,98
+4.333333333333333,male,NA,white ,preschool,99
+5.75,male,NA,mixed ,preschool,100
+4.833333333333333,male,NA,white ,preschool,101
+4.833333333333333,female,NA,white ,preschool,102
+4.5,male,NA,mixed ,preschool,103
+4.583333333333333,male,NA,asian ,preschool,104
+4.916666666666667,female,NA,NaN ,preschool,105
+NA,NA,NA,NA,preschool,106
+NA,NA,NA,NA,preschool,107
+4.916666666666667,female,NA,mixed hispanic,preschool,108
+5.25,female,NA,white ,preschool,109
+4.25,male,NA,NaN ,preschool,110
+4,male,NA,asian ,preschool,111
+4.916666666666667,male,NA,other ,preschool,112
+4.166666666666667,male,NA,white ,preschool,113
+4.333333333333333,female,NA,NaN ,preschool,114
+4.166666666666667,female,NA,white ,preschool,115
+4.416666666666667,female,NA,NaN ,preschool,116
+4.166666666666667,female,NA,mixed ,preschool,117
+5.75,male,NA,asian ,preschool,118
+4.333333333333333,female,NA,asian ,preschool,119
+4.333333333333333,male,NA,mixed ,preschool,120
+4.333333333333333,male,NA,white ,preschool,121
+4.666666666666667,male,NA,asian ,preschool,122
+4.333333333333333,male,NA,other hispanic,preschool,123
+5.083333333333333,female,NA,mixed ,preschool,124
+4.083333333333333,female,NA,other ,preschool,125
+5.25,male,NA,other ,preschool,126
+4.916666666666667,male,NA,other ,preschool,127
+3.0833333333333335,female,NA,white ,preschool,128
+3.5833333333333335,male,NA,asian ,preschool,129
+4.25,female,NA,white hispanic,preschool,130
+4.5,female,NA,Mixed ,preschool,131
+5.166666666666667,female,NA,NaN ,preschool,132
+4.75,female,NA,NaN ,preschool,133
+4.166666666666667,female,NA,Mixed ,preschool,134
+4.333333333333333,male,NA,Mixed ,preschool,135
+3.6666666666666665,male,NA,white ,preschool,136
+4.5,female,NA,asian ,preschool,137
+3.5833333333333335,male,NA,asian ,preschool,138
+4.166666666666667,female,NA,Asian ,preschool,139
+4.083333333333333,female,NA,Mixed ,preschool,140
+5.166666666666667,male,NA,Asian ,preschool,141
+4.5,female,NA,Mixed ,preschool,142
+4.25,female,NA,Mixed ,preschool,143
+4.25,male,NA,white ,preschool,144
+3.75,male,NA,NaN ,preschool,145
+4.5,male,NA,white ,preschool,146
+4,female,NA,white ,preschool,147
+5,male,NA,Asian ,preschool,148
+5.083333333333333,female,NA,Asian ,preschool,149
+4.583333333333333,male,NA,white ,preschool,150
+5,female,NA,NaN ,preschool,151
+4.416666666666667,female,NA,white ,preschool,152
+5.333333333333333,female,NA,Mixed ,preschool,153
+4.333333333333333,male,NA,Mixed ,preschool,154
+4.75,male,NA,Asian ,preschool,155
+NA,NA,NA,NA,preschool,156
+NA,NA,NA,NA,preschool,157
+5.416666666666667,male,NA,Asian ,preschool,158
+4.416666666666667,male,NA,Mixed ,preschool,159
+4.666666666666667,male,NA,asian ,preschool,160
+4.666666666666667,male,NA,Asian ,preschool,161
+4.833333333333333,male,NA,Mixed ,preschool,162
+4.833333333333333,female,NA,white ,preschool,163
+5.25,female,NA,Mixed ,preschool,164
+5,male,NA,white ,preschool,165
+4,male,NA,Mixed hispanic,preschool,166
+4.25,male,NA,NaN ,preschool,167
+5.5,male,NA,white ,preschool,168
+4.916666666666667,female,NA,white ,preschool,169
+5.166666666666667,female,NA,Asian hispanic,preschool,170
+4.166666666666667,male,NA,asian ,preschool,171
+5,female,NA,NaN ,preschool,172
+4.416666666666667,female,NA,white ,preschool,173
+5.583333333333333,male,NA,Mixed ,preschool,174
+4.833333333333333,female,NA,white ,preschool,175
+NA,NA,NA,NA,preschool,176
+4.75,female,NA,NaN ,preschool,177
+NA,NA,NA,NA,preschool,178
+NA,NA,NA,NA,preschool,179
+4.583333333333333,female,NA,NaN ,preschool,180
+4,female,NA,white ,preschool,181
+5.666666666666667,female,NA,white ,preschool,182
+4.25,female,NA,asian ,preschool,183
+4.916666666666667,female,NA,Mixed ,preschool,184
+4.333333333333333,male,NA,white hispanic,preschool,185
+4.5,male,NA,mixed ,preschool,186
+5.5,male,NA,Asian ,preschool,187
+4.083333333333333,male,NA,white ,preschool,188
+5.333333333333333,male,NA,black ,preschool,189
+4.833333333333333,female,NA,NaN ,preschool,190
+5.083333333333333,female,NA,white ,preschool,191
+4.916666666666667,female,NA,white ,preschool,192
+4,female,NA,white ,preschool,193
+5.166666666666667,female,NA,white ,preschool,194
+4.916666666666667,male,NA,white hispanic,preschool,195
+5.833333333333333,male,NA,Asian ,preschool,196
+4.666666666666667,female,NA,white ,preschool,197
+5.666666666666667,male,NA,mixed ,preschool,198
+4.916666666666667,male,NA,NaN ,preschool,199
+4.666666666666667,male,NA,white ,preschool,200
+4.416666666666667,male,NA,Asian ,preschool,201
+5.583333333333333,female,NA,Asian ,preschool,202
+5.083333333333333,female,NA,Asian hispanic,preschool,203
+NA,NA,NA,NA,preschool,204
+NA,NA,NA,NA,preschool,205
+NA,NA,NA,NA,preschool,206
+NA,NA,NA,NA,preschool,207
+NA,NA,NA,NA,preschool,208
+NA,NA,NA,NA,preschool,209
+NA,NA,NA,NA,preschool,210
+NA,NA,NA,NA,preschool,211
+NA,NA,NA,NA,preschool,212
