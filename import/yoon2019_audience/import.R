@@ -54,13 +54,12 @@ sort_expt1_clean <- sort_expt1 |>
     rep_num = ifelse(partner == "M1", round, 4 + round),
     stage_num = ifelse(partner == "M1", 1, 2),
     trial_num = presumed_view_order,
-    condition = str_c("expt1_", partner, "_sort"),
     image = str_c("image_", trialID),
     group_size = 4, # TODO figure out how to handle group size here!!
     order_match = "order"
   ) |>
   select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
-    text = transcription, condition, group_size, order_match
+    text = transcription, group_size, order_match
   )
 
 cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
@@ -85,7 +84,7 @@ cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
       T ~ 2
     ),
     trial_num = (rep_num - 1) * 16 + presumed_view_order,
-    condition = str_c("expt1_", condition, "_match"),
+    condition = str_c("expt1_", str_sub(condition, 3, -2)),
     group_size = 4,
     order_match = "match"
   ) |>
@@ -93,7 +92,8 @@ cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
     text = transcription, condition, group_size, order_match
   )
 
-all_1 <- sort_expt1_clean |> bind_rows(cued_expt1)
+condition_1 <- cued_expt1 |> distinct(condition, gameid)
+all_1 <- sort_expt1_clean |> left_join(condition_1)|> bind_rows(cued_expt1) 
 
 # Expt 2
 # 35 groups of 5
@@ -132,12 +132,11 @@ sort_expt2_clean <- sort_expt2 |>
     ),
     trial_num = presumed_view_order,
     image = str_c("image_", trialID),
-    condition = str_c("expt2_", partner, "_sort"),
     group_size = 5, # TODO figure out how to handle group size here!!
     order_match = "order"
   ) |>
   select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
-    text = transcription, condition, group_size, order_match
+    text = transcription, group_size, order_match
   )
 
 cued_expt2 <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
@@ -162,7 +161,7 @@ cued_expt2 <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
     ),
     trial_num = (rep_num - 1) * 16 + presumed_view_order,
     image = str_c("image_", trialID),
-    condition = str_c("expt2_", condition, "_match"),
+    condition = str_c("expt2_", str_sub(condition, 3, -2)),
     group_size = 5,
     order_match = "match"
   ) |>
@@ -170,7 +169,8 @@ cued_expt2 <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
     text = transcription, condition, group_size, order_match
   )
 
-all_2 <- sort_expt2_clean |> bind_rows(cued_expt2)
+condition_2 <- cued_expt2 |> distinct(gameid, condition)
+all_2 <- sort_expt2_clean |> left_join(condition_2)|> bind_rows(cued_expt2)
 
 # Expt 3
 # 14 groups of 7
@@ -200,14 +200,13 @@ sort_expt3_clean <- sort_expt3 |>
     playerid = str_c("expt3_group", subID, "_d"), # if we ever get matcher stuff, note that a matcher becomes a director with a different number since each group of 7 does everything twice
     rep_num = round,
     trial_num = presumed_view_order,
-    condition = str_c("expt3_M1M2M3_sort"),
     image = str_c("image_", trialID),
     stage_num = 1,
     group_size = 7, # TODO figure out how to handle group size here!!
     order_match = "order"
   ) |>
   select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
-    text = transcription, condition, group_size, order_match
+    text = transcription, group_size, order_match
   )
 
 cued_expt3 <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |>
@@ -223,7 +222,7 @@ cued_expt3 <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |>
     rep_num = 6,
     stage_num = 2,
     trial_num = (rep_num - 1) * 16 + presumed_view_order,
-    condition = str_c("expt3_", condition, "_match"),
+    condition = str_c("expt3_", str_sub(condition, 3, -2)),
     image = str_c("image_", trialID),
     group_size = 7,
     order_match="match"
@@ -232,7 +231,8 @@ cued_expt3 <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |>
     text = transcription, condition, group_size, order_match
   )
 
-all_3 <- sort_expt3_clean |> bind_rows(cued_expt3)
+condition_3 <- cued_expt3 |> distinct(gameid, condition)
+all_3 <- sort_expt3_clean |> left_join(condition_3)|> bind_rows(cued_expt3)
 
 #### put everything together
 

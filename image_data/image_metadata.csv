@@ -1,4 +1,20 @@
 image_id,image_type,kilogram_id,image_path
+f9,fribble,NA,NA
+f6,fribble,NA,NA
+f15,fribble,NA,NA
+f14,fribble,NA,NA
+f13,fribble,NA,NA
+f16,fribble,NA,NA
+f11,fribble,NA,NA
+f8,fribble,NA,NA
+f3,fribble,NA,NA
+f10,fribble,NA,NA
+f5,fribble,NA,NA
+f4,fribble,NA,NA
+f7,fribble,NA,NA
+f2,fribble,NA,NA
+f1,fribble,NA,NA
+f12,fribble,NA,NA
 C,tangram,page-C,page-C.svg
 G,tangram,page-G,page-G.svg
 H,tangram,page-H,page-H.svg
@@ -12,9 +28,15 @@ I,tangram,page-I,page-I.svg
 E,tangram,page-E,page-E.svg
 J,tangram,page-J,page-J.svg
 hold,tangram,NA,I1.jpg
-walk,tangram,NA,B1.jpg
 swim,tangram,NA,D1.jpg
+walk,tangram,NA,B1.jpg
 jump,tangram,NA,E1.jpg
+3,tangram,NA,NA
+2,tangram,NA,NA
+6,tangram,NA,NA
+5,tangram,NA,NA
+1,tangram,NA,NA
+4,tangram,NA,NA
 page2-136,tangram,page2-136,page2-136.svg
 page7-79,tangram,page7-79,page7-79.svg
 page6-52,tangram,page6-52,page6-52.svg
@@ -7773,6 +7795,26 @@ F1,tangram,NA,F1.jpg
 /tangrams/196_314.png,tangram,NA,NA
 /tangrams/67_317.png,tangram,NA,NA
 /tangrams/64_367.png,tangram,NA,NA
+basket_9,photograph,NA,basket_9.png
+basket_3,photograph,NA,basket_3.png
+basket_7,photograph,NA,basket_7.png
+basket_5,photograph,NA,basket_5.png
+basket_10,photograph,NA,basket_10.png
+basket_1,photograph,NA,basket_1.png
+basket_4,photograph,NA,basket_4.png
+basket_6,photograph,NA,basket_6.png
+basket_2,photograph,NA,basket_2.png
+basket_8,photograph,NA,basket_8.png
+dog_2,photograph,NA,dog_2.png
+dog_8,photograph,NA,dog_8.png
+dog_4,photograph,NA,dog_4.png
+dog_10,photograph,NA,dog_10.png
+dog_6,photograph,NA,dog_6.png
+dog_3,photograph,NA,dog_3.png
+dog_7,photograph,NA,dog_7.png
+dog_1,photograph,NA,dog_1.png
+dog_9,photograph,NA,dog_9.png
+dog_5,photograph,NA,dog_5.png
 image_101,line drawing,NA,NA
 image_102,line drawing,NA,NA
 image_103,line drawing,NA,NA

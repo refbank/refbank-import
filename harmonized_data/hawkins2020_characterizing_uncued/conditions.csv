@@ -1,2 +1,2 @@
-dataset_id,full_cite,short_cite,group_size,prior_relationship,partner_constancy,role_constancy,population,confederates,modality,feedback,backchannel,language,condition_id
-hawkins2020_characterizing_uncued,"Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",Hawkins et al. (2020),2,no,yes,yes,adult,no,written,full,full,English,1
+condition_label,dataset_id,full_cite,short_cite,group_size,prior_relationship,partner_constancy,role_constancy,population,confederates,modality,feedback,backchannel,language,condition_id
+unconstrained,hawkins2020_characterizing_uncued,"Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",Hawkins et al. (2020),2,no,yes,yes,adult,no,written,full,full,English,1

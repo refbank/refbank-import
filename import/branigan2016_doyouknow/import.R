@@ -107,7 +107,7 @@ combined <- transcripts |>
     language = "English",
     prior_relationship = "yes",
     partner_constancy = "no", # could revisit
-    population = "children",
+    population = "child",
     role_constancy = "yes",
     confederates = "no",
     modality = "oral-in-person",
@@ -142,12 +142,16 @@ combined <- transcripts |>
     native_language = as.character(NA), # presumably mostly English for most kids
     race = as.character(NA),
     gender = as.character(NA),
-    education = "elementary",
+    education = "less-than-high-school",
     choice_id = NA,
-    message_irrelevant = NA
+    message_irrelevant = NA,
+    condition_label=case_when(
+      condition=="NP" ~ "naive participant",
+      condition=="SP" ~ "side participant",
+      condition=="OH" ~ "overhearer")
   ) |>
-  rename(condition_label = condition, game_id = group, text = description) |>
-  select(-trial, -words, -speaker, -round, -tangram, -stage, -set)
+  rename(game_id = group, text = description) |>
+  select(-trial, -words, -speaker, -round, -tangram, -stage, -set, -condition)
 
 source("validate.R")
 validate_dataset(combined, write = T)

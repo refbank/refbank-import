@@ -17,7 +17,7 @@ language <- "English"
 # Harmonization constants based on the paper
 prior_relationship <- "no"
 partner_constancy <- "yes"
-population <- "adults"
+population <- "adult"
 role_constancy <- "yes"
 confederates <- "no"
 modality <- "oral-in-person"
@@ -32,9 +32,6 @@ dogs_file <- here("import/wang2025_lvlms/raw_data/dogs-matching-data-plus-formal
 harmonize_matching_dataset <- function(df, condition_label) {
   # Identify player columns
   player_cols <- grep("^P\\d+", names(df), value = TRUE)
-
-  # Create option_set: all trials have options 1-10
-  option_set_string <- paste(1:10, collapse = ";")
 
   # Add a unique trial identifier that combines Round and the item number
   df <- df %>%
@@ -195,6 +192,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
 
   # Add all the required columns
   harmonized <- messages_df %>%
+    rowwise() |>
     mutate(
       dataset_id = dataset_id,
       full_cite = full_cite,
@@ -211,8 +209,8 @@ harmonize_matching_dataset <- function(df, condition_label) {
       feedback = feedback,
       backchannel = backchannel,
       room_num = 1,
-      option_set = option_set_string,
-      target = as.character(Answer),
+      option_set = str_c(condition_label, "_", 1:10, sep = "", collapse = ";"),
+      target = str_c(condition_label, "_", as.character(Answer)),
       rep_num = 1,
       stage_num = 1,
       exclude = FALSE,
@@ -226,7 +224,8 @@ harmonize_matching_dataset <- function(df, condition_label) {
       race = NA,
       education = NA,
       message_irrelevant = FALSE,
-      choice_id = NA_character_
+      choice_id = NA_character_,
+      condition_label="experiment_1"
     ) %>%
     select(
       condition_label, dataset_id, full_cite, short_cite, group_size, language, prior_relationship, partner_constancy,
@@ -244,8 +243,8 @@ harmonize_matching_dataset <- function(df, condition_label) {
 baskets_raw <- read_excel(baskets_file)
 dogs_raw <- read_excel(dogs_file)
 
-baskets_harmonized <- harmonize_matching_dataset(baskets_raw, "baskets")
-dogs_harmonized <- harmonize_matching_dataset(dogs_raw, "dogs")
+baskets_harmonized <- harmonize_matching_dataset(baskets_raw, "basket")
+dogs_harmonized <- harmonize_matching_dataset(dogs_raw, "dog")
 
 # Combine and Save
 all_harmonized <- bind_rows(baskets_harmonized, dogs_harmonized)

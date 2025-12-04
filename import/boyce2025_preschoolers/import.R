@@ -32,7 +32,7 @@ expt_1_data <- read_csv(url(expt_1_responses)) |>
   )) |>
   filter(!is.na(response)) |>
   mutate(correct = as.numeric(correct)) |>
-  mutate(expt = "1") |>
+  mutate(expt = "expt1") |>
   mutate(trial = trial - 2)
 
 expt_1_transcript <- read_csv(url(expt_1_transcript)) |>
@@ -43,7 +43,7 @@ expt_1_transcript <- read_csv(url(expt_1_transcript)) |>
     trial < 10 ~ "block 2",
     trial < 14 ~ "block 3",
   )) |>
-  mutate(expt = "1") |>
+  mutate(expt = "expt1") |>
   mutate(trial = trial - 2)
 
 expt_2_data <- read_csv(url(expt_2_responses)) |>
@@ -57,7 +57,7 @@ expt_2_data <- read_csv(url(expt_2_responses)) |>
   )) |>
   filter(!is.na(response)) |>
   mutate(correct = as.numeric(correct)) |>
-  mutate(expt = "2") |>
+  mutate(expt = "expt2") |>
   mutate(trial = trial - 4)
 
 expt_2_transcript <- read_csv(url(expt_2_transcript)) |>
@@ -69,7 +69,7 @@ expt_2_transcript <- read_csv(url(expt_2_transcript)) |>
     trial < 16 ~ "block 3",
     trial < 20 ~ "block 4"
   )) |>
-  mutate(expt = "2") |>
+  mutate(expt = "expt2") |>
   mutate(trial = trial - 4)
 
 
@@ -85,7 +85,7 @@ expt_3_data <- read_csv(url(expt_3_responses)) |>
   )) |>
   filter(!is.na(response)) |>
   mutate(correct = as.numeric(correct)) |>
-  mutate(expt = "3") |>
+  mutate(expt = "expt3") |>
   mutate(trial = trial - 4)
 
 expt_3_transcript <- read_csv(url(expt_3_transcript)) |>
@@ -97,7 +97,7 @@ expt_3_transcript <- read_csv(url(expt_3_transcript)) |>
     trial < 16 ~ "block 3",
     trial < 20 ~ "block 4"
   )) |>
-  mutate(expt = "3") |>
+  mutate(expt = "expt3") |>
   mutate(trial = trial - 4)
 
 
@@ -107,13 +107,16 @@ demogs <- read_csv(url(expt_1_demog)) |>
   bind_rows(read_csv(url(expt_3_demog)) |>
     mutate(expt = as.character(expt))) |>
   mutate(
-    age = age_month / 12,
+    age = floor(age_month / 12),
     hispanic = case_when(
       hispanic == "yes" ~ "hispanic",
       T ~ ""
     ),
-    race = str_c(ethnicity, " ", hispanic)
-  )
+    race = str_c(ethnicity, " ", hispanic),
+    expt = str_c("expt", expt),
+    playerId = str_c(expt, "_", id)
+  ) |>
+  select(-id)
 
 # construct apprpriate chunks
 
@@ -139,17 +142,24 @@ choices <- expt_1_data |>
   bind_rows(expt_2_data) |>
   bind_rows(expt_3_data) |>
   inner_join(read_csv(url(expt_1_link)) |>
-    mutate(expt = "1") |>
+    mutate(expt = "expt1") |>
     bind_rows(
-      read_csv(url(expt_2_link)) |> mutate(expt = "2")
+      read_csv(url(expt_2_link)) |> mutate(expt = "expt2")
     ) |>
     bind_rows(
-      read_tsv(url(expt_3_link)) |> mutate(expt = "3")
+      read_tsv(url(expt_3_link)) |> mutate(expt = "expt3")
     ) |> select(game, expt)) |>
   filter(type != "practice") |>
   select(game, trial, response, listener, distractor, target, expt) |>
   rename(playerId = listener, choice_id = response) |>
-  mutate(choice_id = ifelse(is.na(choice_id), "timed_out", choice_id)) |>
+  mutate(choice_id = case_when(
+    is.na(choice_id) ~ "timed_out",
+    choice_id == "baby" ~ "H",
+    choice_id == "zombie" ~ "A",
+    choice_id == "dancer" ~ "G",
+    choice_id == "bunny" ~ "E",
+    T ~ choice_id
+  )) |>
   mutate(
     action_type = "selection",
     role = "matcher"
@@ -165,12 +175,12 @@ no_talk <- expt_1_data |>
 
 
 exclude <- read_csv(url(expt_1_link)) |>
-  mutate(expt = "1") |>
+  mutate(expt = "expt1") |>
   bind_rows(
-    read_csv(url(expt_2_link)) |> mutate(expt = "2")
+    read_csv(url(expt_2_link)) |> mutate(expt = "expt2")
   ) |>
   bind_rows(
-    read_tsv(url(expt_3_link)) |> mutate(expt = "3")
+    read_tsv(url(expt_3_link)) |> mutate(expt = "expt3")
   ) |>
   filter(!is.na(exclude)) |>
   mutate(exclude = T)
@@ -191,6 +201,22 @@ echo_exclude <- expt_2_transcript |>
 exclude_all <- exclude |> bind_rows(no_talk_exclude, echo_exclude)
 
 options <- choices |>
+  mutate(
+    target = case_when(
+      target == "baby" ~ "H",
+      target == "zombie" ~ "A",
+      target == "dancer" ~ "G",
+      target == "bunny" ~ "E",
+      T ~ target
+    ),
+    distractor = case_when(
+      distractor == "baby" ~ "H",
+      distractor == "zombie" ~ "A",
+      distractor == "dancer" ~ "G",
+      distractor == "bunny" ~ "E",
+      T ~ distractor
+    )
+  ) |>
   select(target, distractor, trial, game, expt) |>
   mutate(option_set = str_c(target, distractor, sep = ";")) |>
   select(-distractor)
@@ -201,7 +227,6 @@ all <- messages |>
   select(-target) |>
   left_join(exclude_all) |>
   left_join(options) |>
-  left_join(demogs |> rename(playerId = id), by = c("expt", "game", "playerId")) |>
   filter(!is.na(target)) |>
   rename(condition_label = expt) |>
   mutate(
@@ -225,7 +250,7 @@ all <- messages |>
     trial_num = trial + 1,
     time_stamp = as.numeric(NA),
     native_language = as.character(NA),
-    education = "preschool",
+    education = "less-than-high-school",
     message_number = as.numeric(message_number),
     game_id = str_c(condition_label, "_", game),
     player_id = str_c(condition_label, "_", playerId),
@@ -257,6 +282,8 @@ all <- messages |>
     player_id == "expt2_id133" ~ "expt1_id57",
     T ~ player_id,
   )) |>
+  left_join(demogs |> rename(condition_label = expt), by = c("condition_label", "playerId")) |>
+  # to revisit, but for the kids who played repeatedly, we take the demogs at first encounter
   select(
     dataset_id, full_cite, short_cite, group_size, language, condition_label,
     prior_relationship, partner_constancy, population, role_constancy,

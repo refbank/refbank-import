@@ -12,14 +12,6 @@ results <- read_delim(here(raw_data_loc, "interaction_ToT_accuracy.txt"), delim 
   select(-trial) |>
   filter(task == "ref")
 
-results |>
-  select(pair, round, correct_target = target, given_answer = correct_answer) |>
-  distinct()
-
-results |>
-  select(pair, correct_target = target, given_answer = correct_answer) |>
-  distinct()
-
 # there are not very many trials without correct choices and we can't easily reconstruct choice id for most of them, so just dropping
 
 choices <- results |>
@@ -34,6 +26,8 @@ choices <- results |>
 
 # todo figure out what the choices mapping is when they got it wrong!
 
+trial_start <- results |> select(pair, round, trial_nr, trial_onset = onset_msec)
+
 transcripts <- list.files(here(raw_data_loc, "transcript")) |>
   as_tibble() |>
   mutate(data = map(value, \(v) {
@@ -41,7 +35,7 @@ transcripts <- list.files(here(raw_data_loc, "transcript")) |>
   })) |>
   unnest(data) |>
   filter(task == "ref") |>
-  select(-value, -trial, trial_id, -task) |>
+  select(-value, -trial, -trial_id, -task) |>
   left_join(trial_start) |>
   mutate(
     action_type = "message",
@@ -74,7 +68,7 @@ all <- choices |>
   bind_rows(transcripts) |>
   bind_rows(fill_describer) |>
   mutate(
-    condition_label = "",
+    condition_label = "expt1",
     dataset_id = "boegels2025_power",
     full_cite = "Bögels, S., Li, T., Rasenberg, M., Eijk, L., Toni, I., & Pouw, W. (2026). There is a power law of joint communicative effort and it reflects communicative work. Cognition, 268(10637), 0.",
     short_cite = "Bögels et al (2026)",
@@ -83,7 +77,7 @@ all <- choices |>
     prior_relationship = "no",
     partner_constancy = "yes",
     role_constancy = "no",
-    population = "adults",
+    population = "adult",
     confederates = "no",
     modality = "oral-in-person",
     feedback = "none", # not explicitly mentioned, guessing from dataset paper
@@ -105,8 +99,8 @@ all <- choices |>
   ) |>
   rename(game_id = pair) |>
   select(
-    -round, -trial_nr, -participant, -onset_msec, -offset_msec, -trial,
-    -trial_id, -task, -director, -onset, -offset, -trial_onset
+    -round, -trial_nr, -participant, -onset_msec, -offset_msec,
+    -director, -onset, -offset, -trial_onset
   )
 
 source(here("validate.R"))

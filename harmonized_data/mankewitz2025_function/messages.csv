@@ -1795,9 +1795,7 @@ arrow and sharp arms and normal legs,62,describer,1,FALSE,NA,1308
 arrow at bottom pointing up,58,describer,1,FALSE,NA,1309
 "arrow at bottom that is quite large, looks like water fountain/toilet",58,describer,1,FALSE,NA,1310
 cutout?,44,matcher,1,FALSE,NA,1311
-"Arrow at the bottom pointing up
-
-Less bulty",63,describer,1,FALSE,NA,1312
+Arrow at the bottom pointing up  Less bulty,63,describer,1,FALSE,NA,1312
 arrow at the left side and at the top,61,describer,1,FALSE,NA,1313
 arrow genie bottom,64,describer,1,FALSE,NA,1314
 arrow non space,61,describer,1,FALSE,NA,1315
@@ -1966,13 +1964,9 @@ below,48,matcher,2,FALSE,NA,1194
 "brimmed hat, drips",43,describer,1,FALSE,NA,1456
 brucket arrow,61,describer,1,FALSE,NA,1457
 brucket non arrow,61,describer,1,FALSE,NA,1458
-"Bulkier
-
-Arrow at the bottom pointing up",63,describer,1,FALSE,NA,1459
+Bulkier  Arrow at the bottom pointing up,63,describer,1,FALSE,NA,1459
 "Bulky, no rectangle",63,describer,1,FALSE,NA,1460
-"Bullkier
-No white in the middle
-Arrow pointing up at the bottom",63,describer,1,FALSE,NA,1461
+Bullkier No white in the middle Arrow pointing up at the bottom,63,describer,1,FALSE,NA,1461
 but with a triangle facing down,57,describer,1,FALSE,NA,1462
 bye!!,45,describer,3,TRUE,NA,1241
 c on bottom with two ears ?,69,describer,1,FALSE,NA,1463
@@ -2395,26 +2389,17 @@ Less bulky,58,describer,2,FALSE,NA,1375
 bigger or smaller bottom?,54,matcher,2,FALSE,NA,1800
 the instructions weren't clear that it would switch matcher each time.,54,matcher,3,FALSE,NA,1800
 Less bulky,58,describer,1,FALSE,NA,1801
-"less bulky
-
-Arrow at the bottom pointing up",63,describer,1,FALSE,NA,1802
+less bulky  Arrow at the bottom pointing up,63,describer,1,FALSE,NA,1802
 Like a chrsitmas tree no rectangle,58,describer,1,FALSE,NA,1803
 like a funnel top,37,describer,2,FALSE,NA,1476
 LIKE A HOUSE,37,describer,4,FALSE,NA,1177
-"Like a toilet
-Arrow at the bottom pointing up",63,describer,2,FALSE,NA,1413
+Like a toilet Arrow at the bottom pointing up,63,describer,2,FALSE,NA,1413
 like a turtle from below,64,describer,1,FALSE,NA,1804
 small or big shape on right?,55,matcher,2,FALSE,NA,1773
-"Like christmas tree
-
-small arrow at the bottom",63,describer,1,FALSE,NA,1805
+Like christmas tree  small arrow at the bottom,63,describer,1,FALSE,NA,1805
 ?,66,matcher,1,FALSE,NA,1806
-"Like flying jet
-
-Rectangle in the middle",63,describer,1,FALSE,NA,1807
-"Like flying jet
-
-white arrow in the middle",63,describer,1,FALSE,NA,1808
+Like flying jet  Rectangle in the middle,63,describer,1,FALSE,NA,1807
+Like flying jet  white arrow in the middle,63,describer,1,FALSE,NA,1808
 "Like flying jet, white arrow pointing down",63,describer,1,FALSE,NA,1809
 lloks like an animal with 3 distinct legs aqnd a tail to the right,46,describer,1,FALSE,NA,1810
 Lmk if you need another hint,58,describer,1,TRUE,NA,1811
@@ -2551,9 +2536,7 @@ no pipe in the image,66,describer,1,FALSE,NA,1901
 No problem buddy,63,describer,3,FALSE,NA,1730
 say something,48,matcher,2,FALSE,NA,1253
 No rectangle,63,describer,2,FALSE,NA,1809
-"No rectangle
-
-tree like at the top",63,describer,1,FALSE,NA,1902
+No rectangle  tree like at the top,63,describer,1,FALSE,NA,1902
 no rectangle in middle,58,describer,2,FALSE,NA,1700
 lol,68,matcher,1,FALSE,NA,1903
 No rectangle or 2 triangles,42,describer,2,FALSE,NA,1369
@@ -2567,17 +2550,12 @@ no tale,52,describer,1,FALSE,NA,1907
 no traingle,68,describer,5,FALSE,NA,1419
 "no triangle, and chimney pointing down on left",50,describer,2,FALSE,NA,1740
 No triangles on top or bottom,42,describer,2,FALSE,NA,1653
-"No white
-
-Top is Bulkier
-
-Arrow pointing up a he bottom",63,describer,1,FALSE,NA,1908
+No white  Top is Bulkier  Arrow pointing up a he bottom,63,describer,1,FALSE,NA,1908
 No white and no rectangle,63,describer,1,FALSE,NA,1909
 "no white in it, no rectangle",58,describer,1,FALSE,NA,1910
 no white in this one,58,describer,2,FALSE,NA,1379
 no arrow? or no bracket?,66,matcher,2,FALSE,NA,1886
-"No white inside
-arrow the bottom pointing up",63,describer,1,FALSE,NA,1911
+No white inside arrow the bottom pointing up,63,describer,1,FALSE,NA,1911
 ty,66,matcher,3,FALSE,NA,1886
 no zigzag,37,describer,2,FALSE,NA,1161
 "No, more like a sideways cat",42,describer,3,FALSE,NA,1386
@@ -2692,9 +2670,7 @@ rectangle in middle like a tree,58,describer,1,FALSE,NA,1974
 rectangle in middle top is bulkier,58,describer,1,FALSE,NA,1975
 "rectangle in middle, bulkier, does not look like tree",58,describer,1,FALSE,NA,1976
 rectangle in the middle,58,describer,2,FALSE,NA,1280
-"rectangle in the middle
-
-Not bulky",63,describer,4,FALSE,NA,1730
+rectangle in the middle  Not bulky,63,describer,4,FALSE,NA,1730
 "rectangle in top left corner, diamond on far right side",49,describer,1,FALSE,NA,1977
 Note that the objects are not in the same order for each of us.,41,matcher,1,FALSE,NA,1978
 "So you'll need to describe the object to me, rather than its position (e.g., first object)",41,matcher,2,FALSE,NA,1978
@@ -2805,9 +2781,7 @@ six long spikes at top and rectangle at bottom,41,describer,1,FALSE,NA,2040
 small,50,describer,3,FALSE,NA,1858
 "I'm in Austin, Texas",54,matcher,2,FALSE,NA,1747
 small arrow at the left pointing down,63,describer,2,FALSE,NA,1460
-"Small arrow at the left pointing down
-
-White in the middle",63,describer,1,FALSE,NA,2041
+Small arrow at the left pointing down  White in the middle,63,describer,1,FALSE,NA,2041
 small black shape on right (not the fish).  More white than black on the left.,55,describer,1,FALSE,NA,2042
 small hexa/penta on right.  More white than black.,55,describer,1,FALSE,NA,2043
 "small hexagon, chimney pointing down on left",50,describer,1,FALSE,NA,2044
@@ -2936,9 +2910,7 @@ the shape looks like an N,67,describer,1,FALSE,NA,2111
 the shape looks like someone is opening there mouth and looking right,51,describer,3,FALSE,NA,1775
 the top has*,70,describer,2,FALSE,NA,1436
 the top is a vase and the bottom looks like legs,62,describer,1,FALSE,NA,2112
-"The top is bulkier
-
-Bottom left arrow pointing down",63,describer,1,FALSE,NA,2113
+The top is bulkier  Bottom left arrow pointing down,63,describer,1,FALSE,NA,2113
 The very first image,63,describer,3,FALSE,NA,1563
 there is 2 pointy thing touching on left side of the screen,40,describer,2,FALSE,NA,1484
 theres also a triangle on the right but going inwards,60,describer,1,FALSE,NA,2114
@@ -3143,28 +3115,17 @@ which country do you live in?,43,describer,4,TRUE,NA,1443
 which is tchoose the second one by your left,48,describer,3,FALSE,NA,1596
 "white arrow in middle pointing down, the one that doesnt look like a fighter jet",58,describer,1,FALSE,NA,2223
 white arrow in the middle pointing down,63,describer,1,FALSE,NA,2224
-"White arrow inside pointing down
-
-Rectangle in the middle",63,describer,1,FALSE,NA,2225
-"white arrow inside pointing down
-like a flightung jet",63,describer,1,FALSE,NA,2226
+White arrow inside pointing down  Rectangle in the middle,63,describer,1,FALSE,NA,2225
+white arrow inside pointing down like a flightung jet,63,describer,1,FALSE,NA,2226
 white in middle,58,describer,2,FALSE,NA,1404
 white in middle black arrow pointing up at bottom,58,describer,1,FALSE,NA,2227
 "I am 32, female",43,matcher,3,FALSE,NA,1737
 white in the middle,58,describer,2,FALSE,NA,2160
-"White in the middle
-
-Arrow a he two sides and small house at bottom",63,describer,1,FALSE,NA,2228
+White in the middle  Arrow a he two sides and small house at bottom,63,describer,1,FALSE,NA,2228
 hi,45,matcher,4,FALSE,NA,1272
-"White in the middle
-
-No rectangle",63,describer,1,FALSE,NA,2229
-"white in the middle
-
-Rectangle in the middle",63,describer,1,FALSE,NA,2230
-"white in the middle 
-
-Aroow pointing up",63,describer,2,FALSE,NA,2222
+White in the middle  No rectangle,63,describer,1,FALSE,NA,2229
+white in the middle  Rectangle in the middle,63,describer,1,FALSE,NA,2230
+white in the middle   Aroow pointing up,63,describer,2,FALSE,NA,2222
 white in the middle and small arrow at the botom,63,describer,1,FALSE,NA,2231
 "white triangle bottom right corner, has diamond",40,describer,1,FALSE,NA,2232
 this is longer than i thought it would be,59,matcher,2,FALSE,NA,1571
@@ -4960,9 +4921,7 @@ house top again,114,describer,1,FALSE,NA,3560
 "house up top, archway bottom",114,describer,1,FALSE,NA,3561
 human like top head and hands apart,116,describer,1,FALSE,NA,3562
 hurry,112,describer,2,TRUE,NA,3530
-"it has 2 different size triangle on the right hand side. 
-
-The left is completely flat",112,describer,1,FALSE,NA,3563
+it has 2 different size triangle on the right hand side.   The left is completely flat,112,describer,1,FALSE,NA,3563
 "it has a cat face for a head, the body has a triangle pointing to the right",126,describer,1,FALSE,NA,3564
 "it has a cat face with the ears pointing sideays, the body is a slanted rhombus",126,describer,1,FALSE,NA,3565
 it has a cat head and ends with a rectangle,123,describer,1,FALSE,NA,3566
@@ -7910,8 +7869,7 @@ maybe it's loading?,171,matcher,4,FALSE,NA,5413
 tangram,164,describer,2,FALSE,NA,5247
 same,171,matcher,5,FALSE,NA,5413
 tell me the pattern,186,describer,1,TRUE,NA,5647
-"thank you! you too!!
-its been fun",191,describer,2,TRUE,NA,5355
+thank you! you too!! its been fun,191,describer,2,TRUE,NA,5355
 thanks for waiting btw i know these can be unreliable sometimes,184,describer,2,TRUE,NA,4995
 that is what happened my first round,194,describer,6,TRUE,NA,5413
 That same hat but now at the base,155,describer,1,FALSE,NA,5648
@@ -8436,11 +8394,7 @@ hi,201,matcher,1,FALSE,NA,5929
 arrow to the right,211,describer,2,FALSE,NA,5928
 which one,199,matcher,1,FALSE,NA,5930
 arrow to the right,211,describer,3,FALSE,NA,5928
-"arrow to the right, three pointed flat tail.
-
-arrow to the right.
-
-V-tail, square head",211,describer,1,FALSE,NA,5931
+"arrow to the right, three pointed flat tail.  arrow to the right.  V-tail, square head",211,describer,1,FALSE,NA,5931
 arrowhead v tail,199,describer,1,FALSE,NA,5932
 "arrowhead, diamond tail",211,describer,1,FALSE,NA,5933
 "arrowhead, diamond tail",211,describer,2,FALSE,NA,5933
@@ -9873,8 +9827,7 @@ left rectangle,239,describer,1,FALSE,NA,6981
 left rectangle,239,describer,1,FALSE,NA,6982
 left rectangle,239,describer,1,FALSE,NA,6983
 which one?,255,matcher,1,FALSE,NA,6984
-"left rectangle
-or likr bird or bat",239,describer,1,FALSE,NA,6985
+left rectangle or likr bird or bat,239,describer,1,FALSE,NA,6985
 left side is a lil longer than the right,241,describer,2,FALSE,NA,6946
 Left side point,251,describer,1,FALSE,NA,6986
 left side point,254,describer,1,FALSE,NA,6987
@@ -11694,8 +11647,7 @@ just checking are you still there,308,matcher,2,FALSE,NA,8338
 It looks like inverted K,271,describer,1,FALSE,NA,8339
 it looks like letter C,284,describer,1,FALSE,NA,8340
 "It looks likes an animal with two legs, it's head pointing down, but it's smooth and does not have jagged lines and to the left is a triangle that is facing towards to the right",280,describer,1,FALSE,NA,8341
-"It still says this for me: You are the director.
-Correct! You earned $0.03 cents!",260,describer,19,TRUE,NA,7735
+It still says this for me: You are the director. Correct! You earned $0.03 cents!,260,describer,19,TRUE,NA,7735
 it straight base on left,259,describer,2,FALSE,NA,7738
 tell me what it looks like,268,matcher,3,FALSE,NA,8266
 It's a big M on right,271,describer,2,FALSE,NA,8083
@@ -11989,13 +11941,7 @@ ok nice things are working again,269,describer,3,TRUE,NA,8428
 "ok stool to right, square to left",269,describer,2,FALSE,NA,7934
 "Okay so this is one of the two with the diamond points on the right side, but this one has a triangle in the middle on the left side",285,describer,3,FALSE,NA,7942
 "Okay so this one is one of the ""B's"" but the one without an arrow on the left side",285,describer,1,FALSE,NA,8489
-"Okay, I'm ready to play as the matcher!
-
-I see four tangram shapes.
-
-I'm waiting for the director to tell me which one is the target.
-
-Let me know what you see!",288,describer,1,TRUE,NA,8490
+"Okay, I'm ready to play as the matcher!  I see four tangram shapes.  I'm waiting for the director to tell me which one is the target.  Let me know what you see!",288,describer,1,TRUE,NA,8490
 "Okay, this is the B with the square box on the left",285,describer,1,FALSE,NA,8491
 okayyy,284,describer,4,FALSE,NA,7756
 on its sdie with 2 legs on the right and a angled line on the left,290,describer,1,FALSE,NA,8492
@@ -12549,13 +12495,7 @@ same haha,266,matcher,21,FALSE,NA,8052
 then the right side looks likeletter L,284,describer,3,FALSE,NA,8275
 there was 62 places so might take them a sec,292,describer,22,TRUE,NA,8052
 i see what you mean,266,matcher,23,FALSE,NA,8052
-"Okay, I'm ready to play as the matcher!
-
-I see four tangram shapes.
-
-I'm waiting for the director to tell me which one is the target.
-
-Let me know what you see!1",288,matcher,1,FALSE,NA,8768
+"Okay, I'm ready to play as the matcher!  I see four tangram shapes.  I'm waiting for the director to tell me which one is the target.  Let me know what you see!1",288,matcher,1,FALSE,NA,8768
 "There's a diamond shape at the top, and an angled square to the left of the image, under a sharp point",258,describer,3,FALSE,NA,8100
 "theres something wrong with my wifi, it wont let me pick anything",269,describer,3,TRUE,NA,7934
 They are in a different order for me,300,describer,7,TRUE,NA,8120
@@ -15928,9 +15868,7 @@ not the one with rectangles on the right,396,describer,1,FALSE,NA,11189
 "not the one with rectangles to the right, though",396,describer,1,FALSE,NA,11190
 not the one with shaoe 7,382,describer,2,FALSE,NA,10646
 Not the ones with pincers,384,describer,1,FALSE,NA,11191
-"Not the two pincers facing to the right
-
-The one with the triangle in the bottom left hand corner",396,describer,2,FALSE,NA,10936
+Not the two pincers facing to the right  The one with the triangle in the bottom left hand corner,396,describer,2,FALSE,NA,10936
 Not triangle on right,384,describer,1,FALSE,NA,11192
 not with the face of 7,382,describer,2,FALSE,NA,10780
 object with diamond at the bottom and handle shape at the top,375,describer,1,FALSE,NA,11193
@@ -18200,9 +18138,7 @@ both left pointing arrows,457,describer,2,FALSE,NA,12604
 YES,434,matcher,2,FALSE,NA,12708
 both zig,473,describer,1,FALSE,NA,12709
 ALRIGHT,434,matcher,3,FALSE,NA,12708
-"""Got it! Let me check for the reversed tick facing the right side.""  
-
-*Click on the tangram that resembles the described shape.*",434,matcher,4,FALSE,NA,12708
+"""Got it! Let me check for the reversed tick facing the right side.""    *Click on the tangram that resembles the described shape.*",434,matcher,4,FALSE,NA,12708
 bottle with wings with box,467,describer,2,FALSE,NA,12535
 bottom is a blag arrow pointing downwards,438,describer,1,FALSE,NA,12710
 bottom is an S with a small box at the top right,446,describer,1,FALSE,NA,12711
@@ -19069,8 +19005,7 @@ keep it up,438,matcher,3,FALSE,NA,12705
 rhombus at bottom,468,describer,1,FALSE,NA,13256
 Any clues?,444,matcher,1,FALSE,NA,13257
 Are you there?,444,matcher,2,FALSE,NA,13257
-"rhombus at bottom 
-bar sticking out on top",468,describer,1,FALSE,NA,13258
+rhombus at bottom  bar sticking out on top,468,describer,1,FALSE,NA,13258
 "rhombus at bottom, heart on top",442,describer,1,FALSE,NA,13259
 rhombus at the bottom,468,describer,1,FALSE,NA,13260
 rhombus on bottom,468,describer,1,FALSE,NA,13261
@@ -19111,29 +19046,7 @@ rod sticking out on top,468,describer,1,FALSE,NA,13284
 rod sticking out on top,442,describer,1,FALSE,NA,13285
 whats it looking like ?,431,matcher,2,FALSE,NA,13136
 Romnus on the bootom,442,describer,1,FALSE,NA,13286
-"Round: 1 / 4
-Trial: 15 / 16
-selection
-00:28
-Score
-$0.12
-Avatar
-You are the director.
-Tangram shape: /tangrams/30_215.png
-Tangram shape: /tangrams/394_385.png
-Tangram shape: /tangrams/438_342.png
-Tangram shape: /tangrams/166_218.png
-01JHRNGDZB5MYBGVMY7ZXEBDZ4
-Minunow
-
-Could you please describe the target shape for me?
-
-01JHRM9KK54T8ZJ2FQ6ARRFP7D
-Repinow
-
-Your ae the director now
-
-Say something",434,describer,4,TRUE,NA,12445
+Round: 1 / 4 Trial: 15 / 16 selection 00:28 Score $0.12 Avatar You are the director. Tangram shape: /tangrams/30_215.png Tangram shape: /tangrams/394_385.png Tangram shape: /tangrams/438_342.png Tangram shape: /tangrams/166_218.png 01JHRNGDZB5MYBGVMY7ZXEBDZ4 Minunow  Could you please describe the target shape for me?  01JHRM9KK54T8ZJ2FQ6ARRFP7D Repinow  Your ae the director now  Say something,434,describer,4,TRUE,NA,12445
 S at the bottom with white V at the to,438,describer,8,FALSE,NA,12586
 S shape and zig zaggy arrows (diamonds),457,describer,1,FALSE,NA,13287
 "S shape on left, arrow pointing into shape on right",457,describer,2,FALSE,NA,12956
@@ -27014,8 +26927,7 @@ water tap no legs,645,describer,1,FALSE,NA,18910
 water tap on #3,645,describer,1,FALSE,NA,18911
 water tap on rectangular shape,647,describer,1,FALSE,NA,18912
 we are,631,describer,4,TRUE,NA,18128
-"we are killing it 
-lets goooo :)",628,describer,3,TRUE,NA,18062
+we are killing it  lets goooo :),628,describer,3,TRUE,NA,18062
 wearing hat,642,describer,2,FALSE,NA,18224
 "white arrow pointing right, bridge behind it with square back, not handle back",666,describer,1,FALSE,NA,18913
 hi,638,matcher,2,FALSE,NA,18629
@@ -36113,9 +36025,7 @@ shaped like pane. three triangles pointing right,919,describer,1,FALSE,NA,26106
 shapes barely touching,905,describer,1,FALSE,NA,26107
 shapes barely touching,905,describer,1,FALSE,NA,26108
 shapes barely touching,905,describer,2,FALSE,NA,25861
-"sible prrallelegram at top left. If you go down from there, its the flat side of a triangle.
-
-The right side looks like a wide W",912,describer,1,FALSE,NA,26109
+"sible prrallelegram at top left. If you go down from there, its the flat side of a triangle.  The right side looks like a wide W",912,describer,1,FALSE,NA,26109
 silhouette in the middle,914,describer,1,FALSE,NA,26110
 silhouette of a skinny diamond,914,describer,1,FALSE,NA,26111
 sillouetee,905,describer,1,FALSE,NA,26112
@@ -39364,8 +39274,7 @@ Upside down house with chimney at bttom and garage door on top,1011,describer,1,
 "Very jagged throughout, not the one with the two rectangles sticking out on top",1012,describer,2,FALSE,NA,28228
 We are doing really good at thios lol,1011,describer,2,TRUE,NA,28268
 "weird lookling, rectangle hat, beck on left side",995,describer,1,FALSE,NA,28579
-"weird shape 
-Not diamond",999,describer,3,FALSE,NA,28146
+weird shape  Not diamond,999,describer,3,FALSE,NA,28146
 ho should i select,1013,matcher,1,FALSE,NA,28580
 "weird shape and c, no diamond",997,describer,1,FALSE,NA,28581
 weird shape left arrow right,997,describer,2,FALSE,NA,28465

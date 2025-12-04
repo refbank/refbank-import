@@ -150,9 +150,10 @@ all_data <- good_choices |>
       str_detect(condition, "thin") ~ "no",
       str_detect(condition, "thick") ~ "yes",
       condition == "emoji" ~ "no",
-      str_detect(condition, "rotate") ~ "no",
       condition == "full_feedback" ~ "no",
-      condition == "no_rotate" ~ "yes"
+      condition == "no_rotate" ~ "yes",
+      str_detect(condition, "rotate") ~ "no",
+      
     ),
     confederates = "no",
     modality = "written",
@@ -160,17 +161,24 @@ all_data <- good_choices |>
       str_detect(condition, "thin") ~ "limited",
       str_detect(condition, "thick") ~ "full",
       condition == "emoji" ~ "limited",
-      str_detect(condition, "rotate") ~ "limited",
       condition == "full_feedback" ~ "full",
-      condition == "no_rotate" ~ "limited"
+      condition == "no_rotate" ~ "limited",
+      str_detect(condition, "rotate") ~ "limited",
+      
     ),
     backchannel = case_when(
       str_detect(condition, "thin") ~ "limited",
       str_detect(condition, "thick") ~ "full",
       condition == "emoji" ~ "limited",
-      str_detect(condition, "rotate") ~ "full",
       condition == "full_feedback" ~ "full",
-      condition == "no_rotate" ~ "full"
+      condition == "no_rotate" ~ "full",
+      str_detect(condition, "rotate") ~ "full"
+    ),
+    condition=case_when(
+      str_detect(condition, "thin")~ str_c("expt3_", condition),
+      str_detect(condition, "thick")~ str_c("expt3_", condition),
+      condition%in%c("emoji", "full_feedback","no_rotate") ~ str_c("expt2_", condition),
+      str_detect(condition, "rotate")~str_c("expt1_", condition)
     ),
     order_match = "match",
     room_num = 1,

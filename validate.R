@@ -113,7 +113,16 @@ validate_dataset <- function(df, write = F) {
   assert_that(all(df$backchannel %in% c("full", "limited", "none")),
     msg = "backchannel must be full, limited, or none"
   )
+  assert_that(
+    all(is.na(df$education) |
+      df$education %in% c("less-than-high-school", "high-school", "some-college", "bachelors", "advanced-degree")),
+    msg = "education level options are less-than-high-school, high-school, some-college, bachelors, advanced-degree"
+  )
 
+  assert_that(
+    all(df$population %in% c("adult", "child", "child-parent")),
+    msg = "population levels are adult, child, child-parent (so far)"
+  )
 
   # check conditions
   try_condition <- df |>
@@ -260,7 +269,6 @@ validate_dataset <- function(df, write = F) {
   players <- players |>
     select(-player_id) |>
     rename(player_id = player_id_numeric)
-  conditions <- conditions |> select(-condition_label)
   trials <- trials |>
     select(-game_id) |>
     rename(game_id = game_id_numeric)
@@ -273,11 +281,11 @@ validate_dataset <- function(df, write = F) {
   print("Checking conditions")
   check_cols(c(
     "condition_id", "dataset_id", "full_cite", "short_cite", "group_size", "prior_relationship", "partner_constancy", "population",
-    "role_constancy", "confederates", "modality", "feedback", "backchannel", "language"
+    "role_constancy", "confederates", "modality", "feedback", "backchannel", "language", "condition_label"
   ), conditions)
   na_conditions <- conditions |> filter(if_any(c(
     "dataset_id", "short_cite", "full_cite", "condition_id", "prior_relationship", "partner_constancy", "population",
-    "role_constancy", "confederates", "modality", "feedback", "backchannel", "group_size", "language"
+    "role_constancy", "confederates", "modality", "feedback", "backchannel", "group_size", "language", "condition_label"
   ), is.na))
   assert_that(nrow(na_conditions) == 0)
 

@@ -1,213 +1,195 @@
 age,gender,native_language,race,education,player_id
-NA,NA,NA,NA,preschool,1
-NA,NA,NA,NA,preschool,2
-NA,NA,NA,NA,preschool,3
-NA,NA,NA,NA,preschool,4
-NA,NA,NA,NA,preschool,5
-NA,NA,NA,NA,preschool,6
-NA,NA,NA,NA,preschool,7
-NA,NA,NA,NA,preschool,8
-NA,NA,NA,NA,preschool,9
-4.916666666666667,female,NA,black ,preschool,10
-5.25,female,NA,white ,preschool,11
-4.25,female,NA,white ,preschool,12
-5.583333333333333,male,NA,mixed hispanic,preschool,13
-4.583333333333333,male,NA,mixed ,preschool,14
-5.333333333333333,male,NA,white ,preschool,15
-4.333333333333333,male,NA,mixed ,preschool,16
-5,male,NA,mixed ,preschool,17
-5.833333333333333,male,NA,black ,preschool,18
-4.416666666666667,male,NA,white ,preschool,19
-5.416666666666667,female,NA,white ,preschool,20
-5.416666666666667,male,NA,asian ,preschool,21
-4.083333333333333,female,NA,white ,preschool,22
-4.333333333333333,female,NA,white ,preschool,23
-4.25,female,NA,asian ,preschool,24
-4.583333333333333,female,NA,mixed ,preschool,25
-4.416666666666667,female,NA,mixed ,preschool,26
-5.416666666666667,female,NA,other ,preschool,27
-4.166666666666667,male,NA,asian ,preschool,28
-4.25,female,NA,asian ,preschool,29
-4.666666666666667,female,NA,asian ,preschool,30
-4.166666666666667,male,NA,mixed hispanic,preschool,31
-NA,NA,NA,NA,preschool,32
-NA,NA,NA,NA,preschool,33
-4.916666666666667,female,NA,mixed ,preschool,34
-4.416666666666667,male,NA,asian ,preschool,35
-4.333333333333333,female,NA,white ,preschool,36
-4.666666666666667,female,NA,black ,preschool,37
-4,male,NA,other ,preschool,38
-5.083333333333333,female,NA,mixed ,preschool,39
-4.833333333333333,female,NA,white ,preschool,40
-5.416666666666667,male,NA,other ,preschool,41
-5.583333333333333,female,NA,white ,preschool,42
-4.75,female,NA,mixed hispanic,preschool,43
-5.166666666666667,male,NA,white ,preschool,44
-4.916666666666667,male,NA,mixed ,preschool,45
-5.75,male,NA,white ,preschool,46
-4,female,NA,NaN ,preschool,47
-5.333333333333333,female,NA,asian ,preschool,48
-4,male,NA,asian ,preschool,49
-NA,NA,NA,NA,preschool,50
-NA,NA,NA,NA,preschool,51
-5.583333333333333,male,NA,white hispanic,preschool,52
-4,male,NA,asian ,preschool,53
-NA,NA,NA,NA,preschool,54
-NA,NA,NA,NA,preschool,55
-NA,NA,NA,NA,preschool,56
-NA,NA,NA,NA,preschool,57
-NA,NA,NA,NA,preschool,58
-NA,NA,NA,NA,preschool,59
-NA,NA,NA,NA,preschool,60
-NA,NA,NA,NA,preschool,61
-4.583333333333333,female,NA,mixed ,preschool,62
-4.333333333333333,female,NA,asian ,preschool,63
-5.5,male,NA,other ,preschool,64
-5.083333333333333,male,NA,asian ,preschool,65
-4.916666666666667,male,NA,mixed hispanic,preschool,66
-5.083333333333333,male,NA,mixed ,preschool,67
-4.583333333333333,female,NA,mixed ,preschool,68
-3.75,female,NA,white ,preschool,69
-4.416666666666667,female,NA,white ,preschool,70
-4.75,female,NA,asian ,preschool,71
-5.416666666666667,female,NA,asian ,preschool,72
-5.5,female,NA,white hispanic,preschool,73
-5.583333333333333,male,NA,asian ,preschool,74
-5.166666666666667,male,NA,mixed ,preschool,75
-4.916666666666667,female,NA,black ,preschool,76
-4.583333333333333,female,NA,NaN ,preschool,77
-4,male,NA,NaN ,preschool,78
-4.833333333333333,male,NA,mixed ,preschool,79
-4.75,female,NA,asian ,preschool,80
-4.25,male,NA,mixed ,preschool,81
-4.25,female,NA,NaN ,preschool,82
-5.166666666666667,female,NA,other ,preschool,83
-4.916666666666667,male,NA,mixed ,preschool,84
-5.166666666666667,female,NA,white ,preschool,85
-4.25,male,NA,asian ,preschool,86
-4.333333333333333,female,NA,mixed ,preschool,87
-NA,NA,NA,NA,preschool,88
-NA,NA,NA,NA,preschool,89
-4.333333333333333,female,NA,mixed ,preschool,90
-4,female,NA,mixed ,preschool,91
-5.166666666666667,male,NA,white hispanic,preschool,92
-4.75,male,NA,mixed hispanic,preschool,93
-5.25,female,NA,asian ,preschool,94
-5.666666666666667,female,NA,asian ,preschool,95
-4.666666666666667,male,NA,asian ,preschool,96
-4.083333333333333,male,NA,asian ,preschool,97
-4.083333333333333,male,NA,mixed ,preschool,98
-4.333333333333333,male,NA,white ,preschool,99
-5.75,male,NA,mixed ,preschool,100
-4.833333333333333,male,NA,white ,preschool,101
-4.833333333333333,female,NA,white ,preschool,102
-4.5,male,NA,mixed ,preschool,103
-4.583333333333333,male,NA,asian ,preschool,104
-4.916666666666667,female,NA,NaN ,preschool,105
-NA,NA,NA,NA,preschool,106
-NA,NA,NA,NA,preschool,107
-4.916666666666667,female,NA,mixed hispanic,preschool,108
-5.25,female,NA,white ,preschool,109
-4.25,male,NA,NaN ,preschool,110
-4,male,NA,asian ,preschool,111
-4.916666666666667,male,NA,other ,preschool,112
-4.166666666666667,male,NA,white ,preschool,113
-4.333333333333333,female,NA,NaN ,preschool,114
-4.166666666666667,female,NA,white ,preschool,115
-4.416666666666667,female,NA,NaN ,preschool,116
-4.166666666666667,female,NA,mixed ,preschool,117
-5.75,male,NA,asian ,preschool,118
-4.333333333333333,female,NA,asian ,preschool,119
-4.333333333333333,male,NA,mixed ,preschool,120
-4.333333333333333,male,NA,white ,preschool,121
-4.666666666666667,male,NA,asian ,preschool,122
-4.333333333333333,male,NA,other hispanic,preschool,123
-5.083333333333333,female,NA,mixed ,preschool,124
-4.083333333333333,female,NA,other ,preschool,125
-5.25,male,NA,other ,preschool,126
-4.916666666666667,male,NA,other ,preschool,127
-3.0833333333333335,female,NA,white ,preschool,128
-3.5833333333333335,male,NA,asian ,preschool,129
-4.25,female,NA,white hispanic,preschool,130
-4.5,female,NA,Mixed ,preschool,131
-5.166666666666667,female,NA,NaN ,preschool,132
-4.75,female,NA,NaN ,preschool,133
-4.166666666666667,female,NA,Mixed ,preschool,134
-4.333333333333333,male,NA,Mixed ,preschool,135
-3.6666666666666665,male,NA,white ,preschool,136
-4.5,female,NA,asian ,preschool,137
-3.5833333333333335,male,NA,asian ,preschool,138
-4.166666666666667,female,NA,Asian ,preschool,139
-4.083333333333333,female,NA,Mixed ,preschool,140
-5.166666666666667,male,NA,Asian ,preschool,141
-4.5,female,NA,Mixed ,preschool,142
-4.25,female,NA,Mixed ,preschool,143
-4.25,male,NA,white ,preschool,144
-3.75,male,NA,NaN ,preschool,145
-4.5,male,NA,white ,preschool,146
-4,female,NA,white ,preschool,147
-5,male,NA,Asian ,preschool,148
-5.083333333333333,female,NA,Asian ,preschool,149
-4.583333333333333,male,NA,white ,preschool,150
-5,female,NA,NaN ,preschool,151
-4.416666666666667,female,NA,white ,preschool,152
-5.333333333333333,female,NA,Mixed ,preschool,153
-4.333333333333333,male,NA,Mixed ,preschool,154
-4.75,male,NA,Asian ,preschool,155
-NA,NA,NA,NA,preschool,156
-NA,NA,NA,NA,preschool,157
-5.416666666666667,male,NA,Asian ,preschool,158
-4.416666666666667,male,NA,Mixed ,preschool,159
-4.666666666666667,male,NA,asian ,preschool,160
-4.666666666666667,male,NA,Asian ,preschool,161
-4.833333333333333,male,NA,Mixed ,preschool,162
-4.833333333333333,female,NA,white ,preschool,163
-5.25,female,NA,Mixed ,preschool,164
-5,male,NA,white ,preschool,165
-4,male,NA,Mixed hispanic,preschool,166
-4.25,male,NA,NaN ,preschool,167
-5.5,male,NA,white ,preschool,168
-4.916666666666667,female,NA,white ,preschool,169
-5.166666666666667,female,NA,Asian hispanic,preschool,170
-4.166666666666667,male,NA,asian ,preschool,171
-5,female,NA,NaN ,preschool,172
-4.416666666666667,female,NA,white ,preschool,173
-5.583333333333333,male,NA,Mixed ,preschool,174
-4.833333333333333,female,NA,white ,preschool,175
-NA,NA,NA,NA,preschool,176
-4.75,female,NA,NaN ,preschool,177
-NA,NA,NA,NA,preschool,178
-NA,NA,NA,NA,preschool,179
-4.583333333333333,female,NA,NaN ,preschool,180
-4,female,NA,white ,preschool,181
-5.666666666666667,female,NA,white ,preschool,182
-4.25,female,NA,asian ,preschool,183
-4.916666666666667,female,NA,Mixed ,preschool,184
-4.333333333333333,male,NA,white hispanic,preschool,185
-4.5,male,NA,mixed ,preschool,186
-5.5,male,NA,Asian ,preschool,187
-4.083333333333333,male,NA,white ,preschool,188
-5.333333333333333,male,NA,black ,preschool,189
-4.833333333333333,female,NA,NaN ,preschool,190
-5.083333333333333,female,NA,white ,preschool,191
-4.916666666666667,female,NA,white ,preschool,192
-4,female,NA,white ,preschool,193
-5.166666666666667,female,NA,white ,preschool,194
-4.916666666666667,male,NA,white hispanic,preschool,195
-5.833333333333333,male,NA,Asian ,preschool,196
-4.666666666666667,female,NA,white ,preschool,197
-5.666666666666667,male,NA,mixed ,preschool,198
-4.916666666666667,male,NA,NaN ,preschool,199
-4.666666666666667,male,NA,white ,preschool,200
-4.416666666666667,male,NA,Asian ,preschool,201
-5.583333333333333,female,NA,Asian ,preschool,202
-5.083333333333333,female,NA,Asian hispanic,preschool,203
-NA,NA,NA,NA,preschool,204
-NA,NA,NA,NA,preschool,205
-NA,NA,NA,NA,preschool,206
-NA,NA,NA,NA,preschool,207
-NA,NA,NA,NA,preschool,208
-NA,NA,NA,NA,preschool,209
-NA,NA,NA,NA,preschool,210
-NA,NA,NA,NA,preschool,211
-NA,NA,NA,NA,preschool,212
+NA,NA,NA,NA,less-than-high-school,1
+NA,NA,NA,NA,less-than-high-school,2
+NA,NA,NA,NA,less-than-high-school,3
+NA,NA,NA,NA,less-than-high-school,4
+NA,NA,NA,NA,less-than-high-school,5
+NA,NA,NA,NA,less-than-high-school,6
+NA,NA,NA,NA,less-than-high-school,7
+NA,NA,NA,NA,less-than-high-school,8
+NA,NA,NA,NA,less-than-high-school,9
+NA,NA,NA,NA,less-than-high-school,10
+NA,NA,NA,NA,less-than-high-school,11
+NA,NA,NA,NA,less-than-high-school,12
+NA,NA,NA,NA,less-than-high-school,13
+NA,NA,NA,NA,less-than-high-school,14
+NA,NA,NA,NA,less-than-high-school,15
+NA,NA,NA,NA,less-than-high-school,16
+NA,NA,NA,NA,less-than-high-school,17
+NA,NA,NA,NA,less-than-high-school,18
+NA,NA,NA,NA,less-than-high-school,19
+NA,NA,NA,NA,less-than-high-school,20
+NA,NA,NA,NA,less-than-high-school,21
+NA,NA,NA,NA,less-than-high-school,22
+NA,NA,NA,NA,less-than-high-school,23
+NA,NA,NA,NA,less-than-high-school,24
+NA,NA,NA,NA,less-than-high-school,25
+NA,NA,NA,NA,less-than-high-school,26
+NA,NA,NA,NA,less-than-high-school,27
+NA,NA,NA,NA,less-than-high-school,28
+NA,NA,NA,NA,less-than-high-school,29
+NA,NA,NA,NA,less-than-high-school,30
+NA,NA,NA,NA,less-than-high-school,31
+NA,NA,NA,NA,less-than-high-school,32
+NA,NA,NA,NA,less-than-high-school,33
+NA,NA,NA,NA,less-than-high-school,34
+NA,NA,NA,NA,less-than-high-school,35
+NA,NA,NA,NA,less-than-high-school,36
+NA,NA,NA,NA,less-than-high-school,37
+NA,NA,NA,NA,less-than-high-school,38
+NA,NA,NA,NA,less-than-high-school,39
+NA,NA,NA,NA,less-than-high-school,40
+NA,NA,NA,NA,less-than-high-school,41
+NA,NA,NA,NA,less-than-high-school,42
+NA,NA,NA,NA,less-than-high-school,43
+NA,NA,NA,NA,less-than-high-school,44
+NA,NA,NA,NA,less-than-high-school,45
+NA,NA,NA,NA,less-than-high-school,46
+NA,NA,NA,NA,less-than-high-school,47
+NA,NA,NA,NA,less-than-high-school,48
+NA,NA,NA,NA,less-than-high-school,49
+NA,NA,NA,NA,less-than-high-school,50
+NA,NA,NA,NA,less-than-high-school,51
+NA,NA,NA,NA,less-than-high-school,52
+NA,NA,NA,NA,less-than-high-school,53
+NA,NA,NA,NA,less-than-high-school,54
+NA,NA,NA,NA,less-than-high-school,55
+NA,NA,NA,NA,less-than-high-school,56
+NA,NA,NA,NA,less-than-high-school,57
+NA,NA,NA,NA,less-than-high-school,58
+NA,NA,NA,NA,less-than-high-school,59
+NA,NA,NA,NA,less-than-high-school,60
+NA,NA,NA,NA,less-than-high-school,61
+NA,NA,NA,NA,less-than-high-school,62
+NA,NA,NA,NA,less-than-high-school,63
+NA,NA,NA,NA,less-than-high-school,64
+NA,NA,NA,NA,less-than-high-school,65
+NA,NA,NA,NA,less-than-high-school,66
+NA,NA,NA,NA,less-than-high-school,67
+NA,NA,NA,NA,less-than-high-school,68
+NA,NA,NA,NA,less-than-high-school,69
+NA,NA,NA,NA,less-than-high-school,70
+NA,NA,NA,NA,less-than-high-school,71
+NA,NA,NA,NA,less-than-high-school,72
+NA,NA,NA,NA,less-than-high-school,73
+NA,NA,NA,NA,less-than-high-school,74
+NA,NA,NA,NA,less-than-high-school,75
+NA,NA,NA,NA,less-than-high-school,76
+NA,NA,NA,NA,less-than-high-school,77
+NA,NA,NA,NA,less-than-high-school,78
+NA,NA,NA,NA,less-than-high-school,79
+NA,NA,NA,NA,less-than-high-school,80
+NA,NA,NA,NA,less-than-high-school,81
+NA,NA,NA,NA,less-than-high-school,82
+NA,NA,NA,NA,less-than-high-school,83
+NA,NA,NA,NA,less-than-high-school,84
+NA,NA,NA,NA,less-than-high-school,85
+NA,NA,NA,NA,less-than-high-school,86
+NA,NA,NA,NA,less-than-high-school,87
+NA,NA,NA,NA,less-than-high-school,88
+NA,NA,NA,NA,less-than-high-school,89
+NA,NA,NA,NA,less-than-high-school,90
+NA,NA,NA,NA,less-than-high-school,91
+NA,NA,NA,NA,less-than-high-school,92
+NA,NA,NA,NA,less-than-high-school,93
+NA,NA,NA,NA,less-than-high-school,94
+NA,NA,NA,NA,less-than-high-school,95
+NA,NA,NA,NA,less-than-high-school,96
+NA,NA,NA,NA,less-than-high-school,97
+NA,NA,NA,NA,less-than-high-school,98
+NA,NA,NA,NA,less-than-high-school,99
+NA,NA,NA,NA,less-than-high-school,100
+NA,NA,NA,NA,less-than-high-school,101
+NA,NA,NA,NA,less-than-high-school,102
+NA,NA,NA,NA,less-than-high-school,103
+NA,NA,NA,NA,less-than-high-school,104
+NA,NA,NA,NA,less-than-high-school,105
+NA,NA,NA,NA,less-than-high-school,106
+NA,NA,NA,NA,less-than-high-school,107
+NA,NA,NA,NA,less-than-high-school,108
+NA,NA,NA,NA,less-than-high-school,109
+NA,NA,NA,NA,less-than-high-school,110
+NA,NA,NA,NA,less-than-high-school,111
+NA,NA,NA,NA,less-than-high-school,112
+NA,NA,NA,NA,less-than-high-school,113
+NA,NA,NA,NA,less-than-high-school,114
+NA,NA,NA,NA,less-than-high-school,115
+NA,NA,NA,NA,less-than-high-school,116
+NA,NA,NA,NA,less-than-high-school,117
+NA,NA,NA,NA,less-than-high-school,118
+NA,NA,NA,NA,less-than-high-school,119
+NA,NA,NA,NA,less-than-high-school,120
+NA,NA,NA,NA,less-than-high-school,121
+NA,NA,NA,NA,less-than-high-school,122
+NA,NA,NA,NA,less-than-high-school,123
+NA,NA,NA,NA,less-than-high-school,124
+NA,NA,NA,NA,less-than-high-school,125
+NA,NA,NA,NA,less-than-high-school,126
+NA,NA,NA,NA,less-than-high-school,127
+NA,NA,NA,NA,less-than-high-school,128
+NA,NA,NA,NA,less-than-high-school,129
+NA,NA,NA,NA,less-than-high-school,130
+NA,NA,NA,NA,less-than-high-school,131
+NA,NA,NA,NA,less-than-high-school,132
+NA,NA,NA,NA,less-than-high-school,133
+NA,NA,NA,NA,less-than-high-school,134
+NA,NA,NA,NA,less-than-high-school,135
+NA,NA,NA,NA,less-than-high-school,136
+NA,NA,NA,NA,less-than-high-school,137
+NA,NA,NA,NA,less-than-high-school,138
+NA,NA,NA,NA,less-than-high-school,139
+NA,NA,NA,NA,less-than-high-school,140
+NA,NA,NA,NA,less-than-high-school,141
+NA,NA,NA,NA,less-than-high-school,142
+NA,NA,NA,NA,less-than-high-school,143
+NA,NA,NA,NA,less-than-high-school,144
+NA,NA,NA,NA,less-than-high-school,145
+NA,NA,NA,NA,less-than-high-school,146
+NA,NA,NA,NA,less-than-high-school,147
+NA,NA,NA,NA,less-than-high-school,148
+NA,NA,NA,NA,less-than-high-school,149
+NA,NA,NA,NA,less-than-high-school,150
+NA,NA,NA,NA,less-than-high-school,151
+NA,NA,NA,NA,less-than-high-school,152
+NA,NA,NA,NA,less-than-high-school,153
+NA,NA,NA,NA,less-than-high-school,154
+NA,NA,NA,NA,less-than-high-school,155
+NA,NA,NA,NA,less-than-high-school,156
+NA,NA,NA,NA,less-than-high-school,157
+NA,NA,NA,NA,less-than-high-school,158
+NA,NA,NA,NA,less-than-high-school,159
+NA,NA,NA,NA,less-than-high-school,160
+NA,NA,NA,NA,less-than-high-school,161
+NA,NA,NA,NA,less-than-high-school,162
+NA,NA,NA,NA,less-than-high-school,163
+NA,NA,NA,NA,less-than-high-school,164
+NA,NA,NA,NA,less-than-high-school,165
+NA,NA,NA,NA,less-than-high-school,166
+NA,NA,NA,NA,less-than-high-school,167
+NA,NA,NA,NA,less-than-high-school,168
+NA,NA,NA,NA,less-than-high-school,169
+NA,NA,NA,NA,less-than-high-school,170
+NA,NA,NA,NA,less-than-high-school,171
+NA,NA,NA,NA,less-than-high-school,172
+NA,NA,NA,NA,less-than-high-school,173
+NA,NA,NA,NA,less-than-high-school,174
+NA,NA,NA,NA,less-than-high-school,175
+NA,NA,NA,NA,less-than-high-school,176
+NA,NA,NA,NA,less-than-high-school,177
+NA,NA,NA,NA,less-than-high-school,178
+NA,NA,NA,NA,less-than-high-school,179
+NA,NA,NA,NA,less-than-high-school,180
+NA,NA,NA,NA,less-than-high-school,181
+NA,NA,NA,NA,less-than-high-school,182
+NA,NA,NA,NA,less-than-high-school,183
+NA,NA,NA,NA,less-than-high-school,184
+NA,NA,NA,NA,less-than-high-school,185
+NA,NA,NA,NA,less-than-high-school,186
+NA,NA,NA,NA,less-than-high-school,187
+NA,NA,NA,NA,less-than-high-school,188
+NA,NA,NA,NA,less-than-high-school,189
+NA,NA,NA,NA,less-than-high-school,190
+NA,NA,NA,NA,less-than-high-school,191
+NA,NA,NA,NA,less-than-high-school,192
+NA,NA,NA,NA,less-than-high-school,193
+NA,NA,NA,NA,less-than-high-school,194

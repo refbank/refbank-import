@@ -120,7 +120,8 @@ d_messages_final <- d_chat |>
     role = ifelse(director_msg, "describer", "matcher"),
     time_stamp = NA,
     player_id = playerID,
-    choice_id = NA
+    choice_id = NA,
+    text = str_replace_all(text, "\n", " ")
   ) |>
   select(
     roundID, gameID, action_type, player_id, role, time_stamp,
@@ -200,7 +201,12 @@ d_full <- d_actions |>
     room_num = 1,
     age = ifelse(age != "", as.numeric(age), as.numeric(NA)),
     gender = ifelse(gender != "", gender |> as.character() |> bin_gender(), as.character(NA)),
-    education = ifelse(education != "", as.character(education), as.character(NA)),
+    education = case_when(
+      education == "high-school" ~ "high-school",
+      education == "master" ~ "advanced-degree",
+      education == "bachelor" ~ "bachelors",
+      T ~ NA
+    ),
     race = as.character(NA),
     native_language = "English", # paper says recruited native English speakers from US UK Canada
     prior_relationship = "no",

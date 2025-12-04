@@ -64,7 +64,7 @@ all <- messages |>
     age = ifelse(person == "child", age, NA) |> as.numeric(),
     gender = as.character(NA),
     race = as.character(NA),
-    education = as.character(NA),
+    education = ifelse(person == "child", "less-than-high-school", as.character(NA)),
     native_language = as.character(NA),
     stage_num = 1,
     room_num = 1,

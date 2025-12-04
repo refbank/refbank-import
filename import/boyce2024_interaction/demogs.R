@@ -51,7 +51,13 @@ demogs <- bind_rows(
     race = str_c(race.white, race.black, race.asian, race.native, race.islander, race.hispanic, sep = " "),
     race = str_squish(race),
     race = ifelse(race == "", NA, race),
-    education = data.education
-  ) |>
+    education = case_when(
+      data.education=="master"~"advanced-degree",
+      data.education=="bachelor"~"bachelors",
+      data.education=="someCollege"~"some-college",
+      data.education=="highSchool"~"high-school",
+      data.education=="lessHighSchool"~"less-than-high-school",
+      T~NA
+  )) |>
   select(player_id = playerId, game_id = gameId, gender, age, native_language, race, education) |>
   write_csv(here("import/boyce2024_interaction/demogs.csv"))
