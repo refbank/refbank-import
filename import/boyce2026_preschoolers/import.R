@@ -230,9 +230,9 @@ all <- messages |>
   filter(!is.na(target)) |>
   rename(condition_label = expt) |>
   mutate(
-    dataset_id = "boyce2025_preschoolers",
-    full_cite = "Boyce, V., Sparks, R., Mofor, Y., & Frank, M. C. Preschoolers can form conventional pacts with each other to communicate about novel referents. Preprint. 2025.",
-    short_cite = "Boyce et al. (2025)",
+    dataset_id = "boyce2026_preschoolers",
+    full_cite = "Boyce, V., Sparks, R. Z., & Frank, M. C. (2026). Preschoolers can coordinate with each other to communicate about novel referents. Preprint",
+    short_cite = "Boyce et al (2026)",
     group_size = 2,
     language = "English",
     prior_relationship = "yes",
@@ -282,8 +282,7 @@ all <- messages |>
     player_id == "expt2_id133" ~ "expt1_id57",
     T ~ player_id,
   )) |>
-  left_join(demogs |> rename(condition_label = expt), by = c("condition_label", "playerId")) |>
-  # to revisit, but for the kids who played repeatedly, we take the demogs at first encounter
+  left_join(demogs |> select(-expt) |> rename(player_id = playerId), by = c("player_id")) |>
   select(
     dataset_id, full_cite, short_cite, group_size, language, condition_label,
     prior_relationship, partner_constancy, population, role_constancy,

@@ -18,9 +18,10 @@ ready_for_segment <- raw_messages |>
     targetPosition = "",
     role = ifelse(sender == "director", "describer", "matcher"),
     person = ifelse(role == "describer", "A", "B"), # we know that roles don't swap
-    message = contents
+    message = contents,
+    message_id_num=row_number()
   ) |>
-  select(game, grid, targetPosition, role, person, message)
+  select(game, grid, targetPosition, role, message_id_num, message)
 
 # specs
 # game (numeric from 1)

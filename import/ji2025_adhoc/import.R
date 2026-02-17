@@ -2,15 +2,7 @@ library(here)
 library(tidyverse)
 library(jsonlite)
 
-# what does "controlled" mean?? -- looks like basically non-repeating / novel from the paper
-
-
-## issues identified by Alvin
-# expt 2 two stage, check stage count for expt 3
-# expt 1 NA texts
-# page-F target
-
-data_dir <- "import/eliav2023_semantic/raw_data"
+data_dir <- "import/ji2025_adhoc/raw_data"
 
 
 ParseJSONColumn <- function(x) {
@@ -39,12 +31,12 @@ expt_2 <- read_csv(here(data_dir, "exp2_data.csv")) |>
 expt_3 <- read_csv(here(data_dir, "exp3_data.csv")) |>
   mutate(condition_label = "expt3") |>
   mutate(sec_until_click = as.double(sec_until_click)) |>
-  mutate(stage_num = 1) # looks like there are 5 blocks of 6 each which I think suggests no test phase?
+  mutate(stage_num = 1)
 
 messages_single <- expt_1 |>
   bind_rows(expt_2) |>
   select(
-    game_id, trial_index, block, target, controlled, 
+    game_id, trial_index, block, target, controlled,
     speaker_id, context, description, time_to_message,
     condition_label, stage_num
   ) |>
@@ -60,7 +52,7 @@ messages_single <- expt_1 |>
 
 messages_complex <- expt_3 |>
   select(
-    game_id, block, target, controlled, trial_index, 
+    game_id, block, target, controlled, trial_index,
     condition_label, description, context, speaker_id, listener_id, stage_num
   ) |>
   mutate(description = map(description, ParseJSONColumn)) |>
@@ -80,7 +72,7 @@ choices <- expt_1 |>
   bind_rows(expt_3) |>
   select(
     game_id, trial_index, block, target, controlled,
-     listener_id, context,
+    listener_id, context,
     sec_until_press, sec_until_click, response, condition_label, stage_num
   ) |>
   mutate(
@@ -94,22 +86,22 @@ all <- messages_single |>
   bind_rows(choices) |>
   bind_rows(messages_complex) |>
   mutate(
-    dataset_id = "eliav2023_semantic",
-    full_cite = "Eliav, R., Ji, A., Artzi, Y., & Hawkins, R. D. (2023). Semantic uncertainty guides the extension of conventions to new referents. arXiv preprint arXiv:2305.06539.",
-    short_cite = "Eliav et al (2023)",
+    dataset_id = "ji2025_adhoc",
+    full_cite = "Ji, A., Bergey, C. A., Eliav, R., Artzi, Y., & Hawkins, R. D. (2025). Ad hoc conventions generalize to new referents. arXiv preprint arXiv:2509.05566.",
+    short_cite = "Ji et al (2025)",
     language = "English",
-    prior_relationship="no",
-    partner_constancy="yes",
-    role_constancy="no", # confirmed in expt2 in paper, otherwise judging by data structure; TODO double check
-    population="adult",
-    confederates="no",
-    modality="written",
-    backchannel=ifelse(condition_label=="expt3", "full", "none"), #from paper + data structure; TODO confirm
-    feedback="limited", #TODO double check, we don't know for 3, and might be full
-    order_match="match",
+    prior_relationship = "no",
+    partner_constancy = "yes",
+    role_constancy = "no",
+    population = "adult",
+    confederates = "no",
+    modality = "written",
+    backchannel = ifelse(condition_label == "expt3", "full", "none"),
+    feedback = "limited",
+    order_match = "match",
     room_num = 1, # only 1 group / game
     age = as.numeric(NA),
-    native_language = "English", # according to criteria in paper for expt 1 & 2, assuming same for 3
+    native_language = "English",
     gender = as.character(NA),
     race = as.character(NA),
     education = as.character(NA),

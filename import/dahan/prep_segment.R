@@ -32,12 +32,13 @@ full <- here(raw_data_loc) |>
   mutate(game = as.factor(source) |> as.numeric()) |>
   mutate(
     game = ifelse(str_detect(source, "D01SET1"), 1, game),
-    game = as.factor(game) |> as.numeric()
+    game = as.factor(game) |> as.numeric(),
+    message_id_num=row_number()
   )
 
 
 
-ready_for_segment <- full |> select(game, grid, targetPosition, role, person, message)
+ready_for_segment <- full |> select(game, grid, targetPosition, role,message_id_num, message)
 # selecting red / blue / green from a larger set
 
 

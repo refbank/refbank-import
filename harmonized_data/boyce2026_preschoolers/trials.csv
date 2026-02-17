@@ -1387,89 +1387,165 @@ room_num,option_set,target,stage_num,trial_num,rep_num,exclude,exclusion_reason,
 1,H;A,H,1,14,4,NA,NA,match,3,190,145,1386,104
 1,A;H,A,1,15,4,NA,NA,match,3,145,190,1387,104
 1,E;H,E,1,16,4,NA,NA,match,3,190,145,1388,104
-1,hold;walk,hold,1,2,1,NA,NA,match,1,93,3,1389,2
-1,jump;swim,jump,1,4,1,NA,NA,match,1,93,3,1390,2
-1,hold;swim,hold,1,2,1,NA,NA,match,1,5,4,1391,3
-1,hold;jump,hold,1,8,2,NA,NA,match,1,5,4,1392,3
-1,swim;jump,swim,1,2,1,TRUE,no describer talk,match,1,13,12,1393,7
-1,swim;hold,swim,1,5,2,NA,NA,match,1,32,33,1394,17
-1,hold;swim,hold,1,2,1,TRUE,no describer talk,match,1,47,46,1395,24
-1,hold;jump,hold,1,1,1,TRUE,no describer talk,match,1,49,48,1396,25
-1,walk;hold,walk,1,3,1,NA,NA,match,2,54,55,1397,28
-1,hold;walk,hold,1,1,1,TRUE,no describer talk,match,2,71,70,1398,36
-1,walk;hold,walk,1,8,2,TRUE,no describer talk,match,2,79,78,1399,40
-1,hold;walk,hold,1,8,2,NA,NA,match,2,89,88,1400,45
-1,jump;swim,jump,1,1,1,TRUE,no describer talk,match,2,90,91,1401,46
-1,hold;walk,hold,1,3,1,TRUE,no describer talk,match,2,90,91,1402,46
-1,swim;walk,swim,1,13,4,TRUE,no describer talk,match,2,94,95,1403,49
-1,walk;hold,walk,1,7,2,TRUE,no describer talk,match,2,102,103,1404,53
-1,swim;walk,swim,1,9,3,TRUE,no describer talk,match,2,102,103,1405,53
-1,swim;hold,swim,1,4,1,TRUE,no describer talk,match,2,119,118,1406,62
-1,A;H,A,1,6,2,NA,NA,match,3,130,129,1407,69
-1,G;A,G,1,2,1,NA,NA,match,3,138,137,1408,73
-1,A;E,A,1,4,1,NA,NA,match,3,138,137,1409,73
-1,A;G,A,1,5,2,NA,NA,match,3,137,138,1410,73
-1,E;G,E,1,6,2,NA,NA,match,3,138,137,1411,73
-1,G;E,G,1,10,3,NA,NA,match,3,138,137,1412,73
-1,A;H,A,1,12,3,NA,NA,match,3,138,137,1413,73
-1,A;H,A,1,14,4,NA,NA,match,3,138,137,1414,73
-1,E;A,E,1,15,4,NA,NA,match,3,137,138,1415,73
-1,G;A,G,1,1,1,NA,NA,match,3,147,148,1416,80
-1,E;A,E,1,2,1,NA,NA,match,3,148,147,1417,80
-1,E;H,E,1,8,2,NA,NA,match,3,148,147,1418,80
-1,E;H,E,1,10,3,NA,NA,match,3,148,147,1419,80
-1,A;H,A,1,11,3,NA,NA,match,3,147,148,1420,80
-1,H;G,H,1,12,3,NA,NA,match,3,148,147,1421,80
-1,A;E,A,1,13,4,NA,NA,match,3,147,148,1422,80
-1,G;E,G,1,16,4,NA,NA,match,3,148,147,1423,80
-1,H;A,H,1,4,1,TRUE,no describer talk,match,3,173,172,1424,94
-1,H;G,H,1,6,2,TRUE,no describer talk,match,3,173,172,1425,94
-1,E;G,E,1,8,2,TRUE,no describer talk,match,3,173,172,1426,94
-1,E;H,E,1,7,2,TRUE,no describer talk,match,3,174,175,1427,95
-1,A;H,A,1,14,4,TRUE,no describer talk,match,3,175,174,1428,95
-1,H;G,H,1,15,4,TRUE,no describer talk,match,3,174,175,1429,95
-1,G;A,G,1,6,2,TRUE,no describer talk,match,3,178,177,1430,97
-1,H;E,H,1,6,2,TRUE,no describer talk,match,3,182,181,1431,99
-1,G;A,G,1,8,2,TRUE,no describer talk,match,3,182,181,1432,99
-1,E;A,E,1,12,3,TRUE,no describer talk,match,3,182,181,1433,99
-1,G;E,G,1,5,2,TRUE,no describer talk,match,3,185,186,1434,101
-1,E;H,E,1,11,3,TRUE,no describer talk,match,3,185,186,1435,101
-1,G;H,G,1,13,4,TRUE,no describer talk,match,3,185,186,1436,101
-1,E;A,E,1,1,1,TRUE,no describer talk,match,3,192,191,1437,105
-1,A;H,A,1,2,1,TRUE,no describer talk,match,3,191,192,1438,105
-1,G;E,G,1,3,1,TRUE,no describer talk,match,3,192,191,1439,105
-1,H;G,H,1,4,1,TRUE,no describer talk,match,3,191,192,1440,105
-1,A;G,A,1,5,2,TRUE,no describer talk,match,3,192,191,1441,105
-1,E;G,E,1,6,2,TRUE,no describer talk,match,3,191,192,1442,105
-1,G;A,G,1,7,2,TRUE,no describer talk,match,3,192,191,1443,105
-1,H;G,H,1,8,2,TRUE,no describer talk,match,3,191,192,1444,105
-1,G;H,G,1,9,3,TRUE,no describer talk,match,3,192,191,1445,105
-1,A;H,A,1,10,3,TRUE,no describer talk,match,3,191,192,1446,105
-1,H;G,H,1,11,3,TRUE,no describer talk,match,3,192,191,1447,105
-1,E;H,E,1,12,3,TRUE,no describer talk,match,3,191,192,1448,105
-1,E;H,E,1,13,4,TRUE,no describer talk,match,3,192,191,1449,105
-1,G;A,G,1,14,4,TRUE,no describer talk,match,3,191,192,1450,105
-1,A;H,A,1,15,4,TRUE,no describer talk,match,3,192,191,1451,105
-1,H;E,H,1,16,4,TRUE,no describer talk,match,3,191,192,1452,105
-1,H;E,H,1,5,2,NA,NA,match,3,188,189,1453,103
-1,E;A,E,1,7,2,NA,NA,match,3,188,189,1454,103
-1,G;E,G,1,8,2,NA,NA,match,3,189,188,1455,103
-1,G;H,G,1,9,3,NA,NA,match,3,188,189,1456,103
-1,H;G,H,1,10,3,NA,NA,match,3,189,188,1457,103
-1,E;H,E,1,12,3,NA,NA,match,3,189,188,1458,103
-1,G;A,G,1,1,1,TRUE,no describer talk,match,3,194,193,1459,106
-1,E;A,E,1,2,1,TRUE,no describer talk,match,3,193,194,1460,106
-1,A;E,A,1,3,1,TRUE,no describer talk,match,3,194,193,1461,106
-1,H;A,H,1,4,1,TRUE,no describer talk,match,3,193,194,1462,106
-1,E;H,E,1,5,2,TRUE,no describer talk,match,3,194,193,1463,106
-1,H;G,H,1,6,2,TRUE,no describer talk,match,3,193,194,1464,106
-1,A;E,A,1,7,2,TRUE,no describer talk,match,3,194,193,1465,106
-1,G;E,G,1,8,2,TRUE,no describer talk,match,3,193,194,1466,106
-1,G;A,G,1,9,3,TRUE,no describer talk,match,3,194,193,1467,106
-1,H;G,H,1,10,3,TRUE,no describer talk,match,3,193,194,1468,106
-1,A;H,A,1,11,3,TRUE,no describer talk,match,3,194,193,1469,106
-1,E;G,E,1,12,3,TRUE,no describer talk,match,3,193,194,1470,106
-1,H;E,H,1,13,4,TRUE,no describer talk,match,3,194,193,1471,106
-1,E;A,E,1,14,4,TRUE,no describer talk,match,3,193,194,1472,106
-1,A;E,A,1,15,4,TRUE,no describer talk,match,3,194,193,1473,106
-1,G;A,G,1,16,4,TRUE,no describer talk,match,3,193,194,1474,106
+1,G;A,G,1,1,1,TRUE,no describer talk,match,3,192,191,1389,105
+1,H;G,H,1,2,1,NA,NA,match,3,191,192,1390,105
+1,E;G,E,1,3,1,NA,NA,match,3,192,191,1391,105
+1,A;E,A,1,4,1,NA,NA,match,3,191,192,1392,105
+1,A;H,A,1,5,2,NA,NA,match,3,192,191,1393,105
+1,E;G,E,1,6,2,NA,NA,match,3,191,192,1394,105
+1,G;E,G,1,7,2,NA,NA,match,3,192,191,1395,105
+1,H;G,H,1,8,2,NA,NA,match,3,191,192,1396,105
+1,G;A,G,1,9,3,NA,NA,match,3,192,191,1397,105
+1,E;G,E,1,10,3,NA,NA,match,3,191,192,1398,105
+1,A;H,A,1,11,3,NA,NA,match,3,192,191,1399,105
+1,H;A,H,1,12,3,NA,NA,match,3,191,192,1400,105
+1,E;H,E,1,13,4,NA,NA,match,3,192,191,1401,105
+1,G;E,G,1,14,4,NA,NA,match,3,191,192,1402,105
+1,A;E,A,1,15,4,NA,NA,match,3,192,191,1403,105
+1,H;E,H,1,16,4,NA,NA,match,3,191,192,1404,105
+1,G;E,G,1,1,1,NA,NA,match,3,193,194;193,1405,106
+1,E;H,E,1,1,1,NA,NA,match,3,196,195,1406,107
+1,A;G,A,1,2,1,NA,NA,match,3,195,196,1407,107
+1,G;A,G,1,3,1,NA,NA,match,3,196,195,1408,107
+1,H;A,H,1,4,1,NA,NA,match,3,195,196,1409,107
+1,A;H,A,1,5,2,NA,NA,match,3,196,195,1410,107
+1,E;H,E,1,6,2,NA,NA,match,3,195,196,1411,107
+1,G;H,G,1,7,2,NA,NA,match,3,196,195,1412,107
+1,H;A,H,1,8,2,NA,NA,match,3,195,196,1413,107
+1,H;G,H,1,9,3,NA,NA,match,3,196,195,1414,107
+1,A;E,A,1,10,3,NA,NA,match,3,195,196,1415,107
+1,E;H,E,1,11,3,NA,NA,match,3,196,195,1416,107
+1,G;H,G,1,12,3,NA,NA,match,3,195,196,1417,107
+1,A;H,A,1,13,4,NA,NA,match,3,196,195,1418,107
+1,H;G,H,1,14,4,NA,NA,match,3,195,196,1419,107
+1,E;A,E,1,15,4,NA,NA,match,3,196,195,1420,107
+1,G;H,G,1,16,4,NA,NA,match,3,195,196,1421,107
+1,A;G,A,1,1,1,NA,NA,match,3,197,198,1422,108
+1,E;H,E,1,2,1,NA,NA,match,3,198,197,1423,108
+1,H;A,H,1,4,1,NA,NA,match,3,198,197,1424,108
+1,G;H,G,1,5,2,NA,NA,match,3,197,198,1425,108
+1,E;G,E,1,6,2,NA,NA,match,3,198,197,1426,108
+1,A;G,A,1,7,2,NA,NA,match,3,197,198,1427,108
+1,H;E,H,1,8,2,NA,NA,match,3,198,197,1428,108
+1,E;H,E,1,10,3,NA,NA,match,3,198,197,1429,108
+1,A;E,A,1,11,3,NA,NA,match,3,197,198,1430,108
+1,H;G,H,1,12,3,NA,NA,match,3,198,197,1431,108
+1,G;E,G,1,13,4,NA,NA,match,3,197,198,1432,108
+1,A;E,A,1,14,4,NA,NA,match,3,198,197,1433,108
+1,H;G,H,1,15,4,NA,NA,match,3,197,198,1434,108
+1,E;H,E,1,16,4,NA,NA,match,3,198,197,1435,108
+1,H;A,H,1,1,1,NA,NA,match,3,199,200,1436,109
+1,A;E,A,1,2,1,NA,NA,match,3,200,199,1437,109
+1,E;G,E,1,4,1,NA,NA,match,3,200,199,1438,109
+1,E;A,E,1,5,2,NA,NA,match,3,199,200,1439,109
+1,H;E,H,1,6,2,NA,NA,match,3,200,199,1440,109
+1,A;E,A,1,7,2,NA,NA,match,3,199,200,1441,109
+1,G;A,G,1,8,2,NA,NA,match,3,200,199,1442,109
+1,E;H,E,1,9,3,NA,NA,match,3,199,200,1443,109
+1,A;E,A,1,10,3,NA,NA,match,3,200,199,1444,109
+1,G;E,G,1,11,3,NA,NA,match,3,199,200,1445,109
+1,H;G,H,1,1,1,NA,NA,match,3,201,202,1446,110
+1,G;A,G,1,2,1,NA,NA,match,3,202,201,1447,110
+1,E;A,E,1,3,1,NA,NA,match,3,201,202,1448,110
+1,A;H,A,1,4,1,NA,NA,match,3,202,201,1449,110
+1,E;A,E,1,5,2,NA,NA,match,3,201,202,1450,110
+1,G;A,G,1,6,2,NA,NA,match,3,202,201,1451,110
+1,A;H,A,1,7,2,NA,NA,match,3,201,202,1452,110
+1,H;A,H,1,8,2,NA,NA,match,3,202,201,1453,110
+1,H;G,H,1,9,3,NA,NA,match,3,201,202,1454,110
+1,E;H,E,1,10,3,NA,NA,match,3,202,201,1455,110
+1,A;H,A,1,11,3,NA,NA,match,3,201,202,1456,110
+1,G;E,G,1,12,3,NA,NA,match,3,202,201,1457,110
+1,E;H,E,1,13,4,NA,NA,match,3,201,202,1458,110
+1,H;E,H,1,14,4,NA,NA,match,3,202,201,1459,110
+1,G;A,G,1,15,4,NA,NA,match,3,201,202,1460,110
+1,A;H,A,1,16,4,NA,NA,match,3,202,201,1461,110
+1,hold;walk,hold,1,2,1,NA,NA,match,1,93,3,1462,2
+1,jump;swim,jump,1,4,1,NA,NA,match,1,93,3,1463,2
+1,hold;swim,hold,1,2,1,NA,NA,match,1,5,4,1464,3
+1,hold;jump,hold,1,8,2,NA,NA,match,1,5,4,1465,3
+1,swim;jump,swim,1,2,1,TRUE,no describer talk,match,1,13,12,1466,7
+1,swim;hold,swim,1,5,2,NA,NA,match,1,32,33,1467,17
+1,hold;swim,hold,1,2,1,TRUE,no describer talk,match,1,47,46,1468,24
+1,hold;jump,hold,1,1,1,TRUE,no describer talk,match,1,49,48,1469,25
+1,walk;hold,walk,1,3,1,NA,NA,match,2,54,55,1470,28
+1,hold;walk,hold,1,1,1,TRUE,no describer talk,match,2,71,70,1471,36
+1,walk;hold,walk,1,8,2,TRUE,no describer talk,match,2,79,78,1472,40
+1,hold;walk,hold,1,8,2,NA,NA,match,2,89,88,1473,45
+1,jump;swim,jump,1,1,1,TRUE,no describer talk,match,2,90,91,1474,46
+1,hold;walk,hold,1,3,1,TRUE,no describer talk,match,2,90,91,1475,46
+1,swim;walk,swim,1,13,4,TRUE,no describer talk,match,2,94,95,1476,49
+1,walk;hold,walk,1,7,2,TRUE,no describer talk,match,2,102,103,1477,53
+1,swim;walk,swim,1,9,3,TRUE,no describer talk,match,2,102,103,1478,53
+1,swim;hold,swim,1,4,1,TRUE,no describer talk,match,2,119,118,1479,62
+1,A;H,A,1,6,2,NA,NA,match,3,130,129,1480,69
+1,G;A,G,1,2,1,NA,NA,match,3,138,137,1481,73
+1,A;E,A,1,4,1,NA,NA,match,3,138,137,1482,73
+1,A;G,A,1,5,2,NA,NA,match,3,137,138,1483,73
+1,E;G,E,1,6,2,NA,NA,match,3,138,137,1484,73
+1,G;E,G,1,10,3,NA,NA,match,3,138,137,1485,73
+1,A;H,A,1,12,3,NA,NA,match,3,138,137,1486,73
+1,A;H,A,1,14,4,NA,NA,match,3,138,137,1487,73
+1,E;A,E,1,15,4,NA,NA,match,3,137,138,1488,73
+1,G;A,G,1,1,1,NA,NA,match,3,147,148,1489,80
+1,E;A,E,1,2,1,NA,NA,match,3,148,147,1490,80
+1,E;H,E,1,8,2,NA,NA,match,3,148,147,1491,80
+1,E;H,E,1,10,3,NA,NA,match,3,148,147,1492,80
+1,A;H,A,1,11,3,NA,NA,match,3,147,148,1493,80
+1,H;G,H,1,12,3,NA,NA,match,3,148,147,1494,80
+1,A;E,A,1,13,4,NA,NA,match,3,147,148,1495,80
+1,G;E,G,1,16,4,NA,NA,match,3,148,147,1496,80
+1,H;A,H,1,4,1,TRUE,no describer talk,match,3,173,172,1497,94
+1,H;G,H,1,6,2,TRUE,no describer talk,match,3,173,172,1498,94
+1,E;G,E,1,8,2,TRUE,no describer talk,match,3,173,172,1499,94
+1,E;H,E,1,7,2,TRUE,no describer talk,match,3,174,175,1500,95
+1,A;H,A,1,14,4,TRUE,no describer talk,match,3,175,174,1501,95
+1,H;G,H,1,15,4,TRUE,no describer talk,match,3,174,175,1502,95
+1,G;A,G,1,6,2,TRUE,no describer talk,match,3,178,177,1503,97
+1,H;E,H,1,6,2,TRUE,no describer talk,match,3,182,181,1504,99
+1,G;A,G,1,8,2,TRUE,no describer talk,match,3,182,181,1505,99
+1,E;A,E,1,12,3,TRUE,no describer talk,match,3,182,181,1506,99
+1,G;E,G,1,5,2,TRUE,no describer talk,match,3,185,186,1507,101
+1,E;H,E,1,11,3,TRUE,no describer talk,match,3,185,186,1508,101
+1,G;H,G,1,13,4,TRUE,no describer talk,match,3,185,186,1509,101
+1,E;A,E,1,1,1,TRUE,no describer talk,match,3,204,203,1510,111
+1,A;H,A,1,2,1,TRUE,no describer talk,match,3,203,204,1511,111
+1,G;E,G,1,3,1,TRUE,no describer talk,match,3,204,203,1512,111
+1,H;G,H,1,4,1,TRUE,no describer talk,match,3,203,204,1513,111
+1,A;G,A,1,5,2,TRUE,no describer talk,match,3,204,203,1514,111
+1,E;G,E,1,6,2,TRUE,no describer talk,match,3,203,204,1515,111
+1,G;A,G,1,7,2,TRUE,no describer talk,match,3,204,203,1516,111
+1,H;G,H,1,8,2,TRUE,no describer talk,match,3,203,204,1517,111
+1,G;H,G,1,9,3,TRUE,no describer talk,match,3,204,203,1518,111
+1,A;H,A,1,10,3,TRUE,no describer talk,match,3,203,204,1519,111
+1,H;G,H,1,11,3,TRUE,no describer talk,match,3,204,203,1520,111
+1,E;H,E,1,12,3,TRUE,no describer talk,match,3,203,204,1521,111
+1,E;H,E,1,13,4,TRUE,no describer talk,match,3,204,203,1522,111
+1,G;A,G,1,14,4,TRUE,no describer talk,match,3,203,204,1523,111
+1,A;H,A,1,15,4,TRUE,no describer talk,match,3,204,203,1524,111
+1,H;E,H,1,16,4,TRUE,no describer talk,match,3,203,204,1525,111
+1,H;E,H,1,5,2,NA,NA,match,3,188,189,1526,103
+1,E;A,E,1,7,2,NA,NA,match,3,188,189,1527,103
+1,G;E,G,1,8,2,NA,NA,match,3,189,188,1528,103
+1,G;H,G,1,9,3,NA,NA,match,3,188,189,1529,103
+1,H;G,H,1,10,3,NA,NA,match,3,189,188,1530,103
+1,E;H,E,1,12,3,NA,NA,match,3,189,188,1531,103
+1,G;A,G,1,1,1,TRUE,no describer talk,match,3,206,205,1532,112
+1,E;A,E,1,2,1,TRUE,no describer talk,match,3,205,206,1533,112
+1,A;E,A,1,3,1,TRUE,no describer talk,match,3,206,205,1534,112
+1,H;A,H,1,4,1,TRUE,no describer talk,match,3,205,206,1535,112
+1,E;H,E,1,5,2,TRUE,no describer talk,match,3,206,205,1536,112
+1,H;G,H,1,6,2,TRUE,no describer talk,match,3,205,206,1537,112
+1,A;E,A,1,7,2,TRUE,no describer talk,match,3,206,205,1538,112
+1,G;E,G,1,8,2,TRUE,no describer talk,match,3,205,206,1539,112
+1,G;A,G,1,9,3,TRUE,no describer talk,match,3,206,205,1540,112
+1,H;G,H,1,10,3,TRUE,no describer talk,match,3,205,206,1541,112
+1,A;H,A,1,11,3,TRUE,no describer talk,match,3,206,205,1542,112
+1,E;G,E,1,12,3,TRUE,no describer talk,match,3,205,206,1543,112
+1,H;E,H,1,13,4,TRUE,no describer talk,match,3,206,205,1544,112
+1,E;A,E,1,14,4,TRUE,no describer talk,match,3,205,206,1545,112
+1,A;E,A,1,15,4,TRUE,no describer talk,match,3,206,205,1546,112
+1,G;A,G,1,16,4,TRUE,no describer talk,match,3,205,206,1547,112
+1,G;E,G,1,3,1,TRUE,no describer talk,match,3,197,198,1548,108
+1,G;E,G,1,9,3,TRUE,no describer talk,match,3,197,198,1549,108
+1,G;H,G,1,3,1,TRUE,no describer talk,match,3,199,200,1550,109

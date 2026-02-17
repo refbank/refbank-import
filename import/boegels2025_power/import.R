@@ -2,9 +2,7 @@ library(here)
 library(tidyverse)
 library(jsonlite)
 
-# each trial has both a identify the one being talked about and
-# a figure out if it's in the same place on the screen
-# we're going to drop the localization part
+#
 
 raw_data_loc <- "import/boegels2025_power/raw_data"
 

@@ -8,7 +8,7 @@ library(here)
 
 # Basic dataset info
 dataset_id <- "wang2025_lvlms"
-full_cite <- "Wang, Z., Li, W., Hsiao, P.-Y., Reiter, A., Wang, X., Mou, L., Frank, M. C., Goodman, N. D., & Hawkins, R. D. (2025). LVLMs are bad at overhearing human referential communication. arXiv preprint arXiv:2509.11514."
+full_cite <- "Wang, Z., Li, W., Kaliosis, P., Rambow, O., & Brennan, S. E. (2025, November). LVLMs are Bad at Overhearing Human Referential Communication. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (pp. 16769-16793)."
 short_cite <- "Wang et al. (2025)"
 group_size <- 2
 structure <- "thick"
@@ -225,7 +225,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
       education = NA,
       message_irrelevant = FALSE,
       choice_id = NA_character_,
-      condition_label="experiment_1"
+      condition_label = "experiment_1"
     ) %>%
     select(
       condition_label, dataset_id, full_cite, short_cite, group_size, language, prior_relationship, partner_constancy,
@@ -247,16 +247,23 @@ baskets_harmonized <- harmonize_matching_dataset(baskets_raw, "basket")
 dogs_harmonized <- harmonize_matching_dataset(dogs_raw, "dog")
 
 # Combine and Save
-all_harmonized <- bind_rows(baskets_harmonized, dogs_harmonized)
+all_messages <- bind_rows(baskets_harmonized, dogs_harmonized)
 
-write.csv(all_harmonized, "LVLMs2025_overhearing_harmonized.csv", row.names = FALSE, na = "")
+all_choices <- all_messages |>
+  select(-action_type, -text, -message_number, -message_irrelevant) |>
+  distinct() |>
+  filter(role == "matcher") |>
+  mutate(text = NA, message_number = NA, message_irrelevant = NA, action_type = "selection", choice_id = target)
+
+all_harmonized <- all_choices |> bind_rows(all_messages)
+write_csv(all_harmonized, here("import/wang2025_lvlms/LVLMs2025_overhearing_harmonized.csv"), na = "")
 
 cat("Wrote harmonized data to LVLMs2025_overhearing_harmonized.csv\n")
 
 # Validate
 source("validate.R")
 
-df <- read_csv("LVLMs2025_overhearing_harmonized.csv", show_col_types = FALSE)
+df <- read_csv(here("import/wang2025_lvlms/LVLMs2025_overhearing_harmonized.csv"), show_col_types = FALSE)
 
 df <- df %>%
   mutate(

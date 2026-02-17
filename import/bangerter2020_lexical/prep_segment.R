@@ -144,10 +144,11 @@ all <- study_1_clean |>
   rename(message = text) |>
   mutate(
     grid = rep,
-    targetPosition = ""
+    targetPosition = "",
+    message_id_num = row_number()
   )
 
-ready_for_segment <- all |> select(game, grid, targetPosition, role, person, message)
+ready_for_segment <- all |> select(game, grid, targetPosition, role, message_id_num, message)
 # specs
 # game (numeric from 1)
 # grid (= round, numeric from 1)

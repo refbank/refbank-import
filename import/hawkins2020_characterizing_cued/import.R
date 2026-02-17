@@ -3,8 +3,6 @@ library(tidyverse)
 library(jsonlite)
 source(here("validate.R"))
 
-# Note this is only for the cued ones!
-# uncued will have to wait for parsing out trial-level stuff
 
 
 # TODOs

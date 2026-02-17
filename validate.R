@@ -82,7 +82,7 @@ validate_dataset <- function(df, write = F) {
   assert_that(all(df$stage_num > 0), msg = "stage_num is 1 indexed")
 
 
-
+  assert_that(all(is.na(df$age) | (df$age > 2 & df$age < 100)), msg = "implausible age data")
   assert_that(all(df$action_type %in% c("message", "selection")),
     msg = "action_type must be message or selection"
   )

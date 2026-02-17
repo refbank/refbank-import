@@ -62,7 +62,8 @@ ready_for_segment <- full |>
     ),
     message_original = message
   ) |>
-  select(game, grid, targetPosition, role, person, message_original)
+  mutate(message_id_num=row_number()) |> 
+  select(game, grid, targetPosition, role, message_id_num, message_original)
 # specs
 # game (numeric from 1)
 # grid (= round, numeric from 1)
