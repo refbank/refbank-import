@@ -35,13 +35,20 @@ theory, agent-based modeling, and experimental psychology.
 
 This is part of the CABB dataset (although this is the paper where there is
 a release of relevant-to-refbank data)
-* 42 pairs (84 participants)
+
+* 42 pairs (84 participants) (we have data for 47 -- matching how many have good transcription mentionedin Eijk et al 2022)
+(Eijk et al 2022 suggests that there is data for more pairs (not released in as part of this paper?, possibly due to lower transcription quality or other missing data))
 * in interactive portion, see the 16 Fribbles (=target shapes)
 * describer has one highlighted, matcher has to identify
-* roles switch each trial, 16 targets x 6 blocks 
+* roles switch each trial, (Eijk et al 2022: "After completing the Referential and Localisation tasks for one Fribble, participants switched roles for the next trial.")
+* 16 targets x 6 blocks 
+* full backchannel: Eijk et al 2022: "They were informed that they could communicate in any way they wanted (without explicitly mentioning speech and gesture)"
+* correctness feedback is not mentioned (in either paper), so we presume that it was not given? 
 
 each trial has both a identify the one being talked about and figure out if it's in the same place on the screen
+From Eijk et al 2022: "Both participants saw the same 16 Fribbles in the same general spatial layout, but 50% of the Fribbles were not positioned in the same locations within this layout (see Fig. 4). On each trial, one of the 16 Fribbles was marked by a red square (the target for that trial) for one of the two participants (the “Director”)."
 we're going to drop the localization part
+
 there's also pre-tests and other measurements that we do not include 
 
 ## Processing/import
@@ -49,5 +56,9 @@ We have choice data, but don't know how to identify the target-selection alignme
 get it wrong (but this could be figured out in future work)
 
 We have text data. 
+
 We do not have the target -- image mapping (although it might be possible)
+
+there are not very many trials without correct choices and we can't easily reconstruct choice id for most of them, so just dropping
+
 We do not have demographics (although we haven't asked)

@@ -20,7 +20,7 @@ partner_constancy <- "yes"
 population <- "adult"
 role_constancy <- "yes"
 confederates <- "no"
-modality <- "oral-in-person"
+modality <- "oral-remote"
 feedback <- "none"
 backchannel <- "full"
 

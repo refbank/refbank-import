@@ -8,12 +8,18 @@ During spontaneous conversations, speakers collaborate on novel referring expres
 
 ## Study details
 
-* 10 pairs of participants (20 participants total) did 4 rounds of baskets and 4 rounds of dogs
+* 10 pairs of participants (20 participants total) did 4 rounds of baskets and 4 rounds of dogs (we have 20 games, 10 and 10)
 * each stimulus set had 10 targets + 3 extras
+* no role switches
+* modality: "Partners sat in separate rooms and communicated via an audio channel."
+* each pair did both dogs and baskets, counterbalanced for order (but I don't think we have which came first per group)
+* backchannel: free 
+* feedback: no mention in paper, we assume that means no feedback
 
 
 ## Processing/import
-* we treat the dog set and the basket set as separate games even though they do have the same participant pairs (could revisit)
+* we treat the dog set and the basket set as separate games even though they do have the same participant pairs
 * paper reports that all pairs got 100% accuracy each time
-* to avoid leaking the written part of the dataset, they have it in a zip file and it can't be shared publicly
+* to avoid leaking the written part of the dataset, they have it in a zip file and say not to post publicly; 
+we are awaiting clarification on whether we can put the text in refbank (for now, dropping text before validation)
 * we have image files

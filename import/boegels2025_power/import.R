@@ -10,7 +10,6 @@ results <- read_delim(here(raw_data_loc, "interaction_ToT_accuracy.txt"), delim 
   select(-trial) |>
   filter(task == "ref")
 
-# there are not very many trials without correct choices and we can't easily reconstruct choice id for most of them, so just dropping
 
 choices <- results |>
   filter(correct_answer == given_answer) |>
@@ -21,8 +20,6 @@ choices <- results |>
   ) |>
   select(pair, round, trial_nr, participant, choice_id, target, onset_msec, offset_msec) |>
   mutate(action_type = "selection", role = "matcher", time_stamp = round((offset_msec - onset_msec) / 1000))
-
-# todo figure out what the choices mapping is when they got it wrong!
 
 trial_start <- results |> select(pair, round, trial_nr, trial_onset = onset_msec)
 

@@ -31,7 +31,10 @@ this knowledge in an adult-like way.
 3 participant role conditions (SP = Side Participant; OH = Overhearer; NP = Naïve Participant)
 On each trial, director describes (same, randomised) set of 8 tangrams to matcher.
 Trials A1-4 – director describes to matcher A; Trials B1-4 – director describes to matcher B
-24 groups of participants (8/participant role condition)
+24 groups of participants (8/participant role condition) (matches the data we have)
+
+* modality (of active participants): in-person face to face, so with full backchannel
+* feedback: (limited) "After each round, the experimenter checked the accuracy of the card positions, and provided feedback about how many were correctly placed."
 
 
 
@@ -39,6 +42,9 @@ Trials A1-4 – director describes to matcher A; Trials B1-4 – director descri
 
 Alignment between target numbering and tangram lettering was determined by us (from a known option set of images). 
 
-The data we have is all that is available, and includes transcripts from some rounds (not all) and target information. 
+The data we have is all that is available, and includes transcripts from some rounds (not all) and target information.
+We have reps 1, 2, 4, and 5. (1, 2, and 4 with first partner, and then first rep with new partner)
+
 We have some aggregate accuracy information, but not trial by trial selection information. 
+
 We do not have demographics. 
