@@ -4,10 +4,8 @@ library(tidyr)
 library(stringr)
 library(here)
 
-# Load data
-# some sort of data error on trial 21 of game 107 (adult adult, where both players are listed as matchers)
-# guessing that right is the describer so that it's alternating across 20 and 22 ?
 source <- "https://raw.githubusercontent.com/ashleychuikay/tangramgame/refs/heads/master/data/experiment1/combined_clean.csv"
+
 combined_df <- read_csv(url(source)) |>
   mutate(role = case_when(
     subid == 107 & trial == 21 & person == "right" ~ "director",
@@ -35,11 +33,8 @@ messages <- combined_df |>
   ) |>
   ungroup()
 
-# some sort of data error on trial 21 of game 107 (adult adult, where both players are listed as matchers)
-# guessing that right is the describer so that it's alternating across 20 and 22 ?
-
 missing_messages <- combined_df |>
-  select(subid, trial, person, role, director, age, experiment, target, rep_num) |> # these are all matchers!
+  select(subid, trial, person, role, director, age, experiment, target, rep_num) |>
   anti_join(messages |> filter(role == "director") |> select(subid, trial, person) |> unique()) |>
   mutate(
     person = director,

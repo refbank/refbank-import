@@ -7,16 +7,6 @@ library(purrr)
 library(here)
 library(fs)
 
-# DATA STRUCTURE NOTES (from email)
-# File naming: tan[round].[dyad].dat
-# Columns (multivariate time series):
-#   1. tangram_mouse: tangram moused over by matcher (1-6 valid, -1 = failed mouse data)
-#   2. correct_tangram: the correct tangram number (1-6)
-#   3. turn_time: time in milliseconds
-#   4. director_eye: tangram fixated by director (1-6 valid, 10 = not fixating, 11 = tracker lost)
-#   5. matcher_eye: tangram fixated by matcher (1-6 valid, 10 = not fixating, 11 = tracker lost)
-# Each row is a time sample (not a trial)
-# No transcripts available - study focused on perceptuomotor dynamics
 
 # Set Metadata
 dataset_id <- "dale2011_tangram"
@@ -29,9 +19,9 @@ partner_constancy <- "yes"
 population <- "adult"
 role_constancy <- "yes"
 confederates <- "no"
-modality <- "oral-in-person"
+modality <- "oral-remote"
 feedback <- "none"
-backchannel <- "none"
+backchannel <- "full"
 
 # Helper to Read a .dat File
 read_tangram_dat <- function(path) {

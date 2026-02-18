@@ -18,10 +18,25 @@ as their words coalesce, their actions approximate a single coordinated system.
 
 ## Study details
 
-20 pairs (40 participants)
+20 pairs (40 participants) (we have 20 games imported)
 6 targets x 3 rounds
 Study is more about eye and mouse tracking (and alignment thereof), but we do not include eye or mouse data
+* role constant throughout experiment
+* paper does not report whether any feedback was given; we assume not given what is typical in ordering experiments
+* communication between describer and matcher was oral but remote ("Participants communicated through hands-free headsets which used an intercom feature on 2.4Ghz wireless phones.")
+* paper does not explicitly report whether matchers were allowed to talk or not, we assume they were given how intercoms generally work
 
 ## Processing/import
 
 We have selection information. We are confirmed not to have text data, and we don't seem to have images or demographics. 
+
+DATA STRUCTURE NOTES (from email)
+File naming: tan[round].[dyad].dat
+Columns (multivariate time series):
+   1. tangram_mouse: tangram moused over by matcher (1-6 valid, -1 = failed mouse data)
+   2. correct_tangram: the correct tangram number (1-6)
+   3. turn_time: time in milliseconds
+   4. director_eye: tangram fixated by director (1-6 valid, 10 = not fixating, 11 = tracker lost)
+   5. matcher_eye: tangram fixated by matcher (1-6 valid, 10 = not fixating, 11 = tracker lost)
+ Each row is a time sample (not a trial)
+ No transcripts available - study focused on perceptuomotor dynamics

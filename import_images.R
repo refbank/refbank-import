@@ -29,10 +29,10 @@ all_images <- all_trials |>
       dataset_id %in% c("yoon2019_audience") ~ "line drawing",
       dataset_id %in% c("hawkins2019_continual", "wang2025_lvlms") ~ "photograph",
       dataset_id %in% c(
-        "boyce2024_interaction", "eliav2023_semantic", "leung2024_scaffolding",
+        "boyce2024_interaction", "ji2025_adhoc", "leung2024_scaffolding",
         "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
         "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_function",
-        "boyce2025_preschoolers", "dale2011_tangram", "branigan2016_doyouknow"
+        "boyce2026_preschoolers", "dale2011_tangram", "branigan2016_doyouknow"
       ) ~ "tangram"
     ),
     kilogram_id = case_when(
@@ -42,7 +42,7 @@ all_images <- all_trials |>
     image_path =
       case_when(
         dataset_id %in% c(
-          "boyce2024_interaction", "eliav2023_semantic",
+          "boyce2024_interaction", "ji2025_adhoc",
           "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
           "hawkins2021_respect", "hawkins2023_frompartners", "branigan2016_doyouknow"
         ) ~ str_c(kilogram_id, ".svg"),
@@ -52,10 +52,10 @@ all_images <- all_trials |>
         target == "walk" ~ "B1.jpg",
         target == "swim" ~ "D1.jpg",
         target == "jump" ~ "E1.jpg",
-        dataset_id == "boyce2025_preschoolers" & target %in% c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L") ~ str_c(kilogram_id, ".svg"),
+        dataset_id == "boyce2026_preschoolers" & target %in% c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L") ~ str_c(kilogram_id, ".svg"),
       )
-  ) |> 
-select(-dataset_id) |>
+  ) |>
+  select(-dataset_id) |>
   rename(image_id = target) |>
   unique() |>
   write_csv(here("image_data/image_metadata.csv"))

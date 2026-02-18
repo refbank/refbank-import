@@ -4,7 +4,6 @@ library(jsonlite)
 
 data_dir <- "import/ji2025_adhoc/raw_data"
 
-
 ParseJSONColumn <- function(x) {
   x |>
     str_replace_all("\\\\", "") |>
@@ -52,7 +51,7 @@ messages_single <- expt_1 |>
 
 messages_complex <- expt_3 |>
   select(
-    game_id, block, target, controlled, trial_index,
+    game_id, block, target, trial_index,
     condition_label, description, context, speaker_id, listener_id, stage_num
   ) |>
   mutate(description = map(description, ParseJSONColumn)) |>

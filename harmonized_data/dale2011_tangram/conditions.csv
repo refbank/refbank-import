@@ -1,2 +1,2 @@
 condition_label,dataset_id,full_cite,short_cite,group_size,prior_relationship,partner_constancy,role_constancy,population,confederates,modality,feedback,backchannel,language,condition_id
-experiment 1,dale2011_tangram,"Dale, R., Kirkham, N. Z., & Richardson, D. C. (2011). How two people become a tangram recognition system. In Proceedings of the European Conference on Computer-Supported Cooperative Work.",Dale et al. (2011),2,no,yes,yes,adult,no,oral-in-person,none,none,English,1
+experiment 1,dale2011_tangram,"Dale, R., Kirkham, N. Z., & Richardson, D. C. (2011). How two people become a tangram recognition system. In Proceedings of the European Conference on Computer-Supported Cooperative Work.",Dale et al. (2011),2,no,yes,yes,adult,no,oral-remote,none,full,English,1

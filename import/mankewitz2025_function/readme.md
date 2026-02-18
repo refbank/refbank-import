@@ -13,6 +13,14 @@ Human languages are compositional, combining smaller units of meaning to express
 Images are coded separately here (per image), but there was structural similarity 
 between some images (same top or bottom half sometimes). See original paper for details. 
 
+* recruitment from Prolific
+* conditions: non-compositional, within-trial competitor, across-trial competitor
+* final sample of 450 dyads after exclusions, across 3 conditions (we have excluded as well- 182 no competitor, 194 within, 176 across)
+* roles alternate by trial
+* feedback: confirmed with author that full feedback was given (paper says "Both participants received immediate feedback about whether the correct shape was selected.")
+* chat box with free typing
+* 4 blocks of 16 trials (64 trials total)
+
 ## Processing/import
 
-We have images, demogs, text, and selections. 
+We have images, demographics, text, and selections. 

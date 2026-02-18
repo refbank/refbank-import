@@ -2,20 +2,6 @@ library(here)
 library(tidyverse)
 library(jsonlite)
 
-# import decisions:
-
-# note that there is also post-test data associated with this dataset, but not imported
-
-# we are treating game-room as game because that's what is unique / game-trialnum
-
-# note that for player-role, original code implies that games.csv is canonical
-# the raw-chat has a few errors!
-# we assume errors are limited to chat metadata -- it appears to be at the ends of things,
-# so perhaps is getting meta-data from the next trial?
-# we assume chat messages are correctly assigned to trial and that playerid is correct which seems to be supported by spot checks
-# we also have to retrieve who the listener is in each room-game to get the right player labels on the selections
-
-
 ParseJSONColumn <- function(x) {
   str_c("[ ", str_c(x, collapse = ",", sep = " "), " ]") %>%
     fromJSON(flatten = T)
@@ -55,7 +41,6 @@ rooms.tmp <- games |>
   rowwise() %>%
   filter(!is.null(room)) %>%
   unnest(room) %>%
-  # mutate(option_set=ifelse(data.targetSet=="setA", "A;B;C;D", "E;F;G;H")) |>
   group_by(playerId) %>%
   mutate(
     n = row_number() - 1,
@@ -99,7 +84,7 @@ messages_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |>
     action_type = "message",
     message_number = as.numeric(message_number),
     message_irrelevant = F
-  ) # I don't see any message relevancy cleaning in the source
+  )
 
 # fix cases where someone seems to be in the wrong room
 fixing_rooms <- messages_1 |>
@@ -158,10 +143,6 @@ messages_2 <- messages_1 |>
   left_join(fixing_rooms) |>
   left_join(targets)
 
-messages_2 |> filter(roomId != message_roomId) # 8 instances all trialNum15
-messages_2 |> filter(target != message_target) # 6 instances all trialNum15
-messages_2 |> filter(gamerole != message_role) # |> select(trialNum) |> unique() # 42 instances, all trial num 7/11/3/15
-
 messages <- messages_2 |>
   select(
     gameId, trialNum, partnerNum, repNum, text, playerId,
@@ -211,7 +192,7 @@ all <- messages_clean |>
       gamerole == "listener" ~ "matcher",
       T ~ NA
     ),
-    age = as.numeric(NA), # TODO demographics
+    age = as.numeric(NA),
     gender = as.character(NA),
     race = as.character(NA),
     education = as.character(NA),
@@ -222,7 +203,7 @@ all <- messages_clean |>
     stage_num = partnerNum + 1,
     trial_num = 1 + trialNum + partnerNum * 16,
     rep_num = 1 + repNum + 4 * partnerNum,
-    time_stamp = ifelse(choice_id == "timed_out", 45, NA), # didn't find timestamps in source, paper reports time out at 45 seconds/trial
+    time_stamp = ifelse(choice_id == "timed_out", 45, NA),
     group_size = 4,
     prior_relationship = "no",
     partner_constancy = "no",

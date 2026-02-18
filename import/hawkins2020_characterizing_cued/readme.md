@@ -33,14 +33,23 @@ Ordering experiment:
 * 218 recruited 
 * 6 rounds of 12 targets each
 * 56 games post exclusions
+* free chat via textbox
+* feedback limited (after each set of 12 "batched feedback on their score (out of 12)")
 
 Matching experiment:
 * 268 recruited
 * 6 rounds of 12 targets each
-* 83 games post exclusions 
+* 83 games post exclusions (we have 262 player ids, 131 games, suggesting pre-exclusions)
+* free chat via textbox
+* full feedback ("participants were given full, immediate feedback: The director saw which tangram their partner clicked, and the matcher saw the intended tangram.")
 
 
 ## Processing/import
 We pull data from github.
 
 We have images, selections, messages. We do not have demographics (but they might exist?). 
+
+We don't import timing info because we can't figure out how to process the timing info in the source. 
+we are unsure of timestamps -- there are both msgTime and timeElapsed, 
+but they don't obviously line up, so not sure we have reliable time to message
+for selections, there is a time column, but I don't think we have a start of trial indicator to baseline with

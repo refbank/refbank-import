@@ -31,11 +31,18 @@ The paper has other simulations and experiments, but the only one relevant enoug
 is experiment 2 in the paper (labeled as experiment 3 in the github)
 
 From the paper:
-92 participants in one of 23 fully connected networks of 4 people 
-Each network gets one of 3 sets of contexts (images)
-Roles swapped each block, (4 blocks of 4 trials each) x 3 partners
+* recruitment from AMT
+* 92 participants in one of 23 fully connected networks of 4 people (we have 30 networks, presumably including exclusions)
+* Each network gets one of 3 sets of contexts (images)
+* Roles swapped each block, (4 blocks of 4 trials each) x 3 partners
+* backchannel: free chat between the two members each block
+* group size is coded as 4 because of network size, but is functionally pairs (at least within each stage)
+* feedback full "both participants in a pair were given full feedback on each trial about their partner’s choice"
 
 ## Processing/import
 We pull the data from github
+
+Distractor identities were somewhat rederived based on the idea that the distractors are labeled in order from what's left of the set
+see https://github.com/hawkrobe/conventions_model/blob/master/reference_game/experiment.py#L102 for why we think that
 
 We have images, text and selections. We do not have demographics (although they may be available)

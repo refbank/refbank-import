@@ -5,13 +5,6 @@ source(here("validate.R"))
 
 
 
-# TODOs
-# exclusions -- expect 131 pairs --> -33 for disconnect ; -3 for native lang; 66/66 rule  excluded 8 for low accuracy
-# this has 83 --> seems like post exclusions then?
-# message relevancy
-# choice timing
-# message timing
-
 url <- "https://raw.githubusercontent.com/hawkrobe/tangrams/refs/heads/master/data/tangrams_sequential/"
 
 # read-in using Robert's code
@@ -117,8 +110,7 @@ messages <- sequentialCombined.raw %>%
   group_by(gameid, trialNum, repetitionNum) |>
   mutate(message_number = row_number() |> as.numeric()) |>
   mutate(time_stamp = as.numeric(NA)) |>
-  # we are unsure of timestamps -- there are both msgTime and timeElapsed,
-  # but they don't obviously line up, so not sure we have reliable time to message
+
   select(
     gameid, trialNum, repetitionNum, role, intendedName, time_stamp, contents,
     message_number, message_irrelevant
@@ -132,7 +124,7 @@ choices <- sequentialClicks |>
   mutate(role = "matcher") |>
   select(gameid, trialNum, repetitionNum, role, intendedName = intendedObj, clickedObj, role) |>
   mutate(
-    time_stamp = as.numeric(NA), # there is a time column, but I don't think we have a start of trial indicator to baseline with
+    time_stamp = as.numeric(NA), 
     action_type = "selection"
   )
 

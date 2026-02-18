@@ -2,13 +2,6 @@ library(here)
 library(tidyverse)
 library(jsonlite)
 
-# from paper Experiment 2
-# 92 participants in networks or 4 (23 networks)
-# networks got 1 of 3 contexts
-# each pair does 4 blocks of 4 each
-# do all 3 pairs
-# not time-synced so wait if one pair is faster
-
 
 ParseJSONColumn <- function(x) {
   str_c("[ ", str_c(x, collapse = ",", sep = " "), " ]") %>%
@@ -54,8 +47,7 @@ contexts <- messages |>
       target %in% c("I", "J", "K", "H") ~ 2
     ),
     target_name = target,
-    distr0 = case_when( # there are all based on the idea that the distractors are labeled in order from what's left of the set
-      # see https://github.com/hawkrobe/conventions_model/blob/master/reference_game/experiment.py#L102 for why we think that
+    distr0 = case_when(
       target == "A" ~ "B",
       target %in% c("B", "C", "D") ~ "A",
       target == "E" ~ "F",
@@ -158,7 +150,7 @@ all <- messages_with_context |>
     backchannel = "full",
     order_match = "match",
     condition_label = "pairs-network",
-    population="adult",
+    population = "adult",
     exclude = ifelse(is.na(exclude), T, exclude),
     exclusion_reason = ifelse(exclude, "incomplete game", NA),
   ) |>

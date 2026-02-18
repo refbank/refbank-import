@@ -132,7 +132,7 @@ d_messages_final <- d_chat |>
 
 # game director
 d_director <- d_round |>
-  select(gameID, director, index) |> # director appears to alternate on a trial by trial basis
+  select(gameID, director, index) |>
   mutate(parity = index %% 2) |>
   select(gameID, derived_director = director, parity) |>
   unique() |>
@@ -199,7 +199,7 @@ d_full <- d_actions |>
   left_join(d_game_final) |>
   mutate(
     room_num = 1,
-    age = ifelse(age != "", as.numeric(age), as.numeric(NA)),
+    age = ifelse(age != "", abs(as.numeric(age)), as.numeric(NA)), # guessing that hyphens are errors?
     gender = ifelse(gender != "", gender |> as.character() |> bin_gender(), as.character(NA)),
     education = case_when(
       education == "high-school" ~ "high-school",

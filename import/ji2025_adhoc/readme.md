@@ -11,24 +11,48 @@ Ji, A., Bergey, C. A., Eliav, R., Artzi, Y., & Hawkins, R. D. (2025). Ad hoc con
 
 We have 3 studies:
 
-* expt1 (Eliav 2023 expt 1; called pilot 1 in appendix of Ji et al 2025): 
-We recruited 60 pairs of participants from Prolific, based on preregistered inclusion criteria (English as first language and location based in US or UK). We excluded 8 pairs of participants,
-we sampled a context of 10 tangrams, 5 tangrams from the high-nameability set and 5 tangrams from the low-nameability set
-Each game contained 5 blocks, and each block had 6 trials. All trials in a game were based on the same context. In each context, 5 tangrams were assigned to the repeated condition, each appearing exactly once in each block. Among the 5 repeated tangrams, we ensured that 2 were drawn from the low-nameability condition and 3 from the high-nameability condition, or vice versa. The other 5 tangrams were assigned to the control condition and only appear in one of the blocks as the target.
+expt1 (Eliav 2023 expt 1; called pilot 1 in appendix of Ji et al 2025): 
+* participants from Prolific 
+* 60 pairs, including 9 excluded (we have 60)
+* each pair has a context of 10 tangrams, 5 high-nameability, 5 low nameability
+* half of images are targets each trial, half only targets once 
+* 5 blocks of 6 trials each 
+* roles swap each block 
+* describer sends single message (45 second limit; + 15 seconds for matcher to select)
+* --> no backchannel
+* feedback: "Both participants received feedback after each trial indicating if the listener had responded correctly."
 
-* expt2 (Eliav 2023 expt 2; called pilot 2 in appendix of Ji et al 2025)
-We recruited 60 pairs of participants, 8 of whom were excluded based on the same criteria used in Pilot 1.
-was an exact replication of the within-dyad 2 × 2 design used in Pilot 1. The second phase (the test phase) was new. A 6th block was appended, containing 10 additional trials (Figure D8).
+expt2 (Eliav 2023 expt 2; called pilot 2 in appendix of Ji et al 2025)
+* presumably from Prolific
+* 60 pairs, including 8 excluded pairs (we have 59)
+* same as expt 1 above, plus a 6th round that was added with 10 new stims
+* roles swap each block 
+* describer sends single message (45 second limit; + 15 seconds for matcher to select)
+* --> no backchannel
+* feedback: "Both participants received feedback after each trial indicating if the listener had responded correctly."
 
-* expt3 (main experiment in Ji et al 2025): 
-We recruited 163 pairs of participants
-to participate in a three-stage communication game (Figure 1A-C).
-12 pairs with incomplete games were excluded, leaving 151 (N = 302) pairs for analysis.
-... 10 possible choices. This phase consisted of five blocks, with six trials per block. 
-Five tangrams appeared as the target on every block (repeated condition), while the other 
-five were interspersed such that they appeared as target only once (control condition).
+
+expt3 (main experiment in Ji et al 2025): 
+* recruitment via Prolific 
+* 163 pairs, of whom 12 excluded (we have 151, suggesting post-exclusions)
+* each game has 10 targets
+* 5 blocks of 6 targets each; 5 targets occur every block, other 5 only occur once 
+* roles swap every block
+* describer has 45 seconds, but messages reset timer to 30 seconds
+* backchannel: both partners can use chatbox freely
+* feedback: "After the listener selected a tangram, both participants would receive feedback on whether the target was correctly selected."
 
 ## Processing/import
 we only import the interactive trials (not pre and post tests)
 
-We have images, text, and responses. We do not have demographics (might be available?). 
+We have images, text, and responses. 
+
+We seem to have time_stamps for the selections and for the expt 1 and 2 messages, but not for expt 3 messages.
+
+These data are available at https://github.com/lil-lab/tangrams-ref/tree/main but at least for
+main experiment = experiment 3, it's processed slightly differently in a way that makes it hard to extract the sequence of 
+describer/matcher messages. 
+
+The demographics (https://github.com/lil-lab/tangrams-ref/blob/main/data/demographics.csv) 
+seem to interface with the full data on the github but don't have the same types of ids that we have. 
+Demographics are potentially importable, but since it would take significant wrangling, we'll hold off until there's a use case. 

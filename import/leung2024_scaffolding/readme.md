@@ -19,8 +19,15 @@ modeling cooperative communication.
 
 ## Study details
 
-(expt 1 in the paper)
-mostly child and parent plus an adult-adult control 
+Experiment 1:
+* children (ages 4,6,8) and parents from local community 
+* 75 child-parents recruited, 12 pairs excluded (we have 63 -- so post exclusion)
+* plus psych department convenience sample for 20 adult-adult pairs (we have 19 )
+* 10 tangrams, always paired with a low similarity foil
+* 4 blocks of 10 targets each
+* play on ipads, talking face to face 
+* roles alternate by trial (and targets are described by the other player in alternating blocks)
+* feedback: none ("Importantly, neither the matcher nor the director received explicit feedback about accuracy: The same sound played whether the selection was correct or not.")
 
 ## Processing/import
 
@@ -32,3 +39,6 @@ but we don't know what image is the distractor each trial (labeled as unk1).
 We do not have demographics, although we assume children to be the age of their age category (ex. 4). 
 
 We have text and accuracy and target images. 
+
+some sort of data error on trial 21 of game 107 (adult adult, where both players are listed as matchers);
+guessing that right is the describer so that it's alternating across 20 and 22 ?

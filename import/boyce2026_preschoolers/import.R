@@ -118,7 +118,7 @@ demogs <- read_csv(url(expt_1_demog)) |>
   ) |>
   select(-id)
 
-# construct apprpriate chunks
+# construct appropriate chunks
 
 messages <- expt_1_transcript |>
   bind_rows(expt_2_transcript) |>
@@ -150,7 +150,7 @@ choices <- expt_1_data |>
       read_tsv(url(expt_3_link)) |> mutate(expt = "expt3")
     ) |> select(game, expt)) |>
   filter(type != "practice") |>
-  select(game, trial, response, listener, distractor, target, expt) |>
+  select(game, trial, response, listener, distractor, target, expt, time) |>
   rename(playerId = listener, choice_id = response) |>
   mutate(choice_id = case_when(
     is.na(choice_id) ~ "timed_out",
@@ -162,7 +162,8 @@ choices <- expt_1_data |>
   )) |>
   mutate(
     action_type = "selection",
-    role = "matcher"
+    role = "matcher",
+    time_stamp=round(time/1000) 
   )
 
 no_talk <- expt_1_data |>
@@ -248,7 +249,6 @@ all <- messages |>
     stage_num = 1,
     rep_num = (trial) %/% 4 + 1,
     trial_num = trial + 1,
-    time_stamp = as.numeric(NA),
     native_language = as.character(NA),
     education = "less-than-high-school",
     message_number = as.numeric(message_number),

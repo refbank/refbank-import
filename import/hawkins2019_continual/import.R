@@ -214,7 +214,7 @@ all <- chat |>
     gender = as.character(NA),
     education = as.character(NA),
     race = as.character(NA),
-    time_stamp = as.numeric(NA), # there is some time info in original data but unclear how to map it
+    time_stamp = as.numeric(NA),
     prior_relationship = "no",
     partner_constancy = "yes",
     role_constancy = "yes",
