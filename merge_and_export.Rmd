@@ -19,6 +19,39 @@ library(assertthat)
 DATA_LOC <- here("harmonized_data")
 ```
 
+# Re-run imports scripts
+
+```{r}
+rerun_imports <- function(to_run){
+# delete harmonized data
+list.files(here("harmonized_data")) |> map(\(f){unlink(here("harmonized_data", f),recursive=T)})
+
+source("validate.R")
+Sys.setenv(FORCE_WRITE = "true")
+to_run |> map(\(f){
+  print(f)
+  source(here("import", f, "import.R"))})
+Sys.unsetenv("FORCE_WRITE")
+source(here("import_images.R"))
+}
+```
+
+
+```{r}
+# to re-run
+to_run <- c("yoon2019_audience", "wang2025_lvlms", "mankewitz2025_function","leung2024_scaffolding",
+            "ji2025_adhoc", "hawkins2023_frompartners", "hawkins2021_respect", 
+            "hawkins2020_characterizing_cued", "hawkins2019_continual",
+            "dale2011_tangram", "branigan2016_doyouknow", "boyce2026_preschoolers",
+            "boyce2024_interaction", "boegels2025_power")
+
+rerun_imports(to_run)
+
+```
+
+
+# Make tables
+
 Set up the function for getting tables. 
 
 ```{r}
@@ -42,7 +75,6 @@ get_tbl <- function(con = DATA_LOC, dataset_name, tbl_name) {
 }
 ```
 
-# Make tables
 
 
 Mark with dataset IDs
@@ -437,8 +469,10 @@ dataset$table("players:7xnd")$update(upload_merge_strategy = "replace")
 dataset$table("images:jw0t")$update(upload_merge_strategy = "replace")
 
 
-
-
+dataset$table("cosine_similarities:cp0s")$update(upload_merge_strategy= "replace")
+dataset$table("embeddings:ckdc")$update(upload_merge_strategy= "replace")
+dataset$table("per_game_summary:bsw0")$update(upload_merge_strategy= "replace")
+dataset$table("summary:w9sc")$update(upload_merge_strategy= "replace")
 
 upload <- dataset$table("datasets:q7yy")$upload()$create(
   "export/datasets.csv",

@@ -20,6 +20,5 @@ During spontaneous conversations, speakers collaborate on novel referring expres
 ## Processing/import
 * we treat the dog set and the basket set as separate games even though they do have the same participant pairs
 * paper reports that all pairs got 100% accuracy each time
-* to avoid leaking the written part of the dataset, they have it in a zip file and say not to post publicly; 
-we are awaiting clarification on whether we can put the text in refbank (for now, dropping text before validation)
 * we have image files
+don't have demogs, have image files, selections, and text 

@@ -2,29 +2,34 @@ library(tidyverse)
 library(here)
 library(jsonlite)
 
-raw_data_loc <- "import/hawkins_fmri/raw_data/behavioral/raw_transcripts"
+raw_data_loc <- "import/hawkins_fmri/raw_data/hawkins_outputs"
 
 
 full <- here(raw_data_loc) |>
-  list.files(recursive = TRUE) |>
+  list.files() |>
   as_tibble() |>
-  filter(str_detect(value, ".tsv"), str_detect(value, "Repeated")) |>
-  mutate(data = map(value, \(f){
-    here(raw_data_loc, f) |>
-      read_tsv() |>
-      mutate(source = f) |>
-      mutate(
-        game = str_sub(source, 7, 9),
-        rep = str_sub(source, -5, -5)
-      )
+  filter(str_detect(value, "run")) |>
+  mutate(data = map(value, \(f) {
+    fromJSON(here(raw_data_loc, f))$segments |>
+      as_tibble() |>
+      select(-words) |>
+      mutate(source = f)
   })) |>
-  unnest(data)
-
-
-
-ready_for_segment <- full |>
+  unnest(data) |>
   mutate(
-    game = as.factor(game) |> as.numeric(),
+    role = "",
+    grid = "",
+    targetPosition = "",
+    message = text
+  ) |>
+  mutate(game = as.factor(source) |> as.numeric()) |>
+  mutate(
+    game = str_sub(source, 7, 9),
+    rep = str_sub(source, -6, -6),
+    rep = ifelse(rep == "v", 2, rep), # one file with a weird naming
+    message_id_num = row_number()
+  ) |>
+  mutate(
     grid = as.numeric(rep),
     targetPosition = "",
     role = "",
@@ -46,8 +51,7 @@ ready_for_segment <- full |>
 # remainder.csv
 
 
-write_csv(ready_for_segment |> filter(game == 1), here("segmentation/sample/hawkins_fmri.csv"))
-write_csv(ready_for_segment |> filter(game != 1), here("segmentation/remainder/hawkins_fmri.csv"))
+write_csv(full, here("segmentation/remainder/hawkins_fmri.csv"))
 
 
 # probably 18 / round ?

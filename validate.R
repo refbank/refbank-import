@@ -22,6 +22,7 @@ check_cols <- function(required_cols, df) {
 
 
 validate_dataset <- function(df, write = F) {
+  if (Sys.getenv("FORCE_WRITE") == "true") write <- TRUE
   # check column presence
   required_cols <- c(
     "condition_label", "dataset_id", "full_cite", "short_cite",

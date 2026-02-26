@@ -34,6 +34,8 @@ pull_targets |>
   View()
 
 pull_targets |>
-  filter(name == "sessid002") |>
+  filter(name == "sessid004") |>
   select(trial_position, target, everything()) |>
   View()
+
+# game 004 round 1 gets removed, so we only have 5 rounds -- maybe these should canonically be 2-6? going by audio

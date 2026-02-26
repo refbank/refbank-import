@@ -211,7 +211,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
       room_num = 1,
       option_set = str_c(condition_label, "_", 1:10, sep = "", collapse = ";"),
       target = str_c(condition_label, "_", as.character(Answer)),
-      rep_num = 1,
+      rep_num = Round,
       stage_num = 1,
       exclude = FALSE,
       exclusion_reason = "",
@@ -225,7 +225,8 @@ harmonize_matching_dataset <- function(df, condition_label) {
       education = NA,
       message_irrelevant = FALSE,
       choice_id = NA_character_,
-      condition_label = "experiment_1"
+      condition_label = "experiment_1",
+      text=str_replace_all(text, "\n", " ")
     ) %>%
     select(
       condition_label, dataset_id, full_cite, short_cite, group_size, language, prior_relationship, partner_constancy,
@@ -311,8 +312,5 @@ trial_roles <- df %>%
     .groups = "drop"
   )
 
-# per their documentation, they don't want the message text on the internet, so for upload to refbank remove that
-df_safe <- df |> mutate(text = as.character(NA))
-
 cat("\n=== Now running validation ===\n")
-validate_dataset(df_safe, write = TRUE)
+validate_dataset(df, write = TRUE)
