@@ -53,6 +53,13 @@ full <- here(raw_data_loc) |>
 
 write_csv(full, here("segmentation/remainder/hawkins_fmri.csv"))
 
+# spec
+# 21 games
+# 2268 trials
+
+full |>
+  mutate(words = str_count(message, "\\S+")) |>
+  summarize(sum = sum(words))
 
 # probably 18 / round ?
 # deffo 18 targets/game, in one of two sets!

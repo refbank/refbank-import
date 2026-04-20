@@ -54,6 +54,11 @@ ready_for_segment <- full |> select(game, grid, targetPosition, role,message_id_
 # sample.csv
 # remainder.csv
 
+ready_for_segment |> distinct(game)
+
+ready_for_segment |>
+  mutate(words = str_count(message, "\\S+")) |>
+  summarize(sum = sum(words))
 
 write_csv(ready_for_segment |> filter(game == 1), here("segmentation/sample/dahan.csv"))
 write_csv(ready_for_segment |> filter(game != 1), here("segmentation/remainder/dahan.csv"))

@@ -62,7 +62,7 @@ ready_for_segment <- full |>
     ),
     message_original = message
   ) |>
-  mutate(message_id_num=row_number()) |> 
+  mutate(message_id_num = row_number()) |>
   select(game, grid, targetPosition, role, message_id_num, message_original)
 # specs
 # game (numeric from 1)
@@ -77,6 +77,13 @@ ready_for_segment <- full |>
 # remainder.csv
 
 # NOte that roles swap after each round!
+
+ready_for_segment |> distinct(game)
+ready_for_segment |> distinct(grid, game)
+
+ready_for_segment |>
+  mutate(words = str_count(message_original, "\\S+")) |>
+  summarize(sum = sum(words))
 
 write_csv(ready_for_segment |> filter(game == 1), here("segmentation/sample/bangerter2000.csv"))
 write_csv(ready_for_segment |> filter(game != 1), here("segmentation/remainder/bangerter2000.csv"))

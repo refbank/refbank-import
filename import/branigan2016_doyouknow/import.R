@@ -145,10 +145,11 @@ combined <- transcripts |>
     education = "less-than-high-school",
     choice_id = NA,
     message_irrelevant = NA,
-    condition_label=case_when(
-      condition=="NP" ~ "naive participant",
-      condition=="SP" ~ "side participant",
-      condition=="OH" ~ "overhearer")
+    condition_label = case_when(
+      condition == "NP" ~ "naive participant",
+      condition == "SP" ~ "side participant",
+      condition == "OH" ~ "overhearer"
+    )
   ) |>
   rename(game_id = group, text = description) |>
   select(-trial, -words, -speaker, -round, -tangram, -stage, -set, -condition)

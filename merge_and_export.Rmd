@@ -553,7 +553,9 @@ con <- redivis$user("mcfrank")$dataset("refbank:2zy7")
 dataset <- con$create_next_version(if_not_exists = T)
 
 
-# dataset$table("per_game_summary")$create()
+# dataset$table("hedges")$create()
+#  dataset$table("pos")$create()
+
 
 dataset$release()
 ```

@@ -29,12 +29,9 @@ pull_targets |>
   tally() |>
   filter(n != 6)
 
-pull_targets |>
-  distinct(target) |>
-  View()
 
 pull_targets |>
-  filter(name == "sessid004") |>
+  filter(name == "sessid013") |>
   select(trial_position, target, everything()) |>
   View()
 
