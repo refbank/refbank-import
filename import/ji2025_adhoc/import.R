@@ -109,7 +109,7 @@ all <- messages_single |>
     group_size = 2,
     target = str_replace(target, ".svg", "") |> str_replace_all("page-", ""),
     choice_id = str_replace(choice_id, ".svg", "") |> str_replace_all("page-", ""),
-    exclude = NA, # TODO figure out
+    exclude = as.logical(NA), # TODO figure out
     exclusion_reason = as.character(NA), # TODO figure out
     option_set = str_replace_all(context, ".svg", "") |> str_replace_all("', '", ";") |>
       str_replace_all(fixed("['"), "") |> str_replace_all(fixed("']"), "") |> str_replace_all("page-", ""),

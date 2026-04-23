@@ -144,7 +144,7 @@ combined <- transcripts |>
     gender = as.character(NA),
     education = "less-than-high-school",
     choice_id = NA,
-    message_irrelevant = NA,
+    message_irrelevant = FALSE,
     condition_label = case_when(
       condition == "NP" ~ "naive participant",
       condition == "SP" ~ "side participant",
