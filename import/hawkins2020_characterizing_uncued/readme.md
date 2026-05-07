@@ -54,4 +54,4 @@ we are unsure of timestamps -- there are both msgTime and timeElapsed,
 but they don't obviously line up, so not sure we have reliable time to message
 for selections, there is a time column, but I don't think we have a start of trial indicator to baseline with.
 
-Identification of what target position goes with each trial (and tagging of extremely irrelevant messages) was done by a contractor. 
+

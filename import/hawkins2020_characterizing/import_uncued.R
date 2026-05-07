@@ -1,7 +1,7 @@
 library(tidyverse)
 library(here)
 
-transcript <- read_csv(here("import/hawkins2020_characterizing_uncued/raw_data/segmented_transcript.csv"))
+transcript <- read_csv(here("import/hawkins2020_characterizing/raw_data/segmented_transcript.csv"))
 raw_messages <- "https://raw.githubusercontent.com/hawkrobe/tangrams/master/data/tangrams_unconstrained/message/rawUnconstrainedMessages.csv"
 raw_choices <- "https://raw.githubusercontent.com/hawkrobe/tangrams/master/data/tangrams_unconstrained/finalBoard/tangramsFinalBoards.csv"
 raw_demog <- "https://raw.githubusercontent.com/hawkrobe/tangrams/master/data/tangrams_unconstrained/turk/tangrams-subject_information.csv"
@@ -141,13 +141,13 @@ exclusion_df <- tribble(
   )
 
 
-all <- messages |>
+all_uncued <- messages |>
   bind_rows(choices) |>
   bind_rows(missing_messages) |>
   left_join(select(subj_df, "gameid", "role", "nativeEnglish")) %>%
   left_join(exclusion_df) |>
   mutate(
-    dataset_id = "hawkins2020_characterizing_uncued",
+    dataset_id = "hawkins2020_characterizing",
     condition_label = "unconstrained",
     full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",
     short_cite = "Hawkins et al. (2020)",
@@ -175,6 +175,3 @@ all <- messages |>
   ) |>
   rename(game_id = gameid) |>
   select(-nativeEnglish)
-
-source(here("validate.R"))
-validate_dataset(all, write=T)

@@ -26,8 +26,8 @@ and support further development of computational models of learning in communica
 ## Study details
 
 Note that this paper reports on 2 similar experiments:
-* one uses an ordering paradigm so doesn't have pre-marked divisions for what text goes with which target (imported separately)
-* one uses a matching paradigm (imported here)
+* one uses an ordering paradigm so doesn't have pre-marked divisions for what text goes with which target 
+* one uses a matching paradigm
 
 Ordering experiment:
 * 218 recruited 
@@ -52,4 +52,7 @@ We have images, selections, messages. We do not have demographics (but they migh
 We don't import timing info because we can't figure out how to process the timing info in the source. 
 we are unsure of timestamps -- there are both msgTime and timeElapsed, 
 but they don't obviously line up, so not sure we have reliable time to message
-for selections, there is a time column, but I don't think we have a start of trial indicator to baseline with
+for selections, there is a time column, but I don't think we have a start of trial indicator to baseline with.
+
+For the ordering experiment: Identification of what target position goes with each trial (and tagging of extremely irrelevant messages) was done by a contractor. 
+

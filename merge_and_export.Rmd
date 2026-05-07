@@ -41,10 +41,9 @@ source(here("import_images.R"))
 # to re-run
 to_run <- c("yoon2019_audience", "wang2025_lvlms", "mankewitz2025_function","leung2024_scaffolding",
             "ji2025_adhoc", "hawkins2023_frompartners", "hawkins2021_respect", 
-            "hawkins2020_characterizing_cued", "hawkins2019_continual",
+            "hawkins2020_characterizing", "hawkins2019_continual",
             "dale2011_tangram", "branigan2016_doyouknow", "boyce2026_preschoolers",
-            "boyce2024_interaction", "boegels2025_power", "dahan2023_collaboration",
-            "hawkins_2020_characterizing_uncued")
+            "boyce2024_interaction", "boegels2025_power", "dahan2023_collaboration")
 
 rerun_imports(to_run)
 

@@ -4,7 +4,7 @@ library(jsonlite)
 source(here("validate.R"))
 
 
-
+# cued import
 url <- "https://raw.githubusercontent.com/hawkrobe/tangrams/refs/heads/master/data/tangrams_sequential/"
 
 # read-in using Robert's code
@@ -110,7 +110,6 @@ messages <- sequentialCombined.raw %>%
   group_by(gameid, trialNum, repetitionNum) |>
   mutate(message_number = row_number() |> as.numeric()) |>
   mutate(time_stamp = as.numeric(NA)) |>
-
   select(
     gameid, trialNum, repetitionNum, role, intendedName, time_stamp, contents,
     message_number, message_irrelevant
@@ -124,7 +123,7 @@ choices <- sequentialClicks |>
   mutate(role = "matcher") |>
   select(gameid, trialNum, repetitionNum, role, intendedName = intendedObj, clickedObj, role) |>
   mutate(
-    time_stamp = as.numeric(NA), 
+    time_stamp = as.numeric(NA),
     action_type = "selection"
   )
 
@@ -150,15 +149,14 @@ choice_no_describer <- choices |>
 options <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L")
 
 
-
-all <- choices |>
+all_cued <- choices |>
   bind_rows(messages) |>
   bind_rows(no_describer) |>
   bind_rows(choice_no_describer) |>
   left_join(exclude) |>
   left_join(select(sequentialSubjInfo, "gameid", "role", "nativeEnglish")) |>
   mutate(
-    dataset_id = "hawkins2020_characterizing_cued",
+    dataset_id = "hawkins2020_characterizing",
     full_cite = "Hawkins, R. D., Frank, M. C., & Goodman, N. D. (2020). Characterizing the dynamics of learning in repeated reference games. Cognitive science, 44(6), e12845.",
     short_cite = "Hawkins et al. (2020)",
     condition_label = "cued",
@@ -218,18 +216,9 @@ all <- choices |>
     message_irrelevant
   )
 
-spoke <- all |>
-  filter(action_type == "message") |>
-  filter(role == "describer") |>
-  select(game_id, trial_num) |>
-  unique()
-all |>
-  filter(action_type == "selection") |>
-  select(game_id, trial_num, choice_id) |>
-  unique() |>
-  anti_join(spoke)
 
+source(here("import/hawkins2020_characterizing/import_uncued.R"))
 
-
+all <- all_cued |> bind_rows(all_uncued)
 
 validate_dataset(all, write = T)

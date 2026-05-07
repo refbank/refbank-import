@@ -30,7 +30,7 @@ all_images <- all_trials |>
       dataset_id %in% c("hawkins2019_continual", "wang2025_lvlms") ~ "photograph",
       dataset_id %in% c(
         "boyce2024_interaction", "ji2025_adhoc", "leung2024_scaffolding",
-        "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
+        "hawkins2020_characterizing",
         "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_function",
         "boyce2026_preschoolers", "dale2011_tangram", "branigan2016_doyouknow",
         "dahan2023_collaboration",
@@ -44,7 +44,7 @@ all_images <- all_trials |>
       case_when(
         dataset_id %in% c(
           "boyce2024_interaction", "ji2025_adhoc",
-          "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
+          "hawkins2020_characterizing", "hawkins2020_characterizing_uncued",
           "hawkins2021_respect", "hawkins2023_frompartners", "branigan2016_doyouknow"
         ) ~ str_c(kilogram_id, ".svg"),
         dataset_id == "dahan2023_collaboration" ~ str_c(target, ".jpeg"),
