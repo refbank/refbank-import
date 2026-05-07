@@ -32,7 +32,7 @@ all_images <- all_trials |>
         "boyce2024_interaction", "ji2025_adhoc", "leung2024_scaffolding",
         "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
         "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_function",
-        "boyce2026_preschoolers", "dale2011_tangram", "branigan2016_doyouknow"
+        "boyce2026_preschoolers", "dale2011_tangram", "branigan2016_doyouknow", "dahan2023_collaboration"
       ) ~ "tangram"
     ),
     kilogram_id = case_when(
@@ -46,6 +46,7 @@ all_images <- all_trials |>
           "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
           "hawkins2021_respect", "hawkins2023_frompartners", "branigan2016_doyouknow"
         ) ~ str_c(kilogram_id, ".svg"),
+        dataset_id == "dahan2023_collaboration" ~ str_c(target, ".jpeg"),
         dataset_id == "wang2025_lvlms" ~ str_c(target, ".png"),
         dataset_id %in% c("leung2024_scaffolding") ~ str_c(target, ".jpg"),
         target == "hold" ~ "I1.jpg",
@@ -59,7 +60,6 @@ all_images <- all_trials |>
   rename(image_id = target) |>
   unique() |>
   write_csv(here("image_data/image_metadata.csv"))
-
 
 
 # hilarious file processing adventure #

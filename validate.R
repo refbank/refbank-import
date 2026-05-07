@@ -205,7 +205,7 @@ validate_dataset <- function(df, write = F) {
     ) |>
     left_join(describer, by = join_by(game_id, room_num, trial_num)) |>
     left_join(matchers, by = join_by(game_id, room_num, trial_num))
-  # View(try_trials |> group_by(game_id, room_num, trial_num) |> tally())
+  View(try_trials |> group_by(game_id, room_num, trial_num) |> mutate(count=n()) |> filter(count>1))
   assert_that(
     try_trials |> select(game_id, room_num, trial_num) |> unique() |> nrow() ==
       try_trials |> nrow(),
@@ -308,7 +308,7 @@ validate_dataset <- function(df, write = F) {
     "trial_num", "rep_num", "exclude", "exclusion_reason", "describer", "matchers", "order_match"
   ), trials)
   na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer", "order_match"), is.na))
-  # View(na_trials)
+  View(na_trials)
   assert_that(nrow(na_trials) == 0)
 
   print("All checks pass!")
