@@ -2,39 +2,46 @@ library(tidyverse)
 library(readxl)
 library(here)
 
-# Pull dahan
+vb_dahan <- read_xlsx(here("segmentation/segmentation_sample_veronica.xlsx"),
+  col_types = "text", sheet = "dahan"
+) |>
+  rename(role_vb = role, grid_vb = grid, targetPosition_vb = targetPosition) |>
+  select(-person) |>
+  mutate(message_id_num = row_number()) |>
+  mutate(message_id_num = case_when(
+    message_id_num > 67 ~ message_id_num - 3,
+    T ~ message_id_num
+  ))
 
-m_dahan_sample <- read_xlsx(here("segmentation/worker_segmentation_sample.xlsx"),
+m_dahan <- read_xlsx(here("segmentation/worker_segmentation_sample_blank.xlsx"),
   col_types = "text", sheet = "dahan"
 ) |>
   janitor::clean_names() |>
   rename(role_w = role_d_for_describer_m_for_matcher, grid_w = grid_1_16, targetPosition_w = target_position_1_3) |>
   mutate(message_id_num = as.numeric(message_id_num))
 
-m_dahan_remainder <- read_xlsx(here("segmentation/worker_segmentation_remainder.xlsx"),
-  col_types = "text", sheet = "dahan"
-) |>
-  janitor::clean_names() |>
-  rename(role_w = role_d_for_describer_m_for_matcher, grid_w = grid_1_16, targetPosition_w = target_position_1_3) |>
-  mutate(message_id_num = as.numeric(message_id_num))
 
-m_dahan <- m_dahan_sample |>
-  bind_rows(m_dahan_remainder) |>
-  write_csv(here("import/dahan2023_collaboration/raw_data/segmented_transcript.csv"))
+dahan <- vb_dahan |>
+  left_join(m_dahan) |>
+  mutate(
+    grid_agree = grid_vb == grid_w,
+    role_agree = role_vb == role_w,
+    target_agree = targetPosition_vb == targetPosition_w
+  )
 
+nrow(vb_dahan) # 229
+nrow(m_dahan) # 230
+nrow(dahan) # 229
 
-# TODO below here!!!!
+dahan |> summarize(
+  grid = sum(grid_agree, na.rm = T) / n(),
+  role = sum(role_agree, na.rm = T) / n(),
+  target = sum(target_agree, na.rm = T) / n()
+)
 
-m_hawkins <- read_xlsx(here("segmentation/worker_segmentation_remainder.xlsx"),
-  col_types = "text", sheet = "hawkins"
-) |>
-  janitor::clean_names() |>
-  rename(target_position = target_position_1_12) |>
-  mutate(target_position = case_when(
-    message == "swaddled baby is my #9" ~ "9",
-    T ~ target_position
-  )) |> # typo probably
-  write_csv(here("import/hawkins2020_characterizing_uncued/raw_data/segmented_transcript.csv"))
+dahan |> filter(is.na(grid_agree) | grid_agree == F) # mostly from a renumbering issue
+dahan |> filter(is.na(target_agree) | target_agree == F) # mostly from a renumbering issue
+dahan |> filter(is.na(role_agree) | role_agree == F) # reasonable disagreement -- these are pretty ambiguous
 
 
 vb_french <- read_xlsx(here("segmentation/segmentation_sample_veronica.xlsx"),

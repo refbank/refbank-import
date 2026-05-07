@@ -60,6 +60,9 @@ Targets: tangrams
 
 ## Processing/import
 
+We received raw audio files and transcribed them using whisper (or similar); 
+a contractor identified which target number each was referring to, tagged (highly) irrelevant messages, and
+IDed what messages came from describer or matcher based on the transcripts.
 
 We have classified this as order -- but it's really a pick 3 in order out of 16, which is different.
 Because they could revisit previous choices within the rep, we've called it order. 
@@ -72,3 +75,4 @@ probably for another quarter (classmates), and not for the last quarter. We've l
 Native language is presumably English in most cases; and at least for the 2023 data, education is presumably mostly "some-college", but we haven't marked this because it's uncertain. 
 
 We have target images. I don't think these are in kilogram, but we could check. 
+

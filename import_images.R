@@ -32,7 +32,8 @@ all_images <- all_trials |>
         "boyce2024_interaction", "ji2025_adhoc", "leung2024_scaffolding",
         "hawkins2020_characterizing_cued", "hawkins2020_characterizing_uncued",
         "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_function",
-        "boyce2026_preschoolers", "dale2011_tangram", "branigan2016_doyouknow", "dahan2023_collaboration"
+        "boyce2026_preschoolers", "dale2011_tangram", "branigan2016_doyouknow",
+        "dahan2023_collaboration",
       ) ~ "tangram"
     ),
     kilogram_id = case_when(
