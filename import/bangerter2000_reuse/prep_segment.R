@@ -11,7 +11,7 @@ library(here)
 
 # and then hand clean up to get rid of the things that don't look like transcripts
 
-raw_data_loc <- "import/bangerter2000_swissgerman/raw_data/plain_transcript"
+raw_data_loc <- "import/bangerter2000_reuse/raw_data/plain_transcript"
 
 
 full <- here(raw_data_loc) |>
@@ -48,8 +48,7 @@ full <- here(raw_data_loc) |>
   filter(message != "")
 
 
-
-ready_for_segment <- full |>
+intermediate <- full |>
   ungroup() |>
   mutate(
     game = as.factor(source) |> as.numeric(), grid = rep, targetPosition = "",
@@ -62,7 +61,10 @@ ready_for_segment <- full |>
     ),
     message_original = message
   ) |>
-  mutate(message_id_num = row_number()) |>
+  mutate(message_id_num = row_number()) 
+
+
+ready_for_segment <- intermediate |> 
   select(game, grid, targetPosition, role, message_id_num, message_original)
 # specs
 # game (numeric from 1)

@@ -148,6 +148,8 @@ all <- study_1_clean |>
     message_id_num = row_number()
   )
 
+all |> write_csv(here("import/bangerter2020_lexical/raw_data/all_text.csv"))
+
 ready_for_segment <- all |> select(game, grid, targetPosition, role, message_id_num, message)
 # specs
 # game (numeric from 1)

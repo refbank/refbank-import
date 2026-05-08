@@ -23,8 +23,6 @@ m_dahan <- m_dahan_sample |>
   write_csv(here("import/dahan2023_collaboration/raw_data/segmented_transcript.csv"))
 
 
-# TODO below here!!!!
-
 m_hawkins <- read_xlsx(here("segmentation/worker_segmentation_remainder.xlsx"),
   col_types = "text", sheet = "hawkins"
 ) |>
@@ -37,72 +35,137 @@ m_hawkins <- read_xlsx(here("segmentation/worker_segmentation_remainder.xlsx"),
   write_csv(here("import/hawkins2020_characterizing_uncued/raw_data/segmented_transcript.csv"))
 
 
-vb_french <- read_xlsx(here("segmentation/segmentation_sample_veronica.xlsx"),
-  col_types = "text", sheet = "bangerter2020"
-) |>
-  rename(targetPosition_vb = targetPosition)
-
-m_french <- read_xlsx(here("segmentation/worker_segmentation_sample_blank.xlsx"),
+m_french_sample <- read_xlsx(here("segmentation/worker_segmentation_sample.xlsx"),
   col_types = "text", sheet = "bangerter2020"
 ) |>
   janitor::clean_names() |>
   rename(targetPosition_w = target_position_1_8)
 
-french <- vb_french |>
-  left_join(m_french) |>
-  mutate(
-    target_agree = targetPosition_vb == targetPosition_w
-  )
 
-nrow(vb_french) # 228
-nrow(m_french) # 240
-nrow(french) # 238
-
-french |>
-  group_by(role) |>
-  summarize(
-    target = sum(target_agree, na.rm = T) / n()
-  )
-
-View(french)
-
-
-vb_german <- read_xlsx(here("segmentation/segmentation_sample_veronica.xlsx"),
-  col_types = "text", sheet = "bangerter2000"
+m_french_remainder <- read_xlsx(here("segmentation/worker_segmentation_remainder.xlsx"),
+  col_types = "text", sheet = "bangerter2020"
 ) |>
-  rename(targetPosition_vb = targetPosition) # |>
-# mutate(message_id_num_orig=row_number()) |>
-# mutate(message_id_num=case_when(
-#   message_id_num_orig>91 ~ message_id_num_orig-9,
-#   message_id_num_orig>83 ~ message_id_num_orig-4,
-#   message_id_num_orig>64 ~ message_id_num_orig-3,
-#   message_id_num_orig>2 ~ message_id_num_orig-2,
-#   message_id_num_orig>1 ~ message_id_num_orig-1,
-#   T ~ message_id_num_orig
-# ))
+  janitor::clean_names() |>
+  rename(targetPosition_w = target_position_1_8)
 
-m_german <- read_xlsx(here("segmentation/worker_segmentation_sample_blank.xlsx"),
+french_original <- read_csv(here("segmentation/sample/bangerter2020.csv")) |>
+  bind_rows(read_csv(here("segmentation/remainder/bangerter2020.csv"))) |>
+  select(-targetPosition, -role)
+
+m_french <- m_french_sample |>
+  bind_rows(m_french_remainder) |>
+  rename(message_english = message) |>
+  mutate(game = as.numeric(game), grid = as.numeric(grid), message_id_num = as.numeric(message_id_num)) |>
+  left_join(french_original)
+
+# where messages got split up need to apply that to the untranslated part
+need_splits <- m_french |>
+  group_by(message_id_num) |>
+  mutate(n = n()) |>
+  filter(n > 1)
+
+split_fr <- need_splits |>
+  select(-message_english, -targetPosition_w) |>
+  distinct() |>
+  rowwise() |>
+  mutate(phrases = str_split(message, "(?<=\\.)\\s*")) |>
+  unnest(phrases) |>
+  filter(phrases != "") |>
+  group_by(message_id_num) |>
+  mutate(message_part_no = row_number())
+split_en <- need_splits |>
+  select(-message) |>
+  group_by(message_id_num) |>
+  mutate(message_part_no = row_number())
+
+split_fr |>
+  full_join(split_en) |>
+  arrange(message_id_num, message_part_no) |>
+  write_csv(here("segmentation/messages_to_split_bangerter2020.csv"))
+
+m_french_all <- m_french |>
+  group_by(message_id_num) |>
+  mutate(n = n()) |>
+  filter(n == 1) |>
+  bind_rows(read_csv(here("segmentation/bangerter2020_split_messages.csv"))) |>
+  mutate(message = case_when(
+    is.na(message) ~ phrases,
+    T ~ message
+  )) |>
+  arrange(message_id_num, message_part_no) |>
+  select(-message_english, -n, -phrases) |>
+  write_csv(here("import/bangerter2020_lexical/raw_data/segmented_transcript.csv"))
+# first assumption -- split by sentences!
+
+
+### not done below here!
+
+m_german_sample <- read_xlsx(here("segmentation/worker_segmentation_sample.xlsx"),
   col_types = "text", sheet = "bangerter2000"
 ) |>
   janitor::clean_names() |>
   rename(targetPosition_w = target_position_1_8) |>
   mutate(message_id_num = as.numeric(message_id_num))
 
+m_german_remainder <- read_xlsx(here("segmentation/worker_segmentation_remainder.xlsx"),
+                             col_types = "text", sheet = "bangerter2000"
+) |>
+  janitor::clean_names() |>
+  rename(targetPosition_w = target_position_1_8) |>
+  mutate(message_id_num = as.numeric(message_id_num))
 
-german <- vb_german |>
-  full_join(m_german) |>
-  mutate(
-    target_agree = targetPosition_vb == targetPosition_w
-  ) |>
-  filter(message != "And", message != "and", message != "Mhm", message != "And?")
+
+german_original <- read_csv(here("segmentation/sample/bangerter2000.csv")) |>
+  bind_rows(read_csv(here("segmentation/remainder/bangerter2000.csv"))) |>
+  select(-targetPosition, -role)
+
+m_german <- m_german_sample |> bind_rows(m_german_remainder) |> 
+
+  rename(message_english = message) |>
+  mutate(game = as.numeric(game), grid = as.numeric(grid), message_id_num = as.numeric(message_id_num)) |>
+  left_join(german_original)
+
+# where messages got split up need to apply that to the untranslated part
+need_splits <- m_german |>
+  group_by(message_id_num) |>
+  mutate(n = n()) |>
+  filter(n > 1)
+
+split_de <- need_splits |>
+  select(-message_english, -targetPosition_w) |>
+  distinct() |> 
+  rowwise() |>
+  mutate(phrases = str_split(message_original, "(?<=\\.)\\s*")) |>
+  unnest(phrases) |>
+  filter(phrases != "") |>
+  group_by(message_id_num) |>
+  mutate(message_part_no = row_number())
+
+split_en <- need_splits |>
+  select(-message_original) |>
+  group_by(message_id_num) |>
+  mutate(message_part_no = row_number())
+
+split_de |>
+  full_join(split_en) |>
+  arrange(message_id_num, message_part_no) |>
+  write_csv(here("segmentation/messages_to_split_bangerter2000.csv"))
+
+split_messages <- read_csv(here("segmentation/bangerter2000_split_messages.csv")) |> 
+  group_by(message_id_num) |> 
+  mutate(message_part_no=row_number())
 
 
-nrow(vb_german) # 214
-nrow(m_german) # 240
-nrow(german) # 238
-
-german |>
-  group_by(role) |>
-  summarize(
-    target = sum(target_agree, na.rm = T) / n()
-  )
+m_german_all <- m_german |>
+  group_by(message_id_num) |>
+  mutate(n = n()) |>
+  filter(n == 1) |>
+  bind_rows(read_csv(here("segmentation/bangerter2000_split_messages.csv"))) |> 
+  mutate(message = case_when(
+    is.na(message_original) ~ phrases,
+    T ~ message_original
+  )) |>
+  arrange(message_id_num, message_part_no) |> 
+  filter(!game%in% c(16, 17, 18)) |> # these are duplicates!!!
+  select(-message_english, -message_original, -n, -phrases) |>
+  write_csv(here("import/bangerter2000_swissgerman/raw_data/segmented_transcript.csv"))

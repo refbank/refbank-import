@@ -43,7 +43,8 @@ to_run <- c("yoon2019_audience", "wang2025_lvlms", "mankewitz2025_function","leu
             "ji2025_adhoc", "hawkins2023_frompartners", "hawkins2021_respect", 
             "hawkins2020_characterizing", "hawkins2019_continual",
             "dale2011_tangram", "branigan2016_doyouknow", "boyce2026_preschoolers",
-            "boyce2024_interaction", "boegels2025_power", "dahan2023_collaboration")
+            "boyce2024_interaction", "boegels2025_power", "dahan2023_collaboration",
+            "bangerter2020_lexical", "bangerter2000_reuse")
 
 rerun_imports(to_run)
 

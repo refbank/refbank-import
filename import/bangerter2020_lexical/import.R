@@ -18,30 +18,91 @@ raw_data_loc <- "import/bangerter2020_lexical/raw_data"
 # * In experiment 3, there are games 1-24, paper reports 12 in each condition.
 # ----1-12=new cars, 13-24=classic
 #
-# Regarding the 2000 data, I’ll have to do some more digging. I’ll get back to you Monday or Tuesday.
 #
 # Best,
 # Adrian
-study_1_loc <- (here(raw_data_loc, "Transcripts Study 1.xls"))
 
+# source(here("import/bangerter2020_lexical/prep_segment.R"))
+all <- read_csv(here("import/bangerter2020_lexical/raw_data/all_text.csv"))
 
-study_1_raw <- study_1_loc |>
-  excel_sheets() %>%
-  set_names() |>
-  as_tibble() |>
-  mutate(data = map(value, \(v){
-    read_excel(v, path = study_1_loc) |> nest()
-  })) |>
-  unnest(data) |>
-  unnest(data)
+alignment <- all |> select(source, role, person, expt, rep, gameid, game, grid, message_id_num)
 
-study_1_clean <- study_1_raw |>
-  clean_names() |>
-  separate(value, into = c("game", "round")) |>
-  select(game, round, role = x2, text = x3) |>
-  filter(!is.na(text)) |>
-  rowwise() |>
-  write_csv(here(raw_data_loc, "study1.csv"))
+tagged_transcripts <- read_csv(here("import/bangerter2020_lexical/raw_data/segmented_transcript.csv"))
+
+messages <- tagged_transcripts |> fill(game)|> left_join(alignment) |> 
+  mutate(action_type="message",
+         message_irrelevant=ifelse(targetPosition_w=="chitchat", T, NA),
+         targetPosition_w=as.numeric(targetPosition_w),
+         targetPosition_w=case_when(targetPosition_w==9 ~ 8, T ~ targetPosition_w), # coding error
+         trial_num=(grid-1)*8+targetPosition_w,
+         rep_num=grid,
+         player_id=person) |> 
+  group_by(gameid,rep_num) |> 
+  fill(trial_num, .direction="downup") |> 
+  group_by(gameid, trial_num) |> 
+  mutate(message_number=row_number() |> as.numeric()) |> 
+  ungroup() |> 
+  filter(!is.na(role), !is.na(player_id)) |> 
+  select(action_type, gameid, player_id, role, text=message, message_irrelevant, trial_num, rep_num, expt, message_number)
+
+dummy_messages <- messages |> filter(role=="matcher") |> distinct(gameid, trial_num, rep_num, expt) |> 
+  anti_join(messages |> filter(role=="describer") |> distinct(gameid, trial_num, rep_num, expt)) |> 
+  mutate(role="describer",
+         text=NA, 
+         action_type="message",
+         player_id=str_c(gameid, "_", "describer"),
+         message_number=NA)
+
+combined <- messages |> bind_rows(dummy_messages) |> 
+  mutate(
+    condition_label = case_when(
+      expt == 1 & gameid %in% c("1_G9", "1_G10", "1_G11", "1_G12", "1_G13", "1_G14", "1_G15", "1_G16") ~ "expt1_classic",
+      expt == 1 ~ "expt1_new",
+      expt == 2 & gameid %in% c("2_3", "2_4", "2_5", "2_6", "2_7", "2_8", "2_11", "2_16", "2_20", "2_21", "2_22", "2_24", "2_A", "2_C", "2_D") ~ "expt2_classic",
+      expt == 2 ~ "expt2_new",
+      expt == 3 & gameid %in% c("3_13", "3_14", "3_15", "3_16", "3_17", "3_18", "3_19", "3_20", "3_21", "3_22", "3_23", "3_24") ~ "expt3_classic",
+      expt == 3 ~ "expt3_new"
+    ),
+    dataset_id = "bangerter2020_lexical",
+    full_cite = "Bangerter, A., Mayor, E., & Knutsen, D. (2020). Lexical entrainment without conceptual pacts? Revisiting the matching task. Journal of Memory and Language, 114, 104129.",
+    short_cite = "Bangerter et al. (2020)",
+    group_size = case_when(
+      expt == 3 ~ 3,
+      T ~ 2
+    ),
+    language="French",
+    prior_relationship="no",
+    partner_constancy=case_when(expt==3 ~ "no", T ~ "yes"),
+    population="adult",
+    role_constancy = "yes",
+    confederates="no",
+    modality="oral-in-person",
+    feedback="none",
+    backchannel="full",
+    room_num=1,
+    stage_num=case_when(
+      expt==1 ~ 1,
+      expt==2 & rep_num==6 ~ 2,
+      expt==2 ~ 1,
+      expt==3 & rep_num<=4 ~ 1,
+      expt==3 & rep_num>=5 ~2
+    ),
+    option_set="unk1;unk2;unk3;unk4;unk5;unk6;unk7;unk8",
+    target="unk1",
+    exclude=NA,
+    exclusion_reason=NA_character_,
+    order_match="order",
+    gender=NA_character_,
+    native_language="French",
+    race=NA_character_,
+    age=NA_real_,
+    time_stamp=NA_real_,
+    education="some-college",
+    choice_id=NA) |> 
+  rename(game_id=gameid) |> 
+  select(-expt)
+    
+  
 
 
 source("validate.R")
