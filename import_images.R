@@ -33,7 +33,7 @@ all_images <- all_trials |>
         "hawkins2020_characterizing",
         "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_function",
         "boyce2026_preschoolers", "dale2011_tangram", "branigan2016_doyouknow",
-        "dahan2023_collaboration",
+        "dahan2023_collaboration", "beattymartinez2026_tangrams"
       ) ~ "tangram"
     ),
     kilogram_id = case_when(
@@ -45,7 +45,7 @@ all_images <- all_trials |>
         dataset_id %in% c(
           "boyce2024_interaction", "ji2025_adhoc",
           "hawkins2020_characterizing", "hawkins2020_characterizing_uncued",
-          "hawkins2021_respect", "hawkins2023_frompartners", "branigan2016_doyouknow"
+          "hawkins2021_respect", "hawkins2023_frompartners", "branigan2016_doyouknow", "beatty-martinez2026_tangrams"
         ) ~ str_c(kilogram_id, ".svg"),
         dataset_id == "dahan2023_collaboration" ~ str_c(target, ".jpeg"),
         dataset_id == "wang2025_lvlms" ~ str_c(target, ".png"),
