@@ -19,6 +19,43 @@ all_trials <- map(all_dirs, \(d) read_csv(file.path(DATA_LOC, d, "trials.csv"), 
 
 # we only do target, not things that occur only as distractors. Could revisit
 
+get_kilogram_id_fmri <- function(target) {
+  # for hawkins frmi images -- I did not find all images in kilogram; possible that I missed some
+  case_when(
+    target == "M" ~ "page1-148",
+    target == "N" ~ NA,
+    target == "O" ~ "page1-159",
+    target == "P" ~ "page5-178",
+    target == "Q" ~ "page9-29",
+    target == "R" ~ "page8-147",
+    target == "S" ~ NA,
+    target == "T" ~ "page6-164",
+    target == "U" ~ "page4-10",
+    target == "V" ~ "page7-14",
+    target == "W" ~ "page4-162",
+    target == "X" ~ "page4-24",
+    target == "Y" ~ "page8-234",
+    target == "Z" ~ "page8-235",
+    target == "AA" ~ "page7-248",
+    target == "AB" ~ "page5-244",
+    target == "AC" ~ "page7-218",
+    target == "AD" ~ "page5-153",
+    target == "AE" ~ NA,
+    target == "AF" ~ NA,
+    target == "AG" ~ NA,
+    target == "AH" ~ NA,
+    target == "AI" ~ NA,
+    target == "AJ" ~ NA,
+  )
+}
+
+get_kilogram_id_reuse <- function(target) {
+  case_when( # I recognized these three
+    target == "base_03" ~ "page_F",
+    target == "base_04" ~ "page_I",
+    target == "close_06" ~ "page_A"
+  )
+}
 
 all_images <- all_trials |>
   select(target, dataset_id) |>
@@ -30,7 +67,7 @@ all_images <- all_trials |>
       dataset_id %in% c("hawkins2019_continual", "wang2025_lvlms") ~ "photograph",
       dataset_id %in% c(
         "boyce2024_interaction", "ji2025_adhoc", "leung2024_scaffolding",
-        "hawkins2020_characterizing",
+        "hawkins2020_characterizing", "hawkins2026_fmri",
         "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_function",
         "boyce2026_preschoolers", "dale2011_tangram", "branigan2016_doyouknow",
         "dahan2023_collaboration", "beatty-martinez2026_tangrams", "bangerter2020_lexical", "bangerter2000_reuse"
@@ -38,23 +75,21 @@ all_images <- all_trials |>
     ),
     kilogram_id = case_when(
       target %in% c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L") ~ str_c("page-", target),
+      dataset_id %in% c("hawkins2026_fmri") ~ get_kilogram_id_fmri(target),
+      dataset_id %in% c("bangerter2000_reuse") ~ get_kilogram_id_reuse(target),
       dataset_id %in% c("eliav2023_semantic") ~ target,
     ),
     image_path =
       case_when(
-        dataset_id %in% c(
-          "boyce2024_interaction", "ji2025_adhoc",
-          "hawkins2020_characterizing", "hawkins2020_characterizing_uncued",
-          "hawkins2021_respect", "hawkins2023_frompartners", "branigan2016_doyouknow", "beatty-martinez2026_tangrams"
-        ) ~ str_c(kilogram_id, ".svg"),
+        !is.na(kilogram_id) ~ str_c(kilogram_id, ".svg"),
+        dataset_id == "hawkins2026_fmri" ~ str_c("tangrams_", target, ".svg"),
         dataset_id == "dahan2023_collaboration" ~ str_c(target, ".jpeg"),
-        dataset_id == "wang2025_lvlms" ~ str_c(target, ".png"),
+        dataset_id %in% c("wang2025_lvlms", "bangerter2000_reuse") ~ str_c(target, ".png"),
         dataset_id %in% c("leung2024_scaffolding") ~ str_c(target, ".jpg"),
         target == "hold" ~ "I1.jpg",
         target == "walk" ~ "B1.jpg",
         target == "swim" ~ "D1.jpg",
         target == "jump" ~ "E1.jpg",
-        dataset_id == "boyce2026_preschoolers" & target %in% c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L") ~ str_c(kilogram_id, ".svg"),
       )
   ) |>
   select(-dataset_id) |>

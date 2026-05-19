@@ -55,7 +55,6 @@ transcripts <- read_csv(here("import/bangerter2000_reuse/raw_data/segmented_tran
 
 
 combined <- transcripts |>
-  bind_rows(dummy_messages) |>
   mutate(
     condition_label = case_when(
       game_id %in% original_proximal ~ "original_proximal",

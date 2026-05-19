@@ -40,7 +40,7 @@ source(here("import_images.R"))
 ```{r}
 # to re-run
 to_run <- c("yoon2019_audience", "wang2025_lvlms", "mankewitz2025_function","leung2024_scaffolding",
-            "ji2025_adhoc", "hawkins2023_frompartners", "hawkins2021_respect", 
+            "ji2025_adhoc", "hawkins2023_frompartners", "hawkins2021_respect", "hawkins2026_fmri",
             "hawkins2020_characterizing", "hawkins2019_continual",
             "dale2011_tangram", "branigan2016_doyouknow", "boyce2026_preschoolers",
             "boyce2024_interaction", "boegels2025_power", "dahan2023_collaboration",
@@ -172,7 +172,7 @@ assert_that(all(trials$rep_num > 0))
 assert_that(all(trials$stage_num > 0))
 
 
-assert_that(max(trials$option_size) == 16) # change these as datasets change, but we're trying to rule out screw ups that make it like 96 or something absurd
+assert_that(max(trials$option_size) == 36) # change these as datasets change, but we're trying to rule out screw ups that make it like 96 or something absurd
 assert_that(min(trials$option_size) == 2)
 
 assert_that(nrow(trials |> distinct(dataset_id, game_id, condition_id))==nrow(trials |> distinct(dataset_id, game_id)), msg="each game can have only one condition")
