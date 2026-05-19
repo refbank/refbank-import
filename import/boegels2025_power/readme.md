@@ -59,6 +59,6 @@ We have text data.
 
 We do not have the target -- image mapping (although it might be possible)
 
-there are not very many trials without correct choices and we can't easily reconstruct choice id for most of them, so just dropping
+there are not very many trials without correct choices and we can't easily reconstruct choice id for most of them, so just dropping choice information for these for now.
 
 We do not have demographics (although we haven't asked)

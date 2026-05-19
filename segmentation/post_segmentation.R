@@ -108,7 +108,7 @@ m_german_sample <- read_xlsx(here("segmentation/worker_segmentation_sample.xlsx"
   mutate(message_id_num = as.numeric(message_id_num))
 
 m_german_remainder <- read_xlsx(here("segmentation/worker_segmentation_remainder.xlsx"),
-                             col_types = "text", sheet = "bangerter2000"
+  col_types = "text", sheet = "bangerter2000"
 ) |>
   janitor::clean_names() |>
   rename(targetPosition_w = target_position_1_8) |>
@@ -119,8 +119,8 @@ german_original <- read_csv(here("segmentation/sample/bangerter2000.csv")) |>
   bind_rows(read_csv(here("segmentation/remainder/bangerter2000.csv"))) |>
   select(-targetPosition, -role)
 
-m_german <- m_german_sample |> bind_rows(m_german_remainder) |> 
-
+m_german <- m_german_sample |>
+  bind_rows(m_german_remainder) |>
   rename(message_english = message) |>
   mutate(game = as.numeric(game), grid = as.numeric(grid), message_id_num = as.numeric(message_id_num)) |>
   left_join(german_original)
@@ -133,7 +133,7 @@ need_splits <- m_german |>
 
 split_de <- need_splits |>
   select(-message_english, -targetPosition_w) |>
-  distinct() |> 
+  distinct() |>
   rowwise() |>
   mutate(phrases = str_split(message_original, "(?<=\\.)\\s*")) |>
   unnest(phrases) |>
@@ -151,21 +151,25 @@ split_de |>
   arrange(message_id_num, message_part_no) |>
   write_csv(here("segmentation/messages_to_split_bangerter2000.csv"))
 
-split_messages <- read_csv(here("segmentation/bangerter2000_split_messages.csv")) |> 
-  group_by(message_id_num) |> 
-  mutate(message_part_no=row_number())
+split_messages <- read_csv(here("segmentation/bangerter2000_split_messages.csv")) |>
+  group_by(message_id_num) |>
+  mutate(message_part_no = row_number())
 
 
 m_german_all <- m_german |>
   group_by(message_id_num) |>
   mutate(n = n()) |>
   filter(n == 1) |>
-  bind_rows(read_csv(here("segmentation/bangerter2000_split_messages.csv"))) |> 
+  bind_rows(read_csv(here("segmentation/bangerter2000_split_messages.csv"))) |>
   mutate(message = case_when(
     is.na(message_original) ~ phrases,
     T ~ message_original
   )) |>
-  arrange(message_id_num, message_part_no) |> 
-  filter(!game%in% c(16, 17, 18)) |> # these are duplicates!!!
+  arrange(message_id_num, message_part_no) |>
+  filter(!game %in% c(16, 17, 18)) |> # these are duplicates!!!
   select(-message_english, -message_original, -n, -phrases) |>
   write_csv(here("import/bangerter2000_swissgerman/raw_data/segmented_transcript.csv"))
+
+# hawkins
+
+hawkins_fmri <- read_csv(here("segmentation/Segmentation hawkins_fmri - Sheet1.csv"))

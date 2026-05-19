@@ -28,8 +28,11 @@ working from the machine translation.
 * most pairs didn't know each other, but a few did
 * undergrad psychology students, mostly native German (or Swiss German) speakers
 
-* we have assorted image data (including some modifications that were trialed but not used, etc), but don't have alignments, 
-it might be possible to work out (with effort), especially if group-group orderings were consistent???
+* we received transcripts of each rep of the game; 
+* these were manually tagged by a contractor for which target position, and cleaned up by a researcher
+* we have identified the pool of target images for each set
+* a researcher (using the descriptions and machine translations) attempted to figure out which image
+went with each target position -- as we do not have gold information on this 
 
 we do not have demographics or selection data
 

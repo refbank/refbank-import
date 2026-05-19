@@ -23,6 +23,12 @@ original_labels <- intermediate |>
   filter(game < 16) |>
   mutate(game_id = str_replace(source, "TEAM_", "") |> str_replace(".docx.txt", "") |> as.numeric()) |>
   select(game, game_id, grid, role, person)
+
+target_labels <- read_csv(here("import/bangerter2000_reuse/raw_data/bangerter2000_combined.csv")) |>
+  rename(game = game_id) |>
+  left_join(original_labels |> distinct(game, game_id)) |>
+  select(game_id, rep_num, trial_num, image_id)
+
 transcripts <- read_csv(here("import/bangerter2000_reuse/raw_data/segmented_transcript.csv")) |>
   inner_join(original_labels) |>
   select(-game) |>
@@ -43,16 +49,13 @@ transcripts <- read_csv(here("import/bangerter2000_reuse/raw_data/segmented_tran
   group_by(trial_num, game_id) |>
   mutate(message_number = row_number() |> as.numeric()) |>
   ungroup() |>
-  select(game_id, player_id, role, text, message_irrelevant, message_number, rep_num, trial_num, action_type)
+  left_join(target_labels) |>
+  rename(target = image_id) |>
+  select(game_id, player_id, role, text, message_irrelevant, message_number, rep_num, trial_num, action_type, target)
 
-dummy_messages <- transcripts |> filter(role=="matcher") |> distinct(game_id, trial_num, rep_num) |> 
-  anti_join(transcripts |> filter(role=="describer") |> distinct(game_id, trial_num, rep_num)) |> 
-  mutate(role="describer") |> left_join(original_labels, by=c("game_id", "rep_num"="grid", "role")) |> 
-  mutate(player_id=str_c(game_id, "_", person)) |> 
-  select(-game, -person) |> 
-  mutate(action_type="message")
 
-combined <- transcripts |> bind_rows(dummy_messages) |> 
+combined <- transcripts |>
+  bind_rows(dummy_messages) |>
   mutate(
     condition_label = case_when(
       game_id %in% original_proximal ~ "original_proximal",
@@ -88,8 +91,11 @@ combined <- transcripts |> bind_rows(dummy_messages) |>
     race = NA_character_,
     education = "some-college",
     choice_id = NA,
-    option_set = "unk1;unk2;unk3;unk4;unk5;unk6;unk7;unk8",
-    target = "unk1"
+    option_set = case_when(
+      str_detect(target, "base") ~ "base_01;base_02;base_03;base_04;base_05;base_06;base_07;base_08",
+      str_detect(target, "close") ~ "close_01;close_02;close_03;close_04;close_04;close_05;close_06;close_07;close_08",
+      str_detect(target, "far") ~ "far_01;far_02;far_03;far_04;far_05;far_06;far_07;far_08"
+    )
   )
 
 
