@@ -454,7 +454,7 @@ Now try pushing them directly to redivis.
 ```{r}
 # Set up the connection to Redivis
 
-con <- redivis$user("mcfrank")$dataset("refbank:2zy7")
+con <- redivis$organization("datapages")$dataset("refbank:2zy7")
 
 dataset <- con$create_next_version(if_not_exists = T)
 
@@ -550,7 +550,7 @@ THIS IS WHERE YOU GO RUN THE WORKFLOW IN THE GUI TO GENERATE DERIVED TABLES!
 ```{r, eval=F}
 # did you run the workflow?
 
-con <- redivis$user("mcfrank")$dataset("refbank:2zy7")
+con <- redivis$organization("datapages")$dataset("refbank:2zy7")
 dataset <- con$create_next_version(if_not_exists = T)
 
 

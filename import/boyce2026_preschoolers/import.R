@@ -21,7 +21,6 @@ expt_3_link <- "https://raw.githubusercontent.com/vboyce/kid-tangrams/refs/heads
 expt_3_demog <- "https://raw.githubusercontent.com/vboyce/kid-tangrams/refs/heads/main/data/expt_3/clean_demog.csv"
 
 
-
 expt_1_data <- read_csv(url(expt_1_responses)) |>
   rename(trial = trialNum) |>
   mutate(type = case_when(
@@ -71,7 +70,6 @@ expt_2_transcript <- read_csv(url(expt_2_transcript)) |>
   )) |>
   mutate(expt = "expt2") |>
   mutate(trial = trial - 4)
-
 
 
 expt_3_data <- read_csv(url(expt_3_responses)) |>
@@ -163,7 +161,7 @@ choices <- expt_1_data |>
   mutate(
     action_type = "selection",
     role = "matcher",
-    time_stamp=round(time/1000) 
+    time_stamp = round(time / 1000)
   )
 
 no_talk <- expt_1_data |>
@@ -249,6 +247,7 @@ all <- messages |>
     stage_num = 1,
     rep_num = (trial) %/% 4 + 1,
     trial_num = trial + 1,
+    exclude = replace_na(exclude, F),
     native_language = as.character(NA),
     education = "less-than-high-school",
     message_number = as.numeric(message_number),

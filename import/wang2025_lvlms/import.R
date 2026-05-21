@@ -214,7 +214,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
       rep_num = Round,
       stage_num = 1,
       exclude = FALSE,
-      exclusion_reason = "",
+      exclusion_reason = NA_character_,
       order_match = "match",
       action_type = "message",
       time_stamp = NA_real_,
@@ -226,7 +226,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
       message_irrelevant = FALSE,
       choice_id = NA_character_,
       condition_label = "experiment_1",
-      text=str_replace_all(text, "\n", " ")
+      text = str_replace_all(text, "\n", " ")
     ) %>%
     select(
       condition_label, dataset_id, full_cite, short_cite, group_size, language, prior_relationship, partner_constancy,

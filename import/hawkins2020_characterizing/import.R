@@ -186,7 +186,7 @@ all_cued <- choices |>
     order_match = "match",
     population = "adult",
     language = "English",
-    exclude = ifelse(exclude, exclude, F), # fill in F for ones not excluded
+    exclude = replace_na(exclude, F), # fill in F for ones not excluded
   ) |>
   mutate(option_set = str_c(options, collapse = ";")) |>
   rename(

@@ -4,9 +4,9 @@ library(tidyr)
 library(stringr)
 library(here)
 
-source <- "https://raw.githubusercontent.com/ashleychuikay/tangramgame/refs/heads/master/data/experiment1/combined_clean.csv"
+data_source <- "https://raw.githubusercontent.com/ashleychuikay/tangramgame/refs/heads/master/data/experiment1/combined_clean.csv"
 
-combined_df <- read_csv(url(source)) |>
+combined_df <- read_csv(url(data_source)) |>
   mutate(role = case_when(
     subid == 107 & trial == 21 & person == "right" ~ "director",
     T ~ role
@@ -45,7 +45,6 @@ missing_messages <- combined_df |>
     action_type = "message"
   ) |>
   select(-director)
-
 
 
 all <- messages |>

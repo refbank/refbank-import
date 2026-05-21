@@ -68,9 +68,10 @@ messages <- transcript |>
     player_id = str_c(gameid, "_", role)
   ) |>
   left_join(target_info) |>
-  filter(is.na(gameid)) |>
+  filter(!is.na(gameid)) |>
   select(rep_num, trial_num, gameid, role, text = message, message_number, message_irrelevant, action_type, player_id, target) |>
-  filter(!is.na(trial_num)) # confirmed these are all not relevant
+  filter(!is.na(trial_num)) |> # confirmed these are all not relevant
+  filter(!is.na(target)) # if we don't have target info can't work with it
 
 missing_messages <- target_info |> # sometimes they don't describe the last one b/c process of elimination
   anti_join(messages |> filter(role == "describer")) |>
@@ -136,7 +137,7 @@ exclusion_df <- tribble(
     tibble(
       gameid = setdiff(unique(messages_df$gameid), .$gameid),
       exclude = FALSE,
-      exclusion_reason = "NA"
+      exclusion_reason = NA_character_
     )
   )
 
@@ -161,7 +162,7 @@ all_uncued <- messages |>
     native_language = ifelse(nativeEnglish == tolower("yes"), "English", NA),
     race = as.character(NA),
     education = as.character(NA),
-    option_set = "A;B;C;D;E;F;G;H;I;J;K;L;",
+    option_set = "A;B;C;D;E;F;G;H;I;J;K;L",
     group_size = 2,
     prior_relationship = "no",
     population = "adult",
