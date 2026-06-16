@@ -92,7 +92,7 @@ combined <- transcripts |>
     choice_id = NA,
     option_set = case_when(
       str_detect(target, "base") ~ "base_01;base_02;base_03;base_04;base_05;base_06;base_07;base_08",
-      str_detect(target, "close") ~ "close_01;close_02;close_03;close_04;close_04;close_05;close_06;close_07;close_08",
+      str_detect(target, "close") ~ "close_01;close_02;close_03;close_04;close_05;close_06;close_07;close_08",
       str_detect(target, "far") ~ "far_01;far_02;far_03;far_04;far_05;far_06;far_07;far_08"
     )
   )

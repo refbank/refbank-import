@@ -45,6 +45,9 @@ Alignment between target numbering and tangram lettering was determined by us (f
 The data we have is all that is available, and includes transcripts from some rounds (not all) and target information.
 We have reps 1, 2, 4, and 5. (1, 2, and 4 with first partner, and then first rep with new partner)
 
+There are 3 games/rounds where one of the targets is labelled in our ordering data as appearing twice. 
+Presumably these are errors -- but it is difficult to sort out where the error occurred, so we leave them as is. 
+This could be revisited. 
 We have some aggregate accuracy information, but not trial by trial selection information. 
 
 We do not have demographics. 
