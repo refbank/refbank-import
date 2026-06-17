@@ -92,8 +92,6 @@ d.humanhumaneasy <- left_join(chatMessages.raw.humanseasy, clickedObj.raw.humans
   mutate(condition = "human-human-easy")
 
 
-
-
 #### combine
 combined <- d.humanhuman |>
   bind_rows(d.humanhumaneasy, d.modellistener) |>
@@ -204,7 +202,7 @@ all <- chat |>
   mutate(
     dataset_id = "hawkins2019_continual",
     full_cite = "Hawkins, R. D., Kwon, M., Sadigh, D., & Goodman, N. D. (2019). Continual adaptation for efficient machine communication. Proceedings of the 24th Conference on Computational Natural Language Learning.",
-    short_cite = "Hawkins et al (2019)",
+    short_cite = "Hawkins et al. (2019)",
     language = "English",
     trial_num = trialNum + 1,
     stage_num = 1,

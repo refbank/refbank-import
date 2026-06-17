@@ -44,6 +44,11 @@ choices <- prep_behavior |>
     action_type = "selection",
     role = "matcher"
   ) |>
+  # the click handler sometimes double-fires, logging several identical clickedTangram
+  # events ms apart for the same trial/player -- keep only the earliest
+  group_by(game_id, rep_num, trial_num, player_id) |>
+  slice_min(time_stamp, n = 1, with_ties = FALSE) |>
+  ungroup() |>
   select(game_id, target, rep_num, trial_num, choice_id, time_stamp, player_id, action_type, role)
 
 option_set <- prep_behavior |>
@@ -135,7 +140,7 @@ combined <- choices |>
     condition_label = "fmri",
     dataset_id = "hawkins2026_fmri",
     full_cite = "Hawkins, R. D., et al (2026) Unpublished hyperscanning study.",
-    short_cite = "Hawkins et al (2026)",
+    short_cite = "Hawkins et al. (2026)",
     group_size = 2,
     language = "English",
     prior_relationship = "yes",

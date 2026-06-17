@@ -87,7 +87,7 @@ all <- messages_single |>
   mutate(
     dataset_id = "ji2025_adhoc",
     full_cite = "Ji, A., Bergey, C. A., Eliav, R., Artzi, Y., & Hawkins, R. D. (2025). Ad hoc conventions generalize to new referents. arXiv preprint arXiv:2509.05566.",
-    short_cite = "Ji et al (2025)",
+    short_cite = "Ji et al. (2025)",
     language = "English",
     prior_relationship = "no",
     partner_constancy = "yes",

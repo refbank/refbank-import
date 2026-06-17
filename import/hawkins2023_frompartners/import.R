@@ -128,7 +128,7 @@ all <- messages_with_context |>
     player_id = str_c(networkid, "_", participantid),
     dataset_id = "hawkins2023_frompartners",
     full_cite = "Hawkins, R. D., Franke, M., Frank, M. C., Goldberg, A. E., Smith, K., Griffiths, T. L., & Goodman, N. D. (2023). From partners to populations: A hierarchical Bayesian account of coordination and convention. Psychological Review, 130(4), 977.",
-    short_cite = "Hawkins et al (2023)",
+    short_cite = "Hawkins et al. (2023)",
     language = "English",
     stage_num = partnernum + 1,
     rep_num = trialnum %/% 4,

@@ -20,6 +20,7 @@ roles <- role_parity |>
 
 choices <- raw |>
   select(game_no, round_no, rep_no, target, response) |>
+  distinct() |> # raw is one row per utterance, so target/response repeat across a trial's utterances
   mutate(
     choice_id = case_when(
       response == "FALSE" ~ "timed_out",

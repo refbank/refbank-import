@@ -56,7 +56,6 @@ rooms_roles <- roles.tmp |>
   rename(gamerole = role, gameroom = room)
 
 
-
 #### get message info
 messages_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |>
   filter(createdAt >= lubridate::ymd("2021-01-21")) %>%
@@ -150,7 +149,6 @@ messages <- messages_2 |>
   )
 
 
-
 # identify cases where we are missing speaker info because they didn't talk
 # these seem to be cases where we just don't have speaker info (incomplete games?)
 # delete these 179 rows for now
@@ -198,7 +196,7 @@ all <- messages_clean |>
     education = as.character(NA),
     dataset_id = "hawkins2021_respect",
     full_cite = "Hawkins, R., Liu, I., Goldberg, A., & Griffiths, T. (2021). Respect the code: Speakers expect novel conventions to generalize within but not across social group boundaries. In Proceedings of the Annual Meeting of the Cognitive Science Society (Vol. 43, No. 43).",
-    short_cite = "Hawkins et al (2021)",
+    short_cite = "Hawkins et al. (2021)",
     language = "English",
     stage_num = partnerNum + 1,
     trial_num = 1 + trialNum + partnerNum * 16,

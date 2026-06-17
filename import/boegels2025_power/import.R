@@ -56,9 +56,6 @@ fill_describer <- transcripts |>
   )
 
 
-
-
-
 all <- choices |>
   bind_rows(transcripts) |>
   bind_rows(fill_describer) |>
@@ -66,7 +63,7 @@ all <- choices |>
     condition_label = "expt1",
     dataset_id = "boegels2025_power",
     full_cite = "Bögels, S., Li, T., Rasenberg, M., Eijk, L., Toni, I., & Pouw, W. (2026). There is a power law of joint communicative effort and it reflects communicative work. Cognition, 268(10637), 0.",
-    short_cite = "Bögels et al (2026)",
+    short_cite = "Bögels et al. (2026)",
     group_size = 2,
     language = "Dutch",
     prior_relationship = "no",

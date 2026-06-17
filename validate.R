@@ -295,6 +295,10 @@ validate_dataset <- function(df, write = F) {
   check_cols(c("trial_id", "choice_id", "player_id", "time_stamp"), choices)
   na_choices <- choices |> filter(if_any(c("trial_id", "choice_id", "player_id"), is.na))
   assert_that(nrow(na_choices) == 0)
+  duplicate_choices <- choices |>
+    count(trial_id, player_id) |>
+    filter(n > 1)
+  assert_that(nrow(duplicate_choices) == 0, msg = "at most one selection allowed per trial per player")
 
   print("Checking messages")
   check_cols(c("trial_id", "player_id", "role", "text", "message_number", "message_irrelevant", "time_stamp"), messages)

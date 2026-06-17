@@ -231,7 +231,7 @@ all <- messages |>
   mutate(
     dataset_id = "boyce2026_preschoolers",
     full_cite = "Boyce, V., Sparks, R. Z., & Frank, M. C. (2026). Preschoolers can coordinate with each other to communicate about novel referents. Preprint",
-    short_cite = "Boyce et al (2026)",
+    short_cite = "Boyce et al. (2026)",
     group_size = 2,
     language = "English",
     prior_relationship = "yes",
