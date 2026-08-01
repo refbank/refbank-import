@@ -18,13 +18,13 @@ messages <- read_csv(str_c(url, "messages.csv")) |>
     role == "speaker" ~ "describer",
     role == "listener" ~ "matcher"
   )) |>
-  select(role, networkid, roomid, trialnum, partnernum, stimsetid, target, participantid, text = content) |>
+  select(role, networkid, roomid, trialnum, partnernum, stimsetid, target_image = target, participantid, text = content) |>
   mutate(
-    target = str_replace(target, "tangram_", ""),
-    target = str_replace(target, ".png", "")
+    target_image = str_replace(target_image, "tangram_", ""),
+    target_image = str_replace(target_image, ".png", "")
   ) |>
   group_by(networkid, roomid, trialnum, partnernum) |>
-  mutate(message_number = row_number() |> as.numeric()) |>
+  mutate(message_num = row_number() |> as.numeric()) |>
   ungroup() |>
   mutate(
     action_type = "message",
@@ -33,51 +33,52 @@ messages <- read_csv(str_c(url, "messages.csv")) |>
 
 
 contexts <- messages |>
-  select(networkid, roomid, trialnum, target) |>
+  select(networkid, roomid, trialnum, target_image) |>
   unique() |>
   mutate(
-    option_set = case_when(
-      target %in% c("A", "B", "C", "D") ~ "A;B;C;D",
-      target %in% c("E", "F", "G", "L") ~ "E;F;G;L",
-      target %in% c("I", "J", "K", "H") ~ "I;J;K;H"
+    image_options = case_when(
+      target_image %in% c("A", "B", "C", "D") ~ "A;B;C;D",
+      target_image %in% c("E", "F", "G", "L") ~ "E;F;G;L",
+      target_image %in% c("I", "J", "K", "H") ~ "I;J;K;H"
     ),
     stim_set_id = case_when(
-      target %in% c("A", "B", "C", "D") ~ 0,
-      target %in% c("E", "F", "G", "L") ~ 1,
-      target %in% c("I", "J", "K", "H") ~ 2
+      target_image %in% c("A", "B", "C", "D") ~ 0,
+      target_image %in% c("E", "F", "G", "L") ~ 1,
+      target_image %in% c("I", "J", "K", "H") ~ 2
     ),
-    target_name = target,
+    target_name = target_image,
     distr0 = case_when(
-      target == "A" ~ "B",
-      target %in% c("B", "C", "D") ~ "A",
-      target == "E" ~ "F",
-      target %in% c("F", "G", "L") ~ "E",
-      target == "I" ~ "J",
-      target %in% c("J", "K", "H") ~ "I",
+      target_image == "A" ~ "B",
+      target_image %in% c("B", "C", "D") ~ "A",
+      target_image == "E" ~ "F",
+      target_image %in% c("F", "G", "L") ~ "E",
+      target_image == "I" ~ "J",
+      target_image %in% c("J", "K", "H") ~ "I",
     ),
     distr1 = case_when(
-      target %in% c("A", "B") ~ "C",
-      target %in% c("C", "D") ~ "B",
-      target %in% c("E", "F") ~ "G",
-      target %in% c("G", "L") ~ "F",
-      target %in% c("I", "J") ~ "K",
-      target %in% c("K", "H") ~ "J",
+      target_image %in% c("A", "B") ~ "C",
+      target_image %in% c("C", "D") ~ "B",
+      target_image %in% c("E", "F") ~ "G",
+      target_image %in% c("G", "L") ~ "F",
+      target_image %in% c("I", "J") ~ "K",
+      target_image %in% c("K", "H") ~ "J",
     ),
     distr2 = case_when(
-      target == "D" ~ "C",
-      target %in% c("A", "B", "C") ~ "D",
-      target == "L" ~ "G",
-      target %in% c("E", "F", "G") ~ "L",
-      target == "H" ~ "K",
-      target %in% c("I", "J", "K") ~ "H",
+      target_image == "D" ~ "C",
+      target_image %in% c("A", "B", "C") ~ "D",
+      target_image == "L" ~ "G",
+      target_image %in% c("E", "F", "G") ~ "L",
+      target_image == "H" ~ "K",
+      target_image %in% c("I", "J", "K") ~ "H",
     )
   ) |>
-  pivot_longer(c("target", "distr0", "distr1", "distr2"), names_to = "object_id", values_to = "choice_id") |>
-  rename(target = target_name)
+  pivot_longer(c("target_image", "distr0", "distr1", "distr2"), names_to = "object_id", values_to = "selected_image") |>
+  mutate(object_id = ifelse(object_id == "target_image", "target", object_id)) |> # clicks.csv's raw object_id values use "target", not our schema's target_image
+  rename(target_image = target_name)
 
 roles <- messages |>
-  mutate(rep_num = trialnum %/% 4) |>
-  select(networkid, roomid, participantid, role, partnernum, rep_num) |>
+  mutate(round_num = trialnum %/% 4) |>
+  select(networkid, roomid, participantid, role, partnernum, round_num) |>
   filter(role == "describer") |>
   unique() |>
   group_by(networkid, roomid, partnernum) |>
@@ -87,16 +88,16 @@ roles <- messages |>
   ) |>
   mutate(matcher = ifelse(is.na(matcher), matcher2, matcher)) |>
   # I fully recognize this is an incredibly hacky way to identify matchers but it works
-  select(networkid, roomid, partnernum, rep_num, participantid = matcher)
+  select(networkid, roomid, partnernum, round_num, participantid = matcher)
 
 clicks <- read_csv(str_c(url, "clicks.csv")) |>
   mutate(role = "matcher") |>
   select(networkid, roomid, trialnum, partnernum, stim_set_id, object_id, role) |>
-  mutate(rep_num = trialnum %/% 4) |>
+  mutate(round_num = trialnum %/% 4) |>
   left_join(roles) |>
   mutate(action_type = "selection") |>
-  left_join(contexts |> select(-option_set, -target)) |>
-  left_join(contexts |> select(networkid, roomid, option_set, trialnum, target) |> unique())
+  left_join(contexts |> select(-image_options, -target_image)) |>
+  left_join(contexts |> select(networkid, roomid, image_options, trialnum, target_image) |> unique())
 
 
 # exclude messages from matchers on trials where the describer didn't talk
@@ -108,7 +109,7 @@ describer_talked <- messages |>
 
 messages_with_context <- messages |>
   inner_join(describer_talked) |>
-  left_join(contexts |> ungroup() |> select(networkid, option_set) |> unique())
+  left_join(contexts |> ungroup() |> select(networkid, image_options) |> unique())
 
 
 completeNetworks <- clicks %>%
@@ -131,9 +132,9 @@ all <- messages_with_context |>
     short_cite = "Hawkins et al. (2023)",
     language = "English",
     stage_num = partnernum + 1,
-    rep_num = trialnum %/% 4,
+    round_num = trialnum %/% 4,
     trial_num = 1 + trialnum + partnernum * 16,
-    rep_num = 1 + rep_num + 4 * partnernum,
+    round_num = 1 + round_num + 4 * partnernum,
     time_stamp = as.numeric(NA), # didn't find timestamps in source
     age = as.numeric(NA), # TODO demographics
     gender = as.character(NA),
@@ -159,12 +160,12 @@ all <- messages_with_context |>
     stage_num,
     condition_label, time_stamp,
     game_id, player_id, room_num,
-    trial_num, rep_num,
-    role, target,
+    trial_num, round_num,
+    role, target_image,
     age, gender, race, education, native_language, population,
     action_type, exclude, exclusion_reason,
-    message_number, text,
-    choice_id, option_set,
+    message_num, text,
+    selected_image, image_options,
     group_size, message_irrelevant,
     prior_relationship, partner_constancy, role_constancy, confederates, modality,
     feedback, backchannel, order_match

@@ -1,2 +1,0 @@
-condition_label,dataset_id,full_cite,short_cite,group_size,prior_relationship,partner_constancy,role_constancy,population,confederates,modality,feedback,backchannel,language,condition_id
-experiment_1,wang2025_lvlms,"Wang, Z., Li, W., Kaliosis, P., Rambow, O., & Brennan, S. E. (2025, November). LVLMs are Bad at Overhearing Human Referential Communication. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (pp. 16769-16793).",Wang et al. (2025),2,no,yes,yes,adult,no,oral-remote,none,full,English,1

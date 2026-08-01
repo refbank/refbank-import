@@ -62,7 +62,7 @@ combined_chat <- one_chat |>
   ) %>%
   select(gameId, trialNum, repNum, tangram, playerId, role, numPlayers, text, condition, is.chitchat) |>
   group_by(gameId, trialNum, repNum) |>
-  mutate(message_number = row_number()) |>
+  mutate(message_num = row_number()) |>
   ungroup() |>
   mutate(action_type = "message") |>
   mutate(role = case_when(
@@ -84,23 +84,23 @@ combined_results <- one_round_results |>
   rename(condition = rotate) |>
   bind_rows(three_round_results) |>
   mutate(
-    choice_id = gsub("/experiment/tangram_", "", response, fixed = TRUE),
-    choice_id = gsub(".png", "", choice_id, fixed = TRUE)
+    selected_image = gsub("/experiment/tangram_", "", response, fixed = TRUE),
+    selected_image = gsub(".png", "", selected_image, fixed = TRUE)
   )
 
 ##### determine when people weren't actually there
 
 last_present <- combined_results |>
-  select(gameId, playerId, trialNum, choice_id) |>
-  filter(choice_id %in% options) |>
+  select(gameId, playerId, trialNum, selected_image) |>
+  filter(selected_image %in% options) |>
   group_by(gameId, playerId) |>
   summarize(lasttrialNum = max(trialNum))
 
-choices <- combined_results |>
+selections <- combined_results |>
   left_join(last_present) |>
   mutate(
-    choice_id = case_when(
-      choice_id %in% options ~ choice_id, # if there's a choice, keep it
+    selected_image = case_when(
+      selected_image %in% options ~ selected_image, # if there's a choice, keep it
       is.na(lasttrialNum) ~ NA, # if there's never a choice, NA
       trialNum > lasttrialNum + 1 ~ NA, # if it's more than one after the last choice, NA
       T ~ "timed_out"
@@ -111,14 +111,14 @@ choices <- combined_results |>
       T ~ time
     ),
     time_stamp = case_when(
-      choice_id %in% options ~ time,
-      choice_id == "timed_out" ~ 180, # known max time for trial
+      selected_image %in% options ~ time,
+      selected_image == "timed_out" ~ 180, # known max time for trial
       T ~ NA
     ),
     action_type = "selection",
     role = "matcher"
   ) |>
-  filter(!is.na(choice_id))
+  filter(!is.na(selected_image))
 
 #### exclusions
 
@@ -126,7 +126,7 @@ choices <- combined_results |>
 good_chat <- combined_chat |> inner_join(combined_chat |> filter(role == "describer") |> select(gameId, trialNum) |> unique())
 
 # exclude trials where there is no describer talking
-good_choices <- choices |> inner_join(combined_chat |> filter(role == "describer") |> select(gameId, trialNum) |> unique())
+good_choices <- selections |> inner_join(combined_chat |> filter(role == "describer") |> select(gameId, trialNum) |> unique())
 
 
 
@@ -137,7 +137,7 @@ all_data <- good_choices |>
   mutate(
     dataset_id = "boyce2024_interaction",
     trial_num = trialNum + 1,
-    rep_num = repNum + 1,
+    round_num = repNum + 1,
     full_cite = "Boyce, V., Hawkins, R. D., Goodman, N. D., & Frank, M. C. (2024). Interaction structure constrains the emergence of conventions in group communication. Proceedings of the National Academy of Sciences, 121(28), e2403888121.",
     short_cite = "Boyce et al. (2024)",
     group_size = case_when(
@@ -195,11 +195,11 @@ all_data <- good_choices |>
       T ~ NA
     ),
     message_irrelevant = (is.chitchat == 1),
-    message_number = as.numeric(message_number),
+    message_num = as.numeric(message_num),
     population = "adult"
   ) |>
   rowwise() |>
-  mutate(option_set = options |> str_c(collapse = ";")) |>
+  mutate(image_options = options |> str_c(collapse = ";")) |>
   ungroup() |>
   select(
     condition_label = condition,
@@ -212,11 +212,11 @@ all_data <- good_choices |>
     confederates, modality, feedback, backchannel, order_match,
     game_id = gameId,
     room_num,
-    option_set,
-    target = tangram,
+    image_options,
+    target_image = tangram,
     stage_num,
     trial_num,
-    rep_num,
+    round_num,
     exclude,
     exclusion_reason,
     action_type,
@@ -224,9 +224,9 @@ all_data <- good_choices |>
     role,
     time_stamp,
     text,
-    message_number,
+    message_num,
     message_irrelevant,
-    choice_id
+    selected_image
   ) |>
   arrange(game_id) |>
   left_join(read_csv(here("import/boyce2024_interaction/demogs.csv")))

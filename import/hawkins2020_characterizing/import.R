@@ -108,18 +108,18 @@ messages <- sequentialCombined.raw %>%
   ) |>
   mutate(contents = str_trim(contents)) |>
   group_by(gameid, trialNum, repetitionNum) |>
-  mutate(message_number = row_number() |> as.numeric()) |>
+  mutate(message_num = row_number() |> as.numeric()) |>
   mutate(time_stamp = as.numeric(NA)) |>
   select(
     gameid, trialNum, repetitionNum, role, intendedName, time_stamp, contents,
-    message_number, message_irrelevant
+    message_num, message_irrelevant
   ) |>
   ungroup() |>
   mutate(action_type = "message")
 
 
-### choices
-choices <- sequentialClicks |>
+### selections
+selections <- sequentialClicks |>
   mutate(role = "matcher") |>
   select(gameid, trialNum, repetitionNum, role, intendedName = intendedObj, clickedObj, role) |>
   mutate(
@@ -137,7 +137,7 @@ no_describer <- messages |>
     action_type = "message"
   )
 
-choice_no_describer <- choices |>
+choice_no_describer <- selections |>
   select(gameid, trialNum, repetitionNum, intendedName) |>
   anti_join(messages |> filter(role == "director") |> select(gameid, trialNum) |> unique()) |>
   mutate(
@@ -149,7 +149,7 @@ choice_no_describer <- choices |>
 options <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L")
 
 
-all_cued <- choices |>
+all_cued <- selections |>
   bind_rows(messages) |>
   bind_rows(no_describer) |>
   bind_rows(choice_no_describer) |>
@@ -170,7 +170,7 @@ all_cued <- choices |>
     education = as.character(NA),
     native_language = ifelse(nativeEnglish == tolower("yes"), "English", NA),
     trial_num = trialNum,
-    rep_num = repetitionNum,
+    round_num = repetitionNum,
     role = case_when(
       role == "director" ~ "describer",
       role == "matcher" ~ "matcher"
@@ -188,20 +188,20 @@ all_cued <- choices |>
     language = "English",
     exclude = replace_na(exclude, F), # fill in F for ones not excluded
   ) |>
-  mutate(option_set = str_c(options, collapse = ";")) |>
+  mutate(image_options = str_c(options, collapse = ";")) |>
   rename(
     game_id = gameid,
-    target = intendedName,
+    target_image = intendedName,
     text = contents,
-    choice_id = clickedObj,
+    selected_image = clickedObj,
   ) |>
   select(
     dataset_id, condition_label, full_cite, short_cite,
     stage_num, room_num,
     language,
-    game_id, player_id, age, gender, native_language, race, education, trial_num, rep_num,
-    role, target, message_number, text,
-    choice_id, time_stamp, option_set,
+    game_id, player_id, age, gender, native_language, race, education, trial_num, round_num,
+    role, target_image, message_num, text,
+    selected_image, time_stamp, image_options,
     group_size,
     prior_relationship,
     partner_constancy,

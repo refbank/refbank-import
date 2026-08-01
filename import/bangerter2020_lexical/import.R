@@ -35,23 +35,23 @@ messages <- tagged_transcripts |> fill(game)|> left_join(alignment) |>
          targetPosition_w=as.numeric(targetPosition_w),
          targetPosition_w=case_when(targetPosition_w==9 ~ 8, T ~ targetPosition_w), # coding error
          trial_num=(grid-1)*8+targetPosition_w,
-         rep_num=grid,
+         round_num=grid,
          player_id=person) |> 
-  group_by(gameid,rep_num) |> 
+  group_by(gameid,round_num) |> 
   fill(trial_num, .direction="downup") |> 
   group_by(gameid, trial_num) |> 
-  mutate(message_number=row_number() |> as.numeric()) |> 
+  mutate(message_num=row_number() |> as.numeric()) |> 
   ungroup() |> 
   filter(!is.na(role), !is.na(player_id)) |> 
-  select(action_type, gameid, player_id, role, text=message, message_irrelevant, trial_num, rep_num, expt, message_number)
+  select(action_type, gameid, player_id, role, text=message, message_irrelevant, trial_num, round_num, expt, message_num)
 
-dummy_messages <- messages |> filter(role=="matcher") |> distinct(gameid, trial_num, rep_num, expt) |> 
-  anti_join(messages |> filter(role=="describer") |> distinct(gameid, trial_num, rep_num, expt)) |> 
+dummy_messages <- messages |> filter(role=="matcher") |> distinct(gameid, trial_num, round_num, expt) |> 
+  anti_join(messages |> filter(role=="describer") |> distinct(gameid, trial_num, round_num, expt)) |> 
   mutate(role="describer",
          text=NA, 
          action_type="message",
          player_id=str_c(gameid, "_", "describer"),
-         message_number=NA)
+         message_num=NA)
 
 combined <- messages |> bind_rows(dummy_messages) |> 
   mutate(
@@ -82,13 +82,13 @@ combined <- messages |> bind_rows(dummy_messages) |>
     room_num=1,
     stage_num=case_when(
       expt==1 ~ 1,
-      expt==2 & rep_num==6 ~ 2,
+      expt==2 & round_num==6 ~ 2,
       expt==2 ~ 1,
-      expt==3 & rep_num<=4 ~ 1,
-      expt==3 & rep_num>=5 ~2
+      expt==3 & round_num<=4 ~ 1,
+      expt==3 & round_num>=5 ~2
     ),
-    option_set="unk1;unk2;unk3;unk4;unk5;unk6;unk7;unk8",
-    target="unk1",
+    image_options="unk1;unk2;unk3;unk4;unk5;unk6;unk7;unk8",
+    target_image="unk1",
     exclude=NA,
     exclusion_reason=NA_character_,
     order_match="order",
@@ -98,7 +98,7 @@ combined <- messages |> bind_rows(dummy_messages) |>
     age=NA_real_,
     time_stamp=NA_real_,
     education="some-college",
-    choice_id=NA) |> 
+    selected_image=NA) |> 
   rename(game_id=gameid) |> 
   select(-expt)
     

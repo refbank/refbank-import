@@ -97,7 +97,7 @@ combined <- transcripts |>
   full_join(full_describers) |>
   left_join(ordering) |>
   group_by(trial, group, round) |>
-  mutate(message_number = row_number() |> as.numeric()) |>
+  mutate(message_num = row_number() |> as.numeric()) |>
   ungroup() |>
   mutate(
     dataset_id = "branigan2016_doyouknow",
@@ -114,8 +114,8 @@ combined <- transcripts |>
     feedback = "limited",
     backchannel = "full",
     room_num = 1,
-    option_set = "A;B;C;D;G;H;I;J",
-    target = case_when(
+    image_options = "A;B;C;D;G;H;I;J",
+    target_image = case_when(
       tangram == 1 ~ "G",
       tangram == 2 ~ "H",
       tangram == 3 ~ "I",
@@ -128,8 +128,8 @@ combined <- transcripts |>
     stage = str_sub(round, 1, 1),
     round = str_sub(round, 2, -1) |> as.numeric(),
     stage_num = ifelse(stage == "A", 1, 2),
-    rep_num = (stage_num - 1) * 4 + round,
-    trial_num = as.numeric(trial) + 8 * (rep_num - 1),
+    round_num = (stage_num - 1) * 4 + round,
+    trial_num = as.numeric(trial) + 8 * (round_num - 1),
     exclude = F,
     exclusion_reason = as.character(NA),
     order_match = "order",
@@ -143,7 +143,7 @@ combined <- transcripts |>
     race = as.character(NA),
     gender = as.character(NA),
     education = "less-than-high-school",
-    choice_id = NA,
+    selected_image = NA,
     message_irrelevant = FALSE,
     condition_label = case_when(
       condition == "NP" ~ "naive participant",

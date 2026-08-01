@@ -11,12 +11,12 @@ messages_df <- read_csv(raw_messages) %>%
   rename(role = sender, msgTime = time)
 
 # Load tangram boards
-choices <- read_csv(raw_choices) %>%
+selections <- read_csv(raw_choices) %>%
   rename(
-    rep_num = roundNum,
+    round_num = roundNum,
   ) |>
   select(-score, -time) |>
-  group_by(gameid, rep_num) |>
+  group_by(gameid, round_num) |>
   pivot_longer(c(starts_with("true"), starts_with("sub")), names_to = "type", values_to = "trial_num") |>
   mutate(
     source = str_sub(type, 1, -2),
@@ -24,17 +24,17 @@ choices <- read_csv(raw_choices) %>%
   ) |>
   select(-type) |>
   pivot_wider(names_from = source, values_from = tangram) |>
-  rename(target = true, choice_id = sub) |>
+  rename(target_image = true, selected_image = sub) |>
   mutate(
-    trial_num = (rep_num - 1) * 12 + trial_num,
+    trial_num = (round_num - 1) * 12 + trial_num,
     player_id = str_c(gameid, "_", "matcher"),
     action_type = "selection",
     role = "matcher"
   ) |>
-  select(gameid, rep_num, trial_num, choice_id, target, player_id, action_type, role)
+  select(gameid, round_num, trial_num, selected_image, target_image, player_id, action_type, role)
 
 
-target_info <- choices |> select(gameid, rep_num, trial_num, target)
+target_info <- selections |> select(gameid, round_num, trial_num, target_image)
 
 pre_transcript <- read_csv(raw_messages) |>
   mutate(
@@ -57,11 +57,11 @@ messages <- transcript |>
   fill(target_position, .direction = "downup") |>
   ungroup() |>
   mutate(
-    rep_num = as.numeric(grid),
-    trial_num = (rep_num - 1) * 12 + as.numeric(target_position)
+    round_num = as.numeric(grid),
+    trial_num = (round_num - 1) * 12 + as.numeric(target_position)
   ) |>
   group_by(trial_num, gameid) |>
-  mutate(message_number = row_number() |> as.numeric()) |>
+  mutate(message_num = row_number() |> as.numeric()) |>
   ungroup() |>
   mutate(
     action_type = "message",
@@ -69,9 +69,9 @@ messages <- transcript |>
   ) |>
   left_join(target_info) |>
   filter(!is.na(gameid)) |>
-  select(rep_num, trial_num, gameid, role, text = message, message_number, message_irrelevant, action_type, player_id, target) |>
+  select(round_num, trial_num, gameid, role, text = message, message_num, message_irrelevant, action_type, player_id, target_image) |>
   filter(!is.na(trial_num)) |> # confirmed these are all not relevant
-  filter(!is.na(target)) # if we don't have target info can't work with it
+  filter(!is.na(target_image)) # if we don't have target_image info can't work with it
 
 missing_messages <- target_info |> # sometimes they don't describe the last one b/c process of elimination
   anti_join(messages |> filter(role == "describer")) |>
@@ -79,7 +79,7 @@ missing_messages <- target_info |> # sometimes they don't describe the last one 
     role = "describer",
     player_id = str_c(gameid, "_", role),
     text = NA,
-    message_number = NA,
+    message_num = NA,
     action_type = "message"
   )
 
@@ -143,7 +143,7 @@ exclusion_df <- tribble(
 
 
 all_uncued <- messages |>
-  bind_rows(choices) |>
+  bind_rows(selections) |>
   bind_rows(missing_messages) |>
   left_join(select(subj_df, "gameid", "role", "nativeEnglish")) %>%
   left_join(exclusion_df) |>
@@ -162,7 +162,7 @@ all_uncued <- messages |>
     native_language = ifelse(nativeEnglish == tolower("yes"), "English", NA),
     race = as.character(NA),
     education = as.character(NA),
-    option_set = "A;B;C;D;E;F;G;H;I;J;K;L",
+    image_options = "A;B;C;D;E;F;G;H;I;J;K;L",
     group_size = 2,
     prior_relationship = "no",
     population = "adult",

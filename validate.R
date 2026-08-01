@@ -28,13 +28,13 @@ validate_dataset <- function(df, write = F) {
     "condition_label", "dataset_id", "full_cite", "short_cite",
     "group_size", "language", "prior_relationship", "partner_constancy", "population",
     "role_constancy", "confederates", "modality", "feedback", "backchannel",
-    "game_id", "room_num", "option_set", "target",
-    "trial_num", "rep_num", "stage_num",
+    "game_id", "room_num", "image_options", "target_image",
+    "trial_num", "round_num", "stage_num",
     "exclude", "exclusion_reason", "order_match",
     "action_type", "player_id", "role", "time_stamp",
     "age", "gender", "native_language", "race", "education",
-    "text", "message_number", "message_irrelevant",
-    "choice_id"
+    "text", "message_num", "message_irrelevant",
+    "selected_image"
   )
 
 
@@ -45,15 +45,15 @@ validate_dataset <- function(df, write = F) {
 
   should_be_char <- c(
     "dataset_id", "full_cite", "short_cite",
-    "language", "option_set", "prior_relationship", "partner_constancy", "population",
+    "language", "image_options", "prior_relationship", "partner_constancy", "population",
     "role_constancy", "confederates", "modality", "feedback", "backchannel",
     "order_match",
     "exclusion_reason", "action_type", "role", "text",
     "gender", "native_language", "race", "education"
   )
   should_be_numeric <- c(
-    "group_size", "room_num", "trial_num", "rep_num", "stage_num",
-    "time_stamp", "message_number", "age"
+    "group_size", "room_num", "trial_num", "round_num", "stage_num",
+    "time_stamp", "message_num", "age"
   )
   should_be_bool <- c("exclude", "message_irrelevant")
 
@@ -79,7 +79,7 @@ validate_dataset <- function(df, write = F) {
   }
 
   assert_that(all(df$trial_num > 0), msg = "trial_num is 1 indexed")
-  assert_that(all(df$rep_num > 0), msg = "rep_num is 1 indexed")
+  assert_that(all(df$round_num > 0), msg = "round_num is 1 indexed")
   assert_that(all(df$stage_num > 0), msg = "stage_num is 1 indexed")
 
 
@@ -196,7 +196,7 @@ validate_dataset <- function(df, write = F) {
   # check trials
   try_trials <- df |>
     select(
-      condition_label, game_id, room_num, option_set, target, stage_num, trial_num, rep_num, exclude,
+      condition_label, game_id, room_num, image_options, target_image, stage_num, trial_num, round_num, exclude,
       exclusion_reason, order_match
     ) |>
     unique() |>
@@ -232,7 +232,7 @@ validate_dataset <- function(df, write = F) {
     left_join(players) |>
     select(game_id, room_num, trial_num, text,
       player_id = player_id_numeric, role,
-      message_number, message_irrelevant, time_stamp
+      message_num, message_irrelevant, time_stamp
     ) |>
     left_join(trials |> select(trial_id, game_id, room_num, trial_num),
       by = join_by(game_id, room_num, trial_num)
@@ -243,27 +243,27 @@ validate_dataset <- function(df, write = F) {
     select(-trial_num, -game_id, -room_num)
 
   # check selections
-  try_choices <- df |>
+  try_selections <- df |>
     filter(action_type == "selection") |>
     left_join(players) |>
-    select(game_id, room_num, trial_num, choice_id, player_id = player_id_numeric, time_stamp) |>
-    left_join(trials |> select(trial_id, game_id, room_num, trial_num, option_set),
+    select(game_id, room_num, trial_num, selected_image, player_id = player_id_numeric, time_stamp) |>
+    left_join(trials |> select(trial_id, game_id, room_num, trial_num, image_options),
       by = join_by(game_id, room_num, trial_num)
     ) |>
-    mutate(option_set_list = str_split(option_set, ";")) |>
+    mutate(image_options_list = str_split(image_options, ";")) |>
     select(-trial_num, -room_num, -game_id) |>
-    mutate(check_choices = map2_lgl(
-      choice_id, option_set_list,
+    mutate(check_selections = map2_lgl(
+      selected_image, image_options_list,
       \(c, o) {
         c %in% o | c == "timed_out"
       }
     ))
 
-  assert_that(all(try_choices$check_choices),
-    msg = "choice_id must be in option_set or timed_out"
+  assert_that(all(try_selections$check_selections),
+    msg = "selected_image must be in image_options or timed_out"
   )
 
-  choices <- try_choices |> select(-option_set_list, -check_choices, -option_set)
+  selections <- try_selections |> select(-image_options_list, -check_selections, -image_options)
 
   # remove excess columns
 
@@ -291,28 +291,28 @@ validate_dataset <- function(df, write = F) {
   # View(na_conditions)
   assert_that(nrow(na_conditions) == 0)
 
-  print("Checking choices")
-  check_cols(c("trial_id", "choice_id", "player_id", "time_stamp"), choices)
-  na_choices <- choices |> filter(if_any(c("trial_id", "choice_id", "player_id"), is.na))
-  assert_that(nrow(na_choices) == 0)
-  duplicate_choices <- choices |>
+  print("Checking selections")
+  check_cols(c("trial_id", "selected_image", "player_id", "time_stamp"), selections)
+  na_selections <- selections |> filter(if_any(c("trial_id", "selected_image", "player_id"), is.na))
+  assert_that(nrow(na_selections) == 0)
+  duplicate_selections <- selections |>
     count(trial_id, player_id) |>
     filter(n > 1)
-  assert_that(nrow(duplicate_choices) == 0, msg = "at most one selection allowed per trial per player")
+  assert_that(nrow(duplicate_selections) == 0, msg = "at most one selection allowed per trial per player")
 
   print("Checking messages")
-  check_cols(c("trial_id", "player_id", "role", "text", "message_number", "message_irrelevant", "time_stamp"), messages)
-  na_messages <- messages |> filter(if_any(c("player_id", "trial_id", "role", "message_number", "text"), is.na))
+  check_cols(c("trial_id", "player_id", "role", "text", "message_num", "message_irrelevant", "time_stamp"), messages)
+  na_messages <- messages |> filter(if_any(c("player_id", "trial_id", "role", "message_num", "text"), is.na))
   assert_that(nrow(na_messages) == 0)
   empty_message <- messages |> filter(text == "")
   assert_that(nrow(empty_message) == 0)
 
   print("Checking trials")
   check_cols(c(
-    "trial_id", "condition_id", "game_id", "room_num", "option_set", "target", "stage_num",
-    "trial_num", "rep_num", "exclude", "exclusion_reason", "describer", "matchers", "order_match"
+    "trial_id", "condition_id", "game_id", "room_num", "image_options", "target_image", "stage_num",
+    "trial_num", "round_num", "exclude", "exclusion_reason", "describer", "matchers", "order_match"
   ), trials)
-  na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "option_set", "target", "stage_num", "trial_num", "rep_num", "describer", "order_match"), is.na))
+  na_trials <- trials |> filter(if_any(c("condition_id", "game_id", "room_num", "image_options", "target_image", "stage_num", "trial_num", "round_num", "describer", "order_match"), is.na))
   # View(na_trials)
   assert_that(nrow(na_trials) == 0)
 
@@ -329,8 +329,8 @@ validate_dataset <- function(df, write = F) {
     write_csv(trials, here(dir, "trials.csv"))
     print("Writing messages")
     write_csv(messages, here(dir, "messages.csv"))
-    print("Writing choices")
-    write_csv(choices, here(dir, "choices.csv"))
+    print("Writing selections")
+    write_csv(selections, here(dir, "selections.csv"))
     print("Writing players")
     write_csv(players, here(dir, "players.csv"))
   }

@@ -35,7 +35,7 @@ expt_3 <- read_csv(here(data_dir, "exp3_data.csv")) |>
 messages_single <- expt_1 |>
   bind_rows(expt_2) |>
   select(
-    game_id, trial_index, block, target, controlled,
+    game_id, trial_index, block, target_image = target, controlled,
     speaker_id, context, description, time_to_message,
     condition_label, stage_num
   ) |>
@@ -43,7 +43,7 @@ messages_single <- expt_1 |>
     player_id = speaker_id,
     role = "describer",
     time_stamp = time_to_message,
-    message_number = 1,
+    message_num = 1,
     message_irrelevant = F,
     action_type = "message",
     text = description
@@ -51,13 +51,13 @@ messages_single <- expt_1 |>
 
 messages_complex <- expt_3 |>
   select(
-    game_id, block, target, trial_index,
+    game_id, block, target_image = target, trial_index,
     condition_label, description, context, speaker_id, listener_id, stage_num
   ) |>
   mutate(description = map(description, ParseJSONColumn)) |>
   unnest(description) |>
-  group_by(game_id, block, target, trial_index) |>
-  mutate(message_number = row_number()) |>
+  group_by(game_id, block, target_image, trial_index) |>
+  mutate(message_num = row_number()) |>
   ungroup() |>
   mutate(
     role = ifelse(role == "speaker", "describer", "matcher"),
@@ -66,23 +66,23 @@ messages_complex <- expt_3 |>
   )
 
 
-choices <- expt_1 |>
+selections <- expt_1 |>
   bind_rows(expt_2) |>
   bind_rows(expt_3) |>
   select(
-    game_id, trial_index, block, target, controlled,
+    game_id, trial_index, block, target_image = target, controlled,
     listener_id, context,
     sec_until_press, sec_until_click, response, condition_label, stage_num
   ) |>
   mutate(
     player_id = listener_id, time_stamp = ifelse(!is.na(sec_until_press), sec_until_press, sec_until_click),
-    action_type = "selection", choice_id = response, role = "matcher"
+    action_type = "selection", selected_image = response, role = "matcher"
   ) |>
-  mutate(choice_id = ifelse(is.na(choice_id), "timed_out", choice_id))
+  mutate(selected_image = ifelse(is.na(selected_image), "timed_out", selected_image))
 
 ### combine everything
 all <- messages_single |>
-  bind_rows(choices) |>
+  bind_rows(selections) |>
   bind_rows(messages_complex) |>
   mutate(
     dataset_id = "ji2025_adhoc",
@@ -105,13 +105,13 @@ all <- messages_single |>
     race = as.character(NA),
     education = as.character(NA),
     trial_num = trial_index + 1,
-    rep_num = 1 + block,
+    round_num = 1 + block,
     group_size = 2,
-    target = str_replace(target, ".svg", "") |> str_replace_all("page-", ""),
-    choice_id = str_replace(choice_id, ".svg", "") |> str_replace_all("page-", ""),
+    target_image = str_replace(target_image, ".svg", "") |> str_replace_all("page-", ""),
+    selected_image = str_replace(selected_image, ".svg", "") |> str_replace_all("page-", ""),
     exclude = as.logical(NA), # TODO figure out
     exclusion_reason = as.character(NA), # TODO figure out
-    option_set = str_replace_all(context, ".svg", "") |> str_replace_all("', '", ";") |>
+    image_options = str_replace_all(context, ".svg", "") |> str_replace_all("', '", ";") |>
       str_replace_all(fixed("['"), "") |> str_replace_all(fixed("']"), "") |> str_replace_all("page-", ""),
   ) |>
   select(
@@ -122,11 +122,11 @@ all <- messages_single |>
     game_id, room_num,
     player_id, age, gender, race, education, native_language,
     stage_num,
-    trial_num, rep_num,
-    role, target,
+    trial_num, round_num,
+    role, target_image,
     action_type, exclude, exclusion_reason,
-    message_number, text,
-    choice_id, option_set,
+    message_num, text,
+    selected_image, image_options,
     group_size, message_irrelevant,
   )
 

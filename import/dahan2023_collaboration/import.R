@@ -14,20 +14,20 @@ choices_info <- read_tsv(here("import/dahan2023_collaboration/raw_data/Alignment
     Segment = str_replace(Segment, "_2", ""),
     game_id = str_sub(Dyad, 2, 3) |> as.numeric(),
     player_id = str_c(game_id, "_", Matcher),
-    choice_id = Matched,
-    target = Target,
+    selected_image = Matched,
+    target_image = Target,
     trial_num = as.numeric(Segment),
-    rep_num = ((trial_num - 1) %/% 3) + 1,
-    option_set = case_when(
-      str_sub(target, 1, 1) == "1" ~ set_1,
-      str_sub(target, 1, 1) == "2" ~ set_2
+    round_num = ((trial_num - 1) %/% 3) + 1,
+    image_options = case_when(
+      str_sub(target_image, 1, 1) == "1" ~ set_1,
+      str_sub(target_image, 1, 1) == "2" ~ set_2
     ),
     role = "matcher",
     action_type = "selection"
   ) |>
-  select(game_id, player_id, choice_id, target, trial_num, rep_num, option_set, role, action_type)
+  select(game_id, player_id, selected_image, target_image, trial_num, round_num, image_options, role, action_type)
 
-target_info <- choices_info |> select(game_id, trial_num, rep_num, target, option_set)
+target_info <- choices_info |> select(game_id, trial_num, round_num, target_image, image_options)
 
 text <- raw_transcript |>
   fill(game) |>
@@ -63,23 +63,23 @@ text <- raw_transcript |>
     game_id = as.numeric(game)
   ) |>
   group_by(game_id, trial_num) |>
-  mutate(message_number = row_number() |> as.numeric()) |>
+  mutate(message_num = row_number() |> as.numeric()) |>
   ungroup() |>
   left_join(target_info) |>
   select(
-    rep_num = grid_w, game_id, role, trial_num, option_set, target,
-    action_type, player_id, message_irrelevant, text = message, message_number
+    round_num = grid_w, game_id, role, trial_num, image_options, target_image,
+    action_type, player_id, message_irrelevant, text = message, message_num
   )
 
 missing_describer_messages <- choices_info |>
-  select(game_id, trial_num, rep_num, player_id, target, option_set) |>
+  select(game_id, trial_num, round_num, player_id, target_image, image_options) |>
   mutate(player_id = case_when(
     str_detect(player_id, "A") ~ str_c(game_id, "_B"),
     str_detect(player_id, "B") ~ str_c(game_id, "_A")
   )) |>
   mutate(role = "describer") |>
   anti_join(text |> filter(role == "describer")) |>
-  mutate(text = NA, message_number = 1, action_type = "message")
+  mutate(text = NA, message_num = 1, action_type = "message")
 
 
 all <- text |>

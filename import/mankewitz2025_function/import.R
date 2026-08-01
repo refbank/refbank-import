@@ -111,7 +111,7 @@ d_messages_final <- d_chat |>
   left_join(d_round |>
     select(roundID, gameID)) |>
   mutate(
-    message_number = 1:n(),
+    message_num = 1:n(),
     message_irrelevant = chit_chat
   ) |>
   ungroup() |>
@@ -120,12 +120,12 @@ d_messages_final <- d_chat |>
     role = ifelse(director_msg, "describer", "matcher"),
     time_stamp = NA,
     player_id = playerID,
-    choice_id = NA,
+    selected_image = NA,
     text = str_replace_all(text, "\n", " ")
   ) |>
   select(
     roundID, gameID, action_type, player_id, role, time_stamp,
-    message_number, message_irrelevant, choice_id, text
+    message_num, message_irrelevant, selected_image, text
   )
 
 # add dummy messages for rounds where director didn't talk
@@ -153,9 +153,9 @@ d_no_talk <- d_round |>
     player_id = director,
     role = "describer",
     time_stamp = NA,
-    message_number = NA,
+    message_num = NA,
     message_irrelevant = NA,
-    choice_id = NA,
+    selected_image = NA,
     text = NA
   )
 
@@ -165,15 +165,15 @@ d_actions_final <- d_round |>
     action_type = "selection",
     role = "matcher",
     time_stamp = as.numeric(NA),
-    choice_id = ifelse(response == "", "timed_out", response),
+    selected_image = ifelse(response == "", "timed_out", response),
     text = NA,
-    message_number = as.numeric(NA),
+    message_num = as.numeric(NA),
     message_irrelevant = NA
   ) |>
   left_join(d_players |> select(gameID, director = playerID, player_id = partnerID)) |>
   select(
     roundID, gameID, action_type, player_id, role, time_stamp,
-    message_number, message_irrelevant, choice_id, text
+    message_num, message_irrelevant, selected_image, text
   )
 
 d_actions <- bind_rows(d_messages_final, d_actions_final, d_no_talk) |> left_join(d_players |> select(gameID, age, gender, education, player_id = playerID), by = c("player_id", "gameID"))
@@ -183,16 +183,16 @@ d_actions <- bind_rows(d_messages_final, d_actions_final, d_no_talk) |> left_joi
 d_trial_info <- d_round |>
   as_tibble() |>
   mutate(
-    option_set = tangramURLs |>
+    image_options = tangramURLs |>
       str_remove_all('\\[|\\]|"') |>
       str_replace_all(",", ";"),
     trial_num = index + 1,
-    rep_num = repNum + 1,
+    round_num = repNum + 1,
     stage_num = 1,
     exclude = FALSE,
     exclusion_reason = as.character(NA)
   ) |>
-  select(roundID, gameID, option_set, trial_num, rep_num, stage_num, exclude, exclusion_reason, target)
+  select(roundID, gameID, image_options, trial_num, round_num, stage_num, exclude, exclusion_reason, target_image = target)
 
 d_full <- d_actions |>
   left_join(d_trial_info) |>
@@ -221,13 +221,13 @@ d_full <- d_actions |>
   ) |>
   select(
     condition_label, dataset_id, full_cite, short_cite,
-    trial_num, rep_num, stage_num, room_num,
+    trial_num, round_num, stage_num, room_num,
     group_size, language, prior_relationship, partner_constancy, population, role_constancy,
     confederates, modality, feedback, backchannel, order_match,
-    game_id, option_set,
-    target, exclude, exclusion_reason, action_type,
+    game_id, image_options,
+    target_image, exclude, exclusion_reason, action_type,
     player_id, age, gender, education, race, native_language,
-    role, time_stamp, text, message_number, message_irrelevant, choice_id
+    role, time_stamp, text, message_num, message_irrelevant, selected_image
   )
 
 

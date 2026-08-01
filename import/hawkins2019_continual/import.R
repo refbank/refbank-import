@@ -132,12 +132,12 @@ contexts <- combined |>
 concat_contexts <- contexts |>
   unique() |>
   group_by(context_id, targetImg, condition) |>
-  summarize(option_set = str_c(url, collapse = ";")) |>
+  summarize(image_options = str_c(url, collapse = ";")) |>
   ungroup()
 
 clicked <- contexts |>
   unique() |>
-  select(clickedObj = targetStatus, context_id, targetImg, condition, choice_id = url)
+  select(clickedObj = targetStatus, context_id, targetImg, condition, selected_image = url)
 
 
 ### split
@@ -151,7 +151,7 @@ chat <- combined |>
     player_id = str_c(gameid, "_describer")
   ) |>
   group_by(gameid, trialNum, repNum) |>
-  mutate(message_number = row_number() |> as.numeric()) |>
+  mutate(message_num = row_number() |> as.numeric()) |>
   ungroup() |>
   left_join(concat_contexts) |>
   mutate(
@@ -159,7 +159,7 @@ chat <- combined |>
     message_irrelevant = F
   ) # we don't have annotations for msg relevancy
 
-choices <- combined |>
+selections <- combined |>
   select(
     gameid, trialNum, repNum, targetImg, context_id, exclude,
     exclusion_reason, condition,
@@ -173,7 +173,7 @@ choices <- combined |>
   left_join(concat_contexts) |>
   left_join(clicked) |>
   mutate(action_type = "selection") |>
-  mutate(choice_id = ifelse(is.na(choice_id), "timed_out", choice_id))
+  mutate(selected_image = ifelse(is.na(selected_image), "timed_out", selected_image))
 
 
 # demogs
@@ -197,7 +197,7 @@ demogs <- demogs.humanhuman |>
 
 ### combine everything
 all <- chat |>
-  bind_rows(choices) |>
+  bind_rows(selections) |>
   left_join(demogs, by = c("gameid", "role", "condition")) |>
   mutate(
     dataset_id = "hawkins2019_continual",
@@ -207,7 +207,7 @@ all <- chat |>
     trial_num = trialNum + 1,
     stage_num = 1,
     room_num = 1,
-    rep_num = 1 + repNum,
+    round_num = 1 + repNum,
     age = as.numeric(NA),
     gender = as.character(NA),
     education = as.character(NA),
@@ -224,16 +224,16 @@ all <- chat |>
     population = "adult",
     group_size = ifelse(condition == "human-speaker-model-listener", 1, 2), # counting number of actual people? idk
   ) |>
-  filter(!is.na(option_set)) |> # this is two games in pilots where there wasn't context info in source
+  filter(!is.na(image_options)) |> # this is two games in pilots where there wasn't context info in source
   select(dataset_id, full_cite, short_cite, language, stage_num,
     condition_label = condition, time_stamp,
     game_id = gameid, room_num,
     player_id, age, gender, native_language, race, education,
-    trial_num, rep_num,
-    role, target = targetImg,
+    trial_num, round_num,
+    role, target_image = targetImg,
     action_type, exclude, exclusion_reason,
-    message_number, text = msg,
-    choice_id, option_set,
+    message_num, text = msg,
+    selected_image, image_options,
     group_size, prior_relationship, partner_constancy, role_constancy, confederates, population,
     modality, feedback, backchannel, order_match,
     message_irrelevant

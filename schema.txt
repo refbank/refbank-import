@@ -25,13 +25,14 @@ These are all the columns for the dataframe. Here we're grouping based on what l
   - game_id:
   - room_num:
   - stage_num:
-  - option_set: the set of choices, collapsed into a semicolon separated list, using str_c(choices, collapse=";")
-  - target: which the correct target is, should be in option_set
+  - image_options: the set of choices, collapsed into a semicolon separated list, using str_c(choices, collapse=";")
+  - target_image: which the correct target is, should be in image_options
   - trial_num: numeric, starting at 1, continuing to increase over entire experiment
-  - rep_num: numeric, repetition number starting at 1 (often block)
+  - round_num: numeric, repetition number starting at 1 (often block)
   - exclude: logical, was this trial excluded in the source
   - exclusion_reason: character, description of which exclusion criteria caused the exclusion
   - order_match: character, "order" or "match", whether the experimental task was about rearranging the order of images (so you could do different orders), or match where each trial has a specific target (can't move forward and back)
+  - option_set_size: numeric, derived at merge time as the number of items in image_options (not produced by individual import scripts)
 
 (action-level)
   - action_type: character, allowed values are (message, selection)
@@ -48,17 +49,17 @@ These are all the columns for the dataframe. Here we're grouping based on what l
 
 (message-level; these are NA for selections)
   - text: character, use a spellchecked version if available, but do not apply any exclusions
-  - message_number: numeric, the position within messages within trial, starting with 1 for the 1st message etc
+  - message_num: numeric, the position within messages within trial, starting with 1 for the 1st message etc
   - message_irrelevant: logical, true if this is a message consisting only of chit-chat / non-task-relevant
 
 (selection-level; these are NA for messages)
-  - choice_id: what target was selected, values can be the values in option_set, or "timed_out" or NA
+  - selected_image: what target was selected, values can be the values in image_options, or "timed_out" or NA
 
 
-Images are handled separately by import_images.R (not by individual import scripts). The values used in option_set and target must match image_id values in the images table. import_images.R derives the image metadata from the trial data by matching dataset_id and target values.
+Images are handled separately by import_images.R (not by individual import scripts). The values used in image_options and target_image must match image_id values in the images table. import_images.R derives the image metadata from the trial data by matching dataset_id and target_image values.
 
 (images table; one row per unique image, written to image_data/image_metadata.csv)
-  - image_id: the image identifier, matches target/option_set values in trials
+  - image_id: the image identifier, matches target_image/image_options values in trials
   - image_type: character, "tangram", "fribble", "line drawing", or "photograph" (other options could be added)
   - kilogram_id: character, the identifier in the kilogram tangram set (e.g. "page-A", "page1-148"), or NA if not in kilogram
   - image_path: character, filename of the image file (e.g. "page-A.svg", "target.png"), or NA if no file

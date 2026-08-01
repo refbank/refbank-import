@@ -114,9 +114,8 @@ matcher_df <- all_data %>%
     backchannel = backchannel,
     game_id = paste0("dyad", dyad_id),
     room_num = 1,
-    option_set = "1;2;3;4;5;6",
-    target = as.character(correct_tangram),
-    rep_num = round_num,
+    image_options = "1;2;3;4;5;6",
+    target_image = as.character(correct_tangram),
     stage_num = 1,
     exclude = FALSE,
     exclusion_reason = NA_character_,
@@ -131,9 +130,9 @@ matcher_df <- all_data %>%
     race = NA_character_,
     education = NA_character_,
     text = NA_character_,
-    message_number = NA_real_,
+    message_num = NA_real_,
     message_irrelevant = FALSE,
-    choice_id = as.character(matcher_best_guess)
+    selected_image = as.character(matcher_best_guess)
   ) %>%
   ungroup()
 
@@ -143,7 +142,7 @@ describer_df <- matcher_df %>%
     condition_label, dataset_id, full_cite, short_cite, group_size, language,
     prior_relationship, partner_constancy, population, role_constancy,
     confederates, modality, feedback, backchannel,
-    game_id, room_num, option_set, target, trial_num, rep_num, stage_num,
+    game_id, room_num, image_options, target_image, trial_num, round_num, stage_num,
     exclude, exclusion_reason, order_match, dyad_id
   ) %>%
   distinct() %>%
@@ -158,16 +157,16 @@ describer_df <- matcher_df %>%
     race = NA_character_,
     education = NA_character_,
     text = NA_character_,
-    message_number = NA_real_,
+    message_num = NA_real_,
     message_irrelevant = FALSE,
-    choice_id = NA_character_
+    selected_image = NA_character_
   ) %>%
   select(-dyad_id)
 
 # Combine matcher selections and describer entries
 harmonized_df <- bind_rows(
   matcher_df %>% select(
-    -dyad_id, -round_num, -tangram_mouse,
+    -dyad_id, -tangram_mouse,
     -correct_tangram, -turn_time, -director_eye, -matcher_eye
   ),
   describer_df
@@ -176,10 +175,10 @@ harmonized_df <- bind_rows(
     condition_label, dataset_id, full_cite, short_cite, group_size, language,
     prior_relationship, partner_constancy, population, role_constancy,
     confederates, modality, feedback, backchannel,
-    game_id, room_num, option_set, target, trial_num, rep_num, stage_num,
+    game_id, room_num, image_options, target_image, trial_num, round_num, stage_num,
     exclude, exclusion_reason, order_match,
     action_type, player_id, role, time_stamp, age, gender, native_language,
-    race, education, text, message_number, message_irrelevant, choice_id
+    race, education, text, message_num, message_irrelevant, selected_image
   )
 
 # Save Harmonized Data
@@ -195,10 +194,10 @@ df <- df %>%
     group_size = as.numeric(group_size),
     room_num = as.numeric(room_num),
     trial_num = as.numeric(trial_num),
-    rep_num = as.numeric(rep_num),
+    round_num = as.numeric(round_num),
     stage_num = as.numeric(stage_num),
     time_stamp = as.numeric(time_stamp),
-    message_number = as.numeric(message_number),
+    message_num = as.numeric(message_num),
     age = as.numeric(age),
     prior_relationship = as.character(prior_relationship),
     partner_constancy = as.character(partner_constancy),
@@ -213,7 +212,7 @@ df <- df %>%
     full_cite = as.character(full_cite),
     short_cite = as.character(short_cite),
     language = as.character(language),
-    option_set = as.character(option_set),
+    image_options = as.character(image_options),
     exclusion_reason = as.character(exclusion_reason),
     action_type = as.character(action_type),
     player_id = as.character(player_id),
@@ -223,7 +222,7 @@ df <- df %>%
     native_language = as.character(native_language),
     race = as.character(race),
     education = as.character(education),
-    choice_id = as.character(choice_id)
+    selected_image = as.character(selected_image)
   )
 
 validate_dataset(df, write = TRUE)

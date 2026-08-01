@@ -20,24 +20,24 @@ prep_behavior <- read_csv(here(raw_data_loc)) |>
       blockNum == 0 ~ (trialNum - 36) + 1,
       blockNum == 7 ~ (trialNum - 180) + 1
     ),
-    target = str_sub(target, 21, -5),
-    choice_id = str_sub(response, 21, -5),
+    target_image = str_sub(target, 21, -5),
+    selected_image = str_sub(response, 21, -5),
     game_id = str_sub(name, -3, -1) |> as.numeric()
   ) |>
   mutate(
-    rep_num = blockNum + 1,
+    round_num = blockNum + 1,
     trial_num = case_when(
-      rep_num == 1 ~ trial_position,
-      rep_num > 1 ~ rep_num * 18 + trial_position # rep2 starts at 37, etc
+      round_num == 1 ~ trial_position,
+      round_num > 1 ~ round_num * 18 + trial_position # rep2 starts at 37, etc
     )
   ) |>
-  select(game_id, target, rep_num, trial_num, target, choice_id, side, verb, at)
+  select(game_id, target_image, round_num, trial_num, target_image, selected_image, side, verb, at)
 
 
-choices <- prep_behavior |>
+selections <- prep_behavior |>
   filter(verb == "clickedTangram") |>
   left_join(prep_behavior |> filter(verb == "RoundStarted") |>
-    select(game_id, target, rep_num, trial_num, starttime = at)) |>
+    select(game_id, target_image, round_num, trial_num, starttime = at)) |>
   mutate(
     time_stamp = (at - starttime) |> as.numeric(),
     player_id = str_c(game_id, "_", side),
@@ -46,21 +46,21 @@ choices <- prep_behavior |>
   ) |>
   # the click handler sometimes double-fires, logging several identical clickedTangram
   # events ms apart for the same trial/player -- keep only the earliest
-  group_by(game_id, rep_num, trial_num, player_id) |>
+  group_by(game_id, round_num, trial_num, player_id) |>
   slice_min(time_stamp, n = 1, with_ties = FALSE) |>
   ungroup() |>
-  select(game_id, target, rep_num, trial_num, choice_id, time_stamp, player_id, action_type, role)
+  select(game_id, target_image, round_num, trial_num, selected_image, time_stamp, player_id, action_type, role)
 
-option_set <- prep_behavior |>
-  select(game_id, target, rep_num) |>
+image_options <- prep_behavior |>
+  select(game_id, target_image, round_num) |>
   distinct() |>
-  group_by(game_id, rep_num) |>
-  summarize(option_set = str_c(target, collapse = ";")) |>
-  left_join(prep_behavior |> select(game_id, trial_num, target, rep_num) |> distinct())
+  group_by(game_id, round_num) |>
+  summarize(image_options = str_c(target_image, collapse = ";")) |>
+  left_join(prep_behavior |> select(game_id, trial_num, target_image, round_num) |> distinct())
 
 # one games doesn't follow role switch by block because something goes off with 004, so we do this
 # the janky hard way
-pairs <- choices |>
+pairs <- selections |>
   distinct(game_id, player_id) |>
   mutate(role = rep(c("describer", "matcher"), times = 21)) |>
   pivot_wider(names_from = role, values_from = player_id)
@@ -69,13 +69,13 @@ all_pairs <- pairs |>
   rename(describer = matcher, matcher = describer) |>
   bind_rows(pairs)
 
-roles <- choices |>
-  distinct(game_id, rep_num, trial_num, player_id) |>
+roles <- selections |>
+  distinct(game_id, round_num, trial_num, player_id) |>
   rename(matcher = player_id) |>
   left_join(all_pairs) |>
   pivot_longer(c("matcher", "describer"), names_to = "role", values_to = "player_id") |>
   bind_rows(tribble( # manually add the missing problem children
-    ~game_id, ~rep_num, ~trial_num, ~role, ~player_id,
+    ~game_id, ~round_num, ~trial_num, ~role, ~player_id,
     2, 3, 59, "matcher", "2_Repi",
     2, 3, 59, "describer", "2_Minu",
     3, 1, 1, "matcher", "3_Repi",
@@ -99,10 +99,10 @@ transcript <- read_csv(here("import/hawkins2026_fmri/raw_data/hawkins_segmented.
   filter(!(game == 4 & grid == 1)) |> # remove the extra extra chitchatty nonsense
   rename(game_id = game) |>
   mutate(
-    rep_num = grid + 1,
+    round_num = grid + 1,
     trial_num = case_when(
-      rep_num == 1 ~ targetPosition,
-      rep_num > 1 ~ rep_num * 18 + targetPosition # rep2 starts at 37, etc
+      round_num == 1 ~ targetPosition,
+      round_num > 1 ~ round_num * 18 + targetPosition # rep2 starts at 37, etc
     ),
     message_irrelevant = case_when(
       is.na(chitchat) ~ F,
@@ -117,23 +117,23 @@ transcript <- read_csv(here("import/hawkins2026_fmri/raw_data/hawkins_segmented.
   ) |>
   rename(text = message) |>
   left_join(roles) |>
-  group_by(trial_num, game_id, rep_num) |>
-  mutate(message_number = row_number() |> as.numeric()) |>
+  group_by(trial_num, game_id, round_num) |>
+  mutate(message_num = row_number() |> as.numeric()) |>
   ungroup() |>
-  left_join(option_set) |>
-  select(game_id, rep_num, trial_num, player_id, text, option_set, target, action_type, message_number, role, message_irrelevant)
+  left_join(image_options) |>
+  select(game_id, round_num, trial_num, player_id, text, image_options, target_image, action_type, message_num, role, message_irrelevant)
 
-dummy_describers <- choices |>
-  left_join(option_set) |>
+dummy_describers <- selections |>
+  left_join(image_options) |>
   bind_rows(transcript |> filter(role == "matcher")) |>
-  distinct(game_id, rep_num, trial_num, target, option_set) |>
+  distinct(game_id, round_num, trial_num, target_image, image_options) |>
   anti_join(transcript |> filter(role == "describer")) |>
   mutate(role = "describer") |>
   left_join(roles) |>
   mutate(action_type = "message")
 
-combined <- choices |>
-  left_join(option_set) |>
+combined <- selections |>
+  left_join(image_options) |>
   bind_rows(dummy_describers) |>
   bind_rows(transcript) |>
   mutate(

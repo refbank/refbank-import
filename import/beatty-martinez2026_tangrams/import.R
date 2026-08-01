@@ -18,11 +18,11 @@ roles <- role_parity |>
   mutate(rep_parity = (rep_parity + 1) %% 2, role = "matcher") |>
   bind_rows(role_parity)
 
-choices <- raw |>
-  select(game_no, round_no, rep_no, target, response) |>
-  distinct() |> # raw is one row per utterance, so target/response repeat across a trial's utterances
+selections <- raw |>
+  select(game_no, round_no, rep_no, target_image = target, response) |>
+  distinct() |> # raw is one row per utterance, so target_image/response repeat across a trial's utterances
   mutate(
-    choice_id = case_when(
+    selected_image = case_when(
       response == "FALSE" ~ "timed_out",
       T ~ response
     ), role = "matcher",
@@ -30,13 +30,13 @@ choices <- raw |>
   ) |>
   left_join(roles) |>
   mutate(action_type = "selection") |>
-  select(game_no, round_no, rep_no, target, choice_id, action_type, participant, role)
+  select(game_no, round_no, rep_no, target_image, selected_image, action_type, participant, role)
 
 
 messages <- raw |>
   mutate(message_irrelevant = ifelse(utterance_related == 0, T, F)) |>
   group_by(game_no, round_no, rep_no) |>
-  mutate(message_number = row_number() |> as.numeric()) |>
+  mutate(message_num = row_number() |> as.numeric()) |>
   ungroup() |>
   mutate(
     action_type = "message",
@@ -46,12 +46,12 @@ messages <- raw |>
     )
   ) |>
   filter(!is.na(utterance)) |>
-  select(game_no, round_no, rep_no, target, participant, role, text = utterance, message_irrelevant, message_number, action_type)
+  select(game_no, round_no, rep_no, target_image = target, participant, role, text = utterance, message_irrelevant, message_num, action_type)
 
-missing_messages <- choices |>
-  distinct(game_no, round_no, rep_no, target) |>
+missing_messages <- selections |>
+  distinct(game_no, round_no, rep_no, target_image) |>
   anti_join(
-    messages |> filter(role == "describer") |> distinct(game_no, round_no, rep_no, target)
+    messages |> filter(role == "describer") |> distinct(game_no, round_no, rep_no, target_image)
   ) |>
   mutate(action_type = "message", rep_parity = rep_no %% 2) |>
   mutate(role = "director") |>
@@ -59,7 +59,7 @@ missing_messages <- choices |>
   mutate(role = "describer") |>
   select(-rep_parity)
 
-all <- choices |>
+all <- selections |>
   bind_rows(messages) |>
   bind_rows(missing_messages) |>
   mutate(
@@ -78,9 +78,9 @@ all <- choices |>
     feedback = "full",
     backchannel = "full",
     room_num = 1,
-    option_set = "A;B;C;D;E;F;G;H;I;J;K;L",
+    image_options = "A;B;C;D;E;F;G;H;I;J;K;L",
     trial_num = round_no + 1,
-    rep_num = rep_no + 1,
+    round_num = rep_no + 1,
     stage_num = 1,
     exclude = F,
     exclusion_reason = NA_character_,

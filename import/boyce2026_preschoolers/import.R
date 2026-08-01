@@ -123,7 +123,7 @@ messages <- expt_1_transcript |>
   bind_rows(expt_3_transcript) |>
   select(game, text, speaker, trial, role, type, expt) |>
   group_by(game, trial, expt) |>
-  mutate(message_number = row_number()) |>
+  mutate(message_num = row_number()) |>
   ungroup() |>
   mutate(
     action_type = "message",
@@ -133,10 +133,10 @@ messages <- expt_1_transcript |>
   filter(type != "practice") |>
   select(game,
     playerId = speaker, role, trial, action_type,
-    message_number, text, message_irrelevant, expt
+    message_num, text, message_irrelevant, expt
   )
 
-choices <- expt_1_data |>
+selections <- expt_1_data |>
   bind_rows(expt_2_data) |>
   bind_rows(expt_3_data) |>
   inner_join(read_csv(url(expt_1_link)) |>
@@ -148,15 +148,15 @@ choices <- expt_1_data |>
       read_tsv(url(expt_3_link)) |> mutate(expt = "expt3")
     ) |> select(game, expt)) |>
   filter(type != "practice") |>
-  select(game, trial, response, listener, distractor, target, expt, time) |>
-  rename(playerId = listener, choice_id = response) |>
-  mutate(choice_id = case_when(
-    is.na(choice_id) ~ "timed_out",
-    choice_id == "baby" ~ "H",
-    choice_id == "zombie" ~ "A",
-    choice_id == "dancer" ~ "G",
-    choice_id == "bunny" ~ "E",
-    T ~ choice_id
+  select(game, trial, response, listener, distractor, target_image = target, expt, time) |>
+  rename(playerId = listener, selected_image = response) |>
+  mutate(selected_image = case_when(
+    is.na(selected_image) ~ "timed_out",
+    selected_image == "baby" ~ "H",
+    selected_image == "zombie" ~ "A",
+    selected_image == "dancer" ~ "G",
+    selected_image == "bunny" ~ "E",
+    T ~ selected_image
   )) |>
   mutate(
     action_type = "selection",
@@ -199,14 +199,14 @@ echo_exclude <- expt_2_transcript |>
 
 exclude_all <- exclude |> bind_rows(no_talk_exclude, echo_exclude)
 
-options <- choices |>
+options <- selections |>
   mutate(
-    target = case_when(
-      target == "baby" ~ "H",
-      target == "zombie" ~ "A",
-      target == "dancer" ~ "G",
-      target == "bunny" ~ "E",
-      T ~ target
+    target_image = case_when(
+      target_image == "baby" ~ "H",
+      target_image == "zombie" ~ "A",
+      target_image == "dancer" ~ "G",
+      target_image == "bunny" ~ "E",
+      T ~ target_image
     ),
     distractor = case_when(
       distractor == "baby" ~ "H",
@@ -216,17 +216,17 @@ options <- choices |>
       T ~ distractor
     )
   ) |>
-  select(target, distractor, trial, game, expt) |>
-  mutate(option_set = str_c(target, distractor, sep = ";")) |>
+  select(target_image, distractor, trial, game, expt) |>
+  mutate(image_options = str_c(target_image, distractor, sep = ";")) |>
   select(-distractor)
 
 all <- messages |>
-  bind_rows(choices) |>
+  bind_rows(selections) |>
   bind_rows(no_talk) |>
-  select(-target) |>
+  select(-target_image) |>
   left_join(exclude_all) |>
   left_join(options) |>
-  filter(!is.na(target)) |>
+  filter(!is.na(target_image)) |>
   rename(condition_label = expt) |>
   mutate(
     dataset_id = "boyce2026_preschoolers",
@@ -245,12 +245,12 @@ all <- messages |>
     order_match = "match",
     room_num = 1,
     stage_num = 1,
-    rep_num = (trial) %/% 4 + 1,
+    round_num = (trial) %/% 4 + 1,
     trial_num = trial + 1,
     exclude = replace_na(exclude, F),
     native_language = as.character(NA),
     education = "less-than-high-school",
-    message_number = as.numeric(message_number),
+    message_num = as.numeric(message_num),
     game_id = str_c(condition_label, "_", game),
     player_id = str_c(condition_label, "_", playerId),
   ) |> # note that there are some limited cases where a participant is repeated
@@ -286,13 +286,13 @@ all <- messages |>
     dataset_id, full_cite, short_cite, group_size, language, condition_label,
     prior_relationship, partner_constancy, population, role_constancy,
     confederates, modality, feedback, backchannel, order_match,
-    game_id, room_num, option_set,
+    game_id, room_num, image_options,
     trial_num,
-    rep_num, stage_num, action_type, target,
+    round_num, stage_num, action_type, target_image,
     exclude, exclusion_reason,
     role, time_stamp,
     native_language, player_id, age, gender, race, education,
-    text, message_number, message_irrelevant, choice_id
+    text, message_num, message_irrelevant, selected_image
   )
 
 validate_dataset(all, write = T)

@@ -11,54 +11,54 @@ all_dirs <- list.dirs(DATA_LOC, full.names = FALSE) |>
 
 all_trials <- map(all_dirs, \(d) read_csv(file.path(DATA_LOC, d, "trials.csv"), show_col_types = FALSE) |>
   mutate(
-    target = as.character(target),
+    target_image = as.character(target_image),
     matchers = as.character(matchers)
   ) |>
   left_join(read_csv(file.path(DATA_LOC, d, "conditions.csv")))) |>
   list_rbind()
 
-# we only do target, not things that occur only as distractors. Could revisit
+# we only do target_image, not things that occur only as distractors. Could revisit
 
-get_kilogram_id_fmri <- function(target) {
+get_kilogram_id_fmri <- function(target_image) {
   # for hawkins frmi images -- I did not find all images in kilogram; possible that I missed some
   case_when(
-    target == "M" ~ "page1-148",
-    target == "N" ~ NA,
-    target == "O" ~ "page1-159",
-    target == "P" ~ "page5-178",
-    target == "Q" ~ "page9-29",
-    target == "R" ~ "page8-147",
-    target == "S" ~ NA,
-    target == "T" ~ "page6-164",
-    target == "U" ~ "page4-10",
-    target == "V" ~ "page7-14",
-    target == "W" ~ "page4-162",
-    target == "X" ~ "page4-24",
-    target == "Y" ~ "page8-234",
-    target == "Z" ~ "page8-235",
-    target == "AA" ~ "page7-248",
-    target == "AB" ~ "page5-244",
-    target == "AC" ~ "page7-218",
-    target == "AD" ~ "page5-153",
-    target == "AE" ~ NA,
-    target == "AF" ~ NA,
-    target == "AG" ~ NA,
-    target == "AH" ~ NA,
-    target == "AI" ~ NA,
-    target == "AJ" ~ NA,
+    target_image == "M" ~ "page1-148",
+    target_image == "N" ~ NA,
+    target_image == "O" ~ "page1-159",
+    target_image == "P" ~ "page5-178",
+    target_image == "Q" ~ "page9-29",
+    target_image == "R" ~ "page8-147",
+    target_image == "S" ~ NA,
+    target_image == "T" ~ "page6-164",
+    target_image == "U" ~ "page4-10",
+    target_image == "V" ~ "page7-14",
+    target_image == "W" ~ "page4-162",
+    target_image == "X" ~ "page4-24",
+    target_image == "Y" ~ "page8-234",
+    target_image == "Z" ~ "page8-235",
+    target_image == "AA" ~ "page7-248",
+    target_image == "AB" ~ "page5-244",
+    target_image == "AC" ~ "page7-218",
+    target_image == "AD" ~ "page5-153",
+    target_image == "AE" ~ NA,
+    target_image == "AF" ~ NA,
+    target_image == "AG" ~ NA,
+    target_image == "AH" ~ NA,
+    target_image == "AI" ~ NA,
+    target_image == "AJ" ~ NA,
   )
 }
 
-get_kilogram_id_reuse <- function(target) {
+get_kilogram_id_reuse <- function(target_image) {
   case_when( # I recognized these three
-    target == "base_03" ~ "page_F",
-    target == "base_04" ~ "page_I",
-    target == "close_06" ~ "page_A"
+    target_image == "base_03" ~ "page_F",
+    target_image == "base_04" ~ "page_I",
+    target_image == "close_06" ~ "page_A"
   )
 }
 
 all_images <- all_trials |>
-  select(target, dataset_id) |>
+  select(target_image, dataset_id) |>
   unique() |>
   mutate(
     image_type = case_when(
@@ -74,26 +74,26 @@ all_images <- all_trials |>
       ) ~ "tangram"
     ),
     kilogram_id = case_when(
-      target %in% c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L") ~ str_c("page-", target),
-      dataset_id %in% c("hawkins2026_fmri") ~ get_kilogram_id_fmri(target),
-      dataset_id %in% c("bangerter2000_reuse") ~ get_kilogram_id_reuse(target),
-      dataset_id %in% c("eliav2023_semantic") ~ target,
+      target_image %in% c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L") ~ str_c("page-", target_image),
+      dataset_id %in% c("hawkins2026_fmri") ~ get_kilogram_id_fmri(target_image),
+      dataset_id %in% c("bangerter2000_reuse") ~ get_kilogram_id_reuse(target_image),
+      dataset_id %in% c("eliav2023_semantic") ~ target_image,
     ),
     image_path =
       case_when(
         !is.na(kilogram_id) ~ str_c(kilogram_id, ".svg"),
-        dataset_id == "hawkins2026_fmri" ~ str_c("tangrams_", target, ".svg"),
-        dataset_id == "dahan2023_collaboration" ~ str_c(target, ".jpeg"),
-        dataset_id %in% c("wang2025_lvlms", "bangerter2000_reuse") ~ str_c(target, ".png"),
-        dataset_id %in% c("leung2024_scaffolding") ~ str_c(target, ".jpg"),
-        target == "hold" ~ "I1.jpg",
-        target == "walk" ~ "B1.jpg",
-        target == "swim" ~ "D1.jpg",
-        target == "jump" ~ "E1.jpg",
+        dataset_id == "hawkins2026_fmri" ~ str_c("tangrams_", target_image, ".svg"),
+        dataset_id == "dahan2023_collaboration" ~ str_c(target_image, ".jpeg"),
+        dataset_id %in% c("wang2025_lvlms", "bangerter2000_reuse") ~ str_c(target_image, ".png"),
+        dataset_id %in% c("leung2024_scaffolding") ~ str_c(target_image, ".jpg"),
+        target_image == "hold" ~ "I1.jpg",
+        target_image == "walk" ~ "B1.jpg",
+        target_image == "swim" ~ "D1.jpg",
+        target_image == "jump" ~ "E1.jpg",
       )
   ) |>
   select(-dataset_id) |>
-  rename(image_id = target) |>
+  rename(image_id = target_image) |>
   unique() |>
   write_csv(here("image_data/image_metadata.csv"))
 

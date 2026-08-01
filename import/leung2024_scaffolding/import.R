@@ -7,17 +7,18 @@ library(here)
 data_source <- "https://raw.githubusercontent.com/ashleychuikay/tangramgame/refs/heads/master/data/experiment1/combined_clean.csv"
 
 combined_df <- read_csv(url(data_source)) |>
+  rename(target_image = target, round_num = rep_num) |>
   mutate(role = case_when(
     subid == 107 & trial == 21 & person == "right" ~ "director",
     T ~ role
   ))
 
 selections <- combined_df |>
-  select(subid, trial, person, role, target, rep_num, age, experiment, correct) |>
+  select(subid, trial, person, role, target_image, round_num, age, experiment, correct) |>
   filter(role == "matcher") |>
   unique() |>
   mutate(
-    choice_id = ifelse(correct, target, "unk1"),
+    selected_image = ifelse(correct, target_image, "unk1"),
     action_type = "selection"
   )
 
@@ -26,7 +27,7 @@ messages <- combined_df |>
   filter(!is.na(utterance)) |>
   group_by(subid, trial) |>
   mutate(
-    message_number = row_number() |> as.numeric(),
+    message_num = row_number() |> as.numeric(),
     text = utterance,
     message_irrelevant = NA,
     action_type = "message"
@@ -34,12 +35,12 @@ messages <- combined_df |>
   ungroup()
 
 missing_messages <- combined_df |>
-  select(subid, trial, person, role, director, age, experiment, target, rep_num) |>
+  select(subid, trial, person, role, director, age, experiment, target_image, round_num) |>
   anti_join(messages |> filter(role == "director") |> select(subid, trial, person) |> unique()) |>
   mutate(
     person = director,
     role = "director",
-    message_number = as.numeric(NA),
+    message_num = as.numeric(NA),
     text = NA,
     message_irrelevant = NA,
     action_type = "message"
@@ -54,7 +55,7 @@ all <- messages |>
     game_id = as.character(subid) |> str_trim(),
     role = ifelse(role == "matcher", "matcher", "describer"),
     player_id = str_c(game_id, "_", person),
-    option_set = str_c(target, "unk1", sep = ";"), # we don't know what the distractor is per trial!
+    image_options = str_c(target_image, "unk1", sep = ";"), # we don't know what the distractor is per trial!
     age = ifelse(person == "child", age, NA) |> as.numeric(),
     gender = as.character(NA),
     race = as.character(NA),

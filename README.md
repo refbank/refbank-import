@@ -9,7 +9,7 @@
 		* raw_data/ an *uncommitted* folder with raw_data
 * harmonized_data/ the folder with the harmonized data -- this folder should only be written to by the validate function!
 	* project/ the project in authoryear_firsttitleword format
-		* choices.csv
+		* selections.csv
 		* conditions.csv
 		* messages.csv
 		* trials.csv

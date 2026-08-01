@@ -83,7 +83,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
             Round = row$Round,
             Answer = row$Answer,
             text = paste(current_text, collapse = "\n"),
-            message_number = message_num
+            message_num = message_num
           )
           message_num <- message_num + 1
           current_text <- c()
@@ -103,7 +103,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
             Round = row$Round,
             Answer = row$Answer,
             text = paste(current_text, collapse = "\n"),
-            message_number = message_num
+            message_num = message_num
           )
           message_num <- message_num + 1
           current_text <- c()
@@ -135,7 +135,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
         Round = row$Round,
         Answer = row$Answer,
         text = paste(current_text, collapse = "\n"),
-        message_number = message_num
+        message_num = message_num
       )
     }
   }
@@ -184,7 +184,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
           Round = orig_row$Round,
           Answer = orig_row$Answer,
           text = str_trim(as.character(orig_row$text)),
-          message_number = 0
+          message_num = 0
         ))
       }
     }
@@ -209,9 +209,9 @@ harmonize_matching_dataset <- function(df, condition_label) {
       feedback = feedback,
       backchannel = backchannel,
       room_num = 1,
-      option_set = str_c(condition_label, "_", 1:10, sep = "", collapse = ";"),
-      target = str_c(condition_label, "_", as.character(Answer)),
-      rep_num = Round,
+      image_options = str_c(condition_label, "_", 1:10, sep = "", collapse = ";"),
+      target_image = str_c(condition_label, "_", as.character(Answer)),
+      round_num = Round,
       stage_num = 1,
       exclude = FALSE,
       exclusion_reason = NA_character_,
@@ -224,17 +224,17 @@ harmonize_matching_dataset <- function(df, condition_label) {
       race = NA,
       education = NA,
       message_irrelevant = FALSE,
-      choice_id = NA_character_,
+      selected_image = NA_character_,
       condition_label = "experiment_1",
       text = str_replace_all(text, "\n", " ")
     ) %>%
     select(
       condition_label, dataset_id, full_cite, short_cite, group_size, language, prior_relationship, partner_constancy,
       population, role_constancy, confederates, modality, feedback, backchannel,
-      game_id, room_num, option_set, target, trial_num, rep_num, stage_num,
+      game_id, room_num, image_options, target_image, trial_num, round_num, stage_num,
       exclude, exclusion_reason, order_match,
       action_type, player_id, role, time_stamp, age, gender, native_language, race, education,
-      text, message_number, message_irrelevant, choice_id
+      text, message_num, message_irrelevant, selected_image
     )
 
   return(harmonized)
@@ -251,10 +251,10 @@ dogs_harmonized <- harmonize_matching_dataset(dogs_raw, "dog")
 all_messages <- bind_rows(baskets_harmonized, dogs_harmonized)
 
 all_choices <- all_messages |>
-  select(-action_type, -text, -message_number, -message_irrelevant) |>
+  select(-action_type, -text, -message_num, -message_irrelevant) |>
   distinct() |>
   filter(role == "matcher") |>
-  mutate(text = NA, message_number = NA, message_irrelevant = NA, action_type = "selection", choice_id = target)
+  mutate(text = NA, message_num = NA, message_irrelevant = NA, action_type = "selection", selected_image = target_image)
 
 all_harmonized <- all_choices |> bind_rows(all_messages)
 write_csv(all_harmonized, here("import/wang2025_lvlms/LVLMs2025_overhearing_harmonized.csv"), na = "")
@@ -271,10 +271,10 @@ df <- df %>%
     group_size = as.numeric(group_size),
     room_num = as.numeric(room_num),
     trial_num = as.numeric(trial_num),
-    rep_num = as.numeric(rep_num),
+    round_num = as.numeric(round_num),
     stage_num = as.numeric(stage_num),
     time_stamp = as.numeric(time_stamp),
-    message_number = as.numeric(message_number),
+    message_num = as.numeric(message_num),
     age = as.numeric(age),
     prior_relationship = as.character(prior_relationship),
     partner_constancy = as.character(partner_constancy),
@@ -289,7 +289,7 @@ df <- df %>%
     full_cite = as.character(full_cite),
     short_cite = as.character(short_cite),
     language = as.character(language),
-    option_set = as.character(option_set),
+    image_options = as.character(image_options),
     exclusion_reason = as.character(exclusion_reason),
     action_type = as.character(action_type),
     player_id = as.character(player_id),
@@ -299,7 +299,7 @@ df <- df %>%
     native_language = as.character(native_language),
     race = as.character(race),
     education = as.character(education),
-    choice_id = as.character(choice_id)
+    selected_image = as.character(selected_image)
   )
 
 # Check if all trials have both describer and matcher messages

@@ -72,16 +72,16 @@ messages_1 <- read_csv(here(raw_data_dir, "rounds.csv")) |>
   unnest(chat) |>
   filter(!is.na(text)) |>
   mutate(
-    target = gsub("/experiment/tangram_", "", target, fixed = TRUE),
-    target = gsub(".png", "", target, fixed = TRUE),
+    target_image = gsub("/experiment/tangram_", "", target, fixed = TRUE),
+    target_image = gsub(".png", "", target_image, fixed = TRUE),
   ) |>
-  select(gameId, trialNum, partnerNum, repNum, text, playerId, roomId, message_target = target, message_role = role) |>
+  select(gameId, trialNum, partnerNum, repNum, text, playerId, roomId, message_target = target_image, message_role = role) |>
   group_by(gameId, trialNum, repNum, partnerNum, roomId) |>
-  mutate(message_number = row_number()) |>
+  mutate(message_num = row_number()) |>
   ungroup() |>
   mutate(
     action_type = "message",
-    message_number = as.numeric(message_number),
+    message_num = as.numeric(message_num),
     message_irrelevant = F
   )
 
@@ -116,25 +116,26 @@ rounds <- read_csv(here(raw_data_dir, "rounds.csv")) |>
   gather(key, value, starts_with("room")) |>
   separate(key, into = c("roomId", "info")) %>%
   spread(info, value) |>
+  rename(target_image = target) |>
   mutate(response = ifelse(response == "false", "timed_out", response)) |>
   mutate(gamerole = "listener") |>
   left_join(fixing_rooms) |>
   mutate(
-    target = gsub("/experiment/tangram_", "", target, fixed = TRUE),
-    target = gsub(".png", "", target, fixed = TRUE),
+    target_image = gsub("/experiment/tangram_", "", target_image, fixed = TRUE),
+    target_image = gsub(".png", "", target_image, fixed = TRUE),
     response = gsub("/experiment/tangram_", "", response, fixed = TRUE),
-    choice_id = gsub(".png", "", response, fixed = TRUE),
+    selected_image = gsub(".png", "", response, fixed = TRUE),
     action_type = "selection"
   ) |>
-  select(gameId, trialNum, repNum, partnerNum, choice_id, target, gamerole, playerId, roomId) |>
-  filter(!is.na(choice_id)) |>
+  select(gameId, trialNum, repNum, partnerNum, selected_image, target_image, gamerole, playerId, roomId) |>
+  filter(!is.na(selected_image)) |>
   filter(!is.na(playerId)) |>
   mutate(action_type = "selection")
 
 
-# get the target for each
+# get the target_image for each
 targets <- rounds |>
-  select(gameId, trialNum, repNum, partnerNum, roomId, target) |>
+  select(gameId, trialNum, repNum, partnerNum, roomId, target_image) |>
   unique()
 
 messages_2 <- messages_1 |>
@@ -145,7 +146,7 @@ messages_2 <- messages_1 |>
 messages <- messages_2 |>
   select(
     gameId, trialNum, partnerNum, repNum, text, playerId,
-    message_number, action_type, message_irrelevant, roomId, gamerole, target
+    message_num, action_type, message_irrelevant, roomId, gamerole, target_image
   )
 
 
@@ -200,8 +201,8 @@ all <- messages_clean |>
     language = "English",
     stage_num = partnerNum + 1,
     trial_num = 1 + trialNum + partnerNum * 16,
-    rep_num = 1 + repNum + 4 * partnerNum,
-    time_stamp = ifelse(choice_id == "timed_out", 45, NA),
+    round_num = 1 + repNum + 4 * partnerNum,
+    time_stamp = ifelse(selected_image == "timed_out", 45, NA),
     group_size = 4,
     prior_relationship = "no",
     partner_constancy = "no",
@@ -215,23 +216,23 @@ all <- messages_clean |>
     condition_label = "pairs-network",
     exclude = ifelse(is.na(exclude), T, exclude),
     exclusion_reason = ifelse(exclude, "incomplete game", NA),
-    option_set = case_when(
-      target %in% c("A", "B", "C", "D") ~ "A;B;C;D",
-      target %in% c("E", "F", "G", "H") ~ "E;F;G;H",
+    image_options = case_when(
+      target_image %in% c("A", "B", "C", "D") ~ "A;B;C;D",
+      target_image %in% c("E", "F", "G", "H") ~ "E;F;G;H",
       T ~ NA
     )
   ) |>
-  filter(!is.na(target)) |>
+  filter(!is.na(target_image)) |>
   select(dataset_id, full_cite, short_cite, language, stage_num,
     condition_label, time_stamp,
     game_id, room_num,
     player_id = playerId,
     age, gender, native_language, race, education,
-    trial_num, rep_num,
-    role, target,
+    trial_num, round_num,
+    role, target_image,
     action_type, exclude, exclusion_reason,
-    message_number, text,
-    choice_id, option_set,
+    message_num, text,
+    selected_image, image_options,
     group_size, message_irrelevant,
     prior_relationship, role_constancy, partner_constancy, confederates, population,
     modality, feedback, backchannel, order_match

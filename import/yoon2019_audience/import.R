@@ -10,7 +10,7 @@ raw_data_dir <- "import/yoon2019_audience/raw_data/"
 
 ### Experiment 1
 
-# TrialID seems to correspond to target image at least
+# TrialID seems to correspond to target_image image at least
 sort_expt1 <- read_tsv(here(raw_data_dir, "E1_sorting.txt")) |>
   rename(trialID = TrialID) |>
   mutate(image_set = str_sub(trialID, 1, 1)) |>
@@ -30,7 +30,7 @@ sort_expt1_clean <- sort_expt1 |>
   mutate(
     gameid = str_c("expt1_group", subID, "_images", image_set),
     playerid = str_c("expt1_group", subID, "_d"),
-    rep_num = ifelse(partner == "M1", round, 4 + round),
+    round_num = ifelse(partner == "M1", round, 4 + round),
     stage_num = ifelse(partner == "M1", 1, 2),
     trial_num = presumed_view_order,
     image = str_c("image_", trialID),
@@ -38,7 +38,7 @@ sort_expt1_clean <- sort_expt1 |>
     order_match = "order",
     role = "describer"
   ) |>
-  select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
+  select(gameid, playerid, round_num, trial_num, images, image, stage_num,
     text = transcription, group_size, order_match, role
   )
 
@@ -48,7 +48,7 @@ sort_expt1_matcher <- sort_expt1 |>
   mutate(
     gameid = str_c("expt1_group", subID, "_images", image_set),
     playerid = str_c("expt1_group", subID, "_", partner),
-    rep_num = ifelse(partner == "M1", round, 4 + round),
+    round_num = ifelse(partner == "M1", round, 4 + round),
     stage_num = ifelse(partner == "M1", 1, 2),
     trial_num = presumed_view_order,
     image = str_c("image_", trialID),
@@ -58,7 +58,7 @@ sort_expt1_matcher <- sort_expt1 |>
     role = "matcher"
   ) |>
   select(
-    gameid, playerid, rep_num, trial_num, images, image, stage_num,
+    gameid, playerid, round_num, trial_num, images, image, stage_num,
     text, group_size, order_match, role
   ) |>
   distinct()
@@ -74,7 +74,7 @@ cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
     playerid = str_c("expt1_group", subID, "_d"),
     images = str_c("image_", trialID, ";unk1;unk2;unk3"),
     image = str_c("image_", trialID),
-    rep_num = case_when(
+    round_num = case_when(
       condition == "2(2K1N)" ~ 9,
       gameid == "expt1_group5_images2" ~ 9, # we expect that only in the above condition was there an M2 stage, but there's an anomaly
       T ~ 5
@@ -84,13 +84,13 @@ cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
       gameid == "expt1_group5_images2" ~ 3, # see above for this anomoly,
       T ~ 2
     ),
-    trial_num = (rep_num - 1) * 16 + presumed_view_order,
+    trial_num = (round_num - 1) * 16 + presumed_view_order,
     condition = str_c("expt1_", str_sub(condition, 3, -2)),
     group_size = 4,
     order_match = "match",
     role = "describer"
   ) |>
-  select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
+  select(gameid, playerid, round_num, trial_num, images, image, stage_num,
     text = transcription, condition, group_size, order_match, role
   )
 
@@ -117,7 +117,7 @@ cued_expt1_matcher <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
     playerid = str_c("expt1_group", subID, "_", matcher),
     images = str_c("image_", trialID, ";unk1;unk2;unk3"),
     image = str_c("image_", trialID),
-    rep_num = case_when(
+    round_num = case_when(
       condition == "2(2K1N)" ~ 9,
       gameid == "expt1_group5_images2" ~ 9, # we expect that only in the above condition was there an M2 stage, but there's an anomaly
       T ~ 5
@@ -127,7 +127,7 @@ cued_expt1_matcher <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
       gameid == "expt1_group5_images2" ~ 3, # see above for this anomoly,
       T ~ 2
     ),
-    trial_num = (rep_num - 1) * 16 + presumed_view_order,
+    trial_num = (round_num - 1) * 16 + presumed_view_order,
     condition = str_c("expt1_", str_sub(condition, 3, -2)),
     group_size = 4,
     order_match = "match",
@@ -135,7 +135,7 @@ cued_expt1_matcher <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
     text = NA
   ) |>
   select(
-    gameid, playerid, rep_num, trial_num, images, image, stage_num,
+    gameid, playerid, round_num, trial_num, images, image, stage_num,
     text, condition, group_size, order_match, role
   ) |>
   distinct()
@@ -171,7 +171,7 @@ sort_expt2_clean <- sort_expt2 |>
   mutate(
     gameid = str_c("expt2_group", subID, "_images", image_set),
     playerid = str_c("expt2_group", subID, "_d"),
-    rep_num = case_when(
+    round_num = case_when(
       partner == "M1" ~ round,
       partner == "M2" ~ 4 + round,
       partner == "M3" ~ 8 + round
@@ -187,7 +187,7 @@ sort_expt2_clean <- sort_expt2 |>
     order_match = "order",
     role = "describer"
   ) |>
-  select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
+  select(gameid, playerid, round_num, trial_num, images, image, stage_num,
     text = transcription, group_size, order_match, role
   )
 
@@ -196,7 +196,7 @@ sort_expt2_matcher <- sort_expt2 |>
   mutate(
     gameid = str_c("expt2_group", subID, "_images", image_set),
     playerid = str_c("expt2_group", subID, "_partner"),
-    rep_num = case_when(
+    round_num = case_when(
       partner == "M1" ~ round,
       partner == "M2" ~ 4 + round,
       partner == "M3" ~ 8 + round
@@ -214,7 +214,7 @@ sort_expt2_matcher <- sort_expt2 |>
     text = NA
   ) |>
   select(
-    gameid, playerid, rep_num, trial_num, images, image, stage_num,
+    gameid, playerid, round_num, trial_num, images, image, stage_num,
     text, group_size, order_match, role
   ) |>
   distinct()
@@ -229,7 +229,7 @@ cued_expt2 <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
     gameid = str_c("expt2_group", subID, "_images", image_set),
     playerid = str_c("expt2_group", subID, "_d"),
     images = str_c("image_", trialID, ";unk1;unk2;unk3"),
-    rep_num = case_when(
+    round_num = case_when(
       condition == "2(3K1N)" ~ 13,
       condition == "3(2K2N)" ~ 9,
       T ~ 5
@@ -239,14 +239,14 @@ cued_expt2 <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
       condition == "3(2K2N)" ~ 3,
       T ~ 2
     ),
-    trial_num = (rep_num - 1) * 16 + presumed_view_order,
+    trial_num = (round_num - 1) * 16 + presumed_view_order,
     image = str_c("image_", trialID),
     condition = str_c("expt2_", str_sub(condition, 3, -2)),
     group_size = 5,
     order_match = "match",
     role = "describer"
   ) |>
-  select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
+  select(gameid, playerid, round_num, trial_num, images, image, stage_num,
     text = transcription, condition, group_size, order_match, role
   )
 
@@ -279,7 +279,7 @@ cued_expt2_matcher <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
     gameid = str_c("expt2_group", subID, "_images", image_set),
     playerid = str_c("expt2_group", subID, "_", matcher),
     images = str_c("image_", trialID, ";unk1;unk2;unk3"),
-    rep_num = case_when(
+    round_num = case_when(
       condition == "2(3K1N)" ~ 13,
       condition == "3(2K2N)" ~ 9,
       T ~ 5
@@ -289,7 +289,7 @@ cued_expt2_matcher <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
       condition == "3(2K2N)" ~ 3,
       T ~ 2
     ),
-    trial_num = (rep_num - 1) * 16 + presumed_view_order,
+    trial_num = (round_num - 1) * 16 + presumed_view_order,
     image = str_c("image_", trialID),
     condition = str_c("expt2_", str_sub(condition, 3, -2)),
     group_size = 5,
@@ -298,7 +298,7 @@ cued_expt2_matcher <- read_tsv(here(raw_data_dir, "Experiment2.txt")) |>
     text = NA
   ) |>
   select(
-    gameid, playerid, rep_num, trial_num, images, image, stage_num,
+    gameid, playerid, round_num, trial_num, images, image, stage_num,
     text, condition, group_size, order_match, role
   ) |>
   distinct()
@@ -336,7 +336,7 @@ sort_expt3_clean <- sort_expt3 |>
   mutate(
     gameid = str_c("expt3_group", subID, "_images", image_set),
     playerid = str_c("expt3_group", subID, "_d"), # if we ever get matcher stuff, note that a matcher becomes a director with a different number since each group of 7 does everything twice
-    rep_num = round,
+    round_num = round,
     trial_num = presumed_view_order,
     image = str_c("image_", trialID),
     stage_num = 1,
@@ -344,7 +344,7 @@ sort_expt3_clean <- sort_expt3 |>
     order_match = "order",
     role = "describer"
   ) |>
-  select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
+  select(gameid, playerid, round_num, trial_num, images, image, stage_num,
     text = transcription, group_size, order_match, role
   )
 
@@ -360,7 +360,7 @@ sort_expt3_matcher <- sort_expt3 |>
   mutate(
     gameid = str_c("expt3_group", subID, "_images", image_set),
     playerid = str_c("expt3_group", subID, "_", matcher),
-    rep_num = round,
+    round_num = round,
     trial_num = presumed_view_order,
     image = str_c("image_", trialID),
     stage_num = 1,
@@ -370,7 +370,7 @@ sort_expt3_matcher <- sort_expt3 |>
     text = NA
   ) |>
   select(
-    gameid, playerid, rep_num, trial_num, images, image, stage_num,
+    gameid, playerid, round_num, trial_num, images, image, stage_num,
     text, group_size, order_match, role
   ) |>
   distinct()
@@ -385,16 +385,16 @@ cued_expt3 <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |>
     gameid = str_c("expt3_group", subID, "_images", image_set),
     playerid = str_c("expt3_group", subID, "_d"),
     images = str_c("image_", trialID, ";unk1;unk2;unk3"),
-    rep_num = 6,
+    round_num = 6,
     stage_num = 2,
-    trial_num = (rep_num - 1) * 16 + presumed_view_order,
+    trial_num = (round_num - 1) * 16 + presumed_view_order,
     condition = str_c("expt3_", str_sub(condition, 3, -2)),
     image = str_c("image_", trialID),
     group_size = 7,
     order_match = "match",
     role = "describer"
   ) |>
-  select(gameid, playerid, rep_num, trial_num, images, image, stage_num,
+  select(gameid, playerid, round_num, trial_num, images, image, stage_num,
     text = transcription, condition, group_size, order_match, role
   )
 
@@ -426,9 +426,9 @@ cued_expt3_matcher <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |>
     gameid = str_c("expt3_group", subID, "_images", image_set),
     playerid = str_c("expt3_group", subID, "_", matcher),
     images = str_c("image_", trialID, ";unk1;unk2;unk3"),
-    rep_num = 6,
+    round_num = 6,
     stage_num = 2,
-    trial_num = (rep_num - 1) * 16 + presumed_view_order,
+    trial_num = (round_num - 1) * 16 + presumed_view_order,
     condition = str_c("expt3_", str_sub(condition, 3, -2)),
     image = str_c("image_", trialID),
     group_size = 7,
@@ -437,7 +437,7 @@ cued_expt3_matcher <- read_tsv(here(raw_data_dir, "Experiment3.txt")) |>
     text = NA
   ) |>
   select(
-    gameid, playerid, rep_num, trial_num, images, image, stage_num,
+    gameid, playerid, round_num, trial_num, images, image, stage_num,
     text, condition, group_size, order_match, role
   ) |>
   distinct()
@@ -478,20 +478,20 @@ all <- all_1 |>
     native_language = as.character(NA),
     race = as.character(NA),
     education = as.character(NA),
-    choice_id = NA # we don't have choice data
+    selected_image = NA # we don't have choice data
   ) |>
-  group_by(rep_num, trial_num, gameid) |>
-  mutate(message_number = row_number() |> as.numeric()) |>
+  group_by(round_num, trial_num, gameid) |>
+  mutate(message_num = row_number() |> as.numeric()) |>
   ungroup() |>
   select(
     condition_label = condition, dataset_id, full_cite, short_cite,
-    trial_num, rep_num, stage_num,
+    trial_num, round_num, stage_num,
     group_size, language, prior_relationship, partner_constancy, role_constancy, population,
     modality, confederates, feedback, backchannel, order_match,
-    game_id = gameid, room_num, option_set = images,
-    target = image, exclude, exclusion_reason, action_type, player_id = playerid,
+    game_id = gameid, room_num, image_options = images,
+    target_image = image, exclude, exclusion_reason, action_type, player_id = playerid,
     age, gender, race, education, native_language,
-    role, time_stamp, text, message_number, message_irrelevant, choice_id
+    role, time_stamp, text, message_num, message_irrelevant, selected_image
   )
 
 validate_dataset(all, write = F)
