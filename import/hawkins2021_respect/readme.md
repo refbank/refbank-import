@@ -23,7 +23,8 @@ social group knowledge.
 (Experiment 1)
 * recruitment from Prolific
 * 272 participants recruited, ended up with 33 groups of 4 (= 132 participants)
-(imported dataset has 45 games and 178 players)
+(imported dataset has 45 games and 178 players; applying exclusions we get 37 games;
+possibly there were additional exclusions based on post-test that we don't import)
 * each group has 1 of 2 target image sets
 * swap roles at start of each block
 * (4 trials x 4 blocks) x 3 partners in network 
@@ -49,4 +50,4 @@ delete these 179 rows for now
 
  according to paper, after excluding incomplete, 33 groups, 132 participants
  this appears to be the exclusion used, but this keeps 37 (which does line up with the number of games in cleaned_messages)
- I can't identify other exclusion used
+ I can't identify other exclusion used -- possibly post-test something?

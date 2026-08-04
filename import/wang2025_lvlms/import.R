@@ -76,7 +76,11 @@ harmonize_matching_dataset <- function(df, condition_label) {
           messages_list[[length(messages_list) + 1]] <- list(
             condition_label = condition_label,
             game_id = paste0(condition_label, "_", row$player),
-            player_id = paste0(condition_label, "_", row$player),
+            # game_id identifies the pair (Pn); player_id must also carry role, since
+            # otherwise the two people within a pair collapse into one identity (every
+            # game_id came out with exactly 1 "player") -- role is durable within a game
+            # (readme: "no role switches"), so this reliably distinguishes the two people
+            player_id = paste0(condition_label, "_", row$player, "_", current_speaker),
             role = current_speaker,
             trial_id_temp = row$trial_id_temp,
             trial_num = row$trial_id_temp,
@@ -96,7 +100,11 @@ harmonize_matching_dataset <- function(df, condition_label) {
           messages_list[[length(messages_list) + 1]] <- list(
             condition_label = condition_label,
             game_id = paste0(condition_label, "_", row$player),
-            player_id = paste0(condition_label, "_", row$player),
+            # game_id identifies the pair (Pn); player_id must also carry role, since
+            # otherwise the two people within a pair collapse into one identity (every
+            # game_id came out with exactly 1 "player") -- role is durable within a game
+            # (readme: "no role switches"), so this reliably distinguishes the two people
+            player_id = paste0(condition_label, "_", row$player, "_", current_speaker),
             role = current_speaker,
             trial_id_temp = row$trial_id_temp,
             trial_num = row$trial_id_temp,
@@ -128,7 +136,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
       messages_list[[length(messages_list) + 1]] <- list(
         condition_label = condition_label,
         game_id = paste0(condition_label, "_", row$player),
-        player_id = paste0(condition_label, "_", row$player),
+        player_id = paste0(condition_label, "_", row$player, "_", current_speaker),
         role = current_speaker,
         trial_id_temp = row$trial_id_temp,
         trial_num = row$trial_id_temp,
@@ -177,7 +185,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
         messages_df <- bind_rows(messages_df, tibble(
           condition_label = condition_label,
           game_id = trial_info$game_id,
-          player_id = trial_info$game_id,
+          player_id = paste0(trial_info$game_id, "_describer"),
           role = "describer",
           trial_id_temp = trial_info$trial_num,
           trial_num = trial_info$trial_num,
@@ -185,6 +193,50 @@ harmonize_matching_dataset <- function(df, condition_label) {
           Answer = orig_row$Answer,
           text = str_trim(as.character(orig_row$text)),
           message_num = 0
+        ))
+      }
+    }
+  }
+
+  # Ensure every trial has a matcher entry -- the paper reports 100% accuracy on every
+  # trial, but selections are derived below from matcher-role message rows, so a trial
+  # where the matcher never produced a transcribed "M:" line (silent but still selected
+  # correctly) would otherwise end up with no selection at all
+  trials_with_matcher <- messages_df %>%
+    filter(role == "matcher") %>%
+    distinct(game_id, trial_num)
+
+  missing_matcher_trials <- all_trials %>%
+    anti_join(trials_with_matcher, by = c("game_id", "trial_num"))
+
+  if (nrow(missing_matcher_trials) > 0) {
+    cat(sprintf(
+      "Warning: %d trials missing matcher, adding placeholder messages\n",
+      nrow(missing_matcher_trials)
+    ))
+
+    for (i in 1:nrow(missing_matcher_trials)) {
+      trial_info <- missing_matcher_trials[i, ]
+
+      orig_row <- df_long %>%
+        filter(
+          paste0(condition_label, "_", player) == trial_info$game_id,
+          trial_id_temp == trial_info$trial_num
+        ) %>%
+        slice(1)
+
+      if (nrow(orig_row) > 0) {
+        messages_df <- bind_rows(messages_df, tibble(
+          condition_label = condition_label,
+          game_id = trial_info$game_id,
+          player_id = paste0(trial_info$game_id, "_matcher"),
+          role = "matcher",
+          trial_id_temp = trial_info$trial_num,
+          trial_num = trial_info$trial_num,
+          Round = orig_row$Round,
+          Answer = orig_row$Answer,
+          text = NA_character_,
+          message_num = NA_real_
         ))
       }
     }
@@ -209,7 +261,7 @@ harmonize_matching_dataset <- function(df, condition_label) {
       feedback = feedback,
       backchannel = backchannel,
       room_num = 1,
-      image_options = str_c(condition_label, "_", 1:10, sep = "", collapse = ";"),
+      image_options = str_c(condition_label, "_", 1:13, sep = "", collapse = ";"),
       target_image = str_c(condition_label, "_", as.character(Answer)),
       round_num = Round,
       stage_num = 1,

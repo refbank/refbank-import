@@ -12,12 +12,22 @@ results <- read_delim(here(raw_data_loc, "interaction_ToT_accuracy.txt"), delim 
 
 
 selections <- results |>
-  filter(correct_answer == given_answer) |>
   mutate(participant = ifelse(director == "A", "B", "A")) |>
   mutate(
     target_image = str_c("f", target),
-    selected_image = ifelse(given_answer == correct_answer, target_image, NA)
+    # given_answer/correct_answer use a rotating per-round label scheme (e.g. "13", "F", "D"),
+    # not the fixed f1-f16 target numbering -- so we only know selected_image when the
+    # matcher was correct (given_answer == correct_answer == target). When they answered
+    # incorrectly, we can't map their label back to an actual fribble id, so it's "unk" --
+    # explicitly meaning a real (incorrect) answer was given but which image it names is
+    # unknown. A handful of trials have no given_answer recorded at all (not an incorrect
+    # answer, just nothing logged); those stay dropped entirely, same as before.
+    selected_image = case_when(
+      given_answer == correct_answer ~ target_image,
+      !is.na(given_answer) ~ "unk"
+    )
   ) |>
+  filter(!is.na(selected_image)) |>
   select(pair, round, trial_nr, participant, selected_image, target_image, onset_msec, offset_msec) |>
   mutate(action_type = "selection", role = "matcher", time_stamp = round((offset_msec - onset_msec) / 1000))
 

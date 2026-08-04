@@ -53,7 +53,7 @@ These are all the columns for the dataframe. Here we're grouping based on what l
   - message_irrelevant: logical, true if this is a message consisting only of chit-chat / non-task-relevant
 
 (selection-level; these are NA for messages)
-  - selected_image: what target was selected, values can be the values in image_options, or "timed_out" or NA
+  - selected_image: what target was selected, values can be the values in image_options, "timed_out" (no selection made), or "unk" (an incorrect selection was made, but which specific image is unrecoverable from the source data)
 
 
 Images are handled separately by import_images.R (not by individual import scripts). The values used in image_options and target_image must match image_id values in the images table. import_images.R derives the image metadata from the trial data by matching dataset_id and target_image values.

@@ -86,7 +86,15 @@ all <- text |>
   bind_rows(choices_info) |>
   bind_rows(missing_describer_messages) |>
   mutate(
-    condition_label = "dahan_color_boxes",
+    # games 1-20 vs. 21-40 correspond to the two source papers (40 participants = 20
+    # dyads each): 1-20 have tight, uniformly high matcher accuracy (mean .97, sd .03),
+    # 21-40 show much wider spread (mean .82, sd .17, range .42-1) -- matching the 2025
+    # paper's own description of its corpus as having "large variability in matchers'
+    # referential accuracy," a trait the 2023 abstract never mentions.
+    condition_label = case_when(
+      game_id <= 20 ~ "dahan2023_color_boxes",
+      game_id >= 21 ~ "dahan2025_color_boxes"
+    ),
     dataset_id = "dahan2023_collaboration",
     full_cite = "Dahan, D. (2023). Collaboration under uncertainty in unscripted conversations: The role of hedges. Journal of Experimental Psychology: Learning, Memory, and Cognition, 49(2), 320.",
     short_cite = "Dahan (2023)",

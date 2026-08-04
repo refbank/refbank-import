@@ -15,7 +15,7 @@ n/a
 This is an unpublished dataset, there is a german research report, and I am
 working from the machine translation. 
 
-* 19 pairs (we have data from 15?)
+* 19 pairs (we have data from 15)
 
 * 3 sets of 8 stims each (original, similar, less-similar)
 * in person, with a visual partition

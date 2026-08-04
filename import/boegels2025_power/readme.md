@@ -53,12 +53,16 @@ there's also pre-tests and other measurements that we do not include
 
 ## Processing/import
 We have choice data, but don't know how to identify the target-selection alignment when participants (rarely)
-get it wrong (but this could be figured out in future work)
+get it wrong (but this could be figured out in future work) `given_answer`/`correct_answer` use a rotating per-round label scheme (e.g. "13", "F", "D"),
+not the fixed f1-f16 target numbering, so we can only recover `selected_image` when the
+matcher was correct (there it must equal the target). For the small number of trials
+(34) where the matcher answered incorrectly, we know a selection was made but not which
+image it names, so `selected_image = "unk"`. 
 
 We have text data. 
 
 We do not have the target -- image mapping (although it might be possible)
 
-there are not very many trials without correct choices and we can't easily reconstruct choice id for most of them, so just dropping choice information for these for now.
+
 
 We do not have demographics (although we haven't asked)

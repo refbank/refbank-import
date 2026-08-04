@@ -39,7 +39,15 @@ all_include <- one_round_include |>
   rbind(two_c_round_include) |>
   rbind(three_round_include) |>
   mutate(include = T) |>
-  bind_rows(pilot_include)
+  bind_rows(pilot_include) |>
+  # keep only the real join keys: pilot_include has no numPlayers column, and the
+  # rotate/condition/name columns are redundant with (and inconsistently named across)
+  # what good_choices/good_chat already carry -- see note at the join below.
+  # distinct() because pilot_include itself has repeated (gameId, repNum) rows (one per
+  # player/trial in the source pilot_round_results, never deduped) -- previously masked
+  # because the broken join never matched pilot rows at all
+  select(gameId, repNum, include) |>
+  distinct()
 
 
 options <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L")
@@ -133,7 +141,14 @@ good_choices <- selections |> inner_join(combined_chat |> filter(role == "descri
 
 all_data <- good_choices |>
   bind_rows(good_chat) |>
-  left_join(all_include) |>
+  # explicit join key: all_include originally carried a "rotate" column (study1/2) and a
+  # "condition" column (study3 only, renamed from "name"), each NA on the rows that don't
+  # have it, plus pilot_include has no "numPlayers" at all. Since good_choices/good_chat
+  # already has a real "condition" value on every row, an unqualified left_join() used to
+  # pick "condition" up as an accidental extra join key -- NA on every study1/2 row of
+  # all_include, so the join silently failed for 100% of study1/2 data (include ended up
+  # NA for all of it). (gameId, repNum) is globally unique and sufficient on its own.
+  left_join(all_include, by = c("gameId", "repNum")) |>
   mutate(
     dataset_id = "boyce2024_interaction",
     trial_num = trialNum + 1,
@@ -187,7 +202,7 @@ all_data <- good_choices |>
     exclude = case_when(
       is.na(include) ~ T,
       include == F ~ T,
-      T ~ NA
+      T ~ F
     ),
     exclusion_reason = case_when(
       include == F ~ "pilot", # this is only used for pilot data

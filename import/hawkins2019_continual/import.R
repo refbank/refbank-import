@@ -16,6 +16,12 @@ clickedObj.raw.humanhuman <- read_csv(str_c(url, "human-human/clickedObjFromMong
 chatMessages.raw.humanhuman <- read_csv(str_c(url, "human-human/messageFromMongo.csv")) %>%
   filter(iterationName != "testing") %>%
   mutate(uttLength = str_count(msg, "\\S+")) %>%
+  # drop iterationName/time here (as the other two conditions' chat tables already do)
+  # so the join below doesn't produce iterationName.x/.y -- keeping both left an
+  # unsuffixed `iterationName` column that never existed, silently NA for every
+  # human-human row, which the exclusion logic below then read as "pilot?" for
+  # virtually the entire condition
+  select(-iterationName, -time) %>%
   group_by(gameid, trialNum, repNum, targetImg, context_id)
 
 incompleteIDs.humanhuman <- clickedObj.raw.humanhuman %>%

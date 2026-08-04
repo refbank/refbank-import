@@ -65,7 +65,19 @@ sort_expt1_matcher <- sort_expt1 |>
 
 cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
   mutate(block = str_sub(trialID, 1, 1)) |>
-  mutate(image_set = str_sub(trialID, 1, 1)) |>
+  mutate(
+    # subID 5's cued-phase image_set tags for 1(1K)/2(2K1N) are swapped in the raw data:
+    # M2's sort session (raw_data/E1_sorting.txt) is recorded at image_set 2, which collides
+    # with this subject's 1(1K) game instead of their 2(2K1N) game -- no other subject has
+    # this collision, and swapping just these two labels back makes both games internally
+    # consistent again (2K1N ends up with the M1+M2 sort data it needs; 1K ends up with only
+    # M1's, as expected)
+    image_set = case_when(
+      subID == 5 & condition == "1(1K)" ~ "3",
+      subID == 5 & condition == "2(2K1N)" ~ "2",
+      T ~ str_sub(trialID, 1, 1)
+    )
+  ) |>
   group_by(subID, block) |>
   mutate(presumed_view_order = row_number()) |> # TODO we don't actually trust this order, but it's all we have
   ungroup() |>
@@ -76,12 +88,10 @@ cued_expt1 <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
     image = str_c("image_", trialID),
     round_num = case_when(
       condition == "2(2K1N)" ~ 9,
-      gameid == "expt1_group5_images2" ~ 9, # we expect that only in the above condition was there an M2 stage, but there's an anomaly
       T ~ 5
     ),
     stage_num = case_when(
       condition == "2(2K1N)" ~ 3,
-      gameid == "expt1_group5_images2" ~ 3, # see above for this anomoly,
       T ~ 2
     ),
     trial_num = (round_num - 1) * 16 + presumed_view_order,
@@ -107,7 +117,15 @@ expt1_cued_matchers <- tribble(
 )
 cued_expt1_matcher <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
   mutate(block = str_sub(trialID, 1, 1)) |>
-  mutate(image_set = str_sub(trialID, 1, 1)) |>
+  mutate(
+    # see the matching comment in cued_expt1 above: subID 5's image_set tags for
+    # 1(1K)/2(2K1N) are swapped in the raw data
+    image_set = case_when(
+      subID == 5 & condition == "1(1K)" ~ "3",
+      subID == 5 & condition == "2(2K1N)" ~ "2",
+      T ~ str_sub(trialID, 1, 1)
+    )
+  ) |>
   group_by(subID, block) |>
   mutate(presumed_view_order = row_number()) |> # TODO we don't actually trust this order, but it's all we have
   ungroup() |>
@@ -119,12 +137,10 @@ cued_expt1_matcher <- read_tsv(here(raw_data_dir, "Experiment1.txt")) |>
     image = str_c("image_", trialID),
     round_num = case_when(
       condition == "2(2K1N)" ~ 9,
-      gameid == "expt1_group5_images2" ~ 9, # we expect that only in the above condition was there an M2 stage, but there's an anomaly
       T ~ 5
     ),
     stage_num = case_when(
       condition == "2(2K1N)" ~ 3,
-      gameid == "expt1_group5_images2" ~ 3, # see above for this anomoly,
       T ~ 2
     ),
     trial_num = (round_num - 1) * 16 + presumed_view_order,
@@ -195,7 +211,7 @@ sort_expt2_matcher <- sort_expt2 |>
   left_join(image_sort_sets) |>
   mutate(
     gameid = str_c("expt2_group", subID, "_images", image_set),
-    playerid = str_c("expt2_group", subID, "_partner"),
+    playerid = str_c("expt2_group", subID, "_", partner),
     round_num = case_when(
       partner == "M1" ~ round,
       partner == "M2" ~ 4 + round,

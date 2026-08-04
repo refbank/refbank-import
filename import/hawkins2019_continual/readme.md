@@ -20,12 +20,12 @@ through simulations on COCO and in real-time reference game experiments with hum
 per refbank inclusion criteria, we only include games with a human describer. 
 
 human-human:
-* 108 participants (54 pairs) (we have 56 games)
+* 108 participants (54 pairs) (we have 56 games, 49 post exclusions)
 * 4 images x 6 blocks (24 trials)
 * backchannel: paper says "interactive chat", but we don't see any matcher messages, so we have coded it as "none"
 * feedback - full "Both agents then receive feedback about the listener’s selection and the identity of the target."
 
-we also have 56 games of a "human-human-easy" condition that is not reported; we believe this has the same structure as 
+we also have 56 games (52 post exclusions) of a "human-human-easy" condition that is not reported; we believe this has the same structure as 
 the other human-human games, but with easier image contexts
 
 human speaker - model listener:

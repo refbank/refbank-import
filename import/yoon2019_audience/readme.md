@@ -83,3 +83,6 @@ There's also some uncertainty on whether the order we have is the actual trial o
  we have post-exclusions here -- when last target wasn't described in sort, 
  that whole sort round was excluded
  random tech difficulty exclusions in cued
+ 
+ For one game in expt 1, the condition is was labelled as does not match the structure; 
+ we assume for that group that there was an incorrect condition -- image set labelling

@@ -76,3 +76,5 @@ Native language is presumably English in most cases; and at least for the 2023 d
 
 We have target images. I don't think these are in kilogram, but we could check. 
 
+We assumed that the first 20 games are the 2023 college student data, and the last 20 are the community sample
+-- this split seems to match the accuracy differences reported in the papers. 

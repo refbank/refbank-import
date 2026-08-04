@@ -173,6 +173,8 @@ no_talk <- expt_1_data |>
   mutate(text = NA, role = "describer", action_type = "message")
 
 
+# whole-game exclusions (pilot, insufficient trials, repeat participants, etc.)
+# these only have a game/expt granularity -- no trial column
 exclude <- read_csv(url(expt_1_link)) |>
   mutate(expt = "expt1") |>
   bind_rows(
@@ -182,7 +184,8 @@ exclude <- read_csv(url(expt_1_link)) |>
     read_tsv(url(expt_3_link)) |> mutate(expt = "expt3")
   ) |>
   filter(!is.na(exclude)) |>
-  mutate(exclude = T)
+  mutate(exclude = T) |>
+  select(game, expt, exclude, exclusion_reason)
 
 no_talk_exclude <- no_talk |>
   select(game, trial, expt) |>
@@ -197,7 +200,12 @@ echo_exclude <- expt_2_transcript |>
   anti_join(no_talk_exclude |> select(game, trial, expt)) |>
   mutate(exclude = T, exclusion_reason = "experimentor echoed description")
 
-exclude_all <- exclude |> bind_rows(no_talk_exclude, echo_exclude)
+# trial-level exclusions have a real trial number -- keep these separate from
+# the whole-game exclusions above so a bind_rows doesn't smuggle a NA "trial"
+# column into `exclude` and silently break the join in `all` below (a NA
+# trial never matches a real trial_num, so whole-game exclusions would never
+# attach to any row)
+trial_exclude <- no_talk_exclude |> bind_rows(echo_exclude)
 
 options <- selections |>
   mutate(
@@ -224,7 +232,13 @@ all <- messages |>
   bind_rows(selections) |>
   bind_rows(no_talk) |>
   select(-target_image) |>
-  left_join(exclude_all) |>
+  left_join(exclude, by = c("game", "expt")) |>
+  left_join(trial_exclude, by = c("game", "trial", "expt"), suffix = c("", "_trial")) |>
+  mutate(
+    exclude = coalesce(exclude, exclude_trial),
+    exclusion_reason = coalesce(exclusion_reason, exclusion_reason_trial)
+  ) |>
+  select(-exclude_trial, -exclusion_reason_trial) |>
   left_join(options) |>
   filter(!is.na(target_image)) |>
   rename(condition_label = expt) |>

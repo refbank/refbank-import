@@ -32,7 +32,7 @@ Note that this paper reports on 2 similar experiments:
 Ordering experiment:
 * 218 recruited 
 * 6 rounds of 12 targets each
-* 56 games post exclusions
+* 56 games post exclusions (our attempt to recreate exclusions gets 59)
 * free chat via textbox
 * feedback limited (after each set of 12 "batched feedback on their score (out of 12)")
 

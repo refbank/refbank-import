@@ -255,12 +255,12 @@ validate_dataset <- function(df, write = F) {
     mutate(check_selections = map2_lgl(
       selected_image, image_options_list,
       \(c, o) {
-        c %in% o | c == "timed_out"
+        c %in% o | c == "timed_out" | c == "unk"
       }
     ))
 
   assert_that(all(try_selections$check_selections),
-    msg = "selected_image must be in image_options or timed_out"
+    msg = "selected_image must be in image_options, timed_out, or unk"
   )
 
   selections <- try_selections |> select(-image_options_list, -check_selections, -image_options)

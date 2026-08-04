@@ -3605,242 +3605,320 @@ The body.,63,matcher,8,NA,NA,1362
 it’s straight,187,describer,9,NA,NA,1362
 Okay.,63,matcher,10,NA,NA,1362
 I'm guessing.,63,matcher,11,NA,NA,1362
-Diamond.,188,describer,1,NA,NA,1363
-Diamond.,188,matcher,1,NA,NA,1364
-Diamond.,188,describer,1,NA,NA,1365
-"I just, I don’t know what it is.",189,describer,1,NA,NA,1366
-A person.,189,describer,1,NA,NA,1367
-A person?,188,matcher,2,NA,NA,1367
-A person.,188,describer,1,NA,NA,1368
-A person.,188,describer,2,NA,NA,1368
-A person.,188,describer,1,NA,NA,1369
-"Umm, triangle. Dey got dey got",189,describer,1,NA,NA,1370
-umm triangle.,188,matcher,2,NA,NA,1370
-it starts with a skring,189,describer,3,NA,NA,1370
-"Uh, trident.",188,describer,1,NA,NA,1371
-Person?,188,matcher,1,NA,NA,1372
-it starts with a plame a me,189,describer,2,NA,NA,1372
-"Okay, a jump and spin with a square",145,describer,1,NA,NA,1373
-It's one with a triangle and another triangle and a square,190,describer,1,NA,NA,1374
-And it has a big triangle like with a top,190,describer,2,NA,NA,1374
-okay,145,matcher,3,NA,NA,1374
-"Now, can you tell me?",190,matcher,1,NA,NA,1375
-"Okay, it's with",145,describer,2,NA,NA,1375
-Diamond on top and straight on the bottom,145,describer,3,NA,NA,1375
-No way for crystal on the bottom,190,matcher,4,NA,NA,1375
-And then another triangle,190,matcher,5,NA,NA,1375
-"No, first one on the top",145,describer,6,NA,NA,1375
-And then the same on the top,145,describer,7,NA,NA,1375
-That goes there and a gem,145,describer,8,NA,NA,1375
-looks like a gem?,190,matcher,9,NA,NA,1375
-And a pancake this?,190,matcher,10,NA,NA,1375
-"No front, no, I guess for you",145,describer,11,NA,NA,1375
-I do it for you,145,describer,12,NA,NA,1375
-"So, it is",145,describer,13,NA,NA,1375
-"No, it has a feet and it has a square",190,describer,1,NA,NA,1376
-And it also has a sharp beak and another feet,190,describer,2,NA,NA,1376
-And a square,190,describer,3,NA,NA,1376
-"So, the one that you did is the one that's inside the box",145,describer,1,NA,NA,1377
-The one with two feet and a square on the back,145,describer,2,NA,NA,1377
-And a head and a back,145,describer,3,NA,NA,1377
-And another feet,145,describer,4,NA,NA,1377
-Now it has a diamond and it has a square,190,describer,1,NA,NA,1378
-And it has a triangle and it has a sharp spot,190,describer,2,NA,NA,1378
-And it has a rectangle and it has a triangle,190,describer,3,NA,NA,1378
-And it has a sharp part on the right here,190,describer,4,NA,NA,1378
-"So, it has two triangles and one square",145,describer,1,NA,NA,1379
-There's two triangles and it has a square,190,matcher,2,NA,NA,1379
-"yeah, that one",145,describer,3,NA,NA,1379
-this one,190,matcher,4,NA,NA,1379
-"yeah,",145,describer,5,NA,NA,1379
-"Now it has a diamond and it looks like this, and it has this, and it has this, and it has this.",190,describer,1,NA,NA,1380
-Without feet.,145,matcher,2,NA,NA,1380
-"And this, and this.",190,describer,3,NA,NA,1380
-"Now, you press it?",190,describer,4,NA,NA,1380
-"So, it has a diamond on the top like this, this, this.",145,describer,1,NA,NA,1381
-And not without feet.,145,describer,2,NA,NA,1381
-With no feet.,145,describer,3,NA,NA,1381
-"Now it has a square and a triangle, and it has a sharp part, and it has a rectangle and another triangle, and it has a sharp part on the bottom.",190,describer,1,NA,NA,1382
-"So, it has two feet and one square on the back.",145,describer,1,NA,NA,1383
-"Like this, like this, and this.",145,describer,2,NA,NA,1383
-"Now it has a triangle and another triangle and a square, and it has a big triangle with a bump on it.",190,describer,1,NA,NA,1384
-"Like, like, like, like, like, like this, like, like a triangle.",190,describer,2,NA,NA,1384
-And a bump.,190,describer,3,NA,NA,1384
-"now it has a small triangle and another small triangle, and one square like this, this, this, this, and this.",145,describer,1,NA,NA,1385
-"Now it has a square, a diamond, and it looks like this, and this.",190,describer,1,NA,NA,1386
-"You don't have to show me, I already know.",145,matcher,2,NA,NA,1386
-Okay.,190,describer,3,NA,NA,1386
-"Now, it does, it has two feet and one square like this, and this, and this, and this.",145,describer,1,NA,NA,1387
-"Now it has a triangle, and it has a triangle, and another triangle, and a square, and a big triangle.",190,describer,1,NA,NA,1388
-Okay.,145,matcher,2,NA,NA,1388
-What is it?,191,matcher,1,NA,NA,1389
-"Hey, now I see a statue.",191,describer,1,NA,NA,1390
-I see a statue and I have a diamond on top of it.,191,describer,2,NA,NA,1390
-It's a bunny rabbit.,192,describer,1,NA,NA,1391
-I see a sad man.,191,describer,1,NA,NA,1392
-What does it look like?,192,matcher,2,NA,NA,1392
-He's looking his head down.,191,describer,3,NA,NA,1392
-With his flag behind him.,191,describer,4,NA,NA,1392
-Me too.,192,matcher,5,NA,NA,1392
-What do you see on the picture?,191,matcher,1,NA,NA,1393
-It's all stills in the mirror.,192,describer,2,NA,NA,1393
-It's the mirror's way of looking down at it.,192,describer,3,NA,NA,1393
-I see a bunny.,191,describer,1,NA,NA,1394
-"A bunny, ba bunny.",192,matcher,2,NA,NA,1394
-I see a bunny.,191,describer,3,NA,NA,1394
-What do you see [id274]?,191,matcher,1,NA,NA,1395
-It's a bunny rabbit.,192,describer,2,NA,NA,1395
-I see a statue.,191,describer,1,NA,NA,1396
-It's a dinosaur.,192,describer,1,NA,NA,1397
-I see a rabbit.,191,describer,1,NA,NA,1398
-A rabbit?,192,matcher,2,NA,NA,1398
-Yeah.,191,describer,3,NA,NA,1398
-What do you see?,191,matcher,1,NA,NA,1399
-It's a guy looking down.,192,describer,2,NA,NA,1399
-I see a statue.,191,describer,1,NA,NA,1400
-I see a bunny.,192,describer,1,NA,NA,1401
-I see,191,matcher,2,NA,NA,1401
-A bunny.,192,describer,3,NA,NA,1401
-I see a dinosaur.,191,describer,1,NA,NA,1402
-It's a guy looking down and I saw that one.,192,describer,1,NA,NA,1403
-I see a statue.,191,describer,1,NA,NA,1404
-So I see inside the box is a rabbit.,193,describer,1,NA,NA,1405
-A rabbit that's small.,193,describer,2,NA,NA,1405
-I don’t see a rabbit. What it look like?,194,matcher,3,NA,NA,1405
-I see a rabbit.,193,describer,4,NA,NA,1405
-I see a rabbit.,193,describer,5,NA,NA,1405
-I don't see anything inside.,195,matcher,1,NA,NA,1406
-I do.,196,describer,2,NA,NA,1406
-"A ship, uh I don't know.",196,describer,3,NA,NA,1406
-boot,196,describer,4,NA,NA,1406
-I see nothing.,196,matcher,1,NA,NA,1407
-I see a pterodactyl inside the box.,195,describer,2,NA,NA,1407
-What is it?,196,matcher,3,NA,NA,1407
-This one?,196,matcher,4,NA,NA,1407
-That one?,196,matcher,5,NA,NA,1407
-Which one is it?,196,matcher,6,NA,NA,1407
-This one.,195,describer,7,NA,NA,1407
-This one.,196,matcher,8,NA,NA,1407
-This.,195,describer,9,NA,NA,1407
-This.,196,matcher,10,NA,NA,1407
-Yep.,195,describer,11,NA,NA,1407
-I see a boot.,196,describer,1,NA,NA,1408
-It's on that side.,196,describer,2,NA,NA,1408
-I see a boot.,195,describer,1,NA,NA,1409
-I see something.,196,describer,1,NA,NA,1410
-I see that.,196,describer,2,NA,NA,1410
-"Yeah, that one.",196,describer,3,NA,NA,1410
-"Um, I see them walking.",196,describer,4,NA,NA,1410
-I see a triangle.,195,describer,1,NA,NA,1411
-Where is it? This one?,196,matcher,2,NA,NA,1411
-It's on this side.,195,describer,3,NA,NA,1411
-This one?,196,matcher,4,NA,NA,1411
-I see one. It is a triangle and it's on that side.,196,describer,1,NA,NA,1412
-This side.,195,matcher,2,NA,NA,1412
-I see a boot Smurfy and I see a boot [id277].,196,describer,3,NA,NA,1412
-I see nothing.,196,matcher,1,NA,NA,1413
-I see a boot.,195,describer,2,NA,NA,1413
-I see a boot with a triangle on top.,195,describer,3,NA,NA,1413
-This one.,196,matcher,4,NA,NA,1413
-I see a triangle on top.,196,describer,1,NA,NA,1414
-I see nothing.,196,matcher,1,NA,NA,1415
-A walking person with wings.,195,describer,2,NA,NA,1415
-I see one with a square on top.,196,describer,1,NA,NA,1416
-I see nothing.,196,matcher,1,NA,NA,1417
-I see a triangle on top of it and it looks like a thing.,195,describer,2,NA,NA,1417
-I see a walking person with the wings.,196,describer,1,NA,NA,1418
-"Whoa, I see a boot with a triangle on top.",195,describer,1,NA,NA,1419
-This one.,196,matcher,2,NA,NA,1419
-I see a square on top.,196,describer,1,NA,NA,1420
-"What did you say, [id278]?",195,matcher,2,NA,NA,1420
-A square on top.,196,describer,3,NA,NA,1420
-I see with a square on top.,195,describer,1,NA,NA,1421
-This one?,196,matcher,2,NA,NA,1421
-Yeah!,195,describer,3,NA,NA,1421
-"Hey, look at this walking guy.",197,describer,1,NA,NA,1422
-A person sitting.,198,describer,1,NA,NA,1423
-A person walking?,197,matcher,1,NA,NA,1424
-It's...,198,describer,2,NA,NA,1424
-a person sitting again.,198,describer,3,NA,NA,1424
-A person sitting.,197,describer,1,NA,NA,1425
-I think it's a person sitting.,198,describer,1,NA,NA,1426
-I guess it's a person sitting.,198,describer,2,NA,NA,1426
-A person walking with a bag.,197,describer,1,NA,NA,1427
-I guess it's a person sitting.,198,describer,1,NA,NA,1428
-I think it's a person...,198,describer,1,NA,NA,1429
-standing.,198,describer,2,NA,NA,1429
-A person walking with a bag on his back.,197,describer,1,NA,NA,1430
-I think it's a person...,198,describer,1,NA,NA,1431
-sitting.,198,describer,2,NA,NA,1431
-I think it's a person sitting.,198,describer,3,NA,NA,1431
-I guess,198,describer,4,NA,NA,1431
-Maybe it's...,198,describer,5,NA,NA,1431
-a person...,198,describer,6,NA,NA,1431
-Maybe it's a person standing.,198,describer,7,NA,NA,1431
-A person...,197,describer,1,NA,NA,1432
-It's a person walking.,198,describer,1,NA,NA,1433
-A person...,197,describer,1,NA,NA,1434
-standing.,197,describer,2,NA,NA,1434
-A person...,197,describer,3,NA,NA,1434
-standing.,197,describer,4,NA,NA,1434
-It's a person sitting...,198,describer,1,NA,NA,1435
-with...,198,describer,2,NA,NA,1435
-a square head...,198,describer,3,NA,NA,1435
-and...,198,describer,4,NA,NA,1435
-a toy tail.,198,describer,5,NA,NA,1435
-A person walking with a flag.,199,describer,1,NA,NA,1436
-rice,200,describer,1,NA,NA,1437
-"Hand, This block.",200,describer,1,NA,NA,1438
-"A flag, a flag in the ground.",199,describer,1,NA,NA,1439
-I can see a human walking holding a flag.,200,describer,1,NA,NA,1440
-I see someone walking with his belly on the ground.,199,describer,1,NA,NA,1441
-I can see a racetrack.,200,describer,1,NA,NA,1442
-I see someone walking holding a flag.,199,describer,1,NA,NA,1443
-A big flag with a flag.,200,describer,1,NA,NA,1444
-A big flag.,200,describer,2,NA,NA,1444
-"uh, someone a flag inside the ground",199,describer,1,NA,NA,1445
-I don’t know what this is,201,describer,1,NA,NA,1446
-"umm, a pokey stack thing and a pokey stuck thing.",202,matcher,2,NA,NA,1446
-I don’t know,201,describer,3,NA,NA,1446
-it’s kind of confusing what is it,202,matcher,4,NA,NA,1446
-I don’t know what it is,201,describer,5,NA,NA,1446
-Now I see the pokey sitting thing,202,describer,1,NA,NA,1447
-"Okay, I see a pokey flat thing",201,matcher,2,NA,NA,1447
-"Okay, look,  I see a pokey flat thing in my box",202,describer,3,NA,NA,1447
-I think it’s this one,201,matcher,4,NA,NA,1447
-"Um, a pokey black",201,describer,1,NA,NA,1448
-"I see a pokey nose working thing,",202,describer,1,NA,NA,1449
-I see a pokey nose working,201,matcher,2,NA,NA,1449
-press it,202,describer,3,NA,NA,1449
-Pokey birthday,201,describer,1,NA,NA,1450
-pokey,201,matcher,1,NA,NA,1451
-I see a pokey sitting down thing,202,describer,2,NA,NA,1451
-I see a pokey walk,201,matcher,3,NA,NA,1451
-"Okay, no I said",202,describer,4,NA,NA,1451
-I see … I see … A pokey working,201,describer,1,NA,NA,1452
-"umm, that’s this one I think, so",202,matcher,2,NA,NA,1452
-"Now I see a pokey, now I see a pokey flat thing",202,describer,1,NA,NA,1453
-Now I see a pokey work thing,201,matcher,2,NA,NA,1453
-"No, no, I said I see a pokey flat thing in the box",202,describer,3,NA,NA,1453
-A pokey flat thing,201,matcher,4,NA,NA,1453
-"Okay, so press it",202,describer,5,NA,NA,1453
-"okay, so this",201,matcher,6,NA,NA,1453
-It's press and leave,202,describer,7,NA,NA,1453
-A pokey flat thing.,201,describer,1,NA,NA,1454
-Now I see a ear flakking in the box,202,describer,1,NA,NA,1455
-"okay, pokey flat",201,matcher,2,NA,NA,1455
-"I see uhh, a pokey flat thing",201,describer,1,NA,NA,1456
-A pokey sitting down thing.,202,describer,1,NA,NA,1457
-I see a pokey sitting down thing.,201,matcher,2,NA,NA,1457
-I see a Pokey thing.,201,describer,1,NA,NA,1458
-I see a Pokey thing.,201,matcher,1,NA,NA,1459
-"Okay, um A pokey",202,describer,2,NA,NA,1459
-Flats thing on its back,202,describer,3,NA,NA,1459
-Press it,202,describer,4,NA,NA,1459
-which one?,201,matcher,5,NA,NA,1459
-"Oh, it's a pokey flat thing",202,describer,6,NA,NA,1459
-This one.,201,matcher,7,NA,NA,1459
-okay press it,202,describer,8,NA,NA,1459
-I see uhh pokey sitting down thing.,201,describer,1,NA,NA,1460
-A pokey working flat thing,202,describer,1,NA,NA,1461
-A pokey working flat thing,201,matcher,2,NA,NA,1461
+A mountain?,188,describer,1,NA,NA,1363
+A mountain with like,189,matcher,2,NA,NA,1363
+With like it's like,189,matcher,3,NA,NA,1363
+a tree,188,describer,4,NA,NA,1363
+is it this one or this one?,189,matcher,5,NA,NA,1363
+the one which in the black box,188,describer,6,NA,NA,1363
+is it the right way or the left way?,189,matcher,7,NA,NA,1363
+Is it the one that looks like a dog walking?,189,matcher,8,NA,NA,1363
+"Yeah, I just, I don't know",188,describer,9,NA,NA,1363
+is it a dog?,189,matcher,1,NA,NA,1364
+"Uh, yeah",188,describer,2,NA,NA,1364
+The dog lie just like this?,189,matcher,3,NA,NA,1364
+Uh no,188,describer,4,NA,NA,1364
+This one,189,matcher,5,NA,NA,1364
+"[id257], I don’t understand your furry face",189,matcher,6,NA,NA,1364
+"So [id257], what is it?",189,matcher,7,NA,NA,1364
+It’s like a dog walking,188,describer,8,NA,NA,1364
+One foot is in front,188,describer,9,NA,NA,1364
+"Okay, this one",189,matcher,10,NA,NA,1364
+"Okay, so is the person walking or the dog walking",189,matcher,1,NA,NA,1365
+"the person walking, I think",188,describer,2,NA,NA,1365
+Is it this one?,189,matcher,3,NA,NA,1365
+"Yeah, I think it is",188,describer,4,NA,NA,1365
+Is it,189,describer,1,NA,NA,1366
+Which one is it?,189,matcher,1,NA,NA,1367
+I think this one,188,describer,2,NA,NA,1367
+is the dog walking?,189,matcher,3,NA,NA,1367
+Yeah,188,describer,4,NA,NA,1367
+like this?,189,matcher,5,NA,NA,1367
+"I think it is, I think it’s not but it is",188,describer,6,NA,NA,1367
+So it’s the mountain with the diamond on top. That's like this. It's like a banana with the diamond on it,189,describer,1,NA,NA,1368
+And now so dog walking the then,188,describer,1,NA,NA,1369
+Which one is it,189,matcher,1,NA,NA,1370
+A banana with the diamond on it or the dog walking,189,matcher,2,NA,NA,1370
+the banana with the diamond on it,188,describer,3,NA,NA,1370
+It's the it's the dog walking,188,describer,1,NA,NA,1371
+not the banana having the,188,describer,2,NA,NA,1371
+it’s not the banana having the diamond on,189,matcher,3,NA,NA,1371
+It's the dog walking.,189,describer,1,NA,NA,1372
+it’s the dog,188,describer,1,NA,NA,1373
+It's the star,188,describer,2,NA,NA,1373
+it's the one that's walking and doing the arm on the back,188,describer,3,NA,NA,1373
+"Um, so is the human walking or the banana on the diamond on it",189,matcher,4,NA,NA,1373
+"human, human",188,describer,5,NA,NA,1373
+human walking that has dog ears?,189,matcher,6,NA,NA,1373
+yeah,188,describer,7,NA,NA,1373
+so it’s the banana with the diamond on it,189,describer,1,NA,NA,1374
+Diamond.,190,describer,1,NA,NA,1375
+Diamond.,190,matcher,1,NA,NA,1376
+Diamond.,190,describer,1,NA,NA,1377
+"I just, I don’t know what it is.",191,describer,1,NA,NA,1378
+A person.,191,describer,1,NA,NA,1379
+A person?,190,matcher,2,NA,NA,1379
+A person.,190,describer,1,NA,NA,1380
+A person.,190,describer,2,NA,NA,1380
+A person.,190,describer,1,NA,NA,1381
+"Umm, triangle. Dey got dey got",191,describer,1,NA,NA,1382
+umm triangle.,190,matcher,2,NA,NA,1382
+it starts with a skring,191,describer,3,NA,NA,1382
+"Uh, trident.",190,describer,1,NA,NA,1383
+Person?,190,matcher,1,NA,NA,1384
+it starts with a plame a me,191,describer,2,NA,NA,1384
+what do you have?,192,matcher,1,NA,NA,1385
+a dog,193,describer,2,NA,NA,1385
+I see a people,192,describer,1,NA,NA,1386
+"I, oh, press it?",193,matcher,2,NA,NA,1386
+It’s a dog.,192,describer,3,NA,NA,1386
+Dog,193,matcher,4,NA,NA,1386
+"Yeah,",192,describer,5,NA,NA,1386
+what is it?,192,matcher,1,NA,NA,1387
+"um, people",193,describer,2,NA,NA,1387
+It's a sheep,192,describer,1,NA,NA,1388
+"um, a kangaroo",193,describer,1,NA,NA,1389
+kangaroo,192,matcher,2,NA,NA,1389
+"a dog, a dog",192,describer,1,NA,NA,1390
+a people,193,describer,1,NA,NA,1391
+people,192,matcher,2,NA,NA,1391
+"I see a dog, hopping. A dog.",192,describer,1,NA,NA,1392
+What do you see to me?,192,matcher,1,NA,NA,1393
+A people.,193,describer,2,NA,NA,1393
+I see a shape,192,describer,1,NA,NA,1394
+What did you see?,192,matcher,1,NA,NA,1395
+People.,193,describer,2,NA,NA,1395
+a dog,192,describer,1,NA,NA,1396
+What do you see?,192,matcher,1,NA,NA,1397
+This.,193,describer,2,NA,NA,1397
+What?,192,matcher,3,NA,NA,1397
+I see a kangaroo,193,describer,4,NA,NA,1397
+kangaroo,192,matcher,5,NA,NA,1397
+I see I see I see a dog.,192,describer,1,NA,NA,1398
+I see a people,193,describer,1,NA,NA,1399
+People,192,matcher,2,NA,NA,1399
+A people.,192,describer,1,NA,NA,1400
+"Okay, a jump and spin with a square",145,describer,1,NA,NA,1401
+It's one with a triangle and another triangle and a square,194,describer,1,NA,NA,1402
+And it has a big triangle like with a top,194,describer,2,NA,NA,1402
+okay,145,matcher,3,NA,NA,1402
+"Now, can you tell me?",194,matcher,1,NA,NA,1403
+"Okay, it's with",145,describer,2,NA,NA,1403
+Diamond on top and straight on the bottom,145,describer,3,NA,NA,1403
+No way for crystal on the bottom,194,matcher,4,NA,NA,1403
+And then another triangle,194,matcher,5,NA,NA,1403
+"No, first one on the top",145,describer,6,NA,NA,1403
+And then the same on the top,145,describer,7,NA,NA,1403
+That goes there and a gem,145,describer,8,NA,NA,1403
+looks like a gem?,194,matcher,9,NA,NA,1403
+And a pancake this?,194,matcher,10,NA,NA,1403
+"No front, no, I guess for you",145,describer,11,NA,NA,1403
+I do it for you,145,describer,12,NA,NA,1403
+"So, it is",145,describer,13,NA,NA,1403
+"No, it has a feet and it has a square",194,describer,1,NA,NA,1404
+And it also has a sharp beak and another feet,194,describer,2,NA,NA,1404
+And a square,194,describer,3,NA,NA,1404
+"So, the one that you did is the one that's inside the box",145,describer,1,NA,NA,1405
+The one with two feet and a square on the back,145,describer,2,NA,NA,1405
+And a head and a back,145,describer,3,NA,NA,1405
+And another feet,145,describer,4,NA,NA,1405
+Now it has a diamond and it has a square,194,describer,1,NA,NA,1406
+And it has a triangle and it has a sharp spot,194,describer,2,NA,NA,1406
+And it has a rectangle and it has a triangle,194,describer,3,NA,NA,1406
+And it has a sharp part on the right here,194,describer,4,NA,NA,1406
+"So, it has two triangles and one square",145,describer,1,NA,NA,1407
+There's two triangles and it has a square,194,matcher,2,NA,NA,1407
+"yeah, that one",145,describer,3,NA,NA,1407
+this one,194,matcher,4,NA,NA,1407
+"yeah,",145,describer,5,NA,NA,1407
+"Now it has a diamond and it looks like this, and it has this, and it has this, and it has this.",194,describer,1,NA,NA,1408
+Without feet.,145,matcher,2,NA,NA,1408
+"And this, and this.",194,describer,3,NA,NA,1408
+"Now, you press it?",194,describer,4,NA,NA,1408
+"So, it has a diamond on the top like this, this, this.",145,describer,1,NA,NA,1409
+And not without feet.,145,describer,2,NA,NA,1409
+With no feet.,145,describer,3,NA,NA,1409
+"Now it has a square and a triangle, and it has a sharp part, and it has a rectangle and another triangle, and it has a sharp part on the bottom.",194,describer,1,NA,NA,1410
+"So, it has two feet and one square on the back.",145,describer,1,NA,NA,1411
+"Like this, like this, and this.",145,describer,2,NA,NA,1411
+"Now it has a triangle and another triangle and a square, and it has a big triangle with a bump on it.",194,describer,1,NA,NA,1412
+"Like, like, like, like, like, like this, like, like a triangle.",194,describer,2,NA,NA,1412
+And a bump.,194,describer,3,NA,NA,1412
+"now it has a small triangle and another small triangle, and one square like this, this, this, this, and this.",145,describer,1,NA,NA,1413
+"Now it has a square, a diamond, and it looks like this, and this.",194,describer,1,NA,NA,1414
+"You don't have to show me, I already know.",145,matcher,2,NA,NA,1414
+Okay.,194,describer,3,NA,NA,1414
+"Now, it does, it has two feet and one square like this, and this, and this, and this.",145,describer,1,NA,NA,1415
+"Now it has a triangle, and it has a triangle, and another triangle, and a square, and a big triangle.",194,describer,1,NA,NA,1416
+Okay.,145,matcher,2,NA,NA,1416
+What is it?,195,matcher,1,NA,NA,1417
+"Hey, now I see a statue.",195,describer,1,NA,NA,1418
+I see a statue and I have a diamond on top of it.,195,describer,2,NA,NA,1418
+It's a bunny rabbit.,196,describer,1,NA,NA,1419
+I see a sad man.,195,describer,1,NA,NA,1420
+What does it look like?,196,matcher,2,NA,NA,1420
+He's looking his head down.,195,describer,3,NA,NA,1420
+With his flag behind him.,195,describer,4,NA,NA,1420
+Me too.,196,matcher,5,NA,NA,1420
+What do you see on the picture?,195,matcher,1,NA,NA,1421
+It's all stills in the mirror.,196,describer,2,NA,NA,1421
+It's the mirror's way of looking down at it.,196,describer,3,NA,NA,1421
+I see a bunny.,195,describer,1,NA,NA,1422
+"A bunny, ba bunny.",196,matcher,2,NA,NA,1422
+I see a bunny.,195,describer,3,NA,NA,1422
+What do you see [id274]?,195,matcher,1,NA,NA,1423
+It's a bunny rabbit.,196,describer,2,NA,NA,1423
+I see a statue.,195,describer,1,NA,NA,1424
+It's a dinosaur.,196,describer,1,NA,NA,1425
+I see a rabbit.,195,describer,1,NA,NA,1426
+A rabbit?,196,matcher,2,NA,NA,1426
+Yeah.,195,describer,3,NA,NA,1426
+What do you see?,195,matcher,1,NA,NA,1427
+It's a guy looking down.,196,describer,2,NA,NA,1427
+I see a statue.,195,describer,1,NA,NA,1428
+I see a bunny.,196,describer,1,NA,NA,1429
+I see,195,matcher,2,NA,NA,1429
+A bunny.,196,describer,3,NA,NA,1429
+I see a dinosaur.,195,describer,1,NA,NA,1430
+It's a guy looking down and I saw that one.,196,describer,1,NA,NA,1431
+I see a statue.,195,describer,1,NA,NA,1432
+So I see inside the box is a rabbit.,197,describer,1,NA,NA,1433
+A rabbit that's small.,197,describer,2,NA,NA,1433
+I don’t see a rabbit. What it look like?,198,matcher,3,NA,NA,1433
+I see a rabbit.,197,describer,4,NA,NA,1433
+I see a rabbit.,197,describer,5,NA,NA,1433
+I don't see anything inside.,199,matcher,1,NA,NA,1434
+I do.,200,describer,2,NA,NA,1434
+"A ship, uh I don't know.",200,describer,3,NA,NA,1434
+boot,200,describer,4,NA,NA,1434
+I see nothing.,200,matcher,1,NA,NA,1435
+I see a pterodactyl inside the box.,199,describer,2,NA,NA,1435
+What is it?,200,matcher,3,NA,NA,1435
+This one?,200,matcher,4,NA,NA,1435
+That one?,200,matcher,5,NA,NA,1435
+Which one is it?,200,matcher,6,NA,NA,1435
+This one.,199,describer,7,NA,NA,1435
+This one.,200,matcher,8,NA,NA,1435
+This.,199,describer,9,NA,NA,1435
+This.,200,matcher,10,NA,NA,1435
+Yep.,199,describer,11,NA,NA,1435
+I see a boot.,200,describer,1,NA,NA,1436
+It's on that side.,200,describer,2,NA,NA,1436
+I see a boot.,199,describer,1,NA,NA,1437
+I see something.,200,describer,1,NA,NA,1438
+I see that.,200,describer,2,NA,NA,1438
+"Yeah, that one.",200,describer,3,NA,NA,1438
+"Um, I see them walking.",200,describer,4,NA,NA,1438
+I see a triangle.,199,describer,1,NA,NA,1439
+Where is it? This one?,200,matcher,2,NA,NA,1439
+It's on this side.,199,describer,3,NA,NA,1439
+This one?,200,matcher,4,NA,NA,1439
+I see one. It is a triangle and it's on that side.,200,describer,1,NA,NA,1440
+This side.,199,matcher,2,NA,NA,1440
+I see a boot Smurfy and I see a boot [id277].,200,describer,3,NA,NA,1440
+I see nothing.,200,matcher,1,NA,NA,1441
+I see a boot.,199,describer,2,NA,NA,1441
+I see a boot with a triangle on top.,199,describer,3,NA,NA,1441
+This one.,200,matcher,4,NA,NA,1441
+I see a triangle on top.,200,describer,1,NA,NA,1442
+I see nothing.,200,matcher,1,NA,NA,1443
+A walking person with wings.,199,describer,2,NA,NA,1443
+I see one with a square on top.,200,describer,1,NA,NA,1444
+I see nothing.,200,matcher,1,NA,NA,1445
+I see a triangle on top of it and it looks like a thing.,199,describer,2,NA,NA,1445
+I see a walking person with the wings.,200,describer,1,NA,NA,1446
+"Whoa, I see a boot with a triangle on top.",199,describer,1,NA,NA,1447
+This one.,200,matcher,2,NA,NA,1447
+I see a square on top.,200,describer,1,NA,NA,1448
+"What did you say, [id278]?",199,matcher,2,NA,NA,1448
+A square on top.,200,describer,3,NA,NA,1448
+I see with a square on top.,199,describer,1,NA,NA,1449
+This one?,200,matcher,2,NA,NA,1449
+Yeah!,199,describer,3,NA,NA,1449
+"Hey, look at this walking guy.",201,describer,1,NA,NA,1450
+A person sitting.,202,describer,1,NA,NA,1451
+A person walking?,201,matcher,1,NA,NA,1452
+It's...,202,describer,2,NA,NA,1452
+a person sitting again.,202,describer,3,NA,NA,1452
+A person sitting.,201,describer,1,NA,NA,1453
+I think it's a person sitting.,202,describer,1,NA,NA,1454
+I guess it's a person sitting.,202,describer,2,NA,NA,1454
+A person walking with a bag.,201,describer,1,NA,NA,1455
+I guess it's a person sitting.,202,describer,1,NA,NA,1456
+I think it's a person...,202,describer,1,NA,NA,1457
+standing.,202,describer,2,NA,NA,1457
+A person walking with a bag on his back.,201,describer,1,NA,NA,1458
+I think it's a person...,202,describer,1,NA,NA,1459
+sitting.,202,describer,2,NA,NA,1459
+I think it's a person sitting.,202,describer,3,NA,NA,1459
+I guess,202,describer,4,NA,NA,1459
+Maybe it's...,202,describer,5,NA,NA,1459
+a person...,202,describer,6,NA,NA,1459
+Maybe it's a person standing.,202,describer,7,NA,NA,1459
+A person...,201,describer,1,NA,NA,1460
+It's a person walking.,202,describer,1,NA,NA,1461
+A person...,201,describer,1,NA,NA,1462
+standing.,201,describer,2,NA,NA,1462
+A person...,201,describer,3,NA,NA,1462
+standing.,201,describer,4,NA,NA,1462
+It's a person sitting...,202,describer,1,NA,NA,1463
+with...,202,describer,2,NA,NA,1463
+a square head...,202,describer,3,NA,NA,1463
+and...,202,describer,4,NA,NA,1463
+a toy tail.,202,describer,5,NA,NA,1463
+A person walking with a flag.,203,describer,1,NA,NA,1464
+rice,204,describer,1,NA,NA,1465
+"Hand, This block.",204,describer,1,NA,NA,1466
+"A flag, a flag in the ground.",203,describer,1,NA,NA,1467
+I can see a human walking holding a flag.,204,describer,1,NA,NA,1468
+I see someone walking with his belly on the ground.,203,describer,1,NA,NA,1469
+I can see a racetrack.,204,describer,1,NA,NA,1470
+I see someone walking holding a flag.,203,describer,1,NA,NA,1471
+A big flag with a flag.,204,describer,1,NA,NA,1472
+A big flag.,204,describer,2,NA,NA,1472
+"uh, someone a flag inside the ground",203,describer,1,NA,NA,1473
+I don’t know what this is,205,describer,1,NA,NA,1474
+"umm, a pokey stack thing and a pokey stuck thing.",206,matcher,2,NA,NA,1474
+I don’t know,205,describer,3,NA,NA,1474
+it’s kind of confusing what is it,206,matcher,4,NA,NA,1474
+I don’t know what it is,205,describer,5,NA,NA,1474
+Now I see the pokey sitting thing,206,describer,1,NA,NA,1475
+"Okay, I see a pokey flat thing",205,matcher,2,NA,NA,1475
+"Okay, look,  I see a pokey flat thing in my box",206,describer,3,NA,NA,1475
+I think it’s this one,205,matcher,4,NA,NA,1475
+"Um, a pokey black",205,describer,1,NA,NA,1476
+"I see a pokey nose working thing,",206,describer,1,NA,NA,1477
+I see a pokey nose working,205,matcher,2,NA,NA,1477
+press it,206,describer,3,NA,NA,1477
+Pokey birthday,205,describer,1,NA,NA,1478
+pokey,205,matcher,1,NA,NA,1479
+I see a pokey sitting down thing,206,describer,2,NA,NA,1479
+I see a pokey walk,205,matcher,3,NA,NA,1479
+"Okay, no I said",206,describer,4,NA,NA,1479
+I see … I see … A pokey working,205,describer,1,NA,NA,1480
+"umm, that’s this one I think, so",206,matcher,2,NA,NA,1480
+"Now I see a pokey, now I see a pokey flat thing",206,describer,1,NA,NA,1481
+Now I see a pokey work thing,205,matcher,2,NA,NA,1481
+"No, no, I said I see a pokey flat thing in the box",206,describer,3,NA,NA,1481
+A pokey flat thing,205,matcher,4,NA,NA,1481
+"Okay, so press it",206,describer,5,NA,NA,1481
+"okay, so this",205,matcher,6,NA,NA,1481
+It's press and leave,206,describer,7,NA,NA,1481
+A pokey flat thing.,205,describer,1,NA,NA,1482
+Now I see a ear flakking in the box,206,describer,1,NA,NA,1483
+"okay, pokey flat",205,matcher,2,NA,NA,1483
+"I see uhh, a pokey flat thing",205,describer,1,NA,NA,1484
+A pokey sitting down thing.,206,describer,1,NA,NA,1485
+I see a pokey sitting down thing.,205,matcher,2,NA,NA,1485
+I see a Pokey thing.,205,describer,1,NA,NA,1486
+I see a Pokey thing.,205,matcher,1,NA,NA,1487
+"Okay, um A pokey",206,describer,2,NA,NA,1487
+Flats thing on its back,206,describer,3,NA,NA,1487
+Press it,206,describer,4,NA,NA,1487
+which one?,205,matcher,5,NA,NA,1487
+"Oh, it's a pokey flat thing",206,describer,6,NA,NA,1487
+This one.,205,matcher,7,NA,NA,1487
+okay press it,206,describer,8,NA,NA,1487
+I see uhh pokey sitting down thing.,205,describer,1,NA,NA,1488
+A pokey working flat thing,206,describer,1,NA,NA,1489
+A pokey working flat thing,205,matcher,2,NA,NA,1489

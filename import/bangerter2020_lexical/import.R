@@ -45,12 +45,18 @@ messages <- tagged_transcripts |> fill(game)|> left_join(alignment) |>
   filter(!is.na(role), !is.na(player_id)) |> 
   select(action_type, gameid, player_id, role, text=message, message_irrelevant, trial_num, round_num, expt, message_num)
 
-dummy_messages <- messages |> filter(role=="matcher") |> distinct(gameid, trial_num, round_num, expt) |> 
-  anti_join(messages |> filter(role=="describer") |> distinct(gameid, trial_num, round_num, expt)) |> 
+# role is constant per person within a game (whoever describes, describes all game), so
+# the real describer's player_id for a trial missing a describer transcript is recoverable
+# from that game's other describer rows -- rather than fabricating a placeholder identity,
+# which would show up as a phantom extra player in the game.
+game_describer <- messages |> filter(role=="describer") |> distinct(gameid, player_id)
+
+dummy_messages <- messages |> filter(role=="matcher") |> distinct(gameid, trial_num, round_num, expt) |>
+  anti_join(messages |> filter(role=="describer") |> distinct(gameid, trial_num, round_num, expt)) |>
+  left_join(game_describer, by="gameid") |>
   mutate(role="describer",
-         text=NA, 
+         text=NA,
          action_type="message",
-         player_id=str_c(gameid, "_", "describer"),
          message_num=NA)
 
 combined <- messages |> bind_rows(dummy_messages) |> 
