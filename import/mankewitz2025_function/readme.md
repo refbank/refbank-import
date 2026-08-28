@@ -13,7 +13,7 @@ Human languages are compositional, combining smaller units of meaning to express
 Images are coded separately here (per image), but there was structural similarity 
 between some images (same top or bottom half sometimes). See original paper for details. 
 
-* recruitment from Prolific
+* recruitment from Prolific -- we assume adults and no prior relationship based on this (paper doesn't state these explicitly)
 * conditions: non-compositional, within-trial competitor, across-trial competitor
 * final sample of 450 dyads after exclusions, across 3 conditions (we have excluded as well- 182 no competitor, 194 within, 176 across)
 * roles alternate by trial

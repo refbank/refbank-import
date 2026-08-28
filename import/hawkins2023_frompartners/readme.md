@@ -31,7 +31,7 @@ The paper has other simulations and experiments, but the only one relevant enoug
 is experiment 2 in the paper (labeled as experiment 3 in the github)
 
 From the paper:
-* recruitment from AMT
+* recruitment from AMT -- we assume adults, no prior relationship, and no confederates based on this; English based on the (English) transcripts (paper doesn't state these explicitly)
 * 92 participants in one of 23 fully connected networks of 4 people (we have 30 networks, presumably including exclusions)
 * Each network gets one of 3 sets of contexts (images)
 * Roles swapped each block, (4 blocks of 4 trials each) x 3 partners

@@ -40,11 +40,12 @@ source(here("import_images.R"))
 ```{r}
 # to re-run
 to_run <- c("yoon2019_audience", "wang2025_lvlms", "mankewitz2025_function","leung2024_scaffolding",
+            
             "ji2025_adhoc", "hawkins2023_frompartners", "hawkins2021_respect", "hawkins2026_fmri",
-            "hawkins2020_characterizing", "hawkins2019_continual",
-            "dale2011_tangram", "branigan2016_doyouknow", "boyce2026_preschoolers",
-            "boyce2024_interaction", "boegels2025_power", "dahan2023_collaboration",
-            "bangerter2020_lexical", "bangerter2000_reuse", "beatty-martinez2026_tangrams")
+            
+            "hawkins2020_characterizing", "hawkins2019_continual","dale2011_tangram", "branigan2016_doyouknow", 
+            "boyce2026_preschoolers","boyce2024_interaction", "boegels2025_power", "dahan2023_collaboration",
+            "dahan2025_hedging","bangerter2020_lexical", "bangerter2000_reuse", "beatty-martinez2026_tangrams")
 
 rerun_imports(to_run)
 
@@ -195,7 +196,7 @@ Table conditions{
   group_size integer
   language varchar
   population varchar {adult, child, child-parent} can have others if other atypical populations
-  prior_relationship {yes,no}
+  prior_relationship {yes,no,mixed}
   partner_constancy {yes,no}
   role_constancy {yes,no}
   confederates {yes, no}

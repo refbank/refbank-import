@@ -170,7 +170,7 @@ all_uncued <- messages |>
     role_constancy = "yes",
     confederates = "no",
     modality = "written",
-    feedback = "full",
+    feedback = "limited",
     backchannel = "full",
     order_match = "order",
   ) |>

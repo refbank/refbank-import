@@ -21,7 +21,7 @@ social group knowledge.
 ## Study details
 
 (Experiment 1)
-* recruitment from Prolific
+* recruitment from Prolific -- we assume adults, no prior relationship, and no confederates based on this (paper doesn't state these explicitly)
 * 272 participants recruited, ended up with 33 groups of 4 (= 132 participants)
 (imported dataset has 45 games and 178 players; applying exclusions we get 37 games;
 possibly there were additional exclusions based on post-test that we don't import)

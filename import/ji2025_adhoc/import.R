@@ -96,7 +96,7 @@ all <- messages_single |>
     confederates = "no",
     modality = "written",
     backchannel = ifelse(condition_label == "expt3", "full", "none"),
-    feedback = "limited",
+    feedback = ifelse(condition_label == "expt3", "full", "limited"),
     order_match = "match",
     room_num = 1, # only 1 group / game
     age = as.numeric(NA),

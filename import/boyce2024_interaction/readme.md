@@ -35,7 +35,10 @@ paper reports 313 games, we have 342 in dataset (laxer exclusions + pilots).
 * games varied in group size 2-6
 * feedback and backchannels varied across conditions 
 
-* participants from Prolific 
+* participants from Prolific -- adults, no prior relationship to each other
+  (independently recruited strangers), no confederates; the paper's Method
+  doesn't spell these out explicitly (standard for Prolific studies) but
+  they're true of every condition
 * group size: coded as assigned, note that actual group size may be smaller in the case of expt3
 * partners are always constant (except if people drop out in expt 3, then group gets smaller)
 * role constancy: either rotates by block (every 12 trials) (most cases), or never rotates (thick and no-rotate) (except experiment 3 if the speaker drops out, it's accomodated)

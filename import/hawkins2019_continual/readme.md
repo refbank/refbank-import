@@ -20,6 +20,7 @@ through simulations on COCO and in real-time reference game experiments with hum
 per refbank inclusion criteria, we only include games with a human describer. 
 
 human-human:
+* recruited via Mechanical Turk; we assume adults, no prior relationship, and English based on this (paper doesn't state these explicitly)
 * 108 participants (54 pairs) (we have 56 games, 49 post exclusions)
 * 4 images x 6 blocks (24 trials)
 * backchannel: paper says "interactive chat", but we don't see any matcher messages, so we have coded it as "none"

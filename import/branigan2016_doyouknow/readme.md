@@ -27,7 +27,14 @@ this knowledge in an adult-like way.
 
 ## Study details
 
- Overall experiment structure:
+prior_relationship = yes is assumed: children were all recruited from the
+same junior school, so they're taken to know each other, though the paper
+doesn't state this explicitly.
+
+language = English is assumed: the paper doesn't state this explicitly, but
+the study was run in the UK, and this matches the (English) transcripts.
+
+Overall experiment structure:
 3 participant role conditions (SP = Side Participant; OH = Overhearer; NP = Naïve Participant)
 On each trial, director describes (same, randomised) set of 8 tangrams to matcher.
 Trials A1-4 – director describes to matcher A; Trials B1-4 – director describes to matcher B

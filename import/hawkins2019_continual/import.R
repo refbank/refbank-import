@@ -207,8 +207,8 @@ all <- chat |>
   left_join(demogs, by = c("gameid", "role", "condition")) |>
   mutate(
     dataset_id = "hawkins2019_continual",
-    full_cite = "Hawkins, R. D., Kwon, M., Sadigh, D., & Goodman, N. D. (2019). Continual adaptation for efficient machine communication. Proceedings of the 24th Conference on Computational Natural Language Learning.",
-    short_cite = "Hawkins et al. (2019)",
+    full_cite = "Hawkins, R. D., Kwon, M., Sadigh, D., & Goodman, N. D. (2020). Continual adaptation for efficient machine communication. Proceedings of the 24th Conference on Computational Natural Language Learning.",
+    short_cite = "Hawkins et al. (2020)",
     language = "English",
     trial_num = trialNum + 1,
     stage_num = 1,

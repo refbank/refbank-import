@@ -13,8 +13,12 @@ source(here("validate.R"))
 # from the authors' already-cleaned processed CSVs; `round`/`player` are pulled from the
 # raw export because the processed versions drop columns we need (`director`) or aren't
 # parseable JSON blobs (`player`).
-raw_base_url <- "https://raw.githubusercontent.com/JMankewitz/comp-shapes-comm/master/data/raw_data/run_v3/"
-preprocessed_base_url <- "https://raw.githubusercontent.com/JMankewitz/comp-shapes-comm/master/data/processed_data/run_v3/"
+# As of 2026-08-25 (upstream commit 82c3d98f, "add additional image sets"), the authors
+# added a second experiment and moved run_v3 from data/{raw,processed}_data/run_v3/ to
+# data/{raw,processed}_data/exp_1/run_v3/ -- confirmed via the GitHub API as a pure
+# rename (100% file-content match), not a data change.
+raw_base_url <- "https://raw.githubusercontent.com/JMankewitz/comp-shapes-comm/master/data/raw_data/exp_1/run_v3/"
+preprocessed_base_url <- "https://raw.githubusercontent.com/JMankewitz/comp-shapes-comm/master/data/processed_data/exp_1/run_v3/"
 
 game_folders <- c(
   "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",

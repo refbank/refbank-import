@@ -93,8 +93,8 @@ validate_dataset <- function(df, write = F) {
   assert_that(all(df$order_match %in% c("order", "match")),
     msg = "order_match must be either order or match"
   )
-  assert_that(all(df$prior_relationship %in% c("yes", "no")),
-    msg = "prior_relationship must be yes or no"
+  assert_that(all(df$prior_relationship %in% c("yes", "no", "mixed")),
+    msg = "prior_relationship must be yes, no, or mixed"
   )
   assert_that(all(df$partner_constancy %in% c("yes", "no")),
     msg = "partner_constancy must be yes or no"

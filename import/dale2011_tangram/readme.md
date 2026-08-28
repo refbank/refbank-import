@@ -23,6 +23,8 @@ as their words coalesce, their actions approximate a single coordinated system.
 Study is more about eye and mouse tracking (and alignment thereof), but we do not include eye or mouse data
 * role constant throughout experiment
 * paper does not report whether any feedback was given; we assume not given what is typical in ordering experiments
+* paper does not report whether participants knew each other beforehand; we assume no prior relationship since it's not mentioned
+* paper does not state the language used; we assume English based on the (English-speaking) university setting
 * communication between describer and matcher was oral but remote ("Participants communicated through hands-free headsets which used an intercom feature on 2.4Ghz wireless phones.")
 * paper does not explicitly report whether matchers were allowed to talk or not, we assume they were given how intercoms generally work
 

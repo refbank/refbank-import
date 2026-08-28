@@ -48,10 +48,28 @@ expt 3:
 
 ## Processing/import
 
-* native French speakers from a swiss university, strangers
+* native French speakers from a swiss university, strangers -- this applies
+  to all three experiments, including expt 3's triads (recruited from the
+  same student-body pool the same way as expt 1/2), not just the two
+  experiments whose Methods sections restate it verbatim
+* feedback = none for expt 3 is assumed, not independently confirmed --
+  expt 3's Method section doesn't restate the no-feedback statement given
+  for expt 1, but it does describe expt 3 as using "similar" materials and
+  procedure to expt 1/2, so we're carrying the no-feedback assumption over
+  rather than treating it as a documented fact for expt 3 specifically
 
 * we do not have target <-> trial information, but do have the *overall* pools of images
 (so with a lot of work, it might be possible to sort out)
 
 * we do not have choice info
+
+**Bug fixed (2026-08-27):** `player_id` was set directly to the raw `person`
+column (values "A"/"B"/"C" -- a role label within a game, not a unique ID),
+with no `gameid` prefix. This collapsed all 76 games' participants into just
+3 global player_ids across the whole dataset, instead of one distinct set
+per game -- caught because it produced an impossible Games > Players count
+in a downstream summary table (Table 2 of the refbank dataset paper).
+Fixed by namespacing `player_id` as `gameid_person` (matching the convention
+every other dataset in this project uses); now 176 distinct players across
+76 games (~2.3/game, consistent with the 2-3 person group sizes).
 

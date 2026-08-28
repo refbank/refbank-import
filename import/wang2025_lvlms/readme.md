@@ -15,6 +15,8 @@ During spontaneous conversations, speakers collaborate on novel referring expres
 * each pair did both dogs and baskets, counterbalanced for order (but I don't think we have which came first per group)
 * backchannel: free 
 * feedback: no mention in paper, we assume that means no feedback
+* confederates: no
+* prior_relationship: no mention in paper, we assume no prior relationship since it's not stated
 
 
 ## Processing/import

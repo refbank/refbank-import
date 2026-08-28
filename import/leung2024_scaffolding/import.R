@@ -153,7 +153,7 @@ all <- messages |>
     confederates = "no",
     language = "English",
     full_cite = "Leung, A., Yurovsky, D., & Hawkins, R. D. (2025). Parents spontaneously scaffold the formation of conversational pacts with their children. Child Development, 96(2), 546-561.",
-    short_cite = "Leung et al. (2024)",
+    short_cite = "Leung et al. (2025)",
     dataset_id = "leung2024_scaffolding",
     time_stamp = as.numeric(NA),
   ) |>

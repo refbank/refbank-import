@@ -65,7 +65,7 @@ all <- selections |>
   mutate(
     condition_label = "codeswitch",
     dataset_id = "beatty-martinez2026_tangrams",
-    full_cite = "Beatty-Martínez, A. L., Jiaze, L., Shen, Y., Mulík, S., Hawkins, R. D., Tamargo, R. E. G., & Dussias, P. E. (2026). The Tangrams Codeswitching Corpus.",
+    full_cite = "Beatty-Martínez, A. L., Jiaze, L., Shen, Y., Mulík, S., Hawkins, R. D., Guzzardo Tamargo, R. E., & Dussias, P. E. (2026). The Tangrams Codeswitching Corpus.",
     short_cite = "Beatty-Martinez et al. (2026)",
     group_size = 2,
     language = "Spanish/English",

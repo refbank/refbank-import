@@ -143,12 +143,12 @@ combined <- selections |>
     short_cite = "Hawkins et al. (2026)",
     group_size = 2,
     language = "English",
-    prior_relationship = "yes",
+    prior_relationship = "mixed",
     partner_constancy = "yes",
     population = "adult",
     role_constancy = "no",
     confederates = "no",
-    modality = "oral-in-person", # idk are scanners in person?
+    modality = "oral-remote", # dyad members are in two separate MRI scanners (confirmed via tangrams-fmri-data repo: "prisma-side" vs "skyra-side" run labels), not co-present
     feedback = "full",
     backchannel = "full",
     room_num = 1,

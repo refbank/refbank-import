@@ -36,7 +36,7 @@ messages <- tagged_transcripts |> fill(game)|> left_join(alignment) |>
          targetPosition_w=case_when(targetPosition_w==9 ~ 8, T ~ targetPosition_w), # coding error
          trial_num=(grid-1)*8+targetPosition_w,
          round_num=grid,
-         player_id=person) |> 
+         player_id=str_c(gameid, "_", person)) |>
   group_by(gameid,round_num) |> 
   fill(trial_num, .direction="downup") |> 
   group_by(gameid, trial_num) |> 

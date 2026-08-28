@@ -31,7 +31,10 @@ with the view that children show early pragmatic competence in supportive contex
 All expts had RAs running the experiments in the room with the kids and talking to the kids
 Echoing of descriptions was common in expt 1 and rare in 2 and 3. 
 
-* participants recruited from preschool classrooms
+* participants recruited from preschool classrooms -- language is English;
+  the manuscript never states this explicitly (all quoted child utterances
+  happen to be English, and recruitment is Bay Area, CA, but that's not the
+  same as the manuscript asserting the testing language)
 * group size: always pairs
 * no partner switches
 * switch describer/matcher roles every trial

@@ -28,8 +28,20 @@ hand identification of trial boundaries
 note: it was in an frmi so is noisy; some clean up has occurred, but there are still some 
 mistranscriptions & may also be diarization errors 
 
-Some pairs of participants had prior relationship -- we have marked it as yes, but it is in fact mixed.
+Some pairs of participants had prior relationship -- we have marked it as mixed.
 
 From the experiment code, full feedback after each trial. 
 
 Age and gender information is available, but requires linking which participant was in which scanner. 
+
+Other condition-level fields not stated in any write-up (there isn't one), confirmed
+directly instead:
+* group_size = 2 -- counted directly from the task code (always exactly one describer,
+  one listener per game)
+* language = English -- based on the (English) transcripts
+* population = adult -- confirmed by the dataset owner
+* partner_constancy = yes -- confirmed by the dataset owner (same two participants for
+  the whole session)
+* confederates = no -- confirmed by the dataset owner
+* backchannel = full -- confirmed by the dataset owner (matches the fully-open audio
+  intercom link between the two scanners)

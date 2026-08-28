@@ -12,7 +12,7 @@ These are all the columns for the dataframe. Here we're grouping based on what l
   - condition_label: character, a human-understandable name for the condition
   - group_size: numeric, how many people per group
   - language: character, the language used such as "English"
-  - prior_relationship: character, "yes" or "no", whether participants knew each other before the study
+  - prior_relationship: character, "yes", "no", or "mixed" (for a condition whose participants are a known blend of acquainted and unacquainted pairs that can't be split further), whether participants knew each other before the study
   - partner_constancy: character, "yes" or "no", whether the partners stay the same for the whole game
   - population: character, "adult", "child", or "child-parent"; could add new values if we get other special populations
   - role_constancy: character, "yes" or "no", whether someone has the same [describer/matcher] role the whole time

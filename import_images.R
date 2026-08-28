@@ -70,7 +70,7 @@ all_images <- all_trials |>
         "hawkins2020_characterizing", "hawkins2026_fmri",
         "hawkins2021_respect", "hawkins2023_frompartners", "mankewitz2025_function",
         "boyce2026_preschoolers", "dale2011_tangram", "branigan2016_doyouknow",
-        "dahan2023_collaboration", "beatty-martinez2026_tangrams", "bangerter2020_lexical", "bangerter2000_reuse"
+        "dahan2023_collaboration", "dahan2025_hedging", "beatty-martinez2026_tangrams", "bangerter2020_lexical", "bangerter2000_reuse"
       ) ~ "tangram"
     ),
     kilogram_id = case_when(
@@ -84,6 +84,7 @@ all_images <- all_trials |>
         !is.na(kilogram_id) ~ str_c(kilogram_id, ".svg"),
         dataset_id == "hawkins2026_fmri" ~ str_c("tangrams_", target_image, ".svg"),
         dataset_id == "dahan2023_collaboration" ~ str_c(target_image, ".jpeg"),
+        dataset_id == "dahan2025_hedging" ~ str_c(target_image, ".jpeg"),
         dataset_id %in% c("wang2025_lvlms", "bangerter2000_reuse") ~ str_c(target_image, ".png"),
         dataset_id %in% c("leung2024_scaffolding") ~ str_c(target_image, ".jpg"),
         target_image == "hold" ~ "I1.jpg",

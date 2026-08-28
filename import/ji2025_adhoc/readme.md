@@ -11,6 +11,8 @@ Ji, A., Bergey, C. A., Eliav, R., Artzi, Y., & Hawkins, R. D. (2025). Ad hoc con
 
 We have 3 studies:
 
+All three studies recruit from Prolific -- we assume adults based on this (paper doesn't state this explicitly).
+
 expt1 (Eliav 2023 expt 1; called pilot 1 in appendix of Ji et al 2025): 
 * participants from Prolific 
 * 60 pairs, including 9 excluded (we have 60)
